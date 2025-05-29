@@ -99,7 +99,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="mb-6 text-white">Products offered</h2>
             <p className="text-xl text-yellow-100 max-w-3xl mx-auto">
-              Choose the right solution for your advertising needs, from startup-friendly options to enterprise-grade platforms.
+             An evolved user experience that drives performance across channels with ease.
             </p>
           </div>
           
@@ -107,22 +107,8 @@ const Index = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="mb-4 text-yellow-secondary">ShoutL Lite</h3>
               <p className="text-gray-600 mb-6">
-                Perfect for small to medium businesses looking to get started with targeted audio advertising.
+                Drawing upon advanced AI technology, ShoutL Lite provides human-sounding audio and video creativity solutions at a fraction of traditional costs. Our pre-packaged OTT solutions simplify advertising processes, empowering businesses to optimize ROI through enhanced ad completion rates and campaign performance
               </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center">
-                  <Check className="w-5 h-5 text-green-500 mr-3" />
-                  <span>Up to 10 active campaigns</span>
-                </li>
-                <li className="flex items-center">
-                  <Check className="w-5 h-5 text-green-500 mr-3" />
-                  <span>Basic analytics dashboard</span>
-                </li>
-                <li className="flex items-center">
-                  <Check className="w-5 h-5 text-green-500 mr-3" />
-                  <span>Email support</span>
-                </li>
-              </ul>
               <Link to="/contact" className="btn-primary w-full text-center inline-block">
                 Get Started
               </Link>
@@ -131,22 +117,8 @@ const Index = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="mb-4 text-yellow-secondary">ShoutL Enterprise</h3>
               <p className="text-gray-600 mb-6">
-                Comprehensive solution for large agencies and enterprises with advanced features and dedicated support.
+                In addition to the comprehensive features of Shoutl Lite, Shoutl Enterprise introduces a White-Labeled DSP Platform designed specifically to cater to the distinctive requirements of corporate media agencies. These fully customizable platforms incorporate self-branded reporting portals and campaign management tools, enabling agencies to provide unparalleled services to their clients.
               </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center">
-                  <Check className="w-5 h-5 text-green-500 mr-3" />
-                  <span>Unlimited campaigns</span>
-                </li>
-                <li className="flex items-center">
-                  <Check className="w-5 h-5 text-green-500 mr-3" />
-                  <span>Advanced AI optimization</span>
-                </li>
-                <li className="flex items-center">
-                  <Check className="w-5 h-5 text-green-500 mr-3" />
-                  <span>24/7 dedicated support</span>
-                </li>
-              </ul>
               <Link to="/contact" className="btn-primary w-full text-center inline-block">
                 Contact Sales
               </Link>
