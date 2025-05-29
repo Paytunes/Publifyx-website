@@ -97,7 +97,7 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-yellow-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="mb-6 text-white">Our Product Suite</h2>
+            <h2 className="mb-6 text-white">Products offered</h2>
             <p className="text-xl text-yellow-100 max-w-3xl mx-auto">
               Choose the right solution for your advertising needs, from startup-friendly options to enterprise-grade platforms.
             </p>
