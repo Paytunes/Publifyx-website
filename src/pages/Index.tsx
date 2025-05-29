@@ -22,24 +22,24 @@ const Index = () => {
             </div>
             <div className="order-1 lg:order-2">
               <h1 className="mb-6">
-                Targeted Audio Advertising That Actually Works
+                Publifyx pioneers innovative Ad-Tech solutions, transforming the digital advertising realm.
               </h1>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <Check className="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">AI-Powered Creative Optimization</span>
+                  <span className="text-lg text-gray-700">Leveraging AI for seamless, cost-effective audio and video creativity solutions.</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">Real-Time Campaign Analytics</span>
+                  <span className="text-lg text-gray-700">Simplify advertising with pre-packaged OTT as well as white-labeled DSP solutions.</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">Cross-Platform Reach</span>
+                  <span className="text-lg text-gray-700">Empowering businesses to maximize ROI by optimizing ad completion rates and campaign performance</span>
                 </div>
               </div>
               <Link to="/contact" className="btn-primary">
-                Request a Demo
+                Get in Touch
               </Link>
             </div>
           </div>
@@ -50,10 +50,7 @@ const Index = () => {
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="mb-6">Why Choose PublifyX?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our platform combines cutting-edge technology with deep market insights to deliver audio advertising that drives results.
-            </p>
+            <h2 className="mb-6">Solutions offered</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -65,7 +62,7 @@ const Index = () => {
               </div>
               <h3 className="mb-4">AI-Powered Creativity</h3>
               <p className="text-gray-600">
-                Our AI algorithms optimize your audio creatives in real-time for maximum engagement and conversion rates.
+                Publifyx offers AI-driven creative solutions that enable businesses to effortlessly create captivating audio and video content. Leveraging advanced AI algorithms, our platform ensures natural and engaging content creation in seconds.
               </p>
             </div>
 
@@ -75,9 +72,9 @@ const Index = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="mb-4">OTT Simplification</h3>
+              <h3 className="mb-4">OTT Advertising Simplification</h3>
               <p className="text-gray-600">
-                Streamlined over-the-top advertising with simplified campaign management and automated optimization.
+                We simplify over-the-top (OTT) advertising by providing pre-packaged solutions that make platform selection easy and affordable. With guaranteed high ad completion rates, businesses can maximize their advertising ROI on OTT platforms.
               </p>
             </div>
 
@@ -87,9 +84,9 @@ const Index = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <h3 className="mb-4">White-Labeled DSP</h3>
+              <h3 className="mb-4">White-Labeled DSP Solutions</h3>
               <p className="text-gray-600">
-                Complete demand-side platform solution that can be white-labeled for agencies and media companies.
+                Publifyx delivers white-labeled Demand Side Platform (DSP) solutions customized for corporate media agencies. These solutions include self-branded reporting portals and campaign management tools, empowering agencies to enhance their offerings and drive greater value for clients.
               </p>
             </div>
           </div>
