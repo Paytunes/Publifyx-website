@@ -1,4 +1,5 @@
 
+
 import Layout from "@/components/Layout";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -28,8 +29,7 @@ const Contact = () => {
     console.log("Submitting form data:", formData);
 
     try {
-      // You'll need to replace this with your actual Google Apps Script URL
-      const googleAppsScriptUrl = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+      const googleAppsScriptUrl = "https://script.google.com/a/hcode.tech/macros/s/AKfycbytrG1hsiIqFlkL4vMMNVRy0WXpEq2E26mU8JGuIA/exec";
       
       const response = await fetch(googleAppsScriptUrl, {
         method: "POST",
@@ -225,3 +225,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
