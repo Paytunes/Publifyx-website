@@ -61,9 +61,9 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="overflow-hidden">
+              <div className="h-24 overflow-hidden flex items-center justify-center">
                 <img
-                  src="/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.png"
+                  src="/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.png"
                   alt="AI-Powered Creativity"
                   className="w-full h-auto object-contain"
                 />
@@ -77,9 +77,9 @@ const Index = () => {
             </div>
 
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="overflow-hidden">
+              <div className="h-24 overflow-hidden flex items-center justify-center">
                 <img
-                  src="/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.png"
+                  src="/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.png"
                   alt="OTT Advertising Simplification"
                   className="w-full h-auto object-contain"
                 />
@@ -93,7 +93,7 @@ const Index = () => {
             </div>
 
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="overflow-hidden">
+              <div className="h-24 overflow-hidden flex items-center justify-center">
                 <img
                   src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="White-Labeled DSP Solutions"
