@@ -30,7 +30,7 @@ const FAQSection = () => {
               What kind of support does Publifyx provide to clients?
             </AccordionTrigger>
             <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
-              Publifyx provides comprehensive support including dedicated account management, technical assistance, campaign optimization guidance, and 24/7 customer service to ensure our clients maximize their advertising ROI and achieve their marketing objectives.
+              Publifyx provides comprehensive support to clients throughout the advertising process. From initial setup and implementation to ongoing optimization and performance monitoring, our team is available to offer guidance, assistance, and troubleshooting as needed.
             </AccordionContent>
           </AccordionItem>
 
@@ -39,7 +39,7 @@ const FAQSection = () => {
               How does Publifyx ensure data privacy and security?
             </AccordionTrigger>
             <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
-              We implement industry-leading security measures including end-to-end encryption, GDPR compliance, regular security audits, and strict data access controls. All client data is protected with enterprise-grade security protocols and stored in secure, compliant data centers.
+              Publifyx takes data privacy and security seriously. We adhere to industry best practices and comply with relevant regulations to safeguard client data and ensure confidentiality. Our platform employs robust security measures to protect against unauthorized access and data breaches.
             </AccordionContent>
           </AccordionItem>
 
@@ -48,7 +48,7 @@ const FAQSection = () => {
               Is Publifyx suitable for businesses of all sizes?
             </AccordionTrigger>
             <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
-              Yes, Publifyx offers scalable solutions for businesses of all sizes. From startups to enterprise corporations, our platform adapts to your budget and requirements with flexible pricing models and customizable features that grow with your business.
+              Yes, Publifyx is designed to accommodate businesses of all sizes, from small startups to large enterprises. Our scalable solutions and flexible pricing options make digital advertising accessible and affordable for businesses across various industries and verticals.
             </AccordionContent>
           </AccordionItem>
 
@@ -57,7 +57,7 @@ const FAQSection = () => {
               What kind of results can clients expect from using Publifyx?
             </AccordionTrigger>
             <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
-              Clients typically see improved ad completion rates, higher ROI, increased brand awareness, and better targeting precision. Our AI-powered platform optimizes campaigns in real-time, resulting in cost-effective advertising with measurable performance improvements.
+              Clients can expect to see improved ad performance, higher engagement rates, and increased ROI from using Publifyx. Our AI-driven solutions and optimization tools are designed to maximize the effectiveness of advertising campaigns and deliver measurable results for clients.
             </AccordionContent>
           </AccordionItem>
 
@@ -66,7 +66,7 @@ const FAQSection = () => {
               How can I get started with Publifyx?
             </AccordionTrigger>
             <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
-              Getting started is simple! Contact our sales team for a personalized demo, choose the right plan for your needs, and our onboarding specialists will help you set up your campaigns. We provide training and ongoing support to ensure your success.
+              Getting started with Publifyx is easy! Simply reach out to our team to schedule a consultation and discuss your advertising needs and objectives. From there, we'll work with you to develop a customized solution and guide you through the implementation process to ensure a seamless experience.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
