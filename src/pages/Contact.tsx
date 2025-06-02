@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,62 +15,11 @@ const Contact = () => {
     mobileNumber: "",
     campaign: ""
   });
-  const [webhookUrl, setWebhookUrl] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!webhookUrl) {
-      toast({
-        title: "Webhook URL Required",
-        description: "Please enter your Zapier webhook URL to send data to Google Sheets",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsLoading(true);
-    console.log("Sending form data to Zapier:", formData);
-
-    try {
-      const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors",
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-          source: "Publifyx Contact Form"
-        }),
-      });
-
-      toast({
-        title: "Form Submitted Successfully!",
-        description: "Your information has been sent to Google Sheets. We'll be in touch shortly.",
-      });
-
-      // Reset form
-      setFormData({
-        companyName: "",
-        companyEmail: "",
-        hearAbout: "",
-        mobileNumber: "",
-        campaign: ""
-      });
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast({
-        title: "Submission Failed",
-        description: "Failed to submit the form. Please check your webhook URL and try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
+    console.log("Form submitted:", formData);
+    // Handle form submission here
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -130,23 +78,6 @@ const Contact = () => {
               </h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Zapier Webhook URL (for Google Sheets)*
-                  </label>
-                  <Input
-                    type="url"
-                    required
-                    value={webhookUrl}
-                    onChange={(e) => setWebhookUrl(e.target.value)}
-                    placeholder="https://hooks.zapier.com/hooks/catch/..."
-                    className="w-full border-gray-300"
-                  />
-                  <p className="text-xs text-gray-500 mt-1">
-                    Create a Zap with Webhooks → Google Sheets and paste the webhook URL here
-                  </p>
-                </div>
-
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Company Name*
@@ -227,10 +158,9 @@ const Contact = () => {
 
                 <Button 
                   type="submit" 
-                  disabled={isLoading}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium disabled:opacity-50"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium"
                 >
-                  {isLoading ? "Submitting..." : "Submit"}
+                  Submit
                 </Button>
               </form>
             </div>
