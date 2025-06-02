@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Check, Play, Pause, SkipBack, SkipForward } from "lucide-react";
@@ -21,8 +20,8 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                alt="Digital Marketing Dashboard"
+                src="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.png"
+                alt="Digital Advertising Solutions"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
