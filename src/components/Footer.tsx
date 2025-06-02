@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 PublifyX. All rights reserved.</p>
+          <p>Copyright @ 2025 <span className="text-orange-500">Publifyx.com</span> | All rights reserved</p>
         </div>
       </div>
     </footer>
