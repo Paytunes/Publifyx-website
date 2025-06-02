@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface GetStartedModalProps {
@@ -116,14 +115,8 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto p-8">
+      <DialogContent className="max-w-2xl p-8">
         <DialogHeader>
-          <button 
-            onClick={onClose}
-            className="absolute -top-2 -right-2 p-2 hover:bg-gray-100 rounded-full"
-          >
-            <X className="w-5 h-5" />
-          </button>
           <DialogTitle className="text-2xl font-bold text-blue-600 mb-2">
             Get started for free
           </DialogTitle>
