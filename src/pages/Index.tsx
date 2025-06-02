@@ -1,3 +1,4 @@
+
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Check, Play, Pause, SkipBack, SkipForward } from "lucide-react";
@@ -62,7 +63,7 @@ const Index = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.png"
                   alt="AI-Powered Creativity"
                   className="w-full h-full object-cover"
                 />
@@ -78,7 +79,7 @@ const Index = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.png"
                   alt="OTT Advertising Simplification"
                   className="w-full h-full object-cover"
                 />
@@ -152,9 +153,11 @@ const Index = () => {
             <div className="order-2 lg:order-1">
               <div className="mb-8">
                 <div className="w-16 h-16 bg-blue-primary rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
+                  <img 
+                    src="/lovable-uploads/fcc537b3-4a2a-486e-9a86-e6441eff9333.png" 
+                    alt="Publifyx Icon" 
+                    className="w-8 h-8"
+                  />
                 </div>
                 <h2 className="mb-6 text-left">Publifyx employs AI for high-quality, engaging, seamless ad content</h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
