@@ -88,7 +88,7 @@ const AdInActionSection = () => {
                           <div className="pt-8 pb-4">
                             <div className="pt-2 text-center leading-tight">
                               <p className="text-xs">Advertisement</p>
-                              <p className="font-semibold">AMFI</p>
+                              <p className="font-semibold">Mama Earth</p>
                             </div>
                             
                             <div className="px-4">
