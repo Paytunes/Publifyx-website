@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { X } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 interface GetStartedModalProps {
   isOpen: boolean;
@@ -25,11 +26,89 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
     gstin: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Get Started form submitted:", formData);
-    // Handle form submission here
-    onClose();
+    setIsSubmitting(true);
+
+    console.log("Submitting Get Started form data:", formData);
+
+    // Transform data according to the provided structure
+    const values = {
+      fullName: formData.name,
+      email: formData.email,
+      companyName: formData.companyName,
+      mobile: formData.phoneNumber.replace(/\D/g, ''), // Remove non-numeric
+      billingAddress: formData.billingAddress,
+      state: formData.state,
+      city: formData.city,
+      pincode: formData.pincode,
+      gstId: formData.gstin || "", // Optional
+    };
+
+    const payload = {
+      first_name: values.fullName,
+      email: values.email,
+      mobile: `+91${values.mobile}`,
+      name: values.companyName,
+      billing_address1: values.billingAddress,
+      billing_city: values.city,
+      billing_state: values.state,
+      billing_zipcode: values.pincode,
+      gst_no: values.gstId,
+    };
+
+    try {
+      const response = await fetch("https://app.publifyx.com/api/v1/create_agency/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        console.log("Get Started form submitted successfully");
+        toast({
+          title: "Success!",
+          description: "Your details have been submitted successfully!",
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          companyName: "",
+          phoneNumber: "",
+          billingAddress: "",
+          state: "",
+          city: "",
+          pincode: "",
+          gstin: ""
+        });
+        
+        onClose();
+      } else {
+        const errData = await response.json();
+        console.error("API error:", errData);
+        toast({
+          title: "Submission Failed",
+          description: errData?.message || "Unknown error occurred",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      toast({
+        title: "Network Error",
+        description: "A network error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -65,6 +144,7 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
               </label>
               <Input
                 type="text"
+                name="name"
                 placeholder="Enter your name"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
@@ -79,6 +159,7 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
               </label>
               <Input
                 type="email"
+                name="email"
                 placeholder="your@email.com"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
@@ -95,6 +176,7 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
               </label>
               <Input
                 type="text"
+                name="companyName"
                 placeholder="Enter your company name"
                 value={formData.companyName}
                 onChange={(e) => handleInputChange("companyName", e.target.value)}
@@ -113,6 +195,7 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
                 </div>
                 <Input
                   type="tel"
+                  name="phoneNumber"
                   placeholder="Enter your phone number"
                   value={formData.phoneNumber}
                   onChange={(e) => handleInputChange("phoneNumber", e.target.value)}
@@ -128,6 +211,7 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
               Billing Address
             </label>
             <Textarea
+              name="billingAddress"
               placeholder="Enter your billing address"
               value={formData.billingAddress}
               onChange={(e) => handleInputChange("billingAddress", e.target.value)}
@@ -142,7 +226,7 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 State
               </label>
-              <Select value={formData.state} onValueChange={(value) => handleInputChange("state", value)}>
+              <Select name="state" value={formData.state} onValueChange={(value) => handleInputChange("state", value)}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select State" />
                 </SelectTrigger>
@@ -184,7 +268,7 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 City
               </label>
-              <Select value={formData.city} onValueChange={(value) => handleInputChange("city", value)}>
+              <Select name="city" value={formData.city} onValueChange={(value) => handleInputChange("city", value)}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select City" />
                 </SelectTrigger>
@@ -221,6 +305,7 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
               </label>
               <Input
                 type="text"
+                name="pincode"
                 placeholder="Enter your pincode"
                 value={formData.pincode}
                 onChange={(e) => handleInputChange("pincode", e.target.value)}
@@ -235,6 +320,7 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
               </label>
               <Input
                 type="text"
+                name="gstin"
                 placeholder="GSTIN number"
                 value={formData.gstin}
                 onChange={(e) => handleInputChange("gstin", e.target.value)}
@@ -245,9 +331,10 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
 
           <Button 
             type="submit" 
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-medium text-lg"
+            disabled={isSubmitting}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-medium text-lg disabled:opacity-50"
           >
-            Create dashboard
+            {isSubmitting ? "Creating dashboard..." : "Create dashboard"}
           </Button>
         </form>
       </DialogContent>
