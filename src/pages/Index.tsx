@@ -5,8 +5,8 @@ import SolutionsSection from "@/components/sections/SolutionsSection";
 import ProductsSection from "@/components/sections/ProductsSection";
 import AdInActionSection from "@/components/sections/AdInActionSection";
 import StatisticsSection from "@/components/sections/StatisticsSection";
-import CTASection from "@/components/sections/CTASection";
 import JoinRevolutionSection from "@/components/sections/JoinRevolutionSection";
+import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
 
 const Index = () => {
@@ -17,8 +17,8 @@ const Index = () => {
       <ProductsSection />
       <AdInActionSection />
       <StatisticsSection />
-      <CTASection />
       <JoinRevolutionSection />
+      <CTASection />
       <FAQSection />
     </Layout>
   );
