@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Check, Play, Pause } from "lucide-react";
@@ -200,6 +199,19 @@ const Index = () => {
           </p>
           <Link to="/contact" className="btn-secondary text-lg px-8 py-4">
             Request a Demo
+          </Link>
+        </div>
+      </section>
+
+      {/* Join Us Revolution Section */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="mb-6">Join Us in This Revolution</h2>
+          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            Are you ready to be a part of the future of digital advertising? Join Publifyx in revolutionizing the industry and shaping the way businesses connect with their audiences. Whether you're a creative thinker, a tech enthusiast, or a marketing expert, there's a place for you on our team. Together, we'll push the boundaries of what's possible, innovate relentlessly, and redefine the standards of excellence in digital advertising. Join us on this exciting journey as we transform the way businesses advertise and engage with their customers. Let's revolutionize digital advertising together.
+          </p>
+          <Link to="/contact" className="btn-primary text-lg px-8 py-4">
+            Join Us!
           </Link>
         </div>
       </section>
