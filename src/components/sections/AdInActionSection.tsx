@@ -1,9 +1,21 @@
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Check, Play, Pause, SkipBack, SkipForward } from "lucide-react";
 
 const AdInActionSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const handlePlayPause = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   return (
     <section className="py-16 md:py-24 bg-gray-50">
@@ -100,7 +112,11 @@ const AdInActionSection = () => {
                                   height="100%" 
                                   width="100%" 
                                 />
-                                <audio src="https://publifyx-web-static.s3.ap-south-1.amazonaws.com/media/public/Mama+Earth+rev+30+sec+%282%29.mp3" preload="metadata"></audio>
+                                <audio 
+                                  ref={audioRef}
+                                  src="https://publifyx-web-static.s3.ap-south-1.amazonaws.com/media/public/Mama+Earth+rev+30+sec+%282%29.mp3" 
+                                  preload="metadata"
+                                />
                                 
                                 <div className="mt-6 text-center" id="know_more_button">
                                   <a 
@@ -136,12 +152,18 @@ const AdInActionSection = () => {
                                   
                                   <button 
                                     aria-label="play-pause-ad"
-                                    onClick={() => setIsPlaying(!isPlaying)}
+                                    onClick={handlePlayPause}
                                     className="bg-black rounded-full p-2"
                                   >
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-12 w-12 text-white">
-                                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"></path>
-                                    </svg>
+                                    {isPlaying ? (
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-12 w-12 text-white">
+                                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+                                      </svg>
+                                    ) : (
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-12 w-12 text-white">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"></path>
+                                      </svg>
+                                    )}
                                   </button>
                                   
                                   <div className="next-track">
