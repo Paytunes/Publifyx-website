@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -61,7 +60,7 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
     };
 
     try {
-      const response = await fetch("https://app.publifyx.com/api/v1/create_agency/", {
+      const response = await fetch("https://staging-app.publifyx.com/api/v1/create_agency/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -118,7 +117,7 @@ const GetStartedModal = ({ isOpen, onClose }: GetStartedModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto p-8">
-        <DialogHeader className="relative">
+        <DialogHeader>
           <button 
             onClick={onClose}
             className="absolute -top-2 -right-2 p-2 hover:bg-gray-100 rounded-full"
