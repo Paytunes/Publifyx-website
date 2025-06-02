@@ -29,51 +29,51 @@ const Contact = () => {
   return (
     <Layout>
       <div className="min-h-screen bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {/* Left Side - Blue Section */}
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-12 text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
+            {/* Left Side - Blue Section (reduced from 50% to ~33%) */}
+            <div className="lg:col-span-2 bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white relative overflow-hidden">
               <div className="relative z-10">
-                <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white">
                   Let's grow your brand together
                 </h1>
-                <p className="text-blue-100 mb-12 text-lg">
+                <p className="text-blue-100 mb-8 text-base">
                   Fill out the form, including details about your next campaign, and we'll be in touch shortly.
                 </p>
 
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div className="flex items-start">
-                    <MapPin className="w-6 h-6 mt-1 mr-4 flex-shrink-0" />
+                    <MapPin className="w-5 h-5 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <div className="text-blue-100">
+                      <div className="text-blue-100 text-sm">
                         Publifyx Tech Pvt. Ltd., Inventio Workspace Ltd., Sector -12 , Dwarka, New Delhi-110075
                       </div>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <Phone className="w-6 h-6 mt-1 mr-4 flex-shrink-0" />
+                    <Phone className="w-5 h-5 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <div className="text-blue-100">+91-8448330304</div>
+                      <div className="text-blue-100 text-sm">+91-8448330304</div>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <Mail className="w-6 h-6 mt-1 mr-4 flex-shrink-0" />
+                    <Mail className="w-5 h-5 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <div className="text-blue-100">info@publifyx.com</div>
+                      <div className="text-blue-100 text-sm">info@publifyx.com</div>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Orange Circle Decoration */}
-              <div className="absolute bottom-0 right-0 w-80 h-80 bg-orange-500 rounded-full transform translate-x-32 translate-y-32"></div>
+              <div className="absolute bottom-0 right-0 w-60 h-60 bg-orange-500 rounded-full transform translate-x-24 translate-y-24"></div>
             </div>
 
-            {/* Right Side - Form Section */}
-            <div className="bg-white p-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+            {/* Right Side - Form Section (increased from 50% to ~67%) */}
+            <div className="lg:col-span-3 bg-white p-8">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
                 Please enter the details
               </h2>
               
