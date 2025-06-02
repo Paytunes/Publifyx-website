@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Check, Play, Pause, SkipBack, SkipForward } from "lucide-react";
@@ -63,7 +62,7 @@ const Index = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.png"
                   alt="AI-Powered Creativity"
                   className="w-full h-full object-cover"
                 />
@@ -79,7 +78,7 @@ const Index = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.png"
                   alt="OTT Advertising Simplification"
                   className="w-full h-full object-cover"
                 />
@@ -95,7 +94,7 @@ const Index = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="h-48 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/lovable-uploads/d0e4d426-d705-4d55-8135-97e8afdf1613.png"
                   alt="White-Labeled DSP Solutions"
                   className="w-full h-full object-cover"
                 />
