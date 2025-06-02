@@ -1,9 +1,11 @@
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Check, Play, Pause, SkipBack, SkipForward } from "lucide-react";
 
 const AdInActionSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(30);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const handlePlayPause = () => {
@@ -16,6 +18,28 @@ const AdInActionSection = () => {
       setIsPlaying(!isPlaying);
     }
   };
+
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      const updateTime = () => setCurrentTime(audio.currentTime);
+      const updateDuration = () => setDuration(audio.duration);
+      
+      audio.addEventListener('timeupdate', updateTime);
+      audio.addEventListener('loadedmetadata', updateDuration);
+      
+      return () => {
+        audio.removeEventListener('timeupdate', updateTime);
+        audio.removeEventListener('loadedmetadata', updateDuration);
+      };
+    }
+  }, []);
 
   return (
     <section className="py-16 md:py-24 bg-gray-50">
@@ -78,7 +102,7 @@ const AdInActionSection = () => {
                         <hr className="vol-down absolute left-0 top-48 w-1 h-12 bg-gray-600 border-0" />
                         <hr className="lock absolute right-0 top-32 w-1 h-12 bg-gray-600 border-0" />
                         
-                        <div className="player bg-white rounded-[2.5rem] overflow-hidden relative">
+                        <div className="player bg-black rounded-[2.5rem] overflow-hidden relative">
                           {/* Notch */}
                           <hr className="notch_top absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-black border-0 rounded-b-lg" />
                           
@@ -99,8 +123,8 @@ const AdInActionSection = () => {
                           {/* Content */}
                           <div className="pt-8 pb-4">
                             <div className="pt-2 text-center leading-tight">
-                              <p className="text-xs">Advertisement</p>
-                              <p className="font-semibold">Mama Earth</p>
+                              <p className="text-xs text-white">Advertisement</p>
+                              <p className="font-semibold text-white">Mama Earth</p>
                             </div>
                             
                             <div className="px-4">
@@ -123,7 +147,7 @@ const AdInActionSection = () => {
                                     id="id_click_through_url" 
                                     href="/" 
                                     target="_blank" 
-                                    className="rounded-full bg-white border border-gray-300 px-4 py-1 text-black no-underline"
+                                    className="rounded-full bg-white border border-white px-4 py-1 text-black no-underline"
                                   >
                                     Know More
                                   </a>
@@ -132,20 +156,25 @@ const AdInActionSection = () => {
                                 <div className="mt-4">
                                   <input 
                                     type="range" 
-                                    className="progressBar cursor-pointer w-full" 
-                                    defaultValue="0" 
-                                    max="30"
+                                    className="progressBar cursor-pointer w-full accent-white" 
+                                    value={currentTime} 
+                                    max={duration}
+                                    onChange={(e) => {
+                                      if (audioRef.current) {
+                                        audioRef.current.currentTime = Number(e.target.value);
+                                      }
+                                    }}
                                   />
                                 </div>
                                 
-                                <div className="flex justify-between text-sm">
-                                  <div className="currentTime">00:00</div>
-                                  <div className="duration">00:30</div>
+                                <div className="flex justify-between text-sm text-white">
+                                  <div className="currentTime">{formatTime(currentTime)}</div>
+                                  <div className="duration">{formatTime(duration)}</div>
                                 </div>
                                 
                                 <div className="mt-4 flex justify-center items-center space-x-4" id="play-pause-button">
                                   <div className="prev-track">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" className="text-black">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" className="text-white">
                                       <path d="M7.917 31.25V8.75h3.708v22.5Zm24.166 0L15.583 20l16.5-11.25Z" fill="currentColor"></path>
                                     </svg>
                                   </div>
@@ -153,21 +182,21 @@ const AdInActionSection = () => {
                                   <button 
                                     aria-label="play-pause-ad"
                                     onClick={handlePlayPause}
-                                    className="bg-black rounded-full p-2"
+                                    className="bg-white rounded-full p-2"
                                   >
                                     {isPlaying ? (
-                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-12 w-12 text-white">
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-12 w-12 text-black">
                                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
                                       </svg>
                                     ) : (
-                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-12 w-12 text-white">
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-12 w-12 text-black">
                                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"></path>
                                       </svg>
                                     )}
                                   </button>
                                   
                                   <div className="next-track">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" className="text-black">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" className="text-white">
                                       <path d="M28.375 31.25V8.75h3.708v22.5Zm-20.458 0V8.75L24.417 20Z" fill="currentColor"></path>
                                     </svg>
                                   </div>
@@ -175,7 +204,7 @@ const AdInActionSection = () => {
                               </div>
                               
                               <div className="mt-5 text-center pb-4">
-                                <p className="text-xs">Powered by</p>
+                                <p className="text-xs text-white">Powered by</p>
                                 <img 
                                   className="logo mx-auto my-1.5 w-28" 
                                   src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.png" 
