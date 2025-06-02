@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Check, Play, Pause, SkipBack, SkipForward } from "lucide-react";
 
@@ -51,74 +52,117 @@ const AdInActionSection = () => {
             </button>
           </div>
           
-          {/* Right Mobile Mockup */}
+          {/* Right Phone Mockup */}
           <div className="order-1 lg:order-2 flex justify-center">
-            <div className="relative">
-              {/* Blue decorative elements */}
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-blue-200 rounded-full opacity-50"></div>
-              <div className="absolute -bottom-12 -right-16 w-48 h-48 bg-blue-300 rounded-full opacity-30"></div>
-              <div className="absolute top-1/2 -right-24 w-24 h-24 bg-blue-400 rounded-full opacity-40"></div>
-              
-              {/* iPhone Mockup */}
-              <div className="relative z-10 bg-black rounded-[3rem] p-2 shadow-2xl max-w-sm">
-                <div className="bg-white rounded-[2.5rem] overflow-hidden">
-                  {/* Status Bar */}
-                  <div className="bg-gray-900 h-8 flex items-center justify-center relative">
-                    <div className="w-20 h-1 bg-white rounded-full"></div>
-                    <div className="absolute top-2 left-4 text-white text-xs">Advertisement</div>
-                    <div className="absolute top-2 right-4 text-white text-xs font-bold">AMFI</div>
-                  </div>
-                  
-                  {/* Ad Content */}
-                  <div className="h-96 bg-gradient-to-b from-orange-50 to-white relative">
-                    {/* Mamaearth Ad */}
-                    <div className="p-4">
-                      <img
-                        src="https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                        alt="Face wash product"
-                        className="w-full h-48 object-cover rounded-lg mb-4"
-                      />
-                      
-                      <div className="text-center mb-4">
-                        <div className="text-orange-500 font-bold text-lg">mamaearth</div>
-                        <div className="text-sm text-gray-600">Vitamin C Daily Glow</div>
-                        <div className="text-sm text-gray-600">Face Wash</div>
-                        <div className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs mt-2 inline-block">
-                          Ubtan Face Wash
-                        </div>
-                      </div>
-                      
-                      <button className="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-full text-sm font-medium mb-4">
-                        Know More
-                      </button>
-                    </div>
-                    
-                    {/* Audio Player Controls */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-black text-white p-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs">00:00</span>
-                        <div className="flex-1 mx-3">
-                          <div className="w-full bg-gray-600 rounded-full h-1">
-                            <div className="bg-white h-1 rounded-full w-0"></div>
+            <div className="relative m-auto">
+              <div className="container">
+                <div id="data-div" className="data-div-modal">
+                  <div className="data-div-modal-content">
+                    <div className="wrapper">
+                      <div className="outer-border relative bg-black rounded-[3rem] p-1 shadow-2xl max-w-sm">
+                        {/* Phone edges */}
+                        <hr className="mute absolute left-0 top-20 w-1 h-8 bg-gray-600 border-0" />
+                        <hr className="vol-up absolute left-0 top-32 w-1 h-12 bg-gray-600 border-0" />
+                        <hr className="vol-down absolute left-0 top-48 w-1 h-12 bg-gray-600 border-0" />
+                        <hr className="lock absolute right-0 top-32 w-1 h-12 bg-gray-600 border-0" />
+                        
+                        <div className="player bg-white rounded-[2.5rem] overflow-hidden relative">
+                          {/* Notch */}
+                          <hr className="notch_top absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-black border-0 rounded-b-lg" />
+                          
+                          {/* Front microphone */}
+                          <div className="front-mic absolute top-4 left-1/2 transform -translate-x-1/2">
+                            <svg width="85" height="8" viewBox="0 0 711 107" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect width="711" height="107" rx="53.5" fill="#2B2B2B"></rect>
+                            </svg>
+                          </div>
+                          
+                          {/* Front camera */}
+                          <div className="front-camera absolute top-2 right-8">
+                            <svg width="18" height="18" viewBox="0 0 133 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <ellipse cx="66.5" cy="62.5" rx="66.5" ry="62.5" fill="#2B2B2B"></ellipse>
+                            </svg>
+                          </div>
+                          
+                          {/* Content */}
+                          <div className="pt-8 pb-4">
+                            <div className="pt-2 text-center leading-tight">
+                              <p className="text-xs">Advertisement</p>
+                              <p className="font-semibold">AMFI</p>
+                            </div>
+                            
+                            <div className="px-4">
+                              <div>
+                                <img 
+                                  className="mt-4 h-56 w-full text-white object-cover rounded-lg" 
+                                  src="https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                  alt="audio advertisement" 
+                                  height="100%" 
+                                  width="100%" 
+                                />
+                                <audio src="https://publifyx-web-static.s3.ap-south-1.amazonaws.com/media/public/Mama+Earth+rev+30+sec+%282%29.mp3" preload="metadata"></audio>
+                                
+                                <div className="mt-6 text-center" id="know_more_button">
+                                  <a 
+                                    id="id_click_through_url" 
+                                    href="/" 
+                                    target="_blank" 
+                                    className="rounded-full bg-white border border-gray-300 px-4 py-1 text-black no-underline"
+                                  >
+                                    Know More
+                                  </a>
+                                </div>
+                                
+                                <div className="mt-4">
+                                  <input 
+                                    type="range" 
+                                    className="progressBar cursor-pointer w-full" 
+                                    defaultValue="0" 
+                                    max="30"
+                                  />
+                                </div>
+                                
+                                <div className="flex justify-between text-sm">
+                                  <div className="currentTime">00:00</div>
+                                  <div className="duration">00:30</div>
+                                </div>
+                                
+                                <div className="mt-4 flex justify-center items-center space-x-4" id="play-pause-button">
+                                  <div className="prev-track">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" className="text-black">
+                                      <path d="M7.917 31.25V8.75h3.708v22.5Zm24.166 0L15.583 20l16.5-11.25Z" fill="currentColor"></path>
+                                    </svg>
+                                  </div>
+                                  
+                                  <button 
+                                    aria-label="play-pause-ad"
+                                    onClick={() => setIsPlaying(!isPlaying)}
+                                    className="bg-black rounded-full p-2"
+                                  >
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-12 w-12 text-white">
+                                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"></path>
+                                    </svg>
+                                  </button>
+                                  
+                                  <div className="next-track">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" className="text-black">
+                                      <path d="M28.375 31.25V8.75h3.708v22.5Zm-20.458 0V8.75L24.417 20Z" fill="currentColor"></path>
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="mt-5 text-center pb-4">
+                                <p className="text-xs">Powered by</p>
+                                <img 
+                                  className="logo mx-auto my-1.5 w-28" 
+                                  src="/logo/PublifyXDarkLogo.png" 
+                                  alt="advertisement is playing"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        <span className="text-xs">00:30</span>
-                      </div>
-                      
-                      <div className="flex items-center justify-center space-x-6">
-                        <SkipBack className="w-6 h-6 text-white" />
-                        <button
-                          onClick={() => setIsPlaying(!isPlaying)}
-                          className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black"
-                        >
-                          {isPlaying ? <Pause size={20} /> : <Play size={20} />}
-                        </button>
-                        <SkipForward className="w-6 h-6 text-white" />
-                      </div>
-                      
-                      <div className="text-center mt-2">
-                        <div className="text-blue-400 text-sm font-bold">PUBLIFYX</div>
-                        <div className="text-xs text-gray-400">Powered by</div>
                       </div>
                     </div>
                   </div>
