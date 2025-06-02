@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,11 +16,64 @@ const Contact = () => {
     mobileNumber: "",
     campaign: ""
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [googleAppsScriptUrl, setGoogleAppsScriptUrl] = useState("");
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
+    
+    if (!googleAppsScriptUrl) {
+      toast({
+        title: "Error",
+        description: "Please enter your Google Apps Script URL",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    console.log("Submitting form data:", formData);
+
+    try {
+      const response = await fetch(googleAppsScriptUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        toast({
+          title: "Success!",
+          description: "Your message has been sent and saved to Google Sheets.",
+        });
+        
+        // Reset form
+        setFormData({
+          companyName: "",
+          companyEmail: "",
+          hearAbout: "",
+          mobileNumber: "",
+          campaign: ""
+        });
+      } else {
+        throw new Error(result.error || "Failed to submit form");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit the form. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -31,7 +85,7 @@ const Contact = () => {
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
-            {/* Left Side - Blue Section (reduced from 50% to ~33%) */}
+            {/* Left Side - Blue Section */}
             <div className="lg:col-span-2 bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white relative overflow-hidden">
               <div className="relative z-10">
                 <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white">
@@ -71,11 +125,28 @@ const Contact = () => {
               <div className="absolute bottom-0 right-0 w-60 h-60 bg-orange-500 rounded-full transform translate-x-24 translate-y-24"></div>
             </div>
 
-            {/* Right Side - Form Section (increased from 50% to ~67%) */}
+            {/* Right Side - Form Section */}
             <div className="lg:col-span-3 bg-white p-8 pb-4">
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
                 Please enter the details
               </h2>
+              
+              {/* Google Apps Script URL Input */}
+              <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-md">
+                <label className="block text-sm font-medium text-blue-900 mb-2">
+                  Google Apps Script Web App URL*
+                </label>
+                <Input
+                  type="url"
+                  placeholder="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
+                  value={googleAppsScriptUrl}
+                  onChange={(e) => setGoogleAppsScriptUrl(e.target.value)}
+                  className="w-full border-blue-300"
+                />
+                <p className="text-xs text-blue-700 mt-1">
+                  Enter your Google Apps Script web app URL to save form submissions to Google Sheets
+                </p>
+              </div>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -158,9 +229,10 @@ const Contact = () => {
 
                 <Button 
                   type="submit" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium"
+                  disabled={isSubmitting}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium disabled:opacity-50"
                 >
-                  Submit
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </Button>
               </form>
             </div>
