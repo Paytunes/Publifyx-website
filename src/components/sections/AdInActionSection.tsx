@@ -156,8 +156,8 @@ const AdInActionSection = () => {
                                 <p className="text-xs">Powered by</p>
                                 <img 
                                   className="logo mx-auto my-1.5 w-28" 
-                                  src="/logo/PublifyXDarkLogo.png" 
-                                  alt="advertisement is playing"
+                                  src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.png" 
+                                  alt="Publifyx Logo"
                                 />
                               </div>
                             </div>
