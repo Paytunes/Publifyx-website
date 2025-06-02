@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Check, Play, Pause, SkipBack, SkipForward } from "lucide-react";
 
@@ -172,34 +171,26 @@ const AdInActionSection = () => {
                                   <div className="duration">{formatTime(duration)}</div>
                                 </div>
                                 
-                                <div className="mt-4 flex justify-center items-center space-x-4" id="play-pause-button">
-                                  <div className="prev-track">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" className="text-white">
-                                      <path d="M7.917 31.25V8.75h3.708v22.5Zm24.166 0L15.583 20l16.5-11.25Z" fill="currentColor"></path>
-                                    </svg>
-                                  </div>
+                                <div className="mt-4 flex justify-center items-center space-x-6" id="play-pause-button">
+                                  <button className="text-white hover:text-gray-300 transition-colors">
+                                    <SkipBack size={24} />
+                                  </button>
                                   
                                   <button 
                                     aria-label="play-pause-ad"
                                     onClick={handlePlayPause}
-                                    className="bg-white rounded-full p-2"
+                                    className="bg-white rounded-full p-3 hover:bg-gray-100 transition-colors"
                                   >
                                     {isPlaying ? (
-                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-12 w-12 text-black">
-                                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
-                                      </svg>
+                                      <Pause size={24} className="text-black" />
                                     ) : (
-                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-12 w-12 text-black">
-                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"></path>
-                                      </svg>
+                                      <Play size={24} className="text-black" />
                                     )}
                                   </button>
                                   
-                                  <div className="next-track">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" className="text-white">
-                                      <path d="M28.375 31.25V8.75h3.708v22.5Zm-20.458 0V8.75L24.417 20Z" fill="currentColor"></path>
-                                    </svg>
-                                  </div>
+                                  <button className="text-white hover:text-gray-300 transition-colors">
+                                    <SkipForward size={24} />
+                                  </button>
                                 </div>
                               </div>
                               
