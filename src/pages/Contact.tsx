@@ -29,7 +29,7 @@ const Contact = () => {
   return (
     <Layout>
       <div className="min-h-screen bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
             {/* Left Side - Blue Section (reduced from 50% to ~33%) */}
             <div className="lg:col-span-2 bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white relative overflow-hidden">
@@ -72,7 +72,7 @@ const Contact = () => {
             </div>
 
             {/* Right Side - Form Section (increased from 50% to ~67%) */}
-            <div className="lg:col-span-3 bg-white p-8">
+            <div className="lg:col-span-3 bg-white p-8 pb-4">
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
                 Please enter the details
               </h2>
