@@ -107,8 +107,8 @@ const AdInActionSection = () => {
                               <div>
                                 <img 
                                   className="mt-4 h-56 w-full text-white object-cover rounded-lg" 
-                                  src="https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                                  alt="audio advertisement" 
+                                  src="/lovable-uploads/f5ba6f65-20c4-464b-994f-bf7e067b8c11.png" 
+                                  alt="Mama Earth Ubtan Face Wash advertisement" 
                                   height="100%" 
                                   width="100%" 
                                 />
