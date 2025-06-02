@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -14,29 +13,23 @@ const Contact = () => {
     companyEmail: "",
     hearAbout: "",
     mobileNumber: "",
-    campaign: ""
+    campaign: "",
+    source: "publifyx"
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [googleAppsScriptUrl, setGoogleAppsScriptUrl] = useState("");
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!googleAppsScriptUrl) {
-      toast({
-        title: "Error",
-        description: "Please enter your Google Apps Script URL",
-        variant: "destructive",
-      });
-      return;
-    }
-    
     setIsSubmitting(true);
     console.log("Submitting form data:", formData);
 
     try {
+      // You'll need to replace this with your actual Google Apps Script URL
+      const googleAppsScriptUrl = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+      
       const response = await fetch(googleAppsScriptUrl, {
         method: "POST",
         headers: {
@@ -59,7 +52,8 @@ const Contact = () => {
           companyEmail: "",
           hearAbout: "",
           mobileNumber: "",
-          campaign: ""
+          campaign: "",
+          source: "publifyx"
         });
       } else {
         throw new Error(result.error || "Failed to submit form");
@@ -131,24 +125,10 @@ const Contact = () => {
                 Please enter the details
               </h2>
               
-              {/* Google Apps Script URL Input */}
-              <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-md">
-                <label className="block text-sm font-medium text-blue-900 mb-2">
-                  Google Apps Script Web App URL*
-                </label>
-                <Input
-                  type="url"
-                  placeholder="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
-                  value={googleAppsScriptUrl}
-                  onChange={(e) => setGoogleAppsScriptUrl(e.target.value)}
-                  className="w-full border-blue-300"
-                />
-                <p className="text-xs text-blue-700 mt-1">
-                  Enter your Google Apps Script web app URL to save form submissions to Google Sheets
-                </p>
-              </div>
-              
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Hidden source field */}
+                <input type="hidden" name="source" value={formData.source} />
+                
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Company Name*
