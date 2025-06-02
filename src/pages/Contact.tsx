@@ -1,3 +1,4 @@
+
 import Layout from "@/components/Layout";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -9,11 +10,11 @@ import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    companyName: "",
-    companyEmail: "",
-    hearAbout: "",
-    mobileNumber: "",
-    campaign: "",
+    company_name: "",
+    company_email: "",
+    hearAboutUs: "",
+    mobile_number: "",
+    project_description: "",
     source: "publifyx"
   });
   
@@ -52,11 +53,11 @@ const Contact = () => {
       
       // Reset form
       setFormData({
-        companyName: "",
-        companyEmail: "",
-        hearAbout: "",
-        mobileNumber: "",
-        campaign: "",
+        company_name: "",
+        company_email: "",
+        hearAboutUs: "",
+        mobile_number: "",
+        project_description: "",
         source: "publifyx"
       });
     } catch (error) {
@@ -137,8 +138,8 @@ const Contact = () => {
                   <Input
                     type="text"
                     required
-                    value={formData.companyName}
-                    onChange={(e) => handleInputChange("companyName", e.target.value)}
+                    value={formData.company_name}
+                    onChange={(e) => handleInputChange("company_name", e.target.value)}
                     className="w-full border-gray-300"
                   />
                 </div>
@@ -150,8 +151,8 @@ const Contact = () => {
                   <Input
                     type="email"
                     required
-                    value={formData.companyEmail}
-                    onChange={(e) => handleInputChange("companyEmail", e.target.value)}
+                    value={formData.company_email}
+                    onChange={(e) => handleInputChange("company_email", e.target.value)}
                     className="w-full border-gray-300"
                   />
                 </div>
@@ -160,7 +161,7 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     How did you hear about us ?
                   </label>
-                  <Select value={formData.hearAbout} onValueChange={(value) => handleInputChange("hearAbout", value)}>
+                  <Select value={formData.hearAboutUs} onValueChange={(value) => handleInputChange("hearAboutUs", value)}>
                     <SelectTrigger className="w-full border-gray-300">
                       <SelectValue placeholder="LinkedIn" />
                     </SelectTrigger>
@@ -187,8 +188,8 @@ const Contact = () => {
                     </div>
                     <Input
                       type="tel"
-                      value={formData.mobileNumber}
-                      onChange={(e) => handleInputChange("mobileNumber", e.target.value)}
+                      value={formData.mobile_number}
+                      onChange={(e) => handleInputChange("mobile_number", e.target.value)}
                       className="flex-1 border-l-0 rounded-l-none border-gray-300"
                     />
                   </div>
@@ -200,8 +201,8 @@ const Contact = () => {
                     Describe your campaign briefly*
                   </label>
                   <Textarea
-                    value={formData.campaign}
-                    onChange={(e) => handleInputChange("campaign", e.target.value)}
+                    value={formData.project_description}
+                    onChange={(e) => handleInputChange("project_description", e.target.value)}
                     rows={4}
                     className="w-full border-gray-300"
                     required
