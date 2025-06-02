@@ -13,150 +13,92 @@ const PrivacyPolicy = () => {
       <div className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
+            <p className="mb-8">
+              Please read these Terms carefully, and contact us if you have any questions.
+            </p>
+            
             <p className="text-gray-600 mb-8">
-              Last updated: {new Date().toLocaleDateString()}
+              This document was last updated on September 19, 2021
+            </p>
+
+            <p className="mb-8">
+              This Privacy Policy governs the manner in which publifyx collects, uses, maintains, and discloses information collected from users (each, a "User") of the www.publifyx.com website ("Site"). This privacy policy applies to the Site and all products and services offered by publifyx.
             </p>
 
             <section className="mb-12">
-              <h2>1. Introduction</h2>
+              <h2>Personal identification information</h2>
               <p>
-                PublifyX ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our demand-side platform and related services.
+                We may collect personal identification information from Users in a variety of ways, including, but not limited to, when Users visit our site, subscribe to the newsletter, and in connection with other activities, services, features, or resources we make available on our Site. Users may visit our Site anonymously. We will collect personal identification information from Users only if they voluntarily submit such information to us. Users can always refuse to supply personally identification information, except that it may prevent them from engaging in certain Site related activities.
               </p>
             </section>
 
             <section className="mb-12">
-              <h2>2. Information We Collect</h2>
-              
-              <h3>Personal Information</h3>
-              <p>We may collect the following types of personal information:</p>
-              <ul className="list-disc pl-6 mt-4">
-                <li>Contact information (name, email address, phone number)</li>
-                <li>Company information (company name, job title, industry)</li>
-                <li>Account credentials (username, encrypted passwords)</li>
-                <li>Billing information (payment details, billing address)</li>
-              </ul>
-
-              <h3>Usage Information</h3>
-              <p>We automatically collect information about how you use our services:</p>
-              <ul className="list-disc pl-6 mt-4">
-                <li>Campaign performance data and analytics</li>
-                <li>Platform usage patterns and preferences</li>
-                <li>Device information (IP address, browser type, operating system)</li>
-                <li>Log files and technical data for service optimization</li>
-              </ul>
-            </section>
-
-            <section className="mb-12">
-              <h2>3. How We Use Your Information</h2>
-              <p>We use the collected information for the following purposes:</p>
-              <ul className="list-disc pl-6 mt-4">
-                <li>Providing and maintaining our advertising platform services</li>
-                <li>Processing payments and managing your account</li>
-                <li>Delivering targeted advertising campaigns</li>
-                <li>Analyzing and improving our platform performance</li>
-                <li>Communicating with you about your account and our services</li>
-                <li>Complying with legal obligations and protecting our rights</li>
-              </ul>
-            </section>
-
-            <section className="mb-12">
-              <h2>4. Information Sharing and Disclosure</h2>
-              <p>We may share your information in the following circumstances:</p>
-              
-              <h3>Service Providers</h3>
-              <p>We work with third-party service providers who assist us in operating our platform, including:</p>
-              <ul className="list-disc pl-6 mt-4">
-                <li>Cloud hosting and data storage providers</li>
-                <li>Payment processing companies</li>
-                <li>Analytics and monitoring services</li>
-                <li>Customer support platforms</li>
-              </ul>
-
-              <h3>Business Transfers</h3>
-              <p>If we are involved in a merger, acquisition, or asset sale, your information may be transferred as part of that transaction.</p>
-
-              <h3>Legal Requirements</h3>
-              <p>We may disclose your information if required to do so by law or in response to valid legal requests.</p>
-            </section>
-
-            <section className="mb-12">
-              <h2>5. Data Security</h2>
+              <h2>Non-personal identification information</h2>
               <p>
-                We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:
-              </p>
-              <ul className="list-disc pl-6 mt-4">
-                <li>Encryption of data in transit and at rest</li>
-                <li>Regular security assessments and audits</li>
-                <li>Access controls and authentication systems</li>
-                <li>Employee training on data protection practices</li>
-              </ul>
-            </section>
-
-            <section className="mb-12">
-              <h2>6. Data Retention</h2>
-              <p>
-                We retain your personal information for as long as necessary to provide our services and fulfill the purposes outlined in this Privacy Policy. We will also retain and use your information as necessary to comply with legal obligations, resolve disputes, and enforce our agreements.
+                We may collect non-personal identification information about Users whenever they interact with our Site. Non-personal identification information may include the browser name, the type of computer and technical information about Users means of connection to our Sites, such as the operating system and the Internet service providers utilized and other similar information.
               </p>
             </section>
 
             <section className="mb-12">
-              <h2>7. Your Rights and Choices</h2>
-              <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+              <h2>Web browser cookies</h2>
+              <p>
+                Our Site may use "cookies" to enhance User experience. User's web browser places cookies on their hard drive for record-keeping purposes and sometimes to track information about them. Users may choose to set their web browser to refuse cookies or to alert you when cookies are being sent. If they do so, note that some parts of the Site may not function properly.
+              </p>
+            </section>
+
+            <section className="mb-12">
+              <h2>How we use collected information</h2>
+              <p>publifyx may collect and use Users personal information for the following purposes:</p>
               <ul className="list-disc pl-6 mt-4">
-                <li>Access to your personal information</li>
-                <li>Correction of inaccurate information</li>
-                <li>Deletion of your personal information</li>
-                <li>Data portability</li>
-                <li>Objection to processing</li>
-                <li>Withdrawal of consent</li>
+                <li>To run a promotion, contest, survey or other Site feature</li>
+                <li>To send Users information they agreed to receive about topics we think will be of interest to them.</li>
+                <li>To send periodic emails</li>
               </ul>
               <p className="mt-4">
-                To exercise these rights, please contact us using the information provided below.
+                If User decides to opt-in to our mailing list, they will receive emails that may include company news, updates, related product or service information, etc. If at any time the User would like to unsubscribe from receiving future emails, we include detailed unsubscribe instructions at the bottom of each email.
               </p>
             </section>
 
             <section className="mb-12">
-              <h2>8. Cookies and Tracking Technologies</h2>
+              <h2>How we protect your information</h2>
               <p>
-                We use cookies and similar tracking technologies to collect information about your browsing activities and to provide personalized experiences. You can control cookies through your browser settings, but disabling cookies may affect the functionality of our services.
+                We adopt appropriate data collection, storage and processing practices and security measures to protect against unauthorized access, alteration, disclosure or destruction of your personal information, username, password, transaction information and data stored on our Site.
               </p>
             </section>
 
             <section className="mb-12">
-              <h2>9. International Data Transfers</h2>
+              <h2>Sharing your personal information</h2>
               <p>
-                Your information may be transferred to and processed in countries other than your country of residence. We ensure that such transfers are conducted in accordance with applicable data protection laws and include appropriate safeguards.
+                We do not sell, trade, or rent User's personal identification information to others. We may share generic aggregated demographic information not linked to any personal identification information regarding visitors and users with our business partners, trusted affiliates, and advertisers for the purposes outlined above. We may use third-party service providers to help us operate our business and the Site or administer activities on our behalf, such as sending out newsletters or surveys. We may share your information with these third parties for those limited purposes provided that you have given us your permission.
               </p>
             </section>
 
             <section className="mb-12">
-              <h2>10. Children's Privacy</h2>
+              <h2>Third-party websites</h2>
               <p>
-                Our services are not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.
+                Users may find advertising or other content on our Site that link to the sites and services of our partners, suppliers, advertisers, sponsors, licensors, and other third parties. We do not control the content or links that appear on these sites and are not responsible for the practices employed by websites linked to or from our Site. In addition, these sites or services, including their content and links, may be constantly changing. These sites and services may have their own privacy policies and customer service policies. Browsing and interaction on any other website, including websites which have a link to our Site, is subject to that website's own terms and policies.
               </p>
             </section>
 
             <section className="mb-12">
-              <h2>11. Changes to This Privacy Policy</h2>
+              <h2>Changes to this privacy policy</h2>
               <p>
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. You are advised to review this Privacy Policy periodically for any changes.
+                publifyx has the discretion to update this privacy policy at any time. When we do, we will revise the updated date at the top of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.
               </p>
             </section>
 
             <section className="mb-12">
-              <h2>12. Contact Us</h2>
+              <h2>Your acceptance of these terms</h2>
               <p>
-                If you have any questions about this Privacy Policy or our data practices, please contact us at:
+                By using this Site, you signify your acceptance of this policy. If you do not agree to this policy, please do not use our Site. Your continued use of the Site following the posting of changes to this policy will be deemed your acceptance of those changes.
               </p>
-              <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-                <p>
-                  <strong>PublifyX Privacy Team</strong><br />
-                  123 Digital Avenue<br />
-                  San Francisco, CA 94105<br />
-                  Email: privacy@publifyx.com<br />
-                  Phone: +1 (555) 123-4567
-                </p>
-              </div>
+            </section>
+
+            <section className="mb-12">
+              <h2>Contacting us</h2>
+              <p>
+                If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at info@publifyx.com.
+              </p>
             </section>
           </div>
         </div>
