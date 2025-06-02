@@ -339,8 +339,8 @@ const Index = () => {
             </div>
             <div className="order-2">
               <img
-                src="/lovable-uploads/d0e4d426-d705-4d55-8135-97e8afdf1613.png"
-                alt="Audio production equipment with mixing console"
+                src="/lovable-uploads/378f516e-ced5-4d46-999b-0075f2957d7a.png"
+                alt="Professional audio production setup with mixing console and microphone"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
