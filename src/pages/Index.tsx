@@ -154,7 +154,7 @@ const Index = () => {
               <div className="mb-8">
                 <div className="w-16 h-16 bg-blue-primary rounded-lg flex items-center justify-center mb-6">
                   <img 
-                    src="/lovable-uploads/fcc537b3-4a2a-486e-9a86-e6441eff9333.png" 
+                    src="/lovable-uploads/e599af68-d851-4a21-8101-acc73bd1a68a.png" 
                     alt="Publifyx Icon" 
                     className="w-8 h-8"
                   />
