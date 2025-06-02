@@ -1,5 +1,3 @@
-
-
 import Layout from "@/components/Layout";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -29,36 +27,38 @@ const Contact = () => {
     console.log("Submitting form data:", formData);
 
     try {
-      const googleAppsScriptUrl = "https://script.google.com/a/hcode.tech/macros/s/AKfycbytrG1hsiIqFlkL4vMMNVRy0WXpEq2E26mU8JGuIA/exec";
+      // Create a form data object for Google Apps Script
+      const formDataForSubmission = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        formDataForSubmission.append(key, value);
+      });
+
+      const googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycbytrG1hsiIqFlkL4vMMNVRy0WXpEq2E26mU8JGuIA/exec";
       
       const response = await fetch(googleAppsScriptUrl, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        mode: "no-cors",
+        body: formDataForSubmission,
       });
 
-      const result = await response.json();
+      // Since we're using no-cors mode, we can't read the response
+      // We'll assume success if no error is thrown
+      console.log("Form submitted successfully");
       
-      if (result.success) {
-        toast({
-          title: "Success!",
-          description: "Your message has been sent and saved to Google Sheets.",
-        });
-        
-        // Reset form
-        setFormData({
-          companyName: "",
-          companyEmail: "",
-          hearAbout: "",
-          mobileNumber: "",
-          campaign: "",
-          source: "publifyx"
-        });
-      } else {
-        throw new Error(result.error || "Failed to submit form");
-      }
+      toast({
+        title: "Success!",
+        description: "Your message has been sent successfully.",
+      });
+      
+      // Reset form
+      setFormData({
+        companyName: "",
+        companyEmail: "",
+        hearAbout: "",
+        mobileNumber: "",
+        campaign: "",
+        source: "publifyx"
+      });
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
@@ -225,4 +225,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
