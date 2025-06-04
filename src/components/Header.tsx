@@ -1,8 +1,14 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import GetStartedModal from "./GetStartedModal";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,6 +36,22 @@ const Header = () => {
               <Link to="/ad-insights" className="text-gray-700 hover:text-blue-primary transition-colors">
                 Ad Insights
               </Link>
+              
+              {/* Services Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-blue-primary transition-colors">
+                  Services
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-white border shadow-lg">
+                  <DropdownMenuItem asChild>
+                    <Link to="/white-label-dsp" className="w-full">
+                      White Label DSP
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               <Link to="/contact" className="text-gray-700 hover:text-blue-primary transition-colors">
                 Contact
               </Link>
@@ -72,6 +94,16 @@ const Header = () => {
                 >
                   Ad Insights
                 </Link>
+                <div className="pl-4">
+                  <p className="text-gray-500 font-medium mb-2">Services</p>
+                  <Link 
+                    to="/white-label-dsp" 
+                    className="text-gray-700 hover:text-blue-primary transition-colors block"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    White Label DSP
+                  </Link>
+                </div>
                 <Link 
                   to="/contact" 
                   className="text-gray-700 hover:text-blue-primary transition-colors"
