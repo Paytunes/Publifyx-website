@@ -1,7 +1,7 @@
 
 // Mock data for chart display
 export const indiaData = [
-  { name: "Total States & UT's", count: 36, impressions: 32.1 }
+  { name: "States & UT's", count: 36, impressions: 32.1 }
 ];
 
 export const statesData = [
@@ -36,7 +36,7 @@ export const getChartData = (selectedLocation: string) => {
     // City selected, show pincodes
     return [
       { 
-        name: "Total Pincodes", 
+        name: "Pincodes", 
         count: 150, 
         impressions: selectedLocation.includes("Mumbai") ? 4.2 : 
         selectedLocation.includes("Pune") ? 3.1 : 
