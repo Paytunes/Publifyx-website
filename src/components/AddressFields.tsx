@@ -2,6 +2,7 @@
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { useGeoChoices } from "@/hooks/useGeoChoices";
 
 interface AddressFieldsProps {
   formData: {
@@ -14,6 +15,8 @@ interface AddressFieldsProps {
 }
 
 const AddressFields = ({ formData, onInputChange }: AddressFieldsProps) => {
+  const { geoChoices, isLoading, error } = useGeoChoices();
+
   return (
     <>
       <div>
@@ -36,75 +39,52 @@ const AddressFields = ({ formData, onInputChange }: AddressFieldsProps) => {
           <label className="block text-sm font-medium text-gray-700 mb-2">
             State
           </label>
-          <Select name="state" value={formData.state} onValueChange={(value) => onInputChange("state", value)}>
+          <Select 
+            name="state" 
+            value={formData.state} 
+            onValueChange={(value) => onInputChange("state", value)}
+            disabled={isLoading}
+          >
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select State" />
+              <SelectValue placeholder={isLoading ? "Loading states..." : "Select State"} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="andhra-pradesh">Andhra Pradesh</SelectItem>
-              <SelectItem value="arunachal-pradesh">Arunachal Pradesh</SelectItem>
-              <SelectItem value="assam">Assam</SelectItem>
-              <SelectItem value="bihar">Bihar</SelectItem>
-              <SelectItem value="chhattisgarh">Chhattisgarh</SelectItem>
-              <SelectItem value="goa">Goa</SelectItem>
-              <SelectItem value="gujarat">Gujarat</SelectItem>
-              <SelectItem value="haryana">Haryana</SelectItem>
-              <SelectItem value="himachal-pradesh">Himachal Pradesh</SelectItem>
-              <SelectItem value="jharkhand">Jharkhand</SelectItem>
-              <SelectItem value="karnataka">Karnataka</SelectItem>
-              <SelectItem value="kerala">Kerala</SelectItem>
-              <SelectItem value="madhya-pradesh">Madhya Pradesh</SelectItem>
-              <SelectItem value="maharashtra">Maharashtra</SelectItem>
-              <SelectItem value="manipur">Manipur</SelectItem>
-              <SelectItem value="meghalaya">Meghalaya</SelectItem>
-              <SelectItem value="mizoram">Mizoram</SelectItem>
-              <SelectItem value="nagaland">Nagaland</SelectItem>
-              <SelectItem value="odisha">Odisha</SelectItem>
-              <SelectItem value="punjab">Punjab</SelectItem>
-              <SelectItem value="rajasthan">Rajasthan</SelectItem>
-              <SelectItem value="sikkim">Sikkim</SelectItem>
-              <SelectItem value="tamil-nadu">Tamil Nadu</SelectItem>
-              <SelectItem value="telangana">Telangana</SelectItem>
-              <SelectItem value="tripura">Tripura</SelectItem>
-              <SelectItem value="uttar-pradesh">Uttar Pradesh</SelectItem>
-              <SelectItem value="uttarakhand">Uttarakhand</SelectItem>
-              <SelectItem value="west-bengal">West Bengal</SelectItem>
-              <SelectItem value="delhi">Delhi</SelectItem>
+              {geoChoices.states.map((state) => (
+                <SelectItem key={state.value} value={state.value}>
+                  {state.label}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
+          {error && (
+            <p className="text-red-500 text-sm mt-1">Failed to load states. Using fallback data.</p>
+          )}
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             City
           </label>
-          <Select name="city" value={formData.city} onValueChange={(value) => onInputChange("city", value)}>
+          <Select 
+            name="city" 
+            value={formData.city} 
+            onValueChange={(value) => onInputChange("city", value)}
+            disabled={isLoading}
+          >
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select City" />
+              <SelectValue placeholder={isLoading ? "Loading cities..." : "Select City"} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="mumbai">Mumbai</SelectItem>
-              <SelectItem value="delhi">Delhi</SelectItem>
-              <SelectItem value="bangalore">Bangalore</SelectItem>
-              <SelectItem value="hyderabad">Hyderabad</SelectItem>
-              <SelectItem value="chennai">Chennai</SelectItem>
-              <SelectItem value="kolkata">Kolkata</SelectItem>
-              <SelectItem value="pune">Pune</SelectItem>
-              <SelectItem value="ahmedabad">Ahmedabad</SelectItem>
-              <SelectItem value="jaipur">Jaipur</SelectItem>
-              <SelectItem value="surat">Surat</SelectItem>
-              <SelectItem value="lucknow">Lucknow</SelectItem>
-              <SelectItem value="kanpur">Kanpur</SelectItem>
-              <SelectItem value="nagpur">Nagpur</SelectItem>
-              <SelectItem value="indore">Indore</SelectItem>
-              <SelectItem value="thane">Thane</SelectItem>
-              <SelectItem value="bhopal">Bhopal</SelectItem>
-              <SelectItem value="visakhapatnam">Visakhapatnam</SelectItem>
-              <SelectItem value="pimpri-chinchwad">Pimpri-Chinchwad</SelectItem>
-              <SelectItem value="patna">Patna</SelectItem>
-              <SelectItem value="vadodara">Vadodara</SelectItem>
+              {geoChoices.cities.map((city) => (
+                <SelectItem key={city.value} value={city.value}>
+                  {city.label}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
+          {error && (
+            <p className="text-red-500 text-sm mt-1">Failed to load cities. Using fallback data.</p>
+          )}
         </div>
       </div>
 
