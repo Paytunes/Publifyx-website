@@ -1,15 +1,74 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Input } from "@/components/ui/input";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Cell, LabelList } from "recharts";
-import { Search, MapPin } from "lucide-react";
+import { Search, MapPin, Loader2 } from "lucide-react";
 
 const GeographicReachChart = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("India");
+  const [cityStateData, setCityStateData] = useState<Array<{ name: string }>>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showError, setShowError] = useState("");
 
-  // Mock data for different locations
+  // Helper function to check if dictionary exists in list
+  const isDictInList = (dict: { name: string }, list: Array<{ name: string }>) => {
+    return list.some(item => item.name === dict.name);
+  };
+
+  // API fetch function
+  const cityStateFetchQuery = async () => {
+    const url = 'https://app.publifyx.com/city_state_data/';
+    try {
+      setIsLoading(true);
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        const res = await response.json();
+        const finalResponse = res.state_cities_list;
+        let finalList = [];
+        for (let i = 0; i < finalResponse.length; ++i) {
+          if (finalResponse[i][1] === 'state') {
+            finalList.push({ name: finalResponse[i][0] + ' (State)' });
+          } else {
+            let dict = {
+              name:
+                finalResponse[i][0].charAt(0).toUpperCase() +
+                finalResponse[i][0].slice(1) +
+                ' (City)',
+            };
+            if (!isDictInList(dict, finalList)) {
+              finalList.push(dict);
+            }
+          }
+        }
+        // "India" added as an option in the search filter
+        finalList.push({ name: 'India' });
+        setCityStateData(finalList);
+        setShowError("");
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    } catch (error: any) {
+      // Handle any errors that occur during the fetch request
+      console.error('Error:', error.message);
+      setShowError('Something went wrong');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Fetch data on component mount
+  useEffect(() => {
+    cityStateFetchQuery();
+  }, []);
+
+  // Mock data for chart display (keeping existing structure for now)
   const indiaData = [
     { name: "Total States & UT's", count: 36, impressions: 32.1 }
   ];
@@ -37,25 +96,18 @@ const GeographicReachChart = () => {
     { name: "Kanpur", count: 38, impressions: 0.9 }
   ];
 
-  // Combined options for search
-  const allLocations = [
-    "India",
-    ...statesData.map(item => item.name),
-    ...citiesData.map(item => item.name)
-  ];
-
   const getChartData = () => {
     if (selectedLocation === "India") {
       return indiaData;
-    } else if (statesData.some(state => state.name === selectedLocation)) {
+    } else if (selectedLocation.includes("(State)")) {
       return citiesData;
     } else {
       // City selected, show pincodes
       return [
-        { name: "Total Pincodes", count: 150, impressions: selectedLocation === "Mumbai" ? 4.2 : 
-          selectedLocation === "Pune" ? 3.1 : 
-          selectedLocation === "Bangalore" ? 2.8 : 
-          selectedLocation === "Chennai" ? 2.4 : 1.5 }
+        { name: "Total Pincodes", count: 150, impressions: selectedLocation.includes("Mumbai") ? 4.2 : 
+          selectedLocation.includes("Pune") ? 3.1 : 
+          selectedLocation.includes("Bangalore") ? 2.8 : 
+          selectedLocation.includes("Chennai") ? 2.4 : 1.5 }
       ];
     }
   };
@@ -63,15 +115,15 @@ const GeographicReachChart = () => {
   const getDisplayLabel = () => {
     if (selectedLocation === "India") {
       return "States & UT's";
-    } else if (statesData.some(state => state.name === selectedLocation)) {
+    } else if (selectedLocation.includes("(State)")) {
       return "Cities";
     } else {
       return "Pincodes";
     }
   };
 
-  const filteredLocations = allLocations.filter(location =>
-    location.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredLocations = cityStateData.filter(location =>
+    location.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const chartConfig = {
@@ -114,6 +166,23 @@ const GeographicReachChart = () => {
 
   const currentData = getChartData();
 
+  if (showError) {
+    return (
+      <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+        <div className="text-center">
+          <h3 className="text-xl font-bold text-gray-800 mb-2">Geographic Reach</h3>
+          <p className="text-red-500">{showError}</p>
+          <button 
+            onClick={cityStateFetchQuery}
+            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
       <div className="flex justify-between items-start mb-8">
@@ -126,31 +195,40 @@ const GeographicReachChart = () => {
         </div>
         <div className="flex items-center gap-2">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-            <Input
-              placeholder="Search location..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-64 pl-10 border-gray-200 focus:border-blue-primary focus:ring-blue-primary"
-            />
-            {searchTerm && filteredLocations.length > 0 && (
-              <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-48 overflow-y-auto">
-                {filteredLocations.map((location) => (
-                  <div
-                    key={location}
-                    className="px-4 py-3 hover:bg-gray-50 cursor-pointer text-sm border-b border-gray-100 last:border-b-0 transition-colors"
-                    onClick={() => {
-                      setSelectedLocation(location);
-                      setSearchTerm("");
-                    }}
-                  >
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-3 w-3 text-gray-400" />
-                      {location}
-                    </div>
-                  </div>
-                ))}
+            {isLoading ? (
+              <div className="flex items-center gap-2 px-3 py-2">
+                <Loader2 className="h-4 w-4 animate-spin" />
+                <span className="text-sm text-gray-500">Loading locations...</span>
               </div>
+            ) : (
+              <>
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <Input
+                  placeholder="Search location..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-64 pl-10 border-gray-200 focus:border-blue-primary focus:ring-blue-primary"
+                />
+                {searchTerm && filteredLocations.length > 0 && (
+                  <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+                    {filteredLocations.map((location) => (
+                      <div
+                        key={location.name}
+                        className="px-4 py-3 hover:bg-gray-50 cursor-pointer text-sm border-b border-gray-100 last:border-b-0 transition-colors"
+                        onClick={() => {
+                          setSelectedLocation(location.name);
+                          setSearchTerm("");
+                        }}
+                      >
+                        <div className="flex items-center gap-2">
+                          <MapPin className="h-3 w-3 text-gray-400" />
+                          {location.name}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>
