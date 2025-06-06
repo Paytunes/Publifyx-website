@@ -39,11 +39,12 @@ export const useGeoChoices = () => {
         };
         
         setGeoChoices(transformedData);
+        console.log('Successfully loaded geo choices from API');
       } catch (err) {
-        console.error('Error fetching geo choices:', err);
-        setError(err instanceof Error ? err.message : 'Failed to fetch geo choices');
+        console.log('API unavailable, using fallback data');
+        // Don't set error state, just use fallback data silently
         
-        // Fallback to existing hardcoded values if API fails
+        // Use fallback data when API fails
         setGeoChoices({
           states: [
             { value: "andhra-pradesh", label: "Andhra Pradesh" },

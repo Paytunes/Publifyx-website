@@ -15,7 +15,7 @@ interface AddressFieldsProps {
 }
 
 const AddressFields = ({ formData, onInputChange }: AddressFieldsProps) => {
-  const { geoChoices, isLoading, error } = useGeoChoices();
+  const { geoChoices, isLoading } = useGeoChoices();
 
   return (
     <>
@@ -56,9 +56,6 @@ const AddressFields = ({ formData, onInputChange }: AddressFieldsProps) => {
               ))}
             </SelectContent>
           </Select>
-          {error && (
-            <p className="text-red-500 text-sm mt-1">Failed to load states. Using fallback data.</p>
-          )}
         </div>
 
         <div>
@@ -82,9 +79,6 @@ const AddressFields = ({ formData, onInputChange }: AddressFieldsProps) => {
               ))}
             </SelectContent>
           </Select>
-          {error && (
-            <p className="text-red-500 text-sm mt-1">Failed to load cities. Using fallback data.</p>
-          )}
         </div>
       </div>
 
