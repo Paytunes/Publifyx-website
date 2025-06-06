@@ -67,21 +67,28 @@ export const useGeoChoices = () => {
         console.log('API call failed:', err);
         console.log('Using fallback geo data');
         
-        // Comprehensive fallback data that matches common Indian geography
+        // Updated fallback data with exact state choices provided by user
         const fallbackData = {
           states: [
+            { value: "Andaman & Nicobar Islands", label: "Andaman & Nicobar Islands" },
             { value: "Andhra Pradesh", label: "Andhra Pradesh" },
             { value: "Arunachal Pradesh", label: "Arunachal Pradesh" },
             { value: "Assam", label: "Assam" },
             { value: "Bihar", label: "Bihar" },
+            { value: "Chandigarh", label: "Chandigarh" },
             { value: "Chhattisgarh", label: "Chhattisgarh" },
+            { value: "Dadra & Nagar Haveli and Daman & Diu", label: "Dadra & Nagar Haveli and Daman & Diu" },
+            { value: "Delhi", label: "Delhi" },
             { value: "Goa", label: "Goa" },
             { value: "Gujarat", label: "Gujarat" },
             { value: "Haryana", label: "Haryana" },
             { value: "Himachal Pradesh", label: "Himachal Pradesh" },
+            { value: "Jammu & Kashmir", label: "Jammu & Kashmir" },
             { value: "Jharkhand", label: "Jharkhand" },
             { value: "Karnataka", label: "Karnataka" },
             { value: "Kerala", label: "Kerala" },
+            { value: "Ladakh", label: "Ladakh" },
+            { value: "Lakshadweep", label: "Lakshadweep" },
             { value: "Madhya Pradesh", label: "Madhya Pradesh" },
             { value: "Maharashtra", label: "Maharashtra" },
             { value: "Manipur", label: "Manipur" },
@@ -89,23 +96,16 @@ export const useGeoChoices = () => {
             { value: "Mizoram", label: "Mizoram" },
             { value: "Nagaland", label: "Nagaland" },
             { value: "Odisha", label: "Odisha" },
+            { value: "Puducherry", label: "Puducherry" },
             { value: "Punjab", label: "Punjab" },
             { value: "Rajasthan", label: "Rajasthan" },
             { value: "Sikkim", label: "Sikkim" },
             { value: "Tamil Nadu", label: "Tamil Nadu" },
             { value: "Telangana", label: "Telangana" },
             { value: "Tripura", label: "Tripura" },
-            { value: "Uttar Pradesh", label: "Uttar Pradesh" },
             { value: "Uttarakhand", label: "Uttarakhand" },
-            { value: "West Bengal", label: "West Bengal" },
-            { value: "Delhi", label: "Delhi" },
-            { value: "Chandigarh", label: "Chandigarh" },
-            { value: "Dadra and Nagar Haveli and Daman and Diu", label: "Dadra and Nagar Haveli and Daman and Diu" },
-            { value: "Jammu and Kashmir", label: "Jammu and Kashmir" },
-            { value: "Ladakh", label: "Ladakh" },
-            { value: "Lakshadweep", label: "Lakshadweep" },
-            { value: "Puducherry", label: "Puducherry" },
-            { value: "Andaman and Nicobar Islands", label: "Andaman and Nicobar Islands" }
+            { value: "Uttar Pradesh", label: "Uttar Pradesh" },
+            { value: "West Bengal", label: "West Bengal" }
           ],
           cities: [
             { value: "Mumbai", label: "Mumbai" },
