@@ -1,76 +1,34 @@
 
 import { useState } from "react";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const AgeGenderChart = () => {
   const [activeTab, setActiveTab] = useState("overview");
 
   // Data for Overview (grouped bars for male/female by age)
-  const overviewData = {
-    labels: ["18-24", "25-34", "35-44", "45-54", "55+"],
-    datasets: [
-      {
-        label: "Male",
-        data: [3.2, 4.1, 2.9, 2.1, 1.3],
-        backgroundColor: "#60A5FA",
-        borderColor: "#60A5FA",
-        borderWidth: 1,
-      },
-      {
-        label: "Female", 
-        data: [3.8, 4.7, 3.4, 2.5, 1.6],
-        backgroundColor: "#F87171",
-        borderColor: "#F87171", 
-        borderWidth: 1,
-      }
-    ]
-  };
+  const overviewData = [
+    { ageGroup: "18-24", Male: 3.2, Female: 3.8 },
+    { ageGroup: "25-34", Male: 4.1, Female: 4.7 },
+    { ageGroup: "35-44", Male: 2.9, Female: 3.4 },
+    { ageGroup: "45-54", Male: 2.1, Female: 2.5 },
+    { ageGroup: "55+", Male: 1.3, Female: 1.6 }
+  ];
 
   // Data for Age only
-  const ageData = {
-    labels: ["18-24", "25-34", "35-44", "45-54", "55+"],
-    datasets: [
-      {
-        label: "Weekly Impressions (Millions)",
-        data: [7.0, 8.8, 6.3, 4.6, 2.9],
-        backgroundColor: "#E11D48",
-        borderColor: "#E11D48",
-        borderWidth: 1,
-      }
-    ]
-  };
+  const ageData = [
+    { ageGroup: "18-24", impressions: 7.0 },
+    { ageGroup: "25-34", impressions: 8.8 },
+    { ageGroup: "35-44", impressions: 6.3 },
+    { ageGroup: "45-54", impressions: 4.6 },
+    { ageGroup: "55+", impressions: 2.9 }
+  ];
 
   // Data for Gender only
-  const genderData = {
-    labels: ["Male", "Female", "Other"],
-    datasets: [
-      {
-        label: "Weekly Impressions (Millions)",
-        data: [13.6, 16.0, 0.8],
-        backgroundColor: ["#60A5FA", "#F87171", "#A78BFA"],
-        borderColor: ["#60A5FA", "#F87171", "#A78BFA"],
-        borderWidth: 1,
-      }
-    ]
-  };
+  const genderData = [
+    { gender: "Male", impressions: 13.6 },
+    { gender: "Female", impressions: 16.0 },
+    { gender: "Other", impressions: 0.8 }
+  ];
 
   const getChartData = () => {
     switch (activeTab) {
@@ -83,47 +41,31 @@ const AgeGenderChart = () => {
     }
   };
 
-  const getXAxisLabel = () => {
+  const getXAxisKey = () => {
     switch (activeTab) {
       case "age":
-        return "Age Groups";
+        return "ageGroup";
       case "gender":
-        return "Gender";
+        return "gender";
       default:
-        return "Age Groups";
+        return "ageGroup";
     }
   };
 
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        position: 'top' as const,
-      },
-      tooltip: {
-        callbacks: {
-          label: function(context: any) {
-            return `${context.dataset.label}: ${context.parsed.y}M impressions`;
-          }
-        }
-      }
-    },
-    scales: {
-      x: {
-        title: {
-          display: true,
-          text: getXAxisLabel()
-        }
-      },
-      y: {
-        title: {
-          display: true,
-          text: 'Weekly Impressions (Millions)'
-        },
-        beginAtZero: true
-      }
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="bg-white p-3 border rounded shadow">
+          <p className="font-medium">{label}</p>
+          {payload.map((entry: any, index: number) => (
+            <p key={index} style={{ color: entry.color }}>
+              {`${entry.dataKey}: ${entry.value}M impressions`}
+            </p>
+          ))}
+        </div>
+      );
     }
+    return null;
   };
 
   return (
@@ -165,11 +107,33 @@ const AgeGenderChart = () => {
       </div>
       
       <div className="mb-4 text-sm text-gray-600">
-        <p>X-axis: {getXAxisLabel()} | Y-axis: Weekly Impressions (Millions)</p>
+        <p>Weekly Impressions (Millions) by {activeTab === "overview" ? "Age and Gender" : activeTab === "age" ? "Age Groups" : "Gender"}</p>
       </div>
 
       <div className="h-80">
-        <Bar data={getChartData()} options={chartOptions} />
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={getChartData()} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey={getXAxisKey()} />
+            <YAxis label={{ value: 'Weekly Impressions (Millions)', angle: -90, position: 'insideLeft' }} />
+            <Tooltip content={<CustomTooltip />} />
+            {activeTab === "overview" ? (
+              <>
+                <Legend />
+                <Bar dataKey="Male" fill="#60A5FA" />
+                <Bar dataKey="Female" fill="#F87171" />
+              </>
+            ) : activeTab === "gender" ? (
+              <Bar dataKey="impressions" fill={(entry: any) => {
+                if (entry?.gender === "Male") return "#60A5FA";
+                if (entry?.gender === "Female") return "#F87171";
+                return "#A78BFA";
+              }} />
+            ) : (
+              <Bar dataKey="impressions" fill="#E11D48" />
+            )}
+          </BarChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );
