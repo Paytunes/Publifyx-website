@@ -83,6 +83,12 @@ const GeographicReachChart = () => {
 
   const CustomLabel = (props: any) => {
     const { x, y, width, height, value, payload } = props;
+    
+    // Safety check for payload
+    if (!payload || payload.count === undefined) {
+      return null;
+    }
+    
     return (
       <text 
         x={x + width / 2} 
@@ -158,7 +164,11 @@ const GeographicReachChart = () => {
           <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
           <XAxis 
             dataKey="name" 
-            tick={{ fontSize: 11, fill: '#6B7280', angle: currentData.length > 6 ? -45 : 0 }}
+            tick={{ 
+              fontSize: 11, 
+              fill: '#6B7280',
+              ...(currentData.length > 6 && { angle: -45 })
+            }}
             textAnchor={currentData.length > 6 ? "end" : "middle"}
             height={currentData.length > 6 ? 80 : 60}
             axisLine={{ stroke: '#E5E7EB' }}
