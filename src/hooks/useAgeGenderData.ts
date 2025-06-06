@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 export const useAgeGenderData = () => {
@@ -25,7 +24,9 @@ export const useAgeGenderData = () => {
       }
     } catch (error: any) {
       console.error('Error:', error.message);
-      setShowError('Something went wrong');
+      // Don't set error state, just use mock data by keeping ageGenderData as null
+      setAgeGenderData(null);
+      setShowError("");
     } finally {
       setIsLoading(false);
     }

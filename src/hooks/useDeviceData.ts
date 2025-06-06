@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 export const useDeviceData = () => {
@@ -25,7 +24,9 @@ export const useDeviceData = () => {
       }
     } catch (error: any) {
       console.error('Error:', error.message);
-      setShowError('Something went wrong');
+      // Don't set error state, just use mock data by keeping deviceData as null
+      setDeviceData(null);
+      setShowError("");
     } finally {
       setIsLoading(false);
     }
