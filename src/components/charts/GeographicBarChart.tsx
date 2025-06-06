@@ -52,8 +52,22 @@ const GeographicBarChart = ({ data, displayLabel }: GeographicBarChartProps) => 
     return colors[index % colors.length];
   };
 
+  // Calculate totals
+  const totalCount = data.reduce((sum, item) => sum + item.count, 0);
+  const totalImpressions = data.reduce((sum, item) => sum + item.impressions, 0);
+
   return (
     <>
+      {/* Count and Total Impressions Display */}
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 flex justify-between items-center">
+        <div className="text-sm font-medium text-gray-700">
+          Total {displayLabel}: <span className="text-blue-600 font-bold">{totalCount}</span>
+        </div>
+        <div className="text-sm font-medium text-gray-700">
+          Weekly Impressions: <span className="text-blue-600 font-bold">{totalImpressions.toFixed(2)} Million</span>
+        </div>
+      </div>
+
       <ChartContainer config={chartConfig} className="h-96">
         <BarChart 
           data={data} 
@@ -108,13 +122,6 @@ const GeographicBarChart = ({ data, displayLabel }: GeographicBarChartProps) => 
           </Bar>
         </BarChart>
       </ChartContainer>
-      
-      {/* Legend for count labels */}
-      <div className="mt-4 text-center">
-        <p className="text-xs text-gray-500">
-          Numbers above bars represent the count of {displayLabel.toLowerCase()}
-        </p>
-      </div>
     </>
   );
 };
