@@ -5,6 +5,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Check, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import GetStartedModal from "@/components/GetStartedModal";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const WhiteLabelDSP = () => {
   const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
@@ -260,26 +266,25 @@ const WhiteLabelDSP = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Frequently Asked Questions
-            </h2>
+          <div className="text-center mb-12">
+            <p className="text-gray-500 text-sm uppercase tracking-wide mb-2">FAQs</p>
+            <h2 className="mb-8">Frequently Asked Questions</h2>
           </div>
-
-          <div className="space-y-6">
+          
+          <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle className="text-lg">{faq.question}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{faq.answer}</p>
-                </CardContent>
-              </Card>
+              <AccordionItem key={index} value={`item-${index + 1}`} className="bg-white rounded-lg shadow-sm border-0">
+                <AccordionTrigger className="px-6 py-4 text-left font-medium text-gray-800 hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
