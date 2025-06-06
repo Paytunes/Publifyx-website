@@ -48,7 +48,7 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
     const payload = {
       first_name: values.fullName,
       email: values.email,
-      mobile: `+91${values.mobile}`,
+      mobile: values.mobile, // Changed: removed +91 prefix, just send the numeric value
       name: values.companyName,
       billing_address1: values.billingAddress,
       billing_city: values.city,
