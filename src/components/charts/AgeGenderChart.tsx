@@ -1,13 +1,12 @@
 
 import { useState } from "react";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
 
 const AgeGenderChart = () => {
-  const [xAxisOption, setXAxisOption] = useState("age-and-gender");
+  const [activeTab, setActiveTab] = useState("age-and-gender");
 
-  // Mock data for different X-axis options
+  // Mock data for different options
   const ageAndGenderData = [
     { name: "18-24 Male", impressions: 3.2 },
     { name: "18-24 Female", impressions: 3.8 },
@@ -36,7 +35,7 @@ const AgeGenderChart = () => {
   ];
 
   const getChartData = () => {
-    switch (xAxisOption) {
+    switch (activeTab) {
       case "age":
         return ageData;
       case "gender":
@@ -47,7 +46,7 @@ const AgeGenderChart = () => {
   };
 
   const getXAxisLabel = () => {
-    switch (xAxisOption) {
+    switch (activeTab) {
       case "age":
         return "Age Groups";
       case "gender":
@@ -68,18 +67,37 @@ const AgeGenderChart = () => {
     <div className="bg-white p-6 rounded-lg shadow-lg">
       <div className="flex justify-between items-center mb-6">
         <h3 className="text-lg font-semibold">Age and Gender</h3>
-        <div className="flex items-center gap-2">
-          <label className="text-sm font-medium">X-axis:</label>
-          <Select value={xAxisOption} onValueChange={setXAxisOption}>
-            <SelectTrigger className="w-40">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="age-and-gender">Age and Gender</SelectItem>
-              <SelectItem value="age">Age</SelectItem>
-              <SelectItem value="gender">Gender</SelectItem>
-            </SelectContent>
-          </Select>
+        <div className="flex space-x-2">
+          <button
+            onClick={() => setActiveTab("age-and-gender")}
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              activeTab === "age-and-gender" 
+                ? "bg-blue-primary text-white" 
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            Age & Gender
+          </button>
+          <button
+            onClick={() => setActiveTab("age")}
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              activeTab === "age" 
+                ? "bg-blue-primary text-white" 
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            Age
+          </button>
+          <button
+            onClick={() => setActiveTab("gender")}
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              activeTab === "gender" 
+                ? "bg-blue-primary text-white" 
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            Gender
+          </button>
         </div>
       </div>
       
@@ -93,9 +111,9 @@ const AgeGenderChart = () => {
           <XAxis 
             dataKey="name" 
             tick={{ fontSize: 12 }}
-            angle={xAxisOption === "age-and-gender" ? -45 : 0}
-            textAnchor={xAxisOption === "age-and-gender" ? "end" : "middle"}
-            height={xAxisOption === "age-and-gender" ? 80 : 60}
+            angle={activeTab === "age-and-gender" ? -45 : 0}
+            textAnchor={activeTab === "age-and-gender" ? "end" : "middle"}
+            height={activeTab === "age-and-gender" ? 80 : 60}
           />
           <YAxis 
             label={{ value: 'Impressions (Millions)', angle: -90, position: 'insideLeft' }}
