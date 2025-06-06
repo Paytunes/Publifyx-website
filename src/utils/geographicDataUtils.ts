@@ -1,10 +1,6 @@
 
 // Mock data for chart display
 export const indiaData = [
-  { name: "States & UT's", count: 36, impressions: 32.1 }
-];
-
-export const statesData = [
   { name: "Maharashtra", count: 358, impressions: 12.5 },
   { name: "Karnataka", count: 224, impressions: 8.7 },
   { name: "Tamil Nadu", count: 234, impressions: 7.2 },
@@ -13,37 +9,38 @@ export const statesData = [
   { name: "West Bengal", count: 341, impressions: 4.9 }
 ];
 
-export const citiesData = [
+export const statesData = [
   { name: "Mumbai", count: 150, impressions: 4.2 },
   { name: "Pune", count: 89, impressions: 3.1 },
-  { name: "Bangalore", count: 95, impressions: 2.8 },
-  { name: "Chennai", count: 76, impressions: 2.4 },
-  { name: "Hyderabad", count: 68, impressions: 2.1 },
-  { name: "Kolkata", count: 72, impressions: 1.9 },
-  { name: "Delhi", count: 65, impressions: 1.7 },
-  { name: "Ahmedabad", count: 58, impressions: 1.5 },
-  { name: "Jaipur", count: 45, impressions: 1.3 },
-  { name: "Lucknow", count: 42, impressions: 1.1 },
-  { name: "Kanpur", count: 38, impressions: 0.9 }
+  { name: "Nagpur", count: 45, impressions: 2.1 },
+  { name: "Nashik", count: 32, impressions: 1.8 },
+  { name: "Aurangabad", count: 28, impressions: 1.5 },
+  { name: "Solapur", count: 24, impressions: 1.2 }
+];
+
+export const citiesData = [
+  { name: "400001", count: 25, impressions: 0.8 },
+  { name: "400002", count: 22, impressions: 0.7 },
+  { name: "400003", count: 18, impressions: 0.6 },
+  { name: "400004", count: 15, impressions: 0.5 },
+  { name: "400005", count: 12, impressions: 0.4 },
+  { name: "400006", count: 10, impressions: 0.3 },
+  { name: "400007", count: 8, impressions: 0.2 },
+  { name: "400008", count: 6, impressions: 0.15 },
+  { name: "400009", count: 5, impressions: 0.1 },
+  { name: "400010", count: 4, impressions: 0.08 },
+  { name: "400011", count: 3, impressions: 0.05 }
 ];
 
 export const getChartData = (selectedLocation: string) => {
   if (selectedLocation === "India") {
-    return indiaData;
+    return indiaData; // Show individual states
   } else if (selectedLocation.includes("(State)")) {
-    return citiesData;
+    return statesData; // Show individual cities for the selected state
+  } else if (selectedLocation.includes("(City)")) {
+    return citiesData; // Show individual pincodes for the selected city
   } else {
-    // City selected, show pincodes
-    return [
-      { 
-        name: "Pincodes", 
-        count: 150, 
-        impressions: selectedLocation.includes("Mumbai") ? 4.2 : 
-        selectedLocation.includes("Pune") ? 3.1 : 
-        selectedLocation.includes("Bangalore") ? 2.8 : 
-        selectedLocation.includes("Chennai") ? 2.4 : 1.5 
-      }
-    ];
+    return indiaData; // Default fallback
   }
 };
 
@@ -52,7 +49,9 @@ export const getDisplayLabel = (selectedLocation: string) => {
     return "States & UT's";
   } else if (selectedLocation.includes("(State)")) {
     return "Cities";
-  } else {
+  } else if (selectedLocation.includes("(City)")) {
     return "Pincodes";
+  } else {
+    return "Geographic Data";
   }
 };
