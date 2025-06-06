@@ -1,23 +1,63 @@
 
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DeviceChart = () => {
-  // Mock data for device impressions with colors
-  const deviceData = [
+  const deviceData = {
+    labels: ["Mobile", "Desktop", "Tablet", "Smart TV", "Other"],
+    datasets: [
+      {
+        data: [18.2, 7.8, 3.4, 1.9, 0.7],
+        backgroundColor: [
+          "#2563eb",
+          "#16a34a", 
+          "#E11D48",
+          "#F59E0B",
+          "#8B5CF6"
+        ],
+        borderColor: [
+          "#2563eb",
+          "#16a34a",
+          "#E11D48", 
+          "#F59E0B",
+          "#8B5CF6"
+        ],
+        borderWidth: 1,
+      }
+    ]
+  };
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context: any) {
+            return `${context.label}: ${context.parsed}M impressions`;
+          }
+        }
+      }
+    }
+  };
+
+  const deviceColors = [
     { name: "Mobile", impressions: 18.2, color: "#2563eb" },
     { name: "Desktop", impressions: 7.8, color: "#16a34a" },
     { name: "Tablet", impressions: 3.4, color: "#E11D48" },
     { name: "Smart TV", impressions: 1.9, color: "#F59E0B" },
     { name: "Other", impressions: 0.7, color: "#8B5CF6" }
   ];
-
-  const chartConfig = {
-    impressions: {
-      label: "Weekly Impressions (Millions)",
-      color: "#16a34a",
-    },
-  };
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -30,28 +70,12 @@ const DeviceChart = () => {
       </div>
 
       <div className="flex items-center justify-between">
-        <ChartContainer config={chartConfig} className="h-80 flex-1">
-          <PieChart>
-            <Pie
-              data={deviceData}
-              cx="50%"
-              cy="50%"
-              labelLine={false}
-              label={({ name, impressions }) => `${name}: ${impressions}M`}
-              outerRadius={100}
-              fill="#8884d8"
-              dataKey="impressions"
-            >
-              {deviceData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
-              ))}
-            </Pie>
-            <ChartTooltip content={<ChartTooltipContent />} />
-          </PieChart>
-        </ChartContainer>
+        <div className="h-80 flex-1">
+          <Doughnut data={deviceData} options={chartOptions} />
+        </div>
         
         <div className="ml-8 space-y-3">
-          {deviceData.map((device) => (
+          {deviceColors.map((device) => (
             <div key={device.name} className="flex items-center gap-3">
               <div 
                 className="w-4 h-4 rounded"
