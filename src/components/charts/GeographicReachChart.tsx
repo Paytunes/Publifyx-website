@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Input } from "@/components/ui/input";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Cell, LabelList } from "recharts";
 import { Search, MapPin } from "lucide-react";
 
 const GeographicReachChart = () => {
@@ -26,9 +26,15 @@ const GeographicReachChart = () => {
   const citiesData = [
     { name: "Mumbai", count: 150, impressions: 4.2 },
     { name: "Pune", count: 89, impressions: 3.1 },
-    { name: "Nagpur", count: 67, impressions: 2.8 },
-    { name: "Nashik", count: 45, impressions: 1.9 },
-    { name: "Aurangabad", count: 32, impressions: 1.5 }
+    { name: "Bangalore", count: 95, impressions: 2.8 },
+    { name: "Chennai", count: 76, impressions: 2.4 },
+    { name: "Hyderabad", count: 68, impressions: 2.1 },
+    { name: "Kolkata", count: 72, impressions: 1.9 },
+    { name: "Delhi", count: 65, impressions: 1.7 },
+    { name: "Ahmedabad", count: 58, impressions: 1.5 },
+    { name: "Jaipur", count: 45, impressions: 1.3 },
+    { name: "Lucknow", count: 42, impressions: 1.1 },
+    { name: "Kanpur", count: 38, impressions: 0.9 }
   ];
 
   // Combined options for search
@@ -48,8 +54,8 @@ const GeographicReachChart = () => {
       return [
         { name: "Total Pincodes", count: 150, impressions: selectedLocation === "Mumbai" ? 4.2 : 
           selectedLocation === "Pune" ? 3.1 : 
-          selectedLocation === "Nagpur" ? 2.8 : 
-          selectedLocation === "Nashik" ? 1.9 : 1.5 }
+          selectedLocation === "Bangalore" ? 2.8 : 
+          selectedLocation === "Chennai" ? 2.4 : 1.5 }
       ];
     }
   };
@@ -69,15 +75,38 @@ const GeographicReachChart = () => {
   );
 
   const chartConfig = {
-    count: {
-      label: `Total ${getDisplayLabel()}`,
-      color: "#2563eb",
-    },
     impressions: {
       label: "Weekly Impressions (Millions)",
-      color: "#16a34a",
+      color: "#2563eb",
     },
   };
+
+  const CustomLabel = (props: any) => {
+    const { x, y, width, height, value, payload } = props;
+    return (
+      <text 
+        x={x + width / 2} 
+        y={y - 5} 
+        fill="#374151" 
+        textAnchor="middle" 
+        fontSize="12"
+        fontWeight="600"
+      >
+        {payload.count}
+      </text>
+    );
+  };
+
+  const getBarColor = (index: number, data: any[]) => {
+    // Use gradient colors for better visual appeal
+    const colors = [
+      "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe",
+      "#1e40af", "#1d4ed8", "#2563eb", "#3730a3", "#4338ca", "#5b21b6"
+    ];
+    return colors[index % colors.length];
+  };
+
+  const currentData = getChartData();
 
   return (
     <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
@@ -86,7 +115,7 @@ const GeographicReachChart = () => {
           <h3 className="text-xl font-bold text-gray-800 mb-2">Geographic Reach</h3>
           <div className="flex items-center gap-2 text-sm text-gray-500">
             <MapPin className="h-4 w-4" />
-            <span>Selected: {selectedLocation} | Showing: {getDisplayLabel()} and Weekly Impressions</span>
+            <span>Selected: {selectedLocation} | Showing: {getDisplayLabel()} with Weekly Impressions (Millions)</span>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -121,42 +150,63 @@ const GeographicReachChart = () => {
         </div>
       </div>
 
-      <ChartContainer config={chartConfig} className="h-80">
-        <BarChart data={getChartData()}>
+      <ChartContainer config={chartConfig} className="h-96">
+        <BarChart 
+          data={currentData} 
+          margin={{ top: 30, right: 30, left: 20, bottom: 5 }}
+        >
           <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
           <XAxis 
             dataKey="name" 
-            tick={{ fontSize: 12, fill: '#6B7280' }}
+            tick={{ fontSize: 11, fill: '#6B7280', angle: currentData.length > 6 ? -45 : 0 }}
+            textAnchor={currentData.length > 6 ? "end" : "middle"}
+            height={currentData.length > 6 ? 80 : 60}
             axisLine={{ stroke: '#E5E7EB' }}
+            interval={0}
           />
           <YAxis 
-            yAxisId="left"
-            label={{ value: 'Count', angle: -90, position: 'insideLeft', style: { textAnchor: 'middle', fill: '#6B7280' } }}
+            label={{ 
+              value: 'Weekly Impressions (Millions)', 
+              angle: -90, 
+              position: 'insideLeft', 
+              style: { textAnchor: 'middle', fill: '#6B7280', fontSize: '12px' } 
+            }}
             tick={{ fontSize: 12, fill: '#6B7280' }}
             axisLine={{ stroke: '#E5E7EB' }}
           />
-          <YAxis 
-            yAxisId="right"
-            orientation="right"
-            label={{ value: 'Impressions (Millions)', angle: 90, position: 'insideRight', style: { textAnchor: 'middle', fill: '#6B7280' } }}
-            tick={{ fontSize: 12, fill: '#6B7280' }}
-            axisLine={{ stroke: '#E5E7EB' }}
+          <ChartTooltip 
+            content={({ active, payload, label }) => {
+              if (active && payload && payload.length) {
+                const data = payload[0].payload;
+                return (
+                  <div className="bg-white p-3 border rounded-lg shadow-lg border-gray-200">
+                    <p className="font-semibold text-gray-800 mb-1">{label}</p>
+                    <p className="text-sm text-blue-600">Impressions: {data.impressions}M</p>
+                    <p className="text-sm text-gray-600">Count: {data.count}</p>
+                  </div>
+                );
+              }
+              return null;
+            }}
           />
-          <ChartTooltip content={<ChartTooltipContent />} />
           <Bar 
-            yAxisId="left"
-            dataKey="count" 
-            fill="var(--color-count)" 
-            radius={[4, 4, 0, 0]}
-          />
-          <Bar 
-            yAxisId="right"
             dataKey="impressions" 
-            fill="var(--color-impressions)" 
             radius={[4, 4, 0, 0]}
-          />
+          >
+            <LabelList content={<CustomLabel />} />
+            {currentData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={getBarColor(index, currentData)} />
+            ))}
+          </Bar>
         </BarChart>
       </ChartContainer>
+      
+      {/* Legend for count labels */}
+      <div className="mt-4 text-center">
+        <p className="text-xs text-gray-500">
+          Numbers above bars represent the count of {getDisplayLabel().toLowerCase()}
+        </p>
+      </div>
     </div>
   );
 };
