@@ -1,9 +1,11 @@
-
 import Layout from "@/components/Layout";
 import { useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
+import GeographicReachChart from "@/components/charts/GeographicReachChart";
+import AgeGenderChart from "@/components/charts/AgeGenderChart";
+import DeviceChart from "@/components/charts/DeviceChart";
 
 const AdInsights = () => {
   const [activeTab, setActiveTab] = useState("age");
@@ -104,6 +106,16 @@ const AdInsights = () => {
                   </Select>
                 </div>
               </div>
+            </div>
+
+            {/* New Charts Section */}
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-8">
+              <GeographicReachChart />
+              <AgeGenderChart />
+            </div>
+
+            <div className="mb-8">
+              <DeviceChart />
             </div>
 
             {/* Charts Section */}
