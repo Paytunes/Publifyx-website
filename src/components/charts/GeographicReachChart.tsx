@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Input } from "@/components/ui/input";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
+import { Search, MapPin } from "lucide-react";
 
 const GeographicReachChart = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -79,29 +80,39 @@ const GeographicReachChart = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg">
-      <div className="flex justify-between items-center mb-6">
-        <h3 className="text-lg font-semibold">Geographic Reach</h3>
+    <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+      <div className="flex justify-between items-start mb-8">
+        <div>
+          <h3 className="text-xl font-bold text-gray-800 mb-2">Geographic Reach</h3>
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <MapPin className="h-4 w-4" />
+            <span>Selected: {selectedLocation} | Showing: {getDisplayLabel()} and Weekly Impressions</span>
+          </div>
+        </div>
         <div className="flex items-center gap-2">
           <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               placeholder="Search location..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-48"
+              className="w-64 pl-10 border-gray-200 focus:border-blue-primary focus:ring-blue-primary"
             />
             {searchTerm && filteredLocations.length > 0 && (
-              <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-48 overflow-y-auto">
+              <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-48 overflow-y-auto">
                 {filteredLocations.map((location) => (
                   <div
                     key={location}
-                    className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+                    className="px-4 py-3 hover:bg-gray-50 cursor-pointer text-sm border-b border-gray-100 last:border-b-0 transition-colors"
                     onClick={() => {
                       setSelectedLocation(location);
                       setSearchTerm("");
                     }}
                   >
-                    {location}
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-3 w-3 text-gray-400" />
+                      {location}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -109,28 +120,27 @@ const GeographicReachChart = () => {
           </div>
         </div>
       </div>
-      
-      <div className="mb-4 text-sm text-gray-600">
-        <p>Selected: {selectedLocation} | Showing: {getDisplayLabel()} and Weekly Impressions (Millions)</p>
-      </div>
 
       <ChartContainer config={chartConfig} className="h-80">
         <BarChart data={getChartData()}>
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
           <XAxis 
             dataKey="name" 
-            tick={{ fontSize: 12 }}
+            tick={{ fontSize: 12, fill: '#6B7280' }}
+            axisLine={{ stroke: '#E5E7EB' }}
           />
           <YAxis 
             yAxisId="left"
-            label={{ value: 'Count', angle: -90, position: 'insideLeft' }}
-            tick={{ fontSize: 12 }}
+            label={{ value: 'Count', angle: -90, position: 'insideLeft', style: { textAnchor: 'middle', fill: '#6B7280' } }}
+            tick={{ fontSize: 12, fill: '#6B7280' }}
+            axisLine={{ stroke: '#E5E7EB' }}
           />
           <YAxis 
             yAxisId="right"
             orientation="right"
-            label={{ value: 'Impressions (Millions)', angle: 90, position: 'insideRight' }}
-            tick={{ fontSize: 12 }}
+            label={{ value: 'Impressions (Millions)', angle: 90, position: 'insideRight', style: { textAnchor: 'middle', fill: '#6B7280' } }}
+            tick={{ fontSize: 12, fill: '#6B7280' }}
+            axisLine={{ stroke: '#E5E7EB' }}
           />
           <ChartTooltip content={<ChartTooltipContent />} />
           <Bar 

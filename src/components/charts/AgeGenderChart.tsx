@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
 
 const AgeGenderChart = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -16,18 +16,18 @@ const AgeGenderChart = () => {
 
   // Data for Age only
   const ageData = [
-    { ageGroup: "18-24", impressions: 7.0 },
-    { ageGroup: "25-34", impressions: 8.8 },
-    { ageGroup: "35-44", impressions: 6.3 },
-    { ageGroup: "45-54", impressions: 4.6 },
-    { ageGroup: "55+", impressions: 2.9 }
+    { ageGroup: "18-24", impressions: 7.0, color: "#E11D48" },
+    { ageGroup: "25-34", impressions: 8.8, color: "#DC2626" },
+    { ageGroup: "35-44", impressions: 6.3, color: "#B91C1C" },
+    { ageGroup: "45-54", impressions: 4.6, color: "#991B1B" },
+    { ageGroup: "55+", impressions: 2.9, color: "#7F1D1D" }
   ];
 
   // Data for Gender only
   const genderData = [
-    { gender: "Male", impressions: 13.6 },
-    { gender: "Female", impressions: 16.0 },
-    { gender: "Other", impressions: 0.8 }
+    { gender: "Male", impressions: 13.6, color: "#60A5FA" },
+    { gender: "Female", impressions: 16.0, color: "#F87171" },
+    { gender: "Other", impressions: 0.8, color: "#A78BFA" }
   ];
 
   const getChartData = () => {
@@ -55,10 +55,10 @@ const AgeGenderChart = () => {
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white p-3 border rounded shadow">
-          <p className="font-medium">{label}</p>
+        <div className="bg-white p-3 border rounded-lg shadow-lg">
+          <p className="font-medium text-gray-800">{label}</p>
           {payload.map((entry: any, index: number) => (
-            <p key={index} style={{ color: entry.color }}>
+            <p key={index} style={{ color: entry.color }} className="font-medium">
               {`${entry.dataKey}: ${entry.value}M impressions`}
             </p>
           ))}
@@ -69,68 +69,73 @@ const AgeGenderChart = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg">
-      <div className="flex justify-between items-center mb-6">
-        <h3 className="text-lg font-semibold">Age and Gender</h3>
-        <div className="flex space-x-2">
+    <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+      <div className="flex justify-between items-center mb-8">
+        <div>
+          <h3 className="text-xl font-bold text-gray-800 mb-2">Age and Gender Demographics</h3>
+          <p className="text-sm text-gray-500">Weekly Impressions (Millions) by {activeTab === "overview" ? "Age and Gender" : activeTab === "age" ? "Age Groups" : "Gender"}</p>
+        </div>
+        <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
           <button
             onClick={() => setActiveTab("overview")}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
               activeTab === "overview" 
-                ? "bg-blue-primary text-white" 
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                ? "bg-blue-primary text-white shadow-sm" 
+                : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
             }`}
           >
             Overview
           </button>
           <button
             onClick={() => setActiveTab("age")}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
               activeTab === "age" 
-                ? "bg-blue-primary text-white" 
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                ? "bg-blue-primary text-white shadow-sm" 
+                : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
             }`}
           >
             Age
           </button>
           <button
             onClick={() => setActiveTab("gender")}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
               activeTab === "gender" 
-                ? "bg-blue-primary text-white" 
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                ? "bg-blue-primary text-white shadow-sm" 
+                : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
             }`}
           >
             Gender
           </button>
         </div>
       </div>
-      
-      <div className="mb-4 text-sm text-gray-600">
-        <p>Weekly Impressions (Millions) by {activeTab === "overview" ? "Age and Gender" : activeTab === "age" ? "Age Groups" : "Gender"}</p>
-      </div>
 
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={getChartData()} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey={getXAxisKey()} />
-            <YAxis label={{ value: 'Weekly Impressions (Millions)', angle: -90, position: 'insideLeft' }} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+            <XAxis 
+              dataKey={getXAxisKey()} 
+              tick={{ fontSize: 12, fill: '#6B7280' }}
+              axisLine={{ stroke: '#E5E7EB' }}
+            />
+            <YAxis 
+              label={{ value: 'Weekly Impressions (Millions)', angle: -90, position: 'insideLeft', style: { textAnchor: 'middle', fill: '#6B7280' } }}
+              tick={{ fontSize: 12, fill: '#6B7280' }}
+              axisLine={{ stroke: '#E5E7EB' }}
+            />
             <Tooltip content={<CustomTooltip />} />
             {activeTab === "overview" ? (
               <>
-                <Legend />
-                <Bar dataKey="Male" fill="#60A5FA" />
-                <Bar dataKey="Female" fill="#F87171" />
+                <Legend wrapperStyle={{ paddingTop: '20px' }} />
+                <Bar dataKey="Male" fill="#60A5FA" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="Female" fill="#F87171" radius={[4, 4, 0, 0]} />
               </>
-            ) : activeTab === "gender" ? (
-              <Bar dataKey="impressions" fill={(entry: any) => {
-                if (entry?.gender === "Male") return "#60A5FA";
-                if (entry?.gender === "Female") return "#F87171";
-                return "#A78BFA";
-              }} />
             ) : (
-              <Bar dataKey="impressions" fill="#E11D48" />
+              <Bar dataKey="impressions" radius={[4, 4, 0, 0]}>
+                {getChartData().map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Bar>
             )}
           </BarChart>
         </ResponsiveContainer>
