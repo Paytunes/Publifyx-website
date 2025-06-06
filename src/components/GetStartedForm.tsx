@@ -45,10 +45,16 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
       gstId: formData.gstin || "", // Optional
     };
 
+    // Format mobile number with +91 prefix and ensure it's properly formatted
+    const formattedMobile = values.mobile.startsWith('91') ? `+${values.mobile}` : `+91${values.mobile}`;
+    
+    console.log("Formatted mobile:", formattedMobile);
+    console.log("State value being sent:", values.state);
+
     const payload = {
       first_name: values.fullName,
       email: values.email,
-      mobile: values.mobile, // Changed: removed +91 prefix, just send the numeric value
+      mobile: formattedMobile, // Add +91 prefix and proper formatting
       name: values.companyName,
       billing_address1: values.billingAddress,
       billing_city: values.city,
@@ -56,6 +62,8 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
       billing_zipcode: values.pincode,
       gst_no: values.gstId,
     };
+
+    console.log("Final payload being sent:", payload);
 
     try {
       const response = await fetch("https://staging-app.publifyx.com/api/v1/create_agency/", {
@@ -65,6 +73,9 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
         },
         body: JSON.stringify(payload),
       });
+
+      const responseData = await response.json();
+      console.log("API response:", responseData);
 
       if (response.ok) {
         console.log("Get Started form submitted successfully");
@@ -88,11 +99,23 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
         
         onClose();
       } else {
-        const errData = await response.json();
-        console.error("API error:", errData);
+        console.error("API error:", responseData);
+        
+        // Create a more detailed error message
+        let errorMessage = "Please check the following fields:\n";
+        if (responseData.mobile) {
+          errorMessage += `• Phone: ${responseData.mobile.join(', ')}\n`;
+        }
+        if (responseData.billing_state) {
+          errorMessage += `• State: ${responseData.billing_state.join(', ')}\n`;
+        }
+        if (responseData.billing_city) {
+          errorMessage += `• City: ${responseData.billing_city.join(', ')}\n`;
+        }
+        
         toast({
           title: "Submission Failed",
-          description: errData?.message || "Unknown error occurred",
+          description: errorMessage || responseData?.message || "Unknown error occurred",
           variant: "destructive",
         });
       }
@@ -109,6 +132,7 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
   };
 
   const handleInputChange = (field: string, value: string) => {
+    console.log(`Field ${field} changed to:`, value);
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
