@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useGeoChoices } from "@/hooks/useGeoChoices";
+import { useEffect, useMemo } from "react";
 
 interface AddressFieldsProps {
   formData: {
@@ -15,7 +16,27 @@ interface AddressFieldsProps {
 }
 
 const AddressFields = ({ formData, onInputChange }: AddressFieldsProps) => {
-  const { geoChoices, isLoading } = useGeoChoices();
+  const { geoChoices, isLoading, getFilteredCities } = useGeoChoices();
+
+  // Get filtered cities based on selected state
+  const filteredCities = useMemo(() => {
+    if (!formData.state) return [];
+    return getFilteredCities(formData.state);
+  }, [formData.state, getFilteredCities]);
+
+  // Clear city when state changes
+  useEffect(() => {
+    if (formData.state && formData.city) {
+      const cityExists = filteredCities.some(city => city.value === formData.city);
+      if (!cityExists) {
+        console.log('Clearing city because it does not exist in the new state');
+        onInputChange("city", "");
+      }
+    }
+  }, [formData.state, formData.city, filteredCities, onInputChange]);
+
+  console.log('Current state:', formData.state);
+  console.log('Available cities for state:', filteredCities.length);
 
   return (
     <>
@@ -66,13 +87,21 @@ const AddressFields = ({ formData, onInputChange }: AddressFieldsProps) => {
             name="city" 
             value={formData.city} 
             onValueChange={(value) => onInputChange("city", value)}
-            disabled={isLoading}
+            disabled={isLoading || !formData.state}
           >
             <SelectTrigger className="w-full">
-              <SelectValue placeholder={isLoading ? "Loading cities..." : "Select City"} />
+              <SelectValue placeholder={
+                isLoading 
+                  ? "Loading cities..." 
+                  : !formData.state 
+                    ? "Select State first" 
+                    : filteredCities.length === 0 
+                      ? "No cities available" 
+                      : "Select City"
+              } />
             </SelectTrigger>
             <SelectContent>
-              {geoChoices.cities.map((city) => (
+              {filteredCities.map((city) => (
                 <SelectItem key={city.value} value={city.value}>
                   {city.label}
                 </SelectItem>
