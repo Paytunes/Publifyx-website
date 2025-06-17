@@ -80,16 +80,27 @@ const Contact = () => {
     <Layout>
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 pb-8">
+          {/* Main H1 Title */}
+          <div className="text-center mb-12">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Get in Touch with PublifyX – Start Your Campaign Journey
+            </h1>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
             {/* Left Side - Blue Section */}
             <div className="lg:col-span-2 bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white relative overflow-hidden">
               <div className="relative z-10">
-                <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-                  Let's grow your brand together
-                </h1>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                  Let's Grow Your Brand Together
+                </h2>
                 <p className="text-blue-100 mb-8 text-base">
                   Fill out the form, including details about your next campaign, and we'll be in touch shortly.
                 </p>
+
+                <h2 className="text-xl font-bold mb-4 text-white">
+                  Contact Information
+                </h2>
 
                 <div className="space-y-4">
                   <div className="flex items-start">
@@ -124,7 +135,7 @@ const Contact = () => {
             {/* Right Side - Form Section */}
             <div className="lg:col-span-3 bg-white p-8 pb-4">
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
-                Please enter the details
+                Fill the Form Below
               </h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -132,9 +143,9 @@ const Contact = () => {
                 <input type="hidden" name="source" value={formData.source} />
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <h3 className="block text-sm font-medium text-gray-700 mb-2">
                     Company Name*
-                  </label>
+                  </h3>
                   <Input
                     type="text"
                     required
@@ -145,9 +156,9 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <h3 className="block text-sm font-medium text-gray-700 mb-2">
                     Company Email*
-                  </label>
+                  </h3>
                   <Input
                     type="email"
                     required
@@ -178,9 +189,9 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <h3 className="block text-sm font-medium text-gray-700 mb-2">
                     Mobile Number
-                  </label>
+                  </h3>
                   <div className="flex">
                     <div className="flex items-center bg-gray-50 border border-r-0 border-gray-300 px-3 rounded-l-md">
                       <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyMCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE0IiByeD0iMiIgZmlsbD0iI0ZGOTkzMyIvPgo8cmVjdCB5PSI0LjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iNC42NjY2NyIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSI5LjMzMzMzIiB3aWR0aD0iMjAiIGhlaWdodD0iNC42NjY2NyIgZmlsbD0iIzEzOEE0NiIvPgo8L3N2Zz4K" alt="IN" className="w-5 h-4 mr-2" />
@@ -197,14 +208,15 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Describe your campaign briefly*
-                  </label>
+                  <h3 className="block text-sm font-medium text-gray-700 mb-2">
+                    Campaign Details*
+                  </h3>
                   <Textarea
                     value={formData.project_description}
                     onChange={(e) => handleInputChange("project_description", e.target.value)}
                     rows={4}
                     className="w-full border-gray-300"
+                    placeholder="Describe your campaign briefly"
                     required
                   />
                 </div>
