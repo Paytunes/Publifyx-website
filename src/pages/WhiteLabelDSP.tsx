@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -84,41 +83,12 @@ const WhiteLabelDSP = () => {
   ];
 
   const features = [
-    {
-      title: "Real-Time Bidding Engine",
-      icon: Zap,
-      description: "Advanced RTB technology for optimal performance"
-    },
-    {
-      title: "Self-Serve and Managed Campaign Modes",
-      icon: Target,
-      description: "Flexible campaign management options"
-    },
-    {
-      title: "Customizable UI with Your Branding",
-      icon: Sparkles,
-      description: "Complete white-label customization"
-    },
-    {
-      title: "Advanced Targeting & Reporting Tools",
-      icon: ChevronRight,
-      description: "Precision targeting with detailed analytics"
-    },
-    {
-      title: "Multi-Format Support: Display, Video, Audio, Native, CTV",
-      icon: Star,
-      description: "Comprehensive ad format coverage"
-    },
-    {
-      title: "API Access for Deep Integrations",
-      icon: Shield,
-      description: "Complete API access for custom integrations"
-    },
-    {
-      title: "24/7 Tech Support & Dedicated Onboarding",
-      icon: Rocket,
-      description: "Full support and seamless onboarding"
-    }
+    "⚡ Real-Time Bidding Engine",
+    "🎯 Self-Serve & Managed Campaign Modes",
+    "🛠 Customizable UI + API Access",
+    "📊 Advanced Targeting & Reporting Tools",
+    "📺 Multi-Format Support: Display, Video, Audio, Native, CTV",
+    "🚀 24/7 Tech Support & Dedicated Onboarding"
   ];
 
   const faqs = [
@@ -303,13 +273,7 @@ const WhiteLabelDSP = () => {
             {features.map((feature, index) => (
               <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white via-gray-50 to-blue-50 hover:scale-105 overflow-hidden">
                 <CardContent className="p-8">
-                  <div className="flex items-start mb-4">
-                    <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-3 mr-4 group-hover:scale-110 transition-transform shadow-lg">
-                      <feature.icon className="text-white" size={24} />
-                    </div>
-                  </div>
-                  <h4 className="font-bold text-gray-800 text-xl mb-3 leading-tight">{feature.title}</h4>
-                  <p className="text-gray-600 text-base leading-relaxed">{feature.description}</p>
+                  <h4 className="font-bold text-gray-800 text-xl mb-3 leading-tight text-center">{feature}</h4>
                 </CardContent>
               </Card>
             ))}
