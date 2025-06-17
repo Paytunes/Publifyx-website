@@ -27,9 +27,6 @@ const Header = () => {
               <Link to="/" className="text-gray-700 hover:text-blue-primary transition-colors">
                 Home
               </Link>
-              <Link to="/ad-insights" className="text-gray-700 hover:text-blue-primary transition-colors">
-                Ad Insights
-              </Link>
               <Link to="/white-label-dsp" className="text-gray-700 hover:text-blue-primary transition-colors">
                 White Label DSP
               </Link>
@@ -67,13 +64,6 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
-                </Link>
-                <Link 
-                  to="/ad-insights" 
-                  className="text-gray-700 hover:text-blue-primary transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Ad Insights
                 </Link>
                 <Link 
                   to="/white-label-dsp" 
