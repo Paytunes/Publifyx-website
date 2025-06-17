@@ -10,13 +10,13 @@ const HeroSection = () => {
           <div className="order-2 lg:order-1">
             <img
               src="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.png"
-              alt="Digital Advertising Solutions"
+              alt="Young woman using phone – digital advertising concept"
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
           <div className="order-1 lg:order-2">
             <h1 className="mb-6">
-              Publifyx pioneers innovative Ad-Tech solutions, transforming the digital advertising realm.
+              PublifyX – AI-Powered Ad-Tech Platform for High-Performance Digital Campaigns
             </h1>
             <div className="space-y-4 mb-8">
               <div className="flex items-center">

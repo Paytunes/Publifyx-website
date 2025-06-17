@@ -4,7 +4,7 @@ const SolutionsSection = () => {
     <section className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="mb-6">Solutions offered</h2>
+          <h2 className="mb-6">Solutions We Offer</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -12,7 +12,7 @@ const SolutionsSection = () => {
             <div className="h-48 overflow-hidden">
               <img
                 src="/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.png"
-                alt="AI-Powered Creativity"
+                alt="Person editing ad video on phone using AI"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -28,7 +28,7 @@ const SolutionsSection = () => {
             <div className="h-48 overflow-hidden">
               <img
                 src="/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.png"
-                alt="OTT Advertising Simplification"
+                alt="Woman watching video content on mobile device"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -44,7 +44,7 @@ const SolutionsSection = () => {
             <div className="h-48 overflow-hidden">
               <img
                 src="/lovable-uploads/d0e4d426-d705-4d55-8135-97e8afdf1613.png"
-                alt="White-Labeled DSP Solutions"
+                alt="Smartphone showing ad interface – DSP solution"
                 className="w-full h-full object-cover"
               />
             </div>

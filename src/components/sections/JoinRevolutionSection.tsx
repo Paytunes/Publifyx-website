@@ -12,7 +12,7 @@ const JoinRevolutionSection = () => {
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
               </svg>
             </div>
-            <h2 className="mb-6 text-left">Join Us in This Revolution</h2>
+            <h2 className="mb-6 text-left">Join the Digital Advertising Revolution</h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed text-left">
               Are you ready to be a part of the future of digital advertising? Join Publifyx in revolutionizing the industry and shaping the way businesses connect with their audiences. Whether you're a creative thinker, a tech enthusiast, or a marketing expert, there's a place for you on our team. Together, we'll push the boundaries of what's possible, innovate relentlessly, and redefine the standards of excellence in digital advertising. Join us on this exciting journey as we transform the way businesses advertise and engage with their customers. Let's revolutionize digital advertising together.
             </p>
@@ -25,7 +25,7 @@ const JoinRevolutionSection = () => {
           <div className="order-2">
             <img
               src="/lovable-uploads/378f516e-ced5-4d46-999b-0075f2957d7a.png"
-              alt="Professional audio production setup with mixing console and microphone"
+              alt="Podcast recording studio – audio ad production setup"
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
