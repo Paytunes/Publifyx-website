@@ -226,34 +226,38 @@ const WhiteLabelDSP = () => {
 
           {/* Key Benefits and Target Audience */}
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            <div className="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 p-8 md:p-10 rounded-3xl border-2 border-green-200 shadow-xl">
+            <div className="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 p-8 md:p-10 rounded-3xl border-2 border-green-200 shadow-xl h-full flex flex-col">
               <h3 className="mb-8 text-gray-800 text-center text-2xl md:text-3xl font-bold">Key Benefits</h3>
-              <ul className="space-y-5">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start group">
-                    <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-full p-2 mr-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
-                      <Check className="text-white" size={16} />
-                    </div>
-                    <span className="text-gray-700 text-lg font-medium leading-relaxed">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex-1 flex flex-col justify-between">
+                <ul className="space-y-6">
+                  {benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-center group min-h-[3.5rem]">
+                      <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-full p-2.5 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                        <Check className="text-white" size={18} />
+                      </div>
+                      <span className="text-gray-700 text-lg font-medium leading-relaxed flex-1">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             
-            <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-8 md:p-10 rounded-3xl border-2 border-blue-200 shadow-xl">
+            <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-8 md:p-10 rounded-3xl border-2 border-blue-200 shadow-xl h-full flex flex-col">
               <h3 className="mb-8 text-gray-800 text-center text-2xl md:text-3xl font-bold">Who's It For?</h3>
-              <div className="space-y-5">
-                {targetAudience.map((audience, index) => (
-                  <div key={index} className="flex items-start group hover:transform hover:scale-105 transition-all duration-300">
-                    <div className={`bg-gradient-to-r ${audience.gradient} rounded-full p-2.5 mr-4 mt-1 flex-shrink-0 shadow-lg`}>
-                      <audience.icon className="text-white" size={16} />
+              <div className="flex-1 flex flex-col justify-between">
+                <div className="space-y-6">
+                  {targetAudience.map((audience, index) => (
+                    <div key={index} className="flex items-center group hover:transform hover:scale-105 transition-all duration-300 min-h-[3.5rem]">
+                      <div className={`bg-gradient-to-r ${audience.gradient} rounded-full p-2.5 mr-4 flex-shrink-0 shadow-lg`}>
+                        <audience.icon className="text-white" size={18} />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-gray-800 text-lg mb-1">{audience.title}</h4>
+                        <p className="text-gray-600 leading-relaxed text-base">{audience.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-gray-800 text-lg mb-1">{audience.title}</h4>
-                      <p className="text-gray-600 leading-relaxed text-base">{audience.description}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
