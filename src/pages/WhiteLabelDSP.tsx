@@ -83,12 +83,41 @@ const WhiteLabelDSP = () => {
   ];
 
   const features = [
-    "⚡ Real-Time Bidding Engine",
-    "🎯 Self-Serve & Managed Campaign Modes",
-    "🛠 Customizable UI + API Access",
-    "📊 Advanced Targeting & Reporting Tools",
-    "📺 Multi-Format Support: Display, Video, Audio, Native, CTV",
-    "🚀 24/7 Tech Support & Dedicated Onboarding"
+    {
+      title: "Real-Time Bidding Engine",
+      description: "Advanced RTB technology for optimal performance",
+      icon: Zap
+    },
+    {
+      title: "Self-Serve and Managed Campaign Modes",
+      description: "Flexible campaign management options",
+      icon: Target
+    },
+    {
+      title: "Customizable UI with Your Branding",
+      description: "Complete white-label customization",
+      icon: Sparkles
+    },
+    {
+      title: "Advanced Targeting & Reporting Tools",
+      description: "Precision targeting with detailed analytics",
+      icon: ChevronRight
+    },
+    {
+      title: "Multi-Format Support: Display, Video, Audio, Native, CTV",
+      description: "Comprehensive ad format coverage",
+      icon: Star
+    },
+    {
+      title: "API Access for Deep Integrations",
+      description: "Complete API access for custom integrations",
+      icon: Shield
+    },
+    {
+      title: "24/7 Tech Support & Dedicated Onboarding",
+      description: "Full support and seamless onboarding",
+      icon: Rocket
+    }
   ];
 
   const faqs = [
@@ -271,9 +300,15 @@ const WhiteLabelDSP = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white via-gray-50 to-blue-50 hover:scale-105 overflow-hidden">
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-gray-200 bg-white hover:scale-105 overflow-hidden">
                 <CardContent className="p-8">
-                  <h4 className="font-bold text-gray-800 text-xl mb-3 leading-tight text-center">{feature}</h4>
+                  <div className="mb-6">
+                    <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4">
+                      <feature.icon className="text-white" size={24} />
+                    </div>
+                  </div>
+                  <h4 className="font-bold text-gray-900 text-xl mb-3 leading-tight">{feature.title}</h4>
+                  <p className="text-gray-600 text-base leading-relaxed">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
