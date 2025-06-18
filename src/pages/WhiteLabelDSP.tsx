@@ -127,8 +127,8 @@ const WhiteLabelDSP = () => {
       icon: Shield
     },
     {
-      title: "White Label Customization & Branding",
-      description: "Full platform branding with your logo and domain",
+      title: "Instantly Scalable without Hiring a Full Dev Team",
+      description: "No code. No team. Just launch.",
       icon: Sparkles
     },
     {
