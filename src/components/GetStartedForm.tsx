@@ -66,7 +66,7 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
     console.log("Final payload being sent:", payload);
 
     try {
-      const response = await fetch("https://staging-app.publifyx.com/api/v1/create_agency/", {
+      const response = await fetch("https://app.publifyx.com/api/v1/create_agency/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
