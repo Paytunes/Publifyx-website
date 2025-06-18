@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -126,6 +125,11 @@ const WhiteLabelDSP = () => {
       title: "API Access for Deep Integrations",
       description: "Complete API access for custom integrations",
       icon: Shield
+    },
+    {
+      title: "White Label Customization & Branding",
+      description: "Full platform branding with your logo and domain",
+      icon: Sparkles
     },
     {
       title: "24/7 Tech Support & Dedicated Onboarding",
