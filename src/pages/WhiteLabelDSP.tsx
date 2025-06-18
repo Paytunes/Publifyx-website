@@ -1,3 +1,4 @@
+
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -315,17 +316,17 @@ const WhiteLabelDSP = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {features.map((feature, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-gray-200 bg-white hover:scale-105 overflow-hidden">
-                <CardContent className="p-8">
-                  <div className="mb-6">
-                    <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4">
-                      <feature.icon className="text-white" size={24} />
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-gray-200 bg-white hover:scale-105 overflow-hidden h-full">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <div className="mb-4">
+                    <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
+                      <feature.icon className="text-white" size={20} />
                     </div>
                   </div>
-                  <h4 className="font-bold text-gray-900 text-xl mb-3 leading-tight">{feature.title}</h4>
-                  <p className="text-gray-600 text-base leading-relaxed">{feature.description}</p>
+                  <h4 className="font-bold text-gray-900 text-lg mb-3 leading-tight flex-grow-0">{feature.title}</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed flex-grow">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
