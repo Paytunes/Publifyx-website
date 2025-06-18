@@ -17,7 +17,7 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
           White Label DSP Solution
         </div>
         <h1 className="mb-6 max-w-5xl mx-auto text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-900 via-orange-600 to-gray-900 bg-clip-text text-transparent leading-tight">
-          White Labelled Platform for <span className="text-orange-500">Programmatic Ad Buying</span>
+          White Labelled Platform for Programmatic Ad Buying
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 mb-4 max-w-4xl mx-auto leading-relaxed font-medium">
           Launch your own ad tech business with our white label DSP for programmatic ad buying for Display, Video, Audio, Native, and CTV ads.

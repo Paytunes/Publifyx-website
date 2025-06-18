@@ -11,23 +11,23 @@ const WhiteLabelFAQSection = () => {
   const faqs = [
     {
       question: "How fast can I go live with my own DSP?",
-      answer: "Most customers launch within 5-7 business days after onboarding."
+      answer: "With PublifyX, your white-labelled DSP can go live in under 2 weeks with complete setup and support."
     },
     {
       question: "Do I need a dev team?",
-      answer: "No. The platform is fully managed — you just focus on growing your business."
+      answer: "No. Our platform is fully managed and requires zero coding or technical setup on your part."
     },
     {
       question: "Can I set my own margins?",
-      answer: "Yes, you control pricing, client billing, and revenue."
+      answer: "Yes, you control pricing, margins, and customer relationships fully."
     },
     {
       question: "What ad formats are supported?",
-      answer: "Display, native, video, mobile, and connected TV."
+      answer: "The platform supports Display, Video, Audio, Native, and CTV ad formats for end-to-end buying."
     },
     {
       question: "How is this different from a reseller model?",
-      answer: "You own the customer experience. Everything runs under your brand."
+      answer: "Unlike a reseller setup, a white-label DSP gives you full branding, pricing control, bidding access, and customer ownership."
     }
   ];
 

@@ -5,22 +5,22 @@ import { Zap, Target, Sparkles, ChevronRight, Star, Shield, Rocket } from "lucid
 const FeaturesSection = () => {
   const features = [
     {
-      title: "Real-Time Bidding Engine",
+      title: "Real-time bidding engine",
       description: "Advanced RTB technology for optimal performance",
       icon: Zap
     },
     {
-      title: "Self-Serve and Managed Campaign Modes",
+      title: "Self-serve and managed campaign modes", 
       description: "Flexible campaign management options",
       icon: Target
     },
     {
-      title: "Customizable UI with Your Branding",
+      title: "Customizable UI",
       description: "Complete white-label customization",
       icon: Sparkles
     },
     {
-      title: "Advanced Targeting & Reporting Tools",
+      title: "Advanced targeting tools",
       description: "Precision targeting with detailed analytics",
       icon: ChevronRight
     },
@@ -30,7 +30,7 @@ const FeaturesSection = () => {
       icon: Star
     },
     {
-      title: "API Access for Deep Integrations",
+      title: "API access for integrations",
       description: "Complete API access for custom integrations",
       icon: Shield
     },
@@ -40,7 +40,7 @@ const FeaturesSection = () => {
       icon: Sparkles
     },
     {
-      title: "24/7 Tech Support & Dedicated Onboarding",
+      title: "24/7 tech support and onboarding",
       description: "Full support and seamless onboarding",
       icon: Rocket
     }
@@ -68,7 +68,7 @@ const FeaturesSection = () => {
                     <feature.icon className="text-white" size={20} />
                   </div>
                 </div>
-                <h4 className="font-bold text-gray-900 text-lg mb-3 leading-tight flex-grow-0">{feature.title}</h4>
+                <h3 className="font-bold text-gray-900 text-lg mb-3 leading-tight flex-grow-0">{feature.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed flex-grow">{feature.description}</p>
               </CardContent>
             </Card>
