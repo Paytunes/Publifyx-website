@@ -1,7 +1,13 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import GetStartedModal from "./GetStartedModal";
 
 const Header = () => {
@@ -24,13 +30,31 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-gray-700 hover:text-blue-primary transition-colors">
+              <Link to="/" className="text-gray-700 hover:text-orange-500 transition-colors">
                 Home
               </Link>
-              <Link to="/white-label-dsp" className="text-gray-700 hover:text-blue-primary transition-colors">
-                White Label DSP
-              </Link>
-              <Link to="/contact" className="text-gray-700 hover:text-blue-primary transition-colors">
+              
+              {/* Services Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-orange-500 transition-colors focus:outline-none">
+                  Services
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-white border shadow-lg">
+                  <DropdownMenuItem asChild>
+                    <Link to="/white-label-dsp" className="w-full px-4 py-2 hover:bg-gray-100">
+                      White Label DSP
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/connected-tv-advertising" className="w-full px-4 py-2 hover:bg-gray-100">
+                      Connected TV Advertising
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">
                 Contact
               </Link>
             </nav>
@@ -60,21 +84,28 @@ const Header = () => {
               <nav className="flex flex-col space-y-4">
                 <Link 
                   to="/" 
-                  className="text-gray-700 hover:text-blue-primary transition-colors"
+                  className="text-gray-700 hover:text-orange-500 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
                 </Link>
                 <Link 
                   to="/white-label-dsp" 
-                  className="text-gray-700 hover:text-blue-primary transition-colors"
+                  className="text-gray-700 hover:text-orange-500 transition-colors pl-4"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   White Label DSP
                 </Link>
                 <Link 
+                  to="/connected-tv-advertising" 
+                  className="text-gray-700 hover:text-orange-500 transition-colors pl-4"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Connected TV Advertising
+                </Link>
+                <Link 
                   to="/contact" 
-                  className="text-gray-700 hover:text-blue-primary transition-colors"
+                  className="text-gray-700 hover:text-orange-500 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact
