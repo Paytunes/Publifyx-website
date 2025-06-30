@@ -34,6 +34,10 @@ const Header = () => {
                 Home
               </Link>
               
+              <Link to="/white-label-dsp" className="text-gray-700 hover:text-orange-500 transition-colors">
+                White Label DSP
+              </Link>
+              
               {/* Services Dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-orange-500 transition-colors focus:outline-none">
@@ -41,11 +45,6 @@ const Header = () => {
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-white border shadow-lg">
-                  <DropdownMenuItem asChild>
-                    <Link to="/white-label-dsp" className="w-full px-4 py-2 hover:bg-gray-100">
-                      White Label DSP
-                    </Link>
-                  </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/connected-tv-advertising" className="w-full px-4 py-2 hover:bg-gray-100">
                       Connected TV Advertising
@@ -91,7 +90,7 @@ const Header = () => {
                 </Link>
                 <Link 
                   to="/white-label-dsp" 
-                  className="text-gray-700 hover:text-orange-500 transition-colors pl-4"
+                  className="text-gray-700 hover:text-orange-500 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   White Label DSP
