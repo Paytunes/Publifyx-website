@@ -1,6 +1,6 @@
 
 import Layout from "@/components/Layout";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GetStartedModal from "@/components/GetStartedModal";
 import CTVHeroSection from "@/components/sections/connectedTV/CTVHeroSection";
 import CTVExplanationSection from "@/components/sections/connectedTV/CTVExplanationSection";
@@ -12,6 +12,27 @@ import CTVFAQSection from "@/components/sections/connectedTV/CTVFAQSection";
 
 const ConnectedTVAdvertising = () => {
   const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Set meta title
+    document.title = "Connected Tv Advertising - PublifyX";
+    
+    // Set meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "Connected TV advertising helps you reach audiences traditional TV can't. Target precisely with our programmatic platform. Learn more today.");
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = "Connected TV advertising helps you reach audiences traditional TV can't. Target precisely with our programmatic platform. Learn more today.";
+      document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+
+    // Cleanup function to reset title when component unmounts
+    return () => {
+      document.title = "PublifyX";
+    };
+  }, []);
 
   const handleGetStarted = () => {
     setIsGetStartedModalOpen(true);
