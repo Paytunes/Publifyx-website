@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Building2, ShoppingBag, MapPin } from "lucide-react";
+import { Building2, ShoppingBag, MapPin, CheckCircle } from "lucide-react";
 
 interface CTVAudienceSectionProps {
   onGetStarted: () => void;
@@ -54,17 +54,19 @@ const CTVAudienceSection = ({ onGetStarted }: CTVAudienceSectionProps) => {
           ))}
         </div>
 
-        <div className="max-w-3xl mx-auto mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-center">Use cases include:</h3>
-          <ul className="space-y-3">
-            {useCases.map((useCase, index) => (
-              <li key={index} className="flex items-start">
-                <span className="text-orange-500 mr-3 text-lg">•</span>
-                <span className="text-gray-700">{useCase}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <Card className="max-w-4xl mx-auto mb-8">
+          <CardContent className="p-8">
+            <h3 className="text-xl font-semibold mb-6 text-center">Key Use Cases Include:</h3>
+            <div className="space-y-4">
+              {useCases.map((useCase, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircle className="text-green-500 flex-shrink-0 mt-1" size={20} />
+                  <span className="text-gray-700">{useCase}</span>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
 
         <div className="text-center">
           <p className="text-lg text-gray-700 mb-6">
