@@ -50,6 +50,11 @@ const Header = () => {
                       Connected TV Advertising
                     </Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/online-banner-advertising" className="w-full px-4 py-2 hover:bg-gray-100">
+                      Online Banner Advertising
+                    </Link>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
 
@@ -101,6 +106,13 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Connected TV Advertising
+                </Link>
+                <Link 
+                  to="/online-banner-advertising" 
+                  className="text-gray-700 hover:text-orange-500 transition-colors pl-4"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Online Banner Advertising
                 </Link>
                 <Link 
                   to="/contact" 

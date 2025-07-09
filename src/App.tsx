@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import AdInsights from "./pages/AdInsights";
 import WhiteLabelDSP from "./pages/WhiteLabelDSP";
 import ConnectedTVAdvertising from "./pages/ConnectedTVAdvertising";
+import OnlineBannerAdvertising from "./pages/OnlineBannerAdvertising";
 import Contact from "./pages/Contact";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/ad-insights" element={<AdInsights />} />
           <Route path="/white-label-dsp" element={<WhiteLabelDSP />} />
           <Route path="/connected-tv-advertising" element={<ConnectedTVAdvertising />} />
+          <Route path="/online-banner-advertising" element={<OnlineBannerAdvertising />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms_and_conditions" element={<TermsConditions />} />
           <Route path="/privacy_policy" element={<PrivacyPolicy />} />
