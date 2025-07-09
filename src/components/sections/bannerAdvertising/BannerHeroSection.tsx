@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { ArrowRight, Play, Zap, Target, TrendingUp } from "lucide-react";
+import { ArrowRight, Zap, Target, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface BannerHeroSectionProps {
@@ -89,8 +89,8 @@ const BannerHeroSection = ({ onGetStarted, onWatchDemo }: BannerHeroSectionProps
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA Button */}
+            <div className="mb-8">
               <Button 
                 onClick={onGetStarted}
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg group"
@@ -98,19 +98,10 @@ const BannerHeroSection = ({ onGetStarted, onWatchDemo }: BannerHeroSectionProps
                 ✅ Get Started in 30 Seconds
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              
-              <Button 
-                onClick={onWatchDemo}
-                variant="outline"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:scale-105"
-              >
-                <Play className="mr-2 w-5 h-5" />
-                📊 Watch How It Works
-              </Button>
             </div>
 
             {/* Trust Indicators */}
-            <div className="mt-8 pt-8 border-t border-gray-200">
+            <div className="pt-8 border-t border-gray-200">
               <p className="text-sm text-gray-500 mb-4">Trusted by 500+ brands worldwide</p>
               <div className="flex items-center space-x-4 opacity-60">
                 <div className="px-3 py-1 bg-gray-100 rounded text-xs font-medium">

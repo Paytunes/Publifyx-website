@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { BarChart3, Palette, Zap, Headphones, Globe, Shield } from "lucide-react";
+import { BarChart3, Zap, Headphones } from "lucide-react";
 
 const BannerFeaturesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,13 +13,6 @@ const BannerFeaturesSection = () => {
       description: "Track and assess the effectiveness of your ads continuously with robust, real-time analytics. Get instant insights to refine strategies and match evolving customer behaviors.",
       mockup: "📊 Live Dashboard",
       color: "bg-blue-500"
-    },
-    {
-      icon: Palette,
-      title: "Advanced Customization",
-      description: "Design visually stunning ads tailored to your brand's unique voice and objectives. Create compelling banners that stand out and drive engagement.",
-      mockup: "🎨 Design Studio",
-      color: "bg-purple-500"
     },
     {
       icon: Zap,
@@ -144,15 +137,6 @@ const BannerFeaturesSection = () => {
                   )}
 
                   {selectedFeature === 1 && (
-                    // Design Tools
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="aspect-square bg-gradient-to-br from-red-400 to-pink-500 rounded-lg"></div>
-                      <div className="aspect-square bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg"></div>
-                      <div className="aspect-square bg-gradient-to-br from-green-400 to-teal-500 rounded-lg"></div>
-                    </div>
-                  )}
-
-                  {selectedFeature === 2 && (
                     // Integration Platforms
                     <div className="flex justify-center items-center space-x-4">
                       <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold">FB</div>
@@ -162,7 +146,7 @@ const BannerFeaturesSection = () => {
                     </div>
                   )}
 
-                  {selectedFeature === 3 && (
+                  {selectedFeature === 2 && (
                     // Support Interface
                     <div className="space-y-3">
                       <div className="flex items-center space-x-3">

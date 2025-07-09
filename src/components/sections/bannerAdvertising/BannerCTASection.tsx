@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Rocket, ArrowRight, CheckCircle, Zap, Star } from "lucide-react";
+import { Rocket, ArrowRight, Zap, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface BannerCTASectionProps {
@@ -86,22 +86,6 @@ const BannerCTASection = ({ onGetStarted }: BannerCTASectionProps) => {
             </p>
           </div>
 
-          {/* Features List */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <CheckCircle className="w-6 h-6 text-green-300" />
-              <span className="text-white font-medium">30-Day Free Trial</span>
-            </div>
-            <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <CheckCircle className="w-6 h-6 text-green-300" />
-              <span className="text-white font-medium">No Setup Fees</span>
-            </div>
-            <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <CheckCircle className="w-6 h-6 text-green-300" />
-              <span className="text-white font-medium">24/7 Expert Support</span>
-            </div>
-          </div>
-
           {/* Main CTA Button */}
           <div className="mb-8">
             <Button 
@@ -126,21 +110,9 @@ const BannerCTASection = ({ onGetStarted }: BannerCTASectionProps) => {
             </div>
             
             <div className="flex items-center space-x-2">
-              <CheckCircle className="w-4 h-4 text-green-300" />
-              <span className="text-sm">Trusted by 500+ Brands</span>
-            </div>
-            
-            <div className="flex items-center space-x-2">
               <Zap className="w-4 h-4 text-yellow-300" />
               <span className="text-sm">Setup in Under 5 Minutes</span>
             </div>
-          </div>
-
-          {/* Urgency Text */}
-          <div className="mt-8 p-4 bg-black/20 backdrop-blur-sm rounded-lg inline-block">
-            <p className="text-white/90 text-sm">
-              🔥 <strong>Special Launch Offer:</strong> Get 50% off your first 3 months when you start today!
-            </p>
           </div>
         </div>
       </div>
