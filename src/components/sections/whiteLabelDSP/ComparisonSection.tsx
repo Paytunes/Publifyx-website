@@ -6,12 +6,12 @@ const ComparisonSection = () => {
     {
       feature: "Time to Launch",
       buildOwn: "12–18 months",
-      whiteLabel: "Our White Labelled Platform"
+      whiteLabel: "15 minutes"
     },
     {
       feature: "Upfront Investment",
       buildOwn: "$250K+",
-      whiteLabel: "Our White Labelled Platform"
+      whiteLabel: "Zero"
     },
     {
       feature: "Maintenance & Infrastructure",
