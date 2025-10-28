@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import DigitalHeroSection from "@/components/sections/digitalAdvertising/DigitalHeroSection";
 import PlatformGridSection from "@/components/sections/digitalAdvertising/PlatformGridSection";
 import InquiryBannerSection from "@/components/sections/digitalAdvertising/InquiryBannerSection";
 import ExplainerSection from "@/components/sections/digitalAdvertising/ExplainerSection";
@@ -10,7 +9,6 @@ import DigitalContactSection from "@/components/sections/digitalAdvertising/Digi
 const DigitalAdvertising = () => {
   return (
     <Layout>
-      <DigitalHeroSection />
       <PlatformGridSection />
       <InquiryBannerSection />
       <ExplainerSection />
