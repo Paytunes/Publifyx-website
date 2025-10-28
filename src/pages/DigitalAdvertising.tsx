@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import PlatformGridSection from "@/components/sections/digitalAdvertising/PlatformGridSection";
 import InquiryBannerSection from "@/components/sections/digitalAdvertising/InquiryBannerSection";
-import ExplainerSection from "@/components/sections/digitalAdvertising/ExplainerSection";
+import DigitalInfoSection from "@/components/sections/digitalAdvertising/DigitalInfoSection";
 import PricingTableSection from "@/components/sections/digitalAdvertising/PricingTableSection";
 import DigitalFAQSection from "@/components/sections/digitalAdvertising/DigitalFAQSection";
 import DigitalContactSection from "@/components/sections/digitalAdvertising/DigitalContactSection";
@@ -11,7 +11,7 @@ const DigitalAdvertising = () => {
     <Layout>
       <PlatformGridSection />
       <InquiryBannerSection />
-      <ExplainerSection />
+      <DigitalInfoSection />
       <PricingTableSection />
       <DigitalFAQSection />
       <DigitalContactSection />
