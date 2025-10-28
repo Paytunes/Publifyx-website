@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
 import DigitalHeroSection from "@/components/sections/digitalAdvertising/DigitalHeroSection";
 import PlatformGridSection from "@/components/sections/digitalAdvertising/PlatformGridSection";
 import InquiryBannerSection from "@/components/sections/digitalAdvertising/InquiryBannerSection";
@@ -9,18 +9,15 @@ import DigitalContactSection from "@/components/sections/digitalAdvertising/Digi
 
 const DigitalAdvertising = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-1">
-        <DigitalHeroSection />
-        <PlatformGridSection />
-        <InquiryBannerSection />
-        <ExplainerSection />
-        <PricingTableSection />
-        <DigitalFAQSection />
-        <DigitalContactSection />
-      </main>
-      <Footer />
-    </div>
+    <Layout>
+      <DigitalHeroSection />
+      <PlatformGridSection />
+      <InquiryBannerSection />
+      <ExplainerSection />
+      <PricingTableSection />
+      <DigitalFAQSection />
+      <DigitalContactSection />
+    </Layout>
   );
 };
 
