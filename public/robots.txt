@@ -1,14 +1,22 @@
+# Allow major search engines
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: Twitterbot
+# Allow AI crawlers for visibility
+User-agent: ChatGPTBot
 Allow: /
 
-User-agent: facebookexternalhit
+User-agent: GPTBot
 Allow: /
 
-User-agent: *
+User-agent: GeminiBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
