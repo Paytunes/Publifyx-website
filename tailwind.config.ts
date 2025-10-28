@@ -33,6 +33,9 @@ export default {
 				'yellow-secondary': '#FF9A33',
 				'gray-text': '#1F2937',
 				'gray-light': '#F9FAFB',
+				'purple-primary': 'hsl(271 81% 37%)',
+				'purple-secondary': 'hsl(250 95% 76%)',
+				'purple-accent': 'hsl(271 91% 65%)',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

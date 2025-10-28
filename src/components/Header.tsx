@@ -55,6 +55,11 @@ const Header = () => {
                       Online Banner Advertising
                     </Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/digital-advertising" className="w-full px-4 py-2 hover:bg-gray-100">
+                      Digital Advertising
+                    </Link>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
 
@@ -113,6 +118,13 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Online Banner Advertising
+                </Link>
+                <Link 
+                  to="/digital-advertising" 
+                  className="text-gray-700 hover:text-orange-500 transition-colors pl-4"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Digital Advertising
                 </Link>
                 <Link 
                   to="/contact" 
