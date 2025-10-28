@@ -25,47 +25,43 @@ const features = [
 
 const ExplainerSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Digital Audio Advertising?
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-[1400px] mx-auto px-6">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Why Choose Digital Advertising?
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Digital audio advertising combines the emotional impact of audio storytelling with the precision 
-            of digital targeting, delivering measurable results for brands of all sizes.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Digital advertising combines the power of targeted reach with measurable results, 
+            delivering exceptional ROI for brands of all sizes.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div 
                 key={index}
-                className="flex gap-4 p-6 rounded-xl border border-gray-200 hover:border-purple-accent hover:shadow-md transition-all duration-300"
+                className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-purple-primary hover:shadow-xl transition-all duration-300 group"
               >
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-purple-primary" />
-                  </div>
+                <div className="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center mb-5 group-hover:bg-purple-primary transition-colors">
+                  <Icon className="w-7 h-7 text-purple-primary group-hover:text-white transition-colors" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-[15px]">
+                  {feature.description}
+                </p>
               </div>
             );
           })}
         </div>
 
-        <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-            How Digital Audio Advertising Works
+        <div className="bg-white rounded-2xl p-10 md:p-14 border border-gray-200 shadow-sm">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+            How Digital Advertising Works
           </h3>
           
           <div className="space-y-6">

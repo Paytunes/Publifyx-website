@@ -1,101 +1,140 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Users, TrendingUp } from "lucide-react";
+import { Users, Wallet } from "lucide-react";
 
 const platforms = [
+  {
+    name: "JioSaavn",
+    category: "Music",
+    users: "100M Monthly Unique Users",
+    minSpend: "₹3,00,000",
+    gradient: "from-emerald-400 to-teal-500",
+  },
+  {
+    name: "Gaana",
+    category: "Entertainment",
+    users: "185M Monthly Unique Users",
+    minSpend: "₹50,000",
+    gradient: "from-red-500 to-orange-500",
+  },
+  {
+    name: "Wynk Music",
+    category: "Music",
+    users: "100M Monthly Unique Users",
+    minSpend: "₹1,00,000",
+    gradient: "from-pink-500 to-purple-500",
+  },
   {
     name: "Spotify",
     category: "Music Streaming",
     users: "8M+ Monthly Users",
-    pricing: "Starting ₹50,000",
-    logo: "🎵",
+    minSpend: "₹50,000",
+    gradient: "from-green-400 to-emerald-600",
   },
   {
-    name: "JioSaavn",
-    category: "Audio Streaming",
-    users: "15M+ Monthly Users",
-    pricing: "Starting ₹35,000",
-    logo: "🎼",
-  },
-  {
-    name: "Gaana",
-    category: "Music Platform",
-    users: "12M+ Monthly Users",
-    pricing: "Starting ₹40,000",
-    logo: "🎶",
-  },
-  {
-    name: "Wynk Music",
-    category: "Streaming Service",
-    users: "10M+ Monthly Users",
-    pricing: "Starting ₹45,000",
-    logo: "🎧",
+    name: "YouTube Music",
+    category: "Video & Audio",
+    users: "491M Monthly Unique Users",
+    minSpend: "₹10,000",
+    gradient: "from-red-600 to-red-700",
   },
   {
     name: "Amazon Music",
     category: "Digital Streaming",
     users: "6M+ Monthly Users",
-    pricing: "Starting ₹55,000",
-    logo: "🎸",
+    minSpend: "₹55,000",
+    gradient: "from-blue-500 to-cyan-500",
   },
   {
-    name: "YouTube Music",
-    category: "Video & Audio",
+    name: "Hungama",
+    category: "Entertainment",
+    users: "45M Monthly Unique Users",
+    minSpend: "₹1,00,000",
+    gradient: "from-orange-500 to-yellow-500",
+  },
+  {
+    name: "Resso",
+    category: "Music Streaming",
     users: "20M+ Monthly Users",
-    pricing: "Starting ₹60,000",
-    logo: "▶️",
+    minSpend: "₹25,000",
+    gradient: "from-purple-500 to-indigo-600",
+  },
+  {
+    name: "Apple Music",
+    category: "Music Platform",
+    users: "5M+ Monthly Users",
+    minSpend: "₹75,000",
+    gradient: "from-gray-700 to-gray-900",
   },
 ];
 
 const PlatformGridSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Top Digital Advertising Platforms
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Choose from India's leading audio streaming platforms to reach your target audience
-          </p>
+    <section className="py-12 bg-white">
+      <div className="max-w-[1400px] mx-auto px-6">
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              Book Digital Advertisements
+            </h2>
+            <p className="text-gray-600">
+              Choose from India's leading digital platforms to reach your target audience
+            </p>
+          </div>
+          <div className="hidden md:flex items-center gap-2 text-sm text-gray-600">
+            <span>Sort by:</span>
+            <select className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-primary">
+              <option>Top Searched</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Users: High to Low</option>
+            </select>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {platforms.map((platform, index) => (
-            <Card 
-              key={index} 
-              className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200 bg-white"
+            <div
+              key={index}
+              className="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             >
-              <div className="flex flex-col h-full">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="text-5xl">{platform.logo}</div>
-                  <span className="text-xs font-medium px-3 py-1 bg-purple-100 text-purple-primary rounded-full">
-                    {platform.category}
-                  </span>
+              {/* Logo Area with Gradient */}
+              <div className={`h-40 bg-gradient-to-br ${platform.gradient} flex items-center justify-center relative`}>
+                <div className="text-white text-5xl font-bold">
+                  {platform.name.charAt(0)}
                 </div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {platform.name}
-                </h3>
-                
-                <div className="space-y-2 mb-4 flex-grow">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Users className="w-4 h-4 text-purple-accent" />
+              </div>
+
+              {/* Content Area */}
+              <div className="p-5">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      {platform.name}
+                    </h3>
+                    <span className="text-sm font-medium text-gray-600">
+                      {platform.category}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="space-y-2.5 mb-5">
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    <Users className="w-4 h-4 text-purple-primary flex-shrink-0" />
                     <span>{platform.users}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <TrendingUp className="w-4 h-4 text-purple-accent" />
-                    <span>{platform.pricing}</span>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-gray-900">
+                    <Wallet className="w-4 h-4 text-purple-primary flex-shrink-0" />
+                    <span>{platform.minSpend} Min Spend</span>
                   </div>
                 </div>
-                
-                <Button 
-                  className="w-full bg-purple-primary hover:bg-purple-primary/90 text-white font-semibold"
+
+                <Button
+                  className="w-full bg-purple-primary hover:bg-purple-primary/90 text-white font-semibold h-11"
                 >
-                  Get Rates
+                  View Details
                 </Button>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
