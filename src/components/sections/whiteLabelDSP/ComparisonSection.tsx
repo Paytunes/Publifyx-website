@@ -6,7 +6,7 @@ const ComparisonSection = () => {
     {
       feature: "Time to Launch",
       buildOwn: "12–18 months",
-      whiteLabel: "15 minutes"
+      whiteLabel: "Under 15 mins"
     },
     {
       feature: "Upfront Investment",
