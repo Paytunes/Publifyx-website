@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -20,7 +19,7 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
     state: "",
     city: "",
     pincode: "",
-    gstin: ""
+    gstin: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,7 +36,7 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
       fullName: formData.name,
       email: formData.email,
       companyName: formData.companyName,
-      mobile: formData.phoneNumber.replace(/\D/g, ''), // Remove non-numeric
+      mobile: formData.phoneNumber.replace(/\D/g, ""), // Remove non-numeric
       billingAddress: formData.billingAddress,
       state: formData.state,
       city: formData.city,
@@ -46,8 +45,10 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
     };
 
     // Format mobile number with +91 prefix and ensure it's properly formatted
-    const formattedMobile = values.mobile.startsWith('91') ? `+${values.mobile}` : `+91${values.mobile}`;
-    
+    //const formattedMobile = values.mobile.startsWith('91') ? `+${values.mobile}` : `+91${values.mobile}`;
+    const formattedMobile =
+      values.mobile.length === 12 && values.mobile.startsWith("91") ? `+${values.mobile}` : `+91${values.mobile}`;
+
     console.log("Formatted mobile:", formattedMobile);
     console.log("State value being sent:", values.state);
 
@@ -83,7 +84,7 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
           title: "Success!",
           description: "Your details have been submitted successfully!",
         });
-        
+
         // Reset form
         setFormData({
           name: "",
@@ -94,25 +95,25 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
           state: "",
           city: "",
           pincode: "",
-          gstin: ""
+          gstin: "",
         });
-        
+
         onClose();
       } else {
         console.error("API error:", responseData);
-        
+
         // Create a more detailed error message
         let errorMessage = "Please check the following fields:\n";
         if (responseData.mobile) {
-          errorMessage += `• Phone: ${responseData.mobile.join(', ')}\n`;
+          errorMessage += `• Phone: ${responseData.mobile.join(", ")}\n`;
         }
         if (responseData.billing_state) {
-          errorMessage += `• State: ${responseData.billing_state.join(', ')}\n`;
+          errorMessage += `• State: ${responseData.billing_state.join(", ")}\n`;
         }
         if (responseData.billing_city) {
-          errorMessage += `• City: ${responseData.billing_city.join(', ')}\n`;
+          errorMessage += `• City: ${responseData.billing_city.join(", ")}\n`;
         }
-        
+
         toast({
           title: "Submission Failed",
           description: errorMessage || responseData?.message || "Unknown error occurred",
@@ -133,7 +134,7 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
 
   const handleInputChange = (field: string, value: string) => {
     console.log(`Field ${field} changed to:`, value);
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -141,9 +142,9 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
       <PersonalInfoFields formData={formData} onInputChange={handleInputChange} />
       <AddressFields formData={formData} onInputChange={handleInputChange} />
       <GSTINField formData={formData} onInputChange={handleInputChange} />
-      
-      <Button 
-        type="submit" 
+
+      <Button
+        type="submit"
         disabled={isSubmitting}
         className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-medium text-lg disabled:opacity-50"
       >
