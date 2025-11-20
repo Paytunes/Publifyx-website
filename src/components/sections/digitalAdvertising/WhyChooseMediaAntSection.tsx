@@ -1,6 +1,8 @@
+import { Separator } from "@/components/ui/separator";
+
 const reasons = [
   {
-    title: "1. Better ROI Through Expert Optimization",
+    title: "1. Better ROI with Proven Expertise",
     description: "We've managed ₹50+ crore in ad spend. Our campaigns deliver 20-30% lower cost per lead than DIY efforts—saving you money while getting more results."
   },
   {
@@ -28,35 +30,40 @@ const reasons = [
     description: "Month-to-month engagements. Clients stay for results, not because they're locked in. Pause or stop with 7 days notice."
   },
   {
-    title: "8. Strategy Included Free",
+    title: "8. Free Strategy & Creative Planning",
     description: "Free campaign planning, creative development, and media mix recommendations (worth ₹15,000)—included with every campaign."
   }
 ];
 
 const WhyChooseMediaAntSection = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-muted/30">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose The Media Ant for Digital Advertising?
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Why Choose Publifyx for Digital Advertising?
           </h2>
         </div>
 
-        <div className="space-y-6 mb-12">
+        <div className="space-y-0 mb-12">
           {reasons.map((reason, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-purple-primary hover:shadow-lg transition-all">
-              <h3 className="text-xl font-bold text-purple-primary mb-3">
-                {reason.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {reason.description}
-              </p>
+            <div key={index}>
+              <div className="bg-card p-8 rounded-lg">
+                <h3 className="text-xl font-bold text-primary mb-3">
+                  {reason.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {reason.description}
+                </p>
+              </div>
+              {index < reasons.length - 1 && (
+                <Separator className="my-6" />
+              )}
             </div>
           ))}
         </div>
 
-        <div className="bg-gradient-to-br from-purple-primary to-purple-accent text-white rounded-2xl p-10 text-center">
+        <div className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-2xl p-10 text-center">
           <p className="text-2xl font-bold mb-4">
             The bottom line: You get agency expertise without agency headaches—better results, transparent reporting, and dedicated support at every step.
           </p>
