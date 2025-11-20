@@ -11,21 +11,21 @@ const benefits = [
 
 const WhyTrustSection = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-background">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why 8,000+ Businesses Trust The Media Ant for Digital Advertising?
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Why 8,000+ Businesses Trust Publifyx for Digital Advertising
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {benefits.map((benefit, index) => (
-            <div key={index} className="flex items-start gap-4 bg-gray-50 p-6 rounded-xl border border-gray-200">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-primary flex items-center justify-center mt-1">
-                <Check className="w-4 h-4 text-white" />
+            <div key={index} className="flex items-start gap-4 bg-muted/30 p-6 rounded-xl border border-border hover:shadow-md transition-shadow">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center mt-1">
+                <Check className="w-4 h-4 text-primary-foreground" />
               </div>
-              <p className="text-gray-700 leading-relaxed">{benefit}</p>
+              <p className="text-foreground leading-relaxed">{benefit}</p>
             </div>
           ))}
         </div>
