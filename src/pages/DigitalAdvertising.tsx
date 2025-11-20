@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import PublisherLogosSection from "@/components/sections/digitalAdvertising/PublisherLogosSection";
 import PlatformGridSection from "@/components/sections/digitalAdvertising/PlatformGridSection";
 import DigitalPricingSection from "@/components/sections/digitalAdvertising/DigitalPricingSection";
 import TMAInsightsSection from "@/components/sections/digitalAdvertising/TMAInsightsSection";
@@ -21,6 +22,7 @@ import DigitalFAQSection from "@/components/sections/digitalAdvertising/DigitalF
 const DigitalAdvertising = () => {
   return (
     <Layout>
+      <PublisherLogosSection />
       <PlatformGridSection />
       <DigitalPricingSection />
       <TMAInsightsSection />
