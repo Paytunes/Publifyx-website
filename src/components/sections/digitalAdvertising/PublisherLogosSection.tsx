@@ -16,6 +16,14 @@ import linkedin from "@/assets/publishers/linkedin.jpg";
 import moneycontrol from "@/assets/publishers/moneycontrol.jpg";
 import ola from "@/assets/publishers/ola.jpg";
 import swiggy from "@/assets/publishers/swiggy.jpg";
+import theHindu from "@/assets/publishers/the-hindu.jpg";
+import tiktok from "@/assets/publishers/tiktok.jpg";
+import timesOfIndia from "@/assets/publishers/times-of-india.jpg";
+import truecaller from "@/assets/publishers/truecaller.jpg";
+import vogue from "@/assets/publishers/vogue.jpg";
+import yourcabs from "@/assets/publishers/yourcabs.jpg";
+import youtube from "@/assets/publishers/youtube.jpg";
+import zee5 from "@/assets/publishers/zee5.jpg";
 
 const publishers = [
   {
@@ -125,6 +133,54 @@ const publishers = [
     name: "Swiggy",
     label: "Publisher",
     metric: "15M+ Orders/Month",
+  },
+  {
+    logo: theHindu,
+    name: "The Hindu",
+    label: "Publisher",
+    metric: "80M+ Readers",
+  },
+  {
+    logo: tiktok,
+    name: "TikTok",
+    label: "Publisher",
+    metric: "1B+ Users",
+  },
+  {
+    logo: timesOfIndia,
+    name: "Times of India",
+    label: "Publisher",
+    metric: "200M+ Readers",
+  },
+  {
+    logo: truecaller,
+    name: "Truecaller",
+    label: "Publisher",
+    metric: "300M+ Users",
+  },
+  {
+    logo: vogue,
+    name: "Vogue",
+    label: "Publisher",
+    metric: "Premium Fashion",
+  },
+  {
+    logo: yourcabs,
+    name: "YourCabs",
+    label: "Publisher",
+    metric: "Travel Network",
+  },
+  {
+    logo: youtube,
+    name: "YouTube",
+    label: "Publisher",
+    metric: "2.5B+ Users",
+  },
+  {
+    logo: zee5,
+    name: "ZEE5",
+    label: "Publisher",
+    metric: "100M+ Users",
   },
 ];
 
