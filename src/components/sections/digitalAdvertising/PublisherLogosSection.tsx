@@ -6,6 +6,16 @@ import facebook from "@/assets/publishers/facebook.jpg";
 import gaana from "@/assets/publishers/gaana.jpg";
 import googleDisplay from "@/assets/publishers/google-display.jpg";
 import googleSearch from "@/assets/publishers/google-search.jpg";
+import hindustanTimes from "@/assets/publishers/hindustan-times.jpg";
+import iccCricket from "@/assets/publishers/icc-cricket.jpg";
+import industryBuying from "@/assets/publishers/industry-buying.jpg";
+import instagram from "@/assets/publishers/instagram.jpg";
+import jioHotstar from "@/assets/publishers/jio-hotstar.jpg";
+import jioSaavn from "@/assets/publishers/jio-saavn.jpg";
+import linkedin from "@/assets/publishers/linkedin.jpg";
+import moneycontrol from "@/assets/publishers/moneycontrol.jpg";
+import ola from "@/assets/publishers/ola.jpg";
+import swiggy from "@/assets/publishers/swiggy.jpg";
 
 const publishers = [
   {
@@ -55,6 +65,66 @@ const publishers = [
     name: "Google Search",
     label: "Publisher",
     metric: "8.5B+ Searches/Day",
+  },
+  {
+    logo: hindustanTimes,
+    name: "Hindustan Times",
+    label: "Publisher",
+    metric: "100M+ Readers",
+  },
+  {
+    logo: iccCricket,
+    name: "ICC Cricket",
+    label: "Publisher",
+    metric: "1B+ Fans",
+  },
+  {
+    logo: industryBuying,
+    name: "IndustryBuying",
+    label: "Publisher",
+    metric: "B2B E-Commerce",
+  },
+  {
+    logo: instagram,
+    name: "Instagram",
+    label: "Publisher",
+    metric: "2B+ Users",
+  },
+  {
+    logo: jioHotstar,
+    name: "JioHotstar",
+    label: "Publisher",
+    metric: "300M+ Users",
+  },
+  {
+    logo: jioSaavn,
+    name: "JioSaavn",
+    label: "Publisher",
+    metric: "100M+ Users",
+  },
+  {
+    logo: linkedin,
+    name: "LinkedIn",
+    label: "Publisher",
+    metric: "900M+ Professionals",
+  },
+  {
+    logo: moneycontrol,
+    name: "MoneyControl",
+    label: "Publisher",
+    metric: "50M+ Users",
+  },
+  {
+    logo: ola,
+    name: "OLA",
+    label: "Publisher",
+    metric: "250M+ Users",
+  },
+  {
+    logo: swiggy,
+    name: "Swiggy",
+    label: "Publisher",
+    metric: "15M+ Orders/Month",
   },
 ];
 
