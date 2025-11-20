@@ -1,4 +1,6 @@
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import { Phone, Mail } from "lucide-react";
 
 const reasons = [
   {
@@ -63,13 +65,40 @@ const WhyChooseMediaAntSection = () => {
           ))}
         </div>
 
-        <div className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-2xl p-10 text-center">
-          <p className="text-2xl font-bold mb-4">
-            The bottom line: You get agency expertise without agency headaches—better results, transparent reporting, and dedicated support at every step.
-          </p>
-          <p className="text-xl mb-6">
-            No lock-ins. No hidden costs. Just performance-driven campaigns that deliver measurable growth.
-          </p>
+        <div className="mt-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
+            The Bottom Line
+          </h2>
+          
+          <div className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-2xl p-10">
+            <p className="text-2xl font-bold mb-4 text-center">
+              You get agency expertise without agency headaches—better results, transparent reporting, and dedicated support at every step.
+            </p>
+            <p className="text-xl mb-8 text-center">
+              No lock-ins. No hidden costs. Just performance-driven campaigns that deliver measurable growth.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+              <Button size="lg" variant="secondary" className="w-full sm:w-auto font-semibold">
+                Start Your Campaign with Publifyx
+              </Button>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold bg-background/10 hover:bg-background/20 border-primary-foreground/30 text-primary-foreground hover:text-primary-foreground">
+                Schedule a Free Consultation
+              </Button>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6 text-primary-foreground">
+              <a href="tel:+918448330304" className="flex items-center gap-2 hover:underline">
+                <Phone className="w-5 h-5" />
+                <span className="font-semibold">Call: +91-8448330304</span>
+              </a>
+              <span className="hidden sm:inline text-primary-foreground/50">|</span>
+              <a href="mailto:info@publifyx.com" className="flex items-center gap-2 hover:underline">
+                <Mail className="w-5 h-5" />
+                <span className="font-semibold">Email: info@publifyx.com</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
