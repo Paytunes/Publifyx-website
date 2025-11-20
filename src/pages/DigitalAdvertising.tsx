@@ -3,6 +3,7 @@ import PublisherLogosSection from "@/components/sections/digitalAdvertising/Publ
 import PlatformGridSection from "@/components/sections/digitalAdvertising/PlatformGridSection";
 import DigitalPricingSection from "@/components/sections/digitalAdvertising/DigitalPricingSection";
 import TMAInsightsSection from "@/components/sections/digitalAdvertising/TMAInsightsSection";
+import TopAdSpendSection from "@/components/sections/digitalAdvertising/TopAdSpendSection";
 import TopMediasSection from "@/components/sections/digitalAdvertising/TopMediasSection";
 import PopularMediasSection from "@/components/sections/digitalAdvertising/PopularMediasSection";
 import TopMediaOptionsSection from "@/components/sections/digitalAdvertising/TopMediaOptionsSection";
@@ -26,6 +27,7 @@ const DigitalAdvertising = () => {
       <TMAInsightsSection />
       <PlatformGridSection />
       <DigitalPricingSection />
+      <TopAdSpendSection />
       <TopMediasSection />
       <PopularMediasSection />
       <TopMediaOptionsSection />
