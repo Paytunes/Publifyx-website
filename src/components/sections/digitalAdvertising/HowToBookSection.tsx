@@ -1,8 +1,9 @@
 const steps = [
   {
-    step: "Step 1: Tell Us Your Goals",
+    number: "1",
+    title: "Share Your Goals",
     content: [
-      "Visit themediaant.com or call 080-37307893",
+      "Visit [website] or call [phone number]",
       "Share three things:",
       "• What do you want? (leads, sales, awareness, app installs)",
       "• Who's your target audience?",
@@ -11,7 +12,8 @@ const steps = [
     ]
   },
   {
-    step: "Step 2: We Build Your Campaign Strategy",
+    number: "2",
+    title: "Get a Custom Campaign Strategy",
     content: [
       "Our media planners create a custom plan showing:",
       "• Which platforms to use (Google, Meta, YouTube, etc.)",
@@ -22,7 +24,8 @@ const steps = [
     ]
   },
   {
-    step: "Step 3: Campaign Launch & Tracking",
+    number: "3",
+    title: "Campaign Setup & Real-Time Tracking",
     content: [
       "We set up:",
       "• Pixel tracking on your website",
@@ -33,7 +36,8 @@ const steps = [
     ]
   },
   {
-    step: "Step 4: Ongoing Optimization",
+    number: "4",
+    title: "Continuous Optimization",
     content: [
       "We don't just launch and forget.",
       "Weekly actions we take:",
@@ -46,40 +50,46 @@ const steps = [
     ]
   },
   {
-    step: "Step 5: Scale What Works",
+    number: "5",
+    title: "Scale and Expand",
     content: [
       "Found a winning formula? We help you:",
       "• 2x-5x your budget profitably",
       "• Expand to new platforms",
       "• Test new markets/audiences",
       "• Build retargeting funnels",
-      "dedicated campaign manager is available via call, WhatsApp, or email throughout."
+      "Your dedicated campaign manager is available via call, WhatsApp, or email throughout."
     ]
   }
 ];
 
 const HowToBookSection = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-muted/30">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            How to Book Digital Ads with The Media Ant?
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            How to Book Digital Ads with Publifyx
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-muted-foreground">
             Launch your campaign in 24-48 hours. We handle the technical complexity.
           </p>
         </div>
 
         <div className="space-y-8">
           {steps.map((item, index) => (
-            <div key={index} className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
-              <h3 className="text-2xl font-bold text-purple-primary mb-4">
-                {item.step}
-              </h3>
-              <div className="space-y-2">
+            <div key={index} className="bg-card rounded-2xl p-8 border border-border hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                  <span className="text-2xl font-bold text-primary-foreground">{item.number}</span>
+                </div>
+                <h3 className="text-2xl font-bold text-foreground pt-2">
+                  {item.title}
+                </h3>
+              </div>
+              <div className="space-y-2 ml-16">
                 {item.content.map((line, idx) => (
-                  <p key={idx} className="text-gray-600 leading-relaxed">
+                  <p key={idx} className="text-muted-foreground leading-relaxed">
                     {line}
                   </p>
                 ))}
