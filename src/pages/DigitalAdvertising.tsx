@@ -8,7 +8,6 @@ import TopMediasSection from "@/components/sections/digitalAdvertising/TopMedias
 import PopularMediasSection from "@/components/sections/digitalAdvertising/PopularMediasSection";
 import TopMediaOptionsSection from "@/components/sections/digitalAdvertising/TopMediaOptionsSection";
 import TopCategoriesSection from "@/components/sections/digitalAdvertising/TopCategoriesSection";
-import BookDigitalAdsSection from "@/components/sections/digitalAdvertising/BookDigitalAdsSection";
 import WhatAreDigitalAdsSection from "@/components/sections/digitalAdvertising/WhatAreDigitalAdsSection";
 import WhyTrustSection from "@/components/sections/digitalAdvertising/WhyTrustSection";
 import AdvantagesSection from "@/components/sections/digitalAdvertising/AdvantagesSection";
@@ -32,7 +31,6 @@ const DigitalAdvertising = () => {
       <PopularMediasSection />
       <TopMediaOptionsSection />
       <TopCategoriesSection />
-      <BookDigitalAdsSection />
       <WhatAreDigitalAdsSection />
       <WhyTrustSection />
       <AdvantagesSection />
