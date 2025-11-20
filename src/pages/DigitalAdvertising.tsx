@@ -23,9 +23,9 @@ const DigitalAdvertising = () => {
   return (
     <Layout>
       <PublisherLogosSection />
+      <TMAInsightsSection />
       <PlatformGridSection />
       <DigitalPricingSection />
-      <TMAInsightsSection />
       <TopMediasSection />
       <PopularMediasSection />
       <TopMediaOptionsSection />
