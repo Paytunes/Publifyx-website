@@ -1,6 +1,19 @@
 const adTypes = [
   {
-    title: "1. Search Engine Marketing (SEM) – Google & Bing Ads",
+    title: "1. Audio Advertising – Spotify & Jiosaavn (Upto 850+ Audio Apps)",
+    subtitle: "Reach listeners during their commute, workout, and daily activities with voice and audio ads.",
+    details: [
+      "How it works: Your audio message plays between songs or podcasts when users stream music on Spotify, JioSaavn, and 850+ audio apps",
+      "Platforms covered: Spotify (70M+ users), JioSaavn (100M+ users), Gaana, and regional audio platforms",
+      "Ad formats: 15-30 second audio spots, sponsored playlists, display companion ads",
+      "Pricing: ₹150-400 per 1,000 impressions (CPM)",
+      "Best for: Brand awareness, local businesses, automotive, BFSI, education",
+      "Why it works: Captive audience during high-engagement moments with 95% completion rates",
+      "Average results: 20-30% higher recall than display ads, ideal for voice-first campaigns"
+    ]
+  },
+  {
+    title: "2. Search Engine Marketing (SEM) – Google & Bing Ads",
     subtitle: "Show up when customers are actively searching for what you sell.",
     details: [
       "How it works: Your ad appears at the top of Google when someone searches \"buy laptop online\" or \"digital marketing agency in Mumbai\"",
@@ -11,7 +24,7 @@ const adTypes = [
     ]
   },
   {
-    title: "2. Social Media Advertising – Meta, Instagram, LinkedIn",
+    title: "3. Social Media Advertising – Meta, Instagram & LinkedIn",
     subtitle: "Build brand awareness and engagement where your audience spends 2+ hours daily.",
     details: [
       "Available platforms:",
@@ -25,7 +38,7 @@ const adTypes = [
     ]
   },
   {
-    title: "3. Video Advertising – YouTube & OTT Platforms",
+    title: "4. Video Advertising – YouTube & OTT Platforms",
     subtitle: "Capture attention with video content on platforms people are glued to.",
     details: [
       "Available platforms:",
@@ -39,7 +52,7 @@ const adTypes = [
     ]
   },
   {
-    title: "4. Display Ads – Banner & Native Advertising",
+    title: "5. Display Advertising – Banner & Native Ads",
     subtitle: "Stay visible across thousands of websites and apps your customers use daily.",
     details: [
       "Ad formats:",
@@ -53,7 +66,7 @@ const adTypes = [
     ]
   },
   {
-    title: "5. Performance Marketing – Lead & Sales Focused",
+    title: "6. Performance Marketing – Lead & Sales Driven",
     subtitle: "Pay only when you get results—leads, sales, sign-ups, or downloads.",
     details: [
       "What we track:",
@@ -65,42 +78,31 @@ const adTypes = [
       "Why it works: Budget allocated only toward measurable business outcomes",
       "Average results: 3-5x ROAS for optimized campaigns"
     ]
-  },
-  {
-    title: "6. Influencer & Affiliate Marketing",
-    subtitle: "Leverage trusted voices to amplify your brand message.",
-    details: [
-      "How it works: Partner with relevant influencers or affiliates who promote your products to their engaged audiences",
-      "Pricing: ₹10,000-10,00,000 per campaign depending on influencer reach",
-      "Best for: D2C brands, fashion, beauty, tech products, apps",
-      "Why it works: 70% of consumers trust influencer recommendations over brand ads",
-      "Average results: 5-10x engagement vs. traditional ads"
-    ]
   }
 ];
 
 const TypesOfAdsSection = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-background">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Types of Digital Ads
           </h2>
         </div>
 
         <div className="space-y-8">
           {adTypes.map((type, index) => (
-            <div key={index} className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
-              <h3 className="text-2xl font-bold text-purple-primary mb-2">
+            <div key={index} className="bg-card rounded-2xl p-8 border border-border hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold text-primary mb-2">
                 {type.title}
               </h3>
-              <p className="text-lg font-semibold text-gray-700 mb-4">
+              <p className="text-lg font-semibold text-foreground mb-4">
                 {type.subtitle}
               </p>
               <div className="space-y-2">
                 {type.details.map((detail, idx) => (
-                  <p key={idx} className="text-gray-600 leading-relaxed">
+                  <p key={idx} className="text-muted-foreground leading-relaxed">
                     {detail}
                   </p>
                 ))}
