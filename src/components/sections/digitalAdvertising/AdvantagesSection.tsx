@@ -27,21 +27,21 @@ const advantages = [
 
 const AdvantagesSection = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-muted/30">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            What are the Advantages of Digital Advertising?
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Advantages of Digital Advertising
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {advantages.map((advantage, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-purple-primary hover:shadow-xl transition-all duration-300">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+            <div key={index} className="bg-card p-8 rounded-2xl border border-border hover:border-primary hover:shadow-xl transition-all duration-300 animate-fade-in">
+              <h3 className="text-xl font-bold text-foreground mb-3">
                 {advantage.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 {advantage.description}
               </p>
             </div>
