@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Mail, Phone } from "lucide-react";
 
 const BookDigitalAdsSection = () => {
   return (
@@ -9,18 +10,28 @@ const BookDigitalAdsSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Book Digital Ads Across 100+ Platforms in Minutes
             </h2>
-            <p className="text-lg md:text-xl mb-6 opacity-95 leading-relaxed">
-              Advertise on YouTube, Facebook, Instagram, Google, OTT platforms, and 100+ digital channels from one dashboard. Start at ₹5,000 for targeted campaigns with real-time tracking, expert campaign management, and transparent pricing.
-            </p>
-            <p className="text-xl font-semibold mb-8">
-              No agencies taking 20% cuts. No confusing dashboards. Just measurable results.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-lg">
-                Get Instant Quote
+            <div className="space-y-4 mb-8">
+              <p className="text-lg md:text-xl opacity-95 leading-relaxed">
+                Advertise on YouTube, Facebook, Instagram, Google, OTT platforms, and 100+ digital channels from one integrated Publifyx dashboard.
+              </p>
+              <p className="text-lg md:text-xl opacity-95 leading-relaxed">
+                Start at ₹5,000 for targeted, real-time campaigns with transparent pricing and expert optimization.
+              </p>
+              <p className="text-lg md:text-xl font-semibold opacity-95 leading-relaxed">
+                No agencies taking 20% cuts. No complicated dashboards. Just measurable, growth-driven results.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center">
+              <Button size="lg" className="text-lg px-8">
+                Start Your Campaign with Publifyx
               </Button>
               <Button size="lg" variant="outline" className="text-lg bg-white/10 border-white text-white hover:bg-white/20">
-                Call 080-37307893
+                <Phone className="w-5 h-5 mr-2" />
+                Contact Us: +91-XXXXXXXXXX
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg bg-white/10 border-white text-white hover:bg-white/20">
+                <Mail className="w-5 h-5 mr-2" />
+                Email: info@publifyx.com
               </Button>
             </div>
           </div>
