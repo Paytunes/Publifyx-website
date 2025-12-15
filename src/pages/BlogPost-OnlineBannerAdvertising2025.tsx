@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Twitter, Linkedin, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   Accordion,
@@ -9,15 +9,58 @@ import {
 } from "@/components/ui/accordion";
 
 const BlogPostOnlineBannerAdvertising2025 = () => {
+  const pageUrl = encodeURIComponent(window.location.href);
+  const pageTitle = encodeURIComponent("The Complete Guide to High-Impact Online Banner Advertising in 2025");
+
+  const shareLinks = {
+    twitter: `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`,
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`,
+  };
+
   return (
     <Layout>
       {/* Hero Section */}
       <section className="bg-[#7C3AED] text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link to="/blog" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Blog
-          </Link>
+          <div className="flex justify-between items-start mb-6">
+            <Link to="/blog" className="inline-flex items-center text-white/80 hover:text-white transition-colors">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Blog
+            </Link>
+            
+            {/* Social Share Buttons */}
+            <div className="flex items-center gap-3">
+              <span className="text-white/70 text-sm hidden sm:inline">Share:</span>
+              <a
+                href={shareLinks.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                aria-label="Share on Twitter"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a
+                href={shareLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                aria-label="Share on LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href={shareLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                aria-label="Share on Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
             The Complete Guide to High-Impact Online Banner Advertising in 2025
           </h1>
