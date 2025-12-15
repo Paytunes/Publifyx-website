@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+      <header className="fixed top-0 left-0 right-0 bg-purple-primary shadow-md z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -30,17 +30,17 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-gray-700 hover:text-orange-500 transition-colors">
+              <Link to="/" className="text-white hover:text-orange-300 transition-colors">
                 Home
               </Link>
               
-              <Link to="/white-label-dsp" className="text-gray-700 hover:text-orange-500 transition-colors">
+              <Link to="/white-label-dsp" className="text-white hover:text-orange-300 transition-colors">
                 White Label DSP
               </Link>
               
               {/* Services Dropdown */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-orange-500 transition-colors focus:outline-none">
+                <DropdownMenuTrigger className="flex items-center text-white hover:text-orange-300 transition-colors focus:outline-none">
                   Services
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
@@ -63,11 +63,11 @@ const Header = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <Link to="/blog" className="text-gray-700 hover:text-orange-500 transition-colors">
+              <Link to="/blog" className="text-white hover:text-orange-300 transition-colors">
                 Blog
               </Link>
 
-              <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">
+              <Link to="/contact" className="text-white hover:text-orange-300 transition-colors">
                 Contact
               </Link>
             </nav>
@@ -84,7 +84,7 @@ const Header = () => {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2"
+              className="md:hidden p-2 text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -93,53 +93,53 @@ const Header = () => {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t">
+            <div className="md:hidden py-4 border-t border-purple-600">
               <nav className="flex flex-col space-y-4">
                 <Link 
                   to="/" 
-                  className="text-gray-700 hover:text-orange-500 transition-colors"
+                  className="text-white hover:text-orange-300 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
                 </Link>
                 <Link 
                   to="/white-label-dsp" 
-                  className="text-gray-700 hover:text-orange-500 transition-colors"
+                  className="text-white hover:text-orange-300 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   White Label DSP
                 </Link>
                 <Link 
                   to="/connected-tv-advertising" 
-                  className="text-gray-700 hover:text-orange-500 transition-colors pl-4"
+                  className="text-white hover:text-orange-300 transition-colors pl-4"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Connected TV Advertising
                 </Link>
                 <Link 
                   to="/online-banner-advertising" 
-                  className="text-gray-700 hover:text-orange-500 transition-colors pl-4"
+                  className="text-white hover:text-orange-300 transition-colors pl-4"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Online Banner Advertising
                 </Link>
                 <Link 
                   to="/digital-advertising" 
-                  className="text-gray-700 hover:text-orange-500 transition-colors pl-4"
+                  className="text-white hover:text-orange-300 transition-colors pl-4"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Digital Advertising
                 </Link>
                 <Link 
                   to="/blog" 
-                  className="text-gray-700 hover:text-orange-500 transition-colors"
+                  className="text-white hover:text-orange-300 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Blog
                 </Link>
                 <Link 
                   to="/contact" 
-                  className="text-gray-700 hover:text-orange-500 transition-colors"
+                  className="text-white hover:text-orange-300 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact
