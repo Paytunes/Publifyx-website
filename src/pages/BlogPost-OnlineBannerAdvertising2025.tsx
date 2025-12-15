@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import { ArrowLeft, Twitter, Linkedin, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -7,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import heroImage from "@/assets/blog/online-banner-advertising-hero.jpg";
 
 const BlogPostOnlineBannerAdvertising2025 = () => {
   const pageUrl = encodeURIComponent(window.location.href);
@@ -18,52 +20,132 @@ const BlogPostOnlineBannerAdvertising2025 = () => {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`,
   };
 
+  // FAQ Schema JSON-LD
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are online banner ads still effective in 2025?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Online banner ads remain effective in 2025 due to their scalability, affordability, precise targeting, and compatibility with identity-based and omnichannel advertising strategies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a realistic CTR for banner advertising?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Industry-aligned CTR benchmarks typically range from 0.3–0.8% for standard display banners and 2–3% for retargeting campaigns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What banner ad formats are most commonly used?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common banner ad formats include 300×250, 728×90, 160×600, and mobile formats like 320×50 and 320×100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does identity-based targeting improve banner ad performance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Identity-based targeting improves banner performance by enabling more accurate audience segmentation, cross-device attribution, and reduced impression wastage."
+        }
+      }
+    ]
+  };
+
+  useEffect(() => {
+    // Set meta title
+    document.title = "High-Impact Online Banner Advertising in 2025 | PublifyX Guide";
+
+    // Set meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'A complete 2025 guide to online banner advertising covering formats, costs, targeting, CTR benchmarks, and how PublifyX enables scalable, data-driven display campaigns.');
+
+    // Add FAQ Schema
+    let schemaScript = document.getElementById('faq-schema') as HTMLScriptElement | null;
+    if (!schemaScript) {
+      schemaScript = document.createElement('script');
+      schemaScript.id = 'faq-schema';
+      schemaScript.type = 'application/ld+json';
+      document.head.appendChild(schemaScript);
+    }
+    schemaScript.textContent = JSON.stringify(faqSchema);
+
+    // Cleanup on unmount
+    return () => {
+      document.title = "PublifyX";
+      const schema = document.querySelector('#faq-schema');
+      if (schema) schema.remove();
+    };
+  }, []);
+
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-[#7C3AED] text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-start mb-6">
-            <Link to="/blog" className="inline-flex items-center text-white/80 hover:text-white transition-colors">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Blog
-            </Link>
-            
-            {/* Social Share Buttons */}
-            <div className="flex items-center gap-3">
-              <span className="text-white/70 text-sm hidden sm:inline">Share:</span>
-              <a
-                href={shareLinks.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label="Share on Twitter"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a
-                href={shareLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label="Share on LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href={shareLinks.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label="Share on Facebook"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
+      {/* Hero Section with Image */}
+      <section className="relative">
+        <div className="w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
+          <img 
+            src={heroImage} 
+            alt="The Complete Guide to High-Impact Online Banner Advertising in 2025 - Formats, Targeting, Performance, Scale"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="bg-[#7C3AED] text-white py-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-start mb-6">
+              <Link to="/blog" className="inline-flex items-center text-white/80 hover:text-white transition-colors">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Blog
+              </Link>
+              
+              {/* Social Share Buttons */}
+              <div className="flex items-center gap-3">
+                <span className="text-white/70 text-sm hidden sm:inline">Share:</span>
+                <a
+                  href={shareLinks.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                  aria-label="Share on Twitter"
+                >
+                  <Twitter className="w-4 h-4" />
+                </a>
+                <a
+                  href={shareLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                  aria-label="Share on LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a
+                  href={shareLinks.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                  aria-label="Share on Facebook"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+              </div>
             </div>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              The Complete Guide to High-Impact Online Banner Advertising in 2025
+            </h1>
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            The Complete Guide to High-Impact Online Banner Advertising in 2025
-          </h1>
         </div>
       </section>
 
@@ -241,19 +323,37 @@ const BlogPostOnlineBannerAdvertising2025 = () => {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-left text-lg font-medium text-gray-900">
-                  Are banner ads still effective in 2025?
+                  Are online banner ads still effective in 2025?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 leading-relaxed">
-                  Yes. Banner ads remain effective due to their scalability, affordability, and compatibility with identity-based targeting and omnichannel attribution.
+                  Yes. Online banner ads remain effective in 2025 due to their scalability, affordability, precise targeting, and compatibility with identity-based and omnichannel advertising strategies.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-left text-lg font-medium text-gray-900">
-                  What CTR is realistic for banner advertising?
+                  What is a realistic CTR for banner advertising?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 leading-relaxed">
-                  Industry-aligned CTR benchmarks range from 0.3–0.8% for standard display and 2–3% for retargeting campaigns.
+                  Industry-aligned CTR benchmarks typically range from 0.3–0.8% for standard display banners and 2–3% for retargeting campaigns.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-left text-lg font-medium text-gray-900">
+                  What banner ad formats are most commonly used?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 leading-relaxed">
+                  Common banner ad formats include 300×250, 728×90, 160×600, and mobile formats like 320×50 and 320×100.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-left text-lg font-medium text-gray-900">
+                  How does identity-based targeting improve banner ad performance?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 leading-relaxed">
+                  Identity-based targeting improves banner performance by enabling more accurate audience segmentation, cross-device attribution, and reduced impression wastage.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
