@@ -11,6 +11,7 @@ import ConnectedTVAdvertising from "./pages/ConnectedTVAdvertising";
 import OnlineBannerAdvertising from "./pages/OnlineBannerAdvertising";
 import DigitalAdvertising from "./pages/DigitalAdvertising";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/online-banner-advertising" element={<OnlineBannerAdvertising />} />
           <Route path="/digital-advertising" element={<DigitalAdvertising />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/terms_and_conditions" element={<TermsConditions />} />
           <Route path="/privacy_policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />

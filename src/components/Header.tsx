@@ -63,6 +63,10 @@ const Header = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
 
+              <Link to="/blog" className="text-gray-700 hover:text-orange-500 transition-colors">
+                Blog
+              </Link>
+
               <Link to="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">
                 Contact
               </Link>
@@ -125,6 +129,13 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Digital Advertising
+                </Link>
+                <Link 
+                  to="/blog" 
+                  className="text-gray-700 hover:text-orange-500 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Blog
                 </Link>
                 <Link 
                   to="/contact" 
