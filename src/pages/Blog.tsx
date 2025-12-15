@@ -7,16 +7,26 @@ import { Link } from "react-router-dom";
 const blogPosts = [
   {
     id: 1,
+    title: "The Complete Guide to High-Impact Online Banner Advertising in 2025",
+    excerpt: "Online banner advertising has been a foundational pillar of digital marketing for nearly three decades, and in 2025, it remains one of the most versatile, measurable, and cost-efficient ways for brands to reach audiences across the open web.",
+    category: "Banner Ads",
+    date: "Dec 15, 2025",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    slug: "online-banner-advertising-guide-2025"
+  },
+  {
+    id: 2,
     title: "The Future of Digital Advertising in 2025",
     excerpt: "Explore the emerging trends shaping the digital advertising landscape and how brands can stay ahead of the curve.",
     category: "Industry Trends",
     date: "Dec 10, 2025",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
     slug: "future-digital-advertising-2025"
   },
   {
-    id: 2,
+    id: 3,
     title: "Connected TV Advertising: A Complete Guide",
     excerpt: "Learn how to leverage Connected TV advertising to reach cord-cutters and streaming audiences effectively.",
     category: "CTV Advertising",
@@ -26,34 +36,24 @@ const blogPosts = [
     slug: "connected-tv-advertising-guide"
   },
   {
-    id: 3,
+    id: 4,
     title: "Maximizing ROI with Programmatic Advertising",
     excerpt: "Discover strategies to optimize your programmatic campaigns and achieve better returns on your ad spend.",
     category: "Programmatic",
     date: "Dec 5, 2025",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop",
     slug: "maximizing-roi-programmatic-advertising"
   },
   {
-    id: 4,
+    id: 5,
     title: "Understanding White Label DSP Solutions",
     excerpt: "A deep dive into white label DSP platforms and how they can empower your advertising business.",
     category: "White Label DSP",
     date: "Dec 2, 2025",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop",
-    slug: "understanding-white-label-dsp"
-  },
-  {
-    id: 5,
-    title: "Banner Advertising Best Practices for Higher CTR",
-    excerpt: "Master the art of creating compelling banner ads that drive clicks and conversions.",
-    category: "Banner Ads",
-    date: "Nov 28, 2025",
-    readTime: "4 min read",
     image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&h=400&fit=crop",
-    slug: "banner-advertising-best-practices"
+    slug: "understanding-white-label-dsp"
   },
   {
     id: 6,
