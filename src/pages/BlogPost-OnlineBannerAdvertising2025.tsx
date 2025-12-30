@@ -102,7 +102,7 @@ const BlogPostOnlineBannerAdvertising2025 = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="bg-[#7C3AED] text-white py-8">
+        <div className="bg-[#2563EB] text-white py-8">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-start mb-6">
               <Link to="/blog" className="inline-flex items-center text-white/80 hover:text-white transition-colors">
