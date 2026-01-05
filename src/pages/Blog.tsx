@@ -27,13 +27,13 @@ const blogPosts = [
   },
   {
     id: 3,
-    title: "The Complete Guide to High-Impact Online Banner Advertising in 2025",
-    excerpt: "Online banner advertising has been a foundational pillar of digital marketing for nearly three decades, and in 2025, it remains one of the most versatile, measurable, and cost-efficient ways for brands to reach audiences across the open web.",
+    title: "The Complete Guide to High-Impact Online Banner Advertising in 2026",
+    excerpt: "Online banner advertising has been a foundational pillar of digital marketing for nearly three decades, and in 2026, it remains one of the most versatile, measurable, and cost-efficient ways for brands to reach audiences across the open web.",
     category: "Banner Ads",
     date: "Dec 15, 2025",
     readTime: "10 min read",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-    slug: "online-banner-advertising-guide-2025"
+    slug: "online-banner-advertising-guide-2026"
   },
   {
     id: 4,
