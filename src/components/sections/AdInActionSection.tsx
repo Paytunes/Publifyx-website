@@ -132,8 +132,9 @@ const AdInActionSection = () => {
                                   className="mt-4 h-56 w-full text-white object-cover rounded-lg" 
                                   src="/lovable-uploads/f5ba6f65-20c4-464b-994f-bf7e067b8c11.png" 
                                   alt="Mama Earth Ubtan Face Wash advertisement" 
-                                  height="100%" 
-                                  width="100%" 
+                                  height={224} 
+                                  width={269} 
+                                  loading="lazy"
                                 />
                                 <audio 
                                   ref={audioRef}
@@ -200,6 +201,9 @@ const AdInActionSection = () => {
                                   className="logo mx-auto my-1.5 w-28" 
                                   src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.png" 
                                   alt="Publifyx Logo"
+                                  width={112}
+                                  height={21}
+                                  loading="lazy"
                                 />
                               </div>
                             </div>

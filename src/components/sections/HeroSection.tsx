@@ -17,6 +17,9 @@ const HeroSection = () => {
                 src="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.png"
                 alt="Young woman using phone – digital advertising concept"
                 className="w-full h-auto rounded-lg shadow-lg"
+                width={584}
+                height={721}
+                fetchPriority="high"
               />
             </div>
             <div className="order-1 lg:order-2">

@@ -27,6 +27,9 @@ const JoinRevolutionSection = () => {
               src="/lovable-uploads/378f516e-ced5-4d46-999b-0075f2957d7a.png"
               alt="Podcast recording studio – audio ad production setup"
               className="w-full h-auto rounded-lg shadow-lg"
+              width={584}
+              height={624}
+              loading="lazy"
             />
           </div>
         </div>
