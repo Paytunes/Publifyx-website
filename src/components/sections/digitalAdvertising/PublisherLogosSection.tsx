@@ -208,6 +208,10 @@ const PublisherLogosSection = () => {
                   src={publisher.logo}
                   alt={publisher.name}
                   className="max-w-full max-h-full object-contain"
+                  width={160}
+                  height={96}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1">

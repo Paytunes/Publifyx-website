@@ -17,6 +17,8 @@ const SolutionsSection = () => {
                 width={384}
                 height={192}
                 loading="lazy"
+                decoding="async"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
             <div className="p-6">
@@ -36,6 +38,8 @@ const SolutionsSection = () => {
                 width={384}
                 height={192}
                 loading="lazy"
+                decoding="async"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
             <div className="p-6">
@@ -55,6 +59,8 @@ const SolutionsSection = () => {
                 width={384}
                 height={192}
                 loading="lazy"
+                decoding="async"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
             <div className="p-6">

@@ -30,6 +30,8 @@ const JoinRevolutionSection = () => {
               width={584}
               height={624}
               loading="lazy"
+              decoding="async"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
         </div>
