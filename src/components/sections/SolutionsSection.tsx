@@ -10,14 +10,17 @@ const SolutionsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="h-48 overflow-hidden">
-              <img
-                src="/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.png"
-                alt="Person editing ad video on phone using AI"
-                className="w-full h-full object-cover"
-                width={384}
-                height={192}
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet="/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.webp" type="image/webp" />
+                <img
+                  src="/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.png"
+                  alt="Person editing ad video on phone using AI"
+                  className="w-full h-full object-cover"
+                  width={384}
+                  height={192}
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="p-6">
               <h3 className="mb-4">AI-Powered Creativity</h3>
@@ -29,14 +32,17 @@ const SolutionsSection = () => {
 
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="h-48 overflow-hidden">
-              <img
-                src="/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.png"
-                alt="Woman watching video content on mobile device"
-                className="w-full h-full object-cover"
-                width={384}
-                height={192}
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet="/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.webp" type="image/webp" />
+                <img
+                  src="/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.png"
+                  alt="Woman watching video content on mobile device"
+                  className="w-full h-full object-cover"
+                  width={384}
+                  height={192}
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="p-6">
               <h3 className="mb-4">OTT Advertising Simplification</h3>
@@ -48,14 +54,17 @@ const SolutionsSection = () => {
 
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="h-48 overflow-hidden">
-              <img
-                src="/lovable-uploads/d0e4d426-d705-4d55-8135-97e8afdf1613.png"
-                alt="Smartphone showing ad interface – DSP solution"
-                className="w-full h-full object-cover"
-                width={384}
-                height={192}
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet="/lovable-uploads/d0e4d426-d705-4d55-8135-97e8afdf1613.webp" type="image/webp" />
+                <img
+                  src="/lovable-uploads/d0e4d426-d705-4d55-8135-97e8afdf1613.png"
+                  alt="Smartphone showing ad interface – DSP solution"
+                  className="w-full h-full object-cover"
+                  width={384}
+                  height={192}
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="p-6">
               <h3 className="mb-4">White-Labeled DSP Solutions</h3>
