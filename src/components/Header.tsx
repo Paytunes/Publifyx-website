@@ -39,7 +39,7 @@ const Header = () => {
 
               {/* Services Dropdown */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-orange-500 transition-colors focus:outline-none">
+                <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-orange-500 focus:outline-none">
                   Services
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
