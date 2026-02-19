@@ -142,7 +142,7 @@ const AdInActionSection = () => {
                                 <audio 
                                   ref={audioRef}
                                   src="https://publifyx-web-static.s3.ap-south-1.amazonaws.com/media/public/Mama+Earth+rev+30+sec+%282%29.mp3" 
-                                  preload="metadata"
+                                  preload="none"
                                 />
                                 
                                 <div className="mt-6 text-center" id="know_more_button">
