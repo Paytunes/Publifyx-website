@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -84,7 +83,7 @@
 
   body {
     @apply bg-background text-foreground font-inter;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   h1 {
@@ -119,5 +118,15 @@
 
   .btn-secondary:hover {
     background-color: rgb(230, 116, 0);
+  }
+}
+
+@layer utilities {
+  /* ── Typography Scale ── */
+  .text-section-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    font-weight: 700;
   }
 }
