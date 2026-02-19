@@ -20,6 +20,8 @@ const HeroSection = () => {
                 width={584}
                 height={721}
                 fetchPriority="high"
+                decoding="sync"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div className="order-1 lg:order-2">

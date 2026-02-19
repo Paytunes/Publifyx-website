@@ -135,6 +135,7 @@ const AdInActionSection = () => {
                                   height={224} 
                                   width={269} 
                                   loading="lazy"
+                                  decoding="async"
                                 />
                                 <audio 
                                   ref={audioRef}
@@ -204,6 +205,7 @@ const AdInActionSection = () => {
                                   width={112}
                                   height={21}
                                   loading="lazy"
+                                  decoding="async"
                                 />
                               </div>
                             </div>
