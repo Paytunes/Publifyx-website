@@ -45,17 +45,17 @@ const Header = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-white border shadow-lg">
                   <DropdownMenuItem asChild>
-                    <Link to="/connected-tv-advertising" className="w-full px-4 py-2 hover:bg-yellow-secondary">
+                    <Link to="/connected-tv-advertising" className="w-full px-4 py-2 hover:bg-gray-100">
                       Connected TV Advertising
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/online-banner-advertising" className="w-full px-4 py-2 hover:bg-yellow-secondary">
+                    <Link to="/online-banner-advertising" className="w-full px-4 py-2 hover:bg-gray-100">
                       Online Banner Advertising
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/digital-advertising" className="w-full px-4 py-2 hover:bg-yellow-secondary">
+                    <Link to="/digital-advertising" className="w-full px-4 py-2 hover:bg-gray-100">
                       Digital Advertising
                     </Link>
                   </DropdownMenuItem>
