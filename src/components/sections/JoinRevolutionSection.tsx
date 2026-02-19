@@ -23,14 +23,17 @@ const JoinRevolutionSection = () => {
             </button>
           </div>
           <div className="order-2">
-            <img
-              src="/lovable-uploads/378f516e-ced5-4d46-999b-0075f2957d7a.png"
-              alt="Podcast recording studio – audio ad production setup"
-              className="w-full h-auto rounded-lg shadow-lg"
-              width={584}
-              height={624}
-              loading="lazy"
-            />
+            <picture>
+              <source srcSet="/lovable-uploads/378f516e-ced5-4d46-999b-0075f2957d7a.webp" type="image/webp" />
+              <img
+                src="/lovable-uploads/378f516e-ced5-4d46-999b-0075f2957d7a.png"
+                alt="Podcast recording studio – audio ad production setup"
+                className="w-full h-auto rounded-lg shadow-lg"
+                width={584}
+                height={624}
+                loading="lazy"
+              />
+            </picture>
           </div>
         </div>
       </div>
