@@ -128,21 +128,18 @@ const AdInActionSection = () => {
                             
                             <div className="px-4">
                               <div>
-                                <picture>
-                                  <source srcSet="/lovable-uploads/f5ba6f65-20c4-464b-994f-bf7e067b8c11.webp" type="image/webp" />
-                                  <img 
-                                    className="mt-4 h-56 w-full text-white object-cover rounded-lg" 
-                                    src="/lovable-uploads/f5ba6f65-20c4-464b-994f-bf7e067b8c11.png" 
-                                    alt="Mama Earth Ubtan Face Wash advertisement" 
-                                    height={224} 
-                                    width={269} 
-                                    loading="lazy"
-                                  />
-                                </picture>
+                                <img 
+                                  className="mt-4 h-56 w-full text-white object-cover rounded-lg" 
+                                  src="/lovable-uploads/f5ba6f65-20c4-464b-994f-bf7e067b8c11.png" 
+                                  alt="Mama Earth Ubtan Face Wash advertisement" 
+                                  height={224} 
+                                  width={269} 
+                                  loading="lazy"
+                                />
                                 <audio 
                                   ref={audioRef}
                                   src="https://publifyx-web-static.s3.ap-south-1.amazonaws.com/media/public/Mama+Earth+rev+30+sec+%282%29.mp3" 
-                                  preload="none"
+                                  preload="metadata"
                                 />
                                 
                                 <div className="mt-6 text-center" id="know_more_button">

@@ -9,21 +9,18 @@ const HeroSection = () => {
 
   return (
     <>
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-gray-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <picture>
-                <source srcSet="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.webp" type="image/webp" />
-                <img
-                  src="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.png"
-                  alt="Young woman using phone – digital advertising concept"
-                  className="w-full h-auto rounded-lg"
-                  width={584}
-                  height={721}
-                  fetchPriority="high"
-                />
-              </picture>
+              <img
+                src="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.png"
+                alt="Young woman using phone – digital advertising concept"
+                className="w-full h-auto rounded-lg shadow-lg"
+                width={584}
+                height={721}
+                fetchPriority="high"
+              />
             </div>
             <div className="order-1 lg:order-2">
               <h1 className="mb-6">
