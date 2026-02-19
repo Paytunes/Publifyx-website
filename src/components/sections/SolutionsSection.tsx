@@ -14,6 +14,9 @@ const SolutionsSection = () => {
                 src="/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.png"
                 alt="Person editing ad video on phone using AI"
                 className="w-full h-full object-cover"
+                width={384}
+                height={192}
+                loading="lazy"
               />
             </div>
             <div className="p-6">
@@ -30,6 +33,9 @@ const SolutionsSection = () => {
                 src="/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.png"
                 alt="Woman watching video content on mobile device"
                 className="w-full h-full object-cover"
+                width={384}
+                height={192}
+                loading="lazy"
               />
             </div>
             <div className="p-6">
@@ -46,6 +52,9 @@ const SolutionsSection = () => {
                 src="/lovable-uploads/d0e4d426-d705-4d55-8135-97e8afdf1613.png"
                 alt="Smartphone showing ad interface – DSP solution"
                 className="w-full h-full object-cover"
+                width={384}
+                height={192}
+                loading="lazy"
               />
             </div>
             <div className="p-6">
