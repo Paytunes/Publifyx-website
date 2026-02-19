@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -20,9 +21,9 @@ const Header = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <img
-                src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.png"
-                alt="PublifyX"
+              <img 
+                src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.png" 
+                alt="PublifyX" 
                 className="h-8 w-auto"
               />
             </Link>
@@ -32,14 +33,14 @@ const Header = () => {
               <Link to="/" className="text-gray-700 hover:text-orange-500 transition-colors">
                 Home
               </Link>
-
+              
               <Link to="/white-label-dsp" className="text-gray-700 hover:text-orange-500 transition-colors">
                 White Label DSP
               </Link>
-
+              
               {/* Services Dropdown */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-orange-500 focus:outline-none">
+                <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-orange-500 transition-colors focus:outline-none">
                   Services
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
@@ -73,13 +74,19 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <button onClick={() => setIsGetStartedModalOpen(true)} className="btn-primary">
+              <button 
+                onClick={() => setIsGetStartedModalOpen(true)}
+                className="btn-primary"
+              >
                 Get Started
               </button>
             </div>
 
             {/* Mobile menu button */}
-            <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button
+              className="md:hidden p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -88,56 +95,56 @@ const Header = () => {
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t">
               <nav className="flex flex-col space-y-4">
-                <Link
-                  to="/"
+                <Link 
+                  to="/" 
                   className="text-gray-700 hover:text-orange-500 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
                 </Link>
-                <Link
-                  to="/white-label-dsp"
+                <Link 
+                  to="/white-label-dsp" 
                   className="text-gray-700 hover:text-orange-500 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   White Label DSP
                 </Link>
-                <Link
-                  to="/connected-tv-advertising"
+                <Link 
+                  to="/connected-tv-advertising" 
                   className="text-gray-700 hover:text-orange-500 transition-colors pl-4"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Connected TV Advertising
                 </Link>
-                <Link
-                  to="/online-banner-advertising"
+                <Link 
+                  to="/online-banner-advertising" 
                   className="text-gray-700 hover:text-orange-500 transition-colors pl-4"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Online Banner Advertising
                 </Link>
-                <Link
-                  to="/digital-advertising"
+                <Link 
+                  to="/digital-advertising" 
                   className="text-gray-700 hover:text-orange-500 transition-colors pl-4"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Digital Advertising
                 </Link>
-                <Link
-                  to="/blog"
+                <Link 
+                  to="/blog" 
                   className="text-gray-700 hover:text-orange-500 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Blog
                 </Link>
-                <Link
-                  to="/contact"
+                <Link 
+                  to="/contact" 
                   className="text-gray-700 hover:text-orange-500 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact
                 </Link>
-                <button
+                <button 
                   onClick={() => {
                     setIsGetStartedModalOpen(true);
                     setIsMenuOpen(false);
@@ -152,7 +159,10 @@ const Header = () => {
         </div>
       </header>
 
-      <GetStartedModal isOpen={isGetStartedModalOpen} onClose={() => setIsGetStartedModalOpen(false)} />
+      <GetStartedModal 
+        isOpen={isGetStartedModalOpen} 
+        onClose={() => setIsGetStartedModalOpen(false)} 
+      />
     </>
   );
 };
