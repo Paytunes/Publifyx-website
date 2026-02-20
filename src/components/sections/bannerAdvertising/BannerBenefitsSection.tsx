@@ -27,7 +27,7 @@ const BannerBenefitsSection = () => {
       icon: DollarSign,
       title: "Cost-Effective Targeting",
       description: "Reach specific audiences based on demographics, location, and interests to maximize ROI.",
-      color: "bg-orange-500",
+      color: "bg-[#ff7200]",
       metric: "300%",
       metricLabel: "Average ROI",
     },

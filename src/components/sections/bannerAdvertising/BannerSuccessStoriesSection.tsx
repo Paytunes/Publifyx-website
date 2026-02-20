@@ -190,7 +190,7 @@ const BannerSuccessStoriesSection = () => {
                   aria-label={`Go to story ${index + 1}`}
                   aria-current={index === currentStory ? "true" : undefined}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentStory ? "bg-orange-500 w-8" : "bg-gray-300"
+                    index === currentStory ? "bg-[#ff7200] w-8" : "bg-gray-300"
                   }`}
                 />
               ))}

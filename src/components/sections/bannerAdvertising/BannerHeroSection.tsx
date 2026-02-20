@@ -47,7 +47,7 @@ const BannerHeroSection = ({ onGetStarted, onWatchDemo }: BannerHeroSectionProps
             transform: "translate(-50%, -50%)",
           }}
         >
-          <div className="w-16 h-10 bg-orange-500 rounded-lg shadow-lg flex items-center justify-center opacity-20">
+          <div className="w-16 h-10 bg-[#ff7200] rounded-lg shadow-lg flex items-center justify-center opacity-20">
             <span className="text-xs text-white font-bold">AD</span>
           </div>
         </div>
@@ -70,7 +70,7 @@ const BannerHeroSection = ({ onGetStarted, onWatchDemo }: BannerHeroSectionProps
               🚀 Amplify Your Brand with{" "}
               <span className="text-[#ff7200] relative">
                 Effective Online Banner Advertising
-                <div className="absolute -bottom-2 left-0 w-full h-1 bg-orange-500 opacity-30 rounded"></div>
+                <div className="absolute -bottom-2 left-0 w-full h-1 bg-[#ff7200] opacity-30 rounded"></div>
               </span>
             </h1>
 

@@ -28,7 +28,7 @@ const BannerFeaturesSection = () => {
       description:
         "Our dedicated support team is available around the clock to assist with any queries and ensure you leverage our tools to their fullest potential.",
       mockup: "👥 Support Team",
-      color: "bg-orange-500",
+      color: "bg-[#ff7200]",
     },
   ];
 
@@ -157,7 +157,7 @@ const BannerFeaturesSection = () => {
                     // Support Interface
                     <div className="space-y-3">
                       <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-orange-500 rounded-full"></div>
+                        <div className="w-8 h-8 bg-[#ff7200] rounded-full"></div>
                         <div className="flex-1 bg-orange-100 rounded-lg p-3 text-sm">How can I help you today?</div>
                       </div>
                       <div className="flex items-center space-x-3 justify-end">
@@ -172,7 +172,7 @@ const BannerFeaturesSection = () => {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 bg-orange-500 text-white px-3 py-2 rounded-full shadow-lg animate-bounce">
+              <div className="absolute -top-4 -right-4 bg-[#ff7200] text-white px-3 py-2 rounded-full shadow-lg animate-bounce">
                 <span className="text-xs font-bold">Live</span>
               </div>
             </div>

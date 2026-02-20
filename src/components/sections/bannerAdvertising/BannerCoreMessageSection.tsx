@@ -79,7 +79,7 @@ const BannerCoreMessageSection = () => {
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-orange-500 p-3 rounded-lg">
+                  <div className="bg-[#ff7200] p-3 rounded-lg">
                     <Target className="w-6 h-6 text-white" />
                   </div>
                   <div>
