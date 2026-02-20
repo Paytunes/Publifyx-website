@@ -103,7 +103,7 @@
   }
 
   .btn-primary {
-    background-color: rgb(255, 129, 0);
+    background-color: #ff7200;
     @apply hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105;
   }
 

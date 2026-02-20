@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ProductsSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-yellow-secondary">
+    <section className="py-16 md:py-24 bg-[#ff7200]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="mb-6 text-white">Our Products</h2>
