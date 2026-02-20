@@ -80,7 +80,7 @@ const Contact = () => {
     <Layout>
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 pb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 min-h-[600px]">
             {/* Left Side - Blue Section */}
             <div className="lg:col-span-2 bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white relative overflow-hidden">
               <div className="relative z-10">
@@ -130,8 +130,9 @@ const Contact = () => {
                 <input type="hidden" name="source" value={formData.source} />
 
                 <div>
-                  <h3 className="block text-sm font-medium text-gray-700 mb-2">Company Name*</h3>
+                  <label htmlFor="company_name" className="block text-sm font-medium text-gray-700 mb-2">Company Name*</label>
                   <Input
+                    id="company_name"
                     type="text"
                     required
                     value={formData.company_name}
@@ -141,8 +142,9 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <h3 className="block text-sm font-medium text-gray-700 mb-2">Company Email*</h3>
+                  <label htmlFor="company_email" className="block text-sm font-medium text-gray-700 mb-2">Company Email*</label>
                   <Input
+                    id="company_email"
                     type="email"
                     required
                     value={formData.company_email}
@@ -173,17 +175,20 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <h3 className="block text-sm font-medium text-gray-700 mb-2">Mobile Number</h3>
+                  <label htmlFor="mobile_number" className="block text-sm font-medium text-gray-700 mb-2">Mobile Number</label>
                   <div className="flex">
                     <div className="flex items-center bg-gray-50 border border-r-0 border-gray-300 px-3 rounded-l-md">
                       <img
                         src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyMCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE0IiByeD0iMiIgZmlsbD0iI0ZGOTkzMyIvPgo8cmVjdCB5PSI0LjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iNC42NjY2NyIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSI5LjMzMzMzIiB3aWR0aD0iMjAiIGhlaWdodD0iNC42NjY2NyIgZmlsbD0iIzEzOEE0NiIvPgo8L3N2Zz4K"
-                        alt="IN"
+                        alt="India flag"
+                        width={20}
+                        height={14}
                         className="w-5 h-4 mr-2"
                       />
                       <span className="text-sm text-gray-600">+91</span>
                     </div>
                     <Input
+                      id="mobile_number"
                       type="tel"
                       value={formData.mobile_number}
                       onChange={(e) => handleInputChange("mobile_number", e.target.value)}
@@ -194,8 +199,9 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <h3 className="block text-sm font-medium text-gray-700 mb-2">Campaign Details*</h3>
+                  <label htmlFor="project_description" className="block text-sm font-medium text-gray-700 mb-2">Campaign Details*</label>
                   <Textarea
+                    id="project_description"
                     value={formData.project_description}
                     onChange={(e) => handleInputChange("project_description", e.target.value)}
                     rows={4}

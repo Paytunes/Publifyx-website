@@ -12,10 +12,10 @@ import ConnectedTVAdvertising from "./pages/ConnectedTVAdvertising";
 import OnlineBannerAdvertising from "./pages/OnlineBannerAdvertising";
 import WhiteLabelDSP from "./pages/WhiteLabelDSP";
 import DigitalAdvertising from "./pages/DigitalAdvertising";
+import Contact from "./pages/Contact";
 
 // Lower-priority routes remain lazy-loaded
 const AdInsights = lazy(() => import("./pages/AdInsights"));
-const Contact = lazy(() => import("./pages/Contact"));
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
 const BlogPostAdTechTrends2026 = lazy(() => import("./pages/BlogPost-AdTechTrends2026"));
 const BlogPostWhiteLabelDSPReasons = lazy(() => import("./pages/BlogPost-WhiteLabelDSPReasons"));
