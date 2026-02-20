@@ -94,7 +94,7 @@ const BannerHeroSection = ({ onGetStarted, onWatchDemo }: BannerHeroSectionProps
             <div className="mb-8">
               <Button
                 onClick={onGetStarted}
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg group"
+                className="bg-[#ff7200] hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg group"
               >
                 ✅ Get Started in 30 Seconds
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

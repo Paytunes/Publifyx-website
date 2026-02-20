@@ -97,7 +97,7 @@ const Blog = () => {
                     alt={post.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <Badge className="absolute top-4 left-4 bg-orange-500 hover:bg-orange-600">{post.category}</Badge>
+                  <Badge className="absolute top-4 left-4 bg-[#ff7200] hover:bg-orange-600">{post.category}</Badge>
                 </div>
                 <CardHeader>
                   <CardTitle className="text-xl text-gray-900 group-hover:text-purple-primary transition-colors line-clamp-2">
@@ -141,7 +141,7 @@ const Blog = () => {
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+            <button className="bg-[#ff7200] hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-colors">
               Subscribe
             </button>
           </div>

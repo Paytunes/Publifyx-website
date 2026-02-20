@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Building2, ShoppingBag, MapPin, CheckCircle } from "lucide-react";
@@ -12,24 +11,24 @@ const CTVAudienceSection = ({ onGetStarted }: CTVAudienceSectionProps) => {
     {
       title: "Ad Agencies",
       description: "running brand campaigns across channels",
-      icon: Building2
+      icon: Building2,
     },
     {
       title: "D2C Brands",
       description: "looking for scalable reach + performance",
-      icon: ShoppingBag
+      icon: ShoppingBag,
     },
     {
       title: "Local Businesses",
       description: "targeting specific zip codes or cities",
-      icon: MapPin
-    }
+      icon: MapPin,
+    },
   ];
 
   const useCases = [
     "Building brand awareness with full-screen video",
-    "Running geo-targeted seasonal promotions", 
-    "Retargeting users who visited your website, right on their TV"
+    "Running geo-targeted seasonal promotions",
+    "Retargeting users who visited your website, right on their TV",
   ];
 
   return (
@@ -72,9 +71,9 @@ const CTVAudienceSection = ({ onGetStarted }: CTVAudienceSectionProps) => {
           <p className="text-lg text-gray-700 mb-6">
             No more spraying and praying—CTV helps you land exactly where it matters.
           </p>
-          <Button 
+          <Button
             onClick={onGetStarted}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-medium transition-all duration-200 hover:scale-105 text-lg"
+            className="bg-[#ff7200] hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-medium transition-all duration-200 hover:scale-105 text-lg"
           >
             Let's Talk Strategy
           </Button>
