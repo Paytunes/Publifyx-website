@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import PublisherLogosSection from "@/components/sections/digitalAdvertising/PublisherLogosSection";
 import DigitalPricingSection from "@/components/sections/digitalAdvertising/DigitalPricingSection";
@@ -19,6 +20,13 @@ import WhyChooseMediaAntSection from "@/components/sections/digitalAdvertising/W
 import DigitalFAQSection from "@/components/sections/digitalAdvertising/DigitalFAQSection";
 
 const DigitalAdvertising = () => {
+  useEffect(() => {
+    document.title = "Digital Advertising in India – Rates, Platforms & Strategy | PublifyX";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", "Reach 10M+ daily users across India's top digital platforms. Compare ad rates, publishers, and formats. Launch targeted campaigns with real-time analytics and measurable ROI.");
+    return () => { document.title = "White Labelled Platform for Programmatic Ad Buying | PublifyX"; };
+  }, []);
+
   return (
     <Layout>
       <PublisherLogosSection />

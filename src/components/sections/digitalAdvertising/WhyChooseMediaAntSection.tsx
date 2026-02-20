@@ -79,7 +79,7 @@ const WhyChooseMediaAntSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
-              <Button size="lg" variant="secondary" className="w-full sm:w-auto font-semibold">
+              <Button size="lg" className="w-full sm:w-auto font-semibold bg-white text-gray-900 hover:bg-gray-100 border border-gray-200">
                 Start Your Campaign with Publifyx
               </Button>
               <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold bg-background/10 hover:bg-background/20 border-primary-foreground/30 text-primary-foreground hover:text-primary-foreground">
