@@ -44,7 +44,7 @@ const HeroSection = () => {
               </div>
               <Button 
                 onClick={() => setIsGetStartedModalOpen(true)}
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105"
+                className="bg-orange-700 hover:bg-orange-800 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105"
               >
                 Get Your White Label DSP
               </Button>
