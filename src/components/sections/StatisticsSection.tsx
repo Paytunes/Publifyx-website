@@ -10,22 +10,22 @@ const StatisticsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="bg-blue-600 p-8 rounded-lg text-center">
             <div className="text-4xl md:text-5xl font-bold text-white mb-2">12K+</div>
-            <div className="text-white text-lg font-medium">Pincode</div>
+            <div className="text-blue-100 text-lg">Pincode</div>
           </div>
 
           <div className="bg-blue-600 p-8 rounded-lg text-center">
             <div className="text-4xl md:text-5xl font-bold text-white mb-2">100+</div>
-            <div className="text-white text-lg font-medium">Publisher</div>
+            <div className="text-blue-100 text-lg">Publisher</div>
           </div>
 
           <div className="bg-blue-600 p-8 rounded-lg text-center">
             <div className="text-4xl md:text-5xl font-bold text-white mb-2">10M+</div>
-            <div className="text-white text-lg font-medium">Audience</div>
+            <div className="text-blue-100 text-lg">Audience</div>
           </div>
 
           <div className="bg-blue-600 p-8 rounded-lg text-center">
             <div className="text-4xl md:text-5xl font-bold text-white mb-2">10M+</div>
-            <div className="text-white text-lg font-medium">Request</div>
+            <div className="text-blue-100 text-lg">Request</div>
           </div>
         </div>
       </div>

@@ -103,21 +103,21 @@
   }
 
   .btn-primary {
-    background-color: rgb(194, 65, 12); /* orange-700: ~4.7:1 contrast on white */
+    background-color: rgb(255, 129, 0);
     @apply hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105;
   }
 
   .btn-primary:hover {
-    background-color: rgb(154, 52, 18); /* orange-800 */
+    background-color: rgb(230, 116, 0);
   }
 
   .btn-secondary {
-    background-color: rgb(194, 65, 12); /* orange-700: ~4.7:1 contrast on white */
+    background-color: rgb(255, 129, 0);
     @apply hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105;
   }
 
   .btn-secondary:hover {
-    background-color: rgb(154, 52, 18); /* orange-800 */
+    background-color: rgb(230, 116, 0);
   }
 }
 
