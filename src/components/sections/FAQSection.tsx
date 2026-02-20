@@ -5,7 +5,7 @@ const FAQSection = () => {
     <section className="py-16 md:py-24 bg-gray-light">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <p className="rounded-full border bg-[#ff7200] px-2.5 py-0.5 text-md font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground">
+          <p className="rounded-full border bg-[#ff7200] w-fit px-2.5 py-0.5 text-md font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-primary-foreground">
             FAQs
           </p>
           <h2 className="mb-8">Have Questions? We've Got Answers</h2>
