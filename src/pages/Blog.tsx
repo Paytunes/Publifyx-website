@@ -100,7 +100,7 @@ const Blog = () => {
                   <Badge className="absolute top-4 left-4 bg-[#ff7200] hover:bg-orange-600">{post.category}</Badge>
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-900 group-hover:text-purple-primary transition-colors line-clamp-2">
+                  <CardTitle className="text-xl text-gray-900 group-hover:text-orange-600 transition-colors line-clamp-2">
                     {post.title}
                   </CardTitle>
                   <CardDescription className="flex items-center gap-4 text-sm text-gray-500">
@@ -133,7 +133,7 @@ const Blog = () => {
       {/* Newsletter CTA */}
       <section className="py-16 bg-[#2563EB] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+          <h2 className="text-3xl font-bold mb-4 text-whit">Subscribe to Our Newsletter</h2>
           <p className="text-blue-100 mb-8">Get the latest advertising insights delivered straight to your inbox</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <input
