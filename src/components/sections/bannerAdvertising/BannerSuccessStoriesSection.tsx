@@ -189,7 +189,7 @@ const BannerSuccessStoriesSection = () => {
                   onClick={() => setCurrentStory(index)}
                   aria-label={`Go to story ${index + 1}`}
                   aria-current={index === currentStory ? "true" : undefined}
-                  className={`relative flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 focus:outline-none`}
+                  className={`relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500`}
                 >
                   <span className={`block rounded-full transition-all duration-300 ${
                     index === currentStory ? "bg-[#ff7200] w-8 h-3" : "bg-gray-300 w-3 h-3"
