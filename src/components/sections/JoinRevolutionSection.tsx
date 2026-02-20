@@ -16,7 +16,7 @@ const JoinRevolutionSection = () => {
             <p className="text-lg text-gray-600 mb-8 leading-relaxed text-left">
               Are you ready to be a part of the future of digital advertising? Join Publifyx in revolutionizing the industry and shaping the way businesses connect with their audiences. Whether you're a creative thinker, a tech enthusiast, or a marketing expert, there's a place for you on our team. Together, we'll push the boundaries of what's possible, innovate relentlessly, and redefine the standards of excellence in digital advertising. Join us on this exciting journey as we transform the way businesses advertise and engage with their customers. Let's revolutionize digital advertising together.
             </p>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105">
+            <button className="bg-orange-700 hover:bg-orange-800 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105">
               <Link to="/contact" className="block w-full h-full">
                 Join us!
               </Link>
