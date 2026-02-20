@@ -96,7 +96,7 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 mt-1 mr-3 flex-shrink-0" />
                     <div>
                       <div className="text-blue-100 text-sm">
-                        Publifyx Tech Pvt. Ltd., Inventio Workspace Ltd., Sector -12 , Dwarka, New Delhi-110075
+                        PublifyX Tech Pvt. Ltd., Inventio Workspace Ltd., Sector -12 , Dwarka, New Delhi-110075
                       </div>
                     </div>
                   </div>

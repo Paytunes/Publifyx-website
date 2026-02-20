@@ -69,7 +69,7 @@ const HowToBookSection = () => {
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            How to Book Digital Ads with Publifyx
+            How to Book Digital Ads with PublifyX
           </h2>
           <p className="text-xl text-muted-foreground">
             Launch your campaign in 24-48 hours. We handle the technical complexity.

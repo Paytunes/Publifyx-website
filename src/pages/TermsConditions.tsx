@@ -22,7 +22,7 @@ const TermsConditions = () => {
             </p>
 
             <p className="mb-8">
-              This Privacy Policy governs how publifyx collects, uses, maintains, and discloses information collected from users (each, a "User") of the www.publifyx.com website ("Site"). This privacy policy applies to the Site and all products and services offered by publifyx.
+              This Privacy Policy governs how PublifyX collects, uses, maintains, and discloses information collected from users (each, a "User") of the www.publifyx.com website ("Site"). This privacy policy applies to the Site and all products and services offered by PublifyX.
             </p>
 
             <section className="mb-12">
@@ -51,41 +51,41 @@ const TermsConditions = () => {
             <section className="mb-12">
               <h2>Disclaimer</h2>
               <p>
-                The materials on publifyx's website are provided on an 'as is' basis. publifyx makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+                The materials on PublifyX's website are provided on an 'as is' basis. PublifyX makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
               </p>
               <p>
-                Further, publifyx does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.
+                Further, PublifyX does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.
               </p>
             </section>
 
             <section className="mb-12">
               <h2>Limitations</h2>
               <p>
-                In no event shall publifyx or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on publifyx's website, even if publifyx or a publifyx authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+                In no event shall PublifyX or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on PublifyX's website, even if PublifyX or a PublifyX authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
               </p>
             </section>
 
             <section className="mb-12">
               <h2>Accuracy of materials</h2>
               <p>
-                The materials appearing on publifyx's website could include technical, typographical, or photographic errors. publifyx does not warrant that any of the materials on its website are accurate, complete, or current. publifyx may make changes to the materials contained on its website at any time without notice. However publifyx does not make any commitment to update the materials.
+                The materials appearing on PublifyX's website could include technical, typographical, or photographic errors. PublifyX does not warrant that any of the materials on its website are accurate, complete, or current. PublifyX may make changes to the materials contained on its website at any time without notice. However PublifyX does not make any commitment to update the materials.
               </p>
             </section>
 
             <section className="mb-12">
               <h2>Third-party Content and Data Sets</h2>
               <p>
-                Certain Materials that are not Submissions (defined below) may be provided by third-party licensors and suppliers to publifyx ("Third-Party Content") where separate and additional terms govern the use of that Third-Party Content.
+                Certain Materials that are not Submissions (defined below) may be provided by third-party licensors and suppliers to PublifyX ("Third-Party Content") where separate and additional terms govern the use of that Third-Party Content.
               </p>
               <p>
-                Data Sets on the Site may be subject to one or more licenses. You may own a Data Set or, subject to appropriate licenses from such owners, upload a Data Set owned by another party or upload a Data Set resulting from combining one or more Data Sets owned by you and others. Except for those Data Sets that you own completely and provide as Submissions, third-party licensors will have rights in the other Data Sets. Unless otherwise specified, those other Data Sets not owned by you that you use our licensed directly to you from the applicable third-party licensor under the terms uploaded with the Data Set. You acknowledge and agree that each Data Set is licensed under separate terms and that the license terms applicable to any Data Set may not be the same as or compatible with the terms applicable to any other Data Set. You hereby agree to comply with any and all license terms applicable to any Data Set used by you. publifyx DOES NOT VERIFY, MAKE ANY REPRESENTATIONS OR TAKE RESPONSIBILITY FOR SUCH THIRD-PARTY DATASETS, INCLUDING, WITHOUT LIMITATION, THE TRUTHFULNESS, ACCURACY, QUALITY OR COMPLETENESS OF THE CONTENT THEREOF, THE ACCURACY OF THE DESIGNATED LICENSE TERMS, THE SUITABILITY OF THE DATA SET FOR YOUR USE OR THE COMPATIBILITY OF THE DATA SET WITH ANY OTHER DATA SET, EVEN IF LINKAGES ARE SUGGESTED BY publifyx.
+                Data Sets on the Site may be subject to one or more licenses. You may own a Data Set or, subject to appropriate licenses from such owners, upload a Data Set owned by another party or upload a Data Set resulting from combining one or more Data Sets owned by you and others. Except for those Data Sets that you own completely and provide as Submissions, third-party licensors will have rights in the other Data Sets. Unless otherwise specified, those other Data Sets not owned by you that you use our licensed directly to you from the applicable third-party licensor under the terms uploaded with the Data Set. You acknowledge and agree that each Data Set is licensed under separate terms and that the license terms applicable to any Data Set may not be the same as or compatible with the terms applicable to any other Data Set. You hereby agree to comply with any and all license terms applicable to any Data Set used by you. PublifyX DOES NOT VERIFY, MAKE ANY REPRESENTATIONS OR TAKE RESPONSIBILITY FOR SUCH THIRD-PARTY DATASETS, INCLUDING, WITHOUT LIMITATION, THE TRUTHFULNESS, ACCURACY, QUALITY OR COMPLETENESS OF THE CONTENT THEREOF, THE ACCURACY OF THE DESIGNATED LICENSE TERMS, THE SUITABILITY OF THE DATA SET FOR YOUR USE OR THE COMPATIBILITY OF THE DATA SET WITH ANY OTHER DATA SET, EVEN IF LINKAGES ARE SUGGESTED BY PublifyX.
               </p>
             </section>
 
             <section className="mb-12">
               <h2>Links</h2>
               <p>
-                publifyx has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by publifyx of the site. Use of any such linked website is at the user's own risk.
+                PublifyX has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by PublifyX of the site. Use of any such linked website is at the user's own risk.
               </p>
             </section>
 
@@ -116,7 +116,7 @@ const TermsConditions = () => {
             <section className="mb-12">
               <h2>Modifications</h2>
               <p>
-                publifyx may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.
+                PublifyX may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.
               </p>
             </section>
 

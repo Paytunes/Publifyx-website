@@ -28,7 +28,7 @@ const Footer = () => {
 
         <div className="text-center text-gray-600 text-sm">
           <p>
-            Copyright © 2025 <span className="text-[#ff7200]">Publifyx.com</span> | All rights reserved
+            Copyright © 2025 <span className="text-[#ff7200]">PublifyX.com</span> | All rights reserved
           </p>
         </div>
       </div>

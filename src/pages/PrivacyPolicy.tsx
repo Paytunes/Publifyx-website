@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
             </p>
 
             <p className="mb-8">
-              This Privacy Policy governs the manner in which publifyx collects, uses, maintains, and discloses information collected from users (each, a "User") of the www.publifyx.com website ("Site"). This privacy policy applies to the Site and all products and services offered by publifyx.
+              This Privacy Policy governs the manner in which PublifyX collects, uses, maintains, and discloses information collected from users (each, a "User") of the www.publifyx.com website ("Site"). This privacy policy applies to the Site and all products and services offered by PublifyX.
             </p>
 
             <section className="mb-12">
@@ -48,7 +48,7 @@ const PrivacyPolicy = () => {
 
             <section className="mb-12">
               <h2>How we use collected information</h2>
-              <p>publifyx may collect and use Users personal information for the following purposes:</p>
+              <p>PublifyX may collect and use Users personal information for the following purposes:</p>
               <ul className="list-disc pl-6 mt-4">
                 <li>To run a promotion, contest, survey or other Site feature</li>
                 <li>To send Users information they agreed to receive about topics we think will be of interest to them.</li>
@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
             <section className="mb-12">
               <h2>Changes to this privacy policy</h2>
               <p>
-                publifyx has the discretion to update this privacy policy at any time. When we do, we will revise the updated date at the top of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.
+                PublifyX has the discretion to update this privacy policy at any time. When we do, we will revise the updated date at the top of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.
               </p>
             </section>
 

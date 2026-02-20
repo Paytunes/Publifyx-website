@@ -13,7 +13,7 @@ const JoinRevolutionSection = () => {
             </div>
             <h2 className="mb-6 text-left">Join the Digital Advertising Revolution</h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed text-left">
-              Are you ready to be a part of the future of digital advertising? Join Publifyx in revolutionizing the
+              Are you ready to be a part of the future of digital advertising? Join PublifyX in revolutionizing the
               industry and shaping the way businesses connect with their audiences. Whether you're a creative thinker, a
               tech enthusiast, or a marketing expert, there's a place for you on our team. Together, we'll push the
               boundaries of what's possible, innovate relentlessly, and redefine the standards of excellence in digital
