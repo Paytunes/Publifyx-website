@@ -95,9 +95,9 @@ const BannerHeroSection = ({ onGetStarted, onWatchDemo }: BannerHeroSectionProps
             <div className="mb-8">
               <Button
                 onClick={onGetStarted}
-                className="bg-[#ff7200] hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg group"
+                className="bg-[#cc5a00] hover:bg-[#b34f00] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 hover:scale-105 shadow-lg group"
               >
-                ✅ Get Started in 30 Seconds
+                Get Started in 30 Seconds
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
@@ -147,11 +147,11 @@ const BannerHeroSection = ({ onGetStarted, onWatchDemo }: BannerHeroSectionProps
               </div>
 
               {/* Floating Metrics */}
-              <div className="absolute -top-4 -right-4 bg-green-700 text-white px-4 py-2 rounded-full shadow-lg animate-bounce">
+              <div className="absolute -top-4 -right-4 bg-green-800 text-white px-4 py-2 rounded-full shadow-lg animate-bounce">
                 <span className="text-sm font-bold">+300% CTR</span>
               </div>
 
-              <div className="absolute -bottom-4 -left-4 bg-blue-700 text-white px-4 py-2 rounded-full shadow-lg animate-pulse">
+              <div className="absolute -bottom-4 -left-4 bg-blue-800 text-white px-4 py-2 rounded-full shadow-lg animate-pulse">
                 <span className="text-sm font-bold">Live Tracking</span>
               </div>
             </div>
