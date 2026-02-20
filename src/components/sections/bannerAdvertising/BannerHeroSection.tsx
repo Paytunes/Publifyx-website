@@ -8,7 +8,8 @@ interface BannerHeroSectionProps {
 }
 
 const BannerHeroSection = ({ onGetStarted, onWatchDemo }: BannerHeroSectionProps) => {
-  const [isVisible, setIsVisible] = useState(false);
+  // Start visible so LCP text is not hidden by JS-gated opacity-0
+  const [isVisible, setIsVisible] = useState(true);
   const [floatingElements, setFloatingElements] = useState([
     { id: 1, x: 10, y: 10, delay: 0 },
     { id: 2, x: 80, y: 20, delay: 1000 },
@@ -146,11 +147,11 @@ const BannerHeroSection = ({ onGetStarted, onWatchDemo }: BannerHeroSectionProps
               </div>
 
               {/* Floating Metrics */}
-              <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg animate-bounce">
+              <div className="absolute -top-4 -right-4 bg-green-700 text-white px-4 py-2 rounded-full shadow-lg animate-bounce">
                 <span className="text-sm font-bold">+300% CTR</span>
               </div>
 
-              <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg animate-pulse">
+              <div className="absolute -bottom-4 -left-4 bg-blue-700 text-white px-4 py-2 rounded-full shadow-lg animate-pulse">
                 <span className="text-sm font-bold">Live Tracking</span>
               </div>
             </div>

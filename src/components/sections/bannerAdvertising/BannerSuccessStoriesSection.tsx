@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, TrendingUp, Users, Zap } from "lucide-react";
+import { ChevronLeft, ChevronRight, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const BannerSuccessStoriesSection = () => {
@@ -119,7 +119,7 @@ const BannerSuccessStoriesSection = () => {
 
                 {/* Metrics */}
                 <div className="grid grid-cols-3 gap-4">
-                  {Object.entries(currentStoryData.metrics).map(([key, value], index) => (
+                  {Object.entries(currentStoryData.metrics).map(([key, value]) => (
                     <div key={key} className="text-center p-4 bg-white rounded-lg shadow-md">
                       <div className="text-2xl font-bold text-[#ff7200] mb-1">{value}</div>
                       <div className="text-sm text-gray-500 capitalize">{key}</div>
@@ -162,7 +162,7 @@ const BannerSuccessStoriesSection = () => {
                 </div>
 
                 {/* Floating Badge */}
-                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg animate-pulse">
+                <div className="absolute -top-4 -right-4 bg-green-700 text-white px-4 py-2 rounded-full shadow-lg animate-pulse">
                   <span className="text-sm font-bold">Success</span>
                 </div>
               </div>
@@ -183,16 +183,18 @@ const BannerSuccessStoriesSection = () => {
 
             {/* Dots Indicator */}
             <div className="flex space-x-2">
-              {successStories.map((_, index) => (
+            {successStories.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentStory(index)}
                   aria-label={`Go to story ${index + 1}`}
                   aria-current={index === currentStory ? "true" : undefined}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentStory ? "bg-[#ff7200] w-8" : "bg-gray-300"
-                  }`}
-                />
+                  className={`relative flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 focus:outline-none`}
+                >
+                  <span className={`block rounded-full transition-all duration-300 ${
+                    index === currentStory ? "bg-[#ff7200] w-8 h-3" : "bg-gray-300 w-3 h-3"
+                  }`} />
+                </button>
               ))}
             </div>
 
