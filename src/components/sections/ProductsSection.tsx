@@ -12,14 +12,17 @@ const ProductsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="mb-4 text-[#ff7200]">Shout Lite</h3>
-            <p className="text-gray-600 mb-6">
-              Drawing upon advanced AI technology, ShoutL Lite provides human-sounding audio and video creativity
-              solutions at a fraction of traditional costs. Our pre-packaged OTT solutions simplify advertising
-              processes, empowering businesses to optimize ROI through enhanced ad completion rates and campaign
-              performance
-            </p>
+          <div className="bg-white p-8 rounded-lg shadow-lg flex justify-between flex-col">
+            <div>
+              <h3 className="mb-4 text-[#ff7200]">Shout Lite</h3>
+              <p className="text-gray-600 mb-6">
+                Drawing upon advanced AI technology, ShoutL Lite provides human-sounding audio and video creativity
+                solutions at a fraction of traditional costs. Our pre-packaged OTT solutions simplify advertising
+                processes, empowering businesses to optimize ROI through enhanced ad completion rates and campaign
+                performance
+              </p>
+            </div>
+
             <Link to="/contact" className="btn-primary w-full text-center inline-block">
               Get Started
             </Link>
