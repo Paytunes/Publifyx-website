@@ -133,7 +133,7 @@ const Blog = () => {
       {/* Newsletter CTA */}
       <section className="py-16 bg-[#2563EB] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-whit">Subscribe to Our Newsletter</h2>
+          <h2 className="text-3xl font-bold mb-4 text-white">Subscribe to Our Newsletter</h2>
           <p className="text-blue-100 mb-8">Get the latest advertising insights delivered straight to your inbox</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <input
