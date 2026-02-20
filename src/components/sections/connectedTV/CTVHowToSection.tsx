@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, MonitorPlay, Upload, BarChart3 } from "lucide-react";
@@ -12,23 +11,23 @@ const CTVHowToSection = ({ onGetStarted }: CTVHowToSectionProps) => {
     {
       title: "Define Your Audience",
       description: "Choose who sees your ads—based on age, location, interests, and even viewing habits.",
-      icon: Target
+      icon: Target,
     },
     {
-      title: "Pick the Right Platforms", 
+      title: "Pick the Right Platforms",
       description: "Select from top OTT platforms and apps where your audience hangs out.",
-      icon: MonitorPlay
+      icon: MonitorPlay,
     },
     {
       title: "Upload Your Creatives",
       description: "Use your existing video assets or create new high-impact creatives for CTV.",
-      icon: Upload
+      icon: Upload,
     },
     {
       title: "Measure & Optimize",
       description: "Get detailed insights—impressions, views, completions, even retarget across mobile and desktop.",
-      icon: BarChart3
-    }
+      icon: BarChart3,
+    },
   ];
 
   return (
@@ -56,12 +55,10 @@ const CTVHowToSection = ({ onGetStarted }: CTVHowToSectionProps) => {
         </div>
 
         <div className="text-center">
-          <p className="text-lg text-gray-700 mb-6">
-            No guesswork. Just smart advertising that performs.
-          </p>
-          <Button 
+          <p className="text-lg text-gray-700 mb-6">No guesswork. Just smart advertising that performs.</p>
+          <Button
             onClick={onGetStarted}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-medium transition-all duration-200 hover:scale-105 text-lg"
+            className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-medium transition-all duration-200 hover:scale-105 text-lg"
           >
             Launch a Campaign
           </Button>
