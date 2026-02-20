@@ -210,8 +210,9 @@ const PublisherLogosSection = () => {
                   className="max-w-full max-h-full object-contain"
                   width={160}
                   height={96}
-                  loading="lazy"
-                  decoding="async"
+                  sizes="(max-width: 640px) 140px, 160px"
+                  loading={index < 4 ? "eager" : "lazy"}
+                  decoding={index < 4 ? "sync" : "async"}
                 />
               </div>
               <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1">
