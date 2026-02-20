@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Eye, Users, BarChart3, Target } from "lucide-react";
 
@@ -11,10 +12,10 @@ const BannerCoreMessageSection = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
 
-    const element = document.getElementById("core-message-section");
+    const element = document.getElementById('core-message-section');
     if (element) observer.observe(element);
 
     return () => observer.disconnect();
@@ -25,32 +26,24 @@ const BannerCoreMessageSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Main Content */}
-          <div
-            className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
-          >
+          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                Transform Your Brand Visibility with
+                Transform Your Brand Visibility with 
                 <span className="text-orange-500"> Strategic Banner Advertising</span>
               </h2>
-
+              
               <div className="prose prose-lg text-gray-600 space-y-6">
                 <p>
-                  Take advantage of online banner ads with PublifyX, a platform designed to increase your brand's
-                  visibility and reach. Online banner advertising is an effective way to capture the attention of
-                  potential customers by visually promoting your products or services across a variety of online
-                  platforms.
+                  Take advantage of online banner ads with PublifyX, a platform designed to increase your brand's visibility and reach. Online banner advertising is an effective way to capture the attention of potential customers by visually promoting your products or services across a variety of online platforms.
                 </p>
-
+                
                 <p>
-                  By placing eye-catching ads on high-traffic websites, PublifyX helps your business gain more exposure
-                  and recognition. Our platform simplifies the process of targeting the right audience, ensuring that
-                  your messaging aligns with consumer interests and preferences.
+                  By placing eye-catching ads on high-traffic websites, PublifyX helps your business gain more exposure and recognition. Our platform simplifies the process of targeting the right audience, ensuring that your messaging aligns with consumer interests and preferences.
                 </p>
-
+                
                 <p>
-                  Join numerous successful brands that have leveraged PublifyX's innovative features to boost their
-                  online presence and engage their target market effectively.
+                  Join numerous successful brands that have leveraged PublifyX's innovative features to boost their online presence and engage their target market effectively.
                 </p>
               </div>
             </div>
@@ -69,17 +62,15 @@ const BannerCoreMessageSection = () => {
           </div>
 
           {/* Why Choose PublifyX */}
-          <div
-            className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
-          >
+          <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="bg-gradient-to-br from-gray-50 to-orange-50 rounded-2xl p-8">
               <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8">
                 Why Choose PublifyX for Banner Advertising?
               </h3>
-
+              
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-orange-600 p-3 rounded-lg">
+                  <div className="bg-orange-500 p-3 rounded-lg">
                     <Target className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -89,7 +80,7 @@ const BannerCoreMessageSection = () => {
                     </p>
                   </div>
                 </div>
-
+                
                 <div className="flex items-start space-x-4">
                   <div className="bg-blue-500 p-3 rounded-lg">
                     <BarChart3 className="w-6 h-6 text-white" />
@@ -101,7 +92,7 @@ const BannerCoreMessageSection = () => {
                     </p>
                   </div>
                 </div>
-
+                
                 <div className="flex items-start space-x-4">
                   <div className="bg-green-500 p-3 rounded-lg">
                     <Users className="w-6 h-6 text-white" />
@@ -113,7 +104,7 @@ const BannerCoreMessageSection = () => {
                     </p>
                   </div>
                 </div>
-
+                
                 <div className="flex items-start space-x-4">
                   <div className="bg-purple-500 p-3 rounded-lg">
                     <Eye className="w-6 h-6 text-white" />
