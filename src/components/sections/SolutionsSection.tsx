@@ -60,7 +60,7 @@ const SolutionsSection = () => {
                 height={192}
                 loading="lazy"
                 decoding="async"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 384px"
               />
             </div>
             <div className="p-6">
