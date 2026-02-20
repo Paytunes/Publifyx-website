@@ -135,7 +135,7 @@ const BannerSuccessStoriesSection = () => {
                 >
                   <div className="text-center mb-8">
                     <div className="text-4xl mb-4">📈</div>
-                    <h4 className="text-xl font-bold mb-2">Campaign Results</h4>
+                    <h4 className="text-xl font-bold mb-2 text-white">Campaign Results</h4>
                     <p className="opacity-90">{currentStoryData.industry}</p>
                   </div>
 
