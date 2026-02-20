@@ -5,7 +5,7 @@ const TMAInsightsSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-              Publifyx Quick Insights for Q3 2025
+              PublifyX Quick Insights for Q3 2025
             </h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
               Brands aiming to execute nationwide campaigns, premium product launches, or strengthen corporate branding can unlock immense value by partnering with media powerhouses like Hotstar, SonyLIV, and JioHotstar. These platforms, recognized for their leading ad spends and distinctive audience reach, deliver unmatched visibility, superior brand recall, and exceptional ROI. Strategic ad formats like Banners and Videos enable engagement across diverse audiences, ensuring that every campaign achieves measurable impact. By leveraging these platforms and ad types, brands can secure a persuasive, professional, and results-driven presence in today's dynamic digital ecosystem.

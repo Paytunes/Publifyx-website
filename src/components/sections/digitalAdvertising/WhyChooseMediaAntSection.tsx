@@ -43,7 +43,7 @@ const WhyChooseMediaAntSection = () => {
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Why Choose Publifyx for Digital Advertising?
+            Why Choose PublifyX for Digital Advertising?
           </h2>
         </div>
 
@@ -80,7 +80,7 @@ const WhyChooseMediaAntSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
               <Button size="lg" className="w-full sm:w-auto font-semibold bg-white text-gray-900 hover:bg-gray-100 border border-gray-200">
-                Start Your Campaign with Publifyx
+                Start Your Campaign with PublifyX
               </Button>
               <Button size="lg" variant="outline" className="w-full sm:w-auto font-semibold bg-background/10 hover:bg-background/20 border-primary-foreground/30 text-primary-foreground hover:text-primary-foreground">
                 Schedule a Free Consultation

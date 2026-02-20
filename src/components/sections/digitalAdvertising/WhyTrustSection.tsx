@@ -15,7 +15,7 @@ const WhyTrustSection = () => {
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Why 8,000+ Businesses Trust Publifyx for Digital Advertising
+            Why 8,000+ Businesses Trust PublifyX for Digital Advertising
           </h2>
         </div>
 
