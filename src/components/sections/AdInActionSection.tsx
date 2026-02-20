@@ -174,12 +174,12 @@ const AdInActionSection = () => {
                                 </div>
                                 
                                 <div className="mt-4 flex justify-center items-center space-x-6" id="play-pause-button">
-                                  <button className="text-white hover:text-gray-300 transition-colors">
-                                    <SkipBack size={24} />
+                                  <button className="text-white hover:text-gray-300 transition-colors" aria-label="Previous track">
+                                    <SkipBack size={24} aria-hidden="true" />
                                   </button>
                                   
                                   <button 
-                                    aria-label="play-pause-ad"
+                                    aria-label={isPlaying ? "Pause audio ad" : "Play audio ad"}
                                     onClick={handlePlayPause}
                                     className="bg-white rounded-full p-3 hover:bg-gray-100 transition-colors"
                                   >
@@ -190,8 +190,8 @@ const AdInActionSection = () => {
                                     )}
                                   </button>
                                   
-                                  <button className="text-white hover:text-gray-300 transition-colors">
-                                    <SkipForward size={24} />
+                                  <button className="text-white hover:text-gray-300 transition-colors" aria-label="Next track">
+                                    <SkipForward size={24} aria-hidden="true" />
                                   </button>
                                 </div>
                               </div>

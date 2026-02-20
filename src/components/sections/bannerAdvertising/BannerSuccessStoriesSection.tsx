@@ -177,8 +177,9 @@ const BannerSuccessStoriesSection = () => {
               variant="outline"
               size="icon"
               className="rounded-full hover:bg-orange-50 hover:border-orange-500"
+              aria-label="Previous story"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-5 h-5" aria-hidden="true" />
             </Button>
 
             {/* Dots Indicator */}
@@ -187,6 +188,8 @@ const BannerSuccessStoriesSection = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentStory(index)}
+                  aria-label={`Go to story ${index + 1}`}
+                  aria-current={index === currentStory ? "true" : undefined}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentStory ? 'bg-orange-500 w-8' : 'bg-gray-300'
                   }`}
@@ -199,8 +202,9 @@ const BannerSuccessStoriesSection = () => {
               variant="outline"
               size="icon"
               className="rounded-full hover:bg-orange-50 hover:border-orange-500"
+              aria-label="Next story"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-5 h-5" aria-hidden="true" />
             </Button>
           </div>
         </div>
