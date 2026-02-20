@@ -6,15 +6,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Blog from "./pages/Blog";
 
-// Lazy-loaded routes – only the homepage is eagerly bundled
+// Lazy-loaded routes – only the homepage and blog index are eagerly bundled
 const AdInsights = lazy(() => import("./pages/AdInsights"));
 const WhiteLabelDSP = lazy(() => import("./pages/WhiteLabelDSP"));
 const ConnectedTVAdvertising = lazy(() => import("./pages/ConnectedTVAdvertising"));
 const OnlineBannerAdvertising = lazy(() => import("./pages/OnlineBannerAdvertising"));
 const DigitalAdvertising = lazy(() => import("./pages/DigitalAdvertising"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Blog = lazy(() => import("./pages/Blog"));
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
 const BlogPostAdTechTrends2026 = lazy(() => import("./pages/BlogPost-AdTechTrends2026"));
 const BlogPostWhiteLabelDSPReasons = lazy(() => import("./pages/BlogPost-WhiteLabelDSPReasons"));
