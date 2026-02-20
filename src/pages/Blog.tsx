@@ -77,7 +77,7 @@ const Blog = () => {
     <Layout>
       {/* Hero Section */}
       <section className="bg-[#2563EB] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto text-white px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">PublifyX Blog</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             Stay updated with the latest insights, trends, and strategies in digital advertising
