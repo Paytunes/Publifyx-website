@@ -7,13 +7,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
+// High-traffic landing pages eagerly bundled to eliminate lazy-load waterfall (LCP)
+import ConnectedTVAdvertising from "./pages/ConnectedTVAdvertising";
+import OnlineBannerAdvertising from "./pages/OnlineBannerAdvertising";
+import WhiteLabelDSP from "./pages/WhiteLabelDSP";
+import DigitalAdvertising from "./pages/DigitalAdvertising";
 
-// Lazy-loaded routes – only the homepage and blog index are eagerly bundled
+// Lower-priority routes remain lazy-loaded
 const AdInsights = lazy(() => import("./pages/AdInsights"));
-const WhiteLabelDSP = lazy(() => import("./pages/WhiteLabelDSP"));
-const ConnectedTVAdvertising = lazy(() => import("./pages/ConnectedTVAdvertising"));
-const OnlineBannerAdvertising = lazy(() => import("./pages/OnlineBannerAdvertising"));
-const DigitalAdvertising = lazy(() => import("./pages/DigitalAdvertising"));
 const Contact = lazy(() => import("./pages/Contact"));
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
 const BlogPostAdTechTrends2026 = lazy(() => import("./pages/BlogPost-AdTechTrends2026"));

@@ -14,24 +14,9 @@ const ConnectedTVAdvertising = () => {
   const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
 
   useEffect(() => {
-    // Set meta title
-    document.title = "Connected Tv Advertising - PublifyX";
-    
-    // Set meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Connected TV advertising helps you reach audiences traditional TV can't. Target precisely with our programmatic platform. Learn more today.");
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = "Connected TV advertising helps you reach audiences traditional TV can't. Target precisely with our programmatic platform. Learn more today.";
-      document.getElementsByTagName('head')[0].appendChild(meta);
-    }
-
-    // Cleanup function to reset title when component unmounts
-    return () => {
-      document.title = "PublifyX";
-    };
+    const prev = document.title;
+    document.title = "Connected TV Advertising - PublifyX";
+    return () => { document.title = prev; };
   }, []);
 
   const handleGetStarted = () => {
