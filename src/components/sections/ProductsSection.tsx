@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const ProductsSection = () => {
@@ -8,15 +7,18 @@ const ProductsSection = () => {
         <div className="text-center mb-16">
           <h2 className="mb-6 text-white">Our Products</h2>
           <p className="text-xl text-yellow-100 max-w-3xl mx-auto">
-           An evolved user experience that drives performance across channels with ease.
+            An evolved user experience that drives performance across channels with ease.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="mb-4 text-yellow-secondary">Shout Lite</h3>
+            <h3 className="mb-4 text-orange-600">Shout Lite</h3>
             <p className="text-gray-600 mb-6">
-              Drawing upon advanced AI technology, ShoutL Lite provides human-sounding audio and video creativity solutions at a fraction of traditional costs. Our pre-packaged OTT solutions simplify advertising processes, empowering businesses to optimize ROI through enhanced ad completion rates and campaign performance
+              Drawing upon advanced AI technology, ShoutL Lite provides human-sounding audio and video creativity
+              solutions at a fraction of traditional costs. Our pre-packaged OTT solutions simplify advertising
+              processes, empowering businesses to optimize ROI through enhanced ad completion rates and campaign
+              performance
             </p>
             <Link to="/contact" className="btn-primary w-full text-center inline-block">
               Get Started
@@ -24,9 +26,12 @@ const ProductsSection = () => {
           </div>
 
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="mb-4 text-yellow-secondary">Shout Enterprise</h3>
+            <h3 className="mb-4 text-orange-600">Shout Enterprise</h3>
             <p className="text-gray-600 mb-6">
-              In addition to the comprehensive features of Shoutl Lite, Shoutl Enterprise introduces a White-Labeled DSP Platform designed specifically to cater to the distinctive requirements of corporate media agencies. These fully customizable platforms incorporate self-branded reporting portals and campaign management tools, enabling agencies to provide unparalleled services to their clients.
+              In addition to the comprehensive features of Shoutl Lite, Shoutl Enterprise introduces a White-Labeled DSP
+              Platform designed specifically to cater to the distinctive requirements of corporate media agencies. These
+              fully customizable platforms incorporate self-branded reporting portals and campaign management tools,
+              enabling agencies to provide unparalleled services to their clients.
             </p>
             <Link to="/contact" className="btn-primary w-full text-center inline-block">
               Contact Sales
