@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const CTASection = () => {
@@ -9,7 +8,7 @@ const CTASection = () => {
         <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
           Join hundreds of brands already using PublifyX to reach their target audiences with precision and impact.
         </p>
-        <Link to="/contact" className="btn-secondary text-lg px-8 py-4">
+        <Link to="/contact" className="btn-primary text-lg px-8 py-4">
           Request a Demo
         </Link>
       </div>
