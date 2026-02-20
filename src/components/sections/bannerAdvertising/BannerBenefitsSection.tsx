@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { TrendingUp, Eye, MousePointer, DollarSign, Users, BarChart3 } from "lucide-react";
 
@@ -10,10 +9,11 @@ const BannerBenefitsSection = () => {
     {
       icon: Eye,
       title: "Increase Brand Awareness",
-      description: "Strategically placed ads on high-traffic websites capture vast audiences and reinforce brand identity.",
+      description:
+        "Strategically placed ads on high-traffic websites capture vast audiences and reinforce brand identity.",
       color: "bg-blue-500",
       metric: "85%",
-      metricLabel: "Brand Recall"
+      metricLabel: "Brand Recall",
     },
     {
       icon: BarChart3,
@@ -21,7 +21,7 @@ const BannerBenefitsSection = () => {
       description: "Track impressions, clicks, and conversions to evaluate campaign performance effectively.",
       color: "bg-green-500",
       metric: "95%",
-      metricLabel: "Tracking Accuracy"
+      metricLabel: "Tracking Accuracy",
     },
     {
       icon: DollarSign,
@@ -29,7 +29,7 @@ const BannerBenefitsSection = () => {
       description: "Reach specific audiences based on demographics, location, and interests to maximize ROI.",
       color: "bg-orange-500",
       metric: "300%",
-      metricLabel: "Average ROI"
+      metricLabel: "Average ROI",
     },
     {
       icon: MousePointer,
@@ -37,7 +37,7 @@ const BannerBenefitsSection = () => {
       description: "Visually appealing and interactive experiences that encourage user interaction and drive traffic.",
       color: "bg-purple-500",
       metric: "45%",
-      metricLabel: "Click-Through Rate"
+      metricLabel: "Click-Through Rate",
     },
     {
       icon: Users,
@@ -45,7 +45,7 @@ const BannerBenefitsSection = () => {
       description: "Connect with millions of potential customers across multiple high-traffic platforms.",
       color: "bg-teal-500",
       metric: "2M+",
-      metricLabel: "Daily Reach"
+      metricLabel: "Daily Reach",
     },
     {
       icon: TrendingUp,
@@ -53,8 +53,8 @@ const BannerBenefitsSection = () => {
       description: "Drive traffic to your website and increase sales opportunities through targeted banner campaigns.",
       color: "bg-red-500",
       metric: "60%",
-      metricLabel: "Sales Increase"
-    }
+      metricLabel: "Sales Increase",
+    },
   ];
 
   useEffect(() => {
@@ -64,10 +64,10 @@ const BannerBenefitsSection = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
-    const element = document.getElementById('benefits-section');
+    const element = document.getElementById("benefits-section");
     if (element) observer.observe(element);
 
     return () => observer.disconnect();
@@ -86,12 +86,10 @@ const BannerBenefitsSection = () => {
     <section id="benefits-section" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-            Benefits of Banner Advertising
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Benefits of Banner Advertising</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Banner advertising offers a multitude of advantages that make it a vital component 
-            of a successful digital marketing strategy.
+            Banner advertising offers a multitude of advantages that make it a vital component of a successful digital
+            marketing strategy.
           </p>
         </div>
 
@@ -99,18 +97,18 @@ const BannerBenefitsSection = () => {
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             const isActive = index === activeCard;
-            
+
             return (
               <div
                 key={index}
                 className={`
                   relative bg-white rounded-2xl p-8 shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-105 cursor-pointer
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-                  ${isActive ? 'ring-2 ring-orange-500 transform scale-105' : ''}
+                  ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+                  ${isActive ? "ring-2 ring-orange-500 transform scale-105" : ""}
                 `}
-                style={{ 
+                style={{
                   animationDelay: `${index * 100}ms`,
-                  transitionDelay: `${index * 100}ms` 
+                  transitionDelay: `${index * 100}ms`,
                 }}
                 onMouseEnter={() => setActiveCard(index)}
               >
@@ -123,10 +121,10 @@ const BannerBenefitsSection = () => {
                 <div className="text-center">
                   <h3 className="text-xl font-bold text-gray-800 mb-4">{benefit.title}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">{benefit.description}</p>
-                  
+
                   {/* Metric */}
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <div className="text-2xl font-bold text-orange-500 mb-1">{benefit.metric}</div>
+                    <div className="text-2xl font-bold text-[#ff7200] mb-1">{benefit.metric}</div>
                     <div className="text-sm text-gray-500">{benefit.metricLabel}</div>
                   </div>
                 </div>
@@ -143,9 +141,7 @@ const BannerBenefitsSection = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <div className="bg-orange-50 rounded-2xl p-8 inline-block">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              Ready to Experience These Benefits?
-            </h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Ready to Experience These Benefits?</h3>
             <p className="text-gray-600 mb-6">
               Join thousands of brands already maximizing their advertising ROI with PublifyX.
             </p>

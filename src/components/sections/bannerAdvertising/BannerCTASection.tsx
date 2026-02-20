@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Rocket, ArrowRight, Zap, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,10 +22,10 @@ const BannerCTASection = ({ onGetStarted }: BannerCTASectionProps) => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
-    const element = document.getElementById('final-cta-section');
+    const element = document.getElementById("final-cta-section");
     if (element) observer.observe(element);
 
     return () => observer.disconnect();
@@ -35,12 +34,12 @@ const BannerCTASection = ({ onGetStarted }: BannerCTASectionProps) => {
   useEffect(() => {
     if (isVisible) {
       const interval = setInterval(() => {
-        setAnimatedElements(prev => 
-          prev.map(element => ({
+        setAnimatedElements((prev) =>
+          prev.map((element) => ({
             ...element,
             y: element.y + (Math.random() - 0.5) * 4,
             x: element.x + (Math.random() - 0.5) * 2,
-          }))
+          })),
         );
       }, 2000);
 
@@ -49,7 +48,10 @@ const BannerCTASection = ({ onGetStarted }: BannerCTASectionProps) => {
   }, [isVisible]);
 
   return (
-    <section id="final-cta-section" className="py-16 md:py-24 bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 relative overflow-hidden">
+    <section
+      id="final-cta-section"
+      className="py-16 md:py-24 bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 relative overflow-hidden"
+    >
       {/* Animated Background Elements */}
       {animatedElements.map((element) => (
         <div
@@ -59,28 +61,30 @@ const BannerCTASection = ({ onGetStarted }: BannerCTASectionProps) => {
             left: `${element.x}%`,
             top: `${element.y}%`,
             animationDelay: `${element.delay}ms`,
-            transform: 'translate(-50%, -50%)',
+            transform: "translate(-50%, -50%)",
           }}
         >
           <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-            <Rocket className="w-6 h-6 text-orange-500" />
+            <Rocket className="w-6 h-6 text-[#ff7200]" />
           </div>
         </div>
       ))}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div
+          className={`text-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        >
           {/* Main Heading */}
           <div className="mb-8">
             <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
               <Zap className="w-5 h-5 text-yellow-300 animate-pulse" />
               <span className="text-white font-semibold">Limited Time Offer</span>
             </div>
-            
+
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               ✅ Ready to Maximize Your Reach?
             </h2>
-            
+
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
               Start your first campaign with PublifyX today and join thousands of successful brands.
             </p>
@@ -88,9 +92,9 @@ const BannerCTASection = ({ onGetStarted }: BannerCTASectionProps) => {
 
           {/* Main CTA Button */}
           <div className="mb-8">
-            <Button 
+            <Button
               onClick={onGetStarted}
-              className="bg-white text-orange-500 hover:bg-gray-100 px-12 py-6 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-110 shadow-2xl group"
+              className="bg-white text-[#ff7200] hover:bg-gray-100 px-12 py-6 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-110 shadow-2xl group"
             >
               <Rocket className="mr-3 w-6 h-6 group-hover:animate-bounce" />
               Launch My Banner Ad Campaign
@@ -108,7 +112,7 @@ const BannerCTASection = ({ onGetStarted }: BannerCTASectionProps) => {
               </div>
               <span className="text-sm">4.9/5 Customer Rating</span>
             </div>
-            
+
             <div className="flex items-center space-x-2">
               <Zap className="w-4 h-4 text-yellow-300" />
               <span className="text-sm">Setup in Under 5 Minutes</span>
