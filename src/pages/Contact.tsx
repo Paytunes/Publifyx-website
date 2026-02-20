@@ -14,15 +14,15 @@ const Contact = () => {
     hearAboutUs: "",
     mobile_number: "",
     project_description: "",
-    source: "publifyx"
+    source: "publifyx",
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     setIsSubmitting(true);
     console.log("Submitting form data:", formData);
 
@@ -33,8 +33,9 @@ const Contact = () => {
         formDataForSubmission.append(key, value);
       });
 
-      const googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycbytrG1hsiIqFlkL4vMMNVRy0WXpEq2E26mU8JGuIA/exec";
-      
+      const googleAppsScriptUrl =
+        "https://script.google.com/macros/s/AKfycbytrG1hsiIqFlkL4vMMNVRy0WXpEq2E26mU8JGuIA/exec";
+
       const response = await fetch(googleAppsScriptUrl, {
         method: "POST",
         mode: "no-cors",
@@ -44,12 +45,12 @@ const Contact = () => {
       // Since we're using no-cors mode, we can't read the response
       // We'll assume success if no error is thrown
       console.log("Form submitted successfully");
-      
+
       toast({
         title: "Success!",
         description: "Your message has been sent successfully.",
       });
-      
+
       // Reset form
       setFormData({
         company_name: "",
@@ -57,7 +58,7 @@ const Contact = () => {
         hearAboutUs: "",
         mobile_number: "",
         project_description: "",
-        source: "publifyx"
+        source: "publifyx",
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -72,7 +73,7 @@ const Contact = () => {
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -83,16 +84,12 @@ const Contact = () => {
             {/* Left Side - Blue Section */}
             <div className="lg:col-span-2 bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white relative overflow-hidden">
               <div className="relative z-10">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-                  Let's Grow Your Brand Together
-                </h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Let's Grow Your Brand Together</h2>
                 <p className="text-blue-100 mb-8 text-base">
                   Fill out the form, including details about your next campaign, and we'll be in touch shortly.
                 </p>
 
-                <h2 className="text-xl font-bold mb-4 text-white">
-                  Contact Information
-                </h2>
+                <h2 className="text-xl font-bold mb-4 text-white">Contact Information</h2>
 
                 <div className="space-y-4">
                   <div className="flex items-start">
@@ -103,14 +100,14 @@ const Contact = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <Phone className="w-5 h-5 mt-1 mr-3 flex-shrink-0" />
                     <div>
                       <div className="text-blue-100 text-sm">+91-8448330304</div>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <Mail className="w-5 h-5 mt-1 mr-3 flex-shrink-0" />
                     <div>
@@ -121,23 +118,19 @@ const Contact = () => {
               </div>
 
               {/* Orange Circle Decoration */}
-              <div className="absolute bottom-0 right-0 w-60 h-60 bg-orange-500 rounded-full transform translate-x-24 translate-y-24"></div>
+              <div className="absolute bottom-0 right-0 w-60 h-60 bg-orange-600 rounded-full transform translate-x-24 translate-y-24"></div>
             </div>
 
             {/* Right Side - Form Section */}
             <div className="lg:col-span-3 bg-white p-8 pb-4">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
-                Fill the Form Below
-              </h2>
-              
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">Fill the Form Below</h2>
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Hidden source field */}
                 <input type="hidden" name="source" value={formData.source} />
-                
+
                 <div>
-                  <h3 className="block text-sm font-medium text-gray-700 mb-2">
-                    Company Name*
-                  </h3>
+                  <h3 className="block text-sm font-medium text-gray-700 mb-2">Company Name*</h3>
                   <Input
                     type="text"
                     required
@@ -148,9 +141,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <h3 className="block text-sm font-medium text-gray-700 mb-2">
-                    Company Email*
-                  </h3>
+                  <h3 className="block text-sm font-medium text-gray-700 mb-2">Company Email*</h3>
                   <Input
                     type="email"
                     required
@@ -161,10 +152,11 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    How did you hear about us ?
-                  </label>
-                  <Select value={formData.hearAboutUs} onValueChange={(value) => handleInputChange("hearAboutUs", value)}>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">How did you hear about us ?</label>
+                  <Select
+                    value={formData.hearAboutUs}
+                    onValueChange={(value) => handleInputChange("hearAboutUs", value)}
+                  >
                     <SelectTrigger className="w-full border-gray-300">
                       <SelectValue placeholder="LinkedIn" />
                     </SelectTrigger>
@@ -181,12 +173,14 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <h3 className="block text-sm font-medium text-gray-700 mb-2">
-                    Mobile Number
-                  </h3>
+                  <h3 className="block text-sm font-medium text-gray-700 mb-2">Mobile Number</h3>
                   <div className="flex">
                     <div className="flex items-center bg-gray-50 border border-r-0 border-gray-300 px-3 rounded-l-md">
-                      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyMCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE0IiByeD0iMiIgZmlsbD0iI0ZGOTkzMyIvPgo8cmVjdCB5PSI0LjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iNC42NjY2NyIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSI5LjMzMzMzIiB3aWR0aD0iMjAiIGhlaWdodD0iNC42NjY2NyIgZmlsbD0iIzEzOEE0NiIvPgo8L3N2Zz4K" alt="IN" className="w-5 h-4 mr-2" />
+                      <img
+                        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyMCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE0IiByeD0iMiIgZmlsbD0iI0ZGOTkzMyIvPgo8cmVjdCB5PSI0LjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iNC42NjY2NyIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSI5LjMzMzMzIiB3aWR0aD0iMjAiIGhlaWdodD0iNC42NjY2NyIgZmlsbD0iIzEzOEE0NiIvPgo8L3N2Zz4K"
+                        alt="IN"
+                        className="w-5 h-4 mr-2"
+                      />
                       <span className="text-sm text-gray-600">+91</span>
                     </div>
                     <Input
@@ -200,9 +194,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <h3 className="block text-sm font-medium text-gray-700 mb-2">
-                    Campaign Details*
-                  </h3>
+                  <h3 className="block text-sm font-medium text-gray-700 mb-2">Campaign Details*</h3>
                   <Textarea
                     value={formData.project_description}
                     onChange={(e) => handleInputChange("project_description", e.target.value)}
@@ -213,8 +205,8 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   disabled={isSubmitting}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium disabled:opacity-50"
                 >

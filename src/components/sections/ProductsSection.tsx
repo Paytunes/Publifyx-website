@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ProductsSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-yellow-secondary">
+    <section className="py-16 md:py-24 bg-orange-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="mb-6 text-white">Our Products</h2>
@@ -20,7 +20,10 @@ const ProductsSection = () => {
               processes, empowering businesses to optimize ROI through enhanced ad completion rates and campaign
               performance
             </p>
-            <Link to="/contact" className="btn-primary w-full text-center inline-block">
+            <Link
+              to="/contact"
+              className="btn-primary !bg-orange-600 hover:!bg-organge-700 w-full text-center inline-block"
+            >
               Get Started
             </Link>
           </div>
@@ -33,7 +36,10 @@ const ProductsSection = () => {
               fully customizable platforms incorporate self-branded reporting portals and campaign management tools,
               enabling agencies to provide unparalleled services to their clients.
             </p>
-            <Link to="/contact" className="btn-primary w-full text-center inline-block">
+            <Link
+              to="/contact"
+              className="btn-primary !bg-orange-600 hover:!bg-organge-700 w-full text-center inline-block"
+            >
               Contact Sales
             </Link>
           </div>
