@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const blogPosts = [
   {
@@ -13,7 +14,8 @@ const blogPosts = [
     category: "Ad Tech",
     date: "Dec 29, 2025",
     readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    // Unsplash supports fm=webp&q=75 for modern format + compression
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&fm=webp&q=75",
     slug: "ad-tech-trends-2026",
   },
   {
@@ -24,7 +26,7 @@ const blogPosts = [
     category: "White Label DSP",
     date: "Dec 29, 2025",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&h=400&fit=crop&fm=webp&q=75",
     slug: "white-label-dsp-reasons",
   },
   {
@@ -35,7 +37,7 @@ const blogPosts = [
     category: "Banner Ads",
     date: "Dec 15, 2025",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&fm=webp&q=75",
     slug: "online-banner-advertising-guide-2026",
   },
   {
@@ -46,7 +48,7 @@ const blogPosts = [
     category: "CTV Advertising",
     date: "Dec 8, 2025",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop&fm=webp&q=75",
     slug: "connected-tv-advertising-guide",
   },
   {
@@ -56,7 +58,7 @@ const blogPosts = [
     category: "Programmatic",
     date: "Dec 5, 2025",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop&fm=webp&q=75",
     slug: "maximizing-roi-programmatic-advertising",
   },
   {
@@ -67,12 +69,18 @@ const blogPosts = [
     category: "Market Insights",
     date: "Nov 25, 2025",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&h=400&fit=crop&fm=webp&q=75",
     slug: "targeting-indian-digital-consumer",
   },
 ];
 
 const Blog = () => {
+  useEffect(() => {
+    const prev = document.title;
+    document.title = "Digital Advertising Blog & Insights | PublifyX";
+    return () => { document.title = prev; };
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -89,13 +97,19 @@ const Blog = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
+            {blogPosts.map((post, index) => (
               <Card key={post.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
                 <div className="relative overflow-hidden">
                   <img
                     src={post.image}
                     alt={post.title}
+                    width={600}
+                    height={400}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    // First card image is the LCP — prioritize it; lazy-load the rest
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    decoding={index === 0 ? "sync" : "async"}
                   />
                   <Badge className="absolute top-4 left-4 bg-[#ff7200] hover:bg-orange-600">{post.category}</Badge>
                 </div>
@@ -152,3 +166,4 @@ const Blog = () => {
 };
 
 export default Blog;
+
