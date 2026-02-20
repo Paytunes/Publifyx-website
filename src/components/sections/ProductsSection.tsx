@@ -28,14 +28,17 @@ const ProductsSection = () => {
             </Link>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="mb-4 text-[#ff7200]">Shout Enterprise</h3>
-            <p className="text-gray-600 mb-6">
-              In addition to the comprehensive features of Shoutl Lite, Shoutl Enterprise introduces a White-Labeled DSP
-              Platform designed specifically to cater to the distinctive requirements of corporate media agencies. These
-              fully customizable platforms incorporate self-branded reporting portals and campaign management tools,
-              enabling agencies to provide unparalleled services to their clients.
-            </p>
+          <div className="bg-white p-8 rounded-lg shadow-lg flex justify-between flex-col">
+            <div>
+              <h3 className="mb-4 text-[#ff7200]">Shout Enterprise</h3>
+              <p className="text-gray-600 mb-6">
+                In addition to the comprehensive features of Shoutl Lite, Shoutl Enterprise introduces a White-Labeled
+                DSP Platform designed specifically to cater to the distinctive requirements of corporate media agencies.
+                These fully customizable platforms incorporate self-branded reporting portals and campaign management
+                tools, enabling agencies to provide unparalleled services to their clients.
+              </p>
+            </div>
+
             <Link to="/contact" className="btn-primary w-full text-center inline-block">
               Contact Sales
             </Link>
