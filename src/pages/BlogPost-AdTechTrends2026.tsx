@@ -1,8 +1,13 @@
 import { useEffect } from "react";
 import BlogPostLayout from "@/components/blog/BlogPostLayout";
+import InlineRelatedArticle from "@/components/blog/InlineRelatedArticle";
+import { getRelatedArticles } from "@/data/blogPosts";
 import { Link } from "react-router-dom";
 
+const CURRENT_SLUG = "ad-tech-trends-2026";
+
 const BlogPostAdTechTrends2026 = () => {
+  const { inline } = getRelatedArticles(CURRENT_SLUG);
   // FAQ Schema JSON-LD
   const faqSchema = {
     "@context": "https://schema.org",
@@ -75,6 +80,7 @@ const BlogPostAdTechTrends2026 = () => {
 
   return (
     <BlogPostLayout
+      currentSlug={CURRENT_SLUG}
       category="Ad Tech"
       date="December 29, 2025"
       readTime="12 min read"
@@ -150,6 +156,8 @@ const BlogPostAdTechTrends2026 = () => {
         White-label solutions are no longer just for large enterprises. With AI-powered platforms lowering entry
         barriers, even mid-sized agencies can launch and manage their own DSP efficiently.
       </p>
+
+      {inline && <InlineRelatedArticle post={inline} />}
 
       <blockquote>
         Looking to build or scale your own programmatic ecosystem? PublifyX enables agencies and brands to launch
