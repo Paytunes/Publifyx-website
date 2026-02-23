@@ -4,8 +4,11 @@ import type { BlogPost } from "@/data/blogPosts";
 
 /** Inline related article card — inserted between paragraphs */
 const InlineRelatedArticle = ({ post }: { post: BlogPost }) => (
-  <div className="not-prose my-10 border border-gray-200 rounded-xl overflow-hidden group hover:shadow-lg transition-shadow">
-    <Link to={`/blog/${post.slug}`} className="flex flex-col sm:flex-row no-underline">
+  <div className="not-prose my-8 border-y border-gray-200 border-solid py-8">
+    <Link
+      to={`/blog/${post.slug}`}
+      className="flex flex-col sm:flex-row no-underline border border-gray-200 rounded-xl overflow-hidden group hover:shadow-lg transition-shadow"
+    >
       <div className="sm:w-2/5 overflow-hidden">
         <img
           src={post.image}
@@ -15,9 +18,7 @@ const InlineRelatedArticle = ({ post }: { post: BlogPost }) => (
         />
       </div>
       <div className="sm:w-3/5 p-5 sm:p-6 flex flex-col justify-center">
-        <span className="text-xs font-bold uppercase tracking-widest text-[#ff7200] mb-2">
-          {post.category}
-        </span>
+        <span className="text-xs font-bold uppercase tracking-widest text-[#ff7200] mb-2">{post.category}</span>
         <h4 className="text-lg font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#ff7200] transition-colors">
           {post.title}
         </h4>
