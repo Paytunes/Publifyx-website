@@ -54,27 +54,6 @@ export const blogPosts: BlogPost[] = [
     image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop&fm=webp&q=75",
     slug: "connected-tv-advertising-guide",
   },
-  {
-    id: 5,
-    title: "Maximizing ROI with Programmatic Advertising",
-    excerpt: "Discover strategies to optimize your programmatic campaigns and achieve better returns on your ad spend.",
-    category: "Programmatic",
-    date: "Dec 5, 2025",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop&fm=webp&q=75",
-    slug: "maximizing-roi-programmatic-advertising",
-  },
-  {
-    id: 6,
-    title: "Targeting the Indian Digital Consumer in 2025",
-    excerpt:
-      "Insights into the evolving digital habits of Indian consumers and how advertisers can reach them effectively.",
-    category: "Market Insights",
-    date: "Nov 25, 2025",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&h=400&fit=crop&fm=webp&q=75",
-    slug: "targeting-indian-digital-consumer",
-  },
 ];
 
 /**
