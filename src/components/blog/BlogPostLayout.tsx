@@ -3,8 +3,11 @@ import Layout from "@/components/Layout";
 import { ArrowLeft, Twitter, Linkedin, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
 import ReadingProgressBar from "./ReadingProgressBar";
+import RelatedArticlesSection from "./RelatedArticlesSection";
+import { getRelatedArticles } from "@/data/blogPosts";
 
 interface BlogPostLayoutProps {
+  currentSlug: string;
   category: string;
   date: string;
   readTime: string;
@@ -17,6 +20,7 @@ interface BlogPostLayoutProps {
 }
 
 const BlogPostLayout = ({
+  currentSlug,
   category,
   date,
   readTime,
@@ -29,6 +33,7 @@ const BlogPostLayout = ({
 }: BlogPostLayoutProps) => {
   const pageUrl = encodeURIComponent(window.location.href);
   const encodedTitle = encodeURIComponent(title);
+  const { sidebar } = getRelatedArticles(currentSlug);
 
   const shareLinks = {
     twitter: `https://twitter.com/intent/tweet?url=${pageUrl}&text=${encodedTitle}`,
@@ -126,6 +131,9 @@ const BlogPostLayout = ({
           {children}
         </div>
       </article>
+
+      {/* Related Articles Section */}
+      <RelatedArticlesSection posts={sidebar} />
     </Layout>
   );
 };

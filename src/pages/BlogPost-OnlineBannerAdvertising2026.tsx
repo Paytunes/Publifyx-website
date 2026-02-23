@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import BlogPostLayout from "@/components/blog/BlogPostLayout";
+import InlineRelatedArticle from "@/components/blog/InlineRelatedArticle";
+import { getRelatedArticles } from "@/data/blogPosts";
 import {
   Accordion,
   AccordionContent,
@@ -8,7 +10,10 @@ import {
 } from "@/components/ui/accordion";
 import heroImage from "@/assets/blog/online-banner-advertising-hero.jpg";
 
+const CURRENT_SLUG = "online-banner-advertising-guide-2026";
+
 const BlogPostOnlineBannerAdvertising2026 = () => {
+  const { inline } = getRelatedArticles(CURRENT_SLUG);
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -77,6 +82,7 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
 
   return (
     <BlogPostLayout
+      currentSlug={CURRENT_SLUG}
       category="Banner Ads"
       date="December 15, 2025"
       readTime="10 min read"
@@ -156,6 +162,8 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
       <p>
         This gives advertisers a complete view of performance, not just last-click snapshots.
       </p>
+
+      {inline && <InlineRelatedArticle post={inline} />}
 
       <h2>How Banner Advertising Works Today</h2>
 

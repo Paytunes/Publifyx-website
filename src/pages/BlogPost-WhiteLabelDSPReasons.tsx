@@ -1,8 +1,13 @@
 import { useEffect } from "react";
 import BlogPostLayout from "@/components/blog/BlogPostLayout";
+import InlineRelatedArticle from "@/components/blog/InlineRelatedArticle";
+import { getRelatedArticles } from "@/data/blogPosts";
 import { Link } from "react-router-dom";
 
+const CURRENT_SLUG = "white-label-dsp-reasons";
+
 const BlogPostWhiteLabelDSPReasons = () => {
+  const { inline } = getRelatedArticles(CURRENT_SLUG);
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -74,6 +79,7 @@ const BlogPostWhiteLabelDSPReasons = () => {
 
   return (
     <BlogPostLayout
+      currentSlug={CURRENT_SLUG}
       category="White Label DSP"
       date="December 29, 2025"
       readTime="10 min read"
@@ -141,6 +147,8 @@ const BlogPostWhiteLabelDSPReasons = () => {
         services, or performance-based pricing. Instead of depending solely on commissions, agencies gain a scalable
         product that grows alongside their client base.
       </p>
+
+      {inline && <InlineRelatedArticle post={inline} />}
 
       <h2>3. AI-Driven Optimisation Without Operational Complexity</h2>
 
