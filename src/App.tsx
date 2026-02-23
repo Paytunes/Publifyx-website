@@ -19,6 +19,7 @@ const AdInsights = lazy(() => import("./pages/AdInsights"));
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
 const BlogPostAdTechTrends2026 = lazy(() => import("./pages/BlogPost-AdTechTrends2026"));
 const BlogPostWhiteLabelDSPReasons = lazy(() => import("./pages/BlogPost-WhiteLabelDSPReasons"));
+const BlogPostConnectedTVAdvertising = lazy(() => import("./pages/BlogPost-ConnectedTVAdvertising"));
 const TermsConditions = lazy(() => import("./pages/TermsConditions"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="/blog/online-banner-advertising-guide-2026" element={<BlogPostOnlineBannerAdvertising2026 />} />
             <Route path="/blog/ad-tech-trends-2026" element={<BlogPostAdTechTrends2026 />} />
             <Route path="/blog/white-label-dsp-reasons" element={<BlogPostWhiteLabelDSPReasons />} />
+            <Route path="/blog/connected-tv-advertising-guide" element={<BlogPostConnectedTVAdvertising />} />
             <Route path="/terms_and_conditions" element={<TermsConditions />} />
             <Route path="/privacy_policy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
