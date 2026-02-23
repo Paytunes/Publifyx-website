@@ -7,7 +7,7 @@ const InlineRelatedArticle = ({ post }: { post: BlogPost }) => (
   <div className="not-prose my-8 border-y border-gray-200 border-solid py-8">
     <Link
       to={`/blog/${post.slug}`}
-      className="flex flex-col sm:flex-row no-underline border border-gray-200 rounded-xl overflow-hidden group hover:shadow-lg transition-shadow"
+      className="flex flex-col sm:flex-row !no-underline border border-gray-200 rounded-xl overflow-hidden group hover:shadow-lg transition-shadow"
     >
       <div className="sm:w-2/5 overflow-hidden">
         <img
