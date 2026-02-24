@@ -5,7 +5,7 @@ import MagneticButton from "@/components/effects/MagneticButton";
 
 const ProductsSection = () => {
   return (
-    <section className="py-20 md:py-32 bg-navy-800 relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-orange-400 rounded-full blur-[160px] opacity-[0.06]" />
 
@@ -53,7 +53,9 @@ const ProductsSection = () => {
               </div>
               <h3 className="mb-4 !text-white text-2xl">Shout Lite</h3>
               <p className="text-navy-300 leading-relaxed mb-8">
-                AI-powered audio and video creativity solutions at a fraction of traditional costs. Pre-packaged OTT solutions simplify advertising, empowering businesses to optimize ROI through enhanced ad completion rates.
+                AI-powered audio and video creativity solutions at a fraction of traditional costs. Pre-packaged OTT
+                solutions simplify advertising, empowering businesses to optimize ROI through enhanced ad completion
+                rates.
               </p>
             </div>
             <MagneticButton as="div" className="w-full">
@@ -84,7 +86,8 @@ const ProductsSection = () => {
               </div>
               <h3 className="mb-4 !text-white text-2xl">Shout Enterprise</h3>
               <p className="text-white/80 leading-relaxed mb-8">
-                White-Labeled DSP Platform designed for corporate media agencies. Fully customizable platforms with self-branded reporting portals and campaign management tools for unparalleled client services.
+                White-Labeled DSP Platform designed for corporate media agencies. Fully customizable platforms with
+                self-branded reporting portals and campaign management tools for unparalleled client services.
               </p>
             </div>
             <MagneticButton as="div" className="w-full">

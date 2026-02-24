@@ -13,7 +13,7 @@ const JoinRevolutionSection = () => {
   const imgY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-32 bg-navy-50 overflow-hidden">
+    <section ref={sectionRef} className="py-12 md:py-16 bg-navy-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -27,7 +27,9 @@ const JoinRevolutionSection = () => {
             </span>
             <h2 className="mb-6 text-left">Join the Digital Advertising Revolution</h2>
             <p className="text-lg text-navy-400 mb-8 leading-relaxed">
-              Be part of the future of digital advertising. Whether you're a creative thinker, tech enthusiast, or marketing expert, there's a place for you. Together, we'll push boundaries, innovate relentlessly, and redefine excellence in digital advertising.
+              Be part of the future of digital advertising. Whether you're a creative thinker, tech enthusiast, or
+              marketing expert, there's a place for you. Together, we'll push boundaries, innovate relentlessly, and
+              redefine excellence in digital advertising.
             </p>
             <MagneticButton as="div">
               <Link to="/contact" className="inline-flex items-center btn-primary group">

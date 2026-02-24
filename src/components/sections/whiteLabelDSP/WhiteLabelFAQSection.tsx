@@ -1,10 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
   {
@@ -25,13 +20,14 @@ const faqs = [
   },
   {
     question: "How is this different from a reseller model?",
-    answer: "Unlike a reseller setup, a white-label DSP gives you full branding, pricing control, bidding access, and customer ownership.",
+    answer:
+      "Unlike a reseller setup, a white-label DSP gives you full branding, pricing control, bidding access, and customer ownership.",
   },
 ];
 
 const WhiteLabelFAQSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <motion.span
@@ -42,20 +38,12 @@ const WhiteLabelFAQSection = () => {
           >
             FAQ
           </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             Frequently Asked Questions
           </motion.h2>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <Accordion type="single" collapsible className="w-full space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem
@@ -66,9 +54,7 @@ const WhiteLabelFAQSection = () => {
                 <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
+                <AccordionContent className="pb-5 text-navy-400 leading-relaxed">{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

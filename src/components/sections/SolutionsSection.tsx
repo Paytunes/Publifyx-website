@@ -6,21 +6,24 @@ const solutions = [
   {
     icon: Cpu,
     title: "AI-Powered Creativity",
-    description: "Create captivating audio and video content effortlessly with advanced AI algorithms that ensure natural, engaging creativity in seconds.",
+    description:
+      "Create captivating audio and video content effortlessly with advanced AI algorithms that ensure natural, engaging creativity in seconds.",
     image: "/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.png",
     alt: "Person editing ad video on phone using AI",
   },
   {
     icon: Tv,
     title: "OTT Advertising Simplification",
-    description: "Pre-packaged OTT solutions make platform selection easy and affordable, with guaranteed high ad completion rates to maximize ROI.",
+    description:
+      "Pre-packaged OTT solutions make platform selection easy and affordable, with guaranteed high ad completion rates to maximize ROI.",
     image: "/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.png",
     alt: "Woman watching video content on mobile device",
   },
   {
     icon: LayoutDashboard,
     title: "White-Labeled DSP Solutions",
-    description: "Customized DSP platforms for corporate media agencies with self-branded reporting portals and campaign management tools.",
+    description:
+      "Customized DSP platforms for corporate media agencies with self-branded reporting portals and campaign management tools.",
     image: "/lovable-uploads/d0e4d426-d705-4d55-8135-97e8afdf1613.png",
     alt: "Smartphone showing ad interface – DSP solution",
   },
@@ -60,7 +63,7 @@ const TiltCard = ({ children, className }: { children: React.ReactNode; classNam
 
 const SolutionsSection = () => {
   return (
-    <section className="py-20 md:py-32 bg-navy-50">
+    <section className="py-12 md:py-16 bg-navy-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.span

@@ -43,7 +43,7 @@ const AdInActionSection = () => {
   }, []);
 
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -136,7 +136,11 @@ const AdInActionSection = () => {
                       />
 
                       <div className="mt-6 text-center">
-                        <a href="/" target="_blank" className="rounded-full bg-white border border-white px-4 py-1 text-navy-800 no-underline text-sm font-medium">
+                        <a
+                          href="/"
+                          target="_blank"
+                          className="rounded-full bg-white border border-white px-4 py-1 text-navy-800 no-underline text-sm font-medium"
+                        >
                           Know More
                         </a>
                       </div>
@@ -161,7 +165,10 @@ const AdInActionSection = () => {
                       </div>
 
                       <div className="mt-4 flex justify-center items-center space-x-6">
-                        <button className="text-white/70 hover:text-white transition-colors" aria-label="Previous track">
+                        <button
+                          className="text-white/70 hover:text-white transition-colors"
+                          aria-label="Previous track"
+                        >
                           <SkipBack size={24} aria-hidden="true" />
                         </button>
                         <button
@@ -169,7 +176,11 @@ const AdInActionSection = () => {
                           onClick={handlePlayPause}
                           className="bg-white rounded-full p-3 hover:bg-white/90 transition-colors"
                         >
-                          {isPlaying ? <Pause size={24} className="text-navy-800" /> : <Play size={24} className="text-navy-800" />}
+                          {isPlaying ? (
+                            <Pause size={24} className="text-navy-800" />
+                          ) : (
+                            <Play size={24} className="text-navy-800" />
+                          )}
                         </button>
                         <button className="text-white/70 hover:text-white transition-colors" aria-label="Next track">
                           <SkipForward size={24} aria-hidden="true" />

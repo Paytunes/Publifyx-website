@@ -35,19 +35,23 @@ const AnimatedCounter = ({ target, suffix }: { target: number; suffix: string })
 
   return (
     <div ref={ref} className="text-4xl md:text-5xl font-extrabold text-navy-800 mb-2 font-display">
-      {display}{suffix}
+      {display}
+      {suffix}
     </div>
   );
 };
 
 const StatisticsSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-white relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-white relative overflow-hidden">
       {/* Subtle background effect */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: "radial-gradient(circle at 1px 1px, hsl(220 47% 12%) 1px, transparent 0)",
-        backgroundSize: "48px 48px",
-      }} />
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: "radial-gradient(circle at 1px 1px, hsl(220 47% 12%) 1px, transparent 0)",
+          backgroundSize: "48px 48px",
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -59,11 +63,7 @@ const StatisticsSection = () => {
           >
             Platform Reach
           </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             Reach the Right Audience
           </motion.h2>
         </div>
