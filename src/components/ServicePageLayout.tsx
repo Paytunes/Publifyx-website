@@ -120,15 +120,25 @@ const ServicePageLayout = ({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
           <Link
             to={`/blog/${relatedArticle.slug}`}
-            className="block bg-navy-50 border border-navy-100 rounded-2xl p-6 hover:shadow-lg transition-shadow group"
+            className="flex flex-col sm:flex-row bg-navy-50 border border-navy-100 rounded-2xl overflow-hidden group hover:shadow-lg hover:shadow-navy-200/40 transition-all duration-300"
           >
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-orange-500">
-              Related Article
-            </span>
-            <h3 className="text-lg font-bold text-navy-900 mt-2 mb-1 group-hover:text-brand-orange-500 transition-colors">
-              {relatedArticle.title}
-            </h3>
-            <p className="text-sm text-navy-500 line-clamp-2">{relatedArticle.excerpt}</p>
+            <div className="sm:w-2/5 overflow-hidden">
+              <img
+                src={relatedArticle.image}
+                alt={relatedArticle.title}
+                className="w-full h-48 sm:h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div className="sm:w-3/5 p-5 sm:p-6 flex flex-col justify-center">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-orange-500 mb-2">
+                Related Article
+              </span>
+              <h3 className="text-lg font-bold text-navy-900 leading-snug mb-1 group-hover:text-brand-orange-500 transition-colors">
+                {relatedArticle.title}
+              </h3>
+              <p className="text-sm text-navy-500 line-clamp-2">{relatedArticle.excerpt}</p>
+            </div>
           </Link>
         </div>
       )}
