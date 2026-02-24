@@ -57,9 +57,9 @@ const FAQSection = () => {
             >
               <AccordionItem
                 value={`item-${i}`}
-                className="bg-navy-50 !text-[16px] rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
+                className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
               >
-                <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
+                <AccordionTrigger className="py-5 !text-[16px] text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent className="pb-5 text-navy-400 leading-relaxed">{faq.a}</AccordionContent>
