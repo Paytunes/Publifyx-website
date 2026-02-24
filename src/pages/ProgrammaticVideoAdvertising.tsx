@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const ProgrammaticVideoAdvertising = () => {
   useEffect(() => {
-    document.title = "Programmatic Video Advertising Platform | Video DSP — PublifyX";
+    document.title = "Programmatic Video Advertising | Video DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Run high-impact video ad campaigns across web, app, and streaming with PublifyX. In-stream, outstream, and rewarded video formats with programmatic precision.");
+    if (meta) meta.setAttribute("content", "Launch high-impact video campaigns across web, app, and streaming platforms. Pre-roll, mid-roll, and outstream formats with VAST/VPAID support and completion optimization.");
   }, []);
 
   return (

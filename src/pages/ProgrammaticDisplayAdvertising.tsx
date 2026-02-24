@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const ProgrammaticDisplayAdvertising = () => {
   useEffect(() => {
-    document.title = "Programmatic Display Advertising Platform | Display DSP — PublifyX";
+    document.title = "Programmatic Display Advertising | Display DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Run targeted display advertising campaigns across premium websites and apps with PublifyX's programmatic display DSP. Banner ads, native ads, and rich media at scale.");
+    if (meta) meta.setAttribute("content", "Run banner, native, and rich media campaigns across premium websites and apps. Real-time bidding, advanced audience targeting, and viewability optimization at scale.");
   }, []);
 
   return (

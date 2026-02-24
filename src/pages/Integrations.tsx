@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const Integrations = () => {
   useEffect(() => {
-    document.title = "PublifyX Integrations | SSPs, Ad Exchanges, and Data Partners";
+    document.title = "PublifyX Integrations | 40+ SSPs, Ad Exchanges & Data Partners";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "PublifyX integrates with 40+ SSPs, ad exchanges, and data partners. Access premium inventory across display, video, audio, CTV, and OTT channels.");
+    if (meta) meta.setAttribute("content", "Access premium inventory through 40+ SSP, ad exchange, and data partner integrations across display, video, audio, CTV, and OTT channels worldwide.");
   }, []);
 
   return (

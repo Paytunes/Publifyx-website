@@ -6,7 +6,7 @@ const WhiteLabelVsSelfServe = () => {
   useEffect(() => {
     document.title = "White Label DSP vs Self-Serve DSP: Which Is Right for You? — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Understand the key differences between a white label DSP and a self-serve DSP. Compare features, costs, control, and scalability to choose the right model.");
+    if (meta) meta.setAttribute("content", "Compare branding, pricing control, scalability, and cost structure between white label and self-serve DSPs. Find the right programmatic model for your business.");
   }, []);
 
   const comparisons = [

@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const Features = () => {
   useEffect(() => {
-    document.title = "PublifyX DSP Features | Targeting, Reporting, Formats, and More";
+    document.title = "PublifyX DSP Features | Targeting, Bidding, Reporting & More";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Explore the full feature set of PublifyX DSP — advanced targeting, real-time bidding, multi-channel support, brand safety, transparent reporting, and white label customization.");
+    if (meta) meta.setAttribute("content", "Advanced targeting, real-time bidding, multi-channel campaign management, brand safety, and white label customization. Everything you need for programmatic success.");
   }, []);
 
   return (

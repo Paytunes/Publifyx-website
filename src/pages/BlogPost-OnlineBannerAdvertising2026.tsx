@@ -54,7 +54,7 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
   };
 
   useEffect(() => {
-    document.title = "High-Impact Online Banner Advertising in 2026 | PublifyX Guide";
+    document.title = "High-Impact Online Banner Advertising in 2026 — PublifyX";
 
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -62,7 +62,7 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'A complete 2026 guide to online banner advertising covering formats, costs, targeting, CTR benchmarks, and how PublifyX enables scalable, data-driven display campaigns.');
+    metaDescription.setAttribute('content', 'The 2026 guide to online banner advertising — formats, costs, targeting, CTR benchmarks, and how to run scalable, data-driven display campaigns with PublifyX.');
 
     let schemaScript = document.getElementById('faq-schema') as HTMLScriptElement | null;
     if (!schemaScript) {

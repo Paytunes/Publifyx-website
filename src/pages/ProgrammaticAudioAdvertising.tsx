@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const ProgrammaticAudioAdvertising = () => {
   useEffect(() => {
-    document.title = "Programmatic Audio Advertising Platform | Audio DSP — PublifyX";
+    document.title = "Programmatic Audio Advertising | Audio DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Run targeted audio ads on streaming music, podcasts, and digital radio with PublifyX's programmatic audio advertising platform. Reach listeners where screens cannot.");
+    if (meta) meta.setAttribute("content", "Reach listeners on streaming music, podcasts, and digital radio with targeted audio ads. High completion rates during screen-free moments. Companion banners included.");
   }, []);
 
   return (

@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const HowItWorks = () => {
   useEffect(() => {
-    document.title = "How PublifyX Works | Launch Your White Label DSP in Days";
+    document.title = "How PublifyX Works | From Setup to Live Campaigns in Days";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Learn how PublifyX works — from initial setup to live campaign launch. Deploy your white label DSP in days with full branding, SSP integrations, and multi-channel capabilities.");
+    if (meta) meta.setAttribute("content", "From consultation to live campaigns in 5–10 business days. See how PublifyX configures your branded DSP with SSP integrations, team training, and ongoing support.");
   }, []);
 
   return (
