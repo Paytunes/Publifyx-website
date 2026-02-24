@@ -9,6 +9,25 @@ import {
 } from "@/components/ui/dropdown-menu";
 import GetStartedModal from "./GetStartedModal";
 
+const serviceLinks = [
+  { to: "/white-label-dsp", label: "White Label DSP" },
+  { to: "/ctv-advertising", label: "CTV Advertising" },
+  { to: "/ott-advertising", label: "OTT Advertising" },
+  { to: "/programmatic-audio-advertising", label: "Audio Advertising" },
+  { to: "/programmatic-display-advertising", label: "Display Advertising" },
+  { to: "/programmatic-video-advertising", label: "Video Advertising" },
+  { to: "/dsp-for-agencies", label: "DSP for Agencies" },
+];
+
+const resourceLinks = [
+  { to: "/how-it-works", label: "How It Works" },
+  { to: "/features", label: "Features" },
+  { to: "/integrations", label: "Integrations" },
+  { to: "/case-studies", label: "Case Studies" },
+  { to: "/pricing", label: "Pricing" },
+  { to: "/about", label: "About" },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
@@ -19,6 +38,8 @@ const Header = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const linkClass = scrolled ? 'text-navy-600 hover:text-brand-orange-500' : 'text-white/90 hover:text-white';
 
   return (
     <>
@@ -37,47 +58,44 @@ const Header = () => {
               />
             </Link>
 
-            <nav className="hidden md:flex items-center space-x-8">
-              <Link to="/" className={`font-medium transition-colors ${scrolled ? 'text-navy-600 hover:text-brand-orange-500' : 'text-white/90 hover:text-white'}`}>
-                Home
-              </Link>
-              <Link to="/white-label-dsp" className={`font-medium transition-colors ${scrolled ? 'text-navy-600 hover:text-brand-orange-500' : 'text-white/90 hover:text-white'}`}>
-                White Label DSP
-              </Link>
+            <nav className="hidden lg:flex items-center space-x-6">
+              <Link to="/" className={`font-medium transition-colors text-sm ${linkClass}`}>Home</Link>
 
               <DropdownMenu>
-                <DropdownMenuTrigger className={`flex items-center font-medium transition-colors focus:outline-none ${scrolled ? 'text-navy-600 hover:text-brand-orange-500' : 'text-white/90 hover:text-white'}`}>
-                  Services
-                  <ChevronDown className="ml-1 h-4 w-4" />
+                <DropdownMenuTrigger className={`flex items-center font-medium transition-colors focus:outline-none text-sm ${linkClass}`}>
+                  Services <ChevronDown className="ml-1 h-3.5 w-3.5" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white border border-navy-100 shadow-xl rounded-xl p-1">
-                  <DropdownMenuItem asChild>
-                    <Link to="/connected-tv-advertising" className="w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700">
-                      Connected TV Advertising
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/online-banner-advertising" className="w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700">
-                      Online Banner Advertising
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/digital-advertising" className="w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700">
-                      Digital Advertising
-                    </Link>
-                  </DropdownMenuItem>
+                <DropdownMenuContent className="bg-white border border-navy-100 shadow-xl rounded-xl p-1 w-56">
+                  {serviceLinks.map((link) => (
+                    <DropdownMenuItem key={link.to} asChild>
+                      <Link to={link.to} className="w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700 text-sm">
+                        {link.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <Link to="/blog" className={`font-medium transition-colors ${scrolled ? 'text-navy-600 hover:text-brand-orange-500' : 'text-white/90 hover:text-white'}`}>
-                Blog
-              </Link>
-              <Link to="/contact" className={`font-medium transition-colors ${scrolled ? 'text-navy-600 hover:text-brand-orange-500' : 'text-white/90 hover:text-white'}`}>
-                Contact
-              </Link>
+              <DropdownMenu>
+                <DropdownMenuTrigger className={`flex items-center font-medium transition-colors focus:outline-none text-sm ${linkClass}`}>
+                  Resources <ChevronDown className="ml-1 h-3.5 w-3.5" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-white border border-navy-100 shadow-xl rounded-xl p-1 w-48">
+                  {resourceLinks.map((link) => (
+                    <DropdownMenuItem key={link.to} asChild>
+                      <Link to={link.to} className="w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700 text-sm">
+                        {link.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <Link to="/blog" className={`font-medium transition-colors text-sm ${linkClass}`}>Blog</Link>
+              <Link to="/contact" className={`font-medium transition-colors text-sm ${linkClass}`}>Contact</Link>
             </nav>
 
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <button
                 onClick={() => setIsGetStartedModalOpen(true)}
                 className="btn-primary px-5 py-2.5 text-sm"
@@ -87,7 +105,7 @@ const Header = () => {
             </div>
 
             <button
-              className="md:hidden p-2"
+              className="lg:hidden p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
@@ -101,29 +119,26 @@ const Header = () => {
           </div>
 
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-navy-100 bg-white rounded-b-xl shadow-lg">
-              <nav className="flex flex-col space-y-3 px-2">
-                <Link to="/" className="text-navy-700 hover:text-brand-orange-500 font-medium py-2 px-3 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Home
-                </Link>
-                <Link to="/white-label-dsp" className="text-navy-700 hover:text-brand-orange-500 font-medium py-2 px-3 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  White Label DSP
-                </Link>
-                <Link to="/connected-tv-advertising" className="text-navy-500 hover:text-brand-orange-500 font-medium py-2 px-3 pl-6 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Connected TV Advertising
-                </Link>
-                <Link to="/online-banner-advertising" className="text-navy-500 hover:text-brand-orange-500 font-medium py-2 px-3 pl-6 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Online Banner Advertising
-                </Link>
-                <Link to="/digital-advertising" className="text-navy-500 hover:text-brand-orange-500 font-medium py-2 px-3 pl-6 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Digital Advertising
-                </Link>
-                <Link to="/blog" className="text-navy-700 hover:text-brand-orange-500 font-medium py-2 px-3 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Blog
-                </Link>
-                <Link to="/contact" className="text-navy-700 hover:text-brand-orange-500 font-medium py-2 px-3 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Contact
-                </Link>
+            <div className="lg:hidden py-4 border-t border-navy-100 bg-white rounded-b-xl shadow-lg max-h-[80vh] overflow-y-auto">
+              <nav className="flex flex-col space-y-1 px-2">
+                <Link to="/" className="text-navy-700 hover:text-brand-orange-500 font-medium py-2.5 px-3 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
+
+                <p className="text-xs font-bold uppercase tracking-wider text-navy-400 px-3 pt-3 pb-1">Services</p>
+                {serviceLinks.map((link) => (
+                  <Link key={link.to} to={link.to} className="text-navy-600 hover:text-brand-orange-500 font-medium py-2 px-3 pl-5 rounded-lg hover:bg-navy-50 transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
+                    {link.label}
+                  </Link>
+                ))}
+
+                <p className="text-xs font-bold uppercase tracking-wider text-navy-400 px-3 pt-3 pb-1">Resources</p>
+                {resourceLinks.map((link) => (
+                  <Link key={link.to} to={link.to} className="text-navy-600 hover:text-brand-orange-500 font-medium py-2 px-3 pl-5 rounded-lg hover:bg-navy-50 transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
+                    {link.label}
+                  </Link>
+                ))}
+
+                <Link to="/blog" className="text-navy-700 hover:text-brand-orange-500 font-medium py-2.5 px-3 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+                <Link to="/contact" className="text-navy-700 hover:text-brand-orange-500 font-medium py-2.5 px-3 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</Link>
                 <button
                   onClick={() => { setIsGetStartedModalOpen(true); setIsMenuOpen(false); }}
                   className="btn-primary text-center mt-2"
