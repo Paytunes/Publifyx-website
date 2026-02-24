@@ -18,23 +18,13 @@ const WhiteLabelDSP = () => {
   };
 
   return (
-    <Layout>
+    <Layout transparentHeader>
       <HeroSection onGetStarted={handleGetStarted} />
-      
       <WhiteLabelExplanationSection />
-      
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <BenefitsAndAudienceSection />
-        </div>
-      </section>
-
+      <BenefitsAndAudienceSection />
       <ComparisonSection />
-      
       <FeaturesSection />
-      
       <WhiteLabelCTASection onGetStarted={handleGetStarted} />
-      
       <WhiteLabelFAQSection />
 
       <GetStartedModal 
