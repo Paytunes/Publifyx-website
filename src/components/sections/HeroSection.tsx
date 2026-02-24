@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Check } from "lucide-react";
+import { ArrowRight, Play, Sparkles, BarChart3, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import GetStartedModal from "@/components/GetStartedModal";
 
 const HeroSection = () => {
@@ -8,50 +9,123 @@ const HeroSection = () => {
 
   return (
     <>
-      <section className="py-16 md:py-24 bg-gray-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <img
-                src="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.png"
-                alt="Young woman using phone – digital advertising concept"
-                className="w-full h-auto rounded-lg shadow-lg"
-                width={584}
-                height={721}
-                fetchPriority="high"
-                decoding="sync"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-            <div className="order-1 lg:order-2">
-              <h1 className="mb-6">PublifyX – AI-Powered Ad-Tech Platform for High-Performance Digital Campaigns</h1>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center">
-                  <Check className="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">
-                    Leveraging AI for seamless, cost-effective audio and video creativity solutions.
-                  </span>
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-navy-800">
+        {/* Background gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
+        
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }} />
+
+        {/* Accent glow */}
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-orange-500 rounded-full blur-[180px] opacity-10" />
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-brand-orange-400 rounded-full blur-[140px] opacity-[0.06]" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
+                <Sparkles className="w-4 h-4 text-brand-orange-400" />
+                <span className="text-sm font-medium text-white/80">AI-Powered Ad-Tech Platform</span>
+              </div>
+
+              <h1 className="mb-6 !text-white leading-[1.1]">
+                Launch High-Performance
+                <span className="block text-brand-orange-400">Digital Campaigns</span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-navy-200 mb-10 max-w-lg leading-relaxed">
+                Leverage AI for seamless creativity, simplify OTT advertising, and maximize ROI with white-labeled DSP solutions.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <Button
+                  onClick={() => setIsGetStartedModalOpen(true)}
+                  className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-8 py-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-orange-500/25 group"
+                >
+                  Get Your White Label DSP
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white px-8 py-6 rounded-xl font-semibold text-lg backdrop-blur-sm"
+                >
+                  <Play className="mr-2 w-5 h-5" />
+                  Watch Demo
+                </Button>
+              </div>
+
+              {/* Trust metrics */}
+              <div className="flex items-center gap-8 pt-8 border-t border-white/10">
+                <div className="flex items-center gap-2">
+                  <Globe className="w-5 h-5 text-brand-orange-400" />
+                  <div>
+                    <div className="text-white font-bold text-lg">300+</div>
+                    <div className="text-navy-300 text-sm">Publishers</div>
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <Check className="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">
-                    Simplify advertising with pre-packaged OTT as well as white-labeled DSP solutions.
-                  </span>
+                <div className="flex items-center gap-2">
+                  <BarChart3 className="w-5 h-5 text-brand-orange-400" />
+                  <div>
+                    <div className="text-white font-bold text-lg">10M+</div>
+                    <div className="text-navy-300 text-sm">Daily Users</div>
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <Check className="w-6 h-6 text-green-500 mr-3 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">
-                    Empowering businesses to maximize ROI by optimizing ad completion rates and campaign performance
-                  </span>
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-brand-orange-400" />
+                  <div>
+                    <div className="text-white font-bold text-lg">12K+</div>
+                    <div className="text-navy-300 text-sm">Pin Codes</div>
+                  </div>
                 </div>
               </div>
-              <Button
-                onClick={() => setIsGetStartedModalOpen(true)}
-                className="bg-[#ff7200] hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105"
-              >
-                Get Your White Label DSP
-              </Button>
-            </div>
+            </motion.div>
+
+            {/* Visual */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              className="hidden lg:block"
+            >
+              <div className="relative">
+                <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10">
+                  <img
+                    src="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.png"
+                    alt="Young woman using phone – digital advertising concept"
+                    className="w-full h-auto"
+                    width={584}
+                    height={721}
+                    fetchPriority="high"
+                    decoding="sync"
+                    sizes="50vw"
+                  />
+                </div>
+                {/* Floating card */}
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                      <BarChart3 className="w-5 h-5 text-green-600" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-navy-800">+300% ROI</div>
+                      <div className="text-xs text-navy-400">Avg. Campaign</div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

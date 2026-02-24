@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import {
@@ -12,13 +12,21 @@ import GetStartedModal from "./GetStartedModal";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
+          <div className="flex justify-between items-center h-18 py-4">
             <Link to="/" className="flex items-center">
               <img
                 src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.png"
@@ -29,127 +37,96 @@ const Header = () => {
               />
             </Link>
 
-            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-gray-700 hover:text-[#ff7200] transition-colors">
+              <Link to="/" className={`font-medium transition-colors ${scrolled ? 'text-navy-600 hover:text-brand-orange-500' : 'text-white/90 hover:text-white'}`}>
                 Home
               </Link>
-
-              <Link to="/white-label-dsp" className="text-gray-700 hover:text-[#ff7200] transition-colors">
+              <Link to="/white-label-dsp" className={`font-medium transition-colors ${scrolled ? 'text-navy-600 hover:text-brand-orange-500' : 'text-white/90 hover:text-white'}`}>
                 White Label DSP
               </Link>
 
-              {/* Services Dropdown */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-[#ff7200] transition-colors focus:outline-none">
+                <DropdownMenuTrigger className={`flex items-center font-medium transition-colors focus:outline-none ${scrolled ? 'text-navy-600 hover:text-brand-orange-500' : 'text-white/90 hover:text-white'}`}>
                   Services
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white border shadow-lg">
+                <DropdownMenuContent className="bg-white border border-navy-100 shadow-xl rounded-xl p-1">
                   <DropdownMenuItem asChild>
-                    <Link to="/connected-tv-advertising" className="w-full px-4 py-2 hover:bg-gray-100">
+                    <Link to="/connected-tv-advertising" className="w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700">
                       Connected TV Advertising
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/online-banner-advertising" className="w-full px-4 py-2 hover:bg-gray-100">
+                    <Link to="/online-banner-advertising" className="w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700">
                       Online Banner Advertising
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/digital-advertising" className="w-full px-4 py-2 hover:bg-gray-100">
+                    <Link to="/digital-advertising" className="w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700">
                       Digital Advertising
                     </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <Link to="/blog" className="text-gray-700 hover:text-[#ff7200] transition-colors">
+              <Link to="/blog" className={`font-medium transition-colors ${scrolled ? 'text-navy-600 hover:text-brand-orange-500' : 'text-white/90 hover:text-white'}`}>
                 Blog
               </Link>
-
-              <Link to="/contact" className="text-gray-700 hover:text-[#ff7200] transition-colors">
+              <Link to="/contact" className={`font-medium transition-colors ${scrolled ? 'text-navy-600 hover:text-brand-orange-500' : 'text-white/90 hover:text-white'}`}>
                 Contact
               </Link>
             </nav>
 
-            {/* CTA Button */}
             <div className="hidden md:block">
-              <button onClick={() => setIsGetStartedModalOpen(true)} className="btn-primary">
+              <button
+                onClick={() => setIsGetStartedModalOpen(true)}
+                className="btn-primary px-5 py-2.5 text-sm"
+              >
                 Get Started
               </button>
             </div>
 
-            {/* Mobile menu button */}
             <button
               className="md:hidden p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+              {isMenuOpen ? (
+                <X size={24} className={scrolled ? "text-navy-800" : "text-white"} aria-hidden="true" />
+              ) : (
+                <Menu size={24} className={scrolled ? "text-navy-800" : "text-white"} aria-hidden="true" />
+              )}
             </button>
           </div>
 
-          {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t">
-              <nav className="flex flex-col space-y-4">
-                <Link
-                  to="/"
-                  className="text-gray-700 hover:text-[#ff7200] transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+            <div className="md:hidden py-4 border-t border-navy-100 bg-white rounded-b-xl shadow-lg">
+              <nav className="flex flex-col space-y-3 px-2">
+                <Link to="/" className="text-navy-700 hover:text-brand-orange-500 font-medium py-2 px-3 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
                   Home
                 </Link>
-                <Link
-                  to="/white-label-dsp"
-                  className="text-gray-700 hover:text-[#ff7200] transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                <Link to="/white-label-dsp" className="text-navy-700 hover:text-brand-orange-500 font-medium py-2 px-3 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
                   White Label DSP
                 </Link>
-                <Link
-                  to="/connected-tv-advertising"
-                  className="text-gray-700 hover:text-[#ff7200] transition-colors pl-4"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                <Link to="/connected-tv-advertising" className="text-navy-500 hover:text-brand-orange-500 font-medium py-2 px-3 pl-6 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
                   Connected TV Advertising
                 </Link>
-                <Link
-                  to="/online-banner-advertising"
-                  className="text-gray-700 hover:text-[#ff7200] transition-colors pl-4"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                <Link to="/online-banner-advertising" className="text-navy-500 hover:text-brand-orange-500 font-medium py-2 px-3 pl-6 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
                   Online Banner Advertising
                 </Link>
-                <Link
-                  to="/digital-advertising"
-                  className="text-gray-700 hover:text-[#ff7200] transition-colors pl-4"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                <Link to="/digital-advertising" className="text-navy-500 hover:text-brand-orange-500 font-medium py-2 px-3 pl-6 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
                   Digital Advertising
                 </Link>
-                <Link
-                  to="/blog"
-                  className="text-gray-700 hover:text-[#ff7200] transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                <Link to="/blog" className="text-navy-700 hover:text-brand-orange-500 font-medium py-2 px-3 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
                   Blog
                 </Link>
-                <Link
-                  to="/contact"
-                  className="text-gray-700 hover:text-[#ff7200] transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                <Link to="/contact" className="text-navy-700 hover:text-brand-orange-500 font-medium py-2 px-3 rounded-lg hover:bg-navy-50 transition-colors" onClick={() => setIsMenuOpen(false)}>
                   Contact
                 </Link>
                 <button
-                  onClick={() => {
-                    setIsGetStartedModalOpen(true);
-                    setIsMenuOpen(false);
-                  }}
-                  className="btn-primary inline-block text-center mt-2"
+                  onClick={() => { setIsGetStartedModalOpen(true); setIsMenuOpen(false); }}
+                  className="btn-primary text-center mt-2"
                 >
                   Get Started
                 </button>
