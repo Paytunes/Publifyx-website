@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Cpu, Tv, LayoutDashboard } from "lucide-react";
+import { useRef, type MouseEvent } from "react";
 
 const solutions = [
   {
@@ -25,13 +26,36 @@ const solutions = [
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15, duration: 0.5, ease: "easeOut" as const },
-  }),
+const TiltCard = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [6, -6]), { stiffness: 200, damping: 20 });
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-6, 6]), { stiffness: 200, damping: 20 });
+
+  const handleMouse = (e: MouseEvent) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    x.set((e.clientX - rect.left) / rect.width - 0.5);
+    y.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
+
+  const handleLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouse}
+      onMouseLeave={handleLeave}
+      style={{ rotateX, rotateY, transformPerspective: 800 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
 };
 
 const SolutionsSection = () => {
@@ -40,9 +64,10 @@ const SolutionsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
             className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
           >
             What We Offer
@@ -71,32 +96,32 @@ const SolutionsSection = () => {
           {solutions.map((solution, i) => (
             <motion.div
               key={solution.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              variants={cardVariants}
-              className="group bg-white rounded-2xl shadow-sm border border-navy-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              transition={{ delay: i * 0.15, duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
             >
-              <div className="h-52 overflow-hidden">
-                <img
-                  src={solution.image}
-                  alt={solution.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  width={384}
-                  height={208}
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="p-7">
-                <div className="w-11 h-11 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-4">
-                  <solution.icon className="w-5 h-5 text-brand-orange-500" />
+              <TiltCard className="group bg-white rounded-2xl shadow-sm border border-navy-100 overflow-hidden hover:shadow-2xl transition-shadow duration-500">
+                <div className="h-52 overflow-hidden">
+                  <img
+                    src={solution.image}
+                    alt={solution.alt}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    width={384}
+                    height={208}
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
-                <h3 className="mb-3 text-xl">{solution.title}</h3>
-                <p className="text-navy-400 leading-relaxed">{solution.description}</p>
-              </div>
+                <div className="p-7">
+                  <div className="w-11 h-11 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-4 group-hover:bg-brand-orange-500 group-hover:text-white transition-colors duration-300">
+                    <solution.icon className="w-5 h-5 text-brand-orange-500 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <h3 className="mb-3 text-xl">{solution.title}</h3>
+                  <p className="text-navy-400 leading-relaxed">{solution.description}</p>
+                </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>

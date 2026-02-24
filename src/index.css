@@ -138,6 +138,26 @@
   }
 }
 
+/* ── Energy Button Ripple ── */
+.energy-btn {
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  transition: background-position 0.4s ease;
+}
+
+.energy-btn:hover {
+  background-position: 100% 0%;
+}
+
+@keyframes ripple-burst {
+  0% { width: 0; height: 0; opacity: 0.5; }
+  100% { width: 300px; height: 300px; opacity: 0; }
+}
+
+.animate-ripple {
+  animation: ripple-burst 0.6s ease-out forwards;
+}
+
 /* ── Editorial Article Content ── */
 .article-content {
   font-size: 1.125rem;
