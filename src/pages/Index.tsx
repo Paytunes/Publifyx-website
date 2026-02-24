@@ -11,7 +11,7 @@ import FAQSection from "@/components/sections/FAQSection";
 
 const Index = () => {
   return (
-    <Layout>
+    <Layout transparentHeader>
       <HeroSection />
       <SolutionsSection />
       <ProductsSection />

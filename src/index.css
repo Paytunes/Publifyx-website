@@ -6,43 +6,43 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 220 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 15%;
 
-    --primary: 271 81% 37%;
+    --primary: 27 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 250 95% 76%;
-    --secondary-foreground: 271 81% 37%;
+    --secondary: 220 20% 97%;
+    --secondary-foreground: 220 47% 12%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 271 91% 65%;
+    --accent: 220 47% 12%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 271 81% 37%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 27 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 220 5.3% 26.1%;
+    --sidebar-primary: 220 47% 12%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent: 220 10% 95%;
+    --sidebar-accent-foreground: 220 47% 12%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 27 100% 50%;
   }
 
   .dark {
@@ -82,42 +82,49 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground;
     font-family: "Inter", sans-serif;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl font-bold text-gray-800;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    color: hsl(220 47% 12%);
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-semibold text-gray-800;
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    color: hsl(220 47% 12%);
   }
 
   h3 {
-    @apply text-xl md:text-2xl font-semibold text-gray-800;
+    @apply text-xl md:text-2xl font-semibold;
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    color: hsl(220 47% 12%);
   }
 
   h4 {
-    @apply text-lg md:text-xl font-semibold text-gray-800;
+    @apply text-lg md:text-xl font-semibold;
+    color: hsl(220 47% 12%);
   }
 
   .btn-primary {
-    background-color: #ff7200;
-    @apply hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105;
+    @apply text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl;
+    background: linear-gradient(135deg, hsl(27 100% 50%), hsl(27 100% 42%));
   }
 
   .btn-primary:hover {
-    background-color: #ea580c;
+    background: linear-gradient(135deg, hsl(27 100% 42%), hsl(27 100% 35%));
   }
 
   .btn-secondary {
-    background-color: rgb(255, 129, 0);
-    @apply hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105;
+    @apply text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105;
+    background: linear-gradient(135deg, hsl(220 47% 12%), hsl(220 45% 20%));
   }
 
   .btn-secondary:hover {
-    background-color: rgb(230, 116, 0);
+    background: linear-gradient(135deg, hsl(220 45% 20%), hsl(220 47% 15%));
   }
 }
 
