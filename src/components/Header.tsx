@@ -71,6 +71,10 @@ const Header = () => {
                 Home
               </Link>
 
+              <Link to="/white-label-dsp" className={`font-medium transition-colors text-sm ${linkClass}`}>
+                White Label DSP
+              </Link>
+
               <DropdownMenu>
                 <DropdownMenuTrigger
                   className={`flex items-center font-medium transition-colors focus:outline-none text-sm ${linkClass}`}
@@ -132,9 +136,17 @@ const Header = () => {
               aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <X size={24} className={scrolled ? "text-navy-800" : isHome ? "text-white" : "text-navy-800"} aria-hidden="true" />
+                <X
+                  size={24}
+                  className={scrolled ? "text-navy-800" : isHome ? "text-white" : "text-navy-800"}
+                  aria-hidden="true"
+                />
               ) : (
-                <Menu size={24} className={scrolled ? "text-navy-800" : isHome ? "text-white" : "text-navy-800"} aria-hidden="true" />
+                <Menu
+                  size={24}
+                  className={scrolled ? "text-navy-800" : isHome ? "text-white" : "text-navy-800"}
+                  aria-hidden="true"
+                />
               )}
             </button>
           </div>
