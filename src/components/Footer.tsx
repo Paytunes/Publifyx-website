@@ -2,30 +2,74 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-navy-900 py-12">
+    <footer className="bg-navy-900 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <div className="mb-6 md:mb-0">
+        {/* Top: Logo + Link Columns */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-1">
             <img
               src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.png"
               alt="PUBLIFYX"
-              className="h-8 w-auto brightness-0 invert"
+              className="h-8 w-auto brightness-0 invert mb-4"
               width={171}
               height={32}
               loading="lazy"
             />
+            <p className="text-navy-400 text-sm leading-relaxed">
+              Powering the next generation of programmatic advertising.
+            </p>
           </div>
 
-          <div className="flex space-x-8">
-            <Link to="/privacy_policy" className="text-navy-400 hover:text-white transition-colors text-sm font-medium">
-              Privacy Policy
-            </Link>
-            <Link to="/terms_and_conditions" className="text-navy-400 hover:text-white transition-colors text-sm font-medium">
-              Terms & Conditions
-            </Link>
+          {/* Services */}
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Services</h4>
+            <ul className="space-y-2.5">
+              <li><Link to="/white-label-dsp" className="text-navy-400 hover:text-white transition-colors text-sm">White Label DSP</Link></li>
+              <li><Link to="/ctv-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">CTV Advertising</Link></li>
+              <li><Link to="/ott-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">OTT Advertising</Link></li>
+              <li><Link to="/programmatic-audio-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">Programmatic Audio</Link></li>
+              <li><Link to="/programmatic-display-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">Programmatic Display</Link></li>
+              <li><Link to="/programmatic-video-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">Programmatic Video</Link></li>
+              <li><Link to="/dsp-for-agencies" className="text-navy-400 hover:text-white transition-colors text-sm">DSP for Agencies</Link></li>
+              <li><Link to="/pricing" className="text-navy-400 hover:text-white transition-colors text-sm">Pricing</Link></li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Resources</h4>
+            <ul className="space-y-2.5">
+              <li><Link to="/how-it-works" className="text-navy-400 hover:text-white transition-colors text-sm">How It Works</Link></li>
+              <li><Link to="/features" className="text-navy-400 hover:text-white transition-colors text-sm">Features</Link></li>
+              <li><Link to="/integrations" className="text-navy-400 hover:text-white transition-colors text-sm">Integrations</Link></li>
+              <li><Link to="/case-studies" className="text-navy-400 hover:text-white transition-colors text-sm">Case Studies</Link></li>
+              <li><Link to="/white-label-dsp-vs-self-serve-dsp" className="text-navy-400 hover:text-white transition-colors text-sm">White Label vs Self-Serve</Link></li>
+              <li><Link to="/ctv-advertising-india" className="text-navy-400 hover:text-white transition-colors text-sm">CTV Advertising India</Link></li>
+              <li><Link to="/blog" className="text-navy-400 hover:text-white transition-colors text-sm">Blog</Link></li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Company</h4>
+            <ul className="space-y-2.5">
+              <li><Link to="/about" className="text-navy-400 hover:text-white transition-colors text-sm">About Us</Link></li>
+              <li><Link to="/contact" className="text-navy-400 hover:text-white transition-colors text-sm">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Legal</h4>
+            <ul className="space-y-2.5">
+              <li><Link to="/privacy_policy" className="text-navy-400 hover:text-white transition-colors text-sm">Privacy Policy</Link></li>
+              <li><Link to="/terms_and_conditions" className="text-navy-400 hover:text-white transition-colors text-sm">Terms & Conditions</Link></li>
+            </ul>
           </div>
         </div>
 
+        {/* Bottom */}
         <div className="pt-8 border-t border-navy-700 text-center text-navy-500 text-sm">
           <p>
             Copyright © 2025 <span className="text-brand-orange-400">PublifyX.com</span> | All rights reserved
