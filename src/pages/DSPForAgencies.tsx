@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const DSPForAgencies = () => {
   useEffect(() => {
-    document.title = "DSP for Agencies | Programmatic Platform Built for Media Agencies — PublifyX";
+    document.title = "DSP for Agencies | Branded Programmatic Platform — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "PublifyX offers a white label DSP built for media agencies. Bring programmatic buying in-house, increase margins, and offer clients a branded advertising platform.");
+    if (meta) meta.setAttribute("content", "Bring programmatic buying in-house with a white label DSP built for agencies. Increase margins, strengthen client retention, and own your media buying workflow.");
   }, []);
 
   return (

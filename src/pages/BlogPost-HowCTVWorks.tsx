@@ -13,7 +13,7 @@ const BlogPostHowCTVWorks = () => {
     document.title = "How Does Connected TV Advertising Work? — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
-    meta?.setAttribute("content", "Learn how connected TV (CTV) advertising works — from ad delivery and targeting to measurement. Understand the technology behind CTV ads on streaming platforms.");
+    meta?.setAttribute("content", "Behind the scenes of CTV ad delivery — targeting, programmatic bidding, measurement, and attribution on streaming platforms explained.");
     return () => { document.title = prev; meta?.setAttribute("content", originalDesc); };
   }, []);
 

@@ -1,6 +1,6 @@
 
 import Layout from "@/components/Layout";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GetStartedModal from "@/components/GetStartedModal";
 import HeroSection from "@/components/sections/whiteLabelDSP/HeroSection";
 import WhiteLabelExplanationSection from "@/components/sections/whiteLabelDSP/WhiteLabelExplanationSection";
@@ -13,6 +13,13 @@ import WhiteLabelFAQSection from "@/components/sections/whiteLabelDSP/WhiteLabel
 
 const WhiteLabelDSP = () => {
   const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = "White Label DSP Platform | Launch Your Own DSP — PublifyX";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Deploy a fully branded demand-side platform in days, not years. Control pricing, margins, and client relationships across Display, Video, Audio & CTV channels.");
+    return () => { document.title = "White Label DSP Platform | Launch Your Programmatic Ad Business — PublifyX"; };
+  }, []);
 
   const handleGetStarted = () => {
     setIsGetStartedModalOpen(true);

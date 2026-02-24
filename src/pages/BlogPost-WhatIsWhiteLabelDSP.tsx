@@ -10,10 +10,10 @@ const BlogPostWhatIsWhiteLabelDSP = () => {
 
   useEffect(() => {
     const prev = document.title;
-    document.title = "What Is a White Label DSP? A Complete Guide — PublifyX";
+    document.title = "What Is a White Label DSP? Complete Guide — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
-    meta?.setAttribute("content", "Learn what a white label DSP is, how it works, who it's for, and why agencies and ad networks use white label demand side platforms to launch their own programmatic businesses.");
+    meta?.setAttribute("content", "Everything you need to know about white label DSPs — how they work, who uses them, and why agencies choose them over building from scratch.");
     return () => { document.title = prev; meta?.setAttribute("content", originalDesc); };
   }, []);
 

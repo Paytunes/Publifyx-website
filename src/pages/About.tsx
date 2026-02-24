@@ -6,7 +6,7 @@ const About = () => {
   useEffect(() => {
     document.title = "About PublifyX | White Label Programmatic Technology Company";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "PublifyX is a programmatic advertising technology company providing white label DSP solutions for agencies, ad networks, and startups worldwide.");
+    if (meta) meta.setAttribute("content", "PublifyX powers the next generation of programmatic advertising. Enterprise-grade white label DSP solutions for agencies, ad networks, and startups worldwide.");
   }, []);
 
   return (

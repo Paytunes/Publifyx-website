@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,12 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = "Contact PublifyX | Request a Demo or Get Pricing";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Schedule a personalized demo, request custom pricing, or speak with our ad tech specialists. Response within one business day.");
+  }, []);
+
   const [formData, setFormData] = useState({
     company_name: "",
     company_email: "",

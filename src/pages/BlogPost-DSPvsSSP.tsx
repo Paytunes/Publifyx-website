@@ -10,10 +10,10 @@ const BlogPostDSPvsSSP = () => {
 
   useEffect(() => {
     const prev = document.title;
-    document.title = "DSP vs SSP: What Advertisers Need to Know — PublifyX";
+    document.title = "DSP vs SSP Explained: What Advertisers Need to Know — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
-    meta?.setAttribute("content", "Understand the difference between DSP and SSP in programmatic advertising. Learn how demand-side platforms and supply-side platforms work together in the ad ecosystem.");
+    meta?.setAttribute("content", "How demand-side and supply-side platforms work together in programmatic advertising. Key differences, functions, and why it matters for advertisers.");
     return () => { document.title = prev; meta?.setAttribute("content", originalDesc); };
   }, []);
 

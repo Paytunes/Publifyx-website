@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const CTVAdvertisingIndia = () => {
   useEffect(() => {
-    document.title = "CTV Advertising in India | Connected TV Ads Platform for Indian Market — PublifyX";
+    document.title = "CTV Advertising in India | Connected TV Ads — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Launch CTV advertising campaigns in India with PublifyX. Reach smart TV audiences across Indian streaming platforms with programmatic connected TV ads.");
+    if (meta) meta.setAttribute("content", "Reach India's growing smart TV audience with programmatic CTV campaigns. Target by state, city, and pin code across premium Indian streaming platforms.");
   }, []);
 
   return (

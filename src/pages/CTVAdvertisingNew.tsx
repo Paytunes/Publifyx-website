@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const CTVAdvertising = () => {
   useEffect(() => {
-    document.title = "CTV Advertising Platform | Programmatic Connected TV Ads — PublifyX";
+    document.title = "CTV Advertising Platform | Connected TV Ads — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Launch data-driven CTV campaigns with PublifyX's connected TV advertising platform. Target households across premium streaming inventory with programmatic precision.");
+    if (meta) meta.setAttribute("content", "Reach households on smart TVs and streaming devices with non-skippable, full-screen video ads. Precision targeting, real-time reporting, and premium CTV inventory access.");
   }, []);
 
   return (

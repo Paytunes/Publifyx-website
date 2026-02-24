@@ -13,7 +13,7 @@ const BlogPostWhyAgenciesSwitching = () => {
     document.title = "Why Agencies Are Switching to White Label DSPs — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
-    meta?.setAttribute("content", "Discover why media agencies are switching from third-party DSPs to white label platforms. Higher margins, brand ownership, and better client retention explained.");
+    meta?.setAttribute("content", "Higher margins, brand ownership, client retention, and full control over supply paths. Why the shift from third-party DSPs to white label platforms is accelerating.");
     return () => { document.title = prev; meta?.setAttribute("content", originalDesc); };
   }, []);
 

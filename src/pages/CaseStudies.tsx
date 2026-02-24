@@ -7,7 +7,7 @@ const CaseStudies = () => {
   useEffect(() => {
     document.title = "PublifyX Case Studies | Real Results from Real Clients";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "See how agencies, ad networks, and startups use PublifyX white label DSP to launch their own programmatic platforms and grow their businesses.");
+    if (meta) meta.setAttribute("content", "See how agencies, ad networks, and startups launched branded DSPs with PublifyX. Faster market entry, higher margins, and stronger client retention — proven results.");
   }, []);
 
   const cases = [

@@ -8,7 +8,7 @@ import { blogPosts } from "@/data/blogPosts";
 const Blog = () => {
   useEffect(() => {
     const prev = document.title;
-    document.title = "Digital Advertising Blog & Insights | PublifyX";
+    document.title = "Programmatic Advertising Blog & Insights — PublifyX";
     return () => { document.title = prev; };
   }, []);
 

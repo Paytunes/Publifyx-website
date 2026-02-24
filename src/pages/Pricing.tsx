@@ -5,9 +5,9 @@ import { CheckCircle2 } from "lucide-react";
 
 const Pricing = () => {
   useEffect(() => {
-    document.title = "White Label DSP Pricing | Transparent Programmatic Platform Costs — PublifyX";
+    document.title = "White Label DSP Pricing | Transparent, Flexible Plans — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Explore PublifyX white label DSP pricing. Flexible plans for agencies, ad networks, and startups. Transparent costs with no hidden fees. Request a custom quote today.");
+    if (meta) meta.setAttribute("content", "Flexible, transparent DSP pricing with no hidden fees or percentage-based markups. All channels, white label branding, and 40+ SSP integrations included. Get a custom quote.");
   }, []);
 
   return (

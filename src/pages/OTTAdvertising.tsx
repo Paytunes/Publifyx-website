@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const OTTAdvertising = () => {
   useEffect(() => {
-    document.title = "OTT Advertising Platform | Over-the-Top Ads Across Every Screen — PublifyX";
+    document.title = "OTT Advertising Platform | Streaming Ads Across Every Screen — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Deliver targeted OTT advertising across streaming platforms on every device. PublifyX's OTT ads platform offers programmatic buying, precise targeting, and real-time analytics.");
+    if (meta) meta.setAttribute("content", "Deliver targeted video ads across streaming platforms on every device. Programmatic OTT buying with advanced targeting, frequency management, and real-time optimization.");
   }, []);
 
   return (
