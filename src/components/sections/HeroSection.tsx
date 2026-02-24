@@ -62,7 +62,8 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="text-lg md:text-xl text-navy-200 mb-10 max-w-lg leading-relaxed"
               >
-                Leverage AI for seamless creativity, simplify OTT advertising, and maximize ROI with white-labeled DSP solutions.
+                Leverage AI for seamless creativity, simplify OTT advertising, and maximize ROI with white-labeled DSP
+                solutions.
               </motion.p>
 
               <motion.div
@@ -118,7 +119,7 @@ const HeroSection = () => {
               className="hidden lg:block"
             >
               <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10">
+                <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 bg-[#ffbf32]">
                   <img
                     src="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.png"
                     alt="Young woman using phone – digital advertising concept"
