@@ -1,5 +1,20 @@
 import { motion } from "framer-motion";
-import { Lightbulb } from "lucide-react";
+import { Lightbulb, Check } from "lucide-react";
+
+const youControl = [
+  "Branding and domain",
+  "Pricing and margins",
+  "Client access",
+  "Campaign workflows",
+];
+
+const weManage = [
+  "Real-time bidding infrastructure",
+  "Server architecture",
+  "Data pipelines",
+  "SSP and exchange integrations",
+  "Ongoing compliance and updates",
+];
 
 const WhiteLabelExplanationSection = () => {
   return (
@@ -20,7 +35,7 @@ const WhiteLabelExplanationSection = () => {
             viewport={{ once: true }}
             className="mb-4 max-w-4xl mx-auto"
           >
-            The Smartest White Label DSP for Programmatic Ad Buying
+            What Is a White Label DSP?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -29,7 +44,7 @@ const WhiteLabelExplanationSection = () => {
             transition={{ delay: 0.1 }}
             className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Everything you need to run a powerful, scalable ad platform — without the time, cost, or hassle of building it yourself.
+            A white label DSP is a fully built demand side platform developed and maintained by a technology provider — but deployed under your brand. Instead of investing millions in building proprietary ad tech, you get a production-ready platform that looks and feels like your own product.
           </motion.p>
         </div>
 
@@ -38,24 +53,46 @@ const WhiteLabelExplanationSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto bg-navy-50 rounded-2xl border border-navy-100 overflow-hidden"
+          className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
         >
-          <div className="bg-navy-800 px-8 md:px-12 py-6 flex items-center gap-3">
-            <Lightbulb className="w-6 h-6 text-brand-orange-400" />
-            <h3 className="!text-white text-xl md:text-2xl font-bold">What is a White Labelled Platform?</h3>
-          </div>
-          <div className="px-8 md:px-12 py-8">
-            <p className="text-navy-500 mb-5 leading-relaxed text-lg">
-              A white label platform is a ready-made SaaS product that businesses can rebrand as their own by customising the name, logo, and design. It lets companies launch quickly without building from scratch, saving time, development costs, and maintenance efforts.
-            </p>
-            <p className="text-navy-500 mb-8 leading-relaxed text-lg">
-              In short, it's our tech and your brand. You get the power of a full-scale white label demand side platform, branded as your own, with zero development time.
-            </p>
-            <div className="bg-brand-orange-50 border border-brand-orange-200 rounded-xl p-6">
-              <p className="font-bold text-brand-orange-600 text-lg md:text-xl text-center">
-                No need to build. No need to manage servers. Just plug in and launch.
-              </p>
+          {/* You Control */}
+          <div className="bg-navy-50 rounded-2xl border border-navy-100 p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-brand-orange-100 flex items-center justify-center">
+                <Lightbulb className="w-5 h-5 text-brand-orange-500" />
+              </div>
+              <h3 className="text-xl font-bold text-navy-800">You Control</h3>
             </div>
+            <ul className="space-y-4">
+              {youControl.map((item) => (
+                <li key={item} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3.5 h-3.5 text-brand-orange-600" />
+                  </div>
+                  <span className="text-navy-600 font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* We Manage */}
+          <div className="bg-navy-800 rounded-2xl border border-navy-700 p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-brand-orange-500/20 flex items-center justify-center">
+                <Lightbulb className="w-5 h-5 text-brand-orange-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white">We Manage</h3>
+            </div>
+            <ul className="space-y-4">
+              {weManage.map((item) => (
+                <li key={item} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3.5 h-3.5 text-green-400" />
+                  </div>
+                  <span className="text-navy-200 font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </motion.div>
       </div>

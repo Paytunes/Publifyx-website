@@ -1,80 +1,92 @@
 import { motion } from "framer-motion";
-import { Check, Target, Zap, Star, Users, Rocket, Shield } from "lucide-react";
-
-const benefits = [
-  "Use your own domain and logo",
-  "Set your own pricing and margins",
-  "Keep full control of customer relationships",
-  "Access real-time programmatic bidding",
-  "Full support, no technical team required",
-  "Enterprise-grade tools and infrastructure",
-];
+import { Target, Zap, Star, Rocket } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const targetAudience = [
-  { title: "Ad Agencies", description: "Offer clients a scalable, branded DSP solution", icon: Target },
-  { title: "Ad Networks", description: "Centralise and optimise buying across inventory", icon: Zap },
-  { title: "Startups", description: "Jumpstart your ad tech venture without dev costs", icon: Star },
-  { title: "Media Buyers", description: "Run campaigns under your brand with pro tools", icon: Users },
-  { title: "Publishers", description: "Monetize inventory with advanced bidding tech", icon: Rocket },
-  { title: "Consultants", description: "Deliver white-label solutions to your clients", icon: Shield },
+  {
+    title: "Media Agencies",
+    description: "Bring programmatic buying in-house, eliminate middlemen, and increase margins by operating your own branded DSP. Control the entire media buying workflow.",
+    icon: Target,
+  },
+  {
+    title: "Ad Networks",
+    description: "Provide your advertiser base with self-serve programmatic capabilities. Expand beyond traditional network buys to include real-time bidding and cross-channel reach.",
+    icon: Zap,
+  },
+  {
+    title: "Startups & Entrepreneurs",
+    description: "Enter the ad tech market without the capital expenditure of building a DSP from scratch. Enterprise-grade technology at a fraction of the cost and time.",
+    icon: Star,
+  },
+  {
+    title: "Publishers with Ad Services",
+    description: "If you offer advertising solutions alongside your content business, a white label DSP lets you create a full-service buying platform for your advertising clients.",
+    icon: Rocket,
+  },
 ];
 
-const BenefitsAndAudienceSection = () => {
+interface BenefitsAndAudienceSectionProps {
+  onGetStarted: () => void;
+}
+
+const BenefitsAndAudienceSection = ({ onGetStarted }: BenefitsAndAudienceSectionProps) => {
   return (
     <section className="py-20 md:py-28 bg-navy-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Benefits */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+        <div className="text-center mb-14">
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-white rounded-2xl border border-navy-100 p-8 md:p-10"
+            className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
           >
-            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-2">
-              Why Choose Us
-            </span>
-            <h2 className="mb-8 text-2xl md:text-3xl">Key Benefits</h2>
-            <ul className="space-y-5">
-              {benefits.map((benefit) => (
-                <li key={benefit} className="flex items-center gap-4 group">
-                  <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <Check className="w-4 h-4 text-green-600" />
-                  </div>
-                  <span className="text-navy-600 text-lg font-medium">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Target Audience */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            Built For You
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white rounded-2xl border border-navy-100 p-8 md:p-10"
           >
-            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-2">
-              Built For
-            </span>
-            <h2 className="mb-8 text-2xl md:text-3xl">Who's It For?</h2>
-            <div className="space-y-5">
-              {targetAudience.map((audience) => (
-                <div key={audience.title} className="flex items-center gap-4 group hover:-translate-y-0.5 transition-transform duration-200">
-                  <div className="w-10 h-10 rounded-xl bg-brand-orange-50 flex items-center justify-center flex-shrink-0">
-                    <audience.icon className="w-5 h-5 text-brand-orange-500" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-navy-800 text-base mb-0.5">{audience.title}</h3>
-                    <p className="text-navy-400 text-sm leading-relaxed">{audience.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+            Who Is PublifyX White Label DSP For?
+          </motion.h2>
         </div>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+          {targetAudience.map((audience, i) => (
+            <motion.div
+              key={audience.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+            >
+              <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
+                <audience.icon className="w-6 h-6 text-brand-orange-500" />
+              </div>
+              <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
+              <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <p className="text-navy-500 mb-6 font-medium">Not sure which model fits your business?</p>
+          <Button
+            onClick={onGetStarted}
+            variant="outline"
+            className="border-navy-200 text-navy-700 hover:bg-navy-100 px-8 py-6 rounded-xl font-semibold text-lg group"
+          >
+            Request a Strategy Consultation
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

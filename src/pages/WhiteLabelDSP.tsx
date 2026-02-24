@@ -4,9 +4,10 @@ import { useState } from "react";
 import GetStartedModal from "@/components/GetStartedModal";
 import HeroSection from "@/components/sections/whiteLabelDSP/HeroSection";
 import WhiteLabelExplanationSection from "@/components/sections/whiteLabelDSP/WhiteLabelExplanationSection";
-import BenefitsAndAudienceSection from "@/components/sections/whiteLabelDSP/BenefitsAndAudienceSection";
-import ComparisonSection from "@/components/sections/whiteLabelDSP/ComparisonSection";
+import WhyChooseSection from "@/components/sections/whiteLabelDSP/WhyChooseSection";
 import FeaturesSection from "@/components/sections/whiteLabelDSP/FeaturesSection";
+import BenefitsAndAudienceSection from "@/components/sections/whiteLabelDSP/BenefitsAndAudienceSection";
+import HowItWorksSection from "@/components/sections/whiteLabelDSP/HowItWorksSection";
 import WhiteLabelCTASection from "@/components/sections/whiteLabelDSP/WhiteLabelCTASection";
 import WhiteLabelFAQSection from "@/components/sections/whiteLabelDSP/WhiteLabelFAQSection";
 
@@ -21,9 +22,10 @@ const WhiteLabelDSP = () => {
     <Layout transparentHeader>
       <HeroSection onGetStarted={handleGetStarted} />
       <WhiteLabelExplanationSection />
-      <BenefitsAndAudienceSection />
-      <ComparisonSection />
+      <WhyChooseSection onGetStarted={handleGetStarted} />
       <FeaturesSection />
+      <BenefitsAndAudienceSection onGetStarted={handleGetStarted} />
+      <HowItWorksSection onGetStarted={handleGetStarted} />
       <WhiteLabelCTASection onGetStarted={handleGetStarted} />
       <WhiteLabelFAQSection />
 
