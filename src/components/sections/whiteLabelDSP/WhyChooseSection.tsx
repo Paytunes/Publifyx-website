@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Video, Tv, Radio, Headphones, LayoutGrid } from "lucide-react";
+import MagneticCard from "@/components/effects/MagneticCard";
 
 const channels = [
   { name: "Display Advertising", icon: Monitor },
@@ -55,12 +56,13 @@ const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-white rounded-xl border border-navy-100 p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
             >
-              <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mx-auto mb-3 group-hover:bg-brand-orange-100 transition-colors">
-                <channel.icon className="w-6 h-6 text-brand-orange-500" />
-              </div>
-              <h3 className="font-bold text-navy-800 text-sm">{channel.name}</h3>
+              <MagneticCard className="bg-white rounded-xl border border-navy-100 p-6 text-center hover:shadow-lg transition-all duration-300 group h-full">
+                <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mx-auto mb-3 group-hover:bg-brand-orange-100 transition-colors">
+                  <channel.icon className="w-6 h-6 text-brand-orange-500" />
+                </div>
+                <h3 className="font-bold text-navy-800 text-sm">{channel.name}</h3>
+              </MagneticCard>
             </motion.div>
           ))}
         </div>

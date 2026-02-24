@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, PhoneCall, Settings, Rocket, GraduationCap } from "lucide-react";
+import MagneticCard from "@/components/effects/MagneticCard";
 
 const steps = [
   {
@@ -77,12 +78,14 @@ const HowItWorksSection = ({ onGetStarted }: HowItWorksSectionProps) => {
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-navy-200" />
               )}
-              <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-navy-700 transition-colors relative z-10">
-                <step.icon className="w-8 h-8 text-brand-orange-400" />
-              </div>
-              <div className="text-xs font-bold text-brand-orange-500 mb-2">{step.number}</div>
-              <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
-              <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+              <MagneticCard className="relative z-10">
+                <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-navy-700 transition-colors">
+                  <step.icon className="w-8 h-8 text-brand-orange-400" />
+                </div>
+                <div className="text-xs font-bold text-brand-orange-500 mb-2">{step.number}</div>
+                <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
+                <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+              </MagneticCard>
             </motion.div>
           ))}
         </div>
