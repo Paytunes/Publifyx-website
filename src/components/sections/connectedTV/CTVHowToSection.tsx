@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, MonitorPlay, Upload, BarChart3 } from "lucide-react";
+import MagneticCard from "@/components/effects/MagneticCard";
 
 interface CTVHowToSectionProps {
   onGetStarted: () => void;
@@ -42,15 +43,17 @@ const CTVHowToSection = ({ onGetStarted }: CTVHowToSectionProps) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {steps.map((step, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-full p-3 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <step.icon className="text-white" size={24} />
-                </div>
-                <h3 className="font-bold text-lg mb-3">{step.title}</h3>
-                <p className="text-gray-600 text-sm">{step.description}</p>
-              </CardContent>
-            </Card>
+            <MagneticCard key={index}>
+              <Card className="text-center h-full hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-full p-3 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <step.icon className="text-white" size={24} />
+                  </div>
+                  <h3 className="font-bold text-lg mb-3">{step.title}</h3>
+                  <p className="text-gray-600 text-sm">{step.description}</p>
+                </CardContent>
+              </Card>
+            </MagneticCard>
           ))}
         </div>
 

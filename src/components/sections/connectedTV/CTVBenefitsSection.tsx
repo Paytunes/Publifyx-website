@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp, Users, Monitor, Zap } from "lucide-react";
+import MagneticCard from "@/components/effects/MagneticCard";
 
 interface CTVBenefitsSectionProps {
   onGetStarted: () => void;
@@ -38,19 +39,21 @@ const CTVBenefitsSection = ({ onGetStarted }: CTVBenefitsSectionProps) => {
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-full p-3 flex-shrink-0">
-                      <benefit.icon className="text-white" size={24} />
+              <MagneticCard key={index}>
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-full p-3 flex-shrink-0">
+                        <benefit.icon className="text-white" size={24} />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-lg mb-2 text-gray-800">{benefit.title}</h3>
+                        <p className="text-gray-600">{benefit.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-2 text-gray-800">{benefit.title}</h3>
-                      <p className="text-gray-600">{benefit.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </MagneticCard>
             ))}
           </div>
 

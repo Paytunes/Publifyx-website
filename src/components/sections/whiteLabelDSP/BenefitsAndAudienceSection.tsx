@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Target, Zap, Star, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import MagneticCard from "@/components/effects/MagneticCard";
 
 const targetAudience = [
   {
@@ -60,13 +61,14 @@ const BenefitsAndAudienceSection = ({ onGetStarted }: BenefitsAndAudienceSection
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
             >
-              <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
-                <audience.icon className="w-6 h-6 text-brand-orange-500" />
-              </div>
-              <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
-              <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+              <MagneticCard className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-all duration-300 group h-full">
+                <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
+                  <audience.icon className="w-6 h-6 text-brand-orange-500" />
+                </div>
+                <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
+                <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+              </MagneticCard>
             </motion.div>
           ))}
         </div>
