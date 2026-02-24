@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
@@ -32,6 +32,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -41,7 +43,9 @@ const Header = () => {
 
   const linkClass = scrolled
     ? "text-navy-600 hover:text-brand-orange-500"
-    : "text-navy-600 hover:text-brand-orange-500";
+    : isHome
+      ? "text-white hover:text-brand-orange-300"
+      : "text-navy-600 hover:text-brand-orange-500";
 
   return (
     <>
@@ -128,9 +132,9 @@ const Header = () => {
               aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <X size={24} className={scrolled ? "text-navy-800" : "text-white"} aria-hidden="true" />
+                <X size={24} className={scrolled ? "text-navy-800" : isHome ? "text-white" : "text-navy-800"} aria-hidden="true" />
               ) : (
-                <Menu size={24} className={scrolled ? "text-navy-800" : "text-white"} aria-hidden="true" />
+                <Menu size={24} className={scrolled ? "text-navy-800" : isHome ? "text-white" : "text-navy-800"} aria-hidden="true" />
               )}
             </button>
           </div>
