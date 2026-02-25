@@ -12,7 +12,7 @@ const Contact = () => {
   useEffect(() => {
     document.title = "Contact PublifyX | Request a Demo or Get Pricing";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Schedule a personalized demo, request custom pricing, or speak with our ad tech specialists. Response within one business day.");
+    if (meta) meta.setAttribute("content", "Get in touch with PublifyX to schedule a demo, request pricing, or learn how our white label DSP can power your programmatic advertising business.");
   }, []);
 
   const [formData, setFormData] = useState({

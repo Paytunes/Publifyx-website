@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const Features = () => {
   useEffect(() => {
-    document.title = "PublifyX DSP Features | Targeting, Bidding, Reporting & More";
+    document.title = "PublifyX DSP Features | Targeting, Reporting, Formats, and More";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Advanced targeting, real-time bidding, multi-channel campaign management, brand safety, and white label customization. Everything you need for programmatic success.");
+    if (meta) meta.setAttribute("content", "Explore the full feature set of PublifyX DSP — advanced targeting, real-time bidding, multi-channel support, brand safety, transparent reporting, and white label customization.");
   }, []);
 
   return (
@@ -16,7 +16,7 @@ const Features = () => {
         { label: "Features" },
       ]}
       heroTitle="PublifyX DSP Features — Everything You Need for Programmatic Success"
-      heroSubtitle="Comprehensive programmatic buying capabilities across every major digital channel. From advanced targeting to transparent reporting and white label customization."
+      heroSubtitle="PublifyX is built to give you comprehensive programmatic buying capabilities across every major digital channel. From advanced targeting and real-time optimization to transparent reporting and white label customization, every feature is designed to help you run efficient, high-performing campaigns."
       relatedArticleSlug="ad-tech-trends-2026"
       ctaTitle="See Features in Action"
       ctaDescription="Schedule a personalized demo to explore every feature of the PublifyX platform."
@@ -24,21 +24,21 @@ const Features = () => {
       <section className="space-y-12">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Multi-Channel Campaign Management</h2>
-          <p className="text-navy-600 leading-relaxed">Run campaigns across display, video, audio, Connected TV (CTV), and Over-the-Top (OTT) from a single unified platform. No need to switch between multiple tools. Plan, launch, and optimize cross-channel campaigns from one dashboard.</p>
+          <p className="text-navy-600 leading-relaxed">Run campaigns across display, video, audio, Connected TV (CTV), and Over-the-Top (OTT) from a single unified platform. No need to switch between multiple tools or accounts for different formats. Plan, launch, and optimize cross-channel campaigns from one dashboard.</p>
         </div>
 
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-6">Advanced Targeting</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { title: "Demographic", desc: "Age, gender, household income, education, and parental status." },
-              { title: "Geographic", desc: "Country, state, city, DMA, zip code, and radius targeting." },
-              { title: "Behavioral", desc: "Purchase intent, browsing behavior, and interest-based segments." },
-              { title: "Contextual", desc: "Keyword and category-based targeting to align with relevant content." },
-              { title: "Device", desc: "Desktop, mobile, tablet, connected TV, and specific operating systems." },
-              { title: "Time & Day", desc: "Schedule campaigns for specific hours and days of the week." },
-              { title: "First-Party Data", desc: "Upload and activate your own audience data for precision." },
-              { title: "Third-Party Segments", desc: "Access audience data from leading data providers." },
+              { title: "Demographic Targeting", desc: "Age, gender, household income, education, and parental status." },
+              { title: "Geographic Targeting", desc: "Country, state, city, DMA, zip code, and radius targeting." },
+              { title: "Behavioral Targeting", desc: "Purchase intent, browsing behavior, and interest-based audience segments." },
+              { title: "Contextual Targeting", desc: "Keyword and category-based targeting to align ads with relevant content." },
+              { title: "Device Targeting", desc: "Desktop, mobile, tablet, connected TV, and specific operating systems." },
+              { title: "Time and Day Targeting", desc: "Schedule campaigns to run during specific hours and days of the week." },
+              { title: "First-Party Data Onboarding", desc: "Upload and activate your own audience data for precision targeting." },
+              { title: "Third-Party Data Segments", desc: "Access audience data from leading data providers." },
             ].map((item, i) => (
               <div key={i} className="bg-navy-50 border border-navy-100 rounded-xl p-4">
                 <h3 className="font-bold text-navy-900 text-sm mb-1">{item.title}</h3>
@@ -50,17 +50,17 @@ const Features = () => {
 
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Real-Time Bidding and Optimization</h2>
-          <p className="text-navy-600 leading-relaxed">PublifyX's real-time bidding engine processes millions of bid requests per second, evaluating each impression against your campaign criteria. Our algorithms automatically adjust bids to maximize performance toward CPM, CPC, CPA, ROAS, or video completion rate.</p>
+          <p className="text-navy-600 leading-relaxed">PublifyX's real-time bidding engine processes millions of bid requests per second, evaluating each impression against your campaign criteria and bidding strategy. Our optimization algorithms automatically adjust bids to maximize performance toward your chosen KPIs — whether CPM, CPC, CPA, ROAS, or video completion rate.</p>
         </div>
 
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Reporting and Analytics</h2>
-          <p className="text-navy-600 leading-relaxed">Access real-time dashboards with granular metrics across all channels. View performance by creative, placement, audience segment, device, geography, and time period. Export reports in customizable formats. White label reporting ensures client-facing reports carry your brand.</p>
+          <p className="text-navy-600 leading-relaxed">Access real-time campaign dashboards with granular metrics across all channels. View performance by creative, placement, audience segment, device, geography, and time period. Export reports in customizable formats. White label reporting ensures client-facing reports carry your brand.</p>
         </div>
 
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Brand Safety and Fraud Prevention</h2>
-          <p className="text-navy-600 leading-relaxed">Protect your campaigns with domain-level and category-level exclusions, pre-bid fraud filtering, viewability verification, and integration with third-party brand safety and verification providers.</p>
+          <p className="text-navy-600 leading-relaxed">Protect your campaigns with domain-level and category-level exclusions, pre-bid fraud filtering, viewability verification, and integration with third-party brand safety and verification providers. Ensure your ads appear alongside appropriate content and reach real users.</p>
         </div>
 
         <div>

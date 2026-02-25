@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const HowItWorks = () => {
   useEffect(() => {
-    document.title = "How PublifyX Works | From Setup to Live Campaigns in Days";
+    document.title = "How PublifyX Works | Launch Your White Label DSP in Days";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "From consultation to live campaigns in 5–10 business days. See how PublifyX configures your branded DSP with SSP integrations, team training, and ongoing support.");
+    if (meta) meta.setAttribute("content", "Learn how PublifyX works — from initial setup to live campaign launch. Deploy your white label DSP in days with full branding, SSP integrations, and multi-channel capabilities.");
   }, []);
 
   return (
@@ -16,7 +16,7 @@ const HowItWorks = () => {
         { label: "How It Works" },
       ]}
       heroTitle="How PublifyX Works — From Setup to Live Campaigns in Days"
-      heroSubtitle="Launching your own demand side platform sounds complex, but with PublifyX, the process is streamlined and straightforward. We handle the technology — you focus on your brand, your clients, and your growth."
+      heroSubtitle="Launching your own demand side platform sounds complex, but with PublifyX, the process is streamlined and straightforward. We handle the technology, infrastructure, and integrations — you focus on your brand, your clients, and your growth strategy. Here is a step-by-step overview of how PublifyX takes you from initial consultation to running live programmatic campaigns under your own brand."
       ctaTitle="Ready to Launch?"
       ctaDescription="Most clients go from consultation to live campaigns within five to ten business days."
       faqs={[
@@ -27,11 +27,11 @@ const HowItWorks = () => {
     >
       <section className="space-y-12">
         {[
-          { step: "1", title: "Discovery and Consultation", desc: "We discuss your business model, target markets, and specific requirements — channels to activate, client access model, branding specs, and SSP or data partner integrations. This ensures the platform is configured to your exact needs from day one." },
-          { step: "2", title: "Platform Configuration and Branding", desc: "Our team configures the platform with your branding — custom domain, logo, color palette, and interface customizations. We set up your account structure, user roles, and permission levels." },
-          { step: "3", title: "Supply Integration", desc: "We activate connections to SSPs and ad exchanges relevant to your campaigns. PublifyX comes pre-integrated with 40+ SSPs covering display, video, audio, CTV, and OTT. Custom integrations are also available." },
-          { step: "4", title: "Team Onboarding and Training", desc: "Your team receives comprehensive onboarding covering platform navigation, campaign setup, targeting options, bidding strategies, reporting, and optimization best practices." },
-          { step: "5", title: "Campaign Launch and Optimization", desc: "Launch your first campaigns. Our support team assists with strategy, troubleshooting, and optimization as you scale your operations." },
+          { step: "1", title: "Discovery and Consultation", desc: "The process begins with a consultation where we discuss your business model, target markets, and specific requirements. We will cover the channels you plan to activate (display, video, audio, CTV, OTT), the client access model you prefer (self-serve, managed, or hybrid), your branding specifications, and any specific SSP or data partner integrations you need. This conversation ensures the platform is configured to match your exact needs from day one." },
+          { step: "2", title: "Platform Configuration and Branding", desc: "Our technical team configures the PublifyX platform with your branding — custom domain, logo, color palette, and interface customizations. We set up your account structure, user roles, and permission levels. If you are deploying the white label version, every client-facing element of the platform will reflect your brand identity exclusively." },
+          { step: "3", title: "Supply Integration", desc: "We activate connections to the supply-side platforms and ad exchanges relevant to your campaigns. PublifyX comes pre-integrated with over 40 SSPs covering display, video, audio, CTV, and OTT inventory. If you have existing relationships with specific supply partners, we can configure those integrations as well." },
+          { step: "4", title: "Team Onboarding and Training", desc: "Your team receives comprehensive onboarding training covering platform navigation, campaign setup, targeting options, bidding strategies, reporting, and optimization best practices. We provide documentation and ongoing support to ensure your team is confident and self-sufficient." },
+          { step: "5", title: "Campaign Launch and Optimization", desc: "With the platform configured and your team trained, you are ready to launch your first campaigns. Our support team remains available to assist with campaign strategy, troubleshooting, and optimization as you scale your operations. Most clients go from initial consultation to live campaigns within five to ten business days." },
         ].map((item, i) => (
           <div key={i} className="flex items-start gap-6">
             <span className="flex-shrink-0 w-12 h-12 bg-brand-orange-500 text-white rounded-2xl flex items-center justify-center text-lg font-bold">{item.step}</span>
