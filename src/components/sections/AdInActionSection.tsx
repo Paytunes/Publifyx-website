@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Check, Play, Pause, SkipBack, SkipForward, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
