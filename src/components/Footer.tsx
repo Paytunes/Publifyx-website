@@ -9,14 +9,15 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <img
-              src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.png"
-              alt="PUBLIFYX"
-              className="h-8 w-auto brightness-0 invert mb-4"
-              width={171}
-              height={32}
-              loading="lazy"
-            />
+            <Link to="/">
+              <img
+                src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.png"
+                alt="PublifyX"
+                className="h-8 w-auto"
+                width={171}
+                height={32}
+              />
+            </Link>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
               Powering the next generation of programmatic advertising.
             </p>

@@ -32,7 +32,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const isWhiteLabelDsp = location.pathname === "/white-label-dsp";
+  const isContact = location.pathname === "/contact";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -42,7 +42,7 @@ const Header = () => {
 
   const linkClass = scrolled
     ? "text-navy-600 hover:text-brand-orange-500"
-    : isHome || isWhiteLabelDsp
+    : !isContact
       ? "text-white hover:text-brand-orange-300"
       : "text-navy-600 hover:text-brand-orange-500";
 
@@ -199,11 +199,7 @@ const Header = () => {
                 >
                   Contact
                 </Link>
-                <Link
-                  to="/contact"
-                  className="btn-primary text-center mt-2 block"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                <Link to="/contact" className="btn-primary text-center mt-2 block" onClick={() => setIsMenuOpen(false)}>
                   Get Started
                 </Link>
               </nav>
@@ -211,7 +207,6 @@ const Header = () => {
           )}
         </div>
       </header>
-
     </>
   );
 };
