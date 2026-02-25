@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import agencyDashboard from "@/assets/agency/agency-dashboard.webp";
+import agencyTeam from "@/assets/agency/agency-team.webp";
 
 const DSPForAgencies = () => {
   useEffect(() => {
@@ -30,6 +32,19 @@ const DSPForAgencies = () => {
       ]}
     >
       <section className="space-y-12">
+        <div className="rounded-2xl overflow-hidden mb-2">
+          <img
+            src={agencyDashboard}
+            alt="Agency programmatic advertising dashboard showing campaign analytics and media buying data"
+            width={800}
+            height={450}
+            loading="eager"
+            decoding="async"
+            className="w-full h-auto object-cover"
+          />
+          <p className="text-xs text-navy-400 mt-2 italic">A branded DSP gives agencies full control over programmatic buying, reporting, and client management.</p>
+        </div>
+
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Why Agencies Need Their Own DSP</h2>
           <p className="text-navy-600 leading-relaxed mb-4">Most agencies today rely on third-party DSPs where they pay percentage-based fees on media spend, have limited control over supply paths, and present reports that carry another company's branding. This model erodes margins, creates transparency concerns with clients, and makes it difficult to differentiate your agency from competitors using the same tools.</p>
@@ -54,6 +69,18 @@ const DSPForAgencies = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden">
+          <img
+            src={agencyTeam}
+            alt="Media agency team collaborating on programmatic campaign strategy"
+            width={800}
+            height={450}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-auto object-cover"
+          />
         </div>
 
         <div>

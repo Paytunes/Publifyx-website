@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import ctvLivingRoom from "@/assets/ctv/ctv-living-room.webp";
+import ctvStreaming from "@/assets/ctv/ctv-streaming.webp";
 
 const CTVAdvertising = () => {
   useEffect(() => {
@@ -30,6 +32,19 @@ const CTVAdvertising = () => {
       ]}
     >
       <section className="space-y-12">
+        <div className="rounded-2xl overflow-hidden mb-2">
+          <img
+            src={ctvLivingRoom}
+            alt="Smart TV in a modern living room displaying streaming content for connected TV advertising"
+            width={800}
+            height={450}
+            loading="eager"
+            decoding="async"
+            className="w-full h-auto object-cover"
+          />
+          <p className="text-xs text-navy-400 mt-2 italic">Connected TV advertising delivers full-screen video ads to viewers on smart TVs and streaming devices.</p>
+        </div>
+
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">What Is CTV Advertising?</h2>
           <p className="text-navy-600 leading-relaxed mb-4">CTV advertising refers to video ads delivered through internet-connected television devices. Unlike traditional linear TV, where ads are broadcast to mass audiences during scheduled programming, CTV ads are served programmatically to specific households or audience segments based on data-driven targeting.</p>
@@ -79,6 +94,18 @@ const CTVAdvertising = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden">
+          <img
+            src={ctvStreaming}
+            alt="Streaming content on a connected TV device showing programmatic CTV ad delivery"
+            width={800}
+            height={450}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-auto object-cover"
+          />
         </div>
 
         <div>
