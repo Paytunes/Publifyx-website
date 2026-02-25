@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Play } from "lucide-react";
 import { motion } from "framer-motion";
-import ctvHeroDashboard from "@/assets/ctv/ctv-connected-hero.webp";
+import { Link } from "react-router-dom";
 
 interface CTVHeroSectionProps {
   onGetStarted: () => void;
@@ -55,29 +55,42 @@ const CTVHeroSection = ({ onGetStarted }: CTVHeroSectionProps) => {
                 Book a Demo
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
+              <Link
+                to="/contact"
+                className="inline-flex items-center border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white px-8 py-3.5 rounded-xl font-semibold text-lg backdrop-blur-sm border transition-colors"
+              >
+                <Play className="mr-2 w-5 h-5" />
+                Contact Us
+              </Link>
             </div>
 
             <p className="text-sm text-navy-400">No commitment required · Launch campaigns in minutes</p>
           </motion.div>
 
+          {/* Right side — trust stats */}
           <motion.div
-            initial={{ opacity: 0, x: 40, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="hidden lg:block"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="hidden lg:grid grid-cols-2 gap-4"
           >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
-              <img
-                src={ctvHeroDashboard}
-                alt="Connected TV advertising dashboard with audience targeting and campaign performance analytics"
-                className="relative w-full h-auto rounded-2xl shadow-2xl shadow-black/40 border border-white/10"
-                width={1024}
-                height={1024}
-                fetchPriority="high"
-                decoding="sync"
-              />
-            </div>
+            {[
+              { value: "100+", label: "Premium CTV Publishers" },
+              { value: "95%+", label: "Video Completion Rate" },
+              { value: "15s/30s", label: "Ad Format Support" },
+              { value: "24/7", label: "Dedicated Support" },
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + i * 0.1 }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors"
+              >
+                <div className="text-3xl font-bold text-brand-orange-400 mb-1">{stat.value}</div>
+                <div className="text-sm text-navy-300">{stat.label}</div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>
