@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   Sparkles,
-  Play,
   Rocket,
   GraduationCap,
   Search,
@@ -18,6 +17,7 @@ import {
   Star,
   Target,
 } from "lucide-react";
+import howItWorksDashboard from "@/assets/how-it-works/hero-dashboard.webp";
 import MagneticCard from "@/components/effects/MagneticCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -161,38 +161,27 @@ const HowItWorks = () => {
                   Start Your Journey{" "}
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button
-                  variant="outline"
-                  className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white px-8 py-6 rounded-xl font-semibold text-lg backdrop-blur-sm"
-                >
-                  <Play className="mr-2 w-5 h-5" /> Watch Demo
-                </Button>
               </div>
               <p className="text-sm text-navy-400">No commitment required · Most clients launch within 2 weeks</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="hidden lg:grid grid-cols-2 gap-4"
+              initial={{ opacity: 0, x: 40, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="hidden lg:block"
             >
-              {[
-                { value: "5", label: "Simple Steps" },
-                { value: "5-10", label: "Business Days" },
-                { value: "40+", label: "SSP Integrations" },
-                { value: "Zero", label: "Engineering Required" },
-              ].map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 + i * 0.1 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors"
-                >
-                  <div className="text-3xl font-bold text-brand-orange-400 mb-1">{stat.value}</div>
-                  <div className="text-sm text-navy-300">{stat.label}</div>
-                </motion.div>
-              ))}
+              <div className="relative">
+                <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
+                <img
+                  src={howItWorksDashboard}
+                  alt="DSP onboarding process dashboard showing setup steps, domain configuration, and integration status"
+                  className="relative w-full h-auto rounded-2xl shadow-2xl shadow-black/40 border border-white/10"
+                  width={1024}
+                  height={1024}
+                  fetchPriority="high"
+                  decoding="sync"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
