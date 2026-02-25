@@ -1,7 +1,7 @@
 
 import Layout from "@/components/Layout";
-import { useState, useEffect } from "react";
-import GetStartedModal from "@/components/GetStartedModal";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import HeroSection from "@/components/sections/whiteLabelDSP/HeroSection";
 import WhiteLabelExplanationSection from "@/components/sections/whiteLabelDSP/WhiteLabelExplanationSection";
 import WhyChooseSection from "@/components/sections/whiteLabelDSP/WhyChooseSection";
@@ -12,7 +12,7 @@ import WhiteLabelCTASection from "@/components/sections/whiteLabelDSP/WhiteLabel
 import WhiteLabelFAQSection from "@/components/sections/whiteLabelDSP/WhiteLabelFAQSection";
 
 const WhiteLabelDSP = () => {
-  const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "White Label DSP Platform | Launch Your Own DSP — PublifyX";
@@ -22,7 +22,7 @@ const WhiteLabelDSP = () => {
   }, []);
 
   const handleGetStarted = () => {
-    setIsGetStartedModalOpen(true);
+    navigate("/contact");
   };
 
   return (
@@ -35,11 +35,6 @@ const WhiteLabelDSP = () => {
       <HowItWorksSection onGetStarted={handleGetStarted} />
       <WhiteLabelCTASection onGetStarted={handleGetStarted} />
       <WhiteLabelFAQSection />
-
-      <GetStartedModal 
-        isOpen={isGetStartedModalOpen} 
-        onClose={() => setIsGetStartedModalOpen(false)} 
-      />
     </Layout>
   );
 };

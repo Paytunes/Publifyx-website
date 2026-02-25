@@ -1,8 +1,8 @@
 
 import Layout from "@/components/Layout";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-import GetStartedModal from "@/components/GetStartedModal";
 import BannerHeroSection from "@/components/sections/bannerAdvertising/BannerHeroSection";
 import BannerCoreMessageSection from "@/components/sections/bannerAdvertising/BannerCoreMessageSection";
 import BannerBenefitsSection from "@/components/sections/bannerAdvertising/BannerBenefitsSection";
@@ -11,7 +11,7 @@ import BannerSuccessStoriesSection from "@/components/sections/bannerAdvertising
 import BannerCTASection from "@/components/sections/bannerAdvertising/BannerCTASection";
 
 const OnlineBannerAdvertising = () => {
-  const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Online Banner Advertising Solutions | High-Impact Display Ads — PublifyX";
@@ -21,7 +21,7 @@ const OnlineBannerAdvertising = () => {
   }, []);
 
   const handleGetStarted = () => {
-    setIsGetStartedModalOpen(true);
+    navigate("/contact");
   };
 
   const scrollToExplainer = () => {
@@ -45,11 +45,6 @@ const OnlineBannerAdvertising = () => {
       <BannerSuccessStoriesSection />
       
       <BannerCTASection onGetStarted={handleGetStarted} />
-
-      <GetStartedModal 
-        isOpen={isGetStartedModalOpen} 
-        onClose={() => setIsGetStartedModalOpen(false)} 
-      />
     </Layout>
   );
 };

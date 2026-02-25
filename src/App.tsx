@@ -66,6 +66,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/white-label-dsp" element={<WhiteLabelDSP />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/contact-us" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
 
             {/* Core Service Pages */}

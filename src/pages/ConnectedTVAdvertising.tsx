@@ -1,7 +1,7 @@
 
 import Layout from "@/components/Layout";
-import { useState, useEffect } from "react";
-import GetStartedModal from "@/components/GetStartedModal";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import CTVHeroSection from "@/components/sections/connectedTV/CTVHeroSection";
 import CTVExplanationSection from "@/components/sections/connectedTV/CTVExplanationSection";
 import CTVBenefitsSection from "@/components/sections/connectedTV/CTVBenefitsSection";
@@ -11,7 +11,7 @@ import CTVCTASection from "@/components/sections/connectedTV/CTVCTASection";
 import CTVFAQSection from "@/components/sections/connectedTV/CTVFAQSection";
 
 const ConnectedTVAdvertising = () => {
-  const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const prev = document.title;
@@ -20,7 +20,7 @@ const ConnectedTVAdvertising = () => {
   }, []);
 
   const handleGetStarted = () => {
-    setIsGetStartedModalOpen(true);
+    navigate("/contact");
   };
 
   return (
@@ -32,11 +32,6 @@ const ConnectedTVAdvertising = () => {
       <CTVAudienceSection onGetStarted={handleGetStarted} />
       <CTVCTASection onGetStarted={handleGetStarted} />
       <CTVFAQSection />
-
-      <GetStartedModal 
-        isOpen={isGetStartedModalOpen} 
-        onClose={() => setIsGetStartedModalOpen(false)} 
-      />
     </Layout>
   );
 };

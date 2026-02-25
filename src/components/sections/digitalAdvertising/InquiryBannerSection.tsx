@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Sparkles, BarChart3 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const InquiryBannerSection = () => {
   return (
@@ -36,20 +37,24 @@ const InquiryBannerSection = () => {
             </ul>
             
             <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg"
-                className="bg-white text-purple-primary hover:bg-gray-100 font-bold px-8 py-6 text-lg h-auto shadow-lg"
-              >
-                Plan My Campaign
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white/10 font-bold px-8 py-6 text-lg h-auto"
-              >
-                View Pricing
-              </Button>
+              <Link to="/contact">
+                <Button 
+                  size="lg"
+                  className="bg-white text-purple-primary hover:bg-gray-100 font-bold px-8 py-6 text-lg h-auto shadow-lg"
+                >
+                  Plan My Campaign
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white/10 font-bold px-8 py-6 text-lg h-auto"
+                >
+                  View Pricing
+                </Button>
+              </Link>
             </div>
           </div>
           
