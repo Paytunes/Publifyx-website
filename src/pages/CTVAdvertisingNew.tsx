@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import ctvHeroDashboard from "@/assets/ctv/ctv-hero-dashboard.webp";
 import {
   ArrowRight,
   Sparkles,
@@ -205,28 +206,23 @@ const CTVAdvertising = () => {
               <p className="text-sm text-navy-400">No commitment required · Flexible budgets</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="hidden lg:grid grid-cols-2 gap-4"
+              initial={{ opacity: 0, x: 40, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="hidden lg:block"
             >
-              {[
-                { value: "95%+", label: "Video Completion Rate" },
-                { value: "40+", label: "SSP Integrations" },
-                { value: "ZIP-Level", label: "Geographic Targeting" },
-                { value: "24/7", label: "Real-Time Reporting" },
-              ].map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 + i * 0.1 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors"
-                >
-                  <div className="text-3xl font-bold text-brand-orange-400 mb-1">{stat.value}</div>
-                  <div className="text-sm text-navy-300">{stat.label}</div>
-                </motion.div>
-              ))}
+              <div className="relative">
+                <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
+                <img
+                  src={ctvHeroDashboard}
+                  alt="Connected TV advertising dashboard with audience targeting and campaign performance analytics"
+                  className="relative w-full h-auto rounded-2xl shadow-2xl shadow-black/40 border border-white/10"
+                  width={1024}
+                  height={1024}
+                  fetchPriority="high"
+                  decoding="sync"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
