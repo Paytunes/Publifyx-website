@@ -32,8 +32,8 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const isContact = location.pathname === "/contact";
-  const isBlog = location.pathname === "/blog";
+  const isContact = location.pathname.includes("/contact");
+  const isBlog = location.pathname.includes("/blog");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
