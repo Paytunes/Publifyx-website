@@ -13,10 +13,11 @@ interface PageBreadcrumbProps {
 }
 
 const PageBreadcrumb = ({ items, variant = "dark" }: PageBreadcrumbProps) => {
-  const linkClass = variant === "dark"
-    ? "text-navy-300 hover:text-brand-orange-400 transition-colors"
-    : "text-navy-500 hover:text-brand-orange-500 transition-colors";
-  const separatorClass = variant === "dark" ? "text-navy-500" : "text-navy-300";
+  const linkClass =
+    variant === "dark"
+      ? "text-navy-300 hover:text-brand-orange-400 transition-colors"
+      : "text-navy-500 hover:text-brand-orange-500 transition-colors";
+  const separatorClass = variant === "dark" ? "text-navy-300" : "text-navy-300";
   const currentClass = variant === "dark" ? "text-white/80 font-medium" : "text-navy-800 font-medium";
 
   return (
