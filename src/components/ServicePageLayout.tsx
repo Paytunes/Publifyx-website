@@ -36,14 +36,12 @@ const ServicePageLayout = ({
   ctaTitle = "Ready to Get Started?",
   ctaDescription = "Schedule a personalized demo to see how PublifyX can power your programmatic advertising business.",
 }: ServicePageLayoutProps) => {
-  const relatedArticle = relatedArticleSlug
-    ? blogPosts.find((p) => p.slug === relatedArticleSlug)
-    : null;
+  const relatedArticle = relatedArticleSlug ? blogPosts.find((p) => p.slug === relatedArticleSlug) : null;
 
   return (
     <Layout>
       {/* Breadcrumbs */}
-      <div className="bg-navy-50 border-b border-navy-100">
+      <div className="bg-white/60 border-b border-navy-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-navy-500">
             {breadcrumbs.map((item, i) => (
@@ -91,10 +89,7 @@ const ServicePageLayout = ({
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-8 flex flex-wrap gap-4"
           >
-            <Link
-              to="/contact"
-              className="btn-primary px-8 py-3.5 text-base font-semibold"
-            >
+            <Link to="/contact" className="btn-primary px-8 py-3.5 text-base font-semibold">
               Book a Call
             </Link>
             <Link
@@ -108,9 +103,7 @@ const ServicePageLayout = ({
       </section>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        {children}
-      </div>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">{children}</div>
 
       {/* Inline Related Article */}
       {relatedArticle && (
@@ -184,18 +177,13 @@ const FAQAccordionItem = ({ question, answer }: { question: string; answer: stri
   const [open, setOpen] = useState(false);
   return (
     <div className="bg-white rounded-xl border border-navy-100 overflow-hidden">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center px-6 py-5 text-left"
-      >
+      <button onClick={() => setOpen(!open)} className="w-full flex justify-between items-center px-6 py-5 text-left">
         <span className="font-semibold text-navy-900 pr-4">{question}</span>
-        <ChevronRight className={`w-5 h-5 text-navy-400 flex-shrink-0 transition-transform ${open ? "rotate-90" : ""}`} />
+        <ChevronRight
+          className={`w-5 h-5 text-navy-400 flex-shrink-0 transition-transform ${open ? "rotate-90" : ""}`}
+        />
       </button>
-      {open && (
-        <div className="px-6 pb-5 text-navy-600 leading-relaxed">
-          {answer}
-        </div>
-      )}
+      {open && <div className="px-6 pb-5 text-navy-600 leading-relaxed">{answer}</div>}
     </div>
   );
 };
