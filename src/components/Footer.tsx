@@ -28,7 +28,7 @@ const Footer = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-navy-400 hover:text-white  flex gap-2 items-start transition-colors duration-200"
+                  className="text-primary-foreground/60 hover:text-white  flex gap-2 items-start transition-colors duration-200"
                 >
                   <Icon size={21} />
                   <h5 className="font-medium">Follow Us on LinkedIn</h5>
