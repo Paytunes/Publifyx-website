@@ -43,9 +43,9 @@ const Header = () => {
 
   const linkClass = scrolled
     ? "text-navy-600 hover:text-brand-orange-500"
-    : !isContact || !isBlog
-      ? "text-white hover:text-brand-orange-300"
-      : "text-navy-600 hover:text-brand-orange-500";
+    : isContact || isBlog
+      ? "text-navy-600 hover:text-brand-orange-500"
+      : "text-white hover:text-brand-orange-300";
 
   return (
     <>
