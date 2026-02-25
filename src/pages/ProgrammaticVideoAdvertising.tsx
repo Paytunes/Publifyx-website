@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   Sparkles,
-  Play,
+  
   Video,
   Monitor,
   Target,
@@ -203,12 +203,6 @@ const ProgrammaticVideoAdvertising = () => {
                   className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-orange-500/25 group"
                 >
                   Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white px-8 py-6 rounded-xl font-semibold text-lg backdrop-blur-sm"
-                >
-                  <Play className="mr-2 w-5 h-5" /> Watch Demo
                 </Button>
               </div>
               <p className="text-sm text-navy-400">No commitment required · VAST & VPAID supported</p>
