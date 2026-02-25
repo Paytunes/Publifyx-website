@@ -7,7 +7,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import GetStartedModal from "./GetStartedModal";
 
 const serviceLinks = [
   { to: "/white-label-dsp", label: "White Label DSP" },
@@ -30,7 +29,6 @@ const resourceLinks = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
@@ -125,9 +123,9 @@ const Header = () => {
             </nav>
 
             <div className="hidden lg:block">
-              <button onClick={() => setIsGetStartedModalOpen(true)} className="btn-primary px-5 py-2.5 text-sm">
+              <Link to="/contact" className="btn-primary px-5 py-2.5 text-sm">
                 Get Started
-              </button>
+              </Link>
             </div>
 
             <button
@@ -201,22 +199,19 @@ const Header = () => {
                 >
                   Contact
                 </Link>
-                <button
-                  onClick={() => {
-                    setIsGetStartedModalOpen(true);
-                    setIsMenuOpen(false);
-                  }}
-                  className="btn-primary text-center mt-2"
+                <Link
+                  to="/contact"
+                  className="btn-primary text-center mt-2 block"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Get Started
-                </button>
+                </Link>
               </nav>
             </div>
           )}
         </div>
       </header>
 
-      <GetStartedModal isOpen={isGetStartedModalOpen} onClose={() => setIsGetStartedModalOpen(false)} />
     </>
   );
 };
