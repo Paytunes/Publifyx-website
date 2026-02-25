@@ -390,7 +390,7 @@ const WhiteLabelVsSelfServe = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-12 md:py-16 bg-navy-50">
+      <section className="py-12 md:py-16 bg-navy-50 faq-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <motion.span

@@ -135,7 +135,7 @@ const ServicePageLayout = ({
 
       {/* FAQ Section */}
       {faqs && faqs.length > 0 && (
-        <section className="bg-navy-50 py-16">
+        <section className="bg-navy-50 py-16 faq-section">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-navy-900 mb-10">Frequently Asked Questions</h2>
             <div className="space-y-4">
