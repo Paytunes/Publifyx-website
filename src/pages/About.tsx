@@ -6,7 +6,7 @@ const About = () => {
   useEffect(() => {
     document.title = "About PublifyX | White Label Programmatic Technology Company";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "PublifyX powers the next generation of programmatic advertising. Enterprise-grade white label DSP solutions for agencies, ad networks, and startups worldwide.");
+    if (meta) meta.setAttribute("content", "PublifyX is a programmatic advertising technology company providing white label DSP solutions for agencies, ad networks, and startups worldwide.");
   }, []);
 
   return (
@@ -16,7 +16,7 @@ const About = () => {
         { label: "About" },
       ]}
       heroTitle="About PublifyX — Powering the Next Generation of Programmatic Advertising"
-      heroSubtitle="We build and operate white-labeled demand side platform technology that enables agencies, ad networks, and startups to launch their own branded programmatic advertising platforms."
+      heroSubtitle="PublifyX is a programmatic advertising technology company headquartered in Delhi, India. We build and operate white-labeled demand side platform technology that enables agencies, ad networks, and startups to launch their own branded programmatic advertising platforms without building technology from scratch. Our mission is to democratize access to programmatic advertising technology. We believe that the tools to buy and optimize digital media should not be restricted to companies with million-dollar engineering budgets. PublifyX makes enterprise-grade ad tech accessible, affordable, and deployable in days."
       ctaTitle="Partner with PublifyX"
       ctaDescription="Ready to explore how we can power your programmatic advertising business?"
     >
@@ -27,18 +27,13 @@ const About = () => {
         </div>
 
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Our Mission</h2>
-          <p className="text-navy-600 leading-relaxed">To democratize access to programmatic advertising technology. We believe that the tools to buy and optimize digital media should not be restricted to companies with million-dollar engineering budgets. PublifyX makes enterprise-grade ad tech accessible, affordable, and deployable in days.</p>
-        </div>
-
-        <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Who We Serve</h2>
-          <p className="text-navy-600 leading-relaxed">Our clients include independent media agencies looking to bring programmatic in-house, ad networks seeking self-serve capabilities, performance marketing companies, and startups entering the ad tech space. We serve businesses across the United States, India, Southeast Asia, and other markets worldwide.</p>
+          <p className="text-navy-600 leading-relaxed">Our clients include independent media agencies looking to bring programmatic in-house, ad networks seeking self-serve capabilities for their advertisers, performance marketing companies, and startups entering the ad tech space. We serve businesses across the United States, India, Southeast Asia, and other markets worldwide.</p>
         </div>
 
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Our Approach</h2>
-          <p className="text-navy-600 leading-relaxed">We combine deep ad tech expertise with a commitment to transparency and client success. Our platform is built on robust, scalable infrastructure designed to handle high-volume programmatic buying. Our support team brings hands-on experience in campaign strategy, optimization, and agency operations.</p>
+          <p className="text-navy-600 leading-relaxed">We combine deep ad tech expertise with a commitment to transparency and client success. Our platform is built on robust, scalable infrastructure designed to handle high-volume programmatic buying. Our support team brings hands-on experience in campaign strategy, optimization, and agency operations — ensuring our clients have the guidance they need to grow.</p>
         </div>
 
         <div className="bg-navy-50 border border-navy-100 rounded-2xl p-6 md:p-8">

@@ -7,7 +7,7 @@ const CaseStudies = () => {
   useEffect(() => {
     document.title = "PublifyX Case Studies | Real Results from Real Clients";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "See how agencies, ad networks, and startups launched branded DSPs with PublifyX. Faster market entry, higher margins, and stronger client retention — proven results.");
+    if (meta) meta.setAttribute("content", "See how agencies, ad networks, and startups use PublifyX white label DSP to launch their own programmatic platforms and grow their businesses.");
   }, []);
 
   const cases = [
@@ -17,31 +17,31 @@ const CaseStudies = () => {
       challenge: "A mid-sized independent media agency was paying significant technology fees to a third-party DSP, limiting their margins and forcing them to present clients with another company's platform.",
       solution: "The agency deployed PublifyX as a white label DSP under their own brand. They configured the platform with their domain, branding, and preferred SSP integrations.",
       results: [
-        "Eliminated third-party DSP fees, increasing margins on programmatic campaigns",
-        "Client retention improved as advertisers used the agency's branded platform",
-        "Expanded service offering to include CTV and audio advertising",
+        "The agency eliminated third-party DSP fees, increasing their margins on programmatic campaigns",
+        "Client retention improved as advertisers began using the agency's branded platform for campaign visibility and reporting",
+        "The agency expanded their service offering to include CTV and audio advertising using the same platform",
       ],
     },
     {
       icon: Zap,
       title: "Ad Tech Startup Enters the Market in Two Weeks",
-      challenge: "A startup team with ad tech experience wanted to launch their own DSP but lacked the capital and time to build technology from scratch.",
+      challenge: "A startup team with ad tech experience wanted to launch their own DSP offering but lacked the capital and time to build technology from scratch.",
       solution: "They chose PublifyX's white label DSP to go to market quickly with a fully functional, branded programmatic platform.",
       results: [
-        "Launched DSP within two weeks with display, video, and audio capabilities",
-        "Onboarded first advertisers in the first month",
-        "Reached profitability within the first quarter",
+        "The startup launched their DSP within two weeks, complete with display, video, and audio capabilities",
+        "They onboarded their first advertisers in the first month and reached profitability within the first quarter",
+        "By leveraging PublifyX's infrastructure while controlling their own pricing and client relationships",
       ],
     },
     {
       icon: Users,
-      title: "Ad Network Adds Self-Serve Programmatic",
-      challenge: "An established ad network wanted to offer their advertiser base self-serve programmatic buying capabilities, but building internally would take too long.",
-      solution: "The network integrated PublifyX as a white-labeled self-serve platform. The interface carried the network's branding, and campaigns ran through preferred supply partners.",
+      title: "Ad Network Adds Self-Serve Programmatic to Their Offering",
+      challenge: "An established ad network wanted to offer their advertiser base self-serve programmatic buying capabilities, but building a DSP internally would take too long.",
+      solution: "The network integrated PublifyX as a white-labeled self-serve platform accessible to their advertisers. The interface carried the network's branding, and campaigns ran through the network's preferred supply partners.",
       results: [
-        "Added new revenue stream through platform access fees",
+        "The network added a new revenue stream through platform access fees",
         "Improved advertiser satisfaction with self-serve capabilities",
-        "Differentiated offering from competing networks",
+        "Differentiated their offering from competing networks",
       ],
     },
   ];
@@ -53,7 +53,7 @@ const CaseStudies = () => {
         { label: "Case Studies" },
       ]}
       heroTitle="Case Studies — How Businesses Grow with PublifyX"
-      heroSubtitle="Every PublifyX client has a unique story. What they share is a common outcome: faster market entry, increased margins, and stronger client relationships."
+      heroSubtitle="Every PublifyX client has a unique story. What they share is a common outcome: faster market entry, increased margins, and stronger client relationships powered by their own branded programmatic platform. Below are examples of how different businesses have leveraged PublifyX to achieve their goals."
       ctaTitle="Write Your Own Success Story"
       ctaDescription="Join agencies, ad networks, and startups that have transformed their business with PublifyX."
     >

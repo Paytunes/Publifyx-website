@@ -4,9 +4,9 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const Integrations = () => {
   useEffect(() => {
-    document.title = "PublifyX Integrations | 40+ SSPs, Ad Exchanges & Data Partners";
+    document.title = "PublifyX Integrations | SSPs, Ad Exchanges, and Data Partners";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Access premium inventory through 40+ SSP, ad exchange, and data partner integrations across display, video, audio, CTV, and OTT channels worldwide.");
+    if (meta) meta.setAttribute("content", "PublifyX integrates with 40+ SSPs, ad exchanges, and data partners. Access premium inventory across display, video, audio, CTV, and OTT channels.");
   }, []);
 
   return (
@@ -16,19 +16,19 @@ const Integrations = () => {
         { label: "Integrations" },
       ]}
       heroTitle="Integrations — Connected to the Programmatic Ecosystem"
-      heroSubtitle="The value of a DSP depends on the quality and breadth of its supply connections. PublifyX integrates with over 40 supply-side platforms, ad exchanges, and data partners."
+      heroSubtitle="The value of a demand side platform depends on the quality and breadth of its supply connections. PublifyX integrates with over 40 supply-side platforms, ad exchanges, and data partners — giving you access to premium inventory across display, video, audio, CTV, and OTT channels worldwide."
       ctaTitle="Explore Our Integrations"
       ctaDescription="Need a specific supply partner or data integration? Our team can configure custom connections for your platform."
     >
       <section className="space-y-12">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Supply-Side Platform Integrations</h2>
-          <p className="text-navy-600 leading-relaxed">PublifyX connects to leading SSPs that aggregate inventory from premium publishers, apps, and streaming platforms. These integrations provide access to billions of daily impressions across all major ad formats and devices. Our supply partnerships are continuously expanded and optimized.</p>
+          <p className="text-navy-600 leading-relaxed">PublifyX connects to leading SSPs that aggregate inventory from premium publishers, apps, and streaming platforms. These integrations provide access to billions of daily impressions across all major ad formats and devices. Our supply partnerships are continuously expanded and optimized to ensure you have access to the highest-quality inventory at competitive clearing prices.</p>
         </div>
 
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Ad Exchange Connections</h2>
-          <p className="text-navy-600 leading-relaxed">Access real-time bidding inventory through major ad exchanges. Our exchange integrations cover open auction, private marketplace (PMP), and programmatic guaranteed deal types.</p>
+          <p className="text-navy-600 leading-relaxed">Access real-time bidding inventory through major ad exchanges that connect publishers with advertisers at scale. Our exchange integrations cover open auction, private marketplace (PMP), and programmatic guaranteed deal types.</p>
         </div>
 
         <div>
