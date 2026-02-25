@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { CheckCircle2 } from "lucide-react";
+import pricingPlanning from "@/assets/pricing/pricing-planning.webp";
 
 const Pricing = () => {
   useEffect(() => {
@@ -29,6 +30,10 @@ const Pricing = () => {
       ]}
     >
       <section className="space-y-12">
+        <div className="rounded-2xl overflow-hidden mb-2">
+          <img src={pricingPlanning} alt="Business team planning white label DSP pricing and programmatic platform costs" width={800} height={450} loading="eager" decoding="async" className="w-full h-auto object-cover" />
+          <p className="text-xs text-navy-400 mt-2 italic">Transparent, predictable pricing aligned with your business model.</p>
+        </div>
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">How PublifyX DSP Pricing Works</h2>
           <p className="text-navy-600 leading-relaxed mb-4">PublifyX offers flexible pricing models tailored to different business stages and requirements. Our pricing typically includes a platform access fee and may include a nominal technology fee based on media spend. The exact pricing structure depends on your specific requirements, including the number of channels you plan to activate, the level of customization needed, and the volume of media spend you anticipate.</p>

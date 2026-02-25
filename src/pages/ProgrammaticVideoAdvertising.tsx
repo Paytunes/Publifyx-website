@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import videoProduction from "@/assets/video/video-production.webp";
+import videoStreaming from "@/assets/video/video-streaming.webp";
 
 const ProgrammaticVideoAdvertising = () => {
   useEffect(() => {
@@ -30,6 +32,10 @@ const ProgrammaticVideoAdvertising = () => {
       ]}
     >
       <section className="space-y-12">
+        <div className="rounded-2xl overflow-hidden mb-2">
+          <img src={videoProduction} alt="Video ad production and programmatic video advertising campaign setup" width={800} height={450} loading="eager" decoding="async" className="w-full h-auto object-cover" />
+          <p className="text-xs text-navy-400 mt-2 italic">Video advertising commands attention with the combination of sight, sound, and motion.</p>
+        </div>
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">What Is Programmatic Video Advertising?</h2>
           <p className="text-navy-600 leading-relaxed mb-4">Programmatic video advertising is the automated buying of video ad placements through real-time bidding technology. When a user encounters a video ad opportunity — whether on a news website, within a mobile app, or on a streaming platform — a bid request is sent to demand-side platforms. Advertisers bid on the impression based on targeting criteria, and the winning video ad is served to the viewer.</p>
@@ -60,6 +66,10 @@ const ProgrammaticVideoAdvertising = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden">
+          <img src={videoStreaming} alt="Video streaming on connected devices for programmatic video ad delivery" width={800} height={450} loading="lazy" decoding="async" className="w-full h-auto object-cover" />
         </div>
 
         <div>

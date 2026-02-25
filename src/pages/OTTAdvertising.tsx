@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import ottStreamingDevices from "@/assets/ott/ott-streaming-devices.webp";
+import ottMultiscreen from "@/assets/ott/ott-multiscreen.webp";
 
 const OTTAdvertising = () => {
   useEffect(() => {
@@ -30,6 +32,10 @@ const OTTAdvertising = () => {
       ]}
     >
       <section className="space-y-12">
+        <div className="rounded-2xl overflow-hidden mb-2">
+          <img src={ottStreamingDevices} alt="OTT streaming across multiple devices including smart TV, tablet, and smartphone" width={800} height={450} loading="eager" decoding="async" className="w-full h-auto object-cover" />
+          <p className="text-xs text-navy-400 mt-2 italic">OTT advertising reaches audiences across every internet-connected screen.</p>
+        </div>
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">What Is OTT Advertising?</h2>
           <p className="text-navy-600 leading-relaxed mb-4">OTT stands for "over-the-top," referring to content delivered directly over the internet, bypassing traditional cable, broadcast, and satellite television providers. OTT advertising is the placement of ads within this internet-delivered content.</p>
@@ -61,6 +67,10 @@ const OTTAdvertising = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden">
+          <img src={ottMultiscreen} alt="Multi-screen OTT ad delivery across streaming platforms" width={800} height={450} loading="lazy" decoding="async" className="w-full h-auto object-cover" />
         </div>
 
         <div>
