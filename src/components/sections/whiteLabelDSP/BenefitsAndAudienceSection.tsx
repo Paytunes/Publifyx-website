@@ -80,14 +80,12 @@ const BenefitsAndAudienceSection = ({ onGetStarted }: BenefitsAndAudienceSection
           className="text-center"
         >
           <p className="text-navy-500 mb-6 font-medium">Not sure which model fits your business?</p>
-          <Button
-            onClick={onGetStarted}
-            variant="outline"
-            className="border-navy-200 text-navy-700 hover:bg-navy-100 px-8 py-6 rounded-xl font-semibold text-lg group"
-          >
+         
+                        <Link to="/contact" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">Contact Us</Link>
+
             Request a Strategy Consultation
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          </Link>
         </motion.div>
       </div>
     </section>
