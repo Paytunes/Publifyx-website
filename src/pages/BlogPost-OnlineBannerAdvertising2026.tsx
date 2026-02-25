@@ -292,7 +292,7 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
             value="item-1"
             className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
           >
-            <AccordionTrigger className="!my-0 py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
+            <AccordionTrigger className="my-0 py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
               Are online banner ads still effective in 2026?
             </AccordionTrigger>
             <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
