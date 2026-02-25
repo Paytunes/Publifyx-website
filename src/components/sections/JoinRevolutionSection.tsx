@@ -32,7 +32,7 @@ const JoinRevolutionSection = () => {
               redefine excellence in digital advertising.
             </p>
             <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-              <Link to="/contact" className="inline-flex items-center btn-primary group">
+              <Link to="/contact" className="flex items-center text-white no-underline group">
                 Join Us
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
