@@ -77,10 +77,12 @@ const AdInActionSection = () => {
               ))}
             </div>
 
-            <button className="inline-flex items-center btn-primary group">
-              Request a demo
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+              <Link to="/contact" className="flex items-center text-white no-underline group">
+                Request a demo
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </EnergyButton>
           </motion.div>
 
           {/* Right Phone Mockup */}
