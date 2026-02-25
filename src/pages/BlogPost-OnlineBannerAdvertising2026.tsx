@@ -287,12 +287,12 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
       <div className="border-t border-navy-100 pt-12 mt-12">
         <h2 className="!mt-0">Frequently Asked Questions</h2>
 
-        <Accordion type="single" collapsible className="w-full space-y-3">
+        <Accordion type="single" collapsible className="w-full space-y-3 !my-0">
           <AccordionItem
             value="item-1"
             className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
           >
-            <AccordionTrigger className="!my-0 !text-sm py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
+            <AccordionTrigger className="my-0 py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
               Are online banner ads still effective in 2026?
             </AccordionTrigger>
             <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
@@ -305,7 +305,7 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
             value="item-2"
             className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
           >
-            <AccordionTrigger className="py-5 !my-0 !text-md text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
+            <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
               What is a realistic CTR for banner advertising?
             </AccordionTrigger>
             <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
@@ -318,7 +318,7 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
             value="item-3"
             className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
           >
-            <AccordionTrigger className="py-5 !my-0 !text-md text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
+            <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
               What banner ad formats are most commonly used?
             </AccordionTrigger>
             <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
@@ -330,7 +330,7 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
             value="item-4"
             className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
           >
-            <AccordionTrigger className="py-5 !my-0 !text-md text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
+            <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
               How does identity-based targeting improve banner ad performance?
             </AccordionTrigger>
             <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
