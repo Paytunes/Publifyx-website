@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import featuresDashboard from "@/assets/features/features-dashboard.webp";
 
 const Features = () => {
   useEffect(() => {
@@ -22,6 +23,10 @@ const Features = () => {
       ctaDescription="Schedule a personalized demo to explore every feature of the PublifyX platform."
     >
       <section className="space-y-12">
+        <div className="rounded-2xl overflow-hidden mb-2">
+          <img src={featuresDashboard} alt="PublifyX DSP platform dashboard showing multi-channel campaign management features" width={800} height={450} loading="eager" decoding="async" className="w-full h-auto object-cover" />
+          <p className="text-xs text-navy-400 mt-2 italic">Comprehensive programmatic buying capabilities across every major digital channel.</p>
+        </div>
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Multi-Channel Campaign Management</h2>
           <p className="text-navy-600 leading-relaxed">Run campaigns across display, video, audio, Connected TV (CTV), and Over-the-Top (OTT) from a single unified platform. No need to switch between multiple tools or accounts for different formats. Plan, launch, and optimize cross-channel campaigns from one dashboard.</p>

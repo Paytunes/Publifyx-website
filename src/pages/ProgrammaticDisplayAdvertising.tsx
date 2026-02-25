@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import displayAnalytics from "@/assets/display/display-analytics.webp";
+import displayDevices from "@/assets/display/display-devices.webp";
 
 const ProgrammaticDisplayAdvertising = () => {
   useEffect(() => {
@@ -30,6 +32,10 @@ const ProgrammaticDisplayAdvertising = () => {
       ]}
     >
       <section className="space-y-12">
+        <div className="rounded-2xl overflow-hidden mb-2">
+          <img src={displayAnalytics} alt="Programmatic display advertising analytics dashboard showing campaign performance metrics" width={800} height={450} loading="eager" decoding="async" className="w-full h-auto object-cover" />
+          <p className="text-xs text-navy-400 mt-2 italic">Programmatic display connects you to billions of daily impressions across websites and apps worldwide.</p>
+        </div>
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">What Is Programmatic Display Advertising?</h2>
           <p className="text-navy-600 leading-relaxed mb-4">Programmatic display advertising is the automated buying and selling of display ad inventory through real-time bidding auctions. When a user visits a website or opens an app, the available ad space triggers a bid request that is sent to demand-side platforms. Advertisers bid on the impression based on whether the user matches their targeting criteria. The winning ad is served to the user in milliseconds.</p>
@@ -55,6 +61,10 @@ const ProgrammaticDisplayAdvertising = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden">
+          <img src={displayDevices} alt="Display ads shown across multiple devices including desktop, laptop, and mobile" width={800} height={450} loading="lazy" decoding="async" className="w-full h-auto object-cover" />
         </div>
 
         <div>

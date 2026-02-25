@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import onboarding from "@/assets/how-it-works/onboarding.webp";
 
 const HowItWorks = () => {
   useEffect(() => {
@@ -26,6 +27,10 @@ const HowItWorks = () => {
       ]}
     >
       <section className="space-y-12">
+        <div className="rounded-2xl overflow-hidden mb-2">
+          <img src={onboarding} alt="Team onboarding and platform setup for PublifyX white label DSP deployment" width={800} height={450} loading="eager" decoding="async" className="w-full h-auto object-cover" />
+          <p className="text-xs text-navy-400 mt-2 italic">From consultation to live campaigns — typically within five to ten business days.</p>
+        </div>
         {[
           { step: "1", title: "Discovery and Consultation", desc: "The process begins with a consultation where we discuss your business model, target markets, and specific requirements. We will cover the channels you plan to activate (display, video, audio, CTV, OTT), the client access model you prefer (self-serve, managed, or hybrid), your branding specifications, and any specific SSP or data partner integrations you need. This conversation ensures the platform is configured to match your exact needs from day one." },
           { step: "2", title: "Platform Configuration and Branding", desc: "Our technical team configures the PublifyX platform with your branding — custom domain, logo, color palette, and interface customizations. We set up your account structure, user roles, and permission levels. If you are deploying the white label version, every client-facing element of the platform will reflect your brand identity exclusively." },

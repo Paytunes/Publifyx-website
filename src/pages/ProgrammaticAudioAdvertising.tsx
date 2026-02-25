@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import audioStreaming from "@/assets/audio/audio-streaming.webp";
+import podcastRecording from "@/assets/audio/podcast-recording.webp";
 
 const ProgrammaticAudioAdvertising = () => {
   useEffect(() => {
@@ -30,6 +32,10 @@ const ProgrammaticAudioAdvertising = () => {
       ]}
     >
       <section className="space-y-12">
+        <div className="rounded-2xl overflow-hidden mb-2">
+          <img src={audioStreaming} alt="Person listening to streaming audio with headphones representing programmatic audio advertising" width={800} height={450} loading="eager" decoding="async" className="w-full h-auto object-cover" />
+          <p className="text-xs text-navy-400 mt-2 italic">Programmatic audio reaches listeners during screen-free moments across streaming, podcasts, and digital radio.</p>
+        </div>
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">What Is Programmatic Audio Advertising?</h2>
           <p className="text-navy-600 leading-relaxed mb-4">Programmatic audio advertising is the automated buying and selling of audio ad inventory using real-time bidding technology. When a listener streams music, a podcast, or digital radio content, an audio ad slot becomes available. A bid request is sent to demand-side platforms, where advertisers compete in a real-time auction based on targeting criteria. The winning ad is served seamlessly within the listener's stream.</p>
@@ -61,6 +67,10 @@ const ProgrammaticAudioAdvertising = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden">
+          <img src={podcastRecording} alt="Podcast recording studio microphone for programmatic audio ad delivery" width={800} height={450} loading="lazy" decoding="async" className="w-full h-auto object-cover" />
         </div>
 
         <div>
