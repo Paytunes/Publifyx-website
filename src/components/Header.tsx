@@ -104,7 +104,7 @@ const Header = () => {
                 >
                   Resources <ChevronDown className="ml-1 h-3.5 w-3.5" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white border border-navy-100 shadow-xl rounded-xl p-1 w-48">
+                <DropdownMenuContent className="bg-white border border-navy-100 shadow-xl rounded-xl p-1 w-56">
                   {resourceLinks.map((link) => (
                     <DropdownMenuItem key={link.to} asChild>
                       <Link
