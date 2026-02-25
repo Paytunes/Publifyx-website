@@ -14,9 +14,10 @@ const ConnectedTVAdvertising = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const prev = document.title;
-    document.title = "Connected TV Advertising - PublifyX";
-    return () => { document.title = prev; };
+    document.title = "Connected TV Advertising Platform | CTV Ads — PublifyX";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Reach engaged audiences on Smart TVs with PublifyX Connected TV advertising. Premium CTV inventory, real-time analytics, and programmatic precision.");
+    return () => { document.title = "PublifyX — Programmatic Advertising Platform"; };
   }, []);
 
   const handleGetStarted = () => {
@@ -24,7 +25,7 @@ const ConnectedTVAdvertising = () => {
   };
 
   return (
-    <Layout>
+    <Layout transparentHeader>
       <CTVHeroSection onGetStarted={handleGetStarted} />
       <CTVExplanationSection onGetStarted={handleGetStarted} />
       <CTVBenefitsSection onGetStarted={handleGetStarted} />
