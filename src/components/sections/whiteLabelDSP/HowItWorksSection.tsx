@@ -7,25 +7,25 @@ const steps = [
   {
     number: "01",
     title: "Schedule a Consultation",
-    description: "Define your business requirements, branding, and goals with our team.",
+    description: "Schedule a consultation to define business requirements and branding.",
     icon: PhoneCall,
   },
   {
     number: "02",
     title: "Configure Your Platform",
-    description: "We set up your custom domain, branding, and SSP integrations.",
+    description: "Our team configures your domain, branding, and SSP integrations.",
     icon: Settings,
   },
   {
     number: "03",
     title: "Deploy in 15 Minutes",
-    description: "Your fully branded DSP goes live — ready to onboard advertisers.",
+    description: "Deployment is completed within 15 minutes.",
     icon: Rocket,
   },
   {
     number: "04",
     title: "Onboarding & Support",
-    description: "Your team receives training and ongoing dedicated support.",
+    description: "Your team receives onboarding training and ongoing support.",
     icon: GraduationCap,
   },
 ];
@@ -52,7 +52,7 @@ const HowItWorksSection = ({ onGetStarted }: HowItWorksSectionProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            How to Launch Your White Label DSP
+            How to Get Started with PublifyX White Label DSP
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

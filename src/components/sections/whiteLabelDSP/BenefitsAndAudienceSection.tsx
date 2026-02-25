@@ -7,17 +7,17 @@ import MagneticCard from "@/components/effects/MagneticCard";
 const targetAudience = [
   {
     title: "Media Agencies",
-    description: "Bring programmatic buying in-house, eliminate middlemen, and increase margins by operating your own branded DSP. Control the entire media buying workflow.",
+    description: "Bring programmatic buying in-house, eliminate middlemen, and increase margins by operating your own branded DSP. Control the entire media buying workflow and offer clients a proprietary platform experience.",
     icon: Target,
   },
   {
     title: "Ad Networks",
-    description: "Provide your advertiser base with self-serve programmatic capabilities. Expand beyond traditional network buys to include real-time bidding and cross-channel reach.",
+    description: "Provide your advertiser base with self-serve programmatic capabilities. Expand your product offering beyond traditional network buys to include real-time bidding, audience targeting, and cross-channel reach.",
     icon: Zap,
   },
   {
     title: "Startups & Entrepreneurs",
-    description: "Enter the ad tech market without the capital expenditure of building a DSP from scratch. Enterprise-grade technology at a fraction of the cost and time.",
+    description: "Enter the ad tech market without the capital expenditure of building a DSP from scratch. PublifyX gives you enterprise-grade technology at a fraction of the cost and time.",
     icon: Star,
   },
   {

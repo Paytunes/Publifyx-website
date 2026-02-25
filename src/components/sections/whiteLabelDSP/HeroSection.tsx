@@ -30,12 +30,16 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
             </div>
 
             <h1 className="mb-6 !text-white leading-[1.1]">
-              Launch Your Own Branded
+              White Label DSP — Launch Your Own Branded
               <span className="block text-brand-orange-400">Demand Side Platform</span>
             </h1>
 
             <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-              Give agencies, ad networks, and startups the ability to launch a fully branded programmatic platform in 15 minutes — without writing a single line of code.
+              Launching a demand side platform from scratch used to mean years of development, massive engineering costs, and complex exchange integrations. With PublifyX, it doesn't.
+            </p>
+
+            <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
+              Our white label DSP gives agencies, ad networks, and startups the ability to launch a fully branded programmatic platform in 15 minutes, not days, without writing a single line of code. Your logo. Your domain. Your pricing. Your client relationships. Our DSP.
             </p>
 
             <p className="text-base text-navy-300 mb-10 font-semibold">

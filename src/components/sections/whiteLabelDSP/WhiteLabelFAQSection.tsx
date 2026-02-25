@@ -3,25 +3,24 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
-    question: "How fast can I go live with my own DSP?",
-    answer: "With PublifyX, your white-labelled DSP can go live in under 2 weeks with complete setup and support.",
+    question: "How long does it take to launch a white label DSP with PublifyX?",
+    answer: "Most white label DSP deployments with PublifyX are completed within 15 minutes. This includes branding customization, domain setup, SSP integrations, and platform testing.",
   },
   {
-    question: "Do I need a dev team?",
-    answer: "No. Our platform is fully managed and requires zero coding or technical setup on your part.",
+    question: "Do I need technical expertise to operate a white label DSP?",
+    answer: "No. PublifyX handles all technical infrastructure, server management, and platform updates. You and your team focus on client relationships, campaign strategy, and business development. We provide full onboarding training.",
   },
   {
-    question: "Can I set my own margins?",
-    answer: "Yes, you control pricing, margins, and customer relationships fully.",
+    question: "What ad formats does PublifyX white label DSP support?",
+    answer: "PublifyX supports display banners, native ads, video (pre-roll, mid-roll, outstream), audio ads (streaming, podcast, digital radio), Connected TV (CTV), and Over-the-Top (OTT) video formats.",
   },
   {
-    question: "What ad formats are supported?",
-    answer: "The platform supports Display, Video, Audio, Native, and CTV ad formats for end-to-end buying.",
+    question: "Can I set my own pricing and margins with a white label DSP?",
+    answer: "Yes. You have full control over your pricing structure. You decide what to charge your advertisers and how to structure your margins. PublifyX operates transparently in the background.",
   },
   {
-    question: "How is this different from a reseller model?",
-    answer:
-      "Unlike a reseller setup, a white-label DSP gives you full branding, pricing control, bidding access, and customer ownership.",
+    question: "What is the difference between a white label DSP and a self-serve DSP?",
+    answer: "A self-serve DSP is a SaaS tool where you sign up, deposit funds, and start buying media — but the platform carries the provider's branding. A white label DSP is fully rebranded as your own product, giving you control over branding, pricing, client access, and SSP partnerships.",
   },
 ];
 
@@ -39,7 +38,7 @@ const WhiteLabelFAQSection = () => {
             FAQ
           </motion.span>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            Frequently Asked Questions
+            Frequently Asked Questions About White Label DSP
           </motion.h2>
         </div>
 

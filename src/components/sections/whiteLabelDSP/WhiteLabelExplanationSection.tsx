@@ -44,7 +44,7 @@ const WhiteLabelExplanationSection = () => {
             transition={{ delay: 0.1 }}
             className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
           >
-            A white label DSP is a fully built demand side platform developed and maintained by a technology provider — but deployed under your brand. Instead of investing millions in building proprietary ad tech, you get a production-ready platform that looks and feels like your own product.
+            A white label DSP is a fully built demand side platform developed and maintained by a technology provider, but deployed under your brand. Instead of investing millions in building proprietary ad tech from the ground up, you get a fully functional programmatic advertising platform that looks and feels like your own product, ready to onboard advertisers and start buying media immediately.
           </motion.p>
         </div>
 
