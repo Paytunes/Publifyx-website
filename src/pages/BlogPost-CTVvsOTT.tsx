@@ -10,10 +10,10 @@ const BlogPostCTVvsOTT = () => {
 
   useEffect(() => {
     const prev = document.title;
-    document.title = "CTV vs OTT Advertising: Key Differences Explained — PublifyX";
+    document.title = "CTV vs OTT Advertising: What's the Difference? — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
-    meta?.setAttribute("content", "Understand the difference between CTV and OTT advertising — scope, targeting, measurement, and how to combine both for maximum streaming reach.");
+    meta?.setAttribute("content", "Understand the difference between CTV and OTT advertising. Learn how connected TV and over-the-top ads work, where they overlap, and how to use both for maximum reach.");
     return () => { document.title = prev; meta?.setAttribute("content", originalDesc); };
   }, []);
 

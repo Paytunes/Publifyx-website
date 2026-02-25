@@ -13,7 +13,7 @@ const BlogPostHowToLaunchDSP = () => {
     document.title = "How to Launch Your Own DSP Without Building From Scratch — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
-    meta?.setAttribute("content", "Step-by-step guide to launching a branded DSP using white label technology. Go from setup to live programmatic campaigns in under two weeks.");
+    meta?.setAttribute("content", "Learn how to launch your own demand side platform using white label technology. Step-by-step guide for agencies, ad networks, and startups entering programmatic advertising.");
     return () => { document.title = prev; meta?.setAttribute("content", originalDesc); };
   }, []);
 

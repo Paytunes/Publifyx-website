@@ -10,10 +10,10 @@ const BlogPostProgrammaticAudioGuide = () => {
 
   useEffect(() => {
     const prev = document.title;
-    document.title = "Complete Guide to Programmatic Audio Advertising — PublifyX";
+    document.title = "Guide to Programmatic Audio Advertising — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
-    meta?.setAttribute("content", "How programmatic audio ads work across streaming music, podcasts, and digital radio. Formats, targeting capabilities, measurement, and getting started.");
+    meta?.setAttribute("content", "A comprehensive guide to programmatic audio advertising. Learn how audio ads work, what formats are available, targeting options, and how to get started with programmatic audio.");
     return () => { document.title = prev; meta?.setAttribute("content", originalDesc); };
   }, []);
 

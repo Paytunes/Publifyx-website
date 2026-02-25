@@ -13,7 +13,7 @@ const BlogPostWhiteLabelVsBuildInHouse = () => {
     document.title = "White Label DSP vs Building In-House: Cost Comparison — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
-    meta?.setAttribute("content", "Detailed cost analysis — engineering, infrastructure, timeline, and total cost of ownership. Why white label DSPs deliver the same outcome at a fraction of the price.");
+    meta?.setAttribute("content", "Compare the costs of a white label DSP versus building a demand side platform in-house. Detailed analysis of development, maintenance, and total cost of ownership.");
     return () => { document.title = prev; meta?.setAttribute("content", originalDesc); };
   }, []);
 
