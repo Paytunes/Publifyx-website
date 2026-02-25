@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Play } from "lucide-react";
 import { motion } from "framer-motion";
+import heroDashboard from "@/assets/white-label-dsp/hero-dashboard.webp";
 
 interface HeroSectionProps {
   onGetStarted: () => void;
@@ -74,28 +75,23 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
 
           {/* Right side — trust stats */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="hidden lg:grid grid-cols-2 gap-4"
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="hidden lg:block"
           >
-            {[
-              { value: "40+", label: "SSP & Exchange Integrations" },
-              { value: "15 min", label: "Platform Deployment" },
-              { value: "5+", label: "Ad Formats Supported" },
-              { value: "24/7", label: "Dedicated Support" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + i * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors"
-              >
-                <div className="text-3xl font-bold text-brand-orange-400 mb-1">{stat.value}</div>
-                <div className="text-sm text-navy-300">{stat.label}</div>
-              </motion.div>
-            ))}
+            <div className="relative">
+              <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
+              <img
+                src={heroDashboard}
+                alt="Ad-tech programmatic advertising dashboard with real-time bidding analytics and campaign metrics"
+                className="relative w-full h-auto rounded-2xl shadow-2xl shadow-black/40 border border-white/10"
+                width={1024}
+                height={1024}
+                fetchPriority="high"
+                decoding="sync"
+              />
+            </div>
           </motion.div>
         </div>
       </div>
