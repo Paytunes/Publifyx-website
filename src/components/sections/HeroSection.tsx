@@ -79,13 +79,6 @@ const HeroSection = () => {
                   Get Your White Label DSP
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </EnergyButton>
-                <Button
-                  variant="outline"
-                  className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white px-8 py-6 rounded-xl font-semibold text-lg backdrop-blur-sm"
-                >
-                  <Play className="mr-2 w-5 h-5" />
-                  Watch Demo
-                </Button>
               </motion.div>
 
               {/* Trust metrics */}
