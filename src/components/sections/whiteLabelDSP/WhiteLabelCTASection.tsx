@@ -8,7 +8,7 @@ interface WhiteLabelCTASectionProps {
 
 const WhiteLabelCTASection = ({ onGetStarted }: WhiteLabelCTASectionProps) => {
   return (
-    <section className="py-20 md:py-28 bg-navy-800 relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange-500 rounded-full blur-[250px] opacity-10" />
 

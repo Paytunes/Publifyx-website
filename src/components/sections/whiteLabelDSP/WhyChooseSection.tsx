@@ -18,7 +18,7 @@ interface WhyChooseSectionProps {
 
 const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
   return (
-    <section className="py-20 md:py-28 bg-navy-50">
+    <section className="py-12 md:py-16 bg-navy-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <motion.span
@@ -44,7 +44,10 @@ const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
             transition={{ delay: 0.1 }}
             className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Most white label platforms focus heavily on display. Some extend into video. PublifyX delivers true multi-channel capability under one unified platform. We connect to 40+ supply-side platforms and ad exchanges, giving your advertisers access to premium inventory across web, mobile apps, smart TVs, and streaming environments. Every format. Every screen. One branded dashboard.
+            Most white label platforms focus heavily on display. Some extend into video. PublifyX delivers true
+            multi-channel capability under one unified platform. We connect to 40+ supply-side platforms and ad
+            exchanges, giving your advertisers access to premium inventory across web, mobile apps, smart TVs, and
+            streaming environments. Every format. Every screen. One branded dashboard.
           </motion.p>
         </div>
 
@@ -73,7 +76,9 @@ const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="text-navy-500 mb-6 font-medium">Talk to our team about activating the channels that matter most to your business.</p>
+          <p className="text-navy-500 mb-6 font-medium">
+            Talk to our team about activating the channels that matter most to your business.
+          </p>
           <Button
             onClick={onGetStarted}
             className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-8 py-6 rounded-xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 group"

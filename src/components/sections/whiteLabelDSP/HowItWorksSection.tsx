@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, PhoneCall, Settings, Rocket, GraduationCap } from "lucide-react";
 
-
 const steps = [
   {
     number: "01",
@@ -36,7 +35,7 @@ interface HowItWorksSectionProps {
 
 const HowItWorksSection = ({ onGetStarted }: HowItWorksSectionProps) => {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <motion.span
@@ -47,11 +46,7 @@ const HowItWorksSection = ({ onGetStarted }: HowItWorksSectionProps) => {
           >
             Get Started
           </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             How to Get Started with PublifyX White Label DSP
           </motion.h2>
           <motion.p
