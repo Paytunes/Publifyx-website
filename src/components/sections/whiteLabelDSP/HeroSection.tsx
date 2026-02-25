@@ -2,12 +2,16 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import heroDashboard from "@/assets/white-label-dsp/hero-dashboard.webp";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
+import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
 
 interface HeroSectionProps {
   onGetStarted: () => void;
 }
 
 const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
+  const breadcrumbs = useServiceBreadcrumbs("White Label DSP");
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-navy-800">
       <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
@@ -22,6 +26,7 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
       <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 md:pt-28 md:pb-16">
+        <PageBreadcrumb items={breadcrumbs} />
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -66,7 +71,6 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
             <p className="text-sm text-navy-400">No commitment required · Launch in under 15 minutes</p>
           </motion.div>
 
-          {/* Right side — trust stats */}
           <motion.div
             initial={{ opacity: 0, x: 40, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
