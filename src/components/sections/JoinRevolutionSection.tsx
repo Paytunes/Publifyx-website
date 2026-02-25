@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
-import MagneticButton from "@/components/effects/MagneticButton";
+import EnergyButton from "@/components/effects/EnergyButton";
 
 const JoinRevolutionSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -31,12 +31,12 @@ const JoinRevolutionSection = () => {
               marketing expert, there's a place for you. Together, we'll push boundaries, innovate relentlessly, and
               redefine excellence in digital advertising.
             </p>
-            <MagneticButton as="div">
+            <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
               <Link to="/contact" className="inline-flex items-center btn-primary group">
                 Join Us
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </MagneticButton>
+            </EnergyButton>
           </motion.div>
 
           <motion.div
