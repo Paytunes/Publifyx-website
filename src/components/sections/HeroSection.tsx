@@ -67,7 +67,7 @@ const HeroSection = () => {
               </motion.p>
 
               <EnergyButton
-                className="bg-brand-orange-500 w-fit hover:bg-brand-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25"
+                className="bg-brand-orange-500 mb-4 w-fit hover:bg-brand-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25"
                 onClick={() => setIsGetStartedModalOpen(true)}
               >
                 Get Your White Label DSP
