@@ -10,14 +10,17 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-navy-800">
       <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-        backgroundSize: '40px 40px'
-      }} />
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+          backgroundSize: "40px 40px",
+        }}
+      />
       <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
       <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -35,11 +38,14 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
             </h1>
 
             <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-              Launching a demand side platform from scratch used to mean years of development, massive engineering costs, and complex exchange integrations. With PublifyX, it doesn't.
+              Launching a demand side platform from scratch used to mean years of development, massive engineering
+              costs, and complex exchange integrations. With PublifyX, it doesn't.
             </p>
 
             <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-              Our white label DSP gives agencies, ad networks, and startups the ability to launch a fully branded programmatic platform in 15 minutes, not days, without writing a single line of code. Your logo. Your domain. Your pricing. Your client relationships. Our DSP.
+              Our white label DSP gives agencies, ad networks, and startups the ability to launch a fully branded
+              programmatic platform in 15 minutes, not days, without writing a single line of code. Your logo. Your
+              domain. Your pricing. Your client relationships. Our DSP.
             </p>
 
             <p className="text-base text-navy-300 mb-10 font-semibold">

@@ -31,7 +31,7 @@ const HeroSection = () => {
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-orange-500 rounded-full blur-[180px] opacity-10" />
       <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-brand-orange-400 rounded-full blur-[140px] opacity-[0.06]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
@@ -62,9 +62,7 @@ const HeroSection = () => {
               solutions.
             </motion.p>
 
-            <EnergyButton
-              className="bg-brand-orange-500 mb-4 w-fit hover:bg-brand-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25"
-            >
+            <EnergyButton className="bg-brand-orange-500 mb-4 w-fit hover:bg-brand-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25">
               <Link to="/contact" className="flex items-center text-white no-underline">
                 Get Your White Label DSP
                 <ArrowRight className="ml-2 w-5 h-5" />
