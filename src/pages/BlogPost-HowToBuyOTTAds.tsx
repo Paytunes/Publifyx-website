@@ -13,7 +13,7 @@ const BlogPostHowToBuyOTTAds = () => {
     document.title = "How to Buy OTT Ads Programmatically — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
-    meta?.setAttribute("content", "Step-by-step guide to buying OTT ads — choosing a DSP, setting targeting, preparing creative, and measuring streaming campaign performance.");
+    meta?.setAttribute("content", "A step-by-step guide to buying OTT ads programmatically. Learn how to set up OTT campaigns, choose targeting options, select inventory, and measure results.");
     return () => { document.title = prev; meta?.setAttribute("content", originalDesc); };
   }, []);
 

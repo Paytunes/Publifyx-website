@@ -13,7 +13,7 @@ const BlogPostProgrammaticIndia = () => {
     document.title = "Programmatic Advertising in India: Market Overview — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
-    meta?.setAttribute("content", "India's programmatic landscape — market growth, key channels, opportunities in CTV and audio, and how to reach Indian digital audiences at scale.");
+    meta?.setAttribute("content", "An overview of programmatic advertising in India. Market size, growth trends, key channels, and opportunities for agencies and advertisers in the Indian market.");
     return () => { document.title = prev; meta?.setAttribute("content", originalDesc); };
   }, []);
 

@@ -10,10 +10,10 @@ const BlogPostSmartTVGuide = () => {
 
   useEffect(() => {
     const prev = document.title;
-    document.title = "Smart TV Advertising: Complete Guide — PublifyX";
+    document.title = "Smart TV Advertising: A Complete Guide — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
-    meta?.setAttribute("content", "How ads appear on smart TVs, available formats, household-level targeting, and how to run smart TV ad campaigns programmatically.");
+    meta?.setAttribute("content", "Everything you need to know about smart TV advertising. How ads appear on smart TVs, targeting options, costs, and how to run smart TV ad campaigns programmatically.");
     return () => { document.title = prev; meta?.setAttribute("content", originalDesc); };
   }, []);
 
