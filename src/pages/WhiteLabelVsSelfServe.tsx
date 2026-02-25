@@ -20,6 +20,7 @@ import {
   Star,
   Target,
 } from "lucide-react";
+import comparisonDashboard from "@/assets/white-label-vs-self-serve/hero-dashboard.webp";
 import MagneticCard from "@/components/effects/MagneticCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -153,28 +154,23 @@ const WhiteLabelVsSelfServe = () => {
               <p className="text-sm text-navy-400">Not sure? Talk to our team for a personalized recommendation</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="hidden lg:grid grid-cols-2 gap-4"
+              initial={{ opacity: 0, x: 40, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="hidden lg:block"
             >
-              {[
-                { value: "6", label: "Key Differences" },
-                { value: "100%", label: "Brand Control (WL)" },
-                { value: "1-2 Weeks", label: "WL Setup Time" },
-                { value: "Better", label: "ROI at Scale (WL)" },
-              ].map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 + i * 0.1 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors"
-                >
-                  <div className="text-3xl font-bold text-brand-orange-400 mb-1">{stat.value}</div>
-                  <div className="text-sm text-navy-300">{stat.label}</div>
-                </motion.div>
-              ))}
+              <div className="relative">
+                <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
+                <img
+                  src={comparisonDashboard}
+                  alt="White label vs self-serve DSP comparison dashboard showing feature matrix, branding options, and cost projections"
+                  className="relative w-full h-auto rounded-2xl shadow-2xl shadow-black/40 border border-white/10"
+                  width={1024}
+                  height={1024}
+                  fetchPriority="high"
+                  decoding="sync"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
