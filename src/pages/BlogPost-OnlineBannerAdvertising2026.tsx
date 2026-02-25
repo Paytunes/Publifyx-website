@@ -234,42 +234,42 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
       </p>
 
       {/* FAQ Section */}
-      <div className="border-t border-gray-200 pt-12 mt-12">
+      <div className="border-t border-navy-100 pt-12 mt-12">
         <h2 className="!mt-0">Frequently Asked Questions</h2>
         
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger className="text-left text-lg font-medium text-gray-900">
+        <Accordion type="single" collapsible className="w-full space-y-3">
+          <AccordionItem value="item-1" className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300">
+            <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
               Are online banner ads still effective in 2026?
             </AccordionTrigger>
-            <AccordionContent className="text-gray-700 leading-relaxed">
+            <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
               Yes. Online banner ads remain effective in 2026 due to their scalability, affordability, precise targeting, and compatibility with identity-based and omnichannel advertising strategies.
             </AccordionContent>
           </AccordionItem>
           
-          <AccordionItem value="item-2">
-            <AccordionTrigger className="text-left text-lg font-medium text-gray-900">
+          <AccordionItem value="item-2" className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300">
+            <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
               What is a realistic CTR for banner advertising?
             </AccordionTrigger>
-            <AccordionContent className="text-gray-700 leading-relaxed">
+            <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
               Industry-aligned CTR benchmarks typically range from 0.3–0.8% for standard display banners and 2–3% for retargeting campaigns.
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem value="item-3">
-            <AccordionTrigger className="text-left text-lg font-medium text-gray-900">
+          <AccordionItem value="item-3" className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300">
+            <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
               What banner ad formats are most commonly used?
             </AccordionTrigger>
-            <AccordionContent className="text-gray-700 leading-relaxed">
+            <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
               Common banner ad formats include 300×250, 728×90, 160×600, and mobile formats like 320×50 and 320×100.
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem value="item-4">
-            <AccordionTrigger className="text-left text-lg font-medium text-gray-900">
+          <AccordionItem value="item-4" className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300">
+            <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
               How does identity-based targeting improve banner ad performance?
             </AccordionTrigger>
-            <AccordionContent className="text-gray-700 leading-relaxed">
+            <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
               Identity-based targeting improves banner performance by enabling more accurate audience segmentation, cross-device attribution, and reduced impression wastage.
             </AccordionContent>
           </AccordionItem>
