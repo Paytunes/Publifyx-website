@@ -1,116 +1,273 @@
+import Layout from "@/components/Layout";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import ServicePageLayout from "@/components/ServicePageLayout";
-import agencyDashboard from "@/assets/agency/agency-dashboard.webp";
-import agencyTeam from "@/assets/agency/agency-team.webp";
+import { useNavigate, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Sparkles, Play, Building2, Palette, Users, DollarSign, Headphones, Layers, Target, PhoneCall, Settings, Rocket, GraduationCap, Zap, Star, Globe } from "lucide-react";
+import MagneticCard from "@/components/effects/MagneticCard";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+const features = [
+  { title: "Multi-Channel Buying", description: "Run display, video, audio, CTV, and OTT campaigns from a single interface.", icon: Layers },
+  { title: "White Label Branding", description: "Deploy under your agency's brand — custom domain, logo, colors, and reports.", icon: Palette },
+  { title: "Flexible Client Access", description: "Grant self-serve access, view-only dashboards, or manage everything internally.", icon: Users },
+  { title: "Transparent Pricing", description: "No hidden markups on media. You control what you charge clients.", icon: DollarSign },
+  { title: "Dedicated Support", description: "Onboarding, training, and ongoing support tailored to how agencies operate.", icon: Headphones },
+  { title: "Scalable Infrastructure", description: "From ten clients to a hundred — the platform scales without constraints.", icon: Zap },
+];
+
+const agencyTypes = [
+  { title: "Independent Media Agencies", description: "Bring programmatic in-house, replace third-party DSPs, and capture margins that went to middlemen.", icon: Building2 },
+  { title: "Performance Marketing Agencies", description: "Run data-driven campaigns optimizing toward CPA, ROAS, and performance KPIs with log-level data.", icon: Target },
+  { title: "Creative Agencies", description: "Add programmatic capabilities to your offering without building a media buying team from scratch.", icon: Star },
+  { title: "Regional & Boutique Agencies", description: "Compete with larger agencies by presenting clients with a proprietary technology platform.", icon: Globe },
+];
+
+const steps = [
+  { number: "01", title: "Schedule Consultation", description: "Define business requirements, branding, and client structure.", icon: PhoneCall },
+  { number: "02", title: "Platform Configuration", description: "We configure your domain, branding, and SSP integrations.", icon: Settings },
+  { number: "03", title: "Deploy Your DSP", description: "Your branded platform goes live — typically within 5-10 business days.", icon: Rocket },
+  { number: "04", title: "Onboarding & Growth", description: "Your team receives training and ongoing support for campaign optimization.", icon: GraduationCap },
+];
+
+const faqs = [
+  { question: "Can my agency white label the PublifyX DSP?", answer: "Yes. Full white label capabilities — your domain, branding, and visual identity. Clients see your proprietary technology." },
+  { question: "How does PublifyX help agencies increase margins?", answer: "By eliminating third-party DSP fees. You set your own pricing and retain the margin that previously went to intermediaries." },
+  { question: "What channels can agencies access?", answer: "Display, video, audio, CTV, and OTT — all from one platform." },
+  { question: "Do agencies need technical staff?", answer: "No dedicated technical staff required. PublifyX handles infrastructure, maintenance, and updates." },
+  { question: "How quickly can an agency get started?", answer: "Most deployments complete within 5-10 business days including branding, SSP integrations, and onboarding." },
+];
 
 const DSPForAgencies = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = "DSP for Agencies | Programmatic Platform Built for Media Agencies — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "PublifyX offers a white label DSP built for media agencies. Bring programmatic buying in-house, increase margins, and offer clients a branded advertising platform.");
+    if (meta) meta.setAttribute("content", "PublifyX offers a white label DSP built for media agencies. Bring programmatic buying in-house, increase margins, and offer clients a branded platform.");
+    return () => { document.title = "PublifyX — Programmatic Advertising Platform"; };
   }, []);
 
+  const handleGetStarted = () => navigate("/contact");
+
   return (
-    <ServicePageLayout
-      breadcrumbs={[
-        { label: "Home", path: "/" },
-        { label: "Services" },
-        { label: "DSP for Agencies" },
-      ]}
-      heroTitle="DSP for Agencies — Bring Programmatic Buying In-House with Your Own Branded Platform"
-      heroSubtitle="Media agencies are under increasing pressure to demonstrate transparency, deliver measurable results, and differentiate their services in a crowded marketplace. Operating your own demand side platform is one of the most effective ways to achieve all three. PublifyX provides a DSP built specifically for the needs of media agencies. Whether you want a white-labeled platform branded as your own or a managed buying tool for your media team, PublifyX gives you direct access to programmatic inventory across display, video, audio, CTV, and OTT — with full control over margins, client access, and reporting."
-      relatedArticleSlug="white-label-dsp-reasons"
-      ctaTitle="Get Your Agency's Own DSP"
-      ctaDescription="Eliminate third-party fees, increase margins, and present clients with a platform that carries your brand."
-      faqs={[
-        { question: "Can my agency white label the PublifyX DSP?", answer: "Yes. PublifyX offers full white label capabilities. You can deploy the platform under your own domain, branding, and visual identity. Clients interact with a platform that appears to be your proprietary technology." },
-        { question: "How does PublifyX help agencies increase margins?", answer: "By operating your own DSP, you eliminate third-party DSP fees and markups. You set your own pricing with clients and retain the margin that previously went to technology intermediaries." },
-        { question: "What channels can agencies access through PublifyX?", answer: "Agencies can run programmatic campaigns across display, video, audio, Connected TV (CTV), and Over-the-Top (OTT) channels — all from one platform." },
-        { question: "Do agencies need technical staff to use PublifyX?", answer: "No dedicated technical staff is required. PublifyX handles all platform infrastructure, maintenance, and updates. Your team focuses on campaign strategy and client management. We provide comprehensive onboarding training." },
-        { question: "How quickly can an agency get started with PublifyX?", answer: "Most agency deployments are completed within five to ten business days, including branding setup, SSP integrations, and team onboarding." },
-      ]}
-    >
-      <section className="space-y-12">
-        <div className="rounded-2xl overflow-hidden mb-2">
-          <img
-            src={agencyDashboard}
-            alt="Agency programmatic advertising dashboard showing campaign analytics and media buying data"
-            width={800}
-            height={450}
-            loading="eager"
-            decoding="async"
-            className="w-full h-auto object-cover"
-          />
-          <p className="text-xs text-navy-400 mt-2 italic">A branded DSP gives agencies full control over programmatic buying, reporting, and client management.</p>
-        </div>
-
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Why Agencies Need Their Own DSP</h2>
-          <p className="text-navy-600 leading-relaxed mb-4">Most agencies today rely on third-party DSPs where they pay percentage-based fees on media spend, have limited control over supply paths, and present reports that carry another company's branding. This model erodes margins, creates transparency concerns with clients, and makes it difficult to differentiate your agency from competitors using the same tools.</p>
-          <p className="text-navy-600 leading-relaxed mb-4">Operating your own DSP — or a <Link to="/white-label-dsp" className="text-brand-orange-500 hover:underline font-medium">white-labeled version</Link> of one — changes the equation. You control the entire media buying workflow. You set your own margins. You present clients with a platform that carries your brand. And you gain access to log-level data that enables deeper optimization and more transparent reporting.</p>
-          <p className="text-navy-600 leading-relaxed">An agency DSP also strengthens client retention. When clients use your platform to view campaigns and access reports, switching to another agency becomes significantly more costly and disruptive. Your technology becomes part of their workflow.</p>
-        </div>
-
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-6">What Makes PublifyX the Right DSP for Agencies?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { title: "Multi-Channel Buying in One Platform", desc: "Run display, video, audio, CTV, and OTT campaigns from a single interface. No need to manage multiple DSP accounts for different channels." },
-              { title: "White Label Branding", desc: "Deploy the PublifyX platform under your agency's brand. Custom domain, logo, colors, and client-facing reports — everything reflects your identity." },
-              { title: "Flexible Client Access", desc: "Choose how clients interact with the platform. Grant self-serve access for hands-on clients, provide view-only dashboards for reporting purposes, or manage everything internally." },
-              { title: "Transparent Fee Structure", desc: "PublifyX operates on a clear, predictable pricing model. No hidden markups on media costs. You control what you charge your clients and how you structure your margins." },
-              { title: "Dedicated Agency Support", desc: "Our team understands the agency business model. We provide onboarding, training, and ongoing support tailored to how agencies operate — including help with pitches, RFP responses, and campaign strategy." },
-              { title: "Scalable Infrastructure", desc: "Whether you manage ten clients or a hundred, the PublifyX platform scales with your business. Add new advertisers, campaigns, and channels without infrastructure constraints." },
-            ].map((item, i) => (
-              <div key={i} className="bg-navy-50 border border-navy-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-navy-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-navy-600">{item.desc}</p>
+    <Layout transparentHeader>
+      {/* Hero */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-navy-800">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
+                <Sparkles className="w-4 h-4 text-brand-orange-400" />
+                <span className="text-sm font-medium text-white/80">DSP for Agencies</span>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-2xl overflow-hidden">
-          <img
-            src={agencyTeam}
-            alt="Media agency team collaborating on programmatic campaign strategy"
-            width={800}
-            height={450}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-auto object-cover"
-          />
-        </div>
-
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-6">How Agencies Use PublifyX</h2>
-          <div className="space-y-4">
-            {[
-              { title: "Independent Media Agencies", desc: "Use PublifyX to bring programmatic buying in-house, replacing reliance on third-party DSPs and capturing the margin that previously went to technology middlemen." },
-              { title: "Performance Marketing Agencies", desc: "Use the platform to run data-driven campaigns across multiple channels, optimizing toward CPA, ROAS, and other performance KPIs with full log-level data access." },
-              { title: "Creative Agencies", desc: "Expanding into media services use PublifyX to add programmatic capabilities to their offering without building a media buying team from scratch." },
-              { title: "Regional and Boutique Agencies", desc: "Use the white label DSP to compete with larger agencies by presenting clients with a proprietary technology platform that elevates their positioning in the market." },
-            ].map((item, i) => (
-              <div key={i} className="border-l-4 border-brand-orange-500 pl-5 py-2">
-                <h3 className="font-bold text-navy-900">{item.title}</h3>
-                <p className="text-sm text-navy-600 mt-1">{item.desc}</p>
+              <h1 className="mb-6 !text-white leading-[1.1]">
+                DSP for Agencies — Bring Programmatic
+                <span className="block text-brand-orange-400">Buying In-House</span>
+              </h1>
+              <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
+                Eliminate third-party fees, increase margins, and present clients with a branded programmatic platform that carries your agency's identity.
+              </p>
+              <p className="text-base text-navy-300 mb-10 font-semibold">
+                Your brand · Your margins · Your clients · Our infrastructure
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
+                <Button onClick={handleGetStarted} className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-orange-500/25 group">
+                  Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white px-8 py-6 rounded-xl font-semibold text-lg backdrop-blur-sm">
+                  <Play className="mr-2 w-5 h-5" /> Watch Demo
+                </Button>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-navy-50 border border-navy-100 rounded-2xl p-6 md:p-8">
-          <h3 className="text-lg font-bold text-navy-900 mb-3">Explore Related Services</h3>
-          <div className="flex flex-wrap gap-3">
-            <Link to="/white-label-dsp" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">White Label DSP</Link>
-            <Link to="/pricing" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">Pricing</Link>
-            <Link to="/how-it-works" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">How It Works</Link>
-            <Link to="/case-studies" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">Case Studies</Link>
+              <p className="text-sm text-navy-400">No commitment required · Deploy in 5-10 days</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.3 }} className="hidden lg:grid grid-cols-2 gap-4">
+              {[
+                { value: "5+", label: "Channels Supported" },
+                { value: "40+", label: "SSP Integrations" },
+                { value: "100%", label: "White Label Ready" },
+                { value: "24/7", label: "Agency Support" },
+              ].map((stat, i) => (
+                <motion.div key={stat.label} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.1 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                  <div className="text-3xl font-bold text-brand-orange-400 mb-1">{stat.value}</div>
+                  <div className="text-sm text-navy-300">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
-    </ServicePageLayout>
+
+      {/* Why Agencies Need Own DSP */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Agency DSP</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-4 max-w-4xl mx-auto">Why Agencies Need Their Own DSP</motion.h2>
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed">
+              Third-party DSPs erode margins, create transparency concerns, and make it difficult to differentiate. Operating your own DSP changes the equation — you control the workflow, set margins, and present clients with your branded platform.
+            </motion.p>
+          </div>
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="bg-navy-50 rounded-2xl border border-navy-100 p-8">
+              <h3 className="text-xl font-bold text-navy-800 mb-4">Without Your Own DSP</h3>
+              <ul className="space-y-3">
+                {["Paying percentage-based fees", "Limited supply path control", "Reports carry another brand", "Easy for clients to switch"].map(item => (
+                  <li key={item} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                      <span className="text-red-500 text-xs font-bold">✕</span>
+                    </div>
+                    <span className="text-navy-600 font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-navy-800 rounded-2xl border border-navy-700 p-8">
+              <h3 className="text-xl font-bold text-white mb-4">With PublifyX DSP</h3>
+              <ul className="space-y-3">
+                {["Control entire media buying workflow", "Set your own margins", "Branded platform experience", "Stronger client retention", "Log-level data access"].map(item => (
+                  <li key={item} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                      <ArrowRight className="w-3.5 h-3.5 text-green-400" />
+                    </div>
+                    <span className="text-navy-200 font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-20 md:py-28 bg-navy-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Platform Features</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>What Makes PublifyX Right for Agencies</motion.h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {features.map((feature, i) => (
+              <motion.div key={feature.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
+                <MagneticCard className="group bg-white rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
+                  <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
+                    <feature.icon className="w-6 h-6 text-brand-orange-500" />
+                  </div>
+                  <h3 className="font-bold text-navy-800 text-lg mb-2">{feature.title}</h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">{feature.description}</p>
+                </MagneticCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who It's For */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Built For You</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>How Agencies Use PublifyX</motion.h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {agencyTypes.map((audience, i) => (
+              <motion.div key={audience.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                <MagneticCard className="bg-navy-50 rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-all duration-300 group h-full">
+                  <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
+                    <audience.icon className="w-6 h-6 text-brand-orange-500" />
+                  </div>
+                  <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
+                  <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+                </MagneticCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 md:py-28 bg-navy-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Get Started</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>How to Get Started</motion.h2>
+          </div>
+          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
+            {steps.map((step, i) => (
+              <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12 }} className="relative text-center group">
+                {i < steps.length - 1 && <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-navy-200" />}
+                <div className="relative z-10">
+                  <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-navy-700 transition-colors">
+                    <step.icon className="w-8 h-8 text-brand-orange-400" />
+                  </div>
+                  <div className="text-xs font-bold text-brand-orange-500 mb-2">{step.number}</div>
+                  <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
+            <Button onClick={handleGetStarted} className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 group">
+              Get Your Agency's Own DSP <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Related */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-navy-50 rounded-2xl border border-navy-100 p-6 md:p-8">
+            <h3 className="text-lg font-bold text-navy-900 mb-4">Explore Related Services</h3>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/white-label-dsp" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">White Label DSP</Link>
+              <Link to="/pricing" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">Pricing</Link>
+              <Link to="/how-it-works" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">How It Works</Link>
+              <Link to="/case-studies" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">Case Studies</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 md:py-28 bg-navy-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange-500 rounded-full blur-[250px] opacity-10" />
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="mb-6 !text-white">Get Your Agency's Own DSP</h2>
+          <p className="text-xl text-navy-300 mb-4 leading-relaxed">Eliminate third-party fees, increase margins, and present clients with a branded platform.</p>
+          <p className="text-base text-navy-400 mb-10 font-semibold">No commitment required · Deploy in 5-10 days</p>
+          <Button onClick={handleGetStarted} className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white text-lg px-10 py-6 font-semibold hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 rounded-xl group">
+            Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </motion.div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 md:py-28 bg-navy-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">FAQ</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>Frequently Asked Questions</motion.h2>
+          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={i} value={`faq-${i}`} className="bg-white rounded-xl border border-navy-100 px-6 overflow-hidden">
+                  <AccordionTrigger className="text-left font-semibold text-navy-800 hover:text-brand-orange-500 hover:no-underline py-5">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
   );
 };
 
