@@ -1,12 +1,7 @@
 import { motion } from "framer-motion";
 import { Lightbulb, Check } from "lucide-react";
 
-const youControl = [
-  "Branding and domain",
-  "Pricing and margins",
-  "Client access",
-  "Campaign workflows",
-];
+const youControl = ["Branding and domain", "Pricing and margins", "Client access", "Campaign workflows"];
 
 const weManage = [
   "Real-time bidding infrastructure",
@@ -18,7 +13,7 @@ const weManage = [
 
 const WhiteLabelExplanationSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <motion.span
@@ -44,7 +39,10 @@ const WhiteLabelExplanationSection = () => {
             transition={{ delay: 0.1 }}
             className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
           >
-            A white label DSP is a fully built demand side platform developed and maintained by a technology provider, but deployed under your brand. Instead of investing millions in building proprietary ad tech from the ground up, you get a fully functional programmatic advertising platform that looks and feels like your own product, ready to onboard advertisers and start buying media immediately.
+            A white label DSP is a fully built demand side platform developed and maintained by a technology provider,
+            but deployed under your brand. Instead of investing millions in building proprietary ad tech from the ground
+            up, you get a fully functional programmatic advertising platform that looks and feels like your own product,
+            ready to onboard advertisers and start buying media immediately.
           </motion.p>
         </div>
 
