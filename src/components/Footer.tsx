@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -19,20 +20,76 @@ const Footer = () => {
             <p className="text-navy-400 text-sm leading-relaxed">
               Powering the next generation of programmatic advertising.
             </p>
+
+            <div className="mt-4">
+              {[{ icon: Linkedin, href: "https://www.linkedin.com/company/publifyx/" }].map(({ icon: Icon, href }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-foreground/50 hover:text-primary-foreground/70  flex gap-2 items-start transition-colors duration-200"
+                >
+                  <Icon size={21} />
+                  <h5 className="font-medium">Follow Us on LinkedIn</h5>
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Services */}
           <div>
             <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Services</h4>
             <ul className="space-y-2.5">
-              <li><Link to="/white-label-dsp" className="text-navy-400 hover:text-white transition-colors text-sm">White Label DSP</Link></li>
-              <li><Link to="/ctv-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">CTV Advertising</Link></li>
-              <li><Link to="/ott-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">OTT Advertising</Link></li>
-              <li><Link to="/programmatic-audio-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">Programmatic Audio</Link></li>
-              <li><Link to="/programmatic-display-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">Programmatic Display</Link></li>
-              <li><Link to="/programmatic-video-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">Programmatic Video</Link></li>
-              <li><Link to="/dsp-for-agencies" className="text-navy-400 hover:text-white transition-colors text-sm">DSP for Agencies</Link></li>
-              <li><Link to="/pricing" className="text-navy-400 hover:text-white transition-colors text-sm">Pricing</Link></li>
+              <li>
+                <Link to="/white-label-dsp" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  White Label DSP
+                </Link>
+              </li>
+              <li>
+                <Link to="/ctv-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  CTV Advertising
+                </Link>
+              </li>
+              <li>
+                <Link to="/ott-advertising" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  OTT Advertising
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/programmatic-audio-advertising"
+                  className="text-navy-400 hover:text-white transition-colors text-sm"
+                >
+                  Programmatic Audio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/programmatic-display-advertising"
+                  className="text-navy-400 hover:text-white transition-colors text-sm"
+                >
+                  Programmatic Display
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/programmatic-video-advertising"
+                  className="text-navy-400 hover:text-white transition-colors text-sm"
+                >
+                  Programmatic Video
+                </Link>
+              </li>
+              <li>
+                <Link to="/dsp-for-agencies" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  DSP for Agencies
+                </Link>
+              </li>
+              <li>
+                <Link to="/pricing" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  Pricing
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -40,13 +97,44 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Resources</h4>
             <ul className="space-y-2.5">
-              <li><Link to="/how-it-works" className="text-navy-400 hover:text-white transition-colors text-sm">How It Works</Link></li>
-              <li><Link to="/features" className="text-navy-400 hover:text-white transition-colors text-sm">Features</Link></li>
-              <li><Link to="/integrations" className="text-navy-400 hover:text-white transition-colors text-sm">Integrations</Link></li>
-              <li><Link to="/case-studies" className="text-navy-400 hover:text-white transition-colors text-sm">Case Studies</Link></li>
-              <li><Link to="/white-label-dsp-vs-self-serve-dsp" className="text-navy-400 hover:text-white transition-colors text-sm">White Label vs Self-Serve</Link></li>
-              <li><Link to="/ctv-advertising-india" className="text-navy-400 hover:text-white transition-colors text-sm">CTV Advertising India</Link></li>
-              <li><Link to="/blog" className="text-navy-400 hover:text-white transition-colors text-sm">Blog</Link></li>
+              <li>
+                <Link to="/how-it-works" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  How It Works
+                </Link>
+              </li>
+              <li>
+                <Link to="/features" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link to="/integrations" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  Integrations
+                </Link>
+              </li>
+              <li>
+                <Link to="/case-studies" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/white-label-dsp-vs-self-serve-dsp"
+                  className="text-navy-400 hover:text-white transition-colors text-sm"
+                >
+                  White Label vs Self-Serve
+                </Link>
+              </li>
+              <li>
+                <Link to="/ctv-advertising-india" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  CTV Advertising India
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -54,8 +142,16 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Company</h4>
             <ul className="space-y-2.5">
-              <li><Link to="/about" className="text-navy-400 hover:text-white transition-colors text-sm">About Us</Link></li>
-              <li><Link to="/contact" className="text-navy-400 hover:text-white transition-colors text-sm">Contact</Link></li>
+              <li>
+                <Link to="/about" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -63,8 +159,16 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Legal</h4>
             <ul className="space-y-2.5">
-              <li><Link to="/privacy_policy" className="text-navy-400 hover:text-white transition-colors text-sm">Privacy Policy</Link></li>
-              <li><Link to="/terms_and_conditions" className="text-navy-400 hover:text-white transition-colors text-sm">Terms & Conditions</Link></li>
+              <li>
+                <Link to="/privacy_policy" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms_and_conditions" className="text-navy-400 hover:text-white transition-colors text-sm">
+                  Terms & Conditions
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
