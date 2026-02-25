@@ -1,106 +1,276 @@
+import Layout from "@/components/Layout";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import ServicePageLayout from "@/components/ServicePageLayout";
-import videoProduction from "@/assets/video/video-production.webp";
-import videoStreaming from "@/assets/video/video-streaming.webp";
+import { useNavigate, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Sparkles, Play, Video, Monitor, Target, Eye, Zap, Layers, PhoneCall, Settings, Rocket, GraduationCap, Building2, Megaphone, Tv } from "lucide-react";
+import MagneticCard from "@/components/effects/MagneticCard";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+const features = [
+  { title: "In-Stream & Outstream", description: "Pre-roll, mid-roll, post-roll within video content, or outstream video in editorial environments.", icon: Video },
+  { title: "Premium Inventory", description: "Access video placements across high-quality publisher sites, mobile apps, and streaming platforms.", icon: Monitor },
+  { title: "VAST & VPAID Compliance", description: "Full support for industry-standard video ad serving protocols across publishers and devices.", icon: Layers },
+  { title: "Advanced Targeting", description: "Target by demographics, geography, interests, device type, content context, and behavioral signals.", icon: Target },
+  { title: "Viewability Optimization", description: "Optimize for viewable impressions and video completion rate to maximize budget efficiency.", icon: Eye },
+  { title: "Cross-Channel Strategy", description: "Combine web/app video with CTV and OTT within PublifyX for unified video advertising.", icon: Zap },
+];
+
+const adFormats = [
+  { title: "Pre-Roll Video Ads", desc: "Video ads playing before content — 6s bumper, 15s, and 30s formats." },
+  { title: "Mid-Roll Video Ads", desc: "Ads inserted during natural breaks for higher completion rates." },
+  { title: "Post-Roll Video Ads", desc: "Video ads playing after content conclusion." },
+  { title: "Outstream Video Ads", desc: "Auto-playing video within text-based editorial content." },
+  { title: "Rewarded Video Ads", desc: "In-app video offering incentives for full ad viewing." },
+];
+
+const steps = [
+  { number: "01", title: "Upload Video Creatives", description: "Upload your 6s, 15s, or 30s video ads in MP4 or MOV format.", icon: PhoneCall },
+  { number: "02", title: "Set Targeting", description: "Define audiences by demographics, behavior, context, and geography.", icon: Settings },
+  { number: "03", title: "Launch Campaigns", description: "Go live across premium video inventory via real-time bidding.", icon: Rocket },
+  { number: "04", title: "Optimize & Scale", description: "Monitor VCR, viewability, and conversions — optimize in real time.", icon: GraduationCap },
+];
+
+const whoItsFor = [
+  { title: "Brand Advertisers", description: "Build awareness with sight, sound, and motion — video delivers the strongest brand recall of any digital format.", icon: Megaphone },
+  { title: "Media Agencies", description: "Run video campaigns for clients across web, app, and streaming with white-label reporting and margin control.", icon: Building2 },
+  { title: "Performance Marketers", description: "Drive measurable outcomes with video completion optimization and cross-device attribution.", icon: Target },
+  { title: "Streaming & OTT Brands", description: "Extend your video strategy from CTV to web and mobile with unified campaign management.", icon: Tv },
+];
+
+const faqs = [
+  { question: "What is the difference between in-stream and outstream?", answer: "In-stream plays within existing video content. Outstream appears within non-video environments like articles, auto-playing as the user scrolls." },
+  { question: "What video ad lengths does PublifyX support?", answer: "6-second bumper, 15-second, and 30-second spots. Custom lengths may be available depending on inventory." },
+  { question: "How is video ad performance measured?", answer: "Key metrics include impressions, VCR, viewability rate, CTR, and CPCV — all available in real-time reporting." },
+  { question: "Can I run video ads on mobile apps?", answer: "Yes. PublifyX provides in-app video inventory including rewarded and interstitial video formats." },
+  { question: "Does PublifyX support VAST and VPAID?", answer: "Yes. Full support for both standards ensuring compatibility across all publishers." },
+];
 
 const ProgrammaticVideoAdvertising = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = "Programmatic Video Advertising Platform | Video DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Run high-impact video ad campaigns across websites, apps, and streaming platforms with PublifyX's programmatic video advertising platform. Pre-roll, mid-roll, and outstream formats.");
+    if (meta) meta.setAttribute("content", "Run high-impact video ad campaigns across websites, apps, and streaming platforms with PublifyX.");
+    return () => { document.title = "PublifyX — Programmatic Advertising Platform"; };
   }, []);
 
+  const handleGetStarted = () => navigate("/contact");
+
   return (
-    <ServicePageLayout
-      breadcrumbs={[
-        { label: "Home", path: "/" },
-        { label: "Services" },
-        { label: "Programmatic Video Advertising" },
-      ]}
-      heroTitle="Programmatic Video Advertising — High-Impact Video Ads Across Web, App, and Streaming"
-      heroSubtitle="Video advertising commands attention like no other digital format. With higher engagement rates, stronger brand recall, and growing consumer preference for video content, programmatic video has become an essential channel for performance-driven and brand-building campaigns alike. PublifyX provides a programmatic video advertising platform that enables agencies and advertisers to run video campaigns across premium websites, mobile apps, and streaming environments. Access in-stream and outstream video inventory through real-time bidding, target specific audiences with precision, and measure every impression with detailed performance analytics."
-      relatedArticleSlug="connected-tv-advertising-guide"
-      ctaTitle="Launch Your Video Campaign"
-      ctaDescription="Run high-impact video campaigns across premium websites, mobile apps, and streaming environments."
-      faqs={[
-        { question: "What is the difference between in-stream and outstream video ads?", answer: "In-stream video ads play within existing video content (before, during, or after). Outstream video ads appear within non-video environments like articles and feeds, auto-playing as the user scrolls." },
-        { question: "What video ad lengths does PublifyX support?", answer: "PublifyX supports 6-second bumper ads, 15-second spots, and 30-second spots. Custom lengths may be available depending on inventory sources." },
-        { question: "How is video ad performance measured?", answer: "Key video metrics include impressions, video completion rate (VCR), viewability rate, click-through rate, and cost per completed view (CPCV). PublifyX provides all of these in real-time reporting." },
-        { question: "Can I run video ads on mobile apps?", answer: "Yes. PublifyX provides access to in-app video inventory across mobile applications, including rewarded and interstitial video formats." },
-        { question: "Does PublifyX support VAST and VPAID video tags?", answer: "Yes. PublifyX fully supports VAST (Video Ad Serving Template) and VPAID (Video Player-Ad Interface Definition) standards for video ad serving compatibility across publishers." },
-      ]}
-    >
-      <section className="space-y-12">
-        <div className="rounded-2xl overflow-hidden mb-2">
-          <img src={videoProduction} alt="Video ad production and programmatic video advertising campaign setup" width={800} height={450} loading="eager" decoding="async" className="w-full h-auto object-cover" />
-          <p className="text-xs text-navy-400 mt-2 italic">Video advertising commands attention with the combination of sight, sound, and motion.</p>
-        </div>
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">What Is Programmatic Video Advertising?</h2>
-          <p className="text-navy-600 leading-relaxed mb-4">Programmatic video advertising is the automated buying of video ad placements through real-time bidding technology. When a user encounters a video ad opportunity — whether on a news website, within a mobile app, or on a streaming platform — a bid request is sent to demand-side platforms. Advertisers bid on the impression based on targeting criteria, and the winning video ad is served to the viewer.</p>
-          <p className="text-navy-600 leading-relaxed">Programmatic video ads include in-stream formats (pre-roll, mid-roll, and post-roll ads that play within video content) and outstream formats (video ads that appear within text-based content, typically auto-playing as the user scrolls). Both formats offer high visibility and engagement compared to standard display placements.</p>
-        </div>
-
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Why Invest in Programmatic Video Advertising?</h2>
-          <p className="text-navy-600 leading-relaxed mb-4">Video captures attention more effectively than any other digital ad format. Studies consistently show that video ads drive higher brand awareness, message recall, and purchase intent compared to static display. The combination of sight, sound, and motion creates an immersive experience that resonates with audiences.</p>
-          <p className="text-navy-600 leading-relaxed mb-4">Programmatic buying amplifies the effectiveness of video by adding targeting precision and real-time optimization. Instead of buying video inventory manually through direct deals alone, programmatic enables you to reach specific audiences across thousands of video publishers simultaneously. You can optimize toward completion rate, viewability, or conversion goals — adjusting campaigns in real time based on performance data.</p>
-          <p className="text-navy-600 leading-relaxed">The growth of digital video consumption across devices has also expanded available inventory. From short-form content on mobile apps to long-form streaming on connected TVs, the opportunities for programmatic video advertising continue to increase.</p>
-        </div>
-
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-6">PublifyX Video Advertising Capabilities</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { title: "In-Stream and Outstream Formats", desc: "Run pre-roll, mid-roll, and post-roll video ads within video content, or deploy outstream video ads that play within editorial and app environments." },
-              { title: "Premium Video Inventory", desc: "Access video ad placements across high-quality publisher sites, mobile apps, and streaming platforms through our SSP and ad exchange integrations." },
-              { title: "VAST and VPAID Compliance", desc: "Full support for industry-standard video ad serving protocols, ensuring compatibility across publishers and devices." },
-              { title: "Advanced Audience Targeting", desc: "Target video audiences by demographics, geography, interests, device type, content context, and behavioral signals. Combine with first-party data for precision." },
-              { title: "Viewability and Completion Optimization", desc: "Our algorithms optimize for viewable impressions and video completion rate, ensuring your budget is spent on ads that are actually seen and watched." },
-              { title: "Cross-Channel Video Strategy", desc: "Combine web and app video campaigns with CTV and OTT within PublifyX for a unified video advertising strategy across all screens." },
-            ].map((item, i) => (
-              <div key={i} className="bg-navy-50 border border-navy-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-navy-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-navy-600">{item.desc}</p>
+    <Layout transparentHeader>
+      {/* Hero */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-navy-800">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
+                <Sparkles className="w-4 h-4 text-brand-orange-400" />
+                <span className="text-sm font-medium text-white/80">Video Advertising Platform</span>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-2xl overflow-hidden">
-          <img src={videoStreaming} alt="Video streaming on connected devices for programmatic video ad delivery" width={800} height={450} loading="lazy" decoding="async" className="w-full h-auto object-cover" />
-        </div>
-
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-6">Video Ad Formats on PublifyX</h2>
-          <div className="space-y-4">
-            {[
-              { title: "Pre-Roll Video Ads", desc: "Video ads that play before the viewer's chosen content. Standard lengths include 6 seconds (bumper), 15 seconds, and 30 seconds." },
-              { title: "Mid-Roll Video Ads", desc: "Video ads inserted during natural break points within longer content, delivering higher completion rates due to viewer investment in the content." },
-              { title: "Post-Roll Video Ads", desc: "Video ads that play after the viewer's content has concluded." },
-              { title: "Outstream Video Ads", desc: "Video ads that appear within non-video editorial content, auto-playing as the user scrolls. Outstream expands video reach beyond video-only environments." },
-              { title: "Rewarded Video Ads", desc: "Video ads in mobile apps that offer the user an incentive (such as in-app currency or extra content) in exchange for watching the full ad." },
-            ].map((item, i) => (
-              <div key={i} className="border-l-4 border-brand-orange-500 pl-5 py-2">
-                <h3 className="font-bold text-navy-900">{item.title}</h3>
-                <p className="text-sm text-navy-600 mt-1">{item.desc}</p>
+              <h1 className="mb-6 !text-white leading-[1.1]">
+                Programmatic Video — High-Impact Ads
+                <span className="block text-brand-orange-400">Across Web, App & Streaming</span>
+              </h1>
+              <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
+                Video commands attention like no other format. Higher engagement, stronger brand recall, and growing consumer preference make video essential for every media strategy.
+              </p>
+              <p className="text-base text-navy-300 mb-10 font-semibold">
+                In-stream · Outstream · Rewarded · One platform
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
+                <Button onClick={handleGetStarted} className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-orange-500/25 group">
+                  Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white px-8 py-6 rounded-xl font-semibold text-lg backdrop-blur-sm">
+                  <Play className="mr-2 w-5 h-5" /> Watch Demo
+                </Button>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-navy-50 border border-navy-100 rounded-2xl p-6 md:p-8">
-          <h3 className="text-lg font-bold text-navy-900 mb-3">Explore Related Services</h3>
-          <div className="flex flex-wrap gap-3">
-            <Link to="/ctv-advertising" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">CTV Advertising</Link>
-            <Link to="/ott-advertising" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">OTT Advertising</Link>
-            <Link to="/programmatic-display-advertising" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">Display Advertising</Link>
-            <Link to="/white-label-dsp" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">White Label DSP</Link>
+              <p className="text-sm text-navy-400">No commitment required · VAST & VPAID supported</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.3 }} className="hidden lg:grid grid-cols-2 gap-4">
+              {[
+                { value: "5+", label: "Video Ad Formats" },
+                { value: "40+", label: "SSP Integrations" },
+                { value: "90%+", label: "Avg. Completion Rate" },
+                { value: "Real-Time", label: "Optimization & Reporting" },
+              ].map((stat, i) => (
+                <motion.div key={stat.label} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.1 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                  <div className="text-3xl font-bold text-brand-orange-400 mb-1">{stat.value}</div>
+                  <div className="text-sm text-navy-300">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
-    </ServicePageLayout>
+
+      {/* Explainer */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Video Advertising</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-4 max-w-4xl mx-auto">Why Invest in Programmatic Video?</motion.h2>
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed">
+              Video captures attention more effectively than any other digital format. The combination of sight, sound, and motion creates immersive experiences that drive brand awareness, recall, and purchase intent.
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-20 md:py-28 bg-navy-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Platform Features</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>Video Advertising Capabilities</motion.h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {features.map((feature, i) => (
+              <motion.div key={feature.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
+                <MagneticCard className="group bg-white rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
+                  <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
+                    <feature.icon className="w-6 h-6 text-brand-orange-500" />
+                  </div>
+                  <h3 className="font-bold text-navy-800 text-lg mb-2">{feature.title}</h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">{feature.description}</p>
+                </MagneticCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ad Formats */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Ad Formats</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>Video Ad Formats on PublifyX</motion.h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {adFormats.map((format, i) => (
+              <motion.div key={format.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className={i === adFormats.length - 1 ? "md:col-span-2 lg:col-span-1" : ""}>
+                <div className="bg-navy-50 rounded-2xl border border-navy-100 p-7 h-full hover:shadow-lg transition-all duration-300">
+                  <div className="w-10 h-10 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-4">
+                    <span className="text-white font-bold text-sm">{String(i + 1).padStart(2, '0')}</span>
+                  </div>
+                  <h3 className="font-bold text-navy-800 text-lg mb-2">{format.title}</h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">{format.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who It's For */}
+      <section className="py-20 md:py-28 bg-navy-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Built For You</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>Who Is Video Advertising For?</motion.h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {whoItsFor.map((audience, i) => (
+              <motion.div key={audience.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                <MagneticCard className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-all duration-300 group h-full">
+                  <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
+                    <audience.icon className="w-6 h-6 text-brand-orange-500" />
+                  </div>
+                  <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
+                  <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+                </MagneticCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Get Started</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>How It Works</motion.h2>
+          </div>
+          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
+            {steps.map((step, i) => (
+              <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12 }} className="relative text-center group">
+                {i < steps.length - 1 && <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-navy-200" />}
+                <div className="relative z-10">
+                  <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-navy-700 transition-colors">
+                    <step.icon className="w-8 h-8 text-brand-orange-400" />
+                  </div>
+                  <div className="text-xs font-bold text-brand-orange-500 mb-2">{step.number}</div>
+                  <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
+            <Button onClick={handleGetStarted} className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 group">
+              Launch Video Campaigns <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Related */}
+      <section className="py-12 bg-navy-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl border border-navy-100 p-6 md:p-8">
+            <h3 className="text-lg font-bold text-navy-900 mb-4">Explore Related Services</h3>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/ctv-advertising" className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">CTV Advertising</Link>
+              <Link to="/ott-advertising" className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">OTT Advertising</Link>
+              <Link to="/programmatic-display-advertising" className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">Display Advertising</Link>
+              <Link to="/white-label-dsp" className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">White Label DSP</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 md:py-28 bg-navy-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange-500 rounded-full blur-[250px] opacity-10" />
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="mb-6 !text-white">Launch Your Video Campaign</h2>
+          <p className="text-xl text-navy-300 mb-4 leading-relaxed">Run high-impact video campaigns across premium websites, mobile apps, and streaming environments.</p>
+          <p className="text-base text-navy-400 mb-10 font-semibold">No commitment required · All formats supported</p>
+          <Button onClick={handleGetStarted} className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white text-lg px-10 py-6 font-semibold hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 rounded-xl group">
+            Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </motion.div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 md:py-28 bg-navy-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">FAQ</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>Frequently Asked Questions</motion.h2>
+          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={i} value={`faq-${i}`} className="bg-white rounded-xl border border-navy-100 px-6 overflow-hidden">
+                  <AccordionTrigger className="text-left font-semibold text-navy-800 hover:text-brand-orange-500 hover:no-underline py-5">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
   );
 };
 

@@ -1,107 +1,304 @@
+import Layout from "@/components/Layout";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import ServicePageLayout from "@/components/ServicePageLayout";
-import ottStreamingDevices from "@/assets/ott/ott-streaming-devices.webp";
-import ottMultiscreen from "@/assets/ott/ott-multiscreen.webp";
+import { useNavigate, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Sparkles, Play, Smartphone, Tv, Target, BarChart3, RefreshCw, Zap, Settings, PhoneCall, Rocket, GraduationCap, Building2, Store, Globe, Megaphone } from "lucide-react";
+import MagneticCard from "@/components/effects/MagneticCard";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+const features = [
+  { title: "Multi-Device Reach", description: "Deliver video ads across smart TVs, mobile devices, tablets, desktop browsers, and gaming consoles.", icon: Smartphone },
+  { title: "Premium Inventory Access", description: "Connect to ad-supported streaming platforms, FAST channels, and OTT app inventory through leading SSPs.", icon: Globe },
+  { title: "Advanced Audience Targeting", description: "Target viewers by age, gender, income, interests, purchase behavior, content genre, and geography.", icon: Target },
+  { title: "Frequency Management", description: "Control how many times a household or individual sees your ad across devices and platforms.", icon: RefreshCw },
+  { title: "Real-Time Optimization", description: "Monitor campaign performance in real time with impressions, VCR, reach, frequency, and cost efficiency.", icon: BarChart3 },
+  { title: "Omnichannel Integration", description: "Combine OTT with display, audio, and native advertising within PublifyX for unified media buying.", icon: Zap },
+];
+
+const adFormats = [
+  { title: "Pre-Roll Video Ads", desc: "Short video ads that play before the viewer's selected content begins. Typically 15 or 30 seconds." },
+  { title: "Mid-Roll Video Ads", desc: "Ads inserted during natural breaks within longer-form content, targeted to specific audiences." },
+  { title: "Post-Roll Video Ads", desc: "Video ads that play after the content has concluded." },
+  { title: "Interactive OTT Ads", desc: "Formats allowing viewers to engage with clickable overlays and QR code prompts." },
+  { title: "Companion Display Banners", desc: "Display ads shown alongside the video player, reinforcing the video message with a visual banner." },
+];
+
+const steps = [
+  { number: "01", title: "Define Campaign Goals", description: "Set your objectives — awareness, reach, conversions, or brand lift.", icon: PhoneCall },
+  { number: "02", title: "Configure Targeting", description: "Select audiences by demographics, geography, interests, and viewing behavior.", icon: Settings },
+  { number: "03", title: "Launch Campaigns", description: "Go live across OTT inventory via real-time bidding with optimized creatives.", icon: Rocket },
+  { number: "04", title: "Optimize & Report", description: "Monitor performance in real time and optimize for maximum ROI.", icon: GraduationCap },
+];
+
+const whoItsFor = [
+  { title: "Brand Advertisers", description: "Reach streaming audiences at scale with full-screen, non-skippable video ads across every device.", icon: Megaphone },
+  { title: "Media Agencies", description: "Offer OTT as a premium channel within your programmatic stack with white-label reporting.", icon: Building2 },
+  { title: "Performance Marketers", description: "Drive measurable outcomes with precise targeting and real-time optimization across OTT inventory.", icon: Target },
+  { title: "Local & Regional Businesses", description: "Target specific geographic areas with OTT ads — reach cord-cutters in your market affordably.", icon: Store },
+];
+
+const faqs = [
+  { question: "What is the difference between OTT and CTV advertising?", answer: "OTT refers to content delivered over the internet across all devices — TVs, phones, tablets, and computers. CTV refers specifically to ads viewed on a television screen through internet-connected devices. CTV is a subset of OTT." },
+  { question: "What platforms do OTT ads run on?", answer: "OTT ads run across ad-supported streaming services, FAST channels, and OTT apps. Specific platforms vary by region and inventory availability through our SSP partners." },
+  { question: "Can OTT advertising be targeted to specific audiences?", answer: "Yes. PublifyX supports audience targeting based on demographics, geography, interests, viewing behavior, purchase intent, and household-level data for OTT campaigns." },
+  { question: "How much does OTT advertising cost?", answer: "OTT advertising is typically priced on a CPM basis. Costs vary based on targeting specificity, inventory quality, and campaign scale. PublifyX allows flexible budget entry points." },
+  { question: "Can I measure OTT ad performance?", answer: "Yes. PublifyX provides real-time reporting on impressions, video completion rates, reach, frequency, and cost metrics. Attribution measurement is also available." },
+];
 
 const OTTAdvertising = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = "OTT Advertising Platform | Over-the-Top Ads Across Every Screen — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Deliver targeted OTT advertising across streaming platforms on every device. PublifyX's OTT ads platform offers programmatic buying, precise targeting, and real-time analytics.");
+    return () => { document.title = "PublifyX — Programmatic Advertising Platform"; };
   }, []);
 
+  const handleGetStarted = () => navigate("/contact");
+
   return (
-    <ServicePageLayout
-      breadcrumbs={[
-        { label: "Home", path: "/" },
-        { label: "Services" },
-        { label: "OTT Advertising" },
-      ]}
-      heroTitle="OTT Advertising Platform — Reach Streaming Audiences Across Every Screen"
-      heroSubtitle="Over-the-top (OTT) advertising gives brands the ability to reach audiences wherever they stream content — on smart TVs, mobile phones, tablets, laptops, and gaming consoles. As consumers continue to shift away from traditional cable and satellite services, OTT has become a critical channel for advertisers seeking to maintain reach and relevance. PublifyX provides a programmatic OTT advertising platform that connects you to premium streaming inventory across devices and platforms. Whether your audience is watching a show on their smart TV, catching up on a podcast app, or streaming music during their commute, our platform ensures your message reaches them with precision and measurable impact."
-      relatedArticleSlug="connected-tv-advertising-guide"
-      ctaTitle="Launch Your OTT Campaign"
-      ctaDescription="Connect with streaming audiences across every device. Talk to our team to plan your first OTT campaign."
-      faqs={[
-        { question: "What is the difference between OTT and CTV advertising?", answer: "OTT refers to content delivered over the internet across all devices — TVs, phones, tablets, and computers. CTV refers specifically to ads viewed on a television screen through internet-connected devices. CTV is a subset of OTT." },
-        { question: "What platforms do OTT ads run on?", answer: "OTT ads run across ad-supported streaming services, FAST (free ad-supported streaming TV) channels, and OTT apps. Specific platforms vary by region and inventory availability through our SSP partners." },
-        { question: "Can OTT advertising be targeted to specific audiences?", answer: "Yes. PublifyX supports audience targeting based on demographics, geography, interests, viewing behavior, purchase intent, and household-level data for OTT campaigns." },
-        { question: "How much does OTT advertising cost?", answer: "OTT advertising is typically priced on a CPM basis. Costs vary based on targeting specificity, inventory quality, and campaign scale. PublifyX allows flexible budget entry points suitable for businesses of varying sizes." },
-        { question: "Can I measure OTT ad performance?", answer: "Yes. PublifyX provides real-time reporting on impressions, video completion rates, reach, frequency, and cost metrics. Attribution measurement for website visits and conversions is also available." },
-      ]}
-    >
-      <section className="space-y-12">
-        <div className="rounded-2xl overflow-hidden mb-2">
-          <img src={ottStreamingDevices} alt="OTT streaming across multiple devices including smart TV, tablet, and smartphone" width={800} height={450} loading="eager" decoding="async" className="w-full h-auto object-cover" />
-          <p className="text-xs text-navy-400 mt-2 italic">OTT advertising reaches audiences across every internet-connected screen.</p>
-        </div>
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">What Is OTT Advertising?</h2>
-          <p className="text-navy-600 leading-relaxed mb-4">OTT stands for "over-the-top," referring to content delivered directly over the internet, bypassing traditional cable, broadcast, and satellite television providers. OTT advertising is the placement of ads within this internet-delivered content.</p>
-          <p className="text-navy-600 leading-relaxed mb-4">OTT content is consumed across multiple devices — smart TVs, streaming sticks (Roku, Fire TV), smartphones, tablets, laptops, and gaming consoles. The ads served within this content can be video pre-rolls, mid-rolls, or post-rolls, as well as interactive ad formats that prompt viewer engagement.</p>
-          <p className="text-navy-600 leading-relaxed">The key distinction between OTT and <Link to="/ctv-advertising" className="text-brand-orange-500 hover:underline font-medium">CTV</Link> is the scope. OTT refers to the content delivery method and spans all internet-connected devices. CTV is a subset of OTT, referring specifically to content viewed on a television screen. When you run OTT advertising through PublifyX, you reach viewers across all these screens — not just the TV.</p>
-        </div>
-
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">Why OTT Advertising Matters</h2>
-          <p className="text-navy-600 leading-relaxed mb-4">Traditional TV advertising operates on a broadcast model where ads reach a mass audience with limited targeting precision. OTT advertising flips this model by enabling household-level and individual-level targeting based on demographic data, behavioral signals, geographic location, and content preferences.</p>
-          <p className="text-navy-600 leading-relaxed mb-4">OTT audiences are highly engaged. They have actively chosen the content they are watching, which translates to higher attention levels compared to passive channel surfing on linear TV. Ad completion rates on OTT are consistently higher than other digital video environments, as many OTT ads are non-skippable.</p>
-          <p className="text-navy-600 leading-relaxed">For advertisers, OTT provides the reach of television with the accountability of digital. You can track impressions, completion rates, frequency, and attribution — metrics that traditional TV simply cannot offer at the same granularity.</p>
-        </div>
-
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-6">PublifyX OTT Advertising Capabilities</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { title: "Multi-Device Reach", desc: "Deliver video ads across smart TVs, mobile devices, tablets, desktop browsers, and gaming consoles. Reach your audience on the device and platform they prefer." },
-              { title: "Premium Inventory Access", desc: "Connect to ad-supported streaming platforms, FAST channels, and OTT app inventory through our integrations with leading supply-side platforms and private marketplace deals." },
-              { title: "Advanced Audience Targeting", desc: "Target viewers based on age, gender, household income, interests, purchase behavior, content genre preferences, and geographic location. Combine first-party data with third-party audience segments for precise reach." },
-              { title: "Frequency Management", desc: "Control how many times a household or individual sees your ad across devices and platforms, preventing ad fatigue while maximizing campaign efficiency." },
-              { title: "Real-Time Optimization and Reporting", desc: "Monitor campaign performance in real time with metrics including impressions, VCR, reach, frequency, and cost efficiency. Make adjustments on the fly to improve results." },
-              { title: "Seamless Integration with Other Channels", desc: "Combine OTT campaigns with display, audio, and native advertising within the PublifyX platform for a unified, omnichannel media buying experience." },
-            ].map((item, i) => (
-              <div key={i} className="bg-navy-50 border border-navy-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                <h3 className="font-bold text-navy-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-navy-600">{item.desc}</p>
+    <Layout transparentHeader>
+      {/* Hero */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-navy-800">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
+                <Sparkles className="w-4 h-4 text-brand-orange-400" />
+                <span className="text-sm font-medium text-white/80">OTT Advertising Platform</span>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-2xl overflow-hidden">
-          <img src={ottMultiscreen} alt="Multi-screen OTT ad delivery across streaming platforms" width={800} height={450} loading="lazy" decoding="async" className="w-full h-auto object-cover" />
-        </div>
-
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-6">OTT Ad Formats Supported by PublifyX</h2>
-          <div className="space-y-4">
-            {[
-              { title: "Pre-Roll Video Ads", desc: "Short video ads that play before the viewer's selected content begins. Typically 15 or 30 seconds in length." },
-              { title: "Mid-Roll Video Ads", desc: "Ads inserted during natural breaks within longer-form content, similar to traditional commercial breaks but targeted to specific audiences." },
-              { title: "Post-Roll Video Ads", desc: "Video ads that play after the content has concluded." },
-              { title: "Interactive OTT Ads", desc: "Formats that allow viewers to engage with the ad using their remote control or touch screen, including clickable overlays and QR code prompts." },
-              { title: "Companion Display Banners", desc: "Display ads shown alongside or below the video player on certain OTT platforms, reinforcing the video message with a visual banner." },
-            ].map((item, i) => (
-              <div key={i} className="border-l-4 border-brand-orange-500 pl-5 py-2">
-                <h3 className="font-bold text-navy-900">{item.title}</h3>
-                <p className="text-sm text-navy-600 mt-1">{item.desc}</p>
+              <h1 className="mb-6 !text-white leading-[1.1]">
+                OTT Advertising — Reach Streaming Audiences
+                <span className="block text-brand-orange-400">Across Every Screen</span>
+              </h1>
+              <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
+                Over-the-top advertising gives brands the ability to reach audiences wherever they stream — on smart TVs, mobile phones, tablets, laptops, and gaming consoles.
+              </p>
+              <p className="text-base text-navy-300 mb-10 font-semibold">
+                Every device · Every platform · One dashboard
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
+                <Button onClick={handleGetStarted} className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-orange-500/25 group">
+                  Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white px-8 py-6 rounded-xl font-semibold text-lg backdrop-blur-sm">
+                  <Play className="mr-2 w-5 h-5" /> Watch Demo
+                </Button>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-navy-50 border border-navy-100 rounded-2xl p-6 md:p-8">
-          <h3 className="text-lg font-bold text-navy-900 mb-3">Explore Related Services</h3>
-          <div className="flex flex-wrap gap-3">
-            <Link to="/ctv-advertising" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">CTV Advertising</Link>
-            <Link to="/programmatic-video-advertising" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">Video Advertising</Link>
-            <Link to="/programmatic-audio-advertising" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">Audio Advertising</Link>
-            <Link to="/white-label-dsp" className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">White Label DSP</Link>
+              <p className="text-sm text-navy-400">No commitment required · Flexible budget entry points</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.3 }} className="hidden lg:grid grid-cols-2 gap-4">
+              {[
+                { value: "5+", label: "Ad Formats Supported" },
+                { value: "40+", label: "SSP Integrations" },
+                { value: "95%+", label: "Video Completion Rate" },
+                { value: "24/7", label: "Real-Time Reporting" },
+              ].map((stat, i) => (
+                <motion.div key={stat.label} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.1 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+                  <div className="text-3xl font-bold text-brand-orange-400 mb-1">{stat.value}</div>
+                  <div className="text-sm text-navy-300">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
-    </ServicePageLayout>
+
+      {/* What Is OTT */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">OTT Advertising</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-4 max-w-4xl mx-auto">What Is OTT Advertising?</motion.h2>
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed">
+              OTT stands for "over-the-top," referring to content delivered directly over the internet, bypassing traditional cable and satellite. OTT advertising reaches viewers across all internet-connected devices with the precision of digital and the impact of television.
+            </motion.p>
+          </div>
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="bg-navy-50 rounded-2xl border border-navy-100 p-8">
+              <h3 className="text-xl font-bold text-navy-800 mb-4">OTT Reaches Every Screen</h3>
+              <ul className="space-y-3">
+                {["Smart TVs & streaming sticks", "Smartphones & tablets", "Laptops & desktops", "Gaming consoles"].map(item => (
+                  <li key={item} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
+                      <Tv className="w-3.5 h-3.5 text-brand-orange-600" />
+                    </div>
+                    <span className="text-navy-600 font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-navy-800 rounded-2xl border border-navy-700 p-8">
+              <h3 className="text-xl font-bold text-white mb-4">Why OTT Matters</h3>
+              <ul className="space-y-3">
+                {["Household-level targeting precision", "Higher attention than linear TV", "Non-skippable ad formats", "Measurable impressions & attribution", "Growing cord-cutter audiences"].map(item => (
+                  <li key={item} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                      <ArrowRight className="w-3.5 h-3.5 text-green-400" />
+                    </div>
+                    <span className="text-navy-200 font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-20 md:py-28 bg-navy-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Platform Features</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>PublifyX OTT Advertising Capabilities</motion.h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {features.map((feature, i) => (
+              <motion.div key={feature.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
+                <MagneticCard className="group bg-white rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
+                  <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
+                    <feature.icon className="w-6 h-6 text-brand-orange-500" />
+                  </div>
+                  <h3 className="font-bold text-navy-800 text-lg mb-2">{feature.title}</h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">{feature.description}</p>
+                </MagneticCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ad Formats */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Ad Formats</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>OTT Ad Formats Supported</motion.h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {adFormats.map((format, i) => (
+              <motion.div key={format.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className={i === adFormats.length - 1 ? "md:col-span-2 lg:col-span-1" : ""}>
+                <div className="bg-navy-50 rounded-2xl border border-navy-100 p-7 h-full hover:shadow-lg transition-all duration-300">
+                  <div className="w-10 h-10 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-4">
+                    <span className="text-white font-bold text-sm">{String(i + 1).padStart(2, '0')}</span>
+                  </div>
+                  <h3 className="font-bold text-navy-800 text-lg mb-2">{format.title}</h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">{format.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who It's For */}
+      <section className="py-20 md:py-28 bg-navy-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Built For You</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>Who Is OTT Advertising For?</motion.h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+            {whoItsFor.map((audience, i) => (
+              <motion.div key={audience.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                <MagneticCard className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-all duration-300 group h-full">
+                  <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
+                    <audience.icon className="w-6 h-6 text-brand-orange-500" />
+                  </div>
+                  <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
+                  <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+                </MagneticCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">Get Started</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>How OTT Advertising Works with PublifyX</motion.h2>
+          </div>
+          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
+            {steps.map((step, i) => (
+              <motion.div key={step.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12 }} className="relative text-center group">
+                {i < steps.length - 1 && <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-navy-200" />}
+                <div className="relative z-10">
+                  <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-navy-700 transition-colors">
+                    <step.icon className="w-8 h-8 text-brand-orange-400" />
+                  </div>
+                  <div className="text-xs font-bold text-brand-orange-500 mb-2">{step.number}</div>
+                  <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
+            <Button onClick={handleGetStarted} className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 group">
+              Launch Your OTT Campaign <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-12 bg-navy-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl border border-navy-100 p-6 md:p-8">
+            <h3 className="text-lg font-bold text-navy-900 mb-4">Explore Related Services</h3>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/ctv-advertising" className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">CTV Advertising</Link>
+              <Link to="/programmatic-video-advertising" className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">Video Advertising</Link>
+              <Link to="/programmatic-audio-advertising" className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">Audio Advertising</Link>
+              <Link to="/white-label-dsp" className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors">White Label DSP</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 md:py-28 bg-navy-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange-500 rounded-full blur-[250px] opacity-10" />
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="mb-6 !text-white">Launch Your OTT Campaign</h2>
+          <p className="text-xl text-navy-300 mb-4 leading-relaxed">Connect with streaming audiences across every device. Talk to our team to plan your first OTT campaign.</p>
+          <p className="text-base text-navy-400 mb-10 font-semibold">No commitment required · Flexible budgets</p>
+          <Button onClick={handleGetStarted} className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white text-lg px-10 py-6 font-semibold hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 rounded-xl group">
+            Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </motion.div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 md:py-28 bg-navy-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">FAQ</motion.span>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>Frequently Asked Questions</motion.h2>
+          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={i} value={`faq-${i}`} className="bg-white rounded-xl border border-navy-100 px-6 overflow-hidden">
+                  <AccordionTrigger className="text-left font-semibold text-navy-800 hover:text-brand-orange-500 hover:no-underline py-5">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
   );
 };
 
