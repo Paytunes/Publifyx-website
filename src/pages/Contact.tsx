@@ -11,7 +11,11 @@ const Contact = () => {
   useEffect(() => {
     document.title = "Contact PublifyX | Request a Demo or Get Pricing";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Get in touch with PublifyX to schedule a demo, request pricing, or learn how our white label DSP can power your programmatic advertising business.");
+    if (meta)
+      meta.setAttribute(
+        "content",
+        "Get in touch with PublifyX to schedule a demo, request pricing, or learn how our white label DSP can power your programmatic advertising business.",
+      );
   }, []);
 
   const [formData, setFormData] = useState({
@@ -97,7 +101,9 @@ const Contact = () => {
 
               <div className="relative z-10">
                 <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white leading-tight">
-                  Let's Grow Your<br />Brand Together
+                  Let's Grow Your
+                  <br />
+                  Brand Together
                 </h2>
                 <p className="text-white/70 text-sm md:text-base leading-relaxed mb-10">
                   Fill out the form, including details about your next campaign, and we'll be in touch shortly.
@@ -109,32 +115,15 @@ const Contact = () => {
                     label="Office"
                     value="PublifyX Tech Pvt. Ltd., Inventio Workspace Ltd., Sector-12, Dwarka, New Delhi-110075"
                   />
-                  <ContactInfoItem
-                    icon={<Phone className="w-5 h-5" />}
-                    label="Phone"
-                    value="+91-8448330304"
-                  />
-                  <ContactInfoItem
-                    icon={<Mail className="w-5 h-5" />}
-                    label="Email"
-                    value="info@publifyx.com"
-                  />
+                  <ContactInfoItem icon={<Phone className="w-5 h-5" />} label="Phone" value="+91-8448330304" />
+                  <ContactInfoItem icon={<Mail className="w-5 h-5" />} label="Email" value="info@publifyx.com" />
                 </div>
-              </div>
-
-              {/* Bottom accent bar */}
-              <div className="relative z-10 mt-10 pt-6 border-t border-white/10">
-                <p className="text-white/50 text-xs">
-                  © {new Date().getFullYear()} PublifyX Tech Pvt. Ltd.
-                </p>
               </div>
             </div>
 
             {/* Right Panel — Form */}
             <div className="lg:col-span-3 bg-white p-8 md:p-10 lg:p-12">
-              <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-8">
-                Fill the Form Below
-              </h2>
+              <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-8">Fill the Form Below</h2>
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <input type="hidden" name="source" value={formData.source} />
@@ -222,7 +211,9 @@ const Contact = () => {
                   disabled={isSubmitting}
                   className="w-full h-12 rounded-lg bg-[hsl(217,80%,48%)] hover:bg-[hsl(217,80%,42%)] text-white font-semibold text-base shadow-md hover:shadow-lg transition-all duration-200 mt-2 group"
                 >
-                  {isSubmitting ? "Submitting..." : (
+                  {isSubmitting ? (
+                    "Submitting..."
+                  ) : (
                     <>
                       Submit Inquiry
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
@@ -242,9 +233,7 @@ const Contact = () => {
 
 const ContactInfoItem = ({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) => (
   <div className="flex items-start gap-4">
-    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-      {icon}
-    </div>
+    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">{icon}</div>
     <div>
       <p className="text-xs font-medium uppercase tracking-wider text-white/50 mb-1">{label}</p>
       <p className="text-white/90 text-sm leading-relaxed">{value}</p>
@@ -252,10 +241,21 @@ const ContactInfoItem = ({ icon, label, value }: { icon: React.ReactNode; label:
   </div>
 );
 
-const FormField = ({ label, required, hint, children }: { label: string; required?: boolean; hint?: string; children: React.ReactNode }) => (
+const FormField = ({
+  label,
+  required,
+  hint,
+  children,
+}: {
+  label: string;
+  required?: boolean;
+  hint?: string;
+  children: React.ReactNode;
+}) => (
   <div>
     <label className="block text-sm font-medium text-foreground mb-1.5">
-      {label}{required && <span className="text-destructive ml-0.5">*</span>}
+      {label}
+      {required && <span className="text-destructive ml-0.5">*</span>}
     </label>
     {children}
     {hint && <p className="text-xs text-muted-foreground mt-1">{hint}</p>}
