@@ -33,7 +33,7 @@ const OnlineBannerAdvertising = () => {
   return (
     <Layout>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-        <PageBreadcrumb items={[{ label: "Home", path: "/" }, { label: "Services", path: "/services" }, { label: "Online Banner Advertising" }]} variant="light" />
+        <PageBreadcrumb items={[{ label: "Home", path: "/" }, { label: "Services" }, { label: "Online Banner Advertising" }]} variant="light" />
       </div>
       <BannerHeroSection 
         onGetStarted={handleGetStarted} 
