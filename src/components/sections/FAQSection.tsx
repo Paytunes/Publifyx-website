@@ -30,7 +30,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="py-12 md:py-16 bg-white faq-section">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <motion.span
