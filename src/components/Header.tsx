@@ -24,6 +24,7 @@ const resourceLinks = [
   { to: "/integrations", label: "Integrations" },
   { to: "/case-studies", label: "Case Studies" },
   { to: "/pricing", label: "Pricing" },
+  { to: "/white-label-dsp-vs-self-serve-dsp", label: "White Label vs Self-Serve" },
   { to: "/about", label: "About" },
 ];
 
