@@ -47,11 +47,21 @@ const BlogPostLayout = ({
       <ReadingProgressBar />
 
       {/* Hero Section */}
-      <section className="bg-navy-50 pt-12 pb-8 border-b border-navy-100">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-navy-800 pt-12 pb-8 border-b border-navy-700 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb */}
           <PageBreadcrumb
-            variant="light"
+            variant="dark"
             items={[
               { label: "Home", path: "/" },
               { label: "Blog", path: "/blog" },
@@ -63,14 +73,14 @@ const BlogPostLayout = ({
           <div className="flex justify-between items-center mb-8">
             <Link
               to="/blog"
-              className="inline-flex items-center text-navy-400 hover:text-navy-800 transition-colors text-sm font-medium"
+              className="inline-flex items-center text-navy-300 hover:text-white transition-colors text-sm font-medium"
             >
               <ArrowLeft className="w-4 h-4 mr-1.5" />
               All Articles
             </Link>
 
             <div className="flex items-center gap-2">
-              <span className="text-navy-300 text-xs uppercase tracking-wider hidden sm:inline">Share</span>
+              <span className="text-navy-400 text-xs uppercase tracking-wider hidden sm:inline">Share</span>
               {[
                 { href: shareLinks.twitter, icon: Twitter, label: "Twitter" },
                 { href: shareLinks.linkedin, icon: Linkedin, label: "LinkedIn" },
@@ -81,7 +91,7 @@ const BlogPostLayout = ({
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center rounded-full text-navy-400 hover:text-brand-orange-500 hover:bg-brand-orange-50 transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-full text-navy-400 hover:text-brand-orange-400 hover:bg-white/10 transition-colors"
                   aria-label={`Share on ${label}`}
                 >
                   <Icon className="w-4 h-4" />
@@ -91,26 +101,26 @@ const BlogPostLayout = ({
           </div>
 
           {/* Category Badge */}
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-brand-orange-500 mb-4">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-brand-orange-400 mb-4">
             {category}
           </span>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-extrabold leading-[1.1] tracking-tight text-navy-800 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-extrabold leading-[1.1] tracking-tight text-white mb-4">
             {title}
           </h1>
 
           {/* Subtitle */}
           {subtitle && (
-            <p className="text-lg sm:text-xl text-navy-400 leading-relaxed mb-5">
+            <p className="text-lg sm:text-xl text-navy-200 leading-relaxed mb-5">
               {subtitle}
             </p>
           )}
 
           {/* Meta Line */}
-          <div className="flex items-center gap-2 text-sm text-navy-400 font-medium uppercase tracking-wide">
+          <div className="flex items-center gap-2 text-sm text-navy-300 font-medium uppercase tracking-wide">
             <time>{date}</time>
-            <span className="text-navy-300">|</span>
+            <span className="text-navy-500">|</span>
             <span>{readTime}</span>
           </div>
         </div>
