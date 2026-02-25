@@ -3,7 +3,6 @@ import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Layout from "./Layout";
 import { useState } from "react";
-import GetStartedModal from "./GetStartedModal";
 import { blogPosts } from "@/data/blogPosts";
 
 interface BreadcrumbItem {
@@ -37,8 +36,6 @@ const ServicePageLayout = ({
   ctaTitle = "Ready to Get Started?",
   ctaDescription = "Schedule a personalized demo to see how PublifyX can power your programmatic advertising business.",
 }: ServicePageLayoutProps) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const relatedArticle = relatedArticleSlug
     ? blogPosts.find((p) => p.slug === relatedArticleSlug)
     : null;
@@ -94,12 +91,12 @@ const ServicePageLayout = ({
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-8 flex flex-wrap gap-4"
           >
-            <button
-              onClick={() => setIsModalOpen(true)}
+            <Link
+              to="/contact"
               className="btn-primary px-8 py-3.5 text-base font-semibold"
             >
               Book a Call
-            </button>
+            </Link>
             <Link
               to="/contact"
               className="inline-flex items-center px-8 py-3.5 border-2 border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition-colors text-base"
@@ -163,12 +160,12 @@ const ServicePageLayout = ({
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{ctaTitle}</h2>
           <p className="text-lg text-white/90 mb-8">{ctaDescription}</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button
-              onClick={() => setIsModalOpen(true)}
+            <Link
+              to="/contact"
               className="bg-white text-brand-orange-600 px-8 py-3.5 rounded-xl font-bold hover:bg-navy-50 transition-colors"
             >
               Book a Demo
-            </button>
+            </Link>
             <Link
               to="/contact"
               className="border-2 border-white text-white px-8 py-3.5 rounded-xl font-bold hover:bg-white/10 transition-colors"
@@ -178,8 +175,6 @@ const ServicePageLayout = ({
           </div>
         </div>
       </section>
-
-      <GetStartedModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </Layout>
   );
 };
