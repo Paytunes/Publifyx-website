@@ -284,7 +284,7 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
       </p>
 
       {/* FAQ Section */}
-      <div className="border-t border-navy-100 pt-12 mt-12">
+      <div className="border-t border-navy-100 pt-12 mt-12 faq-section">
         <h2 className="!mt-0">Frequently Asked Questions</h2>
 
         <Accordion type="single" collapsible className="w-full space-y-3">
