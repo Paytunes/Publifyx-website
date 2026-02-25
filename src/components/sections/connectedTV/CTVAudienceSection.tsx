@@ -33,7 +33,7 @@ const useCases = [
 
 const CTVAudienceSection = ({ onGetStarted }: CTVAudienceSectionProps) => {
   return (
-    <section className="py-20 md:py-28 bg-navy-50">
+    <section className="py-12 md:py-16 bg-navy-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <motion.span

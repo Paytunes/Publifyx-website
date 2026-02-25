@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import GeographicReachChart from "@/components/charts/GeographicReachChart";
 import AgeGenderChart from "@/components/charts/AgeGenderChart";
@@ -10,7 +9,7 @@ const AdInsights = () => {
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-primary via-blue-600 to-blue-700 py-20">
+        <section className="bg-gradient-to-r from-blue-primary via-blue-600 to-blue-700 py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="flex justify-center mb-6">
               <div className="p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
@@ -19,9 +18,10 @@ const AdInsights = () => {
             </div>
             <h1 className="text-white mb-6 leading-tight">Targeted Audio Ads DSP</h1>
             <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-              Reach your audience with precision targeting across city, device, age, and gender demographics with real-time data insights.
+              Reach your audience with precision targeting across city, device, age, and gender demographics with
+              real-time data insights.
             </p>
-            
+
             {/* Key Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">

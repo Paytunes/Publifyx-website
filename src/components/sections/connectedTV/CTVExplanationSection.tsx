@@ -31,7 +31,7 @@ const items = [
 
 const CTVExplanationSection = ({ onGetStarted }: CTVExplanationSectionProps) => {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <motion.span
@@ -57,7 +57,8 @@ const CTVExplanationSection = ({ onGetStarted }: CTVExplanationSectionProps) => 
             transition={{ delay: 0.1 }}
             className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Deliver full-screen, non-skippable video ads to viewers on the biggest screen in the house — powered by programmatic precision.
+            Deliver full-screen, non-skippable video ads to viewers on the biggest screen in the house — powered by
+            programmatic precision.
           </motion.p>
         </div>
 
@@ -69,10 +70,7 @@ const CTVExplanationSection = ({ onGetStarted }: CTVExplanationSectionProps) => 
           className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12"
         >
           {items.map((item, i) => (
-            <MagneticCard
-              key={item.title}
-              className="bg-navy-50 rounded-2xl border border-navy-100 p-8 text-center"
-            >
+            <MagneticCard key={item.title} className="bg-navy-50 rounded-2xl border border-navy-100 p-8 text-center">
               <div className="w-14 h-14 rounded-2xl bg-brand-orange-100 flex items-center justify-center mx-auto mb-5">
                 <item.icon className="w-7 h-7 text-brand-orange-500" />
               </div>

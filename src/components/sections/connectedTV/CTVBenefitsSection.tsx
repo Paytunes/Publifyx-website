@@ -33,7 +33,7 @@ const benefits = [
 
 const CTVBenefitsSection = ({ onGetStarted }: CTVBenefitsSectionProps) => {
   return (
-    <section className="py-20 md:py-28 bg-navy-50">
+    <section className="py-12 md:py-16 bg-navy-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <motion.span
@@ -95,7 +95,8 @@ const CTVBenefitsSection = ({ onGetStarted }: CTVBenefitsSectionProps) => {
           className="bg-navy-800 rounded-2xl border border-navy-700 p-10 max-w-5xl mx-auto text-center"
         >
           <p className="text-lg text-navy-200 mb-6 leading-relaxed max-w-2xl mx-auto">
-            Expect your brand to run smarter, richer, and better-looking campaigns with Smart TV advertising with connected TV ads by PublifyX.
+            Expect your brand to run smarter, richer, and better-looking campaigns with Smart TV advertising with
+            connected TV ads by PublifyX.
           </p>
           <Link
             to="/contact"

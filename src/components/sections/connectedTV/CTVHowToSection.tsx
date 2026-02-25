@@ -35,7 +35,7 @@ const steps = [
 
 const CTVHowToSection = ({ onGetStarted }: CTVHowToSectionProps) => {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <motion.span
@@ -81,9 +81,7 @@ const CTVHowToSection = ({ onGetStarted }: CTVHowToSectionProps) => {
               transition={{ delay: 0.1 * i }}
               className="bg-navy-50 rounded-2xl border border-navy-100 p-8 text-center relative"
             >
-              <span className="text-5xl font-black text-navy-100 absolute top-4 right-5">
-                {step.number}
-              </span>
+              <span className="text-5xl font-black text-navy-100 absolute top-4 right-5">{step.number}</span>
               <div className="w-14 h-14 rounded-2xl bg-brand-orange-100 flex items-center justify-center mx-auto mb-5 relative z-10">
                 <step.icon className="w-7 h-7 text-brand-orange-500" />
               </div>
