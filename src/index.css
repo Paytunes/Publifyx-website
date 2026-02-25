@@ -196,7 +196,7 @@
   line-height: 1.3;
 }
 
-.faq-section.article-content h3 {
+.faq-section .article-content h3 {
   font-size: 1.375rem;
   font-weight: 700;
   color: #1f2937;
@@ -259,7 +259,7 @@
     font-size: 1.5rem;
   }
 
-  .faq-section.article-content h3 {
+  .faq-section .article-content h3 {
     font-size: 1rem;
     margin-block: 0;
   }
