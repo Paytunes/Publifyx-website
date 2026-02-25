@@ -66,20 +66,13 @@ const HeroSection = () => {
                 solutions.
               </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1 }}
-                className="flex flex-col sm:flex-row gap-4 mb-12"
+              <EnergyButton
+                className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25"
+                onClick={() => setIsGetStartedModalOpen(true)}
               >
-                <EnergyButton
-                  className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25"
-                  onClick={() => setIsGetStartedModalOpen(true)}
-                >
-                  Get Your White Label DSP
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </EnergyButton>
-              </motion.div>
+                Get Your White Label DSP
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </EnergyButton>
 
               {/* Trust metrics */}
               <motion.div
