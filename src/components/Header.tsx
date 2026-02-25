@@ -86,6 +86,7 @@ const Header = () => {
                     <DropdownMenuItem key={link.to} asChild>
                       <Link
                         to={link.to}
+                        state={{ fromServices: true }}
                         className="w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700 text-sm"
                       >
                         {link.label}
@@ -167,6 +168,7 @@ const Header = () => {
                   <Link
                     key={link.to}
                     to={link.to}
+                    state={{ fromServices: true }}
                     className="text-navy-600 hover:text-brand-orange-500 font-medium py-2 px-3 pl-5 rounded-lg hover:bg-navy-50 transition-colors text-sm"
                     onClick={() => setIsMenuOpen(false)}
                   >
