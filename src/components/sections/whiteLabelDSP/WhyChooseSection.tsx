@@ -35,7 +35,7 @@ const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
             viewport={{ once: true }}
             className="mb-4 max-w-4xl mx-auto"
           >
-            True Multi-Channel Capability Under One Platform
+            Why Choose PublifyX White Label DSP?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
             transition={{ delay: 0.1 }}
             className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Most white label platforms focus on display. Some extend into video. PublifyX delivers every format, every screen — from one branded dashboard. Connected to 40+ supply-side platforms and ad exchanges.
+            Most white label platforms focus heavily on display. Some extend into video. PublifyX delivers true multi-channel capability under one unified platform. We connect to 40+ supply-side platforms and ad exchanges, giving your advertisers access to premium inventory across web, mobile apps, smart TVs, and streaming environments. Every format. Every screen. One branded dashboard.
           </motion.p>
         </div>
 

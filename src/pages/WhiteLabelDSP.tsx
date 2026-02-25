@@ -17,7 +17,7 @@ const WhiteLabelDSP = () => {
   useEffect(() => {
     document.title = "White Label DSP Platform | Launch Your Own DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Deploy a fully branded demand-side platform in days, not years. Control pricing, margins, and client relationships across Display, Video, Audio & CTV channels.");
+    if (meta) meta.setAttribute("content", "Launch your own branded white label DSP in 15 minutes with PublifyX. Multi-channel programmatic buying across Display, Video, Audio & CTV. No coding required.");
     return () => { document.title = "White Label DSP Platform | Launch Your Programmatic Ad Business — PublifyX"; };
   }, []);
 
