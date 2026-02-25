@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Check, Play, Pause, SkipBack, SkipForward, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import EnergyButton from "@/components/effects/EnergyButton";
 
 const AdInActionSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
