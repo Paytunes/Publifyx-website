@@ -6,22 +6,26 @@ import MagneticCard from "@/components/effects/MagneticCard";
 const targetAudience = [
   {
     title: "Media Agencies",
-    description: "Bring programmatic buying in-house, eliminate middlemen, and increase margins by operating your own branded DSP. Control the entire media buying workflow and offer clients a proprietary platform experience.",
+    description:
+      "Bring programmatic buying in-house, eliminate middlemen, and increase margins by operating your own branded DSP. Control the entire media buying workflow and offer clients a proprietary platform experience.",
     icon: Target,
   },
   {
     title: "Ad Networks",
-    description: "Provide your advertiser base with self-serve programmatic capabilities. Expand your product offering beyond traditional network buys to include real-time bidding, audience targeting, and cross-channel reach.",
+    description:
+      "Provide your advertiser base with self-serve programmatic capabilities. Expand your product offering beyond traditional network buys to include real-time bidding, audience targeting, and cross-channel reach.",
     icon: Zap,
   },
   {
     title: "Startups & Entrepreneurs",
-    description: "Enter the ad tech market without the capital expenditure of building a DSP from scratch. PublifyX gives you enterprise-grade technology at a fraction of the cost and time.",
+    description:
+      "Enter the ad tech market without the capital expenditure of building a DSP from scratch. PublifyX gives you enterprise-grade technology at a fraction of the cost and time.",
     icon: Star,
   },
   {
     title: "Publishers with Ad Services",
-    description: "If you offer advertising solutions alongside your content business, a white label DSP lets you create a full-service buying platform for your advertising clients.",
+    description:
+      "If you offer advertising solutions alongside your content business, a white label DSP lets you create a full-service buying platform for your advertising clients.",
     icon: Rocket,
   },
 ];
@@ -43,11 +47,7 @@ const BenefitsAndAudienceSection = ({ onGetStarted }: BenefitsAndAudienceSection
           >
             Built For You
           </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             Who Is PublifyX White Label DSP For?
           </motion.h2>
         </div>
@@ -79,7 +79,10 @@ const BenefitsAndAudienceSection = ({ onGetStarted }: BenefitsAndAudienceSection
           className="text-center"
         >
           <p className="text-navy-500 mb-6 font-medium">Not sure which model fits your business?</p>
-          <Link to="/contact" className="inline-flex items-center text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors group">
+          <Link
+            to="/contact"
+            className="inline-flex items-center text-md bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors group"
+          >
             Request a Strategy Consultation
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
