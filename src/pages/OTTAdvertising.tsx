@@ -411,7 +411,7 @@ const OTTAdvertising = () => {
           "Reduced CPM wastage through audience segmentation",
           "Increased incremental reach beyond linear TV",
         ]}
-        variant="grid"
+        variant="split"
       />
 
       {/* Who It's For */}
