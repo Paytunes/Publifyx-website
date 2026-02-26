@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Monitor, Video, Tv, LayoutGrid, BarChart3, Settings, Target, Eye } from "lucide-react";
+import { ArrowRight, Monitor, Video, Tv, BarChart3, Settings, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 import EnergyButton from "@/components/effects/EnergyButton";
+import DisplayMockup from "./mockups/DisplayMockup";
+import VideoMockup from "./mockups/VideoMockup";
+import CTVMockup from "./mockups/CTVMockup";
+import DataTargetingMockup from "./mockups/DataTargetingMockup";
+import ReportingMockup from "./mockups/ReportingMockup";
+import WhiteLabelMockup from "./mockups/WhiteLabelMockup";
 
 const tabs = [
   {
@@ -12,11 +18,7 @@ const tabs = [
     headline: "Display Advertising",
     description:
       "Access premium display inventory across 40+ supply-side platforms. Serve banners, rich media, and native ads on top-tier publisher websites and mobile apps — all from one unified dashboard.",
-    cards: [
-      { icon: Eye, title: "Premium Publishers", text: "Serve ads on top-tier websites and apps with brand-safe environments." },
-      { icon: LayoutGrid, title: "Rich Media Formats", text: "Banners, interstitials, expandables, and native placements in every size." },
-      { icon: Target, title: "Precision Targeting", text: "Geo, device, audience segments, and contextual targeting built in." },
-    ],
+    Mockup: DisplayMockup,
   },
   {
     id: "video",
@@ -25,11 +27,7 @@ const tabs = [
     headline: "Video Advertising",
     description:
       "Run pre-roll, mid-roll, and outstream video campaigns across premium video publishers. Reach engaged audiences on content they love with VAST/VPAID-compliant creatives.",
-    cards: [
-      { icon: Video, title: "All Video Formats", text: "Pre-roll, mid-roll, outstream, and in-banner video across devices." },
-      { icon: BarChart3, title: "Completion Tracking", text: "Measure VTR, quartile completions, and viewability in real time." },
-      { icon: Target, title: "Audience-First Buying", text: "Layer demographic, interest, and behavioral data on every campaign." },
-    ],
+    Mockup: VideoMockup,
   },
   {
     id: "ctv",
@@ -38,11 +36,7 @@ const tabs = [
     headline: "Connected TV (CTV)",
     description:
       "Deliver unskippable, full-screen ads on smart TVs and streaming devices. CTV combines the impact of television with the precision of digital — measurable, targeted, and brand-safe.",
-    cards: [
-      { icon: Tv, title: "Big Screen Impact", text: "Full-screen, non-skippable ads on smart TVs and streaming sticks." },
-      { icon: Eye, title: "Brand-Safe Inventory", text: "Premium CTV publishers with transparent, fraud-free environments." },
-      { icon: BarChart3, title: "Measurable Results", text: "Track completions, reach, frequency, and attribution across households." },
-    ],
+    Mockup: CTVMockup,
   },
   {
     id: "data",
@@ -51,11 +45,7 @@ const tabs = [
     headline: "Data & Targeting",
     description:
       "Leverage first-party, third-party, and contextual data to build precise audience segments. Our DMP integration ensures every impression is targeted, relevant, and high-performing.",
-    cards: [
-      { icon: Target, title: "Audience Segments", text: "Build custom audiences from demographic, behavioral, and intent signals." },
-      { icon: Settings, title: "DMP Integration", text: "Onboard your own data or tap into 50+ third-party data providers." },
-      { icon: BarChart3, title: "Real-Time Optimization", text: "AI-powered bidding adjusts targeting in real time for peak performance." },
-    ],
+    Mockup: DataTargetingMockup,
   },
   {
     id: "reporting",
@@ -64,11 +54,7 @@ const tabs = [
     headline: "Real-Time Reporting",
     description:
       "White-labeled dashboards with live campaign metrics, exportable reports, and client-facing analytics. Give your advertisers full transparency without exposing your margins.",
-    cards: [
-      { icon: BarChart3, title: "Live Dashboards", text: "Real-time impressions, clicks, conversions, and spend tracking." },
-      { icon: Eye, title: "Client-Facing Views", text: "Share branded, read-only dashboards with your advertisers." },
-      { icon: Settings, title: "Custom Reports", text: "Schedule automated PDF/CSV reports with your logo and branding." },
-    ],
+    Mockup: ReportingMockup,
   },
   {
     id: "whitelabel",
@@ -77,11 +63,7 @@ const tabs = [
     headline: "White Label Control",
     description:
       "Full control over branding, domains, user management, and margin settings. Your clients see your brand — never ours. Launch your own DSP in under 15 minutes with zero upfront investment.",
-    cards: [
-      { icon: Settings, title: "Custom Branding", text: "Your logo, colors, domain, and email templates — fully white-labeled." },
-      { icon: LayoutGrid, title: "Margin Control", text: "Set custom margins per client, per campaign, or per channel." },
-      { icon: Monitor, title: "User Management", text: "Create sub-accounts, assign roles, and manage access levels." },
-    ],
+    Mockup: WhiteLabelMockup,
   },
 ];
 
@@ -160,7 +142,7 @@ const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
           </div>
 
           {/* Tab Content */}
-          <div className="p-6 md:p-10">
+          <div className="p-4 md:p-8">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
@@ -169,8 +151,8 @@ const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
               >
-                {/* Browser-style chrome dots */}
-                <div className="flex items-center gap-2 mb-6">
+                {/* Browser chrome + headline */}
+                <div className="flex items-center gap-2 mb-4">
                   <span className="w-3 h-3 rounded-full bg-red-400" />
                   <span className="w-3 h-3 rounded-full bg-yellow-400" />
                   <span className="w-3 h-3 rounded-full bg-green-400" />
@@ -179,52 +161,14 @@ const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
                   </span>
                 </div>
 
-                {/* Content Grid */}
-                <div className="grid md:grid-cols-5 gap-8">
-                  {/* Left — Description */}
-                  <div className="md:col-span-2 space-y-4">
-                    <h3 className="text-2xl font-bold text-navy-800">{activeContent.headline}</h3>
-                    <p className="text-navy-400 leading-relaxed">{activeContent.description}</p>
-                  </div>
-
-                  {/* Right — Feature Cards */}
-                  <div className="md:col-span-3 grid sm:grid-cols-3 gap-4">
-                    {activeContent.cards.map((card, i) => (
-                      <div
-                        key={card.title}
-                        className={`rounded-2xl p-5 border transition-all duration-300 ${
-                          i === 1
-                            ? "bg-gradient-to-br from-brand-orange-500 to-brand-orange-400 border-brand-orange-400 text-white"
-                            : "bg-navy-50 border-navy-100 hover:border-brand-orange-200"
-                        }`}
-                      >
-                        <div
-                          className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
-                            i === 1 ? "bg-white/20" : "bg-white"
-                          }`}
-                        >
-                          <card.icon
-                            className={`w-5 h-5 ${i === 1 ? "text-white" : "text-brand-orange-500"}`}
-                          />
-                        </div>
-                        <h4
-                          className={`font-bold text-sm mb-1 ${
-                            i === 1 ? "text-white" : "text-navy-800"
-                          }`}
-                        >
-                          {card.title}
-                        </h4>
-                        <p
-                          className={`text-xs leading-relaxed ${
-                            i === 1 ? "text-white/80" : "text-navy-400"
-                          }`}
-                        >
-                          {card.text}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
+                {/* Description */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-navy-800 mb-2">{activeContent.headline}</h3>
+                  <p className="text-sm text-navy-400 leading-relaxed max-w-3xl">{activeContent.description}</p>
                 </div>
+
+                {/* Unique Dashboard Mockup */}
+                <activeContent.Mockup />
               </motion.div>
             </AnimatePresence>
           </div>
