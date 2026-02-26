@@ -121,7 +121,7 @@ const SolutionsSection = () => {
                   <div className="w-11 h-11 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-4 group-hover:bg-brand-orange-500 group-hover:text-white transition-colors duration-300">
                     <solution.icon className="w-5 h-5 text-brand-orange-500 group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h3 className="mb-3 text-xl">{solution.title}</h3>
+                  <h3 className="mb-3 text-xl lg:whitespace-nowrap">{solution.title}</h3>
                   <p className="text-navy-400 leading-relaxed">{solution.description}</p>
                 </div>
               </TiltCard>
