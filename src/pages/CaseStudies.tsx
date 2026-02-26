@@ -136,13 +136,12 @@ const CaseStudies = () => {
                 Agencies · Ad Networks · Startups · Proven results
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
-                <Button
-                  onClick={handleGetStarted}
-                  className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-orange-500/25 group"
-                >
-                  Write Your Success Story{" "}
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+                  <Link to="/contact" className="flex items-center text-white no-underline group">
+                    Write Your Success Story{" "}
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </EnergyButton>
               </div>
               <p className="text-sm text-navy-400">No commitment required · Schedule a consultation</p>
             </motion.div>
