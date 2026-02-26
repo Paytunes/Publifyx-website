@@ -448,7 +448,7 @@ const CTVAdvertising = () => {
           "Cross-device retargeting increased post-view conversions",
           "Transparent reporting improved campaign optimization speed",
         ]}
-        variant="wide"
+        variant="split"
       />
 
       {/* Related */}

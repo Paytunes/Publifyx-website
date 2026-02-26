@@ -412,7 +412,7 @@ const ProgrammaticAudioAdvertising = () => {
           "Increased brand recall in post-campaign surveys",
           "Improved reach during non-screen engagement hours",
         ]}
-        variant="wide"
+        variant="split"
       />
 
       {/* Who It's For */}
