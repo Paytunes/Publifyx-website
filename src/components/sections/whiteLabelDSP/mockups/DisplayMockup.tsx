@@ -8,7 +8,7 @@ const publishers = [
 ];
 
 const DisplayMockup = () => (
-  <div className="grid md:grid-cols-3 gap-4">
+  <div className="grid md:grid-cols-2 gap-4">
     {/* Website Preview with Banner Zones */}
     <div className="md:col-span-2 rounded-xl border border-navy-100 bg-white p-4 space-y-3">
       <div className="flex items-center gap-2 text-xs font-semibold text-navy-400 mb-2">
