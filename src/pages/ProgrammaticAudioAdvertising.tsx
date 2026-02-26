@@ -325,7 +325,7 @@ const ProgrammaticAudioAdvertising = () => {
         quote="Some of the most influential advertising moments happen when screens are off. Audio allows brands to speak directly to listeners during high-attention moments, and we've made that scalable and measurable."
         name="Saurabh"
         title="CEO, PublifyX"
-        variant="waveform"
+        variant="default"
       />
 
       {/* Features */}
