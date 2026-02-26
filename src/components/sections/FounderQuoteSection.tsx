@@ -9,12 +9,7 @@ interface FounderQuoteSectionProps {
   variant?: "default" | "cinematic";
 }
 
-const FounderQuoteSection = ({
-  quote,
-  name,
-  title,
-  showImage = true,
-}: FounderQuoteSectionProps) => {
+const FounderQuoteSection = ({ quote, name, title, showImage = true }: FounderQuoteSectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -78,7 +73,7 @@ const FounderQuoteSection = ({
             <blockquote
               className="relative rounded-2xl p-6 md:p-8 lg:p-10 transition-shadow duration-500 group-hover:shadow-[0_8px_32px_-8px_hsla(27,100%,50%,0.12)]"
               style={{
-                background: "hsl(222, 47%, 12%)",
+                background: "oklch(27.8% 0.033 256.848)",
                 color: "#ffffff",
               }}
             >
@@ -92,7 +87,7 @@ const FounderQuoteSection = ({
                   height: 0,
                   borderWidth: "15px 40px 0 0",
                   borderStyle: "solid",
-                  borderColor: "transparent hsl(222, 47%, 12%)",
+                  borderColor: "transparent oklch(27.8% 0.033 256.848)",
                 }}
               />
               {/* Triangle pointer – mobile: points up toward founder */}
@@ -105,7 +100,7 @@ const FounderQuoteSection = ({
                   height: 0,
                   borderWidth: "0 15px 15px 0",
                   borderStyle: "solid",
-                  borderColor: "transparent hsl(222, 47%, 12%) transparent transparent",
+                  borderColor: "transparent oklch(27.8% 0.033 256.848) transparent transparent",
                 }}
               />
               <p
