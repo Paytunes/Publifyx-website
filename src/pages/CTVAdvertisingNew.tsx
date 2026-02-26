@@ -1,7 +1,5 @@
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
-import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
-import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
 import { Link } from "react-router-dom";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
@@ -301,15 +299,6 @@ const CTVAdvertising = () => {
         </div>
       </section>
 
-      {/* Founder Quote */}
-      <FounderQuoteSection
-        quote="Connected TV is where brand impact meets digital precision. We designed our CTV Advertising capabilities to give advertisers the storytelling power of television with the targeting and accountability modern marketers demand."
-        name="Saurabh"
-        title="CEO, PublifyX"
-        showImage={false}
-        variant="cinematic"
-      />
-
       {/* Features */}
       <section className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -441,19 +430,6 @@ const CTVAdvertising = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Client Testimonial */}
-      <ClientTestimonialSection
-        quote="CTV campaigns through PublifyX delivered stronger completion rates than any other video channel we've tested. The targeting precision gave us both reach and relevance."
-        attribution="Marketing Head"
-        role="Leading D2C Brand"
-        layout="wide"
-        results={[
-          { text: "Household-level targeting across key metros" },
-          { text: "Cross-device retargeting increased post-view conversions" },
-          { text: "Transparent reporting with full campaign visibility" },
-        ]}
-      />
 
       {/* Related */}
       <section className="py-12 bg-white">
