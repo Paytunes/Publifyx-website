@@ -25,6 +25,8 @@ import {
 } from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
+import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
 
 const features = [
   {
@@ -299,6 +301,13 @@ const CTVAdvertising = () => {
         </div>
       </section>
 
+      <FounderQuoteSection
+        quote="Connected TV is where brand impact meets digital precision. We designed our CTV Advertising capabilities to give advertisers the storytelling power of television with the targeting and accountability modern marketers demand."
+        name="Saurabh"
+        title="CEO, PublifyX"
+        variant="cinematic"
+      />
+
       {/* Features */}
       <section className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -430,6 +439,17 @@ const CTVAdvertising = () => {
           </motion.div>
         </div>
       </section>
+
+      <ClientTestimonialSection
+        quote="CTV campaigns through PublifyX delivered stronger completion rates than any other video channel we've tested. The targeting precision gave us both reach and relevance."
+        attribution="Marketing Head, Leading D2C Brand"
+        results={[
+          "Household-level targeting across key metros",
+          "Cross-device retargeting increased post-view conversions",
+          "Transparent reporting",
+        ]}
+        variant="wide"
+      />
 
       {/* Related */}
       <section className="py-12 bg-white">
