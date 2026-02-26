@@ -26,6 +26,8 @@ import {
 } from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
+import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
 
 const features = [
   {
@@ -317,6 +319,12 @@ const OTTAdvertising = () => {
         </div>
       </section>
 
+      <FounderQuoteSection
+        quote="Streaming is not a trend, it's the new default. Our OTT platform ensures brands don't just follow audiences across devices, but reach them with measurable impact."
+        name="Saurabh"
+        title="CEO, PublifyX"
+      />
+
       {/* Features */}
       <section className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -393,6 +401,18 @@ const OTTAdvertising = () => {
           </div>
         </div>
       </section>
+
+      <ClientTestimonialSection
+        quote="OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple."
+        attribution="Head of Digital, National Media Agency"
+        results={[
+          "Cross-device reach expansion by 42%",
+          "Controlled frequency across TV + mobile environments",
+          "Reduced CPM wastage through audience segmentation",
+          "Increased incremental reach beyond linear TV",
+        ]}
+        variant="grid"
+      />
 
       {/* Who It's For */}
       <section className="py-12 md:py-16 bg-navy-50">

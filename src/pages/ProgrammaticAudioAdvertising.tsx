@@ -28,6 +28,8 @@ import {
 } from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
+import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
 
 const features = [
   {
@@ -319,6 +321,13 @@ const ProgrammaticAudioAdvertising = () => {
         </div>
       </section>
 
+      <FounderQuoteSection
+        quote="Some of the most influential advertising moments happen when screens are off. Audio allows brands to speak directly to listeners during high-attention moments, and we've made that scalable and measurable."
+        name="Saurabh"
+        title="CEO, PublifyX"
+        variant="waveform"
+      />
+
       {/* Features */}
       <section className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -394,6 +403,17 @@ const ProgrammaticAudioAdvertising = () => {
           </div>
         </div>
       </section>
+
+      <ClientTestimonialSection
+        quote="Audio campaigns helped us reach audiences during commute hours where display simply couldn't. Completion rates were consistently strong, and companion banners drove additional engagement."
+        attribution="Senior Media Planner, Digital-First Agency"
+        results={[
+          "Targeted by listening behavior and time of day",
+          "Increased brand recall in post-campaign surveys",
+          "Improved reach during non-screen engagement hours",
+        ]}
+        variant="wide"
+      />
 
       {/* Who It's For */}
       <section className="py-12 md:py-16 bg-navy-50">
