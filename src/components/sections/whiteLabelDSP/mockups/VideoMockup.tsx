@@ -6,7 +6,13 @@ const VideoMockup = () => (
     <div className="md:col-span-3 space-y-4">
       <div className="relative rounded-xl overflow-hidden bg-navy-800 aspect-video flex items-center justify-center group cursor-pointer">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-700 via-navy-800 to-navy-900" />
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 30% 40%, hsl(27 100% 50% / 0.3) 0%, transparent 50%), radial-gradient(circle at 70% 60%, hsl(220 47% 30% / 0.5) 0%, transparent 50%)' }} />
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 30% 40%, hsl(27 100% 50% / 0.3) 0%, transparent 50%), radial-gradient(circle at 70% 60%, hsl(220 47% 30% / 0.5) 0%, transparent 50%)",
+          }}
+        />
         {/* Play button */}
         <div className="relative z-10 w-16 h-16 rounded-full bg-brand-orange-500 flex items-center justify-center shadow-lg shadow-brand-orange-500/30 group-hover:scale-110 transition-transform">
           <Play className="w-7 h-7 text-white fill-white ml-1" />
@@ -24,24 +30,6 @@ const VideoMockup = () => (
         {/* Format badge */}
         <div className="absolute top-3 left-3 px-2 py-1 rounded bg-navy-900/70 text-[10px] text-white font-medium">
           Pre-Roll · VAST 4.2
-        </div>
-      </div>
-
-      {/* Quartile stages — visual only, no numbers */}
-      <div className="rounded-xl border border-navy-100 bg-white p-4">
-        <div className="text-xs font-semibold text-navy-400 mb-3 flex items-center gap-1.5">
-          <BarChart3 className="w-3.5 h-3.5" /> Quartile Tracking
-        </div>
-        <div className="flex items-end gap-3 h-20">
-          {["Start", "25%", "50%", "75%", "Complete"].map((label, i) => (
-            <div key={label} className="flex-1 flex flex-col items-center gap-1">
-              <div
-                className="w-full rounded-t-md bg-gradient-to-t from-brand-orange-500 to-brand-orange-300"
-                style={{ height: `${100 - i * 15}%` }}
-              />
-              <span className="text-[10px] text-navy-400">{label}</span>
-            </div>
-          ))}
         </div>
       </div>
     </div>
