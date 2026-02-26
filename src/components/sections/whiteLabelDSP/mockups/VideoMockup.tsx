@@ -15,7 +15,7 @@ const quartiles = [
 ];
 
 const VideoMockup = () => (
-  <div className="grid md:grid-cols-2 gap-4">
+  <div className="grid md:grid-cols-3 gap-4">
     {/* Video Player */}
     <div className="md:col-span-3 space-y-4">
       <div className="relative rounded-xl overflow-hidden bg-navy-800 aspect-video flex items-center justify-center group cursor-pointer">
