@@ -31,12 +31,11 @@ const FounderQuoteSection = ({
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Desktop: horizontal | Mobile: vertical */}
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
-          {/* Founder identity – left side */}
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-0">
+          {/* Founder identity */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="flex flex-col items-center shrink-0"
           >
@@ -54,7 +53,7 @@ const FounderQuoteSection = ({
                     : {}
                 }
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-brand-orange-400 to-brand-orange-600 flex items-center justify-center text-white font-bold text-2xl md:text-3xl"
+                className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-brand-orange-400 to-brand-orange-600 flex items-center justify-center text-white font-bold text-3xl md:text-4xl"
                 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 {name.charAt(0)}
@@ -69,26 +68,46 @@ const FounderQuoteSection = ({
             <p className="text-navy-300 text-sm">{title}</p>
           </motion.div>
 
-          {/* Speech bubble – right side */}
+          {/* Speech bubble with CSS triangle */}
           <motion.div
-            initial={{ opacity: 0, x: 32 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="relative flex-1 min-w-0 group"
+            className="relative flex-1 min-w-0 md:ml-10 group"
           >
-            {/* Speech pointer – visible on desktop only */}
-            <div
-              className="hidden md:block absolute top-8 -left-3 w-0 h-0"
-              style={{
-                borderTop: "10px solid transparent",
-                borderBottom: "10px solid transparent",
-                borderRight: "12px solid hsl(222, 47%, 14%)",
-              }}
-            />
-
             <blockquote
-              className="relative bg-navy-900/80 backdrop-blur-sm rounded-2xl md:rounded-[20px] border border-white/[0.06] p-6 md:p-8 lg:p-10 transition-shadow duration-500 group-hover:shadow-[0_8px_32px_-8px_hsla(27,100%,50%,0.1)]"
+              className="relative rounded-2xl p-6 md:p-8 lg:p-10 transition-shadow duration-500 group-hover:shadow-[0_8px_32px_-8px_hsla(27,100%,50%,0.12)]"
+              style={{
+                background: "hsl(222, 47%, 12%)",
+                color: "#ffffff",
+              }}
             >
+              {/* Triangle pointer – desktop: points left toward founder */}
+              <span
+                className="hidden md:block absolute"
+                style={{
+                  top: "24px",
+                  left: "-40px",
+                  width: 0,
+                  height: 0,
+                  borderWidth: "15px 40px 0 0",
+                  borderStyle: "solid",
+                  borderColor: "transparent hsl(222, 47%, 12%)",
+                }}
+              />
+              {/* Triangle pointer – mobile: points up toward founder */}
+              <span
+                className="block md:hidden absolute"
+                style={{
+                  top: "-15px",
+                  left: "32px",
+                  width: 0,
+                  height: 0,
+                  borderWidth: "0 15px 15px 0",
+                  borderStyle: "solid",
+                  borderColor: "transparent hsl(222, 47%, 12%) transparent transparent",
+                }}
+              />
               <p
                 className="text-lg md:text-xl lg:text-[1.35rem] text-white/90 leading-relaxed font-light italic"
                 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
