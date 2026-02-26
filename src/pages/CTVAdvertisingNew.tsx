@@ -139,8 +139,6 @@ const faqs = [
 ];
 
 const CTVAdvertising = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     document.title = "CTV Advertising Platform | Programmatic Connected TV Ads — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
@@ -154,7 +152,6 @@ const CTVAdvertising = () => {
     };
   }, []);
 
-  const handleGetStarted = () => navigate("/contact");
   const breadcrumbs = useServiceBreadcrumbs("CTV Advertising");
 
   return (

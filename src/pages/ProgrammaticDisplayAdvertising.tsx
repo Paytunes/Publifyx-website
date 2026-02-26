@@ -159,8 +159,6 @@ const faqs = [
 ];
 
 const ProgrammaticDisplayAdvertising = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     document.title = "Programmatic Display Advertising Platform | Display DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
@@ -174,7 +172,6 @@ const ProgrammaticDisplayAdvertising = () => {
     };
   }, []);
 
-  const handleGetStarted = () => navigate("/contact");
   const breadcrumbs = useServiceBreadcrumbs("Programmatic Display Advertising");
 
   return (

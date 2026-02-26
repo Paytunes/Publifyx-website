@@ -159,8 +159,6 @@ const faqs = [
 ];
 
 const ProgrammaticAudioAdvertising = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     document.title = "Programmatic Audio Advertising Platform | Audio DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
@@ -174,7 +172,6 @@ const ProgrammaticAudioAdvertising = () => {
     };
   }, []);
 
-  const handleGetStarted = () => navigate("/contact");
   const breadcrumbs = useServiceBreadcrumbs("Programmatic Audio Advertising");
 
   return (

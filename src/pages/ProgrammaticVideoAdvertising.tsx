@@ -145,8 +145,6 @@ const faqs = [
 ];
 
 const ProgrammaticVideoAdvertising = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     document.title = "Programmatic Video Advertising Platform | Video DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
@@ -160,7 +158,6 @@ const ProgrammaticVideoAdvertising = () => {
     };
   }, []);
 
-  const handleGetStarted = () => navigate("/contact");
   const breadcrumbs = useServiceBreadcrumbs("Programmatic Video Advertising");
 
   return (
