@@ -18,6 +18,7 @@ import {
   Target,
 } from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
+import EnergyButton from "@/components/effects/EnergyButton";
 
 const cases = [
   {
@@ -318,12 +319,11 @@ const CaseStudies = () => {
           <p className="text-base text-navy-400 mb-10 font-semibold">
             No commitment required · Schedule a consultation
           </p>
-          <Button
-            onClick={handleGetStarted}
-            className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white text-lg px-10 py-6 font-semibold hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 rounded-xl group"
-          >
-            Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+            <Link to="/contact" className="flex items-center text-white no-underline group">
+              Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </EnergyButton>
         </motion.div>
       </section>
     </Layout>
