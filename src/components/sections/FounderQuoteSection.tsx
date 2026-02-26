@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import founderPhoto from "@/assets/founder/saurabh-ceo.webp";
 
 interface FounderQuoteSectionProps {
   quote: string;
@@ -48,10 +49,17 @@ const FounderQuoteSection = ({ quote, name, title, showImage = true }: FounderQu
                     : {}
                 }
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-brand-orange-400 to-brand-orange-600 flex items-center justify-center text-white font-bold text-3xl md:text-4xl"
-                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden"
               >
-                {name.charAt(0)}
+                <img
+                  src={founderPhoto}
+                  alt={`${name}, ${title}`}
+                  width={112}
+                  height={112}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
             )}
             <p
