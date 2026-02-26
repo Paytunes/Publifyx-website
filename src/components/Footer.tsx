@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <Link to="/">
               <img
-                src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.webp"
+                src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.png"
                 alt="PublifyX"
                 className="h-8 w-auto"
                 width={171}

@@ -195,7 +195,7 @@ const AdInActionSection = () => {
                         <p className="text-xs text-white/50">Powered by</p>
                         <img
                           className="mx-auto my-1.5 w-28 brightness-0 invert"
-                          src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.webp"
+                          src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.png"
                           alt="Publifyx Logo"
                           width={112}
                           height={21}
