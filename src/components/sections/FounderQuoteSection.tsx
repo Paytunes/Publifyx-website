@@ -113,7 +113,7 @@ const FounderQuoteSection = ({
                 )}
                 <div>
                   <p className="text-white font-semibold text-base">— {name}</p>
-                  <p className="text-navy-400 text-sm">{title}</p>
+                  <p className="text-navy-200 text-sm">{title}</p>
                 </div>
               </motion.div>
             </div>
