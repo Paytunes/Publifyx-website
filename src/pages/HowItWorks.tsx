@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import EnergyButton from "@/components/effects/EnergyButton";
 import {
   ArrowRight,
   Sparkles,
@@ -103,8 +103,6 @@ const faqs = [
 ];
 
 const HowItWorks = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     document.title = "How PublifyX Works | Launch Your White Label DSP in Days";
     const meta = document.querySelector('meta[name="description"]');
@@ -117,8 +115,6 @@ const HowItWorks = () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
     };
   }, []);
-
-  const handleGetStarted = () => navigate("/contact");
 
   return (
     <Layout transparentHeader>
@@ -154,13 +150,12 @@ const HowItWorks = () => {
                 5 steps · 5-10 business days · Zero engineering required
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
-                <Button
-                  onClick={handleGetStarted}
-                  className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-orange-500/25 group"
-                >
-                  Start Your Journey{" "}
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+                  <Link to="/contact" className="flex items-center text-white no-underline group">
+                    Start Your Journey{" "}
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </EnergyButton>
               </div>
               <p className="text-sm text-navy-400">No commitment required · Most clients launch within 2 weeks</p>
             </motion.div>
@@ -240,13 +235,12 @@ const HowItWorks = () => {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <Button
-              onClick={handleGetStarted}
-              className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 group"
-            >
-              Start Step 1 — Book a Call{" "}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+              <Link to="/contact" className="flex items-center text-white no-underline group">
+                Start Step 1 — Book a Call{" "}
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </EnergyButton>
           </motion.div>
         </div>
       </section>
@@ -341,12 +335,12 @@ const HowItWorks = () => {
           <p className="text-base text-navy-400 mb-10 font-semibold">
             No commitment required · Zero engineering needed
           </p>
-          <Button
-            onClick={handleGetStarted}
-            className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white text-lg px-10 py-6 font-semibold hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 rounded-xl group"
-          >
-            Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+            <Link to="/contact" className="flex items-center text-white no-underline group">
+              Book a Call{" "}
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </EnergyButton>
         </motion.div>
       </section>
 
