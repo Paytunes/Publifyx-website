@@ -36,6 +36,10 @@ const WhiteLabelDSP = () => {
         name="Saurabh"
         title="CEO, PublifyX"
       />
+      <WhyChooseSection onGetStarted={handleGetStarted} />
+      <FeaturesSection />
+      <BenefitsAndAudienceSection onGetStarted={handleGetStarted} />
+      <HowItWorksSection onGetStarted={handleGetStarted} />
       <ClientTestimonialSection
         quote="Launching our own branded DSP completely changed how clients perceive us. We're no longer just a media agency, we're a technology partner. The transition was smooth, and we were live within minutes."
         attribution="Founder, Performance Marketing Agency"
@@ -47,10 +51,6 @@ const WhiteLabelDSP = () => {
         ]}
         variant="split"
       />
-      <WhyChooseSection onGetStarted={handleGetStarted} />
-      <FeaturesSection />
-      <BenefitsAndAudienceSection onGetStarted={handleGetStarted} />
-      <HowItWorksSection onGetStarted={handleGetStarted} />
       <WhiteLabelCTASection onGetStarted={handleGetStarted} />
       <WhiteLabelFAQSection />
     </Layout>

@@ -446,7 +446,7 @@ const CTVAdvertising = () => {
         results={[
           "Household-level targeting across key metros",
           "Cross-device retargeting increased post-view conversions",
-          "Transparent reporting",
+          "Transparent reporting improved campaign optimization speed",
         ]}
         variant="wide"
       />
