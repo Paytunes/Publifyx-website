@@ -397,12 +397,6 @@ const CTVAdvertisingIndia = () => {
                 CTV Advertising (Global)
               </Link>
               <Link
-                to="/ott-advertising"
-                className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
-              >
-                OTT Advertising
-              </Link>
-              <Link
                 to="/white-label-dsp"
                 className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
               >
