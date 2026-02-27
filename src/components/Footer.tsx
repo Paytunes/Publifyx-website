@@ -8,7 +8,7 @@ const Footer = () => {
         {/* Top: Logo + Link Columns */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-1">
             <Link to="/">
               <img
                 src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.webp"
