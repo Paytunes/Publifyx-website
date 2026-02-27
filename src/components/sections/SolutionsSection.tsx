@@ -16,7 +16,7 @@ const solutions = [
     title: "OTT Advertising Simplification",
     description:
       "Pre-packaged OTT solutions make platform selection easy and affordable, with guaranteed high ad completion rates to maximize ROI.",
-    image: "/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.webp",
+    image: "/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.png",
     alt: "Woman watching video content on mobile device",
   },
   {
