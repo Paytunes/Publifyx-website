@@ -3,7 +3,7 @@ import { Palette, Globe, Upload, Settings, Users, Shield } from "lucide-react";
 const WhiteLabelMockup = () => (
   <div className="grid md:grid-cols-5 gap-4">
     {/* Branding Panel */}
-    <div className="md:col-span-3 space-y-4 overflow-scroll md:overflow-hidden;">
+    <div className="md:col-span-3 space-y-4 overflow-scroll md:overflow-hidden">
       {/* Custom branding preview */}
       <div className="rounded-xl border border-navy-100 bg-white p-4">
         <div className="text-xs font-semibold text-navy-400 mb-3 flex items-center gap-1.5">
