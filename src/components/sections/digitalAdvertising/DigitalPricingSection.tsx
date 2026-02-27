@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const pricingData = [
   {
@@ -53,11 +52,9 @@ const DigitalPricingSection = () => {
                     <td className="px-6 py-4 font-semibold text-gray-900">{item.adOption}</td>
                     <td className="px-6 py-4 text-gray-600">{item.rates}</td>
                     <td className="px-6 py-4">
-                      <Link to="/contact">
-                        <Button variant="default" size="sm">
-                          Book Ads Now
-                        </Button>
-                      </Link>
+                      <Button variant="default" size="sm">
+                        Book Ads Now
+                      </Button>
                     </td>
                   </tr>
                 ))}

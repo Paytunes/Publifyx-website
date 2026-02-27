@@ -4,15 +4,13 @@ import Footer from "./Footer";
 
 interface LayoutProps {
   children: React.ReactNode;
-  /** Set to true for pages with dark full-bleed hero sections where nav overlays */
-  transparentHeader?: boolean;
 }
 
-const Layout = ({ children, transparentHeader = false }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className={`flex-1 ${transparentHeader ? '' : 'pt-20'}`}>
+      <main className="flex-1 pt-16">
         {children}
       </main>
       <Footer />

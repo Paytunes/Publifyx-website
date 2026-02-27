@@ -21,10 +21,10 @@ import DigitalFAQSection from "@/components/sections/digitalAdvertising/DigitalF
 
 const DigitalAdvertising = () => {
   useEffect(() => {
-    document.title = "Digital Advertising in India — Rates, Platforms & Strategy | PublifyX";
+    document.title = "Digital Advertising in India – Rates, Platforms & Strategy | PublifyX";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Compare digital ad rates across India's top platforms. Launch targeted campaigns with real-time analytics and measurable ROI across display, video, and streaming channels.");
-    return () => { document.title = "White Label DSP Platform | Launch Your Programmatic Ad Business — PublifyX"; };
+    if (metaDesc) metaDesc.setAttribute("content", "Reach 10M+ daily users across India's top digital platforms. Compare ad rates, publishers, and formats. Launch targeted campaigns with real-time analytics and measurable ROI.");
+    return () => { document.title = "White Labelled Platform for Programmatic Ad Buying | PublifyX"; };
   }, []);
 
   return (

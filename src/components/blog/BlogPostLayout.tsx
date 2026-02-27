@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import ReadingProgressBar from "./ReadingProgressBar";
 import RelatedArticlesSection from "./RelatedArticlesSection";
 import { getRelatedArticles } from "@/data/blogPosts";
-import PageBreadcrumb from "@/components/PageBreadcrumb";
 
 interface BlogPostLayoutProps {
   currentSlug: string;
@@ -43,44 +42,24 @@ const BlogPostLayout = ({
   };
 
   return (
-    <Layout transparentHeader>
+    <Layout>
       <ReadingProgressBar />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-navy-800">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 w-full">
-          {/* Breadcrumb */}
-          <PageBreadcrumb
-            variant="dark"
-            items={[
-              { label: "Home", path: "/" },
-              { label: "Blog", path: "/blog" },
-              { label: title },
-            ]}
-          />
-
+      {/* Hero Section — Editorial Style */}
+      <section className="bg-white pt-12 pb-8 border-b border-gray-200">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back + Share Row */}
           <div className="flex justify-between items-center mb-8">
             <Link
               to="/blog"
-              className="inline-flex items-center text-navy-300 hover:text-white transition-colors text-sm font-medium"
+              className="inline-flex items-center text-gray-500 hover:text-gray-900 transition-colors text-sm font-medium"
             >
               <ArrowLeft className="w-4 h-4 mr-1.5" />
               All Articles
             </Link>
 
             <div className="flex items-center gap-2">
-              <span className="text-navy-400 text-xs uppercase tracking-wider hidden sm:inline">Share</span>
+              <span className="text-gray-400 text-xs uppercase tracking-wider hidden sm:inline">Share</span>
               {[
                 { href: shareLinks.twitter, icon: Twitter, label: "Twitter" },
                 { href: shareLinks.linkedin, icon: Linkedin, label: "LinkedIn" },
@@ -91,7 +70,7 @@ const BlogPostLayout = ({
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center rounded-full text-navy-400 hover:text-brand-orange-400 hover:bg-white/10 transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-full text-gray-400 hover:text-[#ff7200] hover:bg-orange-50 transition-colors"
                   aria-label={`Share on ${label}`}
                 >
                   <Icon className="w-4 h-4" />
@@ -101,31 +80,27 @@ const BlogPostLayout = ({
           </div>
 
           {/* Category Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
-            <span className="text-sm font-medium text-brand-orange-400">{category}</span>
-          </div>
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#ff7200] mb-4">
+            {category}
+          </span>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white mb-6 max-w-4xl">
+          <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-extrabold leading-[1.1] tracking-tight text-gray-900 mb-4">
             {title}
           </h1>
 
           {/* Subtitle */}
           {subtitle && (
-            <p className="text-lg md:text-xl text-navy-200 leading-relaxed mb-8 max-w-3xl">
+            <p className="text-lg sm:text-xl text-gray-500 leading-relaxed mb-5">
               {subtitle}
             </p>
           )}
 
           {/* Meta Line */}
-          <div className="flex items-center gap-4 text-navy-300">
-            <div className="flex items-center gap-2 text-sm font-semibold">
-              <time>{date}</time>
-            </div>
-            <span className="text-navy-500">·</span>
-            <div className="flex items-center gap-2 text-sm font-semibold">
-              <span>{readTime}</span>
-            </div>
+          <div className="flex items-center gap-2 text-sm text-gray-400 font-medium uppercase tracking-wide">
+            <time>{date}</time>
+            <span className="text-gray-300">|</span>
+            <span>{readTime}</span>
           </div>
         </div>
       </section>
@@ -141,7 +116,7 @@ const BlogPostLayout = ({
                 className="w-full rounded-lg object-cover max-h-[500px]"
               />
               {imageCaption && (
-                <figcaption className="text-xs text-navy-400 mt-2 text-center italic">
+                <figcaption className="text-xs text-gray-400 mt-2 text-center italic">
                   {imageCaption}
                 </figcaption>
               )}

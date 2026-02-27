@@ -49,7 +49,7 @@ const BlogPostAdTechTrends2026 = () => {
   };
 
   useEffect(() => {
-    document.title = "Top 5 Ad Tech Trends Every Marketer Should Watch in 2026 — PublifyX";
+    document.title = "Top 5 Ad Tech Trends Every Marketer Should Watch in 2026 | PublifyX";
 
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -59,7 +59,7 @@ const BlogPostAdTechTrends2026 = () => {
     }
     metaDescription.setAttribute(
       "content",
-      "The five ad tech trends shaping 2026: AI-first programmatic, white-label DSPs, generative creatives, CTV/OTT growth, and privacy-first targeting strategies.",
+      "Discover the top 5 ad tech trends for 2026: AI-first programmatic, white-label DSPs, AI-generated creatives, OTT/CTV growth, and privacy-first targeting strategies.",
     );
 
     let schemaScript = document.getElementById("faq-schema-adtech") as HTMLScriptElement | null;

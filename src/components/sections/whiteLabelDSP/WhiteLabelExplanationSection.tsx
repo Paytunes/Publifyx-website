@@ -1,98 +1,47 @@
-import { motion } from "framer-motion";
-import { Lightbulb, Check } from "lucide-react";
-
-const youControl = ["Branding and domain", "Pricing and margins", "Client access", "Campaign workflows"];
-
-const weManage = [
-  "Real-time bidding infrastructure",
-  "Server architecture",
-  "Data pipelines",
-  "SSP and exchange integrations",
-  "Ongoing compliance and updates",
-];
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Sparkles } from "lucide-react";
 
 const WhiteLabelExplanationSection = () => {
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-          >
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 rounded-full text-sm font-semibold mb-6">
+            <Sparkles className="w-4 h-4 mr-2" />
             White Label DSP
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-4 max-w-4xl mx-auto"
-          >
-            What Is a White Label DSP?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
-          >
-            A white label DSP is a fully built demand side platform developed and maintained by a technology provider,
-            but deployed under your brand. Instead of investing millions in building proprietary ad tech from the ground
-            up, you get a fully functional programmatic advertising platform that looks and feels like your own product,
-            ready to onboard advertisers and start buying media immediately.
-          </motion.p>
+          </div>
+          <h2 className="mb-6 max-w-4xl mx-auto text-4xl md:text-5xl font-bold text-gray-900">
+            The Smartest White Label DSP for Programmatic Ad Buying
+          </h2>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Everything you need to run a powerful, scalable ad platform — without the time, cost, or hassle of building
+            it yourself.
+          </p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
-        >
-          {/* You Control */}
-          <div className="bg-navy-50 rounded-2xl border border-navy-100 p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-brand-orange-100 flex items-center justify-center">
-                <Lightbulb className="w-5 h-5 text-brand-orange-500" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-800">You Control</h3>
+        <Card className="max-w-6xl mx-auto mb-16 border-0 shadow-2xl bg-gradient-to-br from-white via-gray-50 to-blue-50 overflow-hidden">
+          <CardHeader className="pb-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+            <CardTitle className="text-3xl md:text-4xl text-white text-center font-bold">
+              What is a White Labelled Platform?
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="px-8 md:px-12 py-10">
+            <p className="text-gray-700 mb-6 leading-relaxed text-lg md:text-xl">
+              A white label platform is a ready-made SaaS product that businesses can rebrand as their own by
+              customising the name, logo, and design. It lets companies launch quickly without building from scratch,
+              saving time, development costs, and maintenance efforts.
+            </p>
+            <p className="text-gray-700 mb-8 leading-relaxed text-lg md:text-xl">
+              In short, it's our tech and your brand. You get the power of a full-scale white label demand side
+              platform, branded as your own, with zero development time.
+            </p>
+            <div className="bg-gradient-to-r from-orange-50 via-red-50 to-orange-50 p-8 rounded-2xl border-2 border-orange-200">
+              <p className="font-bold text-orange-700 text-xl md:text-2xl text-center">
+                No need to build. No need to manage servers. Just plug in and launch.
+              </p>
             </div>
-            <ul className="space-y-4">
-              {youControl.map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3.5 h-3.5 text-brand-orange-600" />
-                  </div>
-                  <span className="text-navy-600 font-medium">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* We Manage */}
-          <div className="bg-navy-800 rounded-2xl border border-navy-700 p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-brand-orange-500/20 flex items-center justify-center">
-                <Lightbulb className="w-5 h-5 text-brand-orange-400" />
-              </div>
-              <h3 className="text-xl font-bold text-white">We Manage</h3>
-            </div>
-            <ul className="space-y-4">
-              {weManage.map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3.5 h-3.5 text-green-400" />
-                  </div>
-                  <span className="text-navy-200 font-medium">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );

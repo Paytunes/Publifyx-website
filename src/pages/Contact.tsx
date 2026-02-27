@@ -1,23 +1,13 @@
-import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  useEffect(() => {
-    document.title = "Contact PublifyX | Request a Demo or Get Pricing";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta)
-      meta.setAttribute(
-        "content",
-        "Get in touch with PublifyX to schedule a demo, request pricing, or learn how our white label DSP can power your programmatic advertising business.",
-      );
-  }, []);
-
   const [formData, setFormData] = useState({
     company_name: "",
     company_email: "",
@@ -32,9 +22,12 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     setIsSubmitting(true);
+    console.log("Submitting form data:", formData);
 
     try {
+      // Create a form data object for Google Apps Script
       const formDataForSubmission = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
         formDataForSubmission.append(key, value);
@@ -43,17 +36,22 @@ const Contact = () => {
       const googleAppsScriptUrl =
         "https://script.google.com/macros/s/AKfycbytrG1hsiIqFlkL4vMMNVRy0WXpEq2E26mU8JGuIA/exec";
 
-      await fetch(googleAppsScriptUrl, {
+      const response = await fetch(googleAppsScriptUrl, {
         method: "POST",
         mode: "no-cors",
         body: formDataForSubmission,
       });
+
+      // Since we're using no-cors mode, we can't read the response
+      // We'll assume success if no error is thrown
+      console.log("Form submitted successfully");
 
       toast({
         title: "Success!",
         description: "Your message has been sent successfully.",
       });
 
+      // Reset form
       setFormData({
         company_name: "",
         company_email: "",
@@ -80,85 +78,89 @@ const Contact = () => {
 
   return (
     <Layout>
-      <section className="min-h-[calc(100vh-5rem)] flex items-center bg-gradient-to-br from-slate-50 via-white to-blue-50/30 py-12 md:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          {/* Page Header */}
-          <div className="text-center mb-10 md:mb-14">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight mb-3">
-              Let's Talk
-            </h1>
-            <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto">
-              Ready to scale your advertising? Fill out the form and our team will get back to you within 24 hours.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12)] border border-border/40">
-            {/* Left Panel */}
-            <div className="lg:col-span-2 bg-gradient-to-br from-[hsl(217,80%,48%)] via-[hsl(220,75%,42%)] to-[hsl(225,70%,32%)] p-8 md:p-10 text-white flex flex-col justify-between relative overflow-hidden">
-              {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#ff7200]/20 rounded-full translate-y-1/3 -translate-x-1/3" />
-
+      <div className="min-h-screen bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 pb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 min-h-[600px]">
+            {/* Left Side - Blue Section */}
+            <div className="lg:col-span-2 bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white relative overflow-hidden">
               <div className="relative z-10">
-                <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white leading-tight">
-                  Let's Grow Your
-                  <br />
-                  Brand Together
-                </h2>
-                <p className="text-white/70 text-sm md:text-base leading-relaxed mb-10">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Let's Grow Your Brand Together</h2>
+                <p className="text-blue-100 mb-8 text-base">
                   Fill out the form, including details about your next campaign, and we'll be in touch shortly.
                 </p>
 
-                <div className="space-y-6">
-                  <ContactInfoItem
-                    icon={<MapPin className="w-5 h-5" />}
-                    label="Office"
-                    value="PublifyX Tech Pvt. Ltd., Inventio Workspace Ltd., Sector-12, Dwarka, New Delhi-110075"
-                  />
-                  <ContactInfoItem icon={<Phone className="w-5 h-5" />} label="Phone" value="+91-8448330304" />
-                  <ContactInfoItem icon={<Mail className="w-5 h-5" />} label="Email" value="info@publifyx.com" />
+                <h2 className="text-xl font-bold mb-4 text-white">Contact Information</h2>
+
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <MapPin className="w-5 h-5 mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      <div className="text-blue-100 text-sm">
+                        PublifyX Tech Pvt. Ltd., Inventio Workspace Ltd., Sector -12 , Dwarka, New Delhi-110075
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <Phone className="w-5 h-5 mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      <div className="text-blue-100 text-sm">+91-8448330304</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <Mail className="w-5 h-5 mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      <div className="text-blue-100 text-sm">info@publifyx.com</div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              {/* Orange Circle Decoration */}
+              <div className="absolute bottom-0 right-0 w-60 h-60 bg-[#ff7200] rounded-full transform translate-x-24 translate-y-24"></div>
             </div>
 
-            {/* Right Panel — Form */}
-            <div className="lg:col-span-3 bg-white p-8 md:p-10 lg:p-12">
-              <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-8">Fill the Form Below</h2>
+            {/* Right Side - Form Section */}
+            <div className="lg:col-span-3 bg-white p-8 pb-4">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">Fill the Form Below</h2>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Hidden source field */}
                 <input type="hidden" name="source" value={formData.source} />
 
-                <FormField label="Company Name" required>
+                <div>
+                  <label htmlFor="company_name" className="block text-sm font-medium text-gray-700 mb-2">Company Name*</label>
                   <Input
                     id="company_name"
                     type="text"
                     required
                     value={formData.company_name}
                     onChange={(e) => handleInputChange("company_name", e.target.value)}
-                    placeholder="Your company name"
-                    className="h-11 rounded-lg border-border/60 bg-muted/30 focus:bg-white transition-colors placeholder:text-muted-foreground/50"
+                    className="w-full border-gray-300"
                   />
-                </FormField>
+                </div>
 
-                <FormField label="Company Email" required>
+                <div>
+                  <label htmlFor="company_email" className="block text-sm font-medium text-gray-700 mb-2">Company Email*</label>
                   <Input
                     id="company_email"
                     type="email"
                     required
                     value={formData.company_email}
                     onChange={(e) => handleInputChange("company_email", e.target.value)}
-                    placeholder="you@company.com"
-                    className="h-11 rounded-lg border-border/60 bg-muted/30 focus:bg-white transition-colors placeholder:text-muted-foreground/50"
+                    className="w-full border-gray-300"
                   />
-                </FormField>
+                </div>
 
-                <FormField label="How did you hear about us?">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">How did you hear about us ?</label>
                   <Select
                     value={formData.hearAboutUs}
                     onValueChange={(value) => handleInputChange("hearAboutUs", value)}
                   >
-                    <SelectTrigger className="h-11 rounded-lg border-border/60 bg-muted/30 focus:bg-white transition-colors">
-                      <SelectValue placeholder="Select an option" />
+                    <SelectTrigger className="w-full border-gray-300">
+                      <SelectValue placeholder="LinkedIn" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="linkedin">LinkedIn</SelectItem>
@@ -170,96 +172,59 @@ const Contact = () => {
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
-                </FormField>
+                </div>
 
-                <FormField label="Mobile Number" hint="Please enter with country code">
+                <div>
+                  <label htmlFor="mobile_number" className="block text-sm font-medium text-gray-700 mb-2">Mobile Number</label>
                   <div className="flex">
-                    <div className="flex items-center bg-muted/50 border border-r-0 border-border/60 px-3 rounded-l-lg gap-2">
+                    <div className="flex items-center bg-gray-50 border border-r-0 border-gray-300 px-3 rounded-l-md">
                       <img
                         src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyMCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE0IiByeD0iMiIgZmlsbD0iI0ZGOTkzMyIvPgo8cmVjdCB5PSI0LjY2NjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iNC42NjY2NyIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSI5LjMzMzMzIiB3aWR0aD0iMjAiIGhlaWdodD0iNC42NjY2NyIgZmlsbD0iIzEzOEE0NiIvPgo8L3N2Zz4K"
                         alt="India flag"
                         width={20}
                         height={14}
-                        className="w-5 h-3.5"
+                        className="w-5 h-4 mr-2"
                       />
-                      <span className="text-sm text-muted-foreground font-medium">+91</span>
+                      <span className="text-sm text-gray-600">+91</span>
                     </div>
                     <Input
                       id="mobile_number"
                       type="tel"
                       value={formData.mobile_number}
                       onChange={(e) => handleInputChange("mobile_number", e.target.value)}
-                      className="flex-1 border-l-0 rounded-l-none h-11 rounded-r-lg border-border/60 bg-muted/30 focus:bg-white transition-colors"
+                      className="flex-1 border-l-0 rounded-l-none border-gray-300"
                     />
                   </div>
-                </FormField>
+                  <p className="text-xs text-gray-500 mt-1">Please enter the mobile number with your country code</p>
+                </div>
 
-                <FormField label="Campaign Details" required>
+                <div>
+                  <label htmlFor="project_description" className="block text-sm font-medium text-gray-700 mb-2">Campaign Details*</label>
                   <Textarea
                     id="project_description"
                     value={formData.project_description}
                     onChange={(e) => handleInputChange("project_description", e.target.value)}
                     rows={4}
-                    className="rounded-lg border-border/60 bg-muted/30 focus:bg-white transition-colors resize-none placeholder:text-muted-foreground/50"
-                    placeholder="Describe your campaign goals, target audience, and budget..."
+                    className="w-full border-gray-300"
+                    placeholder="Describe your campaign briefly"
                     required
                   />
-                </FormField>
+                </div>
 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-12 rounded-lg bg-[hsl(217,80%,48%)] hover:bg-[hsl(217,80%,42%)] text-white font-semibold text-base shadow-md hover:shadow-lg transition-all duration-200 mt-2 group"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium disabled:opacity-50"
                 >
-                  {isSubmitting ? (
-                    "Submitting..."
-                  ) : (
-                    <>
-                      Submit Inquiry
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                    </>
-                  )}
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </Button>
               </form>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </Layout>
   );
 };
-
-/* ── Sub-components ── */
-
-const ContactInfoItem = ({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) => (
-  <div className="flex items-start gap-4">
-    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">{icon}</div>
-    <div>
-      <p className="text-xs font-medium uppercase tracking-wider text-white/50 mb-1">{label}</p>
-      <p className="text-white/90 text-sm leading-relaxed">{value}</p>
-    </div>
-  </div>
-);
-
-const FormField = ({
-  label,
-  required,
-  hint,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  hint?: string;
-  children: React.ReactNode;
-}) => (
-  <div>
-    <label className="block text-sm font-medium text-foreground mb-1.5">
-      {label}
-      {required && <span className="text-destructive ml-0.5">*</span>}
-    </label>
-    {children}
-    {hint && <p className="text-xs text-muted-foreground mt-1">{hint}</p>}
-  </div>
-);
 
 export default Contact;

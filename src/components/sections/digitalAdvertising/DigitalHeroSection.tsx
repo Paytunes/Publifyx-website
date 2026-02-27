@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, TrendingUp, Target, BarChart } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const DigitalHeroSection = () => {
   return (
@@ -17,23 +16,19 @@ const DigitalHeroSection = () => {
           </p>
           
           <div className="flex flex-wrap gap-4 mb-12">
-            <Link to="/contact">
-              <Button 
-                size="lg" 
-                className="bg-white text-purple-primary hover:bg-gray-100 font-bold px-10 py-7 text-lg h-auto shadow-lg"
-              >
-                Get Platform Rates
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white/10 font-bold px-10 py-7 text-lg h-auto"
-              >
-                Talk to an Expert
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              className="bg-white text-purple-primary hover:bg-gray-100 font-bold px-10 py-7 text-lg h-auto shadow-lg"
+            >
+              Get Platform Rates
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-2 border-white text-white hover:bg-white/10 font-bold px-10 py-7 text-lg h-auto"
+            >
+              Talk to an Expert
+            </Button>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">

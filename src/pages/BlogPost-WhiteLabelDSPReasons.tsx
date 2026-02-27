@@ -48,7 +48,7 @@ const BlogPostWhiteLabelDSPReasons = () => {
   };
 
   useEffect(() => {
-    document.title = "5 Reasons Agencies Should Consider a White-Label DSP — PublifyX";
+    document.title = "5 Reasons Agencies Should Consider a White-Label DSP | PublifyX";
 
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -58,7 +58,7 @@ const BlogPostWhiteLabelDSPReasons = () => {
     }
     metaDescription.setAttribute(
       "content",
-      "Brand ownership, margin control, AI-driven optimization, multi-format capabilities, and long-term scalability — why agencies are adopting white-label DSPs.",
+      "Learn why agencies should adopt white-label DSPs: brand ownership, margin control, AI-driven optimization, multi-format capabilities, and long-term scalability.",
     );
 
     let schemaScript = document.getElementById("faq-schema-whitelabel") as HTMLScriptElement | null;
