@@ -6,17 +6,17 @@ const Footer = () => {
     <footer className="bg-navy-900 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top: Logo + Link Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/">
-            <img
+              <img
                 src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.webp"
                 alt="PublifyX"
                 className="h-8"
                 width={171}
                 height={32}
-                style={{ aspectRatio: '171/32' }}
+                style={{ aspectRatio: "171/32" }}
               />
             </Link>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
@@ -33,7 +33,7 @@ const Footer = () => {
                   className="text-primary-foreground/60 hover:text-white  flex gap-2 items-start transition-colors duration-200"
                 >
                   <Icon size={21} aria-hidden="true" />
-                   <span className="font-medium">Follow Us on LinkedIn</span>
+                  <span className="font-medium">Follow Us on LinkedIn</span>
                 </a>
               ))}
             </div>
