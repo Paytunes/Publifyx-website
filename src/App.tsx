@@ -28,6 +28,7 @@ const OnlineBannerAdvertising = lazy(() => import("./pages/OnlineBannerAdvertisi
 const DigitalAdvertising = lazy(() => import("./pages/DigitalAdvertising"));
 const AdInsights = lazy(() => import("./pages/AdInsights"));
 const Services = lazy(() => import("./pages/Services"));
+const CEO = lazy(() => import("./pages/CEO"));
 
 // Existing blog posts
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
@@ -87,6 +88,7 @@ const App = () => (
             <Route path="/integrations" element={<Integrations />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/about" element={<About />} />
+            <Route path="/saurabh" element={<CEO />} />
             <Route path="/white-label-dsp-vs-self-serve-dsp" element={<WhiteLabelVsSelfServe />} />
             <Route path="/ctv-advertising-india" element={<CTVAdvertisingIndia />} />
 
