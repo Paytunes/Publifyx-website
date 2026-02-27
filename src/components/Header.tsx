@@ -36,6 +36,7 @@ const Header = () => {
   const isHome = location.pathname === "/";
   const isContact = location.pathname.includes("/contact");
   const isBlog = location.pathname.includes("/blog");
+  const isFounders = location.pathname.includes("/saurabh");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -45,7 +46,7 @@ const Header = () => {
 
   const linkClass = scrolled
     ? "text-navy-600 hover:text-brand-orange-500"
-    : isContact
+    : isContact || isFounders
       ? "text-navy-600 hover:text-brand-orange-500"
       : "text-white hover:text-brand-orange-300";
 
