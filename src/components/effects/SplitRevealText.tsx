@@ -15,7 +15,7 @@ const SplitRevealText = ({ text, className = "", delay = 0 }: SplitRevealTextPro
         <span key={i} className="inline-block overflow-hidden mr-[0.3em]">
           <motion.span
             className="inline-block"
-            initial={{ y: "110%" }}
+            initial={{ y: 0 }}
             animate={{ y: 0 }}
             transition={{
               duration: 0.6,

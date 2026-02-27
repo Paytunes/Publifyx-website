@@ -35,15 +35,10 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8"
-            >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
               <Sparkles className="w-4 h-4 text-brand-orange-400" />
               <span className="text-sm font-medium text-white/80">AI-Powered Ad-Tech Platform</span>
-            </motion.div>
+            </div>
 
             <h1 className="mb-6 !text-white leading-[1.1]">
               <SplitRevealText text="Launch High-Performance" delay={0.2} />
@@ -52,15 +47,10 @@ const HeroSection = () => {
               </span>
             </h1>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="text-lg md:text-xl text-navy-200 mb-10 max-w-lg leading-relaxed"
-            >
+            <p className="text-lg md:text-xl text-navy-200 mb-10 max-w-lg leading-relaxed">
               Leverage AI for seamless creativity, simplify OTT advertising, and maximize ROI with white-labeled DSP
               solutions.
-            </motion.p>
+            </p>
 
             <EnergyButton className="bg-brand-orange-600 mb-4 w-fit hover:bg-brand-orange-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25">
               <Link to="/contact" className="flex items-center text-white no-underline">
@@ -69,13 +59,7 @@ const HeroSection = () => {
               </Link>
             </EnergyButton>
 
-            {/* Trust metrics */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              className="flex items-center gap-8 pt-8 border-t border-white/10"
-            >
+            <div className="flex items-center gap-8 pt-8 border-t border-white/10">
               {[
                 { icon: Globe, value: "300+", label: "Publishers" },
                 { icon: BarChart3, value: "10M+", label: "Daily Users" },
@@ -89,7 +73,7 @@ const HeroSection = () => {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Visual */}
