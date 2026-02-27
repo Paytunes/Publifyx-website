@@ -3,7 +3,7 @@ import { Palette, Globe, Upload, Settings, Users, Shield } from "lucide-react";
 const WhiteLabelMockup = () => (
   <div className="grid md:grid-cols-5 gap-4">
     {/* Branding Panel */}
-    <div className="md:col-span-3 space-y-4">
+    <div className="md:col-span-3 space-y-4 overflow-scroll">
       {/* Custom branding preview */}
       <div className="rounded-xl border border-navy-100 bg-white p-4">
         <div className="text-xs font-semibold text-navy-400 mb-3 flex items-center gap-1.5">
@@ -27,7 +27,10 @@ const WhiteLabelMockup = () => (
           </div>
           <div className="p-3 bg-navy-50 flex gap-3">
             {["Dashboard", "Campaigns", "Reports", "Settings"].map((item, i) => (
-              <span key={item} className={`text-[11px] font-medium px-2 py-1 rounded ${i === 0 ? "bg-white text-navy-800 shadow-sm" : "text-navy-400"}`}>
+              <span
+                key={item}
+                className={`text-[11px] font-medium px-2 py-1 rounded ${i === 0 ? "bg-white text-navy-800 shadow-sm" : "text-navy-400"}`}
+              >
                 {item}
               </span>
             ))}
