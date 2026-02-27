@@ -24,7 +24,7 @@ const solutions = [
     title: "White-Labeled DSP Solutions",
     description:
       "Customized DSP platforms for corporate media agencies with self-branded reporting portals and campaign management tools.",
-    image: "/lovable-uploads/d0e4d426-d705-4d55-8135-97e8afdf1613.png",
+    image: "/lovable-uploads/d0e4d426-d705-4d55-8135-97e8afdf1613.webp",
     alt: "Smartphone showing ad interface – DSP solution",
   },
 ];
