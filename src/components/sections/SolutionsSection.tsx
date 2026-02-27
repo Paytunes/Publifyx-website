@@ -71,7 +71,7 @@ const SolutionsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
+            className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3"
           >
             What We Offer
           </motion.p>
