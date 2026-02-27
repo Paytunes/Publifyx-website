@@ -8,11 +8,11 @@ const ceoSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://www.publifyx.com/saurabh",
-  "name": "Saurabh",
-  "jobTitle": "CEO",
-  "worksFor": {
-    "@id": "https://www.publifyx.com/#organization"
-  }
+  name: "Saurabh",
+  jobTitle: "CEO",
+  worksFor: {
+    "@id": "https://www.publifyx.com/#organization",
+  },
 };
 
 const CEO = () => {
@@ -20,7 +20,10 @@ const CEO = () => {
     document.title = "Capt. Saurabh Tiwari – CEO of PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "Meet Capt. Saurabh Tiwari, Co-Founder & CEO of PublifyX – an AI-powered, white-labeled DSP platform powering programmatic advertising for brands and agencies.");
+      meta.setAttribute(
+        "content",
+        "Meet Capt. Saurabh Tiwari, Co-Founder & CEO of PublifyX – an AI-powered, white-labeled DSP platform powering programmatic advertising for brands and agencies.",
+      );
     }
 
     const script = document.createElement("script");
@@ -40,16 +43,10 @@ const CEO = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-10">
-            <a href="/saurabh" className="text-sm text-primary font-medium tracking-wide uppercase">
-              Meet the Founder
-            </a>
+            <p className="text-sm text-primary font-medium tracking-wide uppercase">Meet the Founder</p>
           </nav>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             {/* Founder Image */}
             <img
               src={founderImage}
@@ -70,31 +67,46 @@ const CEO = () => {
 
             <div className="space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed">
               <p>
-                Saurabh Tiwari is not your typical tech entrepreneur. Before building one of India's most innovative advertising platforms, he commanded ships across the world's oceans — a career that shaped his instinct for precision, his leadership under pressure, and his ability to navigate uncharted waters.
+                Saurabh Tiwari is not your typical tech entrepreneur. Before building one of India's most innovative
+                advertising platforms, he commanded ships across the world's oceans — a career that shaped his instinct
+                for precision, his leadership under pressure, and his ability to navigate uncharted waters.
               </p>
               <p>
-                Today, he channels that same boldness into PublifyX — an AI-powered, white-labeled DSP (Demand-Side Platform) designed to make digital advertising effortless for brands and agencies across India. Having established a strong foothold in India, Saurabh is now setting his sights on the United States, bringing PublifyX's next-generation adtech capabilities to one of the world's largest advertising markets.
+                Today, he channels that same boldness into PublifyX — an AI-powered, white-labeled DSP (Demand-Side
+                Platform) designed to make digital advertising effortless for brands and agencies across India. Having
+                established a strong foothold in India, Saurabh is now setting his sights on the United States, bringing
+                PublifyX's next-generation adtech capabilities to one of the world's largest advertising markets.
               </p>
 
               <h2 className="text-2xl md:text-3xl font-bold text-foreground pt-6">The Journey</h2>
               <p>
-                From the deck of a vessel to the boardroom of a fast-growing adtech startup, Saurabh's career spans over a decade of diverse leadership. As a certified Captain with Anglo-Eastern Ship Management, he led complex maritime operations before pivoting into media and advertising — where he found a new kind of ocean to navigate.
+                From the deck of a vessel to the boardroom of a fast-growing adtech startup, Saurabh's career spans over
+                a decade of diverse leadership. As a certified Captain with Anglo-Eastern Ship Management, he led
+                complex maritime operations before pivoting into media and advertising — where he found a new kind of
+                ocean to navigate.
               </p>
               <p>
-                He went on to head regional sales for HIT 95 FM across West and South India, and co-founded Rids Media Pvt. Ltd., honing his expertise in business development and advertising sales. These experiences became the foundation for his boldest venture yet.
+                He went on to head regional sales for HIT 95 FM across West and South India, and co-founded Rids Media
+                Pvt. Ltd., honing his expertise in business development and advertising sales. These experiences became
+                the foundation for his boldest venture yet.
               </p>
 
               <h2 className="text-2xl md:text-3xl font-bold text-foreground pt-6">Building PublifyX</h2>
               <p>
-                In 2023, Saurabh co-founded PublifyX Tech Pvt. Ltd. with a clear mission: to become India's largest marketplace for all kinds of advertising. The platform empowers brands and agencies to plan and execute multi-format campaigns — including CTV, digital audio, podcasts, banners, video, and OTT — all from a single, unified interface, powered by AI.
+                In 2023, Saurabh co-founded PublifyX Tech Pvt. Ltd. with a clear mission: to become India's largest
+                marketplace for all kinds of advertising. The platform empowers brands and agencies to plan and execute
+                multi-format campaigns — including CTV, digital audio, podcasts, banners, video, and OTT — all from a
+                single, unified interface, powered by AI.
               </p>
               <p>
-                What sets PublifyX apart is its zero-upfront-cost, white-label model, which removes the traditional barriers for agencies looking to scale their media capabilities without heavy investment.
+                What sets PublifyX apart is its zero-upfront-cost, white-label model, which removes the traditional
+                barriers for agencies looking to scale their media capabilities without heavy investment.
               </p>
 
               <h2 className="text-2xl md:text-3xl font-bold text-foreground pt-6">Vision</h2>
               <blockquote className="border-l-4 border-primary pl-6 italic text-foreground/80">
-                "I believe in the power of learning, adapting, and innovating. The future of advertising is AI-driven — and we're building it."
+                "I believe in the power of learning, adapting, and innovating. The future of advertising is AI-driven —
+                and we're building it."
                 <br />
                 <span className="not-italic font-semibold text-foreground">— Capt. Saurabh Tiwari</span>
               </blockquote>
@@ -110,7 +122,8 @@ const CEO = () => {
 
               <h2 className="text-2xl md:text-3xl font-bold text-foreground pt-6">Let's Connect</h2>
               <p>
-                Saurabh is always open to strategic collaborations, partnerships, and conversations about the future of AI-driven advertising in India.
+                Saurabh is always open to strategic collaborations, partnerships, and conversations about the future of
+                AI-driven advertising in India.
               </p>
               <div className="flex flex-col gap-3 text-foreground">
                 <span className="flex items-center gap-2">
