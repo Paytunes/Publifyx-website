@@ -27,6 +27,7 @@ const CTVAdvertisingIndia = lazy(() => import("./pages/CTVAdvertisingIndia"));
 const OnlineBannerAdvertising = lazy(() => import("./pages/OnlineBannerAdvertising"));
 const DigitalAdvertising = lazy(() => import("./pages/DigitalAdvertising"));
 const AdInsights = lazy(() => import("./pages/AdInsights"));
+const Services = lazy(() => import("./pages/Services"));
 
 // Existing blog posts
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
@@ -80,6 +81,7 @@ const App = () => (
             <Route path="/pricing" element={<Pricing />} />
 
             {/* Supporting Pages */}
+            <Route path="/services" element={<Services />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/features" element={<Features />} />
             <Route path="/integrations" element={<Integrations />} />
