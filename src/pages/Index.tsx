@@ -1,28 +1,25 @@
-import { lazy, Suspense } from "react";
+
 import Layout from "@/components/Layout";
 import HeroSection from "@/components/sections/HeroSection";
-
-const SolutionsSection = lazy(() => import("@/components/sections/SolutionsSection"));
-const ProductsSection = lazy(() => import("@/components/sections/ProductsSection"));
-const AdInActionSection = lazy(() => import("@/components/sections/AdInActionSection"));
-const StatisticsSection = lazy(() => import("@/components/sections/StatisticsSection"));
-const JoinRevolutionSection = lazy(() => import("@/components/sections/JoinRevolutionSection"));
-const CTASection = lazy(() => import("@/components/sections/CTASection"));
-const FAQSection = lazy(() => import("@/components/sections/FAQSection"));
+import SolutionsSection from "@/components/sections/SolutionsSection";
+import ProductsSection from "@/components/sections/ProductsSection";
+import AdInActionSection from "@/components/sections/AdInActionSection";
+import StatisticsSection from "@/components/sections/StatisticsSection";
+import JoinRevolutionSection from "@/components/sections/JoinRevolutionSection";
+import CTASection from "@/components/sections/CTASection";
+import FAQSection from "@/components/sections/FAQSection";
 
 const Index = () => {
   return (
     <Layout transparentHeader>
       <HeroSection />
-      <Suspense fallback={null}>
-        <SolutionsSection />
-        <ProductsSection />
-        <AdInActionSection />
-        <StatisticsSection />
-        <JoinRevolutionSection />
-        <CTASection />
-        <FAQSection />
-      </Suspense>
+      <SolutionsSection />
+      <ProductsSection />
+      <AdInActionSection />
+      <StatisticsSection />
+      <JoinRevolutionSection />
+      <CTASection />
+      <FAQSection />
     </Layout>
   );
 };
