@@ -155,7 +155,7 @@ const Header = () => {
               <nav className="flex flex-col space-y-1 px-2">
                 <Link
                   to="/"
-                  className="text-navy-700 hover:text-brand-orange-500 font-medium py-2.5 px-3 rounded-lg hover:bg-navy-50 transition-colors"
+                  className="text-navy-700 active:text-brand-orange-500 font-medium py-2.5 px-3 rounded-lg active:bg-navy-50 transition-colors touch-manipulation"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
@@ -167,7 +167,7 @@ const Header = () => {
                     key={link.to}
                     to={link.to}
                     state={{ fromServices: true }}
-                    className="text-navy-600 hover:text-brand-orange-500 font-medium py-2 px-3 pl-5 rounded-lg hover:bg-navy-50 transition-colors text-sm"
+                    className="text-navy-600 active:text-brand-orange-500 font-medium py-2 px-3 pl-5 rounded-lg active:bg-navy-50 transition-colors text-sm touch-manipulation"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
@@ -179,7 +179,7 @@ const Header = () => {
                   <Link
                     key={link.to}
                     to={link.to}
-                    className="text-navy-600 hover:text-brand-orange-500 font-medium py-2 px-3 pl-5 rounded-lg hover:bg-navy-50 transition-colors text-sm"
+                    className="text-navy-600 active:text-brand-orange-500 font-medium py-2 px-3 pl-5 rounded-lg active:bg-navy-50 transition-colors text-sm touch-manipulation"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
@@ -188,19 +188,19 @@ const Header = () => {
 
                 <Link
                   to="/blog"
-                  className="text-navy-700 hover:text-brand-orange-500 font-medium py-2.5 px-3 rounded-lg hover:bg-navy-50 transition-colors"
+                  className="text-navy-700 active:text-brand-orange-500 font-medium py-2.5 px-3 rounded-lg active:bg-navy-50 transition-colors touch-manipulation"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Blog
                 </Link>
                 <Link
                   to="/contact"
-                  className="text-navy-700 hover:text-brand-orange-500 font-medium py-2.5 px-3 rounded-lg hover:bg-navy-50 transition-colors"
+                  className="text-navy-700 active:text-brand-orange-500 font-medium py-2.5 px-3 rounded-lg active:bg-navy-50 transition-colors touch-manipulation"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact
                 </Link>
-                <Link to="/contact" className="btn-primary text-center mt-2 block" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/contact" className="btn-primary text-center mt-2 block touch-manipulation" onClick={() => setIsMenuOpen(false)}>
                   Get Started
                 </Link>
               </nav>
