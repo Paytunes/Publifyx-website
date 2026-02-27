@@ -604,28 +604,16 @@ const CTVAdvertising = () => {
             <h3 className="text-lg font-bold text-navy-900 mb-4">Explore Related Services</h3>
             <div className="flex flex-wrap gap-3">
               <Link
-                to="/ott-advertising"
+                to="/white-label-dsp"
                 className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
               >
-                OTT Advertising
-              </Link>
-              <Link
-                to="/programmatic-video-advertising"
-                className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
-              >
-                Video Advertising
+                White Label DSP
               </Link>
               <Link
                 to="/ctv-advertising-india"
                 className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
               >
                 CTV in India
-              </Link>
-              <Link
-                to="/white-label-dsp"
-                className="text-sm bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
-              >
-                White Label DSP
               </Link>
             </div>
           </div>
