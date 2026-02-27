@@ -59,46 +59,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/ott-advertising"
-                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
-                >
-                  OTT Advertising
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/programmatic-audio-advertising"
-                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
-                >
-                  Programmatic Audio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/programmatic-display-advertising"
-                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
-                >
-                  Programmatic Display
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/programmatic-video-advertising"
-                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
-                >
-                  Programmatic Video
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/dsp-for-agencies"
-                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
-                >
-                  DSP for Agencies
-                </Link>
-              </li>
-              <li>
                 <Link to="/pricing" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
                   Pricing
                 </Link>

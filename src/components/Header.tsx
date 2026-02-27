@@ -11,11 +11,6 @@ import {
 const serviceLinks = [
   { to: "/white-label-dsp", label: "White Label DSP" },
   { to: "/ctv-advertising", label: "CTV Advertising" },
-  { to: "/ott-advertising", label: "OTT Advertising" },
-  { to: "/programmatic-audio-advertising", label: "Audio Advertising" },
-  { to: "/programmatic-display-advertising", label: "Display Advertising" },
-  { to: "/programmatic-video-advertising", label: "Video Advertising" },
-  { to: "/dsp-for-agencies", label: "DSP for Agencies" },
 ];
 
 const resourceLinks = [
