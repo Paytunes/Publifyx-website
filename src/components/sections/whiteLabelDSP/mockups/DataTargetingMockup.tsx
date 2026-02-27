@@ -17,7 +17,7 @@ const segments = [
 const DataTargetingMockup = () => (
   <div className="grid md:grid-cols-5 gap-4">
     {/* Segmentation dashboard */}
-    <div className="md:col-span-3 space-y-4">
+    <div className="md:col-span-3 space-y-4 test-3">
       {/* Filter bar */}
       <div className="rounded-xl border border-navy-100 bg-white p-4">
         <div className="text-xs font-semibold text-navy-400 mb-3 flex items-center gap-1.5">

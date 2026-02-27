@@ -10,7 +10,7 @@ const devices = [
 const CTVMockup = () => (
   <div className="grid md:grid-cols-5 gap-4">
     {/* TV Mockup */}
-    <div className="md:col-span-3 space-y-4">
+    <div className="md:col-span-3 space-y-4 test-4">
       {/* Smart TV Frame */}
       <div className="rounded-xl border-2 border-navy-200 bg-navy-800 p-1 relative">
         <div className="rounded-lg overflow-hidden aspect-video relative">
@@ -30,7 +30,9 @@ const CTVMockup = () => (
             </div>
             <div className="flex gap-2 flex-1">
               <div className="flex-1 rounded-lg bg-gradient-to-br from-brand-orange-500/30 to-navy-700 border border-white/10 p-3 flex flex-col justify-end relative overflow-hidden">
-                <div className="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-brand-orange-500 text-[8px] text-white font-bold">AD</div>
+                <div className="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-brand-orange-500 text-[8px] text-white font-bold">
+                  AD
+                </div>
                 <div className="h-2 w-2/3 rounded bg-white/30 mb-1" />
                 <div className="h-1.5 w-1/2 rounded bg-white/20" />
               </div>
@@ -53,7 +55,9 @@ const CTVMockup = () => (
         <div className="flex items-center justify-between gap-2">
           {devices.map((d, i) => (
             <div key={d.label} className="flex flex-col items-center gap-1.5 flex-1">
-              <div className={`w-10 h-10 rounded-xl ${i === 0 ? "bg-brand-orange-50" : "bg-navy-50"} flex items-center justify-center`}>
+              <div
+                className={`w-10 h-10 rounded-xl ${i === 0 ? "bg-brand-orange-50" : "bg-navy-50"} flex items-center justify-center`}
+              >
                 <d.icon className={`w-5 h-5 ${i === 0 ? "text-brand-orange-500" : "text-navy-400"}`} />
               </div>
               <span className="text-[10px] font-medium text-navy-600">{d.label}</span>
@@ -89,7 +93,8 @@ const CTVMockup = () => (
           <BarChart3 className="w-3.5 h-3.5" /> Streaming Platforms
         </div>
         <p className="text-[11px] text-navy-500 leading-relaxed">
-          Access premium inventory across top OTT and streaming platforms. Serve ads on connected TVs, streaming sticks, and smart devices.
+          Access premium inventory across top OTT and streaming platforms. Serve ads on connected TVs, streaming sticks,
+          and smart devices.
         </p>
       </div>
     </div>
