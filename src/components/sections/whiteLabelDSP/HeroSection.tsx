@@ -43,7 +43,7 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
               <span className="block text-brand-orange-400">Demand Side Platform</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
+            <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
               Launching a demand side platform from scratch used to mean years of development, massive engineering
               costs, and complex exchange integrations. With PublifyX, it doesn't.
             </p>

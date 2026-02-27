@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Palette, Layers, Zap, Target, BarChart3, Settings, Headphones } from "lucide-react";
+import { Palette, Layers, Zap, Target, BarChart3, Settings } from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
 
 const features = [
@@ -38,12 +38,6 @@ const features = [
       "Configure the platform for self-serve advertiser access or use it as a managed service tool for your internal media buying team.",
     icon: Settings,
   },
-  {
-    title: "Dedicated Support & Onboarding",
-    description:
-      "Our ad tech specialists guide you through platform setup, SSP integrations, and campaign optimization best practices.",
-    icon: Headphones,
-  },
 ];
 
 const FeaturesSection = () => {
@@ -72,7 +66,7 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.4 }}
-              className={i === features.length - 1 ? "md:col-span-2 lg:col-span-1" : ""}
+              className=""
             >
               <MagneticCard className="group bg-navy-50 rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
                 <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
