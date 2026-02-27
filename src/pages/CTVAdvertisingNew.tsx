@@ -140,6 +140,141 @@ const faqs = [
   },
 ];
 
+const ctvSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "CTV Advertising Platform",
+    "serviceType": "Connected TV Advertising",
+    "provider": {
+      "@type": "Organization",
+      "name": "PublifyX",
+      "url": "https://www.publifyx.com"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "description": "Launch data-driven connected TV advertising campaigns with PublifyX. Reach households across premium streaming platforms with programmatic targeting and real-time reporting.",
+    "url": "https://www.publifyx.com/ctv-advertising",
+    "category": "Programmatic Advertising",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.publifyx.com/ctv-advertising",
+      "availability": "https://schema.org/InStock"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PublifyX CTV Advertising Platform",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web-based",
+    "description": "A programmatic CTV advertising platform enabling agencies and advertisers to reach connected TV audiences with household-level targeting and real-time reporting.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "PublifyX"
+    },
+    "featureList": [
+      "Premium CTV inventory access",
+      "Household-level targeting",
+      "Cross-device retargeting",
+      "Real-time campaign reporting",
+      "Brand safety controls",
+      "White label CTV capabilities"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.publifyx.com/ctv-advertising",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between CTV and OTT advertising?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CTV refers specifically to ads viewed on a television screen through an internet-connected device. OTT is a broader term that covers content and ads delivered via the internet across all devices including smartphones, tablets, laptops, and TVs. CTV is a subset of OTT."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What video formats are supported for CTV ads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PublifyX supports 15-second and 30-second video ad formats for CTV campaigns. Creatives should be in MP4 or MOV format, optimized for full-screen, high-definition television viewing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I target specific geographic areas with CTV advertising?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PublifyX supports geographic targeting at the country, state, city, DMA (designated market area), and zip code level for CTV campaigns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is CTV advertising measured?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Key CTV metrics include impressions, video completion rate (VCR), unique household reach, frequency, and cost per completed view (CPCV). PublifyX also supports attribution measurement for website visits and conversions driven by CTV exposure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is CTV advertising only for large brands?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. CTV advertising is accessible to businesses of all sizes. With programmatic buying through PublifyX, you can start with flexible budgets and scale based on performance results."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.publifyx.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.publifyx.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "CTV Advertising",
+        "item": "https://www.publifyx.com/ctv-advertising"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "reviewBody": "CTV campaigns through PublifyX delivered stronger completion rates than any other video channel we've tested. The targeting precision gave us both reach and relevance.",
+    "author": {
+      "@type": "Person",
+      "name": "Marketing Head, Leading D2C Brand"
+    },
+    "itemReviewed": {
+      "@type": "Service",
+      "name": "PublifyX CTV Advertising Platform"
+    }
+  }
+];
+
 const CTVAdvertising = () => {
   useEffect(() => {
     document.title = "CTV Advertising Platform | Programmatic Connected TV Ads — PublifyX";
@@ -149,8 +284,19 @@ const CTVAdvertising = () => {
         "content",
         "Launch data-driven CTV campaigns with PublifyX's connected TV advertising platform. Target households across premium streaming inventory.",
       );
+
+    const scripts: HTMLScriptElement[] = ctvSchemas.map((schema, i) => {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.id = `ctv-schema-${i}`;
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+      return script;
+    });
+
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
+      scripts.forEach(s => s.remove());
     };
   }, []);
 
