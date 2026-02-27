@@ -110,11 +110,11 @@ const SolutionsSection = () => {
                     src={solution.image}
                     alt={solution.alt}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                    width={384}
+                    width={400}
                     height={208}
                     loading="lazy"
                     decoding="async"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 92vw, 30vw"
                   />
                 </div>
                 <div className="p-7">
