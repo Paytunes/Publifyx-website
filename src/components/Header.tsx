@@ -139,13 +139,13 @@ const Header = () => {
               {isMenuOpen ? (
                 <X
                   size={24}
-                  className={scrolled ? "text-navy-800" : isContact || isFounders ? "text-white" : "text-navy-800"}
+                  className={scrolled ? "text-navy-800" : isContact || isFounders ? "text-navy-800":"text-white" : }
                   aria-hidden="true"
                 />
               ) : (
                 <Menu
                   size={24}
-                  className={scrolled ? "text-navy-800" : isContact || isFounders ? "text-white" : "text-navy-800"}
+                  className={scrolled ? "text-navy-800" : isContact || isFounders ?  "text-navy-800":"text-white" :}
                   aria-hidden="true"
                 />
               )}
