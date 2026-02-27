@@ -8,7 +8,7 @@ const solutions = [
     title: "AI-Powered Creativity",
     description:
       "Create captivating audio and video content effortlessly with advanced AI algorithms that ensure natural, engaging creativity in seconds.",
-    image: "/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.png",
+    image: "/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.webp",
     alt: "Person editing ad video on phone using AI",
   },
   {
