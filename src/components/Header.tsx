@@ -36,7 +36,7 @@ const Header = () => {
   const isHome = location.pathname === "/";
   const isContact = location.pathname.includes("/contact");
   const isBlog = location.pathname.includes("/blog");
-  const isFounders = location.pathname.includes("/saurabh" || "/privacy_policy" || "/terms_and_conditions");
+  const isFounders = ["/saurabh", "/privacy_policy", "/terms_and_conditions"].some(p => location.pathname.includes(p));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
