@@ -1,14 +1,17 @@
 import Layout from "@/components/Layout";
-import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock } from "lucide-react";
+import { Calendar, Clock, Sparkles, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { blogPosts } from "@/data/blogPosts";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
+import MagneticCard from "@/components/effects/MagneticCard";
+import EnergyButton from "@/components/effects/EnergyButton";
 
 const Blog = () => {
   useEffect(() => {
     const prev = document.title;
-    document.title = "Digital Advertising Blog & Insights | PublifyX";
+    document.title = "Programmatic Advertising Blog & Insights — PublifyX";
     return () => { document.title = prev; };
   }, []);
 
@@ -16,133 +19,208 @@ const Blog = () => {
   const rest = blogPosts.slice(1);
 
   return (
-    <Layout>
-      {/* Hero Section — editorial style */}
-      <section className="bg-white border-b border-gray-200 pt-14 pb-10">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#ff7200] mb-4">
-            PublifyX Blog
-          </span>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
-            Insights & Analysis
-          </h1>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Stay updated with the latest trends, strategies, and deep dives in digital advertising and ad tech.
-          </p>
-        </div>
-      </section>
+    <Layout transparentHeader>
+      {/* Hero */}
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-navy-800">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
 
-      {/* Featured Post */}
-      <section className="bg-white py-12">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link to={`/blog/${featured.slug}`} className="group block">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="overflow-hidden rounded-lg">
-                <img
-                  src={featured.image}
-                  alt={featured.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="sync"
-                />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <PageBreadcrumb items={[{ label: "Home", path: "/" }, { label: "Blog" }]} />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
+                <Sparkles className="w-4 h-4 text-brand-orange-400" />
+                <span className="text-sm font-medium text-white/80">PublifyX Blog</span>
               </div>
-              <div>
-                <Badge className="bg-[#ff7200] hover:bg-orange-600 text-white text-xs font-bold uppercase tracking-wider mb-4">
-                  {featured.category}
-                </Badge>
-                <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight mb-3 group-hover:text-[#ff7200] transition-colors">
-                  {featured.title}
-                </h2>
-                <p className="text-gray-500 leading-relaxed mb-4 line-clamp-3">
-                  {featured.excerpt}
-                </p>
-                <div className="flex items-center gap-4 text-sm text-gray-400 font-medium">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5" />
-                    {featured.date}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5" />
-                    {featured.readTime}
-                  </span>
+              <h1 className="mb-6 !text-white leading-[1.1]">
+                Ad Tech Insights &
+                <span className="block text-brand-orange-400">Industry Analysis</span>
+              </h1>
+              <p className="text-lg md:text-xl text-navy-200 mb-10 leading-relaxed max-w-xl">
+                Stay ahead with the latest trends, strategies, and deep dives in programmatic advertising, DSP technology, and digital media buying.
+              </p>
+              <div className="flex items-center gap-6 text-navy-300">
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-brand-orange-400" />
+                  <span className="text-sm font-semibold">{blogPosts.length} Articles</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-semibold">Updated Weekly</span>
                 </div>
               </div>
-            </div>
-          </Link>
+            </motion.div>
+
+            {/* Featured Post Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 40, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="hidden lg:block"
+            >
+              <Link to={`/blog/${featured.slug}`} className="group block">
+                <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden hover:border-brand-orange-500/30 transition-all duration-300">
+                  <img
+                    src={featured.image}
+                    alt={featured.title}
+                    className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="eager"
+                    fetchPriority="high"
+                  />
+                  <div className="p-6">
+                    <span className="inline-block text-xs font-bold uppercase tracking-widest text-brand-orange-400 mb-3">
+                      {featured.category}
+                    </span>
+                    <h3 className="text-xl font-bold text-white mb-3 leading-snug group-hover:text-brand-orange-400 transition-colors line-clamp-2">
+                      {featured.title}
+                    </h3>
+                    <p className="text-navy-300 text-sm leading-relaxed mb-4 line-clamp-2">
+                      {featured.excerpt}
+                    </p>
+                    <div className="flex items-center gap-4 text-xs text-navy-400 font-medium">
+                      <span className="flex items-center gap-1.5">
+                        <Calendar className="w-3.5 h-3.5" /> {featured.date}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Clock className="w-3.5 h-3.5" /> {featured.readTime}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <hr className="border-gray-200" />
-      </div>
+      {/* Articles Grid */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
+            >
+              Latest Articles
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-extrabold text-navy-800"
+            >
+              Explore Our Latest Content
+            </motion.h2>
+          </div>
 
-      {/* Blog Posts Grid */}
-      <section className="py-12 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">
-            Latest Articles
-          </h2>
+          {/* Mobile Featured Post */}
+          <div className="lg:hidden mb-10">
+            <Link to={`/blog/${featured.slug}`} className="group block">
+              <div className="rounded-2xl overflow-hidden border border-navy-100 hover:shadow-lg transition-all">
+                <img src={featured.image} alt={featured.title} className="w-full h-48 object-cover" loading="eager" />
+                <div className="p-5">
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-orange-500">{featured.category}</span>
+                  <h3 className="text-lg font-bold text-navy-800 mt-2 mb-2 group-hover:text-brand-orange-500 transition-colors">{featured.title}</h3>
+                  <div className="flex items-center gap-3 text-xs text-navy-400">
+                    <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{featured.date}</span>
+                    <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{featured.readTime}</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {rest.map((post, index) => (
-              <Link key={post.id} to={`/blog/${post.slug}`} className="group block">
-                <article>
-                  <div className="overflow-hidden rounded-lg mb-4">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      width={600}
-                      height={400}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading={index === 0 ? "eager" : "lazy"}
-                      decoding={index === 0 ? "sync" : "async"}
-                    />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#ff7200]">
-                    {post.category}
-                  </span>
-                  <h3 className="text-lg font-bold text-gray-900 mt-2 mb-2 leading-snug group-hover:text-[#ff7200] transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-3 line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center gap-3 text-xs text-gray-400 font-medium">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
-                      {post.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {post.readTime}
-                    </span>
-                  </div>
-                </article>
-              </Link>
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.06 }}
+              >
+                <Link to={`/blog/${post.slug}`} className="group block h-full">
+                  <MagneticCard className="bg-white rounded-2xl border border-navy-100 overflow-hidden hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                    <div className="overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading={index < 3 ? "eager" : "lazy"}
+                      />
+                    </div>
+                    <div className="p-6 flex flex-col flex-1">
+                      <span className="text-xs font-bold uppercase tracking-widest text-brand-orange-500 mb-2">
+                        {post.category}
+                      </span>
+                      <h3 className="text-lg font-bold text-navy-800 mb-2 leading-snug group-hover:text-brand-orange-500 transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
+                      <p className="text-navy-400 text-sm leading-relaxed mb-4 line-clamp-2 flex-1">
+                        {post.excerpt}
+                      </p>
+                      <div className="flex items-center gap-3 text-xs text-navy-400 font-medium mt-auto">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3" /> {post.date}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3 h-3" /> {post.readTime}
+                        </span>
+                      </div>
+                    </div>
+                  </MagneticCard>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-16 bg-gray-900 text-white">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold mb-3 text-white">Subscribe to Our Newsletter</h2>
-          <p className="text-gray-400 mb-8">Get the latest advertising insights delivered straight to your inbox</p>
+      {/* CTA Section */}
+      <section className="py-16 bg-navy-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange-500 rounded-full blur-[250px] opacity-10" />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,114,0,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,114,0,0.3) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+        >
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 !text-white">Subscribe to Our Newsletter</h2>
+          <p className="text-navy-300 mb-8 text-lg">Get the latest advertising insights delivered straight to your inbox</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+            <label htmlFor="newsletter-email" className="sr-only">Email address</label>
             <input
+              id="newsletter-email"
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#ff7200] border-0"
+              aria-label="Email address for newsletter"
+              className="flex-1 px-4 py-3 rounded-xl text-navy-800 bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange-500 border-0"
             />
-            <button className="bg-[#ff7200] hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+            <EnergyButton className="inline-flex items-center bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-6 py-3 rounded-xl font-semibold transition-colors">
               Subscribe
-            </button>
+            </EnergyButton>
           </div>
-        </div>
+        </motion.div>
       </section>
     </Layout>
   );

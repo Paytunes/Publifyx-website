@@ -138,19 +138,21 @@ const GetStartedForm = ({ onClose }: GetStartedFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 mt-6">
-      <PersonalInfoFields formData={formData} onInputChange={handleInputChange} />
-      <AddressFields formData={formData} onInputChange={handleInputChange} />
-      <GSTINField formData={formData} onInputChange={handleInputChange} />
-
+    <>
+      <form onSubmit={handleSubmit} className="space-y-6 mt-6 overflow-y-scroll">
+        <PersonalInfoFields formData={formData} onInputChange={handleInputChange} />
+        <AddressFields formData={formData} onInputChange={handleInputChange} />
+        <GSTINField formData={formData} onInputChange={handleInputChange} />
+      </form>
       <Button
         type="submit"
+        onClick={handleSubmit}
         disabled={isSubmitting}
         className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-medium text-lg disabled:opacity-50"
       >
         {isSubmitting ? "Creating dashboard..." : "Create dashboard"}
       </Button>
-    </form>
+    </>
   );
 };
 

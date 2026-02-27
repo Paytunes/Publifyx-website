@@ -11,12 +11,12 @@ const BlogPostConnectedTVAdvertising = () => {
   useEffect(() => {
     const prev = document.title;
     document.title =
-      "Connected TV Advertising: A Complete Guide | PublifyX Blog";
+      "Connected TV Advertising: Complete Guide — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     const originalDesc = meta?.getAttribute("content") || "";
     meta?.setAttribute(
       "content",
-      "Learn how Connected TV advertising works, its benefits, targeting options, and how to launch your first CTV campaign to reach cord-cutters and streaming audiences."
+      "How CTV advertising works, its benefits, targeting options, and how to launch your first connected TV campaign to reach cord-cutters and streaming audiences."
     );
     return () => {
       document.title = prev;

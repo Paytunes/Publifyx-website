@@ -1,43 +1,62 @@
 import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
+import EnergyButton from "@/components/effects/EnergyButton";
 
 const JoinRevolutionSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const imgY = useTransform(scrollYProgress, [0, 1], [40, -40]);
+
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section ref={sectionRef} className="py-12 md:py-16 bg-navy-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-1">
-            <div className="w-16 h-16 bg-blue-primary rounded-full flex items-center justify-center mb-6">
-              <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
+          >
+            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-4">
+              Join Us
+            </span>
             <h2 className="mb-6 text-left">Join the Digital Advertising Revolution</h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed text-left">
-              Are you ready to be a part of the future of digital advertising? Join PublifyX in revolutionizing the
-              industry and shaping the way businesses connect with their audiences. Whether you're a creative thinker, a
-              tech enthusiast, or a marketing expert, there's a place for you on our team. Together, we'll push the
-              boundaries of what's possible, innovate relentlessly, and redefine the standards of excellence in digital
-              advertising. Join us on this exciting journey as we transform the way businesses advertise and engage with
-              their customers. Let's revolutionize digital advertising together.
+            <p className="text-lg text-navy-400 mb-8 leading-relaxed">
+              Be part of the future of digital advertising. Whether you're a creative thinker, tech enthusiast, or
+              marketing expert, there's a place for you. Together, we'll push boundaries, innovate relentlessly, and
+              redefine excellence in digital advertising.
             </p>
-            <button className="bg-[#ff7200] hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:scale-105">
-              <Link to="/contact" className="block w-full h-full">
-                Join us!
+            <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+              <Link to="/contact" className="flex items-center text-white no-underline group">
+                Join Us
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </button>
-          </div>
-          <div className="order-2">
+            </EnergyButton>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.33, 1, 0.68, 1] }}
+            style={{ y: imgY }}
+          >
             <img
-              src="/lovable-uploads/378f516e-ced5-4d46-999b-0075f2957d7a.png"
+              src="/lovable-uploads/378f516e-ced5-4d46-999b-0075f2957d7a.webp"
               alt="Podcast recording studio – audio ad production setup"
-              className="w-full h-auto rounded-lg shadow-lg"
+              className="w-full h-auto rounded-2xl shadow-xl"
               width={584}
               height={624}
               loading="lazy"
               decoding="async"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
