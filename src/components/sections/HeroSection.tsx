@@ -62,7 +62,7 @@ const HeroSection = () => {
               solutions.
             </motion.p>
 
-            <EnergyButton className="bg-brand-orange-500 mb-4 w-fit hover:bg-brand-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25">
+            <EnergyButton className="bg-brand-orange-600 mb-4 w-fit hover:bg-brand-orange-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25">
               <Link to="/contact" className="flex items-center text-white no-underline">
                 Get Your White Label DSP
                 <ArrowRight className="ml-2 w-5 h-5" />

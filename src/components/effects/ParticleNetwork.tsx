@@ -14,9 +14,10 @@ const ParticleNetwork = () => {
   const particles = useRef<Particle[]>([]);
   const mouse = useRef({ x: -1000, y: -1000 });
   const raf = useRef<number>(0);
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const init = useCallback((w: number, h: number) => {
-    const count = Math.min(Math.floor((w * h) / 18000), 80);
+    const count = isMobile ? 0 : Math.min(Math.floor((w * h) / 18000), 80);
     particles.current = Array.from({ length: count }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
@@ -110,6 +111,8 @@ const ParticleNetwork = () => {
       canvas.removeEventListener("mousemove", onMouse);
     };
   }, [init]);
+
+  if (isMobile) return null;
 
   return (
     <canvas

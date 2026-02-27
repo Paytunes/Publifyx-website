@@ -208,9 +208,12 @@ const Blog = () => {
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4 !text-white">Subscribe to Our Newsletter</h2>
           <p className="text-navy-300 mb-8 text-lg">Get the latest advertising insights delivered straight to your inbox</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+            <label htmlFor="newsletter-email" className="sr-only">Email address</label>
             <input
+              id="newsletter-email"
               type="email"
               placeholder="Enter your email"
+              aria-label="Email address for newsletter"
               className="flex-1 px-4 py-3 rounded-xl text-navy-800 bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange-500 border-0"
             />
             <EnergyButton className="inline-flex items-center bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-6 py-3 rounded-xl font-semibold transition-colors">

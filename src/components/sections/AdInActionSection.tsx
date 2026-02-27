@@ -150,9 +150,12 @@ const AdInActionSection = () => {
                       </div>
 
                       <div className="mt-4">
+                        <label htmlFor="audio-seek" className="sr-only">Seek audio</label>
                         <input
+                          id="audio-seek"
                           type="range"
                           className="cursor-pointer w-full accent-white"
+                          aria-label="Seek audio position"
                           value={currentTime}
                           max={duration}
                           onChange={(e) => {
