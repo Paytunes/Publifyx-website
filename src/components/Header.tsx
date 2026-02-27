@@ -31,7 +31,9 @@ const Header = () => {
   const isHome = location.pathname === "/";
   const isContact = location.pathname.includes("/contact");
   const isBlog = location.pathname.includes("/blog");
-  const isFounders = ["/saurabh", "/privacy_policy", "/terms_and_conditions"].some(p => location.pathname.includes(p));
+  const isFounders = ["/saurabh", "/privacy_policy", "/terms_and_conditions"].some((p) =>
+    location.pathname.includes(p),
+  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -143,7 +145,7 @@ const Header = () => {
               ) : (
                 <Menu
                   size={24}
-                  className={scrolled ? "text-navy-800" : isHome ? "text-white" : "text-navy-800"}
+                  className={scrolled ? "text-navy-800" : isContact || isFounders ? "text-white" : "text-navy-800"}
                   aria-hidden="true"
                 />
               )}
@@ -200,7 +202,11 @@ const Header = () => {
                 >
                   Contact
                 </Link>
-                <Link to="/contact" className="btn-primary text-center mt-2 block touch-manipulation" onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  to="/contact"
+                  className="btn-primary text-center mt-2 block touch-manipulation"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Get Started
                 </Link>
               </nav>
