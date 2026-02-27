@@ -11,11 +11,6 @@ import Contact from "./pages/Contact";
 
 // Lazy-loaded pages
 const CTVAdvertisingNew = lazy(() => import("./pages/CTVAdvertisingNew"));
-const OTTAdvertising = lazy(() => import("./pages/OTTAdvertising"));
-const ProgrammaticAudioAdvertising = lazy(() => import("./pages/ProgrammaticAudioAdvertising"));
-const ProgrammaticDisplayAdvertising = lazy(() => import("./pages/ProgrammaticDisplayAdvertising"));
-const ProgrammaticVideoAdvertising = lazy(() => import("./pages/ProgrammaticVideoAdvertising"));
-const DSPForAgencies = lazy(() => import("./pages/DSPForAgencies"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const HowItWorks = lazy(() => import("./pages/HowItWorks"));
 const Features = lazy(() => import("./pages/Features"));
@@ -74,11 +69,6 @@ const App = () => (
             {/* Core Service Pages */}
             <Route path="/ctv-advertising" element={<CTVAdvertisingNew />} />
             <Route path="/connected-tv-advertising" element={<CTVAdvertisingNew />} />
-            <Route path="/ott-advertising" element={<OTTAdvertising />} />
-            <Route path="/programmatic-audio-advertising" element={<ProgrammaticAudioAdvertising />} />
-            <Route path="/programmatic-display-advertising" element={<ProgrammaticDisplayAdvertising />} />
-            <Route path="/programmatic-video-advertising" element={<ProgrammaticVideoAdvertising />} />
-            <Route path="/dsp-for-agencies" element={<DSPForAgencies />} />
             <Route path="/pricing" element={<Pricing />} />
 
             {/* Supporting Pages */}

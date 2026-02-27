@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Monitor, Tv, Radio, Video, PlayCircle, Users } from "lucide-react";
+import { Monitor, Tv } from "lucide-react";
 
 const services = [
   {
@@ -17,37 +17,13 @@ const services = [
     icon: Tv,
     path: "/ctv-advertising",
   },
-  {
-    title: "OTT Advertising",
-    description: "Deliver targeted ads across OTT platforms with real-time performance tracking.",
-    icon: PlayCircle,
-    path: "/ott-advertising",
-  },
-  {
-    title: "Programmatic Audio",
-    description: "Run audio ads on streaming, podcast, and digital radio platforms programmatically.",
-    icon: Radio,
-    path: "/programmatic-audio-advertising",
-  },
-  {
-    title: "Programmatic Video",
-    description: "Engage audiences with pre-roll, mid-roll, and outstream video ads across premium inventory.",
-    icon: Video,
-    path: "/programmatic-video-advertising",
-  },
-  {
-    title: "DSP for Agencies",
-    description: "Purpose-built programmatic platform for agencies seeking margin control and brand ownership.",
-    icon: Users,
-    path: "/dsp-for-agencies",
-  },
 ];
 
 const Services = () => {
   useEffect(() => {
     document.title = "Services — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Explore PublifyX services: White Label DSP, CTV, OTT, Audio, Video, and Display programmatic advertising solutions.");
+    if (meta) meta.setAttribute("content", "Explore PublifyX services: White Label DSP and CTV programmatic advertising solutions.");
   }, []);
 
   return (
@@ -72,7 +48,7 @@ const Services = () => {
             </motion.p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {services.map((service, i) => (
               <motion.div
                 key={service.title}
