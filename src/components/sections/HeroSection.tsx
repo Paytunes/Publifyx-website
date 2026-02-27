@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { ArrowRight, Sparkles, BarChart3, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import SplitRevealText from "@/components/effects/SplitRevealText";
+
 import EnergyButton from "@/components/effects/EnergyButton";
 
 const ParticleNetwork = lazy(() => import("@/components/effects/ParticleNetwork"));
@@ -41,9 +41,9 @@ const HeroSection = () => {
             </div>
 
             <h1 className="mb-6 !text-white leading-[1.1]">
-              <SplitRevealText text="Launch High-Performance" delay={0.2} />
+              Launch High-Performance
               <span className="block text-brand-orange-400">
-                <SplitRevealText text="Digital Campaigns" delay={0.5} />
+                Digital Campaigns
               </span>
             </h1>
 
@@ -52,7 +52,7 @@ const HeroSection = () => {
               solutions.
             </p>
 
-            <EnergyButton className="bg-brand-orange-600 mb-4 w-fit hover:bg-brand-orange-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25">
+            <EnergyButton className="bg-brand-orange-700 mb-4 w-fit hover:bg-brand-orange-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25">
               <Link to="/contact" className="flex items-center text-white no-underline">
                 Get Your White Label DSP
                 <ArrowRight className="ml-2 w-5 h-5" />

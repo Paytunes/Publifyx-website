@@ -10,12 +10,13 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/">
-              <img
+            <img
                 src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.webp"
                 alt="PublifyX"
-                className="h-8 w-auto"
+                className="h-8"
                 width={171}
                 height={32}
+                style={{ aspectRatio: '171/32' }}
               />
             </Link>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
