@@ -5,9 +5,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Blog from "./pages/Blog";
-import WhiteLabelDSP from "./pages/WhiteLabelDSP";
-import Contact from "./pages/Contact";
+
+// Critical pages - eager loaded
+const WhiteLabelDSP = lazy(() => import("./pages/WhiteLabelDSP"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Blog = lazy(() => import("./pages/Blog"));
 
 // Lazy-loaded pages
 const CTVAdvertisingNew = lazy(() => import("./pages/CTVAdvertisingNew"));
@@ -25,13 +27,11 @@ const AdInsights = lazy(() => import("./pages/AdInsights"));
 const Services = lazy(() => import("./pages/Services"));
 const CEO = lazy(() => import("./pages/CEO"));
 
-// Existing blog posts
+// Blog posts
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
 const BlogPostAdTechTrends2026 = lazy(() => import("./pages/BlogPost-AdTechTrends2026"));
 const BlogPostWhiteLabelDSPReasons = lazy(() => import("./pages/BlogPost-WhiteLabelDSPReasons"));
 const BlogPostConnectedTVAdvertising = lazy(() => import("./pages/BlogPost-ConnectedTVAdvertising"));
-
-// New Phase 3 blog posts
 const BlogPostWhatIsWhiteLabelDSP = lazy(() => import("./pages/BlogPost-WhatIsWhiteLabelDSP"));
 const BlogPostHowToLaunchDSP = lazy(() => import("./pages/BlogPost-HowToLaunchDSP"));
 const BlogPostCTVvsOTT = lazy(() => import("./pages/BlogPost-CTVvsOTT"));
@@ -87,13 +87,11 @@ const App = () => (
             <Route path="/digital-advertising" element={<DigitalAdvertising />} />
             <Route path="/ad-insights" element={<AdInsights />} />
 
-            {/* Blog Posts — Existing */}
+            {/* Blog Posts */}
             <Route path="/blog/online-banner-advertising-guide-2026" element={<BlogPostOnlineBannerAdvertising2026 />} />
             <Route path="/blog/ad-tech-trends-2026" element={<BlogPostAdTechTrends2026 />} />
             <Route path="/blog/white-label-dsp-reasons" element={<BlogPostWhiteLabelDSPReasons />} />
             <Route path="/blog/connected-tv-advertising-guide" element={<BlogPostConnectedTVAdvertising />} />
-
-            {/* Blog Posts — Phase 3 */}
             <Route path="/blog/what-is-a-white-label-dsp" element={<BlogPostWhatIsWhiteLabelDSP />} />
             <Route path="/blog/how-to-launch-your-own-dsp" element={<BlogPostHowToLaunchDSP />} />
             <Route path="/blog/ctv-vs-ott-advertising" element={<BlogPostCTVvsOTT />} />
