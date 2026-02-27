@@ -111,11 +111,11 @@
 
   .btn-primary {
     @apply text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl;
-    background: linear-gradient(135deg, hsl(27 100% 50%), hsl(27 100% 42%));
+    background: linear-gradient(135deg, hsl(27 100% 42%), hsl(27 100% 35%));
   }
 
   .btn-primary:hover {
-    background: linear-gradient(135deg, hsl(27 100% 42%), hsl(27 100% 35%));
+    background: linear-gradient(135deg, hsl(27 100% 35%), hsl(27 100% 28%));
   }
 
   .btn-secondary {

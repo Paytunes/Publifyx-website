@@ -31,8 +31,8 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-primary-foreground/60 hover:text-white  flex gap-2 items-start transition-colors duration-200"
                 >
-                  <Icon size={21} />
-                  <h5 className="font-medium">Follow Us on LinkedIn</h5>
+                  <Icon size={21} aria-hidden="true" />
+                   <span className="font-medium">Follow Us on LinkedIn</span>
                 </a>
               ))}
             </div>

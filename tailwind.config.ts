@@ -51,6 +51,7 @@ export default {
 					400: 'hsl(27 100% 55%)',
 					500: 'hsl(27 100% 50%)',
 					600: 'hsl(27 100% 42%)',
+					700: 'hsl(27 100% 35%)',
 				},
 				// Legacy aliases
 				'blue-primary': 'hsl(220 47% 12%)',
