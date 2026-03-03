@@ -26,25 +26,10 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           // Isolate framer-motion — it's 300KB+ and only needed for animations
           "framer-motion": ["framer-motion"],
-          // All Radix UI primitives grouped together — loaded async
-          "radix-ui": [
-            "@radix-ui/react-accordion",
-            "@radix-ui/react-dialog",
-            "@radix-ui/react-dropdown-menu",
-            "@radix-ui/react-label",
-            "@radix-ui/react-popover",
-            "@radix-ui/react-select",
-            "@radix-ui/react-separator",
-            "@radix-ui/react-slot",
-            "@radix-ui/react-toast",
-            "@radix-ui/react-tooltip",
-          ],
           // React core + router kept lean and fast
           "react-vendor": ["react", "react-dom", "react-router-dom"],
           // Tanstack query separate chunk
           "query": ["@tanstack/react-query"],
-          // Recharts — only used on AdInsights page
-          "recharts": ["recharts"],
           // Lucide icons — large icon set
           "lucide": ["lucide-react"],
         },
