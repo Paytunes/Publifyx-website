@@ -1,0 +1,32 @@
+# Cache-Control headers for Publifyx website
+# Immutable assets get 1-year TTL (content-hashed by Vite)
+# HTML gets no-cache so updates are immediate
+
+# ── Vite-generated hashed assets (JS/CSS bundles) ── immutable, 1 year
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── Static images in public/lovable-uploads ── 1 year (filenames are UUIDs, effectively immutable)
+/lovable-uploads/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── Favicon and logos ── 1 week
+/favicon.ico
+  Cache-Control: public, max-age=604800
+
+/logo.png
+  Cache-Control: public, max-age=604800
+
+# ── Robots and Sitemap ── 1 day
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+# ── HTML root ── always revalidate so deployments take effect immediately
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

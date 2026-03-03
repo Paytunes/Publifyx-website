@@ -1,14 +1,17 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Check, Play, Pause, SkipBack, SkipForward, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
+import { useReveal } from "@/hooks/useReveal";
 
 const AdInActionSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(30);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  const leftRef = useReveal<HTMLDivElement>();
+  const rightRef = useReveal<HTMLDivElement>();
 
   const handlePlayPause = () => {
     if (audioRef.current) {
@@ -45,16 +48,13 @@ const AdInActionSection = () => {
   }, []);
 
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="py-12 md:py-16 bg-white below-fold">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="order-2 lg:order-1"
+          <div
+            ref={leftRef as React.RefObject<HTMLDivElement>}
+            className="reveal reveal-left order-2 lg:order-1"
           >
             <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-4">
               See It In Action
@@ -72,7 +72,7 @@ const AdInActionSection = () => {
               ].map((text) => (
                 <div key={text} className="flex items-start gap-4">
                   <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-green-600" />
+                    <Check className="w-3.5 h-3.5 text-green-600" aria-hidden="true" />
                   </div>
                   <span className="text-navy-500 leading-relaxed">{text}</span>
                 </div>
@@ -82,36 +82,33 @@ const AdInActionSection = () => {
             <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
               <Link to="/contact" className="flex items-center text-white no-underline group">
                 Request a demo
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </EnergyButton>
-          </motion.div>
+          </div>
 
           {/* Right Phone Mockup */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="order-1 lg:order-2 flex justify-center"
+          <div
+            ref={rightRef as React.RefObject<HTMLDivElement>}
+            className="reveal reveal-right order-1 lg:order-2 flex justify-center"
           >
             <div className="relative">
               <div className="bg-navy-900 rounded-[3rem] p-1 shadow-2xl max-w-[280px]">
-                <hr className="absolute left-0 top-20 w-1 h-8 bg-navy-600 border-0" />
-                <hr className="absolute left-0 top-32 w-1 h-12 bg-navy-600 border-0" />
-                <hr className="absolute left-0 top-48 w-1 h-12 bg-navy-600 border-0" />
-                <hr className="absolute right-0 top-32 w-1 h-12 bg-navy-600 border-0" />
+                <hr className="absolute left-0 top-20 w-1 h-8 bg-navy-600 border-0" aria-hidden="true" />
+                <hr className="absolute left-0 top-32 w-1 h-12 bg-navy-600 border-0" aria-hidden="true" />
+                <hr className="absolute left-0 top-48 w-1 h-12 bg-navy-600 border-0" aria-hidden="true" />
+                <hr className="absolute right-0 top-32 w-1 h-12 bg-navy-600 border-0" aria-hidden="true" />
 
                 <div className="bg-navy-900 rounded-[2.5rem] overflow-hidden relative">
-                  <hr className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-navy-900 border-0 rounded-b-lg" />
+                  <hr className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-navy-900 border-0 rounded-b-lg" aria-hidden="true" />
 
-                  <div className="absolute top-4 left-1/2 -translate-x-1/2">
+                  <div className="absolute top-4 left-1/2 -translate-x-1/2" aria-hidden="true">
                     <svg width="85" height="8" viewBox="0 0 711 107" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect width="711" height="107" rx="53.5" fill="#2B2B2B" />
                     </svg>
                   </div>
 
-                  <div className="absolute top-2 right-8">
+                  <div className="absolute top-2 right-8" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 133 125" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <ellipse cx="66.5" cy="62.5" rx="66.5" ry="62.5" fill="#2B2B2B" />
                     </svg>
@@ -133,6 +130,7 @@ const AdInActionSection = () => {
                         loading="lazy"
                         decoding="async"
                       />
+                      {/* Audio preload="none" — only loads when user presses Play */}
                       <audio
                         ref={audioRef}
                         src="https://publifyx-web-static.s3.ap-south-1.amazonaws.com/media/public/Mama+Earth+rev+30+sec+%282%29.mp3"
@@ -143,6 +141,7 @@ const AdInActionSection = () => {
                         <a
                           href="/"
                           target="_blank"
+                          rel="noopener noreferrer"
                           className="rounded-full bg-white border border-white px-4 py-1 text-navy-800 no-underline text-sm font-medium"
                         >
                           Know More
@@ -184,9 +183,9 @@ const AdInActionSection = () => {
                           className="bg-white rounded-full p-3 hover:bg-white/90 transition-colors"
                         >
                           {isPlaying ? (
-                            <Pause size={24} className="text-navy-800" />
+                            <Pause size={24} className="text-navy-800" aria-hidden="true" />
                           ) : (
-                            <Play size={24} className="text-navy-800" />
+                            <Play size={24} className="text-navy-800" aria-hidden="true" />
                           )}
                         </button>
                         <button className="text-white/70 hover:text-white transition-colors" aria-label="Next track">
@@ -211,7 +210,7 @@ const AdInActionSection = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

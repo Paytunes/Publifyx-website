@@ -138,6 +138,75 @@
   }
 }
 
+/* ══════════════════════════════════════════════════════════════
+   CSS-NATIVE PERFORMANCE ANIMATIONS
+   These replace framer-motion JS animations to reduce TBT/LCP
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Scroll Reveal (replaces framer-motion whileInView) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Staggered delays for card grids */
+.reveal-delay-1 { transition-delay: 0.10s; }
+.reveal-delay-2 { transition-delay: 0.20s; }
+.reveal-delay-3 { transition-delay: 0.30s; }
+
+/* Slide variants */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.reveal-left.reveal-visible  { opacity: 1; transform: none; }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.reveal-right.reveal-visible { opacity: 1; transform: none; }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.reveal-scale.reveal-visible { opacity: 1; transform: none; }
+
+/* ── Hero Image Reveal (CSS-only, replaces framer-motion initial opacity:0) ── */
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateX(28px) scale(0.97); }
+  to   { opacity: 1; transform: translateX(0)    scale(1); }
+}
+.animate-hero-reveal {
+  animation: heroReveal 0.75s cubic-bezier(0.33, 1, 0.68, 1) 0.12s both;
+}
+
+/* ── Float animation (replaces framer-motion animate={{ y: [0,-8,0] }}) ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ── content-visibility for below-fold sections (paint skipping) ── */
+.below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
 /* ── Energy Button Ripple ── */
 .energy-btn {
   background-size: 200% 100%;

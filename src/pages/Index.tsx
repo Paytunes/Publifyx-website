@@ -15,7 +15,8 @@ const Index = () => {
   return (
     <Layout transparentHeader>
       <HeroSection />
-      <Suspense fallback={null}>
+      {/* Min-height fallback prevents CLS (layout shift) as below-fold sections lazy-load */}
+      <Suspense fallback={<div style={{ minHeight: "2400px" }} aria-hidden="true" />}>
         <SolutionsSection />
         <ProductsSection />
         <AdInActionSection />
