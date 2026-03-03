@@ -1,6 +1,9 @@
 import { lazy, Suspense } from "react";
 import { ArrowRight, Sparkles, BarChart3, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+import EnergyButton from "@/components/effects/EnergyButton";
 
 const ParticleNetwork = lazy(() => import("@/components/effects/ParticleNetwork"));
 
@@ -49,15 +52,14 @@ const HeroSection = () => {
               solutions.
             </p>
 
-            <Link
-              to="/contact"
-              className="inline-flex items-center bg-brand-orange-700 hover:bg-brand-orange-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25 transition-colors touch-manipulation"
-            >
-              Get Your White Label DSP
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
+            <EnergyButton className="bg-brand-orange-700 mb-4 w-fit hover:bg-brand-orange-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25">
+              <Link to="/contact" className="flex items-center text-white no-underline">
+                Get Your White Label DSP
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </EnergyButton>
 
-            <div className="flex items-center gap-8 pt-8 mt-4 border-t border-white/10">
+            <div className="flex items-center gap-8 pt-8 border-t border-white/10">
               {[
                 { icon: Globe, value: "300+", label: "Publishers" },
                 { icon: BarChart3, value: "10M+", label: "Daily Users" },
@@ -74,9 +76,12 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Visual – CSS animation instead of framer-motion */}
-          <div
-            className="hidden lg:block animate-hero-fade-in"
+          {/* Visual */}
+          <motion.div
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="hidden lg:block"
           >
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 !bg-[#ffbf32]">
@@ -91,9 +96,11 @@ const HeroSection = () => {
                   sizes="50vw"
                 />
               </div>
-              {/* Floating card – CSS animation */}
-              <div
-                className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl animate-float"
+              {/* Floating card */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
@@ -104,9 +111,9 @@ const HeroSection = () => {
                     <div className="text-xs text-navy-400">Avg. Campaign</div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
