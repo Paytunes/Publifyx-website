@@ -1,17 +1,27 @@
 import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
 import EnergyButton from "@/components/effects/EnergyButton";
-import { useReveal } from "@/hooks/useReveal";
 
 const JoinRevolutionSection = () => {
-  const leftRef = useReveal<HTMLDivElement>();
-  const rightRef = useReveal<HTMLDivElement>();
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const imgY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section className="py-12 md:py-16 bg-navy-50 overflow-hidden below-fold">
+    <section ref={sectionRef} className="py-12 md:py-16 bg-navy-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div ref={leftRef as React.RefObject<HTMLDivElement>} className="reveal reveal-left">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
+          >
             <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-4">
               Join Us
             </span>
@@ -24,12 +34,18 @@ const JoinRevolutionSection = () => {
             <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
               <Link to="/contact" className="flex items-center text-white no-underline group">
                 Join Us
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </EnergyButton>
-          </div>
+          </motion.div>
 
-          <div ref={rightRef as React.RefObject<HTMLDivElement>} className="reveal reveal-right">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.33, 1, 0.68, 1] }}
+            style={{ y: imgY }}
+          >
             <img
               src="/lovable-uploads/378f516e-ced5-4d46-999b-0075f2957d7a.webp"
               alt="Podcast recording studio – audio ad production setup"
@@ -40,7 +56,7 @@ const JoinRevolutionSection = () => {
               decoding="async"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

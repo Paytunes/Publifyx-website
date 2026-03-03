@@ -1,62 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>White Label DSP Platform | Launch Your Programmatic Ad Business — PublifyX</title>
-    <meta name="description" content="Launch your own branded DSP in 15 minutes. Run programmatic campaigns across Display, Video, Audio, CTV &amp; OTT. Built for agencies, ad networks, and startups." />
-    <meta name="author" content="PublifyX" />
-    <meta name="google-site-verification" content="kO2qxGV3w7mB38rA-0igdztlIPoBs3j4ImHvKGJgMDo" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="White Label DSP Platform | Launch Your Programmatic Ad Business — PublifyX" />
-    <meta property="og:description" content="Launch your own branded DSP in 15 minutes. Run programmatic campaigns across Display, Video, Audio, CTV &amp; OTT. Built for agencies, ad networks, and startups." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@publifyx" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <!-- ── Critical inline CSS: prevents FOUC and sets hero background before JS loads ── -->
-    <style>
-      /* Prevents layout shift during JS hydration */
-      body { margin: 0; background: #0f172a; }
-      #root { min-height: 100vh; }
-      /* Below-fold sections get browser paint-skip hint */
-      .below-fold {
-        content-visibility: auto;
-        contain-intrinsic-size: 0 500px;
-      }
-    </style>
-
-    <!-- ── Preconnect: establish early TCP connections for critical third-parties ── -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
-    <!-- ── Fonts: non-blocking load via media="print" trick ── -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"></noscript>
-
-    <!-- ── Favicon ── -->
-    <link rel="icon" href="/lovable-uploads/03f79ad6-ab28-41f5-9484-52cb8eee9c72.png" type="image/png">
-
-    <!-- ── LCP Preload: hero image + critical font subset ── -->
-    <!-- Note: hero image is desktop-only (hidden lg:block), so mobile LCP is the h1 text -->
-    <!-- The h1 is never hidden behind opacity:0 so it paints immediately -->
-    <link rel="preload" href="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.webp" as="image" type="image/webp" fetchpriority="high" media="(min-width: 1024px)">
-    <link rel="preload" as="font" crossorigin href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" type="font/woff2">
-
-    <!-- ── Google Analytics: deferred via window.onload — never blocks render ── -->
+    <!-- Google tag (gtag.js) – deferred to avoid blocking FCP/LCP -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-7T3HNG79SY');
-      // Loads GA script after page is fully interactive
+      // Load GTM after page is interactive to avoid render-blocking
       window.addEventListener('load', function() {
         var s = document.createElement('script');
         s.async = true;
@@ -64,8 +15,34 @@
         document.head.appendChild(s);
       });
     </script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>White Label DSP Platform | Launch Your Programmatic Ad Business — PublifyX</title>
+    <meta name="description" content="Launch your own branded DSP in 15 minutes. Run programmatic campaigns across Display, Video, Audio, CTV & OTT. Built for agencies, ad networks, and startups." />
+    <meta name="author" content="PublifyX" />
+    <meta name="google-site-verification" content="kO2qxGV3w7mB38rA-0igdztlIPoBs3j4ImHvKGJgMDo" />
 
-    <!-- ── Schema: Organization ── -->
+    <meta property="og:title" content="White Label DSP Platform | Launch Your Programmatic Ad Business — PublifyX" />
+    <meta property="og:description" content="Launch your own branded DSP in 15 minutes. Run programmatic campaigns across Display, Video, Audio, CTV & OTT. Built for agencies, ad networks, and startups." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@publifyx" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="icon" href="/lovable-uploads/03f79ad6-ab28-41f5-9484-52cb8eee9c72.png" type="image/png">
+    <!-- Preload LCP hero image and critical font subset -->
+    <link rel="preload" href="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="font" crossorigin href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" type="font/woff2">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -93,7 +70,6 @@
     }
     </script>
 
-    <!-- ── Schema: WebSite ── -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -108,7 +84,6 @@
     }
     </script>
 
-    <!-- ── Schema: FAQPage ── -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -166,7 +141,6 @@
     }
     </script>
 
-    <!-- ── Schema: BreadcrumbList ── -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -186,8 +160,7 @@
   <body>
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <!-- defer is safe for type="module" — delays execution until after HTML is parsed -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module" defer></script>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

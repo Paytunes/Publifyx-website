@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, useState } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
 interface Particle {
   x: number;
@@ -16,36 +16,19 @@ const ParticleNetwork = () => {
   const raf = useRef<number>(0);
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
-  // Delay init by 1.2s so it never competes with LCP paint window
-  const [ready, setReady] = useState(false);
+  const init = useCallback((w: number, h: number) => {
+    const count = isMobile ? 0 : Math.min(Math.floor((w * h) / 18000), 80);
+    particles.current = Array.from({ length: count }, () => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      radius: Math.random() * 1.5 + 0.5,
+      opacity: Math.random() * 0.5 + 0.2,
+    }));
+  }, []);
 
   useEffect(() => {
-    if (isMobile) return;
-    const timer = setTimeout(() => setReady(true), 1200);
-    return () => clearTimeout(timer);
-  }, [isMobile]);
-
-  const init = useCallback(
-    (w: number, h: number) => {
-      const count = isMobile
-        ? 0
-        : Math.min(Math.floor((w * h) / 18000), 80);
-      particles.current = Array.from({ length: count }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.5 + 0.2,
-      }));
-    },
-    [isMobile]
-  );
-
-  useEffect(() => {
-    // Don't start until after the LCP window has closed
-    if (!ready) return;
-
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -66,8 +49,8 @@ const ParticleNetwork = () => {
     };
 
     resize();
-    window.addEventListener("resize", resize, { passive: true });
-    canvas.addEventListener("mousemove", onMouse, { passive: true });
+    window.addEventListener("resize", resize);
+    canvas.addEventListener("mousemove", onMouse);
 
     const draw = () => {
       const rect = canvas.getBoundingClientRect();
@@ -88,7 +71,7 @@ const ParticleNetwork = () => {
         const dy = p.y - mouse.current.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < 120) {
-          const force = ((120 - dist) / 120) * 0.02;
+          const force = (120 - dist) / 120 * 0.02;
           p.vx += dx * force;
           p.vy += dy * force;
         }
@@ -127,16 +110,15 @@ const ParticleNetwork = () => {
       window.removeEventListener("resize", resize);
       canvas.removeEventListener("mousemove", onMouse);
     };
-  }, [init, ready]); // depends on `ready` — won't start until 1.2s post-load
+  }, [init]);
 
-  // Never render on mobile or before the delay fires
-  if (isMobile || !ready) return null;
+  if (isMobile) return null;
 
   return (
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-auto"
-      aria-hidden="true"
+      style={{ willChange: "transform" }}
     />
   );
 };

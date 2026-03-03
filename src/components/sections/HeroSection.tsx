@@ -1,10 +1,10 @@
+import { lazy, Suspense } from "react";
 import { ArrowRight, Sparkles, BarChart3, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { motion } from "framer-motion";
+
 import EnergyButton from "@/components/effects/EnergyButton";
 
-// Lazy-load ParticleNetwork — starts 1.2s after load so it never
-// competes with LCP paint (see ParticleNetwork.tsx)
 const ParticleNetwork = lazy(() => import("@/components/effects/ParticleNetwork"));
 
 const HeroSection = () => {
@@ -13,7 +13,7 @@ const HeroSection = () => {
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
 
-      {/* Particle network — lazy-loaded, delayed 1.2s (see component) */}
+      {/* Particle network */}
       <Suspense fallback={null}>
         <ParticleNetwork />
       </Suspense>
@@ -33,14 +33,13 @@ const HeroSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Content — LCP text is NEVER hidden behind opacity:0 */}
+          {/* Content */}
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
-              <Sparkles className="w-4 h-4 text-brand-orange-400" aria-hidden="true" />
+              <Sparkles className="w-4 h-4 text-brand-orange-400" />
               <span className="text-sm font-medium text-white/80">AI-Powered Ad-Tech Platform</span>
             </div>
 
-            {/* h1 is the LCP element on mobile — must be immediately visible, no JS-gated animation */}
             <h1 className="mb-6 !text-white leading-[1.1]">
               Launch High-Performance
               <span className="block text-brand-orange-400">
@@ -56,7 +55,7 @@ const HeroSection = () => {
             <EnergyButton className="bg-brand-orange-700 mb-4 w-fit hover:bg-brand-orange-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25">
               <Link to="/contact" className="flex items-center text-white no-underline">
                 Get Your White Label DSP
-                <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </EnergyButton>
 
@@ -67,7 +66,7 @@ const HeroSection = () => {
                 { icon: Sparkles, value: "12K+", label: "Pin Codes" },
               ].map((m) => (
                 <div key={m.label} className="flex items-center gap-2">
-                  <m.icon className="w-5 h-5 text-brand-orange-400" aria-hidden="true" />
+                  <m.icon className="w-5 h-5 text-brand-orange-400" />
                   <div>
                     <div className="text-white font-bold text-lg">{m.value}</div>
                     <div className="text-navy-300 text-sm">{m.label}</div>
@@ -77,8 +76,13 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Hero image — CSS animation only, no JS opacity:0 initial state */}
-          <div className="hidden lg:block animate-hero-reveal">
+          {/* Visual */}
+          <motion.div
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="hidden lg:block"
+          >
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 !bg-[#ffbf32]">
                 <img
@@ -89,23 +93,27 @@ const HeroSection = () => {
                   height={721}
                   fetchPriority="high"
                   decoding="sync"
-                  sizes="(max-width: 1024px) 0vw, 50vw"
+                  sizes="50vw"
                 />
               </div>
-              {/* Floating card — CSS animation replaces framer-motion animate loop */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl animate-float">
+              {/* Floating card */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl"
+              >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <BarChart3 className="w-5 h-5 text-green-600" aria-hidden="true" />
+                    <BarChart3 className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
                     <div className="text-sm font-bold text-navy-800">+300% ROI</div>
                     <div className="text-xs text-navy-400">Avg. Campaign</div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
