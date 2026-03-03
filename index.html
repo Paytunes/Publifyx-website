@@ -155,12 +155,20 @@
       ]
     }
     </script>
+    <!-- Inline critical CSS: prevents FOUC and establishes above-the-fold render before any JS/CSS loads -->
+    <style>
+      *,*::before,*::after{box-sizing:border-box}
+      body{margin:0;font-family:"Inter",system-ui,sans-serif;background:#0f172a;color:#f8fafc}
+      #root{min-height:100vh;display:flex;flex-direction:column}
+      /* Hero section placeholder prevents layout shift */
+      .hero-critical{min-height:90vh;display:flex;align-items:center;background:linear-gradient(135deg,#0f172a 0%,#1e293b 60%,#1e3a5f 100%)}
+    </style>
   </head>
 
   <body>
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module" defer></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 
 interface Particle {
   x: number;
@@ -14,6 +14,7 @@ const ParticleNetwork = () => {
   const particles = useRef<Particle[]>([]);
   const mouse = useRef({ x: -1000, y: -1000 });
   const raf = useRef<number>(0);
+  const [ready, setReady] = useState(false);
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const init = useCallback((w: number, h: number) => {
@@ -28,7 +29,15 @@ const ParticleNetwork = () => {
     }));
   }, []);
 
+  // Delay canvas initialisation — prevents rAF loop from competing with LCP paint
   useEffect(() => {
+    if (isMobile) return;
+    const timer = setTimeout(() => setReady(true), 1200);
+    return () => clearTimeout(timer);
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (!ready) return;          // wait until after LCP window
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -110,9 +119,9 @@ const ParticleNetwork = () => {
       window.removeEventListener("resize", resize);
       canvas.removeEventListener("mousemove", onMouse);
     };
-  }, [init]);
+  }, [init, ready]);
 
-  if (isMobile) return null;
+  if (isMobile || !ready) return null;
 
   return (
     <canvas

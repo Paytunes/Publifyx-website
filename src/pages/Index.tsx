@@ -15,7 +15,7 @@ const Index = () => {
   return (
     <Layout transparentHeader>
       <HeroSection />
-      <Suspense fallback={null}>
+      <Suspense fallback={<div style={{ minHeight: "600px" }} aria-hidden="true" />}>
         <SolutionsSection />
         <ProductsSection />
         <AdInActionSection />
