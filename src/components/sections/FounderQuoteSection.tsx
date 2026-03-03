@@ -54,8 +54,8 @@ const FounderQuoteSection = ({ quote, name, title, showImage = true }: FounderQu
                 <img
                   src={founderPhoto}
                   alt={`${name}, ${title}`}
-                  width={112}
-                  height={112}
+                  width={168}
+                  height={168}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover"
