@@ -3,6 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hero fade-in animation – replaces framer-motion for LCP path */
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: translateX(40px) scale(0.95); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+.animate-hero-fade-in {
+  animation: hero-fade-in 0.8s 0.3s ease-out both;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
