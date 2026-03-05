@@ -9,10 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [
-    react(),
-    mode === "development" && componentTagger(),
-  ].filter(Boolean),
+  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -21,7 +18,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     // Merge all CSS into a single file injected directly in HTML <head>
     // This breaks the JS→CSS critical chain flagged by PageSpeed
-    cssCodeSplit: false,
+    cssCodeSplit: true,
     // Increase warning limit to avoid noise from intentional large vendor chunks
     chunkSizeWarningLimit: 600,
     rollupOptions: {
@@ -32,9 +29,9 @@ export default defineConfig(({ mode }) => ({
           // React core + router kept lean and fast
           "react-vendor": ["react", "react-dom", "react-router-dom"],
           // Tanstack query separate chunk
-          "query": ["@tanstack/react-query"],
+          query: ["@tanstack/react-query"],
           // Lucide icons — large icon set
-          "lucide": ["lucide-react"],
+          lucide: ["lucide-react"],
         },
       },
     },
