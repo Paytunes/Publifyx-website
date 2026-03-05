@@ -35,7 +35,7 @@ const BannerHeroSection = ({ onGetStarted, onWatchDemo }: BannerHeroSectionProps
   }, []);
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-gray-light via-white to-orange-50 relative overflow-hidden">
+    <section className="py-16 md:py-12 bg-gradient-to-br from-gray-light via-white to-orange-50 relative overflow-hidden">
       {/* Floating Banner Elements */}
       {floatingElements.map((element) => (
         <div

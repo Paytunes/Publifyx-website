@@ -50,7 +50,7 @@ const BannerCTASection = ({ onGetStarted }: BannerCTASectionProps) => {
   return (
     <section
       id="final-cta-section"
-      className="py-16 md:py-24 bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 relative overflow-hidden"
+      className="py-16 md:py-12 bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 relative overflow-hidden"
     >
       {/* Animated Background Elements */}
       {animatedElements.map((element) => (

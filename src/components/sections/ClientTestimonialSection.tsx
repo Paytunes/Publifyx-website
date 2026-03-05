@@ -77,7 +77,7 @@ const ClientTestimonialSection = ({
 
   if (variant === "grid") {
     return (
-      <section ref={ref} className="py-16 md:py-24 bg-white">
+      <section ref={ref} className="py-16 md:py-12 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Quote card */}
           <motion.div
