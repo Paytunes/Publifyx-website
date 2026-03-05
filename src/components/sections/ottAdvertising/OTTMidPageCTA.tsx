@@ -31,7 +31,7 @@ const OTTMidPageCTA = () => {
               </EnergyButton>
              
             </motion.div>
-          </div>F
+          </div>
         </div>
       </div>
     </section>
