@@ -76,7 +76,7 @@ const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
   const activeContent = tabs.find((t) => t.id === activeTab)!;
 
   return (
-    <section className="py-16 md:py-24 bg-navy-50">
+    <section className="py-12 md:py-16 bg-navy-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -128,9 +128,7 @@ const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`relative flex items-center gap-2 px-5 py-3 text-sm font-semibold rounded-t-xl transition-colors duration-200 whitespace-nowrap ${
-                      isActive
-                        ? "bg-navy-800 text-white"
-                        : "text-navy-400 hover:text-navy-700 hover:bg-navy-50"
+                      isActive ? "bg-navy-800 text-white" : "text-navy-400 hover:text-navy-700 hover:bg-navy-50"
                     }`}
                   >
                     <tab.icon className="w-4 h-4" />

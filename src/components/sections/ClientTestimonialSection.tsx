@@ -20,7 +20,7 @@ const ClientTestimonialSection = ({
 
   if (variant === "wide") {
     return (
-      <section ref={ref} className="py-16 md:py-24 bg-navy-50">
+      <section ref={ref} className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -31,7 +31,7 @@ const ClientTestimonialSection = ({
           >
             {/* Top gradient accent */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange-400 via-brand-orange-500 to-brand-orange-300" />
-            
+
             {/* Subtle quote mark background */}
             <Quote className="absolute top-6 right-8 w-16 h-16 text-navy-100 opacity-40" />
 
@@ -41,20 +41,14 @@ const ClientTestimonialSection = ({
                   <Sparkles className="w-5 h-5 text-brand-orange-500" />
                 </div>
                 <div>
-                  <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display">
-                    "{quote}"
-                  </p>
-                  <p className="text-sm font-semibold text-navy-400 mt-3">
-                    — {attribution}
-                  </p>
+                  <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display">"{quote}"</p>
+                  <p className="text-sm font-semibold text-navy-400 mt-3">— {attribution}</p>
                 </div>
               </div>
 
               {/* Results label */}
               <div className="mt-8 mb-4">
-                <p className="text-xs font-bold uppercase tracking-widest text-brand-orange-500">
-                  Results Snapshot
-                </p>
+                <p className="text-xs font-bold uppercase tracking-widest text-brand-orange-500">Results Snapshot</p>
               </div>
 
               {/* Horizontal animated chips */}
@@ -70,9 +64,7 @@ const ClientTestimonialSection = ({
                     <div className="w-7 h-7 rounded-lg bg-brand-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange-200 transition-colors">
                       <CheckCircle2 className="w-4 h-4 text-brand-orange-500" />
                     </div>
-                    <span className="text-sm font-semibold text-navy-700">
-                      {result}
-                    </span>
+                    <span className="text-sm font-semibold text-navy-700">{result}</span>
                   </motion.div>
                 ))}
               </div>
@@ -101,12 +93,8 @@ const ClientTestimonialSection = ({
                 <Sparkles className="w-5 h-5 text-brand-orange-500" />
               </div>
               <div>
-                <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display mb-4">
-                  "{quote}"
-                </p>
-                <p className="text-sm font-semibold text-navy-500">
-                  — {attribution}
-                </p>
+                <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display mb-4">"{quote}"</p>
+                <p className="text-sm font-semibold text-navy-500">— {attribution}</p>
               </div>
             </div>
           </motion.div>
@@ -138,9 +126,7 @@ const ClientTestimonialSection = ({
                   <div className="w-10 h-10 rounded-xl bg-brand-orange-500/15 flex items-center justify-center mb-4 group-hover:bg-brand-orange-500/25 transition-colors">
                     <CheckCircle2 className="w-5 h-5 text-brand-orange-400" />
                   </div>
-                  <p className="text-sm font-medium text-navy-100 leading-relaxed">
-                    {result}
-                  </p>
+                  <p className="text-sm font-medium text-navy-100 leading-relaxed">{result}</p>
                 </div>
               </motion.div>
             ))}
@@ -152,7 +138,7 @@ const ClientTestimonialSection = ({
 
   // Default: split 2-column layout
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-navy-50">
+    <section ref={ref} className="py-12 md:py-16 bg-navy-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8 items-stretch">
           {/* Left: Testimonial card with glassmorphism depth */}
@@ -170,13 +156,9 @@ const ClientTestimonialSection = ({
 
             <div className="relative z-10">
               <Sparkles className="w-5 h-5 text-brand-orange-500 mb-5" />
-              <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display mb-6">
-                "{quote}"
-              </p>
+              <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display mb-6">"{quote}"</p>
               <div className="w-10 h-px bg-navy-200 mb-3" />
-              <p className="text-sm font-semibold text-navy-500">
-                — {attribution}
-              </p>
+              <p className="text-sm font-semibold text-navy-500">— {attribution}</p>
             </div>
           </motion.div>
 
@@ -205,9 +187,7 @@ const ClientTestimonialSection = ({
                     <div className="w-10 h-10 rounded-xl bg-brand-orange-50 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange-100 transition-colors">
                       <CheckCircle2 className="w-5 h-5 text-brand-orange-500" />
                     </div>
-                    <p className="text-sm font-semibold text-navy-700 leading-snug">
-                      {result}
-                    </p>
+                    <p className="text-sm font-semibold text-navy-700 leading-snug">{result}</p>
                   </div>
                 </motion.div>
               ))}
