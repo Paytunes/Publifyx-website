@@ -78,14 +78,14 @@ const adFormats = [
     desc: "Ads inserted during natural breaks within longer-form content, targeted to specific audiences.",
   },
   { title: "Post-Roll Video Ads", desc: "Video ads that play after the content has concluded." },
-  {
-    title: "Interactive OTT Ads",
-    desc: "Formats allowing viewers to engage with clickable overlays and QR code prompts.",
-  },
-  {
-    title: "Companion Display Banners",
-    desc: "Display ads shown alongside the video player, reinforcing the video message with a visual banner.",
-  },
+  // {
+  //   title: "Interactive OTT Ads",
+  //   desc: "Formats allowing viewers to engage with clickable overlays and QR code prompts.",
+  // },
+  // {
+  //   title: "Companion Display Banners",
+  //   desc: "Display ads shown alongside the video player, reinforcing the video message with a visual banner.",
+  // },
 ];
 
 const steps = [
@@ -186,9 +186,6 @@ const OTTAdvertising = () => {
       {/* 1. HERO - centered with image below */}
       <OTTHero breadcrumbs={breadcrumbs} />
 
-     
-
-      
       {/* 3. WHAT IS OTT */}
 
       {/* What Is OTT */}
@@ -267,7 +264,7 @@ const OTTAdvertising = () => {
         </div>
       </section>
 
-       {/* 2. DEVICE SECTION - all platforms */}
+      {/* 2. DEVICE SECTION - all platforms */}
       <OTTDeviceSection />
       {/* Existing content interlude - Quote */}
       <FounderQuoteSection
@@ -429,7 +426,7 @@ const OTTAdvertising = () => {
               </motion.div>
             ))}
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -492,7 +489,7 @@ const OTTAdvertising = () => {
       <section className="py-12 bg-navy-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-navy-900" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-orange-500 rounded-full blur-[250px] opacity-[0.08]" />
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
