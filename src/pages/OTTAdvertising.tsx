@@ -521,18 +521,6 @@ const OTTAdvertising = () => {
                 CTV Advertising
               </Link>
               <Link
-                to="/programmatic-video-advertising"
-                className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
-              >
-                Video Advertising
-              </Link>
-              <Link
-                to="/programmatic-audio-advertising"
-                className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
-              >
-                Audio Advertising
-              </Link>
-              <Link
                 to="/white-label-dsp"
                 className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
               >

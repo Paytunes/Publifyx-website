@@ -60,6 +60,14 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="/ott-advertising"
+                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
+                >
+                  OTT Advertising
+                </Link>
+              </li>
+              <li>
                 <Link to="/pricing" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
                   Pricing
                 </Link>

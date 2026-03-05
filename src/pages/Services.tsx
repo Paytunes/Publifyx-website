@@ -17,13 +17,19 @@ const services = [
     icon: Tv,
     path: "/ctv-advertising",
   },
+  {
+    title: "OTT Advertising",
+    description: "Deliver targeted video ads across streaming platforms on every device — smart TVs, mobile, tablets, and more.",
+    icon: Tv,
+    path: "/ott-advertising",
+  },
 ];
 
 const Services = () => {
   useEffect(() => {
     document.title = "Services — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Explore PublifyX services: White Label DSP and CTV programmatic advertising solutions.");
+    if (meta) meta.setAttribute("content", "Explore PublifyX services: White Label DSP, CTV, and OTT programmatic advertising solutions for agencies and brands.");
   }, []);
 
   return (

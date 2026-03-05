@@ -11,6 +11,7 @@ import {
 const serviceLinks = [
   { to: "/white-label-dsp", label: "White Label DSP" },
   { to: "/ctv-advertising", label: "CTV Advertising" },
+  { to: "/ott-advertising", label: "OTT Advertising" },
 ];
 
 const resourceLinks = [
