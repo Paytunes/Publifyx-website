@@ -19,6 +19,7 @@ import {
   Globe,
   Megaphone,
   Tv,
+  CheckCircle2,
 } from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -183,195 +184,10 @@ const OTTAdvertising = () => {
 
   return (
     <Layout transparentHeader>
-      {/* 1. HERO - centered with image below */}
+      {/* ─── 1. HERO ─── */}
       <OTTHero breadcrumbs={breadcrumbs} />
 
-     
-
-      
-      {/* 3. WHAT IS OTT */}
-
-      {/* What Is OTT */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
-              OTT Advertising
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-4 max-w-4xl mx-auto"
-            >
-              What Is OTT Advertising?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
-            >
-              OTT stands for "over-the-top," referring to content delivered directly over the internet, bypassing
-              traditional cable and satellite. OTT advertising reaches viewers across all internet-connected devices
-              with the precision of digital and the impact of television.
-            </motion.p>
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
-          >
-            <div className="bg-navy-50 rounded-2xl border border-navy-100 p-8">
-              <h3 className="text-xl font-bold text-navy-800 mb-4">OTT Reaches Every Screen</h3>
-              <ul className="space-y-3">
-                {["Smart TVs & streaming sticks", "Smartphones & tablets", "Laptops & desktops", "Gaming consoles"].map(
-                  (item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
-                        <Tv className="w-3.5 h-3.5 text-brand-orange-600" />
-                      </div>
-                      <span className="text-navy-600 font-medium">{item}</span>
-                    </li>
-                  ),
-                )}
-              </ul>
-            </div>
-            <div className="bg-navy-800 rounded-2xl border border-navy-700 p-8">
-              <h3 className="text-xl font-bold text-white mb-4">Why OTT Matters</h3>
-              <ul className="space-y-3">
-                {[
-                  "Household-level targeting precision",
-                  "Higher attention than linear TV",
-                  "Non-skippable ad formats",
-                  "Measurable impressions & attribution",
-                  "Growing cord-cutter audiences",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
-                      <ArrowRight className="w-3.5 h-3.5 text-green-400" />
-                    </div>
-                    <span className="text-navy-200 font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-       {/* 2. DEVICE SECTION - all platforms */}
-      <OTTDeviceSection />
-      {/* Existing content interlude - Quote */}
-      <FounderQuoteSection
-        quote="Streaming is not a trend, it's the new default. Our OTT platform ensures brands don't just follow audiences across devices, but reach them with measurable impact."
-        name="Saurabh"
-        title="CEO, PublifyX"
-      />
-
-      {/* 3. MEASUREMENT & ATTRIBUTION - infographic focus */}
-      <OTTMeasurementSection />
-
-      {/* 4. MID-PAGE CTA - prominent secondary CTA */}
-      <OTTMidPageCTA />
-
-      {/* 5. RESOURCE GRID - helpful content/webinars */}
-      <OTTResourceSection />
-
-      {/* Features & capabilities */}
-      <section className="py-12 bg-navy-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-extrabold text-brand-orange-500 uppercase tracking-widest mb-4"
-            >
-              Platform Capabilities
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-extrabold text-navy-900 leading-tight"
-            >
-              Everything you need to launch OTT ads
-            </motion.h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {features.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <MagneticCard className="group bg-white rounded-3xl border border-navy-100 p-8 hover:shadow-xl hover:shadow-navy-500/5 transition-all duration-300 h-full">
-                  <div className="w-14 h-14 rounded-2xl bg-brand-orange-50 flex items-center justify-center mb-6 group-hover:bg-brand-orange-500 transition-colors">
-                    <feature.icon className="w-7 h-7 text-brand-orange-500 group-hover:text-white transition-colors" />
-                  </div>
-                  <h3 className="font-extrabold text-navy-800 text-xl mb-3">{feature.title}</h3>
-                  <p className="text-navy-400 leading-relaxed font-medium">{feature.description}</p>
-                </MagneticCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Ad Formats */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-extrabold text-brand-orange-500 uppercase tracking-widest mb-4"
-            >
-              Ad Formats
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-extrabold text-navy-900"
-            >
-              OTT Ad Formats Supported
-            </motion.h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {adFormats.map((format, i) => (
-              <motion.div
-                key={format.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className={i === adFormats.length - 1 ? "md:col-span-2 lg:col-span-1" : ""}
-              >
-                <div className="bg-navy-50 rounded-3xl border border-navy-100 p-10 h-full hover:shadow-xl hover:shadow-navy-500/5 transition-all duration-300 group">
-                  <div className="w-12 h-12 rounded-2xl bg-brand-orange-500 flex items-center justify-center mb-6 shadow-lg shadow-brand-orange-500/20">
-                    <span className="text-white font-black text-lg">{String(i + 1).padStart(2, "0")}</span>
-                  </div>
-                  <h3 className="font-extrabold text-navy-800 text-2xl mb-4">{format.title}</h3>
-                  <p className="text-navy-400 font-medium leading-relaxed">{format.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* ─── 2. TESTIMONIAL (right after hero, like Kochava) ─── */}
       <ClientTestimonialSection
         quote="OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple."
         attribution="Head of Digital, National Media Agency"
@@ -384,10 +200,284 @@ const OTTAdvertising = () => {
         variant="split"
       />
 
-      {/* How It Works */}
-      <section className="py-12 bg-white">
+      {/* ─── 3. WHAT IS OTT — Alternating 2-col layout ─── */}
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+          {/* Row 1: Text left, Card right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20 lg:mb-28">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-4">
+                OTT Advertising
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 mb-6 leading-tight">
+                What Is OTT Advertising?
+              </h2>
+              <p className="text-lg text-navy-400 leading-relaxed mb-8">
+                OTT stands for "over-the-top," referring to content delivered directly over the internet, bypassing
+                traditional cable and satellite. OTT advertising reaches viewers across all internet-connected devices
+                with the precision of digital and the impact of television.
+              </p>
+              <ul className="space-y-4">
+                {["Smart TVs & streaming sticks", "Smartphones & tablets", "Laptops & desktops", "Gaming consoles"].map(
+                  (item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <div className="w-7 h-7 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
+                        <Tv className="w-4 h-4 text-brand-orange-600" />
+                      </div>
+                      <span className="text-navy-700 font-semibold">{item}</span>
+                    </li>
+                  ),
+                )}
+              </ul>
+              <div className="mt-10">
+                <EnergyButton className="inline-flex items-center btn-primary text-base px-8 py-4">
+                  <Link to="/contact" className="flex items-center text-white no-underline group">
+                    Request Consultation
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </EnergyButton>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="bg-navy-800 rounded-3xl border border-navy-700 p-10">
+                <h3 className="text-2xl font-extrabold text-white mb-6">Why OTT Matters</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Household-level targeting precision",
+                    "Higher attention than linear TV",
+                    "Non-skippable ad formats",
+                    "Measurable impressions & attribution",
+                    "Growing cord-cutter audiences",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <div className="w-7 h-7 rounded-full bg-brand-orange-500/20 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle2 className="w-4 h-4 text-brand-orange-400" />
+                      </div>
+                      <span className="text-navy-200 font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Row 2: Card left, Text right (alternating) */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="order-2 lg:order-1"
+            >
+              <div className="bg-navy-50 rounded-3xl border border-navy-100 p-10">
+                <h3 className="text-2xl font-extrabold text-navy-800 mb-6">OTT Reaches Every Screen</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Measure users across CTV, mobile, and connected devices",
+                    "Connect the dots across devices and platforms",
+                    "Capture full-funnel engagement from impression to conversion",
+                    "Attribute conversions across omnichannel media efforts",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <div className="w-7 h-7 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle2 className="w-4 h-4 text-brand-orange-600" />
+                      </div>
+                      <span className="text-navy-600 font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="order-1 lg:order-2"
+            >
+              <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-4">
+                For All Advertisers
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 mb-6 leading-tight">
+                PublifyX for All OTT Advertisers
+              </h2>
+              <p className="text-lg text-navy-400 leading-relaxed mb-8">
+                Seamlessly launch acquisition or re-engagement campaigns with leading OTT partners. Attribute
+                cross-screen conversions and visualize campaign performance alongside all your omnichannel media efforts.
+              </p>
+              <EnergyButton className="inline-flex items-center btn-primary text-base px-8 py-4">
+                <Link to="/contact" className="flex items-center text-white no-underline group">
+                  Request Consultation
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </EnergyButton>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 4. FOUNDER QUOTE ─── */}
+      <FounderQuoteSection
+        quote="Streaming is not a trend, it's the new default. Our OTT platform ensures brands don't just follow audiences across devices, but reach them with measurable impact."
+        name="Saurabh"
+        title="CEO, PublifyX"
+      />
+
+      {/* ─── 5. DEVICE SECTION ─── */}
+      <OTTDeviceSection />
+
+      {/* ─── 6. MEASUREMENT & ATTRIBUTION ─── */}
+      <OTTMeasurementSection />
+
+      {/* ─── 7. PLATFORM CAPABILITIES ─── */}
+      <section className="py-16 md:py-24 bg-navy-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="inline-block text-sm font-extrabold text-brand-orange-500 uppercase tracking-widest mb-4"
+            >
+              Platform Capabilities
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 leading-tight max-w-3xl mx-auto"
+            >
+              Everything you need to launch OTT ads
+            </motion.h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {features.map((feature, i) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+              >
+                <MagneticCard className="group bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-xl hover:shadow-navy-500/5 transition-all duration-300 h-full">
+                  <div className="w-14 h-14 rounded-2xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-500 transition-colors">
+                    <feature.icon className="w-7 h-7 text-brand-orange-500 group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="font-extrabold text-navy-800 text-lg mb-2">{feature.title}</h3>
+                  <p className="text-navy-400 leading-relaxed font-medium text-sm">{feature.description}</p>
+                </MagneticCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 8. AD FORMATS ─── */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="inline-block text-sm font-extrabold text-brand-orange-500 uppercase tracking-widest mb-4"
+            >
+              Ad Formats
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
+            >
+              OTT Ad Formats Supported
+            </motion.h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {adFormats.map((format, i) => (
+              <motion.div
+                key={format.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className={i === adFormats.length - 1 ? "md:col-span-2 lg:col-span-1" : ""}
+              >
+                <div className="bg-navy-50 rounded-2xl border border-navy-100 p-8 h-full hover:shadow-xl hover:shadow-navy-500/5 transition-all duration-300 group">
+                  <div className="w-11 h-11 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-5 shadow-lg shadow-brand-orange-500/20">
+                    <span className="text-white font-black text-base">{String(i + 1).padStart(2, "0")}</span>
+                  </div>
+                  <h3 className="font-extrabold text-navy-800 text-xl mb-3">{format.title}</h3>
+                  <p className="text-navy-400 font-medium leading-relaxed text-sm">{format.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 9. WHO IT'S FOR ─── */}
+      <section className="py-16 md:py-24 bg-navy-800 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-brand-orange-500 rounded-full blur-[200px] opacity-[0.08]" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="inline-block text-sm font-extrabold text-brand-orange-400 uppercase tracking-widest mb-4"
+            >
+              Who It's For
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight max-w-3xl mx-auto"
+            >
+              Built for Every Type of Advertiser
+            </motion.h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {whoItsFor.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 group"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-brand-orange-500/20 flex items-center justify-center mb-5 group-hover:bg-brand-orange-500 transition-colors">
+                  <item.icon className="w-7 h-7 text-brand-orange-400 group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="font-extrabold text-white text-xl mb-2">{item.title}</h3>
+                <p className="text-navy-300 leading-relaxed font-medium text-sm">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 10. HOW IT WORKS ─── */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -400,12 +490,12 @@ const OTTAdvertising = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-extrabold text-navy-900"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
             >
               How OTT Advertising Works
             </motion.h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto mb-20">
+          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto mb-16">
             {steps.map((step, i) => (
               <motion.div
                 key={step.title}
@@ -419,37 +509,43 @@ const OTTAdvertising = () => {
                   <div className="hidden md:block absolute top-12 left-[100%] w-[100%] h-[2px] bg-navy-100 z-0" />
                 )}
                 <div className="relative z-10">
-                  <div className="w-24 h-24 rounded-3xl bg-navy-800 flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-orange-500 transition-all duration-300 shadow-xl shadow-navy-900/20">
+                  <div className="w-24 h-24 rounded-3xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-orange-500 transition-all duration-300 shadow-xl shadow-navy-900/20">
                     <step.icon className="w-10 h-10 text-brand-orange-400 group-hover:text-white" />
                   </div>
-                  <div className="text-sm font-black text-brand-orange-500 mb-3 tracking-widest">{step.number}</div>
-                  <h3 className="font-extrabold text-navy-900 text-lg mb-3">{step.title}</h3>
+                  <div className="text-sm font-black text-brand-orange-500 mb-2 tracking-widest">{step.number}</div>
+                  <h3 className="font-extrabold text-navy-900 text-lg mb-2">{step.title}</h3>
                   <p className="text-navy-400 font-medium text-sm leading-relaxed">{step.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center"
           >
-            <EnergyButton className="inline-flex items-center btn-primary text-xl px-12 py-5 rounded-2xl shadow-2xl shadow-brand-orange-500/30">
+            <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-5 rounded-2xl shadow-2xl shadow-brand-orange-500/30">
               <Link to="/contact" className="flex items-center text-white no-underline group">
                 Launch Your First Campaign{" "}
-                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </Link>
             </EnergyButton>
           </motion.div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-12 bg-navy-50 faq-section">
+      {/* ─── 11. MID-PAGE CTA ─── */}
+      <OTTMidPageCTA />
+
+      {/* ─── 12. RESOURCES ─── */}
+      <OTTResourceSection />
+
+      {/* ─── 13. FAQ ─── */}
+      <section className="py-16 md:py-24 bg-navy-50 faq-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
+          <div className="mb-12">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -462,13 +558,13 @@ const OTTAdvertising = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-extrabold text-navy-900"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
             >
               Common Questions
             </motion.h2>
           </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
                 <AccordionItem
                   key={i}
@@ -488,33 +584,33 @@ const OTTAdvertising = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-12 bg-navy-800 relative overflow-hidden">
+      {/* ─── 14. FINAL CTA ─── */}
+      <section className="py-16 md:py-24 bg-navy-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-navy-900" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-orange-500 rounded-full blur-[250px] opacity-[0.08]" />
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
         >
-          <h2 className="mb-8 !text-white text-4xl md:text-6xl font-black leading-tight">
+          <h2 className="mb-6 !text-white text-3xl md:text-5xl lg:text-6xl font-black leading-tight">
             Ready to Reach Cord-Cutters Everywhere?
           </h2>
-          <p className="text-xl md:text-2xl text-navy-200 mb-12 font-medium">
+          <p className="text-lg md:text-xl text-navy-200 mb-10 font-medium max-w-2xl mx-auto">
             Join hundreds of brands using PublifyX to dominate the streaming landscape.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <EnergyButton className="inline-flex items-center btn-primary text-xl px-12 py-5 rounded-2xl">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-5 rounded-2xl">
               <Link to="/contact" className="flex items-center text-white no-underline group">
                 Request a Demo
-                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </Link>
             </EnergyButton>
             <Link
               to="/pricing"
-              className="inline-flex items-center justify-center bg-white/5 hover:bg-white/10 text-white border border-white/20 text-xl px-12 py-5 rounded-2xl font-bold backdrop-blur-sm transition-all"
+              className="inline-flex items-center justify-center bg-white/5 hover:bg-white/10 text-white border border-white/20 text-lg px-10 py-5 rounded-2xl font-bold backdrop-blur-sm transition-all"
             >
               View Pricing
             </Link>
