@@ -16,13 +16,14 @@ const OTTMeasurementSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-16 text-center"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-8 leading-tight">
             Why OTT Advertising Matters
           </h2>
           <p className="text-lg text-navy-500 leading-relaxed max-w-3xl">
-            Traditional TV advertising operates on a broadcast model where ads reach a mass audience with limited targeting precision. OTT flips that model.
+            Traditional TV advertising operates on a broadcast model where ads reach a mass audience with limited
+            targeting precision. OTT flips that model.
           </p>
         </motion.div>
 
@@ -72,7 +73,8 @@ const OTTMeasurementSection = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-lg text-navy-500 mb-6 leading-relaxed">
-              OTT audiences are highly engaged. They have actively chosen the content they are watching, which translates to higher attention levels compared to passive channel surfing on linear TV.
+              OTT audiences are highly engaged. They have actively chosen the content they are watching, which
+              translates to higher attention levels compared to passive channel surfing on linear TV.
             </p>
             <p className="text-lg text-navy-800 font-semibold leading-relaxed">
               Most OTT ads are non-skippable, delivering consistently high completion rates.
@@ -114,22 +116,18 @@ const OTTMeasurementSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-lg text-navy-500 mb-8 leading-relaxed">
-              For advertisers, OTT combines:
-            </p>
+            <p className="text-lg text-navy-500 mb-8 leading-relaxed">For advertisers, OTT combines:</p>
             <div className="space-y-5 mb-8">
-              {[
-                "Television-scale reach",
-                "Digital targeting precision",
-                "Transparent performance measurement"
-              ].map((item) => (
-                <div key={item} className="flex gap-4 items-center">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-orange-500/20 flex items-center justify-center">
-                    <CheckCircle2 className="w-4 h-4 text-brand-orange-600" />
+              {["Television-scale reach", "Digital targeting precision", "Transparent performance measurement"].map(
+                (item) => (
+                  <div key={item} className="flex gap-4 items-center">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-orange-500/20 flex items-center justify-center">
+                      <CheckCircle2 className="w-4 h-4 text-brand-orange-600" />
+                    </div>
+                    <p className="text-lg font-semibold text-navy-800">{item}</p>
                   </div>
-                  <p className="text-lg font-semibold text-navy-800">{item}</p>
-                </div>
-              ))}
+                ),
+              )}
             </div>
             <p className="text-lg text-navy-500 leading-relaxed">
               Impressions, completion rates, frequency, attribution, all measurable in real time.
