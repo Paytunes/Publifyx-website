@@ -8,11 +8,7 @@ const features = [
     description:
       "Deliver video ads across smart TVs, mobile devices, tablets, desktop browsers, and gaming consoles. Reach your audience on the device and platform they prefer.",
     icon: Smartphone,
-    bullets: [
-      "Smart TVs & streaming sticks",
-      "Mobile & tablet apps",
-      "Desktop browsers & gaming consoles",
-    ],
+    bullets: ["Smart TVs & streaming sticks", "Mobile & tablet apps", "Desktop browsers & gaming consoles"],
     visual: {
       label: "Device Coverage",
       items: [
@@ -28,11 +24,7 @@ const features = [
     description:
       "Access ad-supported streaming platforms, FAST channels, and OTT apps through leading SSP integrations and private marketplace deals.",
     icon: Globe,
-    bullets: [
-      "Ad-supported streaming platforms",
-      "FAST channel inventory",
-      "Private marketplace deals via SSPs",
-    ],
+    bullets: ["Ad-supported streaming platforms", "FAST channel inventory", "Private marketplace deals via SSPs"],
     visual: {
       label: "Inventory Sources",
       items: [
@@ -68,11 +60,7 @@ const features = [
     description:
       "Control how many times a household or individual sees your ad across devices and platforms, preventing ad fatigue while maximizing campaign efficiency.",
     icon: RefreshCw,
-    bullets: [
-      "Household-level frequency caps",
-      "Cross-device deduplication",
-      "Ad fatigue prevention",
-    ],
+    bullets: ["Household-level frequency caps", "Cross-device deduplication", "Ad fatigue prevention"],
     visual: {
       label: "Frequency Control",
       items: [
@@ -88,11 +76,7 @@ const features = [
     description:
       "Monitor campaign performance in real time with metrics including impressions, VCR, reach, frequency, and cost efficiency. Make adjustments on the fly to improve results.",
     icon: BarChart3,
-    bullets: [
-      "Live impression & VCR tracking",
-      "Cost efficiency monitoring",
-      "On-the-fly optimization",
-    ],
+    bullets: ["Live impression & VCR tracking", "Cost efficiency monitoring", "On-the-fly optimization"],
     visual: {
       label: "Performance Metrics",
       items: [
@@ -108,11 +92,7 @@ const features = [
     description:
       "Combine OTT campaigns with display, audio, and native advertising within the PublifyX platform for a unified, omnichannel media buying experience.",
     icon: Zap,
-    bullets: [
-      "Unified campaign management",
-      "Cross-channel attribution",
-      "Single reporting dashboard",
-    ],
+    bullets: ["Unified campaign management", "Cross-channel attribution", "Single reporting dashboard"],
     visual: {
       label: "Channel Mix",
       items: [
@@ -125,7 +105,7 @@ const features = [
   },
 ];
 
-const FeatureVisual = ({ feature, index }: { feature: typeof features[0]; index: number }) => {
+const FeatureVisual = ({ feature, index }: { feature: (typeof features)[0]; index: number }) => {
   const Icon = feature.icon;
   return (
     <div className="bg-white rounded-2xl border border-navy-100 p-8 shadow-xl shadow-navy-500/5 h-full">
@@ -137,7 +117,9 @@ const FeatureVisual = ({ feature, index }: { feature: typeof features[0]; index:
           <div className="w-3 h-3 rounded-full bg-green-400" />
         </div>
         <div className="flex-1 bg-navy-50 rounded-lg h-7 flex items-center px-3">
-          <span className="text-[11px] text-navy-400 font-mono">publifyx.com/ott/{feature.title.toLowerCase().replace(/\s+/g, "-")}</span>
+          <span className="text-[11px] text-navy-400 font-mono">
+            publifyx.com/ott/{feature.title.toLowerCase().replace(/\s+/g, "-")}
+          </span>
         </div>
       </div>
 
@@ -174,7 +156,9 @@ const FeatureVisual = ({ feature, index }: { feature: typeof features[0]; index:
 
       {/* Step indicator */}
       <div className="mt-8 pt-4 border-t border-navy-100 flex items-center justify-between">
-        <span className="text-xs font-bold text-navy-400 uppercase tracking-wider">Feature {index + 1} of {features.length}</span>
+        <span className="text-xs font-bold text-navy-400 uppercase tracking-wider">
+          Feature {index + 1} of {features.length}
+        </span>
         <div className="flex gap-1">
           {features.map((_, i) => (
             <div
@@ -225,7 +209,7 @@ const OTTStickyFeaturesSection = () => {
   return (
     <section className="bg-navy-50" ref={sectionRef}>
       {/* Section Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 pb-12">
         <div className="text-center">
           <motion.span
             initial={{ opacity: 0 }}
