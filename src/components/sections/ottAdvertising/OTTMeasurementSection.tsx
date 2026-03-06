@@ -21,7 +21,7 @@ const OTTMeasurementSection = () => {
           <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-8 leading-tight">
             Why OTT Advertising Matters
           </h2>
-          <p className="text-lg text-navy-500 leading-relaxed max-w-3xl">
+          <p className="text-lg text-navy-500 leading-relaxed max-w-3xl mx-auto">
             Traditional TV advertising operates on a broadcast model where ads reach a mass audience with limited
             targeting precision. OTT flips that model.
           </p>
