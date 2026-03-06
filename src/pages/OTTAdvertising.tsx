@@ -70,37 +70,23 @@ const features = [
   },
 ];
 
-import prerollAd from "@/assets/ott/preroll-ad.webp";
-import midrollAd from "@/assets/ott/midroll-ad.webp";
-import postrollAd from "@/assets/ott/postroll-ad.webp";
-import interactiveAd from "@/assets/ott/interactive-ad.webp";
-import companionBanner from "@/assets/ott/companion-banner.webp";
-
 const adFormats = [
   {
     title: "Pre-Roll Video Ads",
     desc: "Short video ads that play before the viewer's selected content begins. Typically 15 or 30 seconds.",
-    image: prerollAd,
   },
   {
     title: "Mid-Roll Video Ads",
     desc: "Ads inserted during natural breaks within longer-form content, targeted to specific audiences.",
-    image: midrollAd,
   },
-  {
-    title: "Post-Roll Video Ads",
-    desc: "Video ads that play after the content has concluded.",
-    image: postrollAd,
-  },
+  { title: "Post-Roll Video Ads", desc: "Video ads that play after the content has concluded." },
   {
     title: "Interactive OTT Ads",
     desc: "Formats allowing viewers to engage with clickable overlays and QR code prompts.",
-    image: interactiveAd,
   },
   {
     title: "Companion Display Banners",
     desc: "Display ads shown alongside the video player, reinforcing the video message with a visual banner.",
-    image: companionBanner,
   },
 ];
 
@@ -331,7 +317,8 @@ const OTTAdvertising = () => {
               </h2>
               <p className="text-lg text-navy-400 leading-relaxed mb-8">
                 Seamlessly launch acquisition or re-engagement campaigns with leading OTT partners. Attribute
-                cross-screen conversions and visualize campaign performance alongside all your omnichannel media efforts.
+                cross-screen conversions and visualize campaign performance alongside all your omnichannel media
+                efforts.
               </p>
               <EnergyButton className="inline-flex items-center btn-primary text-base px-8 py-4">
                 <Link to="/contact" className="flex items-center text-white no-underline group">
@@ -381,42 +368,25 @@ const OTTAdvertising = () => {
               OTT Ad Formats Supported
             </motion.h2>
           </div>
-          <div className="space-y-16 md:space-y-24 max-w-6xl mx-auto">
-            {adFormats.map((format, i) => {
-              const isEven = i % 2 === 0;
-              return (
-                <motion.div
-                  key={format.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${
-                    isEven ? "" : "md:flex-row-reverse"
-                  }`}
-                >
-                  {/* Image */}
-                  <div className="w-full md:w-1/2">
-                    <div className="rounded-2xl overflow-hidden shadow-xl shadow-navy-500/10 border border-navy-100">
-                      <img
-                        src={format.image}
-                        alt={format.title}
-                        className="w-full h-auto object-cover"
-                        loading="lazy"
-                      />
-                    </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {adFormats.map((format, i) => (
+              <motion.div
+                key={format.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className={i === adFormats.length - 1 ? "md:col-span-2 lg:col-span-1" : ""}
+              >
+                <div className="bg-navy-50 rounded-2xl border border-navy-100 p-8 h-full hover:shadow-xl hover:shadow-navy-500/5 transition-all duration-300 group">
+                  <div className="w-11 h-11 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-5 shadow-lg shadow-brand-orange-500/20">
+                    <span className="text-white font-black text-base">{String(i + 1).padStart(2, "0")}</span>
                   </div>
-                  {/* Text */}
-                  <div className="w-full md:w-1/2">
-                    <div className="w-11 h-11 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-5 shadow-lg shadow-brand-orange-500/20">
-                      <span className="text-white font-black text-base">{String(i + 1).padStart(2, "0")}</span>
-                    </div>
-                    <h3 className="font-extrabold text-navy-800 text-2xl mb-3">{format.title}</h3>
-                    <p className="text-navy-400 font-medium leading-relaxed">{format.desc}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  <h3 className="font-extrabold text-navy-800 text-xl mb-3">{format.title}</h3>
+                  <p className="text-navy-400 font-medium leading-relaxed text-sm">{format.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -537,7 +507,7 @@ const OTTAdvertising = () => {
       {/* ─── 13. FAQ ─── */}
       <section className="py-16 md:py-24 bg-navy-50 faq-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
+          <div className="mb-12 text-center">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
