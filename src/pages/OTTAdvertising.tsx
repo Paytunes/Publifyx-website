@@ -154,20 +154,6 @@ const OTTAdvertising = () => {
                   ),
                 )}
               </ul>
-              <div className="bg-navy-50 rounded-2xl border border-navy-100 p-6 mb-6">
-                <p className="text-base text-navy-600 font-semibold mb-2">The distinction is simple:</p>
-                <p className="text-navy-500 leading-relaxed mb-1">
-                  <strong className="text-navy-800">OTT</strong> is the delivery method across all internet-connected
-                  devices.
-                </p>
-                <p className="text-navy-500 leading-relaxed">
-                  <strong className="text-navy-800">CTV</strong> is specifically OTT viewed on a television screen.
-                </p>
-              </div>
-              <p className="text-lg text-navy-400 leading-relaxed">
-                When you activate OTT campaigns through PublifyX, you reach audiences across every screen, not just the
-                living room.
-              </p>
             </motion.div>
 
             <motion.div
@@ -189,6 +175,19 @@ const OTTAdvertising = () => {
             </motion.div>
           </div>
         </div>
+        <div className="bg-navy-50 rounded-2xl border border-navy-100 p-6 mb-6 max-w-[40rem] mx-auto">
+          <p className="text-base text-navy-600 font-semibold mb-2">The distinction is simple:</p>
+          <p className="text-navy-500 leading-relaxed mb-1">
+            <strong className="text-navy-800">OTT</strong> is the delivery method across all internet-connected devices.
+          </p>
+          <p className="text-navy-500 leading-relaxed">
+            <strong className="text-navy-800">CTV</strong> is specifically OTT viewed on a television screen.
+          </p>
+        </div>
+        <p className="text-lg text-navy-400 leading-relaxed">
+          When you activate OTT campaigns through PublifyX, you reach audiences across every screen, not just the living
+          room.
+        </p>
       </section>
 
       {/* ─── 3. FOUNDER QUOTE ─── */}
