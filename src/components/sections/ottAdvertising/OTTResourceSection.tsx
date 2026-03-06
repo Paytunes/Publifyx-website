@@ -5,7 +5,7 @@ import { blogPosts } from "@/data/blogPosts";
 const OTTResourceSection = () => {
   // Filter blog posts for OTT/CTV categories
   const ottBlogs = blogPosts
-    .filter(post => ["OTT Advertising", "CTV Advertising"].includes(post.category))
+    .filter((post) => ["OTT Advertising", "CTV Advertising"].includes(post.category))
     .slice(0, 3);
 
   return (
@@ -13,14 +13,17 @@ const OTTResourceSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-6 text-center">
               Helpful OTT & CTV Content for Marketers
             </h2>
             <p className="text-lg text-navy-500">
               Boost your knowledge with our curated resources on the evolving landscape of streaming advertising.
             </p>
           </div>
-          <Link to="/blog" className="text-brand-orange-600 font-bold flex items-center gap-2 hover:gap-3 transition-all no-underline">
+          <Link
+            to="/blog"
+            className="text-brand-orange-600 font-bold flex items-center gap-2 hover:gap-3 transition-all no-underline"
+          >
             VIEW ALL RESOURCES
             <span className="text-xl">→</span>
           </Link>
@@ -50,9 +53,7 @@ const OTTResourceSection = () => {
                 <h3 className="text-xl font-extrabold text-navy-900 mb-3 group-hover:text-brand-orange-600 transition-colors">
                   {res.title}
                 </h3>
-                <p className="text-navy-500 leading-relaxed mb-4 line-clamp-2">
-                  {res.excerpt}
-                </p>
+                <p className="text-navy-500 leading-relaxed mb-4 line-clamp-2">{res.excerpt}</p>
                 <div className="text-navy-900 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
                   Read More <span className="text-brand-orange-500">→</span>
                 </div>
