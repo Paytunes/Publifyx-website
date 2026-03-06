@@ -58,7 +58,7 @@ const FounderQuoteSection = ({ quote, name, title, showImage = true }: FounderQu
                   height={168}
                   loading="lazy"
                   decoding="async"
-                  sizes="(max-width: 768px) 96px, 112px"
+                  sizes="(max-width: 768px) 96px, 168px"
                   className="w-full h-full object-cover"
                 />
               </motion.div>
