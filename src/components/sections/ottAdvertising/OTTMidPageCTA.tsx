@@ -25,7 +25,7 @@ const OTTMidPageCTA = () => {
               className="flex flex-col sm:flex-row gap-6 mt-10 justify-center"
             >
               <EnergyButton className="bg-brand-orange-600 hover:bg-brand-orange-700 text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-xl shadow-brand-orange-500/20">
-                <PlayCircle className="w-6 h-6" />
+                <PlayCircle className="w-6 h-6 mr-3" />
                 Book Presentation
               </EnergyButton>
             </motion.div>
