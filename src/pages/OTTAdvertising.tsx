@@ -120,7 +120,7 @@ const OTTAdvertising = () => {
       <OTTHero breadcrumbs={breadcrumbs} />
 
       {/* ─── 2. WHAT IS OTT ─── */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div
@@ -205,7 +205,7 @@ const OTTAdvertising = () => {
       <OTTStickyFeaturesSection />
 
       {/* ─── 6. AD FORMATS ─── */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.span
@@ -278,7 +278,7 @@ const OTTAdvertising = () => {
       />
 
       {/* ─── 8. EXPLORE RELATED SERVICES ─── */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <motion.span
@@ -330,9 +330,7 @@ const OTTAdvertising = () => {
                   <h3 className="text-xl font-extrabold text-navy-900 mb-2 group-hover:text-brand-orange-600 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-navy-400 font-medium leading-relaxed mb-4 flex-1">
-                    {service.desc}
-                  </p>
+                  <p className="text-navy-400 font-medium leading-relaxed mb-4 flex-1">{service.desc}</p>
                   <span className="inline-flex items-center gap-2 text-brand-orange-500 font-bold text-sm group-hover:gap-3 transition-all">
                     Learn More <ArrowRight className="w-4 h-4" />
                   </span>
