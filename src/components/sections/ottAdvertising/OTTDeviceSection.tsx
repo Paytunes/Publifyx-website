@@ -42,16 +42,14 @@ const OTTDeviceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="flex items-start gap-6 group hover:p-6 hover:bg-navy-50 hover:rounded-2xl transition-all duration-300"
+              className="flex items-start gap-6 group hover:bg-navy-50 hover:rounded-2xl transition-all duration-300"
             >
               <div className="w-16 h-full rounded-2xl bg-brand-orange-50 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange-500 group-hover:text-white transition-colors duration-300">
                 <device.icon className="w-8 h-8 text-brand-orange-500 group-hover:text-white transition-colors duration-300" />
               </div>
               <div className="p-2">
                 <h3 className="text-xl font-bold text-navy-800 mb-1">{device.name}</h3>
-                <p className="text-navy-400 group-hover:text-navy-500 leading-relaxed font-medium">
-                  {device.sub}
-                </p>
+                <p className="text-navy-400 group-hover:text-navy-500 leading-relaxed font-medium">{device.sub}</p>
               </div>
             </motion.div>
           ))}
