@@ -126,7 +126,7 @@ const FeatureVisual = ({ feature, index }: { feature: (typeof features)[0]; inde
       {/* Header */}
       <div className="flex items-center gap-4 mb-8">
         <div className="w-14 h-14 rounded-2xl bg-brand-orange-50 flex items-center justify-center">
-          <Icon className="w-7 h-7 text-brand-orange-500" />
+          <Icon className="w-7 h-7 text-brand-orange-700" />
         </div>
         <div>
           <p className="text-xs font-bold text-brand-orange-700 uppercase tracking-widest">{feature.visual.label}</p>
@@ -140,7 +140,7 @@ const FeatureVisual = ({ feature, index }: { feature: (typeof features)[0]; inde
           <div key={item.name}>
             <div className="flex justify-between mb-1.5">
               <span className="text-sm font-semibold text-navy-700">{item.name}</span>
-              <span className="text-sm font-bold text-brand-orange-500">{item.pct}%</span>
+              <span className="text-sm font-bold text-brand-orange-700">{item.pct}%</span>
             </div>
             <div className="w-full bg-navy-100 rounded-full h-3 overflow-hidden">
               <motion.div
@@ -280,7 +280,7 @@ const OTTStickyFeaturesSection = () => {
                         >
                           <Icon
                             className={`w-6 h-6 transition-colors duration-300 ${
-                              isActive ? "text-white" : "text-brand-orange-500"
+                              isActive ? "text-white" : "text-brand-orange-700"
                             }`}
                           />
                         </div>
@@ -313,7 +313,7 @@ const OTTStickyFeaturesSection = () => {
               <div className="bg-white rounded-2xl border border-navy-100 p-6 mb-4">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-11 h-11 rounded-xl bg-brand-orange-50 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-brand-orange-500" />
+                    <Icon className="w-5 h-5 text-brand-orange-700" />
                   </div>
                   <h3 className="text-lg font-extrabold text-navy-800">{feature.title}</h3>
                 </div>

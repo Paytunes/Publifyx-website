@@ -59,7 +59,7 @@ const OTTResourceSection = () => {
                 </h3>
                 <p className="text-navy-600 leading-relaxed mb-4 line-clamp-2">{res.excerpt}</p>
                 <div className="text-navy-900 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-                  Read More <span className="text-brand-orange-500">→</span>
+                  Read More <span className="text-brand-orange-700">→</span>
                 </div>
               </Link>
             </motion.div>
