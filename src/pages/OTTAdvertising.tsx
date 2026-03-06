@@ -234,17 +234,17 @@ const OTTAdvertising = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-4">
+              <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-4">
                 OTT Advertising
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 mb-6 leading-tight">
                 What Is OTT Advertising?
               </h2>
-              <p className="text-lg text-navy-400 leading-relaxed mb-4">
+              <p className="text-lg text-navy-600 leading-relaxed mb-4">
                 OTT stands for "over-the-top," referring to content delivered directly over the internet, bypassing
                 traditional cable, broadcast, and satellite television providers.
               </p>
-              <p className="text-lg text-navy-400 leading-relaxed mb-8">
+              <p className="text-lg text-navy-600 leading-relaxed mb-8">
                 OTT advertising is the placement of ads within this internet-delivered content.
               </p>
               <p className="text-base text-navy-600 font-semibold mb-4">OTT content is consumed across:</p>
@@ -274,6 +274,8 @@ const OTTAdvertising = () => {
                   src={ottMultiscreenImg}
                   alt="OTT content streaming across smart TVs, smartphones, tablets, laptops, and gaming consoles"
                   className="relative w-full h-auto rounded-2xl shadow-2xl shadow-navy-900/20 border border-navy-100"
+                  width={800}
+                  height={600}
                   loading="lazy"
                   decoding="async"
                 />
@@ -290,7 +292,7 @@ const OTTAdvertising = () => {
             <strong className="text-navy-800">CTV</strong> is specifically OTT viewed on a television screen.
           </p>
         </div>
-        <p className="text-lg leading-relaxed max-w-[40rem] mx-auto text-center text-brand-orange-500">
+        <p className="text-lg leading-relaxed max-w-[40rem] mx-auto text-center text-brand-orange-700 font-semibold">
           When you activate OTT campaigns through PublifyX, you reach audiences across every screen, not just the living
           room.
         </p>
@@ -317,7 +319,7 @@ const OTTAdvertising = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="inline-block text-sm font-extrabold text-brand-orange-500 uppercase tracking-widest mb-4"
+              className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
             >
               Ad Formats
             </motion.span>
@@ -350,6 +352,8 @@ const OTTAdvertising = () => {
                         src={format.image}
                         alt={`${format.title} - OTT ad format`}
                         className="w-full h-auto"
+                        width={600}
+                        height={400}
                         loading="lazy"
                         decoding="async"
                       />
@@ -360,7 +364,7 @@ const OTTAdvertising = () => {
                       <span className="text-white font-black text-base">{String(i + 1).padStart(2, "0")}</span>
                     </div>
                     <h3 className="font-extrabold text-navy-800 text-2xl mb-3">{format.title}</h3>
-                    <p className="text-navy-400 font-medium leading-relaxed">{format.desc}</p>
+                    <p className="text-navy-600 font-medium leading-relaxed">{format.desc}</p>
                   </div>
                 </motion.div>
               );
@@ -390,7 +394,7 @@ const OTTAdvertising = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="inline-block text-sm font-extrabold text-brand-orange-500 uppercase tracking-widest mb-4"
+              className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
             >
               More Solutions
             </motion.span>
@@ -435,7 +439,7 @@ const OTTAdvertising = () => {
                   <h3 className="text-xl font-extrabold text-navy-900 mb-2 group-hover:text-brand-orange-600 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-navy-400 font-medium leading-relaxed mb-4 flex-1">{service.desc}</p>
+                  <p className="text-navy-600 font-medium leading-relaxed mb-4 flex-1">{service.desc}</p>
                   <span className="inline-flex items-center gap-2 text-brand-orange-500 font-bold text-sm group-hover:gap-3 transition-all">
                     Learn More <ArrowRight className="w-4 h-4" />
                   </span>
@@ -457,7 +461,7 @@ const OTTAdvertising = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="inline-block text-sm font-extrabold text-brand-orange-500 uppercase tracking-widest mb-4"
+              className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
             >
               FAQ
             </motion.span>
@@ -481,7 +485,7 @@ const OTTAdvertising = () => {
                   <AccordionTrigger className="text-left font-extrabold text-navy-800 hover:text-brand-orange-600 hover:no-underline py-6 text-lg">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-navy-400 font-medium leading-relaxed pb-6 text-base">
+                  <AccordionContent className="text-navy-600 font-medium leading-relaxed pb-6 text-base">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

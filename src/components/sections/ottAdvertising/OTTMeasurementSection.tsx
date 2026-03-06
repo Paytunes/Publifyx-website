@@ -21,7 +21,7 @@ const OTTMeasurementSection = () => {
           <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-8 leading-tight">
             Why OTT Advertising Matters
           </h2>
-          <p className="text-lg text-navy-500 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg text-navy-600 leading-relaxed max-w-3xl mx-auto">
             Traditional TV advertising operates on a broadcast model where ads reach a mass audience with limited
             targeting precision. OTT flips that model.
           </p>
@@ -38,7 +38,7 @@ const OTTMeasurementSection = () => {
           >
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-orange-500/10 rounded-full blur-[100px]" />
             <div className="relative rounded-3xl overflow-hidden shadow-[0_24px_48px_-12px_rgba(0,0,0,0.4)] border border-navy-100">
-              <img src={targetingImg} alt="OTT advertising targeting dashboard" className="w-full h-auto" />
+              <img src={targetingImg} alt="OTT advertising targeting dashboard" className="w-full h-auto" width={800} height={600} loading="lazy" decoding="async" />
             </div>
           </motion.div>
 
@@ -48,7 +48,7 @@ const OTTMeasurementSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-lg text-navy-500 mb-8 leading-relaxed">
+            <p className="text-lg text-navy-600 mb-8 leading-relaxed">
               With OTT, you can target at the household or individual level using:
             </p>
             <div className="space-y-5">
@@ -72,7 +72,7 @@ const OTTMeasurementSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-lg text-navy-500 mb-6 leading-relaxed">
+            <p className="text-lg text-navy-600 mb-6 leading-relaxed">
               OTT audiences are highly engaged. They have actively chosen the content they are watching, which
               translates to higher attention levels compared to passive channel surfing on linear TV.
             </p>
@@ -90,7 +90,7 @@ const OTTMeasurementSection = () => {
           >
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-orange-500/10 rounded-full blur-[100px]" />
             <div className="relative rounded-3xl overflow-hidden shadow-[0_24px_48px_-12px_rgba(0,0,0,0.4)] border border-navy-100">
-              <img src={engagedViewerImg} alt="Engaged viewer watching OTT content" className="w-full h-auto" />
+              <img src={engagedViewerImg} alt="Engaged viewer watching OTT content" className="w-full h-auto" width={800} height={600} loading="lazy" decoding="async" />
             </div>
           </motion.div>
         </div>
@@ -106,7 +106,7 @@ const OTTMeasurementSection = () => {
           >
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-orange-500/10 rounded-full blur-[100px]" />
             <div className="relative rounded-3xl overflow-hidden shadow-[0_24px_48px_-12px_rgba(0,0,0,0.4)] border border-navy-100">
-              <img src={measurementImg} alt="OTT performance measurement dashboard" className="w-full h-auto" />
+              <img src={measurementImg} alt="OTT performance measurement dashboard" className="w-full h-auto" width={800} height={600} loading="lazy" decoding="async" />
             </div>
           </motion.div>
 
@@ -116,7 +116,7 @@ const OTTMeasurementSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-lg text-navy-500 mb-8 leading-relaxed">For advertisers, OTT combines:</p>
+            <p className="text-lg text-navy-600 mb-8 leading-relaxed">For advertisers, OTT combines:</p>
             <div className="space-y-5 mb-8">
               {["Television-scale reach", "Digital targeting precision", "Transparent performance measurement"].map(
                 (item) => (
@@ -129,7 +129,7 @@ const OTTMeasurementSection = () => {
                 ),
               )}
             </div>
-            <p className="text-lg text-navy-500 leading-relaxed">
+            <p className="text-lg text-navy-600 leading-relaxed">
               Impressions, completion rates, frequency, attribution, all measurable in real time.
             </p>
           </motion.div>
@@ -143,7 +143,7 @@ const OTTMeasurementSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-lg text-navy-500 mb-6">
+          <p className="text-lg text-navy-600 mb-6">
             Want to see how OTT fits into your media mix? Request a strategic consultation.
           </p>
           <Link to="/contact">

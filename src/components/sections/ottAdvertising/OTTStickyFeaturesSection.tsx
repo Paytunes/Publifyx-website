@@ -129,7 +129,7 @@ const FeatureVisual = ({ feature, index }: { feature: (typeof features)[0]; inde
           <Icon className="w-7 h-7 text-brand-orange-500" />
         </div>
         <div>
-          <p className="text-xs font-bold text-brand-orange-500 uppercase tracking-widest">{feature.visual.label}</p>
+          <p className="text-xs font-bold text-brand-orange-700 uppercase tracking-widest">{feature.visual.label}</p>
           <h4 className="text-xl font-extrabold text-navy-900">{feature.title}</h4>
         </div>
       </div>
@@ -215,7 +215,7 @@ const OTTStickyFeaturesSection = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="inline-block text-sm font-extrabold text-brand-orange-500 uppercase tracking-widest mb-4"
+            className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
           >
             Platform Capabilities
           </motion.span>
@@ -286,7 +286,7 @@ const OTTStickyFeaturesSection = () => {
                         </div>
                         <h3 className="text-xl font-extrabold text-navy-800">{feature.title}</h3>
                       </div>
-                      <p className="text-navy-400 font-medium leading-relaxed mb-4">{feature.description}</p>
+                      <p className="text-navy-600 font-medium leading-relaxed mb-4">{feature.description}</p>
                       <ul className="space-y-2">
                         {feature.bullets.map((bullet) => (
                           <li key={bullet} className="flex items-center gap-2.5 text-sm text-navy-600 font-medium">
@@ -317,7 +317,7 @@ const OTTStickyFeaturesSection = () => {
                   </div>
                   <h3 className="text-lg font-extrabold text-navy-800">{feature.title}</h3>
                 </div>
-                <p className="text-navy-400 font-medium leading-relaxed mb-3 text-sm">{feature.description}</p>
+                <p className="text-navy-600 font-medium leading-relaxed mb-3 text-sm">{feature.description}</p>
                 <ul className="space-y-1.5">
                   {feature.bullets.map((bullet) => (
                     <li key={bullet} className="flex items-center gap-2 text-sm text-navy-600 font-medium">
