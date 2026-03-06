@@ -87,29 +87,134 @@ const OTTAdvertising = () => {
         "Deliver targeted OTT advertising across streaming platforms on every device. PublifyX's OTT ads platform offers programmatic buying, precise targeting, and real-time analytics.",
       );
 
-    // FAQ Schema
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
+    // Schema markup
+    const schemas = [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "OTT Advertising Platform | Over-the-Top Ads Across Every Screen — PublifyX",
+        "description": "Deliver targeted OTT advertising across streaming platforms on every device. PublifyX's OTT ads platform offers programmatic buying, precise targeting, and real-time analytics.",
+        "url": "https://publifyx.com/ott-advertising",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://publifyx.com" },
+            { "@type": "ListItem", "position": 2, "name": "OTT Advertising", "item": "https://publifyx.com/ott-advertising" }
+          ]
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "OTT Advertising Platform",
+        "serviceType": "Programmatic OTT Advertising",
+        "description": "PublifyX provides a programmatic OTT advertising platform that connects brands to premium streaming inventory across smart TVs, mobile, tablets, desktop, and gaming consoles.",
+        "provider": {
+          "@type": "Organization",
+          "name": "PublifyX",
+          "url": "https://publifyx.com"
         },
-      })),
-    };
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.setAttribute("data-ott-faq-schema", "true");
-    script.textContent = JSON.stringify(faqSchema);
-    document.head.appendChild(script);
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "OTT Advertising Capabilities",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Multi-Device Reach" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Premium Inventory Access" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Advanced Audience Targeting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Frequency Management" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real-Time Optimization and Reporting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seamless Integration with Other Channels" } }
+          ]
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PublifyX",
+        "url": "https://publifyx.com",
+        "sameAs": [],
+        "founder": {
+          "@type": "Person",
+          "name": "Saurabh",
+          "jobTitle": "CEO"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the difference between OTT and CTV advertising?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OTT refers to content delivered over the internet across all devices — TVs, phones, tablets, and computers. CTV refers specifically to ads viewed on a television screen through internet-connected devices. CTV is a subset of OTT."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What platforms do OTT ads run on?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OTT ads run across ad-supported streaming services, FAST (free ad-supported streaming TV) channels, and OTT apps. Specific platforms vary by region and inventory availability through our SSP partners."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can OTT advertising be targeted to specific audiences?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PublifyX supports audience targeting based on demographics, geography, interests, viewing behavior, purchase intent, and household-level data for OTT campaigns."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does OTT advertising cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OTT advertising is typically priced on a CPM basis. Costs vary based on targeting specificity, inventory quality, and campaign scale. PublifyX allows flexible budget entry points suitable for businesses of varying sizes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I measure OTT ad performance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. PublifyX provides real-time reporting on impressions, video completion rates, reach, frequency, and cost metrics. Attribution measurement for website visits and conversions is also available."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "reviewBody": "OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple.",
+        "author": {
+          "@type": "Person",
+          "jobTitle": "Head of Digital",
+          "worksFor": { "@type": "Organization", "name": "National Media Agency" }
+        },
+        "itemReviewed": {
+          "@type": "Service",
+          "name": "OTT Advertising Platform",
+          "provider": { "@type": "Organization", "name": "PublifyX" }
+        }
+      }
+    ];
+
+    const scriptElements: HTMLScriptElement[] = schemas.map((schema, i) => {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.setAttribute("data-ott-schema", String(i));
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+      return script;
+    });
 
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
-      const el = document.querySelector("script[data-ott-faq-schema]");
-      if (el) el.remove();
+      scriptElements.forEach((el) => el.remove());
     };
   }, []);
   const breadcrumbs = useServiceBreadcrumbs("OTT Advertising");
