@@ -33,6 +33,7 @@ import OTTDeviceSection from "@/components/sections/ottAdvertising/OTTDeviceSect
 import OTTMeasurementSection from "@/components/sections/ottAdvertising/OTTMeasurementSection";
 import OTTMidPageCTA from "@/components/sections/ottAdvertising/OTTMidPageCTA";
 import OTTResourceSection from "@/components/sections/ottAdvertising/OTTResourceSection";
+import OTTStickyFeaturesSection from "@/components/sections/ottAdvertising/OTTStickyFeaturesSection";
 
 const features = [
   {
@@ -342,48 +343,8 @@ const OTTAdvertising = () => {
       {/* ─── 6. MEASUREMENT & ATTRIBUTION ─── */}
       <OTTMeasurementSection />
 
-      {/* ─── 7. PLATFORM CAPABILITIES ─── */}
-      <section className="py-16 md:py-24 bg-navy-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-extrabold text-brand-orange-500 uppercase tracking-widest mb-4"
-            >
-              Platform Capabilities
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 leading-tight max-w-3xl mx-auto"
-            >
-              Everything you need to launch OTT ads
-            </motion.h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {features.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <MagneticCard className="group bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-xl hover:shadow-navy-500/5 transition-all duration-300 h-full">
-                  <div className="w-14 h-14 rounded-2xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-500 transition-colors">
-                    <feature.icon className="w-7 h-7 text-brand-orange-500 group-hover:text-white transition-colors" />
-                  </div>
-                  <h3 className="font-extrabold text-navy-800 text-lg mb-2">{feature.title}</h3>
-                  <p className="text-navy-400 leading-relaxed font-medium text-sm">{feature.description}</p>
-                </MagneticCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ─── 7. PLATFORM CAPABILITIES (Sticky Scroll) ─── */}
+      <OTTStickyFeaturesSection />
 
       {/* ─── 8. AD FORMATS ─── */}
       <section className="py-16 md:py-24 bg-white">
