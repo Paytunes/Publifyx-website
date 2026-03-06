@@ -345,7 +345,7 @@ const OTTAdvertising = () => {
       <OTTResourceSection />
 
       {/* ─── 9. FAQ ─── */}
-      <section className="py-16 md:py-24 bg-navy-50 faq-section">
+      <section className="py-12 md:py-16 bg-navy-50 faq-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <motion.span
