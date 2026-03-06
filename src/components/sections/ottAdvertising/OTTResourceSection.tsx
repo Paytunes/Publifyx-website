@@ -16,7 +16,7 @@ const OTTResourceSection = () => {
             <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-6">
               Helpful OTT & CTV Content for Marketers
             </h2>
-            <p className="text-lg text-navy-500">
+            <p className="text-lg text-navy-600">
               Boost your knowledge with our curated resources on the evolving landscape of streaming advertising.
             </p>
           </div>
@@ -45,6 +45,10 @@ const OTTResourceSection = () => {
                     src={res.image}
                     alt={res.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    width={480}
+                    height={300}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-md text-[10px] font-bold tracking-widest text-navy-900 border border-white/20 uppercase">
                     {res.category.replace(" Advertising", "")}
@@ -53,7 +57,7 @@ const OTTResourceSection = () => {
                 <h3 className="text-xl font-extrabold text-navy-900 mb-3 group-hover:text-brand-orange-600 transition-colors">
                   {res.title}
                 </h3>
-                <p className="text-navy-500 leading-relaxed mb-4 line-clamp-2">{res.excerpt}</p>
+                <p className="text-navy-600 leading-relaxed mb-4 line-clamp-2">{res.excerpt}</p>
                 <div className="text-navy-900 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
                   Read More <span className="text-brand-orange-500">→</span>
                 </div>
