@@ -468,7 +468,7 @@ const OTTAdvertising = () => {
                 className="relative text-center group"
               >
                 {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-12 left-[100%] w-[100%] h-[2px] bg-navy-100 z-0" />
+                  <div className="hidden md:block absolute top-[48px] left-[calc(50%+48px)] h-[2px] bg-navy-100 z-0 -translate-y-1/2" style={{ width: 'calc(100% + 2rem - 96px)' }} />
                 )}
                 <div className="relative z-10">
                   <div className="w-24 h-24 rounded-3xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-orange-500 transition-all duration-300 shadow-xl shadow-navy-900/20">
