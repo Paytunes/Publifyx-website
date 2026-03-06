@@ -198,23 +198,28 @@ const OTTStickyFeaturesSection = () => {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = blockRefs.current.indexOf(entry.target as HTMLDivElement);
-            if (idx !== -1) setActiveIndex(idx);
-          }
-        });
-      },
-      { rootMargin: "-50% 0px -50% 0px", threshold: 0 }
-    );
+    const handleScroll = () => {
+      const viewportCenter = window.innerHeight / 2;
+      let closestIdx = 0;
+      let closestDist = Infinity;
 
-    blockRefs.current.forEach((el) => {
-      if (el) observer.observe(el);
-    });
+      blockRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const elCenter = rect.top + rect.height / 2;
+        const dist = Math.abs(elCenter - viewportCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIdx = i;
+        }
+      });
 
-    return () => observer.disconnect();
+      setActiveIndex(closestIdx);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
