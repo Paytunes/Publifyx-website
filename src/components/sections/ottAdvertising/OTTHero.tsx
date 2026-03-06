@@ -31,20 +31,25 @@ const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
                 <span className="text-sm font-medium text-white/80">OTT Advertising Platform</span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1]">
-                OTT Advertising — Reach Streaming Audiences
+                OTT Advertising Platform — Reach Streaming Audiences
                 <span className="block text-brand-orange-400">Across Every Screen</span>
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-                Over-the-top advertising gives brands the ability to reach audiences wherever they stream — on smart
-                TVs, mobile phones, tablets, laptops, and gaming consoles.
+                Streaming has changed how people consume content, and how brands must reach them.
+              </p>
+              <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
+                Over-the-top (OTT) advertising allows you to deliver targeted video ads across smart TVs, smartphones, tablets, laptops, and gaming consoles. Wherever audiences stream, your message follows.
+              </p>
+              <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
+                PublifyX provides a programmatic OTT advertising platform that connects you to premium streaming inventory across devices and environments. Whether your audience is watching a show on a smart TV, catching up on content on mobile, or streaming during their commute, your campaigns reach them with precision and measurable impact.
               </p>
               <p className="text-base text-navy-300 mb-10 font-semibold">
-                Every device · Every platform · One dashboard
+                Looking to expand beyond traditional TV? Speak with our team about launching OTT campaigns.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
                   <Link to="/contact" className="flex items-center text-white no-underline group">
-                    Book a Call{" "}
+                    Book a Demo{" "}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
