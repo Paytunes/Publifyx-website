@@ -184,7 +184,7 @@ const OTTAdvertising = () => {
             <strong className="text-navy-800">CTV</strong> is specifically OTT viewed on a television screen.
           </p>
         </div>
-        <p className="text-lg text-navy-400 leading-relaxed max-w-[40rem] mx-auto text-center text-orange-700">
+        <p className="text-lg leading-relaxed max-w-[40rem] mx-auto text-center text-brand-orange-500">
           When you activate OTT campaigns through PublifyX, you reach audiences across every screen, not just the living
           room.
         </p>
