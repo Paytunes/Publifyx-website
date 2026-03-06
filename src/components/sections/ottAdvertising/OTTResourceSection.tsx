@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
+import { ArrowRight } from "lucide-react";
 
 const OTTResourceSection = () => {
   // Filter blog posts for OTT/CTV categories
@@ -22,10 +23,10 @@ const OTTResourceSection = () => {
           </div>
           <Link
             to="/blog"
-            className="text-brand-orange-600 font-bold flex items-center gap-2 hover:gap-3 transition-all no-underline"
+            className="text-brand-orange-700 font-bold flex items-center gap-2 hover:gap-3 transition-all no-underline"
           >
             VIEW ALL RESOURCES
-            <span className="text-xl">→</span>
+            <ArrowRight className="w-3.5 h-3.5 ml-1" />
           </Link>
         </div>
 
