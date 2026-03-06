@@ -274,8 +274,8 @@ const OTTAdvertising = () => {
                   src={ottMultiscreenImg}
                   alt="OTT content streaming across smart TVs, smartphones, tablets, laptops, and gaming consoles"
                   className="relative w-full h-auto rounded-2xl shadow-2xl shadow-navy-900/20 border border-navy-100"
-                  width={800}
-                  height={600}
+                  width={672}
+                  height={512}
                   loading="lazy"
                   decoding="async"
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
