@@ -33,39 +33,40 @@ import OTTDeviceSection from "@/components/sections/ottAdvertising/OTTDeviceSect
 import OTTMeasurementSection from "@/components/sections/ottAdvertising/OTTMeasurementSection";
 import OTTMidPageCTA from "@/components/sections/ottAdvertising/OTTMidPageCTA";
 import OTTResourceSection from "@/components/sections/ottAdvertising/OTTResourceSection";
-import OTTStickyFeaturesSection from "@/components/sections/ottAdvertising/OTTStickyFeaturesSection";
+import ottStreamingDevices from "@/assets/ott/ott-streaming-devices.webp";
+import ottMultiscreen from "@/assets/ott/ott-multiscreen.webp";
 
 const features = [
   {
     title: "Multi-Device Reach",
-    description: "Deliver video ads across smart TVs, mobile devices, tablets, desktop browsers, and gaming consoles.",
+    description: "Deliver video ads across smart TVs, mobile devices, tablets, desktop browsers, and gaming consoles. Reach your audience on the device and platform they prefer.",
     icon: Smartphone,
   },
   {
     title: "Premium Inventory Access",
     description:
-      "Connect to ad-supported streaming platforms, FAST channels, and OTT app inventory through leading SSPs.",
+      "Access ad-supported streaming platforms, FAST channels, and OTT apps through leading SSP integrations and private marketplace deals.",
     icon: Globe,
   },
   {
     title: "Advanced Audience Targeting",
-    description: "Target viewers by age, gender, income, interests, purchase behavior, content genre, and geography.",
+    description: "Target viewers based on age, gender, household income, interests, purchase behavior, content genre preferences, and geographic location. Combine first-party data with third-party audience segments for precise reach.",
     icon: Target,
   },
   {
     title: "Frequency Management",
-    description: "Control how many times a household or individual sees your ad across devices and platforms.",
+    description: "Control how many times a household or individual sees your ad across devices and platforms, preventing ad fatigue while maximizing campaign efficiency.",
     icon: RefreshCw,
   },
   {
-    title: "Real-Time Optimization",
+    title: "Real-Time Optimization and Reporting",
     description:
-      "Monitor campaign performance in real time with impressions, VCR, reach, frequency, and cost efficiency.",
+      "Monitor campaign performance in real time with metrics including impressions, VCR, reach, frequency, and cost efficiency. Make adjustments on the fly to improve results.",
     icon: BarChart3,
   },
   {
-    title: "Omnichannel Integration",
-    description: "Combine OTT with display, audio, and native advertising within PublifyX for unified media buying.",
+    title: "Seamless Integration with Other Channels",
+    description: "Combine OTT campaigns with display, audio, and native advertising within the PublifyX platform for a unified, omnichannel media buying experience.",
     icon: Zap,
   },
 ];
@@ -73,20 +74,20 @@ const features = [
 const adFormats = [
   {
     title: "Pre-Roll Video Ads",
-    desc: "Short video ads that play before the viewer's selected content begins. Typically 15 or 30 seconds.",
+    desc: "Short video ads that play before the viewer's selected content begins. Typically 15 or 30 seconds in length.",
   },
   {
     title: "Mid-Roll Video Ads",
-    desc: "Ads inserted during natural breaks within longer-form content, targeted to specific audiences.",
+    desc: "Ads inserted during natural breaks within longer-form content, similar to traditional commercial breaks but targeted to specific audiences.",
   },
   { title: "Post-Roll Video Ads", desc: "Video ads that play after the content has concluded." },
   {
     title: "Interactive OTT Ads",
-    desc: "Formats allowing viewers to engage with clickable overlays and QR code prompts.",
+    desc: "Formats that allow viewers to engage with the ad using their remote control or touch screen, including clickable overlays and QR code prompts.",
   },
   {
     title: "Companion Display Banners",
-    desc: "Display ads shown alongside the video player, reinforcing the video message with a visual banner.",
+    desc: "Display ads shown alongside or below the video player on certain OTT platforms, reinforcing the video message with a visual banner.",
   },
 ];
 
@@ -144,12 +145,12 @@ const faqs = [
   {
     question: "What is the difference between OTT and CTV advertising?",
     answer:
-      "OTT refers to content delivered over the internet across all devices — TVs, phones, tablets, and computers. CTV refers specifically to ads viewed on a television screen through internet-connected devices. CTV is a subset of OTT.",
+      "OTT refers to content delivered over the internet across all devices, TVs, phones, tablets, and computers. CTV refers specifically to ads viewed on a television screen through internet-connected devices. CTV is a subset of OTT.",
   },
   {
     question: "What platforms do OTT ads run on?",
     answer:
-      "OTT ads run across ad-supported streaming services, FAST channels, and OTT apps. Specific platforms vary by region and inventory availability through our SSP partners.",
+      "OTT ads run across ad-supported streaming services, FAST (free ad-supported streaming TV) channels, and OTT apps. Specific platforms vary by region and inventory availability through our SSP partners.",
   },
   {
     question: "Can OTT advertising be targeted to specific audiences?",
@@ -159,12 +160,12 @@ const faqs = [
   {
     question: "How much does OTT advertising cost?",
     answer:
-      "OTT advertising is typically priced on a CPM basis. Costs vary based on targeting specificity, inventory quality, and campaign scale. PublifyX allows flexible budget entry points.",
+      "OTT advertising is typically priced on a CPM basis. Costs vary based on targeting specificity, inventory quality, and campaign scale. PublifyX allows flexible budget entry points suitable for businesses of varying sizes.",
   },
   {
     question: "Can I measure OTT ad performance?",
     answer:
-      "Yes. PublifyX provides real-time reporting on impressions, video completion rates, reach, frequency, and cost metrics. Attribution measurement is also available.",
+      "Yes. PublifyX provides real-time reporting on impressions, video completion rates, reach, frequency, and cost metrics. Attribution measurement for website visits and conversions is also available.",
   },
 ];
 
@@ -177,8 +178,30 @@ const OTTAdvertising = () => {
         "content",
         "Deliver targeted OTT advertising across streaming platforms on every device. PublifyX's OTT ads platform offers programmatic buying, precise targeting, and real-time analytics.",
       );
+
+    // FAQ Schema (FAQPage) for AEO/GEO
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer,
+        },
+      })),
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "ott-faq-schema";
+    script.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
+      const existingScript = document.getElementById("ott-faq-schema");
+      if (existingScript) existingScript.remove();
     };
   }, []);
   const breadcrumbs = useServiceBreadcrumbs("OTT Advertising");
@@ -218,13 +241,17 @@ const OTTAdvertising = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 mb-6 leading-tight">
                 What Is OTT Advertising?
               </h2>
-              <p className="text-lg text-navy-400 leading-relaxed mb-8">
-                OTT stands for "over-the-top," referring to content delivered directly over the internet, bypassing
-                traditional cable and satellite. OTT advertising reaches viewers across all internet-connected devices
-                with the precision of digital and the impact of television.
+              <p className="text-lg text-navy-400 leading-relaxed mb-4">
+                OTT stands for "over-the-top," referring to content delivered directly over the internet, bypassing traditional cable, broadcast, and satellite television providers.
               </p>
-              <ul className="space-y-4">
-                {["Smart TVs & streaming sticks", "Smartphones & tablets", "Laptops & desktops", "Gaming consoles"].map(
+              <p className="text-lg text-navy-400 leading-relaxed mb-8">
+                OTT advertising is the placement of ads within this internet-delivered content.
+              </p>
+              <p className="text-lg text-navy-600 font-semibold mb-4">
+                OTT content is consumed across:
+              </p>
+              <ul className="space-y-4 mb-8">
+                {["Smart TVs", "Streaming devices", "Smartphones", "Tablets", "Laptops", "Gaming consoles"].map(
                   (item) => (
                     <li key={item} className="flex items-center gap-3">
                       <div className="w-7 h-7 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
@@ -235,14 +262,20 @@ const OTTAdvertising = () => {
                   ),
                 )}
               </ul>
-              <div className="mt-10">
-                <EnergyButton className="inline-flex items-center btn-primary text-base px-8 py-4">
-                  <Link to="/contact" className="flex items-center text-white no-underline group">
-                    Request Consultation
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </EnergyButton>
+              <div className="bg-navy-50 rounded-2xl border border-navy-100 p-6 mb-8">
+                <p className="text-navy-600 leading-relaxed mb-2">
+                  <span className="font-bold">The distinction is simple:</span>
+                </p>
+                <p className="text-navy-600 leading-relaxed mb-1">
+                  OTT is the delivery method across all internet-connected devices.
+                </p>
+                <p className="text-navy-600 leading-relaxed">
+                  CTV is specifically OTT viewed on a television screen.
+                </p>
               </div>
+              <p className="text-lg text-navy-400 leading-relaxed">
+                When you activate OTT campaigns through PublifyX, you reach audiences across every screen, not just the living room.
+              </p>
             </motion.div>
 
             <motion.div
@@ -251,29 +284,18 @@ const OTTAdvertising = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <div className="bg-navy-800 rounded-3xl border border-navy-700 p-10">
-                <h3 className="text-2xl font-extrabold text-white mb-6">Why OTT Matters</h3>
-                <ul className="space-y-4">
-                  {[
-                    "Household-level targeting precision",
-                    "Higher attention than linear TV",
-                    "Non-skippable ad formats",
-                    "Measurable impressions & attribution",
-                    "Growing cord-cutter audiences",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <div className="w-7 h-7 rounded-full bg-brand-orange-500/20 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 className="w-4 h-4 text-brand-orange-400" />
-                      </div>
-                      <span className="text-navy-200 font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="relative rounded-3xl overflow-hidden shadow-[0_24px_48px_-12px_rgba(0,0,0,0.3)] border border-navy-100">
+                <img
+                  src={ottStreamingDevices}
+                  alt="OTT content streaming across smart TVs, smartphones, tablets, laptops and gaming consoles"
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
           </div>
 
-          {/* Row 2: Card left, Text right (alternating) */}
+          {/* Row 2: Image left, Text right (alternating) */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -282,23 +304,13 @@ const OTTAdvertising = () => {
               transition={{ duration: 0.7 }}
               className="order-2 lg:order-1"
             >
-              <div className="bg-navy-50 rounded-3xl border border-navy-100 p-10">
-                <h3 className="text-2xl font-extrabold text-navy-800 mb-6">OTT Reaches Every Screen</h3>
-                <ul className="space-y-4">
-                  {[
-                    "Measure users across CTV, mobile, and connected devices",
-                    "Connect the dots across devices and platforms",
-                    "Capture full-funnel engagement from impression to conversion",
-                    "Attribute conversions across omnichannel media efforts",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <div className="w-7 h-7 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-4 h-4 text-brand-orange-600" />
-                      </div>
-                      <span className="text-navy-600 font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="relative rounded-3xl overflow-hidden shadow-[0_24px_48px_-12px_rgba(0,0,0,0.3)] border border-navy-100">
+                <img
+                  src={ottMultiscreen}
+                  alt="OTT advertising reaching audiences across every screen and platform"
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
 
@@ -335,7 +347,7 @@ const OTTAdvertising = () => {
       <FounderQuoteSection
         quote="Streaming is not a trend, it's the new default. Our OTT platform ensures brands don't just follow audiences across devices, but reach them with measurable impact."
         name="Saurabh"
-        title="CEO, PublifyX"
+        title="CEO PublifyX"
       />
 
       {/* ─── 5. DEVICE SECTION ─── */}
@@ -344,11 +356,51 @@ const OTTAdvertising = () => {
       {/* ─── 6. MEASUREMENT & ATTRIBUTION ─── */}
       <OTTMeasurementSection />
 
-      {/* ─── 7. PLATFORM CAPABILITIES (Sticky Scroll) ─── */}
-      <OTTStickyFeaturesSection />
+      {/* ─── 7. PLATFORM CAPABILITIES ─── */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="inline-block text-sm font-extrabold text-brand-orange-500 uppercase tracking-widest mb-4"
+            >
+              Capabilities
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
+            >
+              PublifyX OTT Advertising Capabilities
+            </motion.h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {features.map((feature, i) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+              >
+                <MagneticCard className="bg-navy-50 rounded-2xl border border-navy-100 p-8 h-full hover:shadow-xl hover:shadow-navy-500/5 transition-all duration-300 group">
+                  <div className="w-14 h-14 rounded-2xl bg-brand-orange-500/10 flex items-center justify-center mb-5 group-hover:bg-brand-orange-500 transition-colors duration-300">
+                    <feature.icon className="w-7 h-7 text-brand-orange-500 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <h3 className="font-extrabold text-navy-800 text-xl mb-3">{feature.title}</h3>
+                  <p className="text-navy-400 font-medium leading-relaxed text-sm">{feature.description}</p>
+                </MagneticCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ─── 8. AD FORMATS ─── */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.span
@@ -365,7 +417,7 @@ const OTTAdvertising = () => {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
             >
-              OTT Ad Formats Supported
+              OTT Ad Formats Supported by PublifyX
             </motion.h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -522,7 +574,7 @@ const OTTAdvertising = () => {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
             >
-              Common Questions
+              Frequently Asked Questions About OTT Advertising
             </motion.h2>
           </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
