@@ -54,10 +54,11 @@ const FounderQuoteSection = ({ quote, name, title, showImage = true }: FounderQu
                 <img
                   src={founderPhoto}
                   alt={`${name}, ${title}`}
-                  width={96}
-                  height={96}
+                  width={112}
+                  height={112}
                   loading="lazy"
                   decoding="async"
+                  sizes="(max-width: 768px) 96px, 112px"
                   className="w-full h-full object-cover"
                 />
               </motion.div>
