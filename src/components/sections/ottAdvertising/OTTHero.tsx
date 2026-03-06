@@ -27,7 +27,7 @@ const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <PageBreadcrumb items={breadcrumbs} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={skipAnim ? false : { opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
                 <span className="text-sm font-medium text-white/80">OTT Advertising Platform</span>
@@ -48,15 +48,20 @@ const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
               <p className="text-base text-navy-200 mb-10 font-semibold">
                 Looking to expand beyond traditional TV? Speak with our team about launching OTT campaigns.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
+              <motion.div
+                initial={skipAnim ? false : { opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex flex-col sm:flex-row gap-4 items-start mb-10"
+              >
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
                   <Link to="/contact" className="flex items-center text-white no-underline group">
                     Book a Demo{" "}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
             <motion.div
               initial={skipAnim ? false : { opacity: 0, x: 40, scale: 0.95 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
