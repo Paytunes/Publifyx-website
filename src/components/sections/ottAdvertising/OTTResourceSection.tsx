@@ -13,7 +13,7 @@ const OTTResourceSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-6 text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-6">
               Helpful OTT & CTV Content for Marketers
             </h2>
             <p className="text-lg text-navy-500">
