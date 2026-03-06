@@ -207,7 +207,7 @@ const OTTStickyFeaturesSection = () => {
           }
         });
       },
-      { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
+      { rootMargin: "-50% 0px -50% 0px", threshold: 0 }
     );
 
     blockRefs.current.forEach((el) => {
