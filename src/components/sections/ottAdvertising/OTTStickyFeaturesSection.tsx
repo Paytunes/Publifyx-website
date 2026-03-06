@@ -6,7 +6,7 @@ const features = [
   {
     title: "Multi-Device Reach",
     description:
-      "Deliver video ads across smart TVs, mobile devices, tablets, desktop browsers, and gaming consoles.",
+      "Deliver video ads across smart TVs, mobile devices, tablets, desktop browsers, and gaming consoles. Reach your audience on the device and platform they prefer.",
     icon: Smartphone,
     bullets: [
       "Smart TVs & streaming sticks",
@@ -26,12 +26,12 @@ const features = [
   {
     title: "Premium Inventory Access",
     description:
-      "Connect to ad-supported streaming platforms, FAST channels, and OTT app inventory through leading SSPs.",
+      "Access ad-supported streaming platforms, FAST channels, and OTT apps through leading SSP integrations and private marketplace deals.",
     icon: Globe,
     bullets: [
-      "FAST channel inventory",
       "Ad-supported streaming platforms",
-      "OTT app placements via SSP partners",
+      "FAST channel inventory",
+      "Private marketplace deals via SSPs",
     ],
     visual: {
       label: "Inventory Sources",
@@ -46,12 +46,12 @@ const features = [
   {
     title: "Advanced Audience Targeting",
     description:
-      "Target viewers by age, gender, income, interests, purchase behavior, content genre, and geography.",
+      "Target viewers based on age, gender, household income, interests, purchase behavior, content genre preferences, and geographic location. Combine first-party data with third-party audience segments for precise reach.",
     icon: Target,
     bullets: [
-      "Demographic & interest-based segments",
-      "Purchase intent signals",
-      "Geographic & contextual targeting",
+      "Demographic & income-based segments",
+      "Purchase behavior & interest signals",
+      "First-party & third-party data integration",
     ],
     visual: {
       label: "Targeting Layers",
@@ -66,12 +66,12 @@ const features = [
   {
     title: "Frequency Management",
     description:
-      "Control how many times a household or individual sees your ad across devices and platforms.",
+      "Control how many times a household or individual sees your ad across devices and platforms, preventing ad fatigue while maximizing campaign efficiency.",
     icon: RefreshCw,
     bullets: [
       "Household-level frequency caps",
       "Cross-device deduplication",
-      "Platform-level control",
+      "Ad fatigue prevention",
     ],
     visual: {
       label: "Frequency Control",
@@ -84,14 +84,14 @@ const features = [
     },
   },
   {
-    title: "Real-Time Optimization",
+    title: "Real-Time Optimization and Reporting",
     description:
-      "Monitor campaign performance in real time with impressions, VCR, reach, frequency, and cost efficiency.",
+      "Monitor campaign performance in real time with metrics including impressions, VCR, reach, frequency, and cost efficiency. Make adjustments on the fly to improve results.",
     icon: BarChart3,
     bullets: [
       "Live impression & VCR tracking",
       "Cost efficiency monitoring",
-      "Auto-optimization rules",
+      "On-the-fly optimization",
     ],
     visual: {
       label: "Performance Metrics",
@@ -104,9 +104,9 @@ const features = [
     },
   },
   {
-    title: "Omnichannel Integration",
+    title: "Seamless Integration with Other Channels",
     description:
-      "Combine OTT with display, audio, and native advertising within PublifyX for unified media buying.",
+      "Combine OTT campaigns with display, audio, and native advertising within the PublifyX platform for a unified, omnichannel media buying experience.",
     icon: Zap,
     bullets: [
       "Unified campaign management",
@@ -241,7 +241,7 @@ const OTTStickyFeaturesSection = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 leading-tight max-w-3xl mx-auto"
           >
-            Everything you need to launch OTT ads
+            PublifyX OTT Advertising Capabilities
           </motion.h2>
         </div>
       </div>
@@ -250,7 +250,7 @@ const OTTStickyFeaturesSection = () => {
       <div className="hidden lg:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 lg:gap-16 relative">
-            {/* Left: Sticky visual — stays in viewport */}
+            {/* Left: Sticky visual */}
             <div className="relative">
               <div className="sticky top-24 h-[calc(100vh-8rem)] flex items-center">
                 <div className="w-full">
@@ -269,7 +269,7 @@ const OTTStickyFeaturesSection = () => {
               </div>
             </div>
 
-            {/* Right: Each feature block takes ~90vh, vertically centered */}
+            {/* Right: Each feature block */}
             <div>
               {features.map((feature, i) => {
                 const Icon = feature.icon;
