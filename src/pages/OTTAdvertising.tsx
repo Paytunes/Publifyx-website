@@ -107,7 +107,7 @@ const OTTAdvertising = () => {
 
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
-      const el = document.querySelector('script[data-ott-faq-schema]');
+      const el = document.querySelector("script[data-ott-faq-schema]");
       if (el) el.remove();
     };
   }, []);
@@ -135,14 +135,15 @@ const OTTAdvertising = () => {
                 What Is OTT Advertising?
               </h2>
               <p className="text-lg text-navy-400 leading-relaxed mb-4">
-                OTT stands for "over-the-top," referring to content delivered directly over the internet, bypassing traditional cable, broadcast, and satellite television providers.
+                OTT stands for "over-the-top," referring to content delivered directly over the internet, bypassing
+                traditional cable, broadcast, and satellite television providers.
               </p>
               <p className="text-lg text-navy-400 leading-relaxed mb-8">
                 OTT advertising is the placement of ads within this internet-delivered content.
               </p>
               <p className="text-base text-navy-600 font-semibold mb-4">OTT content is consumed across:</p>
               <ul className="space-y-4 mb-8">
-                {["Smart TVs", "Streaming devices", "Smartphones", "Tablets", "Laptops", "Gaming consoles"].map(
+                {["Smart TVs & Streaming devices", "Smartphones & Tablets", "Laptops", "Gaming consoles"].map(
                   (item) => (
                     <li key={item} className="flex items-center gap-3">
                       <div className="w-7 h-7 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
@@ -156,14 +157,16 @@ const OTTAdvertising = () => {
               <div className="bg-navy-50 rounded-2xl border border-navy-100 p-6 mb-6">
                 <p className="text-base text-navy-600 font-semibold mb-2">The distinction is simple:</p>
                 <p className="text-navy-500 leading-relaxed mb-1">
-                  <strong className="text-navy-800">OTT</strong> is the delivery method across all internet-connected devices.
+                  <strong className="text-navy-800">OTT</strong> is the delivery method across all internet-connected
+                  devices.
                 </p>
                 <p className="text-navy-500 leading-relaxed">
                   <strong className="text-navy-800">CTV</strong> is specifically OTT viewed on a television screen.
                 </p>
               </div>
               <p className="text-lg text-navy-400 leading-relaxed">
-                When you activate OTT campaigns through PublifyX, you reach audiences across every screen, not just the living room.
+                When you activate OTT campaigns through PublifyX, you reach audiences across every screen, not just the
+                living room.
               </p>
             </motion.div>
 
