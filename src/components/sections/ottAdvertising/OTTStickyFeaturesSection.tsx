@@ -218,10 +218,10 @@ const OTTStickyFeaturesSection = () => {
   }, []);
 
   return (
-    <section className="py-16 md:py-24 bg-navy-50" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
+    <section className="bg-navy-50" ref={sectionRef}>
+      {/* Section Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12">
+        <div className="text-center">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -239,100 +239,109 @@ const OTTStickyFeaturesSection = () => {
             Everything you need to launch OTT ads
           </motion.h2>
         </div>
+      </div>
 
-        {/* Desktop: 2-column sticky layout */}
-        <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16">
-          {/* Left: Sticky visual */}
-          <div className="relative">
-            <div className="sticky top-32" style={{ height: "fit-content" }}>
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeIndex}
-                  initial={{ opacity: 0, scale: 0.97 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.97 }}
-                  transition={{ duration: 0.35, ease: [0.33, 1, 0.68, 1] }}
-                >
-                  <FeatureVisual feature={features[activeIndex]} index={activeIndex} />
-                </motion.div>
-              </AnimatePresence>
+      {/* Desktop: Full-height scroll sections with sticky visual */}
+      <div className="hidden lg:block">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 lg:gap-16 relative">
+            {/* Left: Sticky visual — stays in viewport */}
+            <div className="relative">
+              <div className="sticky top-24 h-[calc(100vh-8rem)] flex items-center">
+                <div className="w-full">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeIndex}
+                      initial={{ opacity: 0, scale: 0.97 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.97 }}
+                      transition={{ duration: 0.35, ease: [0.33, 1, 0.68, 1] }}
+                    >
+                      <FeatureVisual feature={features[activeIndex]} index={activeIndex} />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Right: Scrolling feature blocks */}
-          <div className="space-y-8">
-            {features.map((feature, i) => {
-              const Icon = feature.icon;
-              const isActive = i === activeIndex;
-              return (
-                <div
-                  key={feature.title}
-                  ref={(el) => setBlockRef(el, i)}
-                  className={`rounded-2xl border-2 p-8 transition-all duration-300 ${
-                    isActive
-                      ? "border-brand-orange-500 bg-white shadow-lg shadow-brand-orange-500/10"
-                      : "border-navy-100 bg-white/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-4 mb-4">
+            {/* Right: Each feature block takes ~90vh, vertically centered */}
+            <div>
+              {features.map((feature, i) => {
+                const Icon = feature.icon;
+                const isActive = i === activeIndex;
+                return (
+                  <div
+                    key={feature.title}
+                    ref={(el) => setBlockRef(el, i)}
+                    className="flex items-center"
+                    style={{ minHeight: "90vh" }}
+                  >
                     <div
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
-                        isActive ? "bg-brand-orange-500" : "bg-brand-orange-50"
+                      className={`rounded-2xl border-2 p-8 w-full transition-all duration-300 ${
+                        isActive
+                          ? "border-brand-orange-500 bg-white shadow-lg shadow-brand-orange-500/10"
+                          : "border-navy-100 bg-white/50 opacity-40"
                       }`}
                     >
-                      <Icon
-                        className={`w-6 h-6 transition-colors duration-300 ${
-                          isActive ? "text-white" : "text-brand-orange-500"
-                        }`}
-                      />
+                      <div className="flex items-center gap-4 mb-4">
+                        <div
+                          className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
+                            isActive ? "bg-brand-orange-500" : "bg-brand-orange-50"
+                          }`}
+                        >
+                          <Icon
+                            className={`w-6 h-6 transition-colors duration-300 ${
+                              isActive ? "text-white" : "text-brand-orange-500"
+                            }`}
+                          />
+                        </div>
+                        <h3 className="text-xl font-extrabold text-navy-800">{feature.title}</h3>
+                      </div>
+                      <p className="text-navy-400 font-medium leading-relaxed mb-4">{feature.description}</p>
+                      <ul className="space-y-2">
+                        {feature.bullets.map((bullet) => (
+                          <li key={bullet} className="flex items-center gap-2.5 text-sm text-navy-600 font-medium">
+                            <div className="w-1.5 h-1.5 rounded-full bg-brand-orange-500 flex-shrink-0" />
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-extrabold text-navy-800">{feature.title}</h3>
                   </div>
-                  <p className="text-navy-400 font-medium leading-relaxed mb-4">{feature.description}</p>
-                  <ul className="space-y-2">
-                    {feature.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-center gap-2.5 text-sm text-navy-600 font-medium">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-orange-500 flex-shrink-0" />
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Mobile: Stacked layout */}
-        <div className="lg:hidden space-y-10">
-          {features.map((feature, i) => {
-            const Icon = feature.icon;
-            return (
-              <div key={feature.title}>
-                {/* Content block */}
-                <div className="bg-white rounded-2xl border border-navy-100 p-6 mb-4">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-11 h-11 rounded-xl bg-brand-orange-50 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-brand-orange-500" />
-                    </div>
-                    <h3 className="text-lg font-extrabold text-navy-800">{feature.title}</h3>
+      {/* Mobile: Stacked layout */}
+      <div className="lg:hidden px-4 sm:px-6 pb-16 space-y-10">
+        {features.map((feature, i) => {
+          const Icon = feature.icon;
+          return (
+            <div key={feature.title}>
+              <div className="bg-white rounded-2xl border border-navy-100 p-6 mb-4">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-11 h-11 rounded-xl bg-brand-orange-50 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-brand-orange-500" />
                   </div>
-                  <p className="text-navy-400 font-medium leading-relaxed mb-3 text-sm">{feature.description}</p>
-                  <ul className="space-y-1.5">
-                    {feature.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-center gap-2 text-sm text-navy-600 font-medium">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-orange-500 flex-shrink-0" />
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="text-lg font-extrabold text-navy-800">{feature.title}</h3>
                 </div>
-                {/* Visual below */}
-                <FeatureVisual feature={feature} index={i} />
+                <p className="text-navy-400 font-medium leading-relaxed mb-3 text-sm">{feature.description}</p>
+                <ul className="space-y-1.5">
+                  {feature.bullets.map((bullet) => (
+                    <li key={bullet} className="flex items-center gap-2 text-sm text-navy-600 font-medium">
+                      <div className="w-1.5 h-1.5 rounded-full bg-brand-orange-500 flex-shrink-0" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            );
-          })}
-        </div>
+              <FeatureVisual feature={feature} index={i} />
+            </div>
+          );
+        })}
       </div>
     </section>
   );
