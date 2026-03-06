@@ -278,6 +278,7 @@ const OTTAdvertising = () => {
                   height={600}
                   loading="lazy"
                   decoding="async"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
                 />
               </div>
             </motion.div>
