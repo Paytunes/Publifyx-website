@@ -198,26 +198,6 @@ const OTTAdvertising = () => {
             }
           }
         ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "OTT Advertising Platform",
-        "serviceType": "Programmatic OTT Advertising",
-        "provider": { "@type": "Organization", "name": "PublifyX", "url": "https://publifyx.com" },
-        "review": {
-          "@type": "Review",
-          "reviewBody": "OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple.",
-          "author": {
-            "@type": "Person",
-            "name": "Head of Digital"
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        }
       }
     ];
 
