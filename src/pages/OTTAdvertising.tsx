@@ -232,6 +232,7 @@ const OTTAdvertising = () => {
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
       scriptElements.forEach((el) => el.remove());
+      preloadLink.remove();
     };
   }, []);
   const breadcrumbs = useServiceBreadcrumbs("OTT Advertising");
