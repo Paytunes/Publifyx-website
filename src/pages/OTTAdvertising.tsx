@@ -367,6 +367,7 @@ const OTTAdvertising = () => {
                         height={400}
                         loading="lazy"
                         decoding="async"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
                   </div>
