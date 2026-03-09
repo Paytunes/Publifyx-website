@@ -3,26 +3,11 @@ import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
 import { ArrowRight } from "lucide-react";
 
-// Local copies of blog thumbnails to avoid third-party CDN requests
-import connectedTvGuideImg from "@/assets/blog/connected-tv-guide.webp";
-import ctvVsOttImg from "@/assets/blog/ctv-vs-ott.webp";
-import howCtvWorksImg from "@/assets/blog/how-ctv-works.webp";
-
-const localImageMap: Record<string, string> = {
-  "connected-tv-advertising-guide": connectedTvGuideImg,
-  "ctv-vs-ott-advertising": ctvVsOttImg,
-  "how-does-connected-tv-advertising-work": howCtvWorksImg,
-};
-
 const OTTResourceSection = () => {
-  // Filter blog posts for OTT/CTV categories and use local images
+  // Filter blog posts for OTT/CTV categories
   const ottBlogs = blogPosts
     .filter((post) => ["OTT Advertising", "CTV Advertising"].includes(post.category))
-    .slice(0, 3)
-    .map((post) => ({
-      ...post,
-      image: localImageMap[post.slug] || post.image,
-    }));
+    .slice(0, 3);
 
   return (
     <section className="py-12 md:py-16 bg-white">
