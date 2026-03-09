@@ -17,7 +17,6 @@ const OTTMeasurementSection = lazy(() => import("@/components/sections/ottAdvert
 const OTTResourceSection = lazy(() => import("@/components/sections/ottAdvertising/OTTResourceSection"));
 const OTTStickyFeaturesSection = lazy(() => import("@/components/sections/ottAdvertising/OTTStickyFeaturesSection"));
 
-import ottHeroDashboardUrl from "@/assets/ott/ott-hero-dashboard.webp";
 import ottMultiscreenImg from "@/assets/ott/ott-multiscreen.webp";
 import prerollImg from "@/assets/ott/preroll-ad.webp";
 import midrollImg from "@/assets/ott/midroll-ad.webp";
@@ -90,14 +89,6 @@ const OTTAdvertising = () => {
         "content",
         "Deliver targeted OTT advertising across streaming platforms on every device. PublifyX's OTT ads platform offers programmatic buying, precise targeting, and real-time analytics.",
       );
-
-    // Preload hero image for faster LCP
-    const preloadLink = document.createElement("link");
-    preloadLink.rel = "preload";
-    preloadLink.as = "image";
-    preloadLink.type = "image/webp";
-    preloadLink.href = ottHeroDashboardUrl;
-    document.head.appendChild(preloadLink);
 
     // Schema markup
     const schemas = [
@@ -233,7 +224,6 @@ const OTTAdvertising = () => {
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
       scriptElements.forEach((el) => el.remove());
-      preloadLink.remove();
     };
   }, []);
   const breadcrumbs = useServiceBreadcrumbs("OTT Advertising");
