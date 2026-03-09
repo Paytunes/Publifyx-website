@@ -106,7 +106,7 @@ const OTTMeasurementSection = () => {
           >
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-orange-500/10 rounded-full blur-[100px]" />
             <div className="relative rounded-3xl overflow-hidden shadow-[0_24px_48px_-12px_rgba(0,0,0,0.4)] border border-navy-100">
-              <img src={measurementImg} alt="OTT performance measurement dashboard" className="w-full h-auto" width={800} height={600} loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px" />
+              <img src={measurementImg} alt="OTT performance measurement dashboard" className="w-full h-auto" width={672} height={448} loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px" />
             </div>
           </motion.div>
 
