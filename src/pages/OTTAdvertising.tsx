@@ -192,8 +192,14 @@ const OTTAdvertising = () => {
         "reviewBody": "OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple.",
         "author": {
           "@type": "Person",
+          "name": "Head of Digital",
           "jobTitle": "Head of Digital",
           "worksFor": { "@type": "Organization", "name": "National Media Agency" }
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
         },
         "itemReviewed": {
           "@type": "Service",
