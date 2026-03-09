@@ -126,6 +126,19 @@ const OTTAdvertising = () => {
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real-Time Optimization and Reporting" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seamless Integration with Other Channels" } }
           ]
+        },
+        "review": {
+          "@type": "Review",
+          "reviewBody": "OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple.",
+          "author": {
+            "@type": "Person",
+            "name": "Head of Digital"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
         }
       },
       {
