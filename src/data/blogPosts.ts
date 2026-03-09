@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
     category: "OTT Advertising",
     date: "Dec 20, 2025",
     readTime: "7 min read",
-    image: new URL("@/assets/blog/ott-buy-ads-card.webp", import.meta.url).href,
+    image: ottBuyAdsCard,
     slug: "how-to-buy-ott-ads-programmatically",
   },
   {
