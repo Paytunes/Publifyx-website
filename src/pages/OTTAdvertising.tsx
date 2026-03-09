@@ -505,6 +505,7 @@ const OTTAdvertising = () => {
           </motion.div>
         </div>
       </section>
+      </Suspense>
     </Layout>
   );
 };
