@@ -95,121 +95,124 @@ const OTTAdvertising = () => {
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "OTT Advertising Platform | Over-the-Top Ads Across Every Screen — PublifyX",
-        "description": "Deliver targeted OTT advertising across streaming platforms on every device. PublifyX's OTT ads platform offers programmatic buying, precise targeting, and real-time analytics.",
-        "url": "https://publifyx.com/ott-advertising",
-        "breadcrumb": {
+        name: "OTT Advertising Platform | Over-the-Top Ads Across Every Screen — PublifyX",
+        description:
+          "Deliver targeted OTT advertising across streaming platforms on every device. PublifyX's OTT ads platform offers programmatic buying, precise targeting, and real-time analytics.",
+        url: "https://publifyx.com/ott-advertising",
+        breadcrumb: {
           "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://publifyx.com" },
-            { "@type": "ListItem", "position": 2, "name": "OTT Advertising", "item": "https://publifyx.com/ott-advertising" }
-          ]
-        }
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://publifyx.com" },
+            { "@type": "ListItem", position: 2, name: "OTT Advertising", item: "https://publifyx.com/ott-advertising" },
+          ],
+        },
       },
       {
         "@context": "https://schema.org",
         "@type": "Service",
-        "name": "OTT Advertising Platform",
-        "serviceType": "Programmatic OTT Advertising",
-        "description": "PublifyX provides a programmatic OTT advertising platform that connects brands to premium streaming inventory across smart TVs, mobile, tablets, desktop, and gaming consoles.",
-        "provider": {
+        name: "OTT Advertising Platform",
+        serviceType: "Programmatic OTT Advertising",
+        description:
+          "PublifyX provides a programmatic OTT advertising platform that connects brands to premium streaming inventory across smart TVs, mobile, tablets, desktop, and gaming consoles.",
+        provider: {
           "@type": "Organization",
-          "name": "PublifyX",
-          "url": "https://publifyx.com"
+          name: "PublifyX",
+          url: "https://publifyx.com",
         },
-        "areaServed": "Worldwide",
-        "hasOfferCatalog": {
+        areaServed: "Worldwide",
+        hasOfferCatalog: {
           "@type": "OfferCatalog",
-          "name": "OTT Advertising Capabilities",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Multi-Device Reach" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Premium Inventory Access" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Advanced Audience Targeting" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Frequency Management" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real-Time Optimization and Reporting" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seamless Integration with Other Channels" } }
-          ]
-        }
+          name: "OTT Advertising Capabilities",
+          itemListElement: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Multi-Device Reach" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Premium Inventory Access" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Advanced Audience Targeting" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Frequency Management" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Real-Time Optimization and Reporting" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Seamless Integration with Other Channels" } },
+          ],
+        },
       },
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "PublifyX",
-        "url": "https://publifyx.com",
-        "sameAs": [],
-        "founder": {
+        name: "PublifyX",
+        url: "https://publifyx.com",
+        sameAs: [],
+        founder: {
           "@type": "Person",
-          "name": "Saurabh",
-          "jobTitle": "CEO"
-        }
+          name: "Saurabh",
+          jobTitle: "CEO",
+        },
       },
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
+        mainEntity: [
           {
             "@type": "Question",
-            "name": "What is the difference between OTT and CTV advertising?",
-            "acceptedAnswer": {
+            name: "What is the difference between OTT and CTV advertising?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "OTT refers to content delivered over the internet across all devices — TVs, phones, tablets, and computers. CTV refers specifically to ads viewed on a television screen through internet-connected devices. CTV is a subset of OTT."
-            }
+              text: "OTT refers to content delivered over the internet across all devices — TVs, phones, tablets, and computers. CTV refers specifically to ads viewed on a television screen through internet-connected devices. CTV is a subset of OTT.",
+            },
           },
           {
             "@type": "Question",
-            "name": "What platforms do OTT ads run on?",
-            "acceptedAnswer": {
+            name: "What platforms do OTT ads run on?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "OTT ads run across ad-supported streaming services, FAST (free ad-supported streaming TV) channels, and OTT apps. Specific platforms vary by region and inventory availability through our SSP partners."
-            }
+              text: "OTT ads run across ad-supported streaming services, FAST (free ad-supported streaming TV) channels, and OTT apps. Specific platforms vary by region and inventory availability through our SSP partners.",
+            },
           },
           {
             "@type": "Question",
-            "name": "Can OTT advertising be targeted to specific audiences?",
-            "acceptedAnswer": {
+            name: "Can OTT advertising be targeted to specific audiences?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "Yes. PublifyX supports audience targeting based on demographics, geography, interests, viewing behavior, purchase intent, and household-level data for OTT campaigns."
-            }
+              text: "Yes. PublifyX supports audience targeting based on demographics, geography, interests, viewing behavior, purchase intent, and household-level data for OTT campaigns.",
+            },
           },
           {
             "@type": "Question",
-            "name": "How much does OTT advertising cost?",
-            "acceptedAnswer": {
+            name: "How much does OTT advertising cost?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "OTT advertising is typically priced on a CPM basis. Costs vary based on targeting specificity, inventory quality, and campaign scale. PublifyX allows flexible budget entry points suitable for businesses of varying sizes."
-            }
+              text: "OTT advertising is typically priced on a CPM basis. Costs vary based on targeting specificity, inventory quality, and campaign scale. PublifyX allows flexible budget entry points suitable for businesses of varying sizes.",
+            },
           },
           {
             "@type": "Question",
-            "name": "Can I measure OTT ad performance?",
-            "acceptedAnswer": {
+            name: "Can I measure OTT ad performance?",
+            acceptedAnswer: {
               "@type": "Answer",
-              "text": "Yes. PublifyX provides real-time reporting on impressions, video completion rates, reach, frequency, and cost metrics. Attribution measurement for website visits and conversions is also available."
-            }
-          }
-        ]
+              text: "Yes. PublifyX provides real-time reporting on impressions, video completion rates, reach, frequency, and cost metrics. Attribution measurement for website visits and conversions is also available.",
+            },
+          },
+        ],
       },
       {
         "@context": "https://schema.org",
         "@type": "Review",
-        "reviewBody": "OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple.",
-        "author": {
+        reviewBody:
+          "OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple.",
+        author: {
           "@type": "Person",
-          "name": "Head of Digital",
-          "jobTitle": "Head of Digital",
-          "worksFor": { "@type": "Organization", "name": "National Media Agency" }
+          name: "Head of Digital",
+          jobTitle: "Head of Digital",
+          worksFor: { "@type": "Organization", name: "National Media Agency" },
         },
-        "reviewRating": {
+        reviewRating: {
           "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
+          ratingValue: "5",
+          bestRating: "5",
         },
-        "itemReviewed": {
-          "@type": "Service",
-          "name": "OTT Advertising Platform",
-          "provider": { "@type": "Organization", "name": "PublifyX" }
-        }
-      }
+        itemReviewed: {
+          "@type": "SoftwareApplication",
+          name: "OTT Advertising Platform",
+          provider: { "@type": "Organization", name: "PublifyX" },
+        },
+      },
     ];
 
     const scriptElements: HTMLScriptElement[] = schemas.map((schema, i) => {
@@ -309,203 +312,203 @@ const OTTAdvertising = () => {
       </section>
 
       <Suspense fallback={<div style={{ minHeight: "600px" }} aria-hidden="true" />}>
-      {/* ─── 3. FOUNDER QUOTE ─── */}
-      <FounderQuoteSection
-        quote="Streaming is not a trend, it's the new default. Our OTT platform ensures brands don't just follow audiences across devices, but reach them with measurable impact."
-        name="Saurabh"
-        title="CEO, PublifyX"
-      />
+        {/* ─── 3. FOUNDER QUOTE ─── */}
+        <FounderQuoteSection
+          quote="Streaming is not a trend, it's the new default. Our OTT platform ensures brands don't just follow audiences across devices, but reach them with measurable impact."
+          name="Saurabh"
+          title="CEO, PublifyX"
+        />
 
-      {/* ─── 4. WHY OTT ADVERTISING MATTERS ─── */}
-      <OTTMeasurementSection />
+        {/* ─── 4. WHY OTT ADVERTISING MATTERS ─── */}
+        <OTTMeasurementSection />
 
-      {/* ─── 5. PLATFORM CAPABILITIES (Sticky Scroll) ─── */}
-      <OTTStickyFeaturesSection />
+        {/* ─── 5. PLATFORM CAPABILITIES (Sticky Scroll) ─── */}
+        <OTTStickyFeaturesSection />
 
-      {/* ─── 6. AD FORMATS ─── */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
-            >
-              Ad Formats
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
-            >
-              OTT Ad Formats Supported by PublifyX
-            </motion.h2>
-          </div>
-          <div className="space-y-16 max-w-6xl mx-auto">
-            {adFormats.map((format, i) => {
-              const isEven = i % 2 === 0;
-              return (
-                <motion.div
-                  key={format.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${
-                    isEven ? "" : "md:flex-row-reverse"
-                  }`}
-                >
-                  <div className="w-full md:w-1/2">
-                    <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-navy-500/10 border border-navy-100">
-                      <img
-                        src={format.image}
-                        alt={`${format.title} - OTT ad format`}
-                        className="w-full h-auto"
-                        width={600}
-                        height={400}
-                        loading="lazy"
-                        decoding="async"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full md:w-1/2">
-                    <div className="w-11 h-11 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-5 shadow-lg shadow-brand-orange-500/20">
-                      <span className="text-white font-black text-base">{String(i + 1).padStart(2, "0")}</span>
-                    </div>
-                    <h3 className="font-extrabold text-navy-800 text-2xl mb-3">{format.title}</h3>
-                    <p className="text-navy-600 font-medium leading-relaxed">{format.desc}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 7. TESTIMONIAL ─── */}
-      <ClientTestimonialSection
-        quote="OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple."
-        attribution="Head of Digital, National Media Agency"
-        results={[
-          "Cross-device reach expansion by 42%",
-          "Controlled frequency across TV + mobile environments",
-          "Reduced CPM wastage through audience segmentation",
-          "Increased incremental reach beyond linear TV",
-        ]}
-        variant="split"
-      />
-
-      {/* ─── 8. EXPLORE RELATED SERVICES ─── */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
-            >
-              More Solutions
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
-            >
-              Explore Related Services
-            </motion.h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                title: "White Label DSP",
-                desc: "Launch your own branded demand-side platform with PublifyX's white-label infrastructure.",
-                icon: Monitor,
-                path: "/white-label-dsp",
-              },
-              {
-                title: "CTV Advertising",
-                desc: "Reach audiences on the big screen with programmatic connected TV campaigns.",
-                icon: Radio,
-                path: "/ctv-advertising",
-              },
-            ].map((service, i) => (
-              <motion.div
-                key={service.title}
+        {/* ─── 6. AD FORMATS ─── */}
+        <section className="py-12 md:py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <motion.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
+              >
+                Ad Formats
+              </motion.span>
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
               >
-                <Link
-                  to={service.path}
-                  className="group flex flex-col h-full bg-navy-50 border border-navy-100 rounded-2xl p-8 hover:border-brand-orange-500/30 hover:shadow-lg hover:shadow-brand-orange-500/5 transition-all duration-300"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-5 shadow-lg shadow-brand-orange-500/20">
-                    <service.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-extrabold text-navy-900 mb-2 group-hover:text-brand-orange-600 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-navy-600 font-medium leading-relaxed mb-4 flex-1">{service.desc}</p>
-                  <span className="inline-flex items-center gap-2 text-brand-orange-500 font-bold text-sm group-hover:gap-3 transition-all">
-                    Learn More <ArrowRight className="w-4 h-4" />
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
+                OTT Ad Formats Supported by PublifyX
+              </motion.h2>
+            </div>
+            <div className="space-y-16 max-w-6xl mx-auto">
+              {adFormats.map((format, i) => {
+                const isEven = i % 2 === 0;
+                return (
+                  <motion.div
+                    key={format.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${
+                      isEven ? "" : "md:flex-row-reverse"
+                    }`}
+                  >
+                    <div className="w-full md:w-1/2">
+                      <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-navy-500/10 border border-navy-100">
+                        <img
+                          src={format.image}
+                          alt={`${format.title} - OTT ad format`}
+                          className="w-full h-auto"
+                          width={600}
+                          height={400}
+                          loading="lazy"
+                          decoding="async"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </div>
+                    </div>
+                    <div className="w-full md:w-1/2">
+                      <div className="w-11 h-11 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-5 shadow-lg shadow-brand-orange-500/20">
+                        <span className="text-white font-black text-base">{String(i + 1).padStart(2, "0")}</span>
+                      </div>
+                      <h3 className="font-extrabold text-navy-800 text-2xl mb-3">{format.title}</h3>
+                      <p className="text-navy-600 font-medium leading-relaxed">{format.desc}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ─── 9. RESOURCES ─── */}
-      <OTTResourceSection />
+        {/* ─── 7. TESTIMONIAL ─── */}
+        <ClientTestimonialSection
+          quote="OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple."
+          attribution="Head of Digital, National Media Agency"
+          results={[
+            "Cross-device reach expansion by 42%",
+            "Controlled frequency across TV + mobile environments",
+            "Reduced CPM wastage through audience segmentation",
+            "Increased incremental reach beyond linear TV",
+          ]}
+          variant="split"
+        />
 
-      {/* ─── 9. FAQ ─── */}
-      <section className="py-12 md:py-16 bg-navy-50 faq-section">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
-            >
-              FAQ
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
-            >
-              Frequently Asked Questions
-            </motion.h2>
-          </div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Accordion type="single" collapsible className="space-y-3">
-              {faqs.map((faq, i) => (
-                <AccordionItem
-                  key={i}
-                  value={`faq-${i}`}
-                  className="bg-white rounded-2xl border border-navy-100 px-8 overflow-hidden hover:border-brand-orange-500/30 transition-all duration-300"
+        {/* ─── 8. EXPLORE RELATED SERVICES ─── */}
+        <section className="py-12 md:py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <motion.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
+              >
+                More Solutions
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
+              >
+                Explore Related Services
+              </motion.h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {[
+                {
+                  title: "White Label DSP",
+                  desc: "Launch your own branded demand-side platform with PublifyX's white-label infrastructure.",
+                  icon: Monitor,
+                  path: "/white-label-dsp",
+                },
+                {
+                  title: "CTV Advertising",
+                  desc: "Reach audiences on the big screen with programmatic connected TV campaigns.",
+                  icon: Radio,
+                  path: "/ctv-advertising",
+                },
+              ].map((service, i) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
-                  <AccordionTrigger className="text-left font-extrabold text-navy-800 hover:text-brand-orange-600 hover:no-underline py-6 text-lg">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-navy-600 font-medium leading-relaxed pb-6 text-base">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
+                  <Link
+                    to={service.path}
+                    className="group flex flex-col h-full bg-navy-50 border border-navy-100 rounded-2xl p-8 hover:border-brand-orange-500/30 hover:shadow-lg hover:shadow-brand-orange-500/5 transition-all duration-300"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-5 shadow-lg shadow-brand-orange-500/20">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-extrabold text-navy-900 mb-2 group-hover:text-brand-orange-600 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-navy-600 font-medium leading-relaxed mb-4 flex-1">{service.desc}</p>
+                    <span className="inline-flex items-center gap-2 text-brand-orange-500 font-bold text-sm group-hover:gap-3 transition-all">
+                      Learn More <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                </motion.div>
               ))}
-            </Accordion>
-          </motion.div>
-        </div>
-      </section>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 9. RESOURCES ─── */}
+        <OTTResourceSection />
+
+        {/* ─── 9. FAQ ─── */}
+        <section className="py-12 md:py-16 bg-navy-50 faq-section">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <motion.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
+              >
+                FAQ
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
+              >
+                Frequently Asked Questions
+              </motion.h2>
+            </div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <Accordion type="single" collapsible className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <AccordionItem
+                    key={i}
+                    value={`faq-${i}`}
+                    className="bg-white rounded-2xl border border-navy-100 px-8 overflow-hidden hover:border-brand-orange-500/30 transition-all duration-300"
+                  >
+                    <AccordionTrigger className="text-left font-extrabold text-navy-800 hover:text-brand-orange-600 hover:no-underline py-6 text-lg">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-navy-600 font-medium leading-relaxed pb-6 text-base">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </motion.div>
+          </div>
+        </section>
       </Suspense>
     </Layout>
   );
