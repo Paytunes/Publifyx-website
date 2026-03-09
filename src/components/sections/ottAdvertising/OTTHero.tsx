@@ -52,21 +52,17 @@ const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
                 </Link>
               </EnergyButton>
             </div>
-            <div
-              className="hidden lg:block animate-fade-in"
-            >
-              <div className="relative">
-                <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
-                <img
-                  src={ottHeroDashboard}
-                  alt="OTT advertising platform dashboard showing programmatic ad buying across streaming devices"
-                  className="relative w-full h-auto rounded-2xl shadow-2xl shadow-black/40 border border-white/10"
-                  width={1024}
-                  height={1024}
-                  fetchPriority="high"
-                  decoding="sync"
-                />
-              </div>
+            <div className="hidden lg:block animate-fade-in relative">
+              <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
+              <img
+                src={ottHeroDashboard}
+                alt="OTT advertising platform dashboard showing programmatic ad buying across streaming devices"
+                className="relative w-full h-auto rounded-2xl shadow-2xl shadow-black/40 border border-white/10"
+                width={1024}
+                height={1024}
+                fetchPriority="high"
+                decoding="sync"
+              />
             </div>
           </div>
         </div>

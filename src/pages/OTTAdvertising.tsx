@@ -17,6 +17,7 @@ const OTTMeasurementSection = lazy(() => import("@/components/sections/ottAdvert
 const OTTResourceSection = lazy(() => import("@/components/sections/ottAdvertising/OTTResourceSection"));
 const OTTStickyFeaturesSection = lazy(() => import("@/components/sections/ottAdvertising/OTTStickyFeaturesSection"));
 
+import ottHeroDashboardUrl from "@/assets/ott/ott-hero-dashboard.webp";
 import ottMultiscreenImg from "@/assets/ott/ott-multiscreen.webp";
 import prerollImg from "@/assets/ott/preroll-ad.webp";
 import midrollImg from "@/assets/ott/midroll-ad.webp";
