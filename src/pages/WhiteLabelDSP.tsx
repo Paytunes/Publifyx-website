@@ -171,6 +171,14 @@ const WhiteLabelDSP = () => {
         "Launch your own branded white label DSP in 15 minutes with PublifyX. Multi-channel programmatic buying across Display, Video, Audio & CTV. No coding required.",
       );
 
+    // Remove any stale FAQPage schemas before injecting (prevents duplicates)
+    document.querySelectorAll('script[type="application/ld+json"]').forEach((el) => {
+      try {
+        const data = JSON.parse(el.textContent || "");
+        if (data["@type"] === "FAQPage") el.remove();
+      } catch {}
+    });
+
     // Inject JSON-LD schemas
     const scripts: HTMLScriptElement[] = allSchemas.map((schema, i) => {
       const script = document.createElement("script");
