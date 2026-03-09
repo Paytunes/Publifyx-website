@@ -26,7 +26,7 @@ const BlogPostHowToBuyOTTAds = () => {
       readTime="7 min read"
       title="How to Buy OTT Ads Programmatically"
       subtitle="A step-by-step guide to reaching streaming audiences with data-driven targeting and real-time optimization."
-      featuredImage="https://images.unsplash.com/photo-1574375927938-d5a98e8d7e28?w=1200&h=600&fit=crop&fm=webp&q=80"
+      featuredImage={ottStreamingAdOverlay}
       featuredImageAlt="Streaming device showing OTT content with advertising overlay"
       imageCaption="Programmatic OTT buying automates the process of reaching streaming audiences at scale."
     >
