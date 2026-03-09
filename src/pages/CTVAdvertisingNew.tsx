@@ -272,7 +272,7 @@ const ctvSchemas = [
       name: "Marketing Head, Leading D2C Brand",
     },
     itemReviewed: {
-      "@type": "Service",
+      "@type": "SoftwareApplication",
       name: "PublifyX CTV Advertising Platform",
     },
   },
