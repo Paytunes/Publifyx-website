@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
+import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import { Link } from "react-router-dom";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
