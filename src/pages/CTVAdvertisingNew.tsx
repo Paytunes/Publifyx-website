@@ -144,135 +144,138 @@ const ctvSchemas = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "CTV Advertising Platform",
-    "serviceType": "Connected TV Advertising",
-    "provider": {
+    name: "CTV Advertising Platform",
+    serviceType: "Connected TV Advertising",
+    provider: {
       "@type": "Organization",
-      "name": "PublifyX",
-      "url": "https://www.publifyx.com"
+      name: "PublifyX",
+      url: "https://www.publifyx.com",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "Place",
-      "name": "Worldwide"
+      name: "Worldwide",
     },
-    "description": "Launch data-driven connected TV advertising campaigns with PublifyX. Reach households across premium streaming platforms with programmatic targeting and real-time reporting.",
-    "url": "https://www.publifyx.com/ctv-advertising",
-    "category": "Programmatic Advertising",
-    "offers": {
+    description:
+      "Launch data-driven connected TV advertising campaigns with PublifyX. Reach households across premium streaming platforms with programmatic targeting and real-time reporting.",
+    url: "https://www.publifyx.com/ctv-advertising",
+    category: "Programmatic Advertising",
+    offers: {
       "@type": "Offer",
-      "url": "https://www.publifyx.com/ctv-advertising",
-      "availability": "https://schema.org/InStock"
-    }
+      url: "https://www.publifyx.com/ctv-advertising",
+      availability: "https://schema.org/InStock",
+    },
   },
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "PublifyX CTV Advertising Platform",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web-based",
-    "description": "A programmatic CTV advertising platform enabling agencies and advertisers to reach connected TV audiences with household-level targeting and real-time reporting.",
-    "publisher": {
+    name: "PublifyX CTV Advertising Platform",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web-based",
+    description:
+      "A programmatic CTV advertising platform enabling agencies and advertisers to reach connected TV audiences with household-level targeting and real-time reporting.",
+    publisher: {
       "@type": "Organization",
-      "name": "PublifyX"
+      name: "PublifyX",
     },
-    "featureList": [
+    featureList: [
       "Premium CTV inventory access",
       "Household-level targeting",
       "Cross-device retargeting",
       "Real-time campaign reporting",
       "Brand safety controls",
-      "White label CTV capabilities"
+      "White label CTV capabilities",
     ],
-    "offers": {
+    offers: {
       "@type": "Offer",
-      "url": "https://www.publifyx.com/ctv-advertising",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    }
+      url: "https://www.publifyx.com/ctv-advertising",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
   },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
+    mainEntity: [
       {
         "@type": "Question",
-        "name": "What is the difference between CTV and OTT advertising?",
-        "acceptedAnswer": {
+        name: "What is the difference between CTV and OTT advertising?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "CTV refers specifically to ads viewed on a television screen through an internet-connected device. OTT is a broader term that covers content and ads delivered via the internet across all devices including smartphones, tablets, laptops, and TVs. CTV is a subset of OTT."
-        }
+          text: "CTV refers specifically to ads viewed on a television screen through an internet-connected device. OTT is a broader term that covers content and ads delivered via the internet across all devices including smartphones, tablets, laptops, and TVs. CTV is a subset of OTT.",
+        },
       },
       {
         "@type": "Question",
-        "name": "What video formats are supported for CTV ads?",
-        "acceptedAnswer": {
+        name: "What video formats are supported for CTV ads?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "PublifyX supports 15-second and 30-second video ad formats for CTV campaigns. Creatives should be in MP4 or MOV format, optimized for full-screen, high-definition television viewing."
-        }
+          text: "PublifyX supports 15-second and 30-second video ad formats for CTV campaigns. Creatives should be in MP4 or MOV format, optimized for full-screen, high-definition television viewing.",
+        },
       },
       {
         "@type": "Question",
-        "name": "Can I target specific geographic areas with CTV advertising?",
-        "acceptedAnswer": {
+        name: "Can I target specific geographic areas with CTV advertising?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Yes. PublifyX supports geographic targeting at the country, state, city, DMA (designated market area), and zip code level for CTV campaigns."
-        }
+          text: "Yes. PublifyX supports geographic targeting at the country, state, city, DMA (designated market area), and zip code level for CTV campaigns.",
+        },
       },
       {
         "@type": "Question",
-        "name": "How is CTV advertising measured?",
-        "acceptedAnswer": {
+        name: "How is CTV advertising measured?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Key CTV metrics include impressions, video completion rate (VCR), unique household reach, frequency, and cost per completed view (CPCV). PublifyX also supports attribution measurement for website visits and conversions driven by CTV exposure."
-        }
+          text: "Key CTV metrics include impressions, video completion rate (VCR), unique household reach, frequency, and cost per completed view (CPCV). PublifyX also supports attribution measurement for website visits and conversions driven by CTV exposure.",
+        },
       },
       {
         "@type": "Question",
-        "name": "Is CTV advertising only for large brands?",
-        "acceptedAnswer": {
+        name: "Is CTV advertising only for large brands?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "No. CTV advertising is accessible to businesses of all sizes. With programmatic buying through PublifyX, you can start with flexible budgets and scale based on performance results."
-        }
-      }
-    ]
+          text: "No. CTV advertising is accessible to businesses of all sizes. With programmatic buying through PublifyX, you can start with flexible budgets and scale based on performance results.",
+        },
+      },
+    ],
   },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.publifyx.com"
+        position: 1,
+        name: "Home",
+        item: "https://www.publifyx.com",
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "Services",
-        "item": "https://www.publifyx.com/services"
+        position: 2,
+        name: "Services",
+        item: "https://www.publifyx.com/services",
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "CTV Advertising",
-        "item": "https://www.publifyx.com/ctv-advertising"
-      }
-    ]
+        position: 3,
+        name: "CTV Advertising",
+        item: "https://www.publifyx.com/ctv-advertising",
+      },
+    ],
   },
   {
     "@context": "https://schema.org",
     "@type": "Review",
-    "reviewBody": "CTV campaigns through PublifyX delivered stronger completion rates than any other video channel we've tested. The targeting precision gave us both reach and relevance.",
-    "author": {
+    reviewBody:
+      "CTV campaigns through PublifyX delivered stronger completion rates than any other video channel we've tested. The targeting precision gave us both reach and relevance.",
+    author: {
       "@type": "Person",
-      "name": "Marketing Head, Leading D2C Brand"
+      name: "Marketing Head, Leading D2C Brand",
     },
-    "itemReviewed": {
+    itemReviewed: {
       "@type": "Service",
-      "name": "PublifyX CTV Advertising Platform"
-    }
-  }
+      name: "PublifyX CTV Advertising Platform",
+    },
+  },
 ];
 
 const CTVAdvertising = () => {
@@ -296,7 +299,7 @@ const CTVAdvertising = () => {
 
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
-      scripts.forEach(s => s.remove());
+      scripts.forEach((s) => s.remove());
     };
   }, []);
 
@@ -338,8 +341,7 @@ const CTVAdvertising = () => {
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
                   <Link to="/contact" className="flex items-center text-white no-underline group">
-                    Book a Demo{" "}
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
               </div>
@@ -376,7 +378,7 @@ const CTVAdvertising = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
+              className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3"
             >
               CTV Advertising
             </motion.span>
@@ -637,8 +639,7 @@ const CTVAdvertising = () => {
           <p className="text-base text-navy-400 mb-10 font-semibold">No commitment required · Flexible budgets</p>
           <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
             <Link to="/contact" className="flex items-center text-white no-underline group">
-              Book a Demo{" "}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </EnergyButton>
         </motion.div>
