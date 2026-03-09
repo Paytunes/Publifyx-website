@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
@@ -5,14 +6,16 @@ import { motion } from "framer-motion";
 import { Tv, Monitor, Radio, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
-import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
 
-// Redesigned Sections
+// Hero loaded eagerly (above fold)
 import OTTHero from "@/components/sections/ottAdvertising/OTTHero";
-import OTTMeasurementSection from "@/components/sections/ottAdvertising/OTTMeasurementSection";
-import OTTResourceSection from "@/components/sections/ottAdvertising/OTTResourceSection";
-import OTTStickyFeaturesSection from "@/components/sections/ottAdvertising/OTTStickyFeaturesSection";
+
+// Lazy-load below-fold sections to reduce initial JS bundle
+const FounderQuoteSection = lazy(() => import("@/components/sections/FounderQuoteSection"));
+const ClientTestimonialSection = lazy(() => import("@/components/sections/ClientTestimonialSection"));
+const OTTMeasurementSection = lazy(() => import("@/components/sections/ottAdvertising/OTTMeasurementSection"));
+const OTTResourceSection = lazy(() => import("@/components/sections/ottAdvertising/OTTResourceSection"));
+const OTTStickyFeaturesSection = lazy(() => import("@/components/sections/ottAdvertising/OTTStickyFeaturesSection"));
 
 import ottMultiscreenImg from "@/assets/ott/ott-multiscreen.webp";
 import prerollImg from "@/assets/ott/preroll-ad.webp";
