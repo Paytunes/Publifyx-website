@@ -62,19 +62,11 @@ const BlogPostWhiteLabelDSPReasons = () => {
       "Brand ownership, margin control, AI-driven optimization, multi-format capabilities, and long-term scalability — why agencies are adopting white-label DSPs.",
     );
 
-    let schemaScript = document.getElementById("faq-schema-whitelabel") as HTMLScriptElement | null;
-    if (!schemaScript) {
-      schemaScript = document.createElement("script");
-      schemaScript.id = "faq-schema-whitelabel";
-      schemaScript.type = "application/ld+json";
-      document.head.appendChild(schemaScript);
-    }
-    schemaScript.textContent = JSON.stringify(faqSchema);
+    const script = injectFaqPageSchema(faqSchema, "faq-schema-whitelabel");
 
     return () => {
       document.title = "PublifyX";
-      const schema = document.querySelector("#faq-schema-whitelabel");
-      if (schema) schema.remove();
+      script.remove();
     };
   }, []);
 

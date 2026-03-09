@@ -63,19 +63,11 @@ const BlogPostOnlineBannerAdvertising2026 = () => {
       "The 2026 guide to online banner advertising — formats, costs, targeting, CTR benchmarks, and how to run scalable, data-driven display campaigns with PublifyX.",
     );
 
-    let schemaScript = document.getElementById("faq-schema") as HTMLScriptElement | null;
-    if (!schemaScript) {
-      schemaScript = document.createElement("script");
-      schemaScript.id = "faq-schema";
-      schemaScript.type = "application/ld+json";
-      document.head.appendChild(schemaScript);
-    }
-    schemaScript.textContent = JSON.stringify(faqSchema);
+    const script = injectFaqPageSchema(faqSchema, "faq-schema-banner");
 
     return () => {
       document.title = "PublifyX";
-      const schema = document.querySelector("#faq-schema");
-      if (schema) schema.remove();
+      script.remove();
     };
   }, []);
 

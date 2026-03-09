@@ -216,6 +216,7 @@ const OTTAdvertising = () => {
       },
     ];
 
+    removeAllFaqPageSchemas();
     const scriptElements: HTMLScriptElement[] = schemas.map((schema, i) => {
       const script = document.createElement("script");
       script.type = "application/ld+json";

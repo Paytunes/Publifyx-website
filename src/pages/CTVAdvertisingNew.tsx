@@ -289,6 +289,7 @@ const CTVAdvertising = () => {
         "Launch data-driven CTV campaigns with PublifyX's connected TV advertising platform. Target households across premium streaming inventory.",
       );
 
+    removeAllFaqPageSchemas();
     const scripts: HTMLScriptElement[] = ctvSchemas.map((schema, i) => {
       const script = document.createElement("script");
       script.type = "application/ld+json";

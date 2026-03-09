@@ -173,12 +173,7 @@ const WhiteLabelDSP = () => {
       );
 
     // Remove any stale FAQPage schemas before injecting (prevents duplicates)
-    document.querySelectorAll('script[type="application/ld+json"]').forEach((el) => {
-      try {
-        const data = JSON.parse(el.textContent || "");
-        if (data["@type"] === "FAQPage") el.remove();
-      } catch {}
-    });
+    removeAllFaqPageSchemas();
 
     // Inject JSON-LD schemas
     const scripts: HTMLScriptElement[] = allSchemas.map((schema, i) => {
