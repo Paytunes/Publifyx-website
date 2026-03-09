@@ -308,6 +308,7 @@ const OTTAdvertising = () => {
         </p>
       </section>
 
+      <Suspense fallback={<div style={{ minHeight: "600px" }} aria-hidden="true" />}>
       {/* ─── 3. FOUNDER QUOTE ─── */}
       <FounderQuoteSection
         quote="Streaming is not a trend, it's the new default. Our OTT platform ensures brands don't just follow audiences across devices, but reach them with measurable impact."
