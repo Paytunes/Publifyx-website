@@ -3,6 +3,7 @@ import BlogPostLayout from "@/components/blog/BlogPostLayout";
 import InlineRelatedArticle from "@/components/blog/InlineRelatedArticle";
 import { getRelatedArticles } from "@/data/blogPosts";
 import { Link } from "react-router-dom";
+import { injectFaqPageSchema } from "@/utils/faqSchemaUtils";
 
 const CURRENT_SLUG = "ad-tech-trends-2026";
 

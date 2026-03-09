@@ -4,6 +4,7 @@ import InlineRelatedArticle from "@/components/blog/InlineRelatedArticle";
 import { getRelatedArticles } from "@/data/blogPosts";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import heroImage from "@/assets/blog/online-banner-advertising-hero.jpg";
+import { injectFaqPageSchema } from "@/utils/faqSchemaUtils";
 
 const CURRENT_SLUG = "online-banner-advertising-guide-2026";
 
