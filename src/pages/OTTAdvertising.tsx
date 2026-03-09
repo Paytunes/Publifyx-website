@@ -90,6 +90,14 @@ const OTTAdvertising = () => {
         "Deliver targeted OTT advertising across streaming platforms on every device. PublifyX's OTT ads platform offers programmatic buying, precise targeting, and real-time analytics.",
       );
 
+    // Preload hero image for faster LCP
+    const preloadLink = document.createElement("link");
+    preloadLink.rel = "preload";
+    preloadLink.as = "image";
+    preloadLink.type = "image/webp";
+    preloadLink.href = ottHeroDashboardUrl;
+    document.head.appendChild(preloadLink);
+
     // Schema markup
     const schemas = [
       {
