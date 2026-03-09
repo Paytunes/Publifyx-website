@@ -43,6 +43,9 @@ const FAQSection = () => {
         },
       })),
     };
+    // Remove any stale homepage FAQ schema before injecting
+    document.querySelectorAll('script[data-homepage-faq="true"]').forEach((el) => el.remove());
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.setAttribute("data-homepage-faq", "true");
