@@ -119,26 +119,13 @@ const OTTAdvertising = () => {
           "@type": "OfferCatalog",
           "name": "OTT Advertising Capabilities",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Multi-Device Reach" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Premium Inventory Access" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Advanced Audience Targeting" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Frequency Management" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Real-Time Optimization and Reporting" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Seamless Integration with Other Channels" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Multi-Device Reach" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Premium Inventory Access" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Advanced Audience Targeting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Frequency Management" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real-Time Optimization and Reporting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seamless Integration with Other Channels" } }
           ]
-        },
-        "review": {
-          "@type": "Review",
-          "reviewBody": "OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple.",
-          "author": {
-            "@type": "Person",
-            "name": "Head of Digital"
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
         }
       },
       {
@@ -198,6 +185,27 @@ const OTTAdvertising = () => {
             }
           }
         ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "reviewBody": "OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple.",
+        "author": {
+          "@type": "Person",
+          "name": "Head of Digital",
+          "jobTitle": "Head of Digital",
+          "worksFor": { "@type": "Organization", "name": "National Media Agency" }
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "itemReviewed": {
+          "@type": "Service",
+          "name": "OTT Advertising Platform",
+          "provider": { "@type": "Organization", "name": "PublifyX" }
+        }
       }
     ];
 
