@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
+import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import { Link } from "react-router-dom";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
@@ -288,6 +289,7 @@ const CTVAdvertising = () => {
         "Launch data-driven CTV campaigns with PublifyX's connected TV advertising platform. Target households across premium streaming inventory.",
       );
 
+    removeAllFaqPageSchemas();
     const scripts: HTMLScriptElement[] = ctvSchemas.map((schema, i) => {
       const script = document.createElement("script");
       script.type = "application/ld+json";

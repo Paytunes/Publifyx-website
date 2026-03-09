@@ -3,6 +3,7 @@ import BlogPostLayout from "@/components/blog/BlogPostLayout";
 import InlineRelatedArticle from "@/components/blog/InlineRelatedArticle";
 import { getRelatedArticles } from "@/data/blogPosts";
 import { Link } from "react-router-dom";
+import { injectFaqPageSchema } from "@/utils/faqSchemaUtils";
 
 const CURRENT_SLUG = "ad-tech-trends-2026";
 
@@ -62,19 +63,11 @@ const BlogPostAdTechTrends2026 = () => {
       "The five ad tech trends shaping 2026: AI-first programmatic, white-label DSPs, generative creatives, CTV/OTT growth, and privacy-first targeting strategies.",
     );
 
-    let schemaScript = document.getElementById("faq-schema-adtech") as HTMLScriptElement | null;
-    if (!schemaScript) {
-      schemaScript = document.createElement("script");
-      schemaScript.id = "faq-schema-adtech";
-      schemaScript.type = "application/ld+json";
-      document.head.appendChild(schemaScript);
-    }
-    schemaScript.textContent = JSON.stringify(faqSchema);
+    const script = injectFaqPageSchema(faqSchema, "faq-schema-adtech");
 
     return () => {
       document.title = "PublifyX";
-      const schema = document.querySelector("#faq-schema-adtech");
-      if (schema) schema.remove();
+      script.remove();
     };
   }, []);
 

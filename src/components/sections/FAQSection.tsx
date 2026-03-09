@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { injectFaqPageSchema } from "@/utils/faqSchemaUtils";
 
 const faqs = [
   {
@@ -43,14 +44,7 @@ const FAQSection = () => {
         },
       })),
     };
-    // Remove any stale homepage FAQ schema before injecting
-    document.querySelectorAll('script[data-homepage-faq="true"]').forEach((el) => el.remove());
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.setAttribute("data-homepage-faq", "true");
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
+    const script = injectFaqPageSchema(schema, "homepage-faq-schema");
     return () => { script.remove(); };
   }, []);
   return (

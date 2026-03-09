@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import HeroSection from "@/components/sections/whiteLabelDSP/HeroSection";
 import WhiteLabelExplanationSection from "@/components/sections/whiteLabelDSP/WhiteLabelExplanationSection";
 import WhyChooseSection from "@/components/sections/whiteLabelDSP/WhyChooseSection";
@@ -172,12 +173,7 @@ const WhiteLabelDSP = () => {
       );
 
     // Remove any stale FAQPage schemas before injecting (prevents duplicates)
-    document.querySelectorAll('script[type="application/ld+json"]').forEach((el) => {
-      try {
-        const data = JSON.parse(el.textContent || "");
-        if (data["@type"] === "FAQPage") el.remove();
-      } catch {}
-    });
+    removeAllFaqPageSchemas();
 
     // Inject JSON-LD schemas
     const scripts: HTMLScriptElement[] = allSchemas.map((schema, i) => {

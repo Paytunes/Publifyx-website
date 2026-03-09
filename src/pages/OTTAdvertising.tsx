@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
+import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
 import { motion } from "framer-motion";
 import { Tv, Monitor, Radio, ArrowRight } from "lucide-react";
@@ -215,6 +216,7 @@ const OTTAdvertising = () => {
       },
     ];
 
+    removeAllFaqPageSchemas();
     const scriptElements: HTMLScriptElement[] = schemas.map((schema, i) => {
       const script = document.createElement("script");
       script.type = "application/ld+json";
