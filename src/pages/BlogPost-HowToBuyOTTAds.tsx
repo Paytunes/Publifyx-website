@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import BlogPostLayout from "@/components/blog/BlogPostLayout";
 import InlineRelatedArticle from "@/components/blog/InlineRelatedArticle";
 import { getRelatedArticles } from "@/data/blogPosts";
+import ottStreamingAdOverlay from "@/assets/blog/ott-streaming-ad-overlay.webp";
 
 const CURRENT_SLUG = "how-to-buy-ott-ads-programmatically";
 
