@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import HeroSection from "@/components/sections/whiteLabelDSP/HeroSection";
 import WhiteLabelExplanationSection from "@/components/sections/whiteLabelDSP/WhiteLabelExplanationSection";
 import WhyChooseSection from "@/components/sections/whiteLabelDSP/WhyChooseSection";
