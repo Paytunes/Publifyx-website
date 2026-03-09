@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 import EnergyButton from "@/components/effects/EnergyButton";
@@ -10,8 +9,6 @@ interface OTTHeroProps {
 }
 
 const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-  const skipAnim = isMobile || useReducedMotion();
   return (
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-navy-800">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
@@ -48,11 +45,8 @@ const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
               <p className="text-base text-navy-200 mb-10 font-semibold">
                 Looking to expand beyond traditional TV? Speak with our team about launching OTT campaigns.
               </p>
-              <motion.div
-                initial={skipAnim ? false : { opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="flex flex-col sm:flex-row gap-4 items-start mb-10"
+              <div
+                className="flex flex-col sm:flex-row gap-4 items-start mb-10 animate-fade-in"
               >
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
                   <Link to="/contact" className="flex items-center text-white no-underline group">
@@ -60,13 +54,10 @@ const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
-              </motion.div>
+              </div>
             </div>
-            <motion.div
-              initial={skipAnim ? false : { opacity: 0, x: 40, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
-              className="hidden lg:block"
+            <div
+              className="hidden lg:block animate-fade-in"
             >
               <div className="relative">
                 <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
@@ -80,7 +71,7 @@ const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
                   decoding="sync"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
