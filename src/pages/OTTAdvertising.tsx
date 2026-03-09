@@ -127,25 +127,7 @@ const OTTAdvertising = () => {
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seamless Integration with Other Channels" } }
           ]
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "47",
-          "bestRating": "5"
-        },
-        "review": {
-          "@type": "Review",
-          "reviewBody": "OTT allowed us to extend our TV strategy across mobile and desktop without losing targeting control. The unified dashboard made cross-screen planning simple.",
-          "author": {
-            "@type": "Person",
-            "name": "Head of Digital"
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        }
+        "url": "https://publifyx.com/ott-advertising"
       },
       {
         "@context": "https://schema.org",
