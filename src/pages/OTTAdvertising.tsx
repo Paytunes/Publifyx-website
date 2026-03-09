@@ -119,12 +119,12 @@ const OTTAdvertising = () => {
           "@type": "OfferCatalog",
           "name": "OTT Advertising Capabilities",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Multi-Device Reach" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Premium Inventory Access" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Advanced Audience Targeting" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Frequency Management" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real-Time Optimization and Reporting" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seamless Integration with Other Channels" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Multi-Device Reach" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Premium Inventory Access" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Advanced Audience Targeting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Frequency Management" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Real-Time Optimization and Reporting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Seamless Integration with Other Channels" } }
           ]
         },
         "review": {
