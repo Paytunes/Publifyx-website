@@ -32,10 +32,10 @@ import {
   Users,
   Clock,
 } from "lucide-react";
-import MagneticCard from "@/components/effects/MagneticCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
 import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
+import AudioStickyFeaturesSection from "@/components/sections/audioAdvertising/AudioStickyFeaturesSection";
 
 const features = [
   {
