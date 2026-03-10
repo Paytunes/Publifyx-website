@@ -1,8 +1,7 @@
 import Layout from "@/components/Layout";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
-import { useEffect, useRef, useState, useCallback } from "react";
-import { AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import audioHeroDashboard from "@/assets/audio/audio-hero-dashboard.webp";
 import listenerHeadphones from "@/assets/audio/listener-headphones.webp";
