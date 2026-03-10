@@ -265,41 +265,10 @@ const ProgrammaticAudioAdvertising = () => {
         </div>
       </section>
 
-      {/* ═══════════════ WHY AUDIO — Alternating Image/Text (TradeDesk-style) ═══════════════ */}
+      {/* ═══════════════ WHAT IS PROGRAMMATIC AUDIO ═══════════════ */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
-              Audio Advertising
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-4 max-w-4xl mx-auto"
-            >
-              Why Audio Advertising?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
-            >
-              Audio reaches audiences in moments where visual media cannot. Listeners are attentive but away from
-              screens. Audio ads benefit from high completion rates — unlike display or video, audio ads are typically
-              played in full.
-            </motion.p>
-          </div>
-
-          {/* Alternating block 1: Image Left, Text Right */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -310,7 +279,7 @@ const ProgrammaticAudioAdvertising = () => {
                 <div className="absolute -inset-3 bg-brand-orange-500/8 rounded-3xl blur-xl" />
                 <img
                   src={listenerHeadphones}
-                  alt="Person listening to streaming music with headphones"
+                  alt="Person listening to streaming music with headphones during programmatic audio ad delivery"
                   className="relative w-full h-auto rounded-2xl shadow-xl"
                   loading="lazy"
                 />
@@ -322,13 +291,57 @@ const ProgrammaticAudioAdvertising = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">Audio Advantage</h3>
-              <ul className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">What Is Programmatic Audio Advertising?</h2>
+              <div className="space-y-4 text-navy-600 leading-relaxed text-lg">
+                <p>
+                  Programmatic audio advertising is the automated buying and selling of audio ad inventory using real-time bidding technology.
+                </p>
+                <p>
+                  When a listener streams music, a podcast, or digital radio content, an audio ad slot becomes available. A bid request is sent to demand-side platforms, where advertisers compete in a real-time auction based on targeting criteria. The winning ad is served seamlessly within the listener's stream.
+                </p>
+                <p>
+                  This process happens in milliseconds and eliminates the need for manual negotiations with individual publishers or radio stations. Advertisers gain access to vast audio inventory across multiple platforms and can manage targeting, budgets, pacing, and frequency from a single interface.
+                </p>
+                <p>
+                  Programmatic audio ads are typically 15 or 30 seconds in length and are often accompanied by a companion display banner shown in the app or player while the audio ad plays.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ WHY AUDIO DESERVES A PLACE ═══════════════ */}
+      <section className="py-20 md:py-28 bg-navy-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">Why Audio Advertising Deserves a Place in Your Media Mix</h2>
+              <div className="space-y-4 text-navy-600 leading-relaxed text-lg">
+                <p>
+                  Audio captures attention during moments when visual ads are ineffective.
+                </p>
+                <p>
+                  Listeners are often fully engaged, wearing headphones, focused, and immersed in content.
+                </p>
+                <p>
+                  Unlike display ads that can be scrolled past, audio ads are typically played in full. Completion rates are consistently high.
+                </p>
+                <p>
+                  Digital audio consumption continues to expand, driven by:
+                </p>
+              </div>
+              <ul className="space-y-3 mt-4 mb-6">
                 {[
-                  "Screen-free audience reach",
-                  "95%+ completion rates",
-                  "Growing listener base globally",
-                  "Podcast boom driving inventory",
+                  "Streaming music platforms",
+                  "Podcast growth",
+                  "Smart speaker adoption",
+                  "Increased mobile usage",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-4">
                     <div className="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
@@ -338,48 +351,30 @@ const ProgrammaticAudioAdvertising = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
-          </div>
-
-          {/* Alternating block 2: Text Left, Image Right */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-2 lg:order-1"
-            >
-              <h3 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">Programmatic Precision</h3>
-              <ul className="space-y-4">
-                {[
-                  "Automated real-time bidding",
-                  "Demographic & behavioral targeting",
-                  "Dynamic creative optimization",
-                  "Cross-channel integration",
-                  "Measurable attribution",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-4">
-                    <div className="w-8 h-8 rounded-full bg-navy-800 flex items-center justify-center flex-shrink-0">
-                      <ArrowRight className="w-4 h-4 text-brand-orange-400" />
-                    </div>
-                    <span className="text-navy-600 font-medium text-lg">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-navy-600 leading-relaxed text-lg mb-6">
+                For advertisers, this means scalable, addressable reach with precision targeting.
+              </p>
+              <p className="text-sm text-navy-400 font-semibold mb-6">
+                Considering audio for your next campaign? Let's map the right targeting strategy.
+              </p>
+              <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+                <Link to="/contact" className="flex items-center text-white no-underline group">
+                  Book a Demo{" "}
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </EnergyButton>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="order-1 lg:order-2"
             >
               <div className="relative">
                 <div className="absolute -inset-3 bg-brand-orange-500/8 rounded-3xl blur-xl" />
                 <img
                   src={podcastStudio}
-                  alt="Professional podcast recording studio with microphone and audio waveforms"
+                  alt="Professional podcast recording studio with microphone for programmatic audio advertising"
                   className="relative w-full h-auto rounded-2xl shadow-xl"
                   loading="lazy"
                 />
