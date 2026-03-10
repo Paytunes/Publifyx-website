@@ -187,7 +187,7 @@ const ProgrammaticAudioAdvertising = () => {
     if (meta)
       meta.setAttribute(
         "content",
-        "Run targeted audio ads on streaming music, podcasts, and digital radio with PublifyX's programmatic audio platform.",
+        "Run targeted audio ads on streaming music, podcasts, and digital radio with PublifyX's programmatic audio advertising platform. Reach listeners where screens cannot.",
       );
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
