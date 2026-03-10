@@ -68,6 +68,14 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="/programmatic-audio-advertising"
+                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
+                >
+                  Programmatic Audio
+                </Link>
+              </li>
+              <li>
                 <Link to="/pricing" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
                   Pricing
                 </Link>
