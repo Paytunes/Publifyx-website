@@ -219,25 +219,28 @@ const ProgrammaticAudioAdvertising = () => {
                 <span className="text-sm font-medium text-white/80">Audio Advertising Platform</span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1]">
-                Programmatic Audio — Reach Listeners
-                <span className="block text-brand-orange-400">Where Screens Cannot</span>
+                Programmatic Audio Advertising — Reach Listeners Across Streaming, Podcasts, and Digital Radio
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-                Audio reaches audiences during screen-free moments — commuting, exercising, cooking, and working. The
-                fastest-growing channel in programmatic.
+                Not every powerful advertising moment happens on a screen.
               </p>
-              <p className="text-base text-navy-300 mb-10 font-semibold">
-                Streaming · Podcasts · Digital Radio · One platform
+              <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
+                Audio reaches audiences while they commute, exercise, cook, or work, moments when visual ads cannot compete.
+              </p>
+              <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
+                PublifyX provides a programmatic audio advertising platform that automates the buying and delivery of audio ads across streaming music, podcasts, digital radio, and smart speaker environments. Target listeners with precision and measure performance in real time, all within the same platform you use for display, video, and CTV.
+              </p>
+              <p className="text-base text-navy-200 mb-10 font-semibold">
+                Want to reach audiences during screen-free moments? Talk to our audio specialists.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
                   <Link to="/contact" className="flex items-center text-white no-underline group">
-                    Book a Call{" "}
+                    Book a Demo{" "}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
               </div>
-              <p className="text-sm text-navy-400">No commitment required · High completion rates</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 40, scale: 0.95 }}
