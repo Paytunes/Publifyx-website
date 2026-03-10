@@ -1,4 +1,4 @@
-import ottBuyAdsCard from "@/assets/blog/ott-buy-ads-card.webp";
+const ottBuyAdsCard = "/images/blog/ott-buy-ads-card.webp";
 
 export interface BlogPost {
   id: number;
