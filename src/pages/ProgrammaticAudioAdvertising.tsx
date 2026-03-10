@@ -704,29 +704,7 @@ const ProgrammaticAudioAdvertising = () => {
         </div>
       </section>
 
-      {/* ═══════════════ CTA ═══════════════ */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-brand-orange-500 to-brand-orange-600 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white rounded-full blur-[200px] opacity-[0.08]" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-brand-orange-300 rounded-full blur-[150px] opacity-20" />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
-        >
-          <h2 className="mb-6 !text-white">Start Your Audio Campaign</h2>
-          <p className="text-xl text-white/90 mb-4 leading-relaxed">
-            Reach listeners across streaming music, podcasts, and digital radio with precision targeting.
-          </p>
-          <p className="text-base text-white/70 mb-10 font-semibold">No commitment required · High completion rates</p>
-          <EnergyButton className="inline-flex items-center bg-navy-800 hover:bg-navy-900 text-white text-lg px-10 py-4 rounded-xl font-semibold shadow-xl transition-all duration-300 hover:scale-105">
-            <Link to="/contact" className="flex items-center text-white no-underline group">
-              Book a Call{" "}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </EnergyButton>
-        </motion.div>
-      </section>
+
 
       {/* ═══════════════ FAQ ═══════════════ */}
       <section className="py-20 md:py-28 bg-navy-50 faq-section">
