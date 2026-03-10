@@ -19,10 +19,7 @@ import {
   Sparkles,
   Headphones,
   Radio,
-  Target,
-  BarChart3,
   Mic,
-  Zap,
   Globe,
   PhoneCall,
   Settings,
@@ -38,6 +35,7 @@ import {
   Clock,
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { injectFaqPageSchema } from "@/utils/faqSchemaUtils";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
 import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
 import AudioStickyFeaturesSection from "@/components/sections/audioAdvertising/AudioStickyFeaturesSection";
@@ -45,22 +43,22 @@ import AudioStickyFeaturesSection from "@/components/sections/audioAdvertising/A
 const adFormats = [
   {
     title: "In-Stream Audio Ads",
-    desc: "15 or 30-second spots before, during, or between songs, podcasts, or radio content.",
+    desc: "Short audio spots (15 or 30 seconds) that play before, during, or between songs, podcast episodes, or radio content.",
     icon: Music,
   },
   {
-    title: "Podcast Dynamic Insertion",
-    desc: "Targeted audio ads dynamically inserted into podcast episodes at listen time.",
+    title: "Podcast Ads with Dynamic Insertion",
+    desc: "Targeted audio ads dynamically inserted into podcast episodes at listen time, based on the listener's profile and targeting parameters.",
     icon: Mic,
   },
   {
     title: "Companion Display Banners",
-    desc: "Visual banners appearing in the streaming app while the audio ad plays.",
+    desc: "Visual banners that appear within the streaming app while the audio ad plays, providing a visual reinforcement and a clickable call-to-action.",
     icon: Radio,
   },
   {
     title: "Sequential Audio Messaging",
-    desc: "A series of audio ads delivered to the same listener over time for narrative storytelling.",
+    desc: "Deliver a series of audio ads to the same listener over time, building a narrative or guiding them through a funnel with progressive messaging.",
     icon: Headphones,
   },
 ];
@@ -123,25 +121,25 @@ const faqs = [
   {
     question: "What is programmatic audio advertising?",
     answer:
-      "Programmatic audio uses automated, real-time bidding to buy and deliver audio ads across streaming music, podcasts, and digital radio.",
+      "Programmatic audio advertising uses automated, real-time bidding technology to buy and deliver audio ads across streaming music platforms, podcasts, and digital radio. It eliminates manual buying and enables precise audience targeting.",
   },
   {
-    question: "What platforms do audio ads run on?",
-    answer: "Streaming music services, podcast networks, digital radio platforms, and smart speaker environments.",
+    question: "What platforms do programmatic audio ads run on?",
+    answer: "Programmatic audio ads run across streaming music services, podcast networks, digital radio platforms, and smart speaker environments. Specific platform availability depends on SSP integrations and regional inventory.",
   },
   {
     question: "How long are audio ads?",
-    answer: "Standard lengths are 15 and 30 seconds. Some platforms support 6-second or 60-second formats.",
+    answer: "Standard programmatic audio ad lengths are 15 seconds and 30 seconds. Some platforms also support 6-second or 60-second formats depending on inventory availability.",
   },
   {
-    question: "Can I target specific audiences?",
+    question: "Can I target specific audiences with audio advertising?",
     answer:
-      "Yes. Targeting by demographics, geography, interests, listening behavior, content genre, device type, and time of day.",
+      "Yes. PublifyX supports targeting by demographics, geography, interests, listening behavior, content genre, device type, and time of day for audio campaigns.",
   },
   {
-    question: "How is performance measured?",
+    question: "How is audio advertising performance measured?",
     answer:
-      "Key metrics: impressions, audio completion rate, unique listener reach, frequency, and cost per completed listen.",
+      "Key metrics include impressions, audio completion rate, unique listener reach, frequency, and cost per completed listen. Companion banner metrics include click-through rate and engagement.",
   },
 ];
 
@@ -184,13 +182,31 @@ const ProgrammaticAudioAdvertising = () => {
   useEffect(() => {
     document.title = "Programmatic Audio Advertising Platform | Audio DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
+    const originalDesc = meta?.getAttribute("content") || "";
     if (meta)
       meta.setAttribute(
         "content",
-        "Run targeted audio ads on streaming music, podcasts, and digital radio with PublifyX's programmatic audio platform.",
+        "Run targeted audio ads on streaming music, podcasts, and digital radio with PublifyX's programmatic audio advertising platform. Reach listeners where screens cannot.",
       );
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer,
+        },
+      })),
+    };
+    const script = injectFaqPageSchema(faqSchema, "audio-advertising-faq-schema");
+
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
+      meta?.setAttribute("content", originalDesc);
+      script.remove();
     };
   }, []);
 
@@ -219,25 +235,28 @@ const ProgrammaticAudioAdvertising = () => {
                 <span className="text-sm font-medium text-white/80">Audio Advertising Platform</span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1]">
-                Programmatic Audio — Reach Listeners
-                <span className="block text-brand-orange-400">Where Screens Cannot</span>
+                Programmatic Audio Advertising — Reach Listeners Across Streaming, Podcasts, and Digital Radio
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-                Audio reaches audiences during screen-free moments — commuting, exercising, cooking, and working. The
-                fastest-growing channel in programmatic.
+                Not every powerful advertising moment happens on a screen.
               </p>
-              <p className="text-base text-navy-300 mb-10 font-semibold">
-                Streaming · Podcasts · Digital Radio · One platform
+              <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
+                Audio reaches audiences while they commute, exercise, cook, or work, moments when visual ads cannot compete.
+              </p>
+              <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
+                PublifyX provides a programmatic audio advertising platform that automates the buying and delivery of audio ads across streaming music, podcasts, digital radio, and smart speaker environments. Target listeners with precision and measure performance in real time, all within the same platform you use for display, video, and CTV.
+              </p>
+              <p className="text-base text-navy-200 mb-10 font-semibold">
+                Want to reach audiences during screen-free moments? Talk to our audio specialists.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
                   <Link to="/contact" className="flex items-center text-white no-underline group">
-                    Book a Call{" "}
+                    Book a Demo{" "}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
               </div>
-              <p className="text-sm text-navy-400">No commitment required · High completion rates</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 40, scale: 0.95 }}
@@ -389,7 +408,7 @@ const ProgrammaticAudioAdvertising = () => {
       <FounderQuoteSection
         quote="Some of the most influential advertising moments happen when screens are off. Audio allows brands to speak directly to listeners during high-attention moments, and we've made that scalable and measurable."
         name="Saurabh"
-        title="CEO, PublifyX"
+        title="CEO PublifyX"
         variant="default"
       />
 
@@ -408,7 +427,7 @@ const ProgrammaticAudioAdvertising = () => {
               <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
                 Ad Formats
               </span>
-              <h2 className="mb-8">Audio Ad Formats Supported</h2>
+              <h2 className="mb-8">Audio Ad Formats Supported by PublifyX</h2>
               <div className="space-y-6">
                 {adFormats.map((format, i) => (
                   <motion.div
@@ -453,7 +472,7 @@ const ProgrammaticAudioAdvertising = () => {
 
       <ClientTestimonialSection
         quote="Audio campaigns helped us reach audiences during commute hours where display simply couldn't. Completion rates were consistently strong, and companion banners drove additional engagement."
-        attribution="Senior Media Planner, Digital-First Agency"
+        attribution=""
         results={[
           "Targeted by listening behavior and time of day",
           "Increased brand recall in post-campaign surveys",
@@ -743,7 +762,7 @@ const ProgrammaticAudioAdvertising = () => {
               FAQ
             </motion.span>
             <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              Frequently Asked Questions
+              Frequently Asked Questions About Programmatic Audio Advertising
             </motion.h2>
           </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
