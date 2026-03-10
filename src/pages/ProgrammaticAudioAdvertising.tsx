@@ -531,7 +531,9 @@ const ProgrammaticAudioAdvertising = () => {
               How It Works
             </motion.h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto mb-14">
+          <div className="relative grid md:grid-cols-4 gap-8 max-w-5xl mx-auto mb-14">
+            {/* Connector line – centered at 48px (half of h-24 icon) */}
+            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-navy-200 z-0" />
             {steps.map((step, i) => (
               <motion.div
                 key={step.title}
@@ -539,19 +541,14 @@ const ProgrammaticAudioAdvertising = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12 }}
-                className="relative text-center group"
+                className="relative text-center group z-10"
               >
-                {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-gradient-to-r from-navy-200 to-transparent" />
-                )}
-                <div className="relative z-10">
-                  <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-orange-500 transition-colors duration-300 shadow-lg">
-                    <step.icon className="w-8 h-8 text-brand-orange-400 group-hover:text-white transition-colors" />
-                  </div>
-                  <div className="text-xs font-bold text-brand-orange-500 mb-2 tracking-wider">{step.number}</div>
-                  <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+                <div className="w-24 h-24 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-orange-500 transition-colors duration-300 shadow-lg">
+                  <step.icon className="w-9 h-9 text-brand-orange-400 group-hover:text-white transition-colors" />
                 </div>
+                <div className="text-xs font-bold text-brand-orange-500 mb-2 tracking-wider">{step.number}</div>
+                <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
+                <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
               </motion.div>
             ))}
           </div>
