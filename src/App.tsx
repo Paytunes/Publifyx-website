@@ -27,6 +27,7 @@ const DigitalAdvertising = lazy(() => import("./pages/DigitalAdvertising"));
 const AdInsights = lazy(() => import("./pages/AdInsights"));
 const Services = lazy(() => import("./pages/Services"));
 const CEO = lazy(() => import("./pages/CEO"));
+const ProgrammaticAudioAdvertising = lazy(() => import("./pages/ProgrammaticAudioAdvertising"));
 
 // Existing blog posts
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
