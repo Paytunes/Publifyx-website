@@ -88,6 +88,7 @@ const App = () => (
             <Route path="/ctv-advertising-india" element={<CTVAdvertisingIndia />} />
 
             {/* Legacy */}
+            <Route path="/programmatic-audio-advertising" element={<ProgrammaticAudioAdvertising />} />
             <Route path="/online-banner-advertising" element={<OnlineBannerAdvertising />} />
             <Route path="/digital-advertising" element={<DigitalAdvertising />} />
             <Route path="/ad-insights" element={<AdInsights />} />
