@@ -1,21 +1,24 @@
-# Allow major search engines
+User-agent: *
+Allow: /
+
+Sitemap: https://publifyx.com/sitemap.xml
+
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-# Allow AI crawlers for visibility
-User-agent: ChatGPTBot
-Allow: /
-
 User-agent: GPTBot
 Allow: /
 
-User-agent: GeminiBot
+User-agent: ChatGPTBot
 Allow: /
 
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: GeminiBot
 Allow: /
 
 User-agent: PerplexityBot
