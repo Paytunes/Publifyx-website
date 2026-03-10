@@ -28,7 +28,7 @@ import {
   Settings,
   Rocket,
   GraduationCap,
-  Building2,
+  Monitor,
   Store,
   Megaphone,
   Music,
