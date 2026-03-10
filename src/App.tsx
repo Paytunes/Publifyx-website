@@ -27,6 +27,7 @@ const DigitalAdvertising = lazy(() => import("./pages/DigitalAdvertising"));
 const AdInsights = lazy(() => import("./pages/AdInsights"));
 const Services = lazy(() => import("./pages/Services"));
 const CEO = lazy(() => import("./pages/CEO"));
+const ProgrammaticAudioAdvertising = lazy(() => import("./pages/ProgrammaticAudioAdvertising"));
 
 // Existing blog posts
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
@@ -87,6 +88,7 @@ const App = () => (
             <Route path="/ctv-advertising-india" element={<CTVAdvertisingIndia />} />
 
             {/* Legacy */}
+            <Route path="/programmatic-audio-advertising" element={<ProgrammaticAudioAdvertising />} />
             <Route path="/online-banner-advertising" element={<OnlineBannerAdvertising />} />
             <Route path="/digital-advertising" element={<DigitalAdvertising />} />
             <Route path="/ad-insights" element={<AdInsights />} />
