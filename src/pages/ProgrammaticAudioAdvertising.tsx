@@ -603,7 +603,7 @@ const ProgrammaticAudioAdvertising = () => {
               Explore Related Services
             </motion.h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
                 title: "OTT Advertising",
@@ -616,12 +616,6 @@ const ProgrammaticAudioAdvertising = () => {
                 desc: "Reach audiences on the big screen with programmatic connected TV campaigns.",
                 icon: Globe,
                 path: "/ctv-advertising",
-              },
-              {
-                title: "Video Advertising",
-                desc: "Deliver high-impact programmatic video ads across screens and formats.",
-                icon: Zap,
-                path: "/programmatic-video-advertising",
               },
               {
                 title: "White Label DSP",
