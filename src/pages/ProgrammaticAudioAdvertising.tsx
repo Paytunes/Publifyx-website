@@ -45,22 +45,22 @@ import AudioStickyFeaturesSection from "@/components/sections/audioAdvertising/A
 const adFormats = [
   {
     title: "In-Stream Audio Ads",
-    desc: "15 or 30-second spots before, during, or between songs, podcasts, or radio content.",
+    desc: "Short audio spots (15 or 30 seconds) that play before, during, or between songs, podcast episodes, or radio content.",
     icon: Music,
   },
   {
-    title: "Podcast Dynamic Insertion",
-    desc: "Targeted audio ads dynamically inserted into podcast episodes at listen time.",
+    title: "Podcast Ads with Dynamic Insertion",
+    desc: "Targeted audio ads dynamically inserted into podcast episodes at listen time, based on the listener's profile and targeting parameters.",
     icon: Mic,
   },
   {
     title: "Companion Display Banners",
-    desc: "Visual banners appearing in the streaming app while the audio ad plays.",
+    desc: "Visual banners that appear within the streaming app while the audio ad plays, providing a visual reinforcement and a clickable call-to-action.",
     icon: Radio,
   },
   {
     title: "Sequential Audio Messaging",
-    desc: "A series of audio ads delivered to the same listener over time for narrative storytelling.",
+    desc: "Deliver a series of audio ads to the same listener over time, building a narrative or guiding them through a funnel with progressive messaging.",
     icon: Headphones,
   },
 ];
