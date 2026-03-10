@@ -456,7 +456,7 @@ const ProgrammaticAudioAdvertising = () => {
 
       <ClientTestimonialSection
         quote="Audio campaigns helped us reach audiences during commute hours where display simply couldn't. Completion rates were consistently strong, and companion banners drove additional engagement."
-        attribution="Senior Media Planner, Digital-First Agency"
+        attribution=""
         results={[
           "Targeted by listening behavior and time of day",
           "Increased brand recall in post-campaign surveys",
