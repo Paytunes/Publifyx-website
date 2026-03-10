@@ -29,6 +29,7 @@ import {
   Rocket,
   GraduationCap,
   Monitor,
+  Building2,
   Store,
   Megaphone,
   Music,
