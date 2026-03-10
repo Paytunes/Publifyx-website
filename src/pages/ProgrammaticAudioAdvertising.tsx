@@ -8,6 +8,10 @@ import listenerHeadphones from "@/assets/audio/listener-headphones.webp";
 import podcastStudio from "@/assets/audio/podcast-studio.webp";
 import audioDevices from "@/assets/audio/audio-devices.webp";
 import listenerActive from "@/assets/audio/listener-active.webp";
+import stepUploadCreatives from "@/assets/audio/step-upload-creatives.webp";
+import stepSetTargeting from "@/assets/audio/step-set-targeting.webp";
+import stepLaunchCampaigns from "@/assets/audio/step-launch-campaigns.webp";
+import stepOptimizeReport from "@/assets/audio/step-optimize-report.webp";
 import { motion, useInView } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
 import {
