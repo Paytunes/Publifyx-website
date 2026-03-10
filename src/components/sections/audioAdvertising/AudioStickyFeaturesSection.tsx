@@ -4,8 +4,8 @@ import { Globe, Target, Mic, Radio, BarChart3, Zap } from "lucide-react";
 
 const features = [
   {
-    title: "Cross-Platform Audio Inventory",
-    description: "Access audio ad inventory across streaming music services, podcast networks, digital radio stations, and smart speaker environments through our integrations with leading audio SSPs.",
+    title: "Cross-Platform Audio",
+    description: "Access inventory across streaming music, podcast networks, digital radio, and smart speakers.",
     icon: Globe,
     visual: {
       label: "Platform Coverage",
@@ -18,8 +18,8 @@ const features = [
     },
   },
   {
-    title: "Precision Listener Targeting",
-    description: "Target audio audiences based on demographics, geographic location, interests, listening behavior, content genre, device type, and time of day.",
+    title: "Precision Targeting",
+    description: "Target by demographics, geography, interests, listening behavior, content genre, and time of day.",
     icon: Target,
     visual: {
       label: "Targeting Layers",
@@ -32,9 +32,9 @@ const features = [
     },
   },
   {
-    title: "Dynamic Creative Capabilities",
+    title: "Dynamic Creative",
     description:
-      "Serve different audio ad creatives to different audience segments based on targeting criteria, enabling personalized messaging at scale.",
+      "Serve different audio creatives to different segments based on targeting criteria for personalized messaging.",
     icon: Mic,
     visual: {
       label: "Creative Segments",
@@ -47,8 +47,8 @@ const features = [
     },
   },
   {
-    title: "Companion Display Banners",
-    description: "Pair your audio ad with a visual companion banner that appears in the listener's app, reinforcing your message with a clickable visual element.",
+    title: "Companion Banners",
+    description: "Pair audio ads with visual companion banners in the listener's app for reinforced messaging.",
     icon: Radio,
     visual: {
       label: "Banner Engagement",
@@ -62,7 +62,7 @@ const features = [
   },
   {
     title: "Real-Time Reporting",
-    description: "Track audio campaign performance with metrics including impressions, completion rate, reach, frequency, and cost per completed listen.",
+    description: "Track impressions, completion rate, reach, frequency, and cost per completed listen.",
     icon: BarChart3,
     visual: {
       label: "Performance Metrics",
@@ -75,8 +75,8 @@ const features = [
     },
   },
   {
-    title: "Unified Platform Experience",
-    description: "Manage audio campaigns alongside display, video, CTV, and OTT within the PublifyX platform, no separate tools or logins required.",
+    title: "Unified Platform",
+    description: "Manage audio alongside display, video, CTV, and OTT — no separate tools or logins required.",
     icon: Zap,
     visual: {
       label: "Channel Mix",
@@ -210,7 +210,7 @@ const AudioStickyFeaturesSection = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 leading-tight max-w-3xl mx-auto"
           >
-            PublifyX Audio Advertising Platform Features
+            Audio Platform Features
           </motion.h2>
         </div>
       </div>
