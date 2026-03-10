@@ -602,7 +602,7 @@ const ProgrammaticAudioAdvertising = () => {
               FAQ
             </motion.span>
             <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              Frequently Asked Questions
+              Frequently Asked Questions About Programmatic Audio Advertising
             </motion.h2>
           </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
