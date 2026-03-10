@@ -1,10 +1,14 @@
 import Layout from "@/components/Layout";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import audioHeroDashboard from "@/assets/audio/audio-hero-dashboard.webp";
-import { motion } from "framer-motion";
+import listenerHeadphones from "@/assets/audio/listener-headphones.webp";
+import podcastStudio from "@/assets/audio/podcast-studio.webp";
+import audioDevices from "@/assets/audio/audio-devices.webp";
+import listenerActive from "@/assets/audio/listener-active.webp";
+import { motion, useInView } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
 import {
   ArrowRight,
@@ -15,7 +19,6 @@ import {
   BarChart3,
   Mic,
   Zap,
-  RefreshCw,
   Globe,
   PhoneCall,
   Settings,
@@ -25,6 +28,9 @@ import {
   Store,
   Megaphone,
   Music,
+  TrendingUp,
+  Users,
+  Clock,
 } from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -69,18 +75,22 @@ const adFormats = [
   {
     title: "In-Stream Audio Ads",
     desc: "15 or 30-second spots before, during, or between songs, podcasts, or radio content.",
+    icon: Music,
   },
   {
     title: "Podcast Dynamic Insertion",
     desc: "Targeted audio ads dynamically inserted into podcast episodes at listen time.",
+    icon: Mic,
   },
   {
     title: "Companion Display Banners",
     desc: "Visual banners appearing in the streaming app while the audio ad plays.",
+    icon: Radio,
   },
   {
     title: "Sequential Audio Messaging",
     desc: "A series of audio ads delivered to the same listener over time for narrative storytelling.",
+    icon: Headphones,
   },
 ];
 
@@ -160,6 +170,41 @@ const faqs = [
   },
 ];
 
+const audioStats = [
+  { value: 95, suffix: "%+", label: "Completion Rate", description: "Audio ads played in full", icon: TrendingUp },
+  { value: 500, suffix: "M+", label: "Listeners Reached", description: "Across streaming platforms", icon: Users },
+  { value: 100, suffix: "+", label: "Publisher Partners", description: "Premium audio inventory", icon: Globe },
+  { value: 24, suffix: "/7", label: "Real-Time Bidding", description: "Always-on campaigns", icon: Clock },
+];
+
+/* ── Animated counter (AdTonos-inspired) ── */
+const AnimatedStatCounter = ({ target, suffix }: { target: number; suffix: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    const duration = 1800;
+    const startTime = performance.now();
+    const step = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [isInView, target]);
+
+  return (
+    <div ref={ref} className="text-5xl md:text-6xl font-extrabold text-white mb-2 font-display">
+      {count}
+      {suffix}
+    </div>
+  );
+};
+
 const ProgrammaticAudioAdvertising = () => {
   useEffect(() => {
     document.title = "Programmatic Audio Advertising Platform | Audio DSP — PublifyX";
@@ -178,7 +223,7 @@ const ProgrammaticAudioAdvertising = () => {
 
   return (
     <Layout transparentHeader>
-      {/* Hero */}
+      {/* ═══════════════ HERO ═══════════════ */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-navy-800">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
         <div
@@ -242,10 +287,10 @@ const ProgrammaticAudioAdvertising = () => {
         </div>
       </section>
 
-      {/* Explainer */}
-      <section className="py-12 md:py-16 bg-white">
+      {/* ═══════════════ WHY AUDIO — Alternating Image/Text (TradeDesk-style) ═══════════════ */}
+      <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -274,33 +319,61 @@ const ProgrammaticAudioAdvertising = () => {
               played in full.
             </motion.p>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
-          >
-            <div className="bg-navy-50 rounded-2xl border border-navy-100 p-8">
-              <h3 className="text-xl font-bold text-navy-800 mb-4">Audio Advantage</h3>
-              <ul className="space-y-3">
+
+          {/* Alternating block 1: Image Left, Text Right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="relative">
+                <div className="absolute -inset-3 bg-brand-orange-500/8 rounded-3xl blur-xl" />
+                <img
+                  src={listenerHeadphones}
+                  alt="Person listening to streaming music with headphones"
+                  className="relative w-full h-auto rounded-2xl shadow-xl"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">Audio Advantage</h3>
+              <ul className="space-y-4">
                 {[
                   "Screen-free audience reach",
                   "95%+ completion rates",
                   "Growing listener base globally",
                   "Podcast boom driving inventory",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
-                      <Headphones className="w-3.5 h-3.5 text-brand-orange-600" />
+                  <li key={item} className="flex items-center gap-4">
+                    <div className="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
+                      <Headphones className="w-4 h-4 text-brand-orange-600" />
                     </div>
-                    <span className="text-navy-600 font-medium">{item}</span>
+                    <span className="text-navy-600 font-medium text-lg">{item}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="bg-navy-800 rounded-2xl border border-navy-700 p-8">
-              <h3 className="text-xl font-bold text-white mb-4">Programmatic Precision</h3>
-              <ul className="space-y-3">
+            </motion.div>
+          </div>
+
+          {/* Alternating block 2: Text Left, Image Right */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="order-2 lg:order-1"
+            >
+              <h3 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">Programmatic Precision</h3>
+              <ul className="space-y-4">
                 {[
                   "Automated real-time bidding",
                   "Demographic & behavioral targeting",
@@ -308,16 +381,33 @@ const ProgrammaticAudioAdvertising = () => {
                   "Cross-channel integration",
                   "Measurable attribution",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
-                      <ArrowRight className="w-3.5 h-3.5 text-green-400" />
+                  <li key={item} className="flex items-center gap-4">
+                    <div className="w-8 h-8 rounded-full bg-navy-800 flex items-center justify-center flex-shrink-0">
+                      <ArrowRight className="w-4 h-4 text-brand-orange-400" />
                     </div>
-                    <span className="text-navy-200 font-medium">{item}</span>
+                    <span className="text-navy-600 font-medium text-lg">{item}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-          </motion.div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="order-1 lg:order-2"
+            >
+              <div className="relative">
+                <div className="absolute -inset-3 bg-brand-orange-500/8 rounded-3xl blur-xl" />
+                <img
+                  src={podcastStudio}
+                  alt="Professional podcast recording studio with microphone and audio waveforms"
+                  className="relative w-full h-auto rounded-2xl shadow-xl"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -328,10 +418,10 @@ const ProgrammaticAudioAdvertising = () => {
         variant="default"
       />
 
-      {/* Features */}
-      <section className="py-12 md:py-16 bg-navy-50">
+      {/* ═══════════════ FEATURES — Modern grid ═══════════════ */}
+      <section className="py-20 md:py-28 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -344,21 +434,21 @@ const ProgrammaticAudioAdvertising = () => {
               Audio Platform Features
             </motion.h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {features.map((feature, i) => (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
               >
-                <MagneticCard className="group bg-white rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
-                  <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
-                    <feature.icon className="w-6 h-6 text-brand-orange-500" />
+                <MagneticCard className="group bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-orange-50 to-brand-orange-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <feature.icon className="w-7 h-7 text-brand-orange-500" />
                   </div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">{feature.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="font-bold text-navy-800 text-xl mb-3">{feature.title}</h3>
+                  <p className="text-navy-400 leading-relaxed">{feature.description}</p>
                 </MagneticCard>
               </motion.div>
             ))}
@@ -366,40 +456,57 @@ const ProgrammaticAudioAdvertising = () => {
         </div>
       </section>
 
-      {/* Ad Formats */}
-      <section className="py-12 md:py-16 bg-white">
+      {/* ═══════════════ AD FORMATS — Alternating with image ═══════════════ */}
+      <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
             >
-              Ad Formats
-            </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              Audio Ad Formats Supported
-            </motion.h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {adFormats.map((format, i) => (
-              <motion.div
-                key={format.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <div className="bg-navy-50 rounded-2xl border border-navy-100 p-7 h-full hover:shadow-lg transition-all duration-300">
-                  <div className="w-10 h-10 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-4">
-                    <span className="text-white font-bold text-sm">{String(i + 1).padStart(2, "0")}</span>
-                  </div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">{format.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{format.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+              <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+                Ad Formats
+              </span>
+              <h2 className="mb-8">Audio Ad Formats Supported</h2>
+              <div className="space-y-6">
+                {adFormats.map((format, i) => (
+                  <motion.div
+                    key={format.title}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex gap-5 items-start group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange-500 transition-colors">
+                      <format.icon className="w-5 h-5 text-brand-orange-400 group-hover:text-white transition-colors" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-navy-800 text-lg mb-1">{format.title}</h3>
+                      <p className="text-navy-400 leading-relaxed">{format.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="hidden lg:block"
+            >
+              <div className="relative">
+                <div className="absolute -inset-4 bg-brand-orange-500/8 rounded-3xl blur-xl" />
+                <img
+                  src={audioDevices}
+                  alt="Smart speakers and audio streaming devices for programmatic audio advertising"
+                  className="relative w-full h-auto rounded-2xl shadow-xl"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -415,48 +522,72 @@ const ProgrammaticAudioAdvertising = () => {
         variant="split"
       />
 
-      {/* Who It's For */}
-      <section className="py-12 md:py-16 bg-navy-50">
+      {/* ═══════════════ WHO IT'S FOR — Image + Cards ═══════════════ */}
+      <section className="py-20 md:py-28 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
+              transition={{ duration: 0.6 }}
+              className="hidden lg:block"
             >
-              Built For You
-            </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              Who Is Audio Advertising For?
-            </motion.h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {whoItsFor.map((audience, i) => (
-              <motion.div
-                key={audience.title}
+              <div className="relative">
+                <div className="absolute -inset-4 bg-brand-orange-500/8 rounded-3xl blur-xl" />
+                <img
+                  src={listenerActive}
+                  alt="Active listener with wireless earbuds during outdoor exercise"
+                  className="relative w-full h-auto rounded-2xl shadow-xl"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+            <div>
+              <motion.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
+              >
+                Built For You
+              </motion.span>
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                className="mb-8"
               >
-                <MagneticCard className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-all duration-300 group h-full">
-                  <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
-                    <audience.icon className="w-6 h-6 text-brand-orange-500" />
-                  </div>
-                  <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
-                  <p className="text-navy-400 leading-relaxed">{audience.description}</p>
-                </MagneticCard>
-              </motion.div>
-            ))}
+                Who Is Audio Advertising For?
+              </motion.h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {whoItsFor.map((audience, i) => (
+                  <motion.div
+                    key={audience.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <div className="bg-white rounded-xl border border-navy-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full group">
+                      <div className="w-11 h-11 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-4 group-hover:bg-brand-orange-100 transition-colors">
+                        <audience.icon className="w-5 h-5 text-brand-orange-500" />
+                      </div>
+                      <h3 className="font-bold text-navy-800 text-base mb-2">{audience.title}</h3>
+                      <p className="text-navy-400 text-sm leading-relaxed">{audience.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-12 md:py-16 bg-white">
+      {/* ═══════════════ HOW IT WORKS — Timeline ═══════════════ */}
+      <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -469,24 +600,24 @@ const ProgrammaticAudioAdvertising = () => {
               How It Works
             </motion.h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
+          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto mb-14">
             {steps.map((step, i) => (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12 }}
                 className="relative text-center group"
               >
                 {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-navy-200" />
+                  <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-gradient-to-r from-navy-200 to-transparent" />
                 )}
                 <div className="relative z-10">
-                  <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-navy-700 transition-colors">
-                    <step.icon className="w-8 h-8 text-brand-orange-400" />
+                  <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-orange-500 transition-colors duration-300 shadow-lg">
+                    <step.icon className="w-8 h-8 text-brand-orange-400 group-hover:text-white transition-colors" />
                   </div>
-                  <div className="text-xs font-bold text-brand-orange-500 mb-2">{step.number}</div>
+                  <div className="text-xs font-bold text-brand-orange-500 mb-2 tracking-wider">{step.number}</div>
                   <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
                   <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
                 </div>
@@ -509,7 +640,7 @@ const ProgrammaticAudioAdvertising = () => {
         </div>
       </section>
 
-      {/* Related */}
+      {/* ═══════════════ RELATED SERVICES ═══════════════ */}
       <section className="py-12 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl border border-navy-100 p-6 md:p-8">
@@ -544,10 +675,64 @@ const ProgrammaticAudioAdvertising = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange-500 rounded-full blur-[250px] opacity-10" />
+      {/* ═══════════════ AUDIO STATISTICS — AdTonos-inspired (near bottom) ═══════════════ */}
+      <section className="py-20 md:py-28 bg-navy-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "48px 48px",
+          }}
+        />
+        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-brand-orange-500 rounded-full blur-[200px] opacity-[0.08]" />
+        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="inline-block text-sm font-semibold text-brand-orange-400 uppercase tracking-widest mb-3"
+            >
+              Platform Reach
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="!text-white"
+            >
+              Audio Advertising by the Numbers
+            </motion.h2>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+            {audioStats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="w-12 h-12 rounded-xl bg-brand-orange-500/20 flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-6 h-6 text-brand-orange-400" />
+                </div>
+                <AnimatedStatCounter target={stat.value} suffix={stat.suffix} />
+                <div className="text-brand-orange-400 font-semibold text-lg mb-1">{stat.label}</div>
+                <div className="text-navy-400 text-sm">{stat.description}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ CTA ═══════════════ */}
+      <section className="py-20 md:py-24 bg-gradient-to-br from-brand-orange-500 to-brand-orange-600 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white rounded-full blur-[200px] opacity-[0.08]" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-brand-orange-300 rounded-full blur-[150px] opacity-20" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -555,11 +740,11 @@ const ProgrammaticAudioAdvertising = () => {
           className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
         >
           <h2 className="mb-6 !text-white">Start Your Audio Campaign</h2>
-          <p className="text-xl text-navy-300 mb-4 leading-relaxed">
+          <p className="text-xl text-white/90 mb-4 leading-relaxed">
             Reach listeners across streaming music, podcasts, and digital radio with precision targeting.
           </p>
-          <p className="text-base text-navy-400 mb-10 font-semibold">No commitment required · High completion rates</p>
-          <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+          <p className="text-base text-white/70 mb-10 font-semibold">No commitment required · High completion rates</p>
+          <EnergyButton className="inline-flex items-center bg-navy-800 hover:bg-navy-900 text-white text-lg px-10 py-4 rounded-xl font-semibold shadow-xl transition-all duration-300 hover:scale-105">
             <Link to="/contact" className="flex items-center text-white no-underline group">
               Book a Call{" "}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -568,8 +753,8 @@ const ProgrammaticAudioAdvertising = () => {
         </motion.div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-12 md:py-16 bg-navy-50 faq-section">
+      {/* ═══════════════ FAQ ═══════════════ */}
+      <section className="py-20 md:py-28 bg-navy-50 faq-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <motion.span
