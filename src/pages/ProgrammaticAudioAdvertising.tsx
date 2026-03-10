@@ -539,24 +539,29 @@ const ProgrammaticAudioAdvertising = () => {
               How It Works
             </motion.h2>
           </div>
-          <div className="relative grid md:grid-cols-4 gap-8 max-w-5xl mx-auto mb-14">
-            {/* Connector line – centered at 48px (half of h-24 icon) */}
-            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-navy-200 z-0" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-14">
             {steps.map((step, i) => (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.12 }}
-                className="relative text-center group z-10"
+                transition={{ delay: i * 0.12, duration: 0.5 }}
+                className="bg-navy-50 rounded-2xl border border-navy-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group"
               >
-                <div className="w-24 h-24 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-orange-500 transition-colors duration-300 shadow-lg">
-                  <step.icon className="w-9 h-9 text-brand-orange-400 group-hover:text-white transition-colors" />
+                <div className="w-full h-44 bg-white flex items-center justify-center p-4">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
                 </div>
-                <div className="text-xs font-bold text-brand-orange-500 mb-2 tracking-wider">{step.number}</div>
-                <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
-                <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+                <div className="p-6">
+                  <span className="text-xs font-bold text-brand-orange-500 tracking-wider">{step.number}</span>
+                  <h3 className="font-bold text-navy-800 text-lg mt-2 mb-2">{step.title}</h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
