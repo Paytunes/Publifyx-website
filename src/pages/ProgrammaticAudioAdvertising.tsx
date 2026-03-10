@@ -411,7 +411,7 @@ const ProgrammaticAudioAdvertising = () => {
               <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
                 Ad Formats
               </span>
-              <h2 className="mb-8">Audio Ad Formats Supported</h2>
+              <h2 className="mb-8">Audio Ad Formats Supported by PublifyX</h2>
               <div className="space-y-6">
                 {adFormats.map((format, i) => (
                   <motion.div
