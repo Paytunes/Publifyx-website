@@ -12,6 +12,7 @@ const serviceLinks = [
   { to: "/white-label-dsp", label: "White Label DSP" },
   { to: "/ctv-advertising", label: "CTV Advertising" },
   { to: "/ott-advertising", label: "OTT Advertising" },
+  { to: "/programmatic-audio-advertising", label: "Programmatic Audio Advertising" },
 ];
 
 const resourceLinks = [
