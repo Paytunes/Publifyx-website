@@ -65,59 +65,8 @@ const adFormats = [
   },
 ];
 
-const steps = [
-  {
-    number: "01",
-    title: "Upload Audio Creatives",
-    description: "Upload your 15s or 30s audio ad creatives with optional companion banners.",
-    icon: PhoneCall,
-    image: stepUploadCreatives,
-  },
-  {
-    number: "02",
-    title: "Set Targeting",
-    description: "Define audiences by demographics, listening behavior, genre, and geography.",
-    icon: Settings,
-    image: stepSetTargeting,
-  },
-  {
-    number: "03",
-    title: "Launch Campaigns",
-    description: "Go live across audio inventory via programmatic buying.",
-    icon: Rocket,
-    image: stepLaunchCampaigns,
-  },
-  {
-    number: "04",
-    title: "Optimize & Report",
-    description: "Monitor completion rates, reach, and frequency — optimize in real time.",
-    icon: GraduationCap,
-    image: stepOptimizeReport,
-  },
-];
 
-const whoItsFor = [
-  {
-    title: "Brand Advertisers",
-    description: "Reach audiences during screen-free moments — commuting, exercising, cooking — when visual ads can't.",
-    icon: Megaphone,
-  },
-  {
-    title: "Media Agencies",
-    description: "Add audio as a premium channel to your programmatic stack with unified reporting.",
-    icon: Building2,
-  },
-  {
-    title: "Podcast Advertisers",
-    description: "Dynamically insert targeted ads into podcast episodes with precision and measurability.",
-    icon: Music,
-  },
-  {
-    title: "Local Businesses",
-    description: "Target specific geographic areas with audio ads on local streaming and radio platforms.",
-    icon: Store,
-  },
-];
+
 
 const faqs = [
   {
