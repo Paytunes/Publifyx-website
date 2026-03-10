@@ -123,25 +123,25 @@ const faqs = [
   {
     question: "What is programmatic audio advertising?",
     answer:
-      "Programmatic audio uses automated, real-time bidding to buy and deliver audio ads across streaming music, podcasts, and digital radio.",
+      "Programmatic audio advertising uses automated, real-time bidding technology to buy and deliver audio ads across streaming music platforms, podcasts, and digital radio. It eliminates manual buying and enables precise audience targeting.",
   },
   {
-    question: "What platforms do audio ads run on?",
-    answer: "Streaming music services, podcast networks, digital radio platforms, and smart speaker environments.",
+    question: "What platforms do programmatic audio ads run on?",
+    answer: "Programmatic audio ads run across streaming music services, podcast networks, digital radio platforms, and smart speaker environments. Specific platform availability depends on SSP integrations and regional inventory.",
   },
   {
     question: "How long are audio ads?",
-    answer: "Standard lengths are 15 and 30 seconds. Some platforms support 6-second or 60-second formats.",
+    answer: "Standard programmatic audio ad lengths are 15 seconds and 30 seconds. Some platforms also support 6-second or 60-second formats depending on inventory availability.",
   },
   {
-    question: "Can I target specific audiences?",
+    question: "Can I target specific audiences with audio advertising?",
     answer:
-      "Yes. Targeting by demographics, geography, interests, listening behavior, content genre, device type, and time of day.",
+      "Yes. PublifyX supports targeting by demographics, geography, interests, listening behavior, content genre, device type, and time of day for audio campaigns.",
   },
   {
-    question: "How is performance measured?",
+    question: "How is audio advertising performance measured?",
     answer:
-      "Key metrics: impressions, audio completion rate, unique listener reach, frequency, and cost per completed listen.",
+      "Key metrics include impressions, audio completion rate, unique listener reach, frequency, and cost per completed listen. Companion banner metrics include click-through rate and engagement.",
   },
 ];
 

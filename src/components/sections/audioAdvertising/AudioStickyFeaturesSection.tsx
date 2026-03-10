@@ -210,7 +210,7 @@ const AudioStickyFeaturesSection = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 leading-tight max-w-3xl mx-auto"
           >
-            Audio Platform Features
+            PublifyX Audio Advertising Platform Features
           </motion.h2>
         </div>
       </div>
