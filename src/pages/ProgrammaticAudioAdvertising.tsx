@@ -182,13 +182,31 @@ const ProgrammaticAudioAdvertising = () => {
   useEffect(() => {
     document.title = "Programmatic Audio Advertising Platform | Audio DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
+    const originalDesc = meta?.getAttribute("content") || "";
     if (meta)
       meta.setAttribute(
         "content",
         "Run targeted audio ads on streaming music, podcasts, and digital radio with PublifyX's programmatic audio advertising platform. Reach listeners where screens cannot.",
       );
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer,
+        },
+      })),
+    };
+    const script = injectFaqPageSchema(faqSchema, "audio-advertising-faq-schema");
+
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
+      meta?.setAttribute("content", originalDesc);
+      script.remove();
     };
   }, []);
 
