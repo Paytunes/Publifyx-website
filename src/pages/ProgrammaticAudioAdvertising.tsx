@@ -70,24 +70,28 @@ const steps = [
     title: "Upload Audio Creatives",
     description: "Upload your 15s or 30s audio ad creatives with optional companion banners.",
     icon: PhoneCall,
+    image: stepUploadCreatives,
   },
   {
     number: "02",
     title: "Set Targeting",
     description: "Define audiences by demographics, listening behavior, genre, and geography.",
     icon: Settings,
+    image: stepSetTargeting,
   },
   {
     number: "03",
     title: "Launch Campaigns",
     description: "Go live across audio inventory via programmatic buying.",
     icon: Rocket,
+    image: stepLaunchCampaigns,
   },
   {
     number: "04",
     title: "Optimize & Report",
     description: "Monitor completion rates, reach, and frequency — optimize in real time.",
     icon: GraduationCap,
+    image: stepOptimizeReport,
   },
 ];
 
