@@ -473,43 +473,8 @@ const ProgrammaticAudioAdvertising = () => {
         variant="default"
       />
 
-      {/* ═══════════════ FEATURES — Modern grid ═══════════════ */}
-      <section className="py-20 md:py-28 bg-navy-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
-              Platform Features
-            </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              Audio Platform Features
-            </motion.h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {features.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <MagneticCard className="group bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-orange-50 to-brand-orange-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <feature.icon className="w-7 h-7 text-brand-orange-500" />
-                  </div>
-                  <h3 className="font-bold text-navy-800 text-xl mb-3">{feature.title}</h3>
-                  <p className="text-navy-400 leading-relaxed">{feature.description}</p>
-                </MagneticCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ═══════════════ FEATURES — Sticky scroll (OTT-style) ═══════════════ */}
+      <AudioStickyFeaturesSection />
 
       {/* ═══════════════ AD FORMATS — Alternating with image ═══════════════ */}
       <section className="py-20 md:py-28 bg-white">
