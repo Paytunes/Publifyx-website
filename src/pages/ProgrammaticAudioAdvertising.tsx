@@ -81,10 +81,10 @@ const faqs = [
 ];
 
 const audioStats = [
-  { value: 95, suffix: "%+", label: "Completion Rate", description: "Audio ads played in full", icon: TrendingUp },
-  { value: 500, suffix: "M+", label: "Listeners Reached", description: "Across streaming platforms", icon: Users },
-  { value: 100, suffix: "+", label: "Publisher Partners", description: "Premium audio inventory", icon: Globe },
-  { value: 24, suffix: "/7", label: "Real-Time Bidding", description: "Always-on campaigns", icon: Clock },
+  { value: 93, suffix: "%", description: "of U.S. adults aged 18+ tune in to radio every week" },
+  { value: 84, suffix: "%", description: "of Americans aged 12+ are familiar with podcasts (approx. 241 million people)" },
+  { value: 73, suffix: "%", description: "of Americans aged 12+ listened to online audio in the past month" },
+  { value: 47, suffix: "%", description: "of Americans aged 12+ listened to a podcast during the last month" },
 ];
 
 /* ── Animated counter (AdTonos-inspired) ── */
