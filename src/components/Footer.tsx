@@ -83,58 +83,18 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* More */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Resources</h4>
+            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">More</h4>
             <ul className="space-y-2.5">
-              <li>
-                <Link
-                  to="/how-it-works"
-                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
-                >
-                  How It Works
-                </Link>
-              </li>
-              <li>
-                <Link to="/features" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/integrations"
-                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
-                >
-                  Integrations
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/case-studies"
-                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
-                >
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/white-label-dsp-vs-self-serve-dsp"
-                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
-                >
-                  White Label vs Self-Serve
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/ctv-advertising-india"
-                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
-                >
-                  CTV Advertising India
-                </Link>
-              </li>
               <li>
                 <Link to="/blog" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
                   Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/pricing" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
+                  Pricing
                 </Link>
               </li>
             </ul>

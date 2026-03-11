@@ -4,6 +4,7 @@ import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import audioHeroDashboard from "@/assets/audio/audio-hero-dashboard.webp";
+import usaMapSilhouette from "@/assets/audio/usa-map-silhouette.png";
 import listenerHeadphones from "@/assets/audio/listener-headphones.webp";
 import podcastStudio from "@/assets/audio/podcast-studio.webp";
 import audioDevices from "@/assets/audio/audio-devices.webp";
@@ -151,7 +152,7 @@ const ProgrammaticAudioAdvertising = () => {
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
                 <span className="text-sm font-medium text-white/80">Audio Advertising Platform</span>
               </div>
-              <h1 className="mb-6 !text-white leading-[1.1]">
+              <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-5xl">
                 Programmatic Audio Advertising — Reach Listeners Across Streaming, Podcasts, and Digital Radio
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
@@ -501,56 +502,62 @@ const ProgrammaticAudioAdvertising = () => {
         </div>
       </section>
 
-      {/* ═══════════════ AUDIO STATISTICS — AdTonos-inspired (near bottom) ═══════════════ */}
-      <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
+      {/* ═══════════════ AUDIO STATISTICS — US Map visual ═══════════════ */}
+      <section className="py-16 md:py-24 bg-navy-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-            backgroundSize: "48px 48px",
-          }}
-        />
-        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-brand-orange-500 rounded-full blur-[200px] opacity-[0.08]" />
-        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <motion.span
+          {/* Map visual with overlaid stats */}
+          <div className="relative flex flex-col items-center">
+            {/* US Map background */}
+            <div className="relative w-full max-w-4xl mx-auto">
+              <img
+                src={usaMapSilhouette}
+                alt="United States of America map"
+                className="w-full h-auto opacity-40"
+                loading="lazy"
+              />
+              {/* Country label */}
+              <motion.h3
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="absolute top-[15%] left-1/2 -translate-x-1/2 text-white font-bold text-xl md:text-2xl lg:text-3xl whitespace-nowrap"
+              >
+                United States of America
+              </motion.h3>
+            </div>
+
+            {/* Stats overlay row */}
+            <div className="w-full max-w-5xl mx-auto -mt-8 sm:-mt-16 md:-mt-24 lg:-mt-32 relative z-20">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                {audioStats.map((stat, i) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.12 }}
+                    className="text-center px-2 py-4"
+                  >
+                    <AnimatedStatCounter target={stat.value} suffix={stat.suffix} />
+                    <p className="text-white/70 text-xs md:text-sm leading-snug mt-1 max-w-[180px] mx-auto">
+                      {stat.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Source line */}
+            <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-400 uppercase tracking-widest mb-3"
+              className="text-white/40 text-xs mt-8 text-center"
             >
-              Platform Reach
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="!text-white"
-            >
-              Audio Advertising by the Numbers
-            </motion.h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
-            {audioStats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-xl bg-brand-orange-500/20 flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-6 h-6 text-brand-orange-400" />
-                </div>
-                <AnimatedStatCounter target={stat.value} suffix={stat.suffix} />
-                <div className="text-brand-orange-400 font-semibold text-lg mb-1">{stat.label}</div>
-                <div className="text-navy-400 text-sm">{stat.description}</div>
-              </motion.div>
-            ))}
+              Source: Statista, Edison Research 2024
+            </motion.p>
           </div>
         </div>
       </section>
