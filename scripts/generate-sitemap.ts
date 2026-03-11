@@ -1,32 +1,13 @@
 /**
- * Generates sitemap.xml and blog/rss.xml from App.tsx routes and blogPosts.ts data.
+ * Generates sitemap.xml and blog/rss.xml from siteRoutes.ts and blogPosts.ts.
  * Used by the Vite plugin at build time and can be run standalone.
  */
 
 import { blogPosts } from "../src/data/blogPosts";
+import { siteRoutes } from "../src/data/siteRoutes";
 
-const SITE_URL = "https://publifyx.com";
+const SITE_URL = "https://www.publifyx.com";
 const TODAY = new Date().toISOString().split("T")[0];
-
-// All static page routes with their priorities and change frequencies
-const staticPages: { path: string; priority: number; changefreq: string }[] = [
-  { path: "/", priority: 1.0, changefreq: "weekly" },
-  { path: "/white-label-dsp", priority: 0.9, changefreq: "monthly" },
-  { path: "/ctv-advertising", priority: 0.9, changefreq: "monthly" },
-  { path: "/ott-advertising", priority: 0.9, changefreq: "monthly" },
-  { path: "/blog", priority: 0.8, changefreq: "daily" },
-  
-  { path: "/contact", priority: 0.7, changefreq: "yearly" },
-  { path: "/services", priority: 0.7, changefreq: "monthly" },
-  { path: "/about", priority: 0.6, changefreq: "monthly" },
-  { path: "/saurabh", priority: 0.5, changefreq: "yearly" },
-  { path: "/digital-advertising", priority: 0.7, changefreq: "monthly" },
-  { path: "/online-banner-advertising", priority: 0.7, changefreq: "monthly" },
-  { path: "/white-label-dsp-vs-self-serve-dsp", priority: 0.6, changefreq: "monthly" },
-  { path: "/ctv-advertising-india", priority: 0.7, changefreq: "monthly" },
-  { path: "/terms_and_conditions", priority: 0.3, changefreq: "yearly" },
-  { path: "/privacy_policy", priority: 0.3, changefreq: "yearly" },
-];
 
 function escapeXml(str: string): string {
   return str
@@ -40,8 +21,8 @@ function escapeXml(str: string): string {
 export function generateSitemap(): string {
   const urls: string[] = [];
 
-  // Static pages
-  for (const page of staticPages) {
+  // Static / service pages from the single-source registry
+  for (const page of siteRoutes) {
     urls.push(`  <url>
     <loc>${SITE_URL}${page.path}</loc>
     <lastmod>${TODAY}</lastmod>
@@ -52,7 +33,6 @@ export function generateSitemap(): string {
 
   // Blog posts — auto-generated from blogPosts data
   for (const post of blogPosts) {
-    // Parse the date from the post for lastmod
     const postDate = new Date(post.date);
     const lastmod = isNaN(postDate.getTime()) ? TODAY : postDate.toISOString().split("T")[0];
 
