@@ -91,13 +91,7 @@ const ctvBrings = [
   "Transparent reporting",
 ];
 
-const targetingBy = [
-  "Demographics",
-  "Geography",
-  "Interests",
-  "Purchase behavior",
-  "Household characteristics",
-];
+const targetingBy = ["Demographics", "Geography", "Interests", "Purchase behavior", "Household characteristics"];
 
 const faqs = [
   {
@@ -281,7 +275,7 @@ const CTVAdvertising = () => {
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
                 <span className="text-sm font-medium text-white/80">Connected TV Advertising</span>
               </div>
-              <h1 className="mb-6 !text-white leading-[1.1]">
+              <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-4xl">
                 CTV Advertising Platform —
                 <span className="block text-brand-orange-400">Reach Audiences on Connected TV</span>
               </h1>
@@ -289,17 +283,18 @@ const CTVAdvertising = () => {
                 Television has not disappeared. It has evolved.
               </p>
               <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-                Connected TV advertising allows brands to reach viewers on smart TVs and streaming devices with the full-screen impact of traditional TV combined with the targeting precision and measurability of digital.
+                Connected TV advertising allows brands to reach viewers on smart TVs and streaming devices with the
+                full-screen impact of traditional TV combined with the targeting precision and measurability of digital.
               </p>
               <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-                PublifyX gives agencies and advertisers a powerful CTV advertising platform to plan, execute, and measure campaigns across premium streaming environments, all from a unified dashboard.
+                PublifyX gives agencies and advertisers a powerful CTV advertising platform to plan, execute, and
+                measure campaigns across premium streaming environments, all from a unified dashboard.
               </p>
               <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-                Deliver non-skippable, full-screen video ads to viewers watching content on smart TVs, Roku, Amazon Fire TV, Apple TV, gaming consoles, and other connected devices.
+                Deliver non-skippable, full-screen video ads to viewers watching content on smart TVs, Roku, Amazon Fire
+                TV, Apple TV, gaming consoles, and other connected devices.
               </p>
-              <p className="text-base text-navy-300 mb-6 font-semibold">
-                Big screen impact. Digital precision.
-              </p>
+              <p className="text-base text-navy-300 mb-6 font-semibold">Big screen impact. Digital precision.</p>
               <h3 className="text-lg text-navy-200 mb-6">
                 Explore how CTV can fit into your media strategy. Book a demo today.
               </h3>
@@ -362,7 +357,9 @@ const CTVAdvertising = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
             >
-              CTV advertising refers to video ads delivered through internet-connected television devices. Unlike traditional linear TV, where ads are broadcast to mass audiences during scheduled programming, CTV ads are served programmatically to specific households or audience segments based on data-driven targeting.
+              CTV advertising refers to video ads delivered through internet-connected television devices. Unlike
+              traditional linear TV, where ads are broadcast to mass audiences during scheduled programming, CTV ads are
+              served programmatically to specific households or audience segments based on data-driven targeting.
             </motion.p>
           </div>
 
@@ -400,7 +397,9 @@ const CTVAdvertising = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <p className="text-lg text-navy-400 leading-relaxed">
-              CTV advertising is a subset of OTT (over-the-top) advertising. While OTT refers to content delivered via the internet across all devices (smartphones, tablets, laptops, TVs), CTV specifically refers to ads viewed on a television screen through an internet connection.
+              CTV advertising is a subset of OTT (over-the-top) advertising. While OTT refers to content delivered via
+              the internet across all devices (smartphones, tablets, laptops, TVs), CTV specifically refers to ads
+              viewed on a television screen through an internet connection.
             </p>
           </motion.div>
         </div>
@@ -441,7 +440,9 @@ const CTVAdvertising = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
             >
-              The shift from cable to streaming is not a trend, it is a structural change in media consumption. Cord-cutting households continue to grow year over year, and a significant portion of younger demographics have never subscribed to traditional cable.
+              The shift from cable to streaming is not a trend, it is a structural change in media consumption.
+              Cord-cutting households continue to grow year over year, and a significant portion of younger demographics
+              have never subscribed to traditional cable.
             </motion.p>
           </div>
 
@@ -494,10 +495,12 @@ const CTVAdvertising = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <p className="text-lg text-navy-400 leading-relaxed mb-4">
-              Completion rates on CTV typically exceed mobile and desktop video. Viewers actively choose what they watch, resulting in higher attention and brand recall.
+              Completion rates on CTV typically exceed mobile and desktop video. Viewers actively choose what they
+              watch, resulting in higher attention and brand recall.
             </p>
             <p className="text-lg text-navy-400 leading-relaxed">
-              Advertisers can control frequency, optimize in real time, and measure outcomes including website visits, app installs, and offline conversions.
+              Advertisers can control frequency, optimize in real time, and measure outcomes including website visits,
+              app installs, and offline conversions.
             </p>
           </motion.div>
         </div>
@@ -607,8 +610,12 @@ const CTVAdvertising = () => {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
         >
-          <h3 className="text-2xl md:text-3xl font-bold mb-6 !text-white">Ready to activate CTV advertising? Request a campaign walkthrough.</h3>
-          <p className="text-base text-navy-400 mb-10 font-semibold">No commitment required · Launch campaigns in minutes</p>
+          <h3 className="text-2xl md:text-3xl font-bold mb-6 !text-white">
+            Ready to activate CTV advertising? Request a campaign walkthrough.
+          </h3>
+          <p className="text-base text-navy-400 mb-10 font-semibold">
+            No commitment required · Launch campaigns in minutes
+          </p>
           <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
             <Link to="/contact" className="flex items-center text-white no-underline group">
               Contact Us <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
