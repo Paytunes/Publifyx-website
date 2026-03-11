@@ -110,8 +110,7 @@ const howItWorksSteps = [
   {
     number: "06",
     title: "Monitor & Report",
-    description:
-      "Monitor and optimize in real time. Post-campaign, access reporting on impressions, VCR, unique household reach, frequency, and cost per completed view.",
+    description: "Monitor and optimize in real time.",
     image: "step-optimize",
   },
 ];
