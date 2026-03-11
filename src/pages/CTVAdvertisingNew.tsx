@@ -67,13 +67,42 @@ const features = [
 ];
 
 const howItWorksSteps = [
-  "Define campaign objectives (awareness, reach, performance).",
-  "Configure audience targeting.",
-  "Upload 15- or 30-second HD video creatives (MP4 or MOV).",
-  "Set budget, bid strategy, and schedule.",
-  "Launch via real-time bidding across connected TV inventory.",
-  "Monitor and optimize in real time.",
-  "Post-campaign, access reporting on impressions, VCR, unique household reach, frequency, and cost per completed view.",
+  {
+    number: "01",
+    title: "Define Objectives",
+    description: "Define campaign objectives (awareness, reach, performance).",
+    image: "step-objectives",
+  },
+  {
+    number: "02",
+    title: "Configure Targeting",
+    description: "Configure audience targeting.",
+    image: "step-targeting",
+  },
+  {
+    number: "03",
+    title: "Upload Creatives",
+    description: "Upload 15- or 30-second HD video creatives (MP4 or MOV).",
+    image: "step-creatives",
+  },
+  {
+    number: "04",
+    title: "Set Budget & Schedule",
+    description: "Set budget, bid strategy, and schedule.",
+    image: "step-budget",
+  },
+  {
+    number: "05",
+    title: "Launch Campaign",
+    description: "Launch via real-time bidding across connected TV inventory.",
+    image: "step-launch",
+  },
+  {
+    number: "06",
+    title: "Monitor & Report",
+    description: "Monitor and optimize in real time. Post-campaign, access reporting on impressions, VCR, unique household reach, frequency, and cost per completed view.",
+    image: "step-optimize",
+  },
 ];
 
 const ctvDevices = [
