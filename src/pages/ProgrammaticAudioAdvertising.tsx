@@ -262,7 +262,7 @@ const ProgrammaticAudioAdvertising = () => {
               <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-3">
                 Why Audio Advertising Deserves a Place in Your Media Mix
               </h2>
-              <div className="space-y-4 text-navy-600 leading-relaxed text-lg">
+              <div className="space-y-3 text-navy-600 leading-relaxed text-lg">
                 <p>Audio captures attention during moments when visual ads are ineffective.</p>
                 <p>Listeners are often fully engaged, wearing headphones, focused, and immersed in content.</p>
                 <p>
@@ -308,7 +308,7 @@ const ProgrammaticAudioAdvertising = () => {
             </motion.div>
           </div>
         </div>
-        <div className="flex gap-4 flex-col items-center mt-6 p-4">
+        <div className="flex gap-6 flex-col items-center mt-6 p-4">
           <p className="text-sm text-navy-400 font-semibold text-center">
             Considering audio for your next campaign? Let's map the right targeting strategy.
           </p>
