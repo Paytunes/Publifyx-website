@@ -32,7 +32,7 @@ const CTVHeroSection = ({ onGetStarted }: CTVHeroSectionProps) => {
               <span className="text-sm font-medium text-white/80">Connected TV Advertising</span>
             </div>
 
-            <h1 className="mb-6 !text-white leading-[1.1]">
+            <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-4xl">
               CTV Advertising Platform —
               <span className="block text-brand-orange-400">Reach Audiences on Connected TV</span>
             </h1>
@@ -42,20 +42,21 @@ const CTVHeroSection = ({ onGetStarted }: CTVHeroSectionProps) => {
             </p>
 
             <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-              Connected TV advertising allows brands to reach viewers on smart TVs and streaming devices with the full-screen impact of traditional TV combined with the targeting precision and measurability of digital.
+              Connected TV advertising allows brands to reach viewers on smart TVs and streaming devices with the
+              full-screen impact of traditional TV combined with the targeting precision and measurability of digital.
             </p>
 
             <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-              PublifyX gives agencies and advertisers a powerful CTV advertising platform to plan, execute, and measure campaigns across premium streaming environments, all from a unified dashboard.
+              PublifyX gives agencies and advertisers a powerful CTV advertising platform to plan, execute, and measure
+              campaigns across premium streaming environments, all from a unified dashboard.
             </p>
 
             <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-              Deliver non-skippable, full-screen video ads to viewers watching content on smart TVs, Roku, Amazon Fire TV, Apple TV, gaming consoles, and other connected devices.
+              Deliver non-skippable, full-screen video ads to viewers watching content on smart TVs, Roku, Amazon Fire
+              TV, Apple TV, gaming consoles, and other connected devices.
             </p>
 
-            <p className="text-base text-navy-300 mb-6 font-semibold">
-              Big screen impact. Digital precision.
-            </p>
+            <p className="text-base text-navy-300 mb-6 font-semibold">Big screen impact. Digital precision.</p>
 
             <h3 className="text-lg text-navy-200 mb-6">
               Explore how CTV can fit into your media strategy. Book a demo today.
