@@ -13,6 +13,10 @@ import stepCreatives from "@/assets/ctv/step-creatives.webp";
 import stepBudget from "@/assets/ctv/step-budget.webp";
 import stepLaunch from "@/assets/ctv/step-launch.webp";
 import stepOptimize from "@/assets/ctv/step-optimize.webp";
+import deviceSmartTv from "@/assets/ctv/device-smart-tv.png";
+import deviceStreaming from "@/assets/ctv/device-streaming.png";
+import deviceGaming from "@/assets/ctv/device-gaming.png";
+import deviceSettop from "@/assets/ctv/device-settop.png";
 import {
   ArrowRight,
   Sparkles,
@@ -113,10 +117,10 @@ const howItWorksSteps = [
 ];
 
 const ctvDevices = [
-  { icon: Tv, label: "Smart TVs with built-in internet connectivity" },
-  { icon: Radio, label: "Streaming devices (Roku, Amazon Fire TV, Apple TV)" },
-  { icon: Gamepad2, label: "Gaming consoles (PlayStation, Xbox)" },
-  { icon: Monitor, label: "Internet-enabled set-top boxes" },
+  { icon: Tv, label: "Smart TVs with built-in internet connectivity", image: deviceSmartTv },
+  { icon: Radio, label: "Streaming devices (Roku, Amazon Fire TV, Apple TV)", image: deviceStreaming },
+  { icon: Gamepad2, label: "Gaming consoles (PlayStation, Xbox)", image: deviceGaming },
+  { icon: Monitor, label: "Internet-enabled set-top boxes", image: deviceSettop },
 ];
 
 const ctvBrings = [
@@ -399,32 +403,31 @@ const CTVAdvertising = () => {
             </motion.p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl mx-auto mb-12"
-          >
-            <h3 className="text-xl font-bold text-navy-800 mb-6 text-center">Connected TV devices include:</h3>
-            <ul className="space-y-4">
+          <div className="max-w-5xl mx-auto mb-12">
+            <h3 className="text-xl font-bold text-navy-800 mb-8 text-center">Connected TV devices include:</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {ctvDevices.map((device, i) => (
-                <motion.li
+                <motion.div
                   key={device.label}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.1 * i }}
-                  className="flex items-center gap-4 bg-navy-50 rounded-xl border border-navy-100 p-4"
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  className="bg-card rounded-2xl border border-navy-100 p-6 text-center shadow-sm hover:shadow-lg transition-shadow duration-300"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
-                    <device.icon className="w-5 h-5 text-brand-orange-500" />
+                  <div className="w-full h-28 flex items-center justify-center mb-4">
+                    <img
+                      src={device.image}
+                      alt={device.label}
+                      className="max-h-full max-w-[80%] object-contain"
+                      loading="lazy"
+                    />
                   </div>
-                  <span className="text-navy-600 font-medium">{device.label}</span>
-                </motion.li>
+                  <h4 className="font-semibold text-navy-800 text-sm leading-snug">{device.label}</h4>
+                </motion.div>
               ))}
-            </ul>
-          </motion.div>
+            </div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
