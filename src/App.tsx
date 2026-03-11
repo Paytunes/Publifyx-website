@@ -14,7 +14,7 @@ const WhiteLabelDSP = lazy(() => import("./pages/WhiteLabelDSP"));
 // Lazy-loaded pages
 const CTVAdvertisingNew = lazy(() => import("./pages/CTVAdvertisingNew"));
 const OTTAdvertising = lazy(() => import("./pages/OTTAdvertising"));
-const Pricing = lazy(() => import("./pages/Pricing"));
+
 const HowItWorks = lazy(() => import("./pages/HowItWorks"));
 const Features = lazy(() => import("./pages/Features"));
 const Integrations = lazy(() => import("./pages/Integrations"));
