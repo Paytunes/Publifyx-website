@@ -161,7 +161,7 @@ const ProgrammaticAudioAdvertising = () => {
                 listeners with precision and measure performance in real time, all within the same platform you use for
                 display, video, and CTV.
               </p>
-              <p className="text-sm text-navy-400 mb-6 font-semibold">
+              <p className="text-sm text-navy-300 mb-6 font-semibold">
                 Want to reach audiences during screen-free moments? Talk to our audio specialists.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
