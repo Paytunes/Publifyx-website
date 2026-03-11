@@ -35,19 +35,6 @@ const BlogPostAdTechTrends2026 = lazy(() => import("./pages/BlogPost-AdTechTrend
 const BlogPostWhiteLabelDSPReasons = lazy(() => import("./pages/BlogPost-WhiteLabelDSPReasons"));
 const BlogPostConnectedTVAdvertising = lazy(() => import("./pages/BlogPost-ConnectedTVAdvertising"));
 
-// New Phase 3 blog posts
-const BlogPostWhatIsWhiteLabelDSP = lazy(() => import("./pages/BlogPost-WhatIsWhiteLabelDSP"));
-const BlogPostHowToLaunchDSP = lazy(() => import("./pages/BlogPost-HowToLaunchDSP"));
-const BlogPostCTVvsOTT = lazy(() => import("./pages/BlogPost-CTVvsOTT"));
-const BlogPostProgrammaticAudioGuide = lazy(() => import("./pages/BlogPost-ProgrammaticAudioGuide"));
-const BlogPostWhyAgenciesSwitching = lazy(() => import("./pages/BlogPost-WhyAgenciesSwitching"));
-const BlogPostHowCTVWorks = lazy(() => import("./pages/BlogPost-HowCTVWorks"));
-const BlogPostSmartTVGuide = lazy(() => import("./pages/BlogPost-SmartTVGuide"));
-const BlogPostDSPvsSSP = lazy(() => import("./pages/BlogPost-DSPvsSSP"));
-const BlogPostWhiteLabelBenefits = lazy(() => import("./pages/BlogPost-WhiteLabelBenefits"));
-const BlogPostProgrammaticIndia = lazy(() => import("./pages/BlogPost-ProgrammaticIndia"));
-const BlogPostHowToBuyOTTAds = lazy(() => import("./pages/BlogPost-HowToBuyOTTAds"));
-const BlogPostWhiteLabelVsBuildInHouse = lazy(() => import("./pages/BlogPost-WhiteLabelVsBuildInHouse"));
 
 const TermsConditions = lazy(() => import("./pages/TermsConditions"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
@@ -99,19 +86,6 @@ const App = () => (
             <Route path="/blog/white-label-dsp-reasons" element={<BlogPostWhiteLabelDSPReasons />} />
             <Route path="/blog/connected-tv-advertising-guide" element={<BlogPostConnectedTVAdvertising />} />
 
-            {/* Blog Posts — Phase 3 */}
-            <Route path="/blog/what-is-a-white-label-dsp" element={<BlogPostWhatIsWhiteLabelDSP />} />
-            <Route path="/blog/how-to-launch-your-own-dsp" element={<BlogPostHowToLaunchDSP />} />
-            <Route path="/blog/ctv-vs-ott-advertising" element={<BlogPostCTVvsOTT />} />
-            <Route path="/blog/guide-to-programmatic-audio-advertising" element={<BlogPostProgrammaticAudioGuide />} />
-            <Route path="/blog/why-agencies-switching-to-white-label-dsp" element={<BlogPostWhyAgenciesSwitching />} />
-            <Route path="/blog/how-does-connected-tv-advertising-work" element={<BlogPostHowCTVWorks />} />
-            <Route path="/blog/smart-tv-advertising-guide" element={<BlogPostSmartTVGuide />} />
-            <Route path="/blog/dsp-vs-ssp-explained" element={<BlogPostDSPvsSSP />} />
-            <Route path="/blog/benefits-of-white-label-programmatic-advertising" element={<BlogPostWhiteLabelBenefits />} />
-            <Route path="/blog/programmatic-advertising-india" element={<BlogPostProgrammaticIndia />} />
-            <Route path="/blog/how-to-buy-ott-ads-programmatically" element={<BlogPostHowToBuyOTTAds />} />
-            <Route path="/blog/white-label-dsp-vs-building-in-house" element={<BlogPostWhiteLabelVsBuildInHouse />} />
 
             {/* Legal */}
             <Route path="/terms_and_conditions" element={<TermsConditions />} />
