@@ -15,16 +15,6 @@ const serviceLinks = [
   { to: "/programmatic-audio-advertising", label: "Programmatic Audio Advertising" },
 ];
 
-const resourceLinks = [
-  { to: "/how-it-works", label: "How It Works" },
-  { to: "/features", label: "Features" },
-  { to: "/integrations", label: "Integrations" },
-  { to: "/case-studies", label: "Case Studies" },
-  { to: "/pricing", label: "Pricing" },
-  { to: "/white-label-dsp-vs-self-serve-dsp", label: "White Label vs Self-Serve" },
-  { to: "/ctv-advertising-india", label: "CTV Advertising in India" },
-  { to: "/about", label: "About" },
-];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
