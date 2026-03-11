@@ -259,7 +259,7 @@ const ProgrammaticAudioAdvertising = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-3">
                 Why Audio Advertising Deserves a Place in Your Media Mix
               </h2>
               <div className="space-y-4 text-navy-600 leading-relaxed text-lg">
@@ -289,14 +289,6 @@ const ProgrammaticAudioAdvertising = () => {
               <p className="text-navy-600 leading-relaxed text-lg mb-6">
                 For advertisers, this means scalable, addressable reach with precision targeting.
               </p>
-              <p className="text-sm text-navy-400 font-semibold mb-6">
-                Considering audio for your next campaign? Let's map the right targeting strategy.
-              </p>
-              <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                <Link to="/contact" className="flex items-center text-white no-underline group">
-                  Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </EnergyButton>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 40 }}
@@ -315,6 +307,16 @@ const ProgrammaticAudioAdvertising = () => {
               </div>
             </motion.div>
           </div>
+        </div>
+        <div className="flex gap-4 flex-col justify-center">
+          <p className="text-sm text-navy-400 font-semibold mb-6">
+            Considering audio for your next campaign? Let's map the right targeting strategy.
+          </p>
+          <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+            <Link to="/contact" className="flex items-center text-white no-underline group">
+              Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </EnergyButton>
         </div>
       </section>
 
