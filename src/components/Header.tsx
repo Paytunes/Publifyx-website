@@ -88,25 +88,6 @@ const Header = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <DropdownMenu>
-                <DropdownMenuTrigger
-                  className={`flex items-center font-medium transition-colors focus:outline-none text-sm ${linkClass}`}
-                >
-                  Resources <ChevronDown className="ml-1 h-3.5 w-3.5" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white border border-navy-100 shadow-xl rounded-xl p-1 w-56">
-                  {resourceLinks.map((link) => (
-                    <DropdownMenuItem key={link.to} asChild>
-                      <Link
-                        to={link.to}
-                        className="w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700 text-sm"
-                      >
-                        {link.label}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
 
               <Link to="/blog" className={`font-medium transition-colors text-sm ${linkClass}`}>
                 Blog
