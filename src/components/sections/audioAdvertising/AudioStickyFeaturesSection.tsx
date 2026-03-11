@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Globe, Target, Mic, Radio, BarChart3, Zap } from "lucide-react";
 
 const features = [
@@ -262,18 +262,15 @@ const AudioStickyFeaturesSection = () => {
             {/* Right: Sticky visual */}
             <div className="relative">
               <div className="sticky top-24 h-[calc(100vh-8rem)] flex items-center">
-                <div className="w-full">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeIndex}
-                      initial={{ opacity: 0, scale: 0.97 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.97 }}
-                      transition={{ duration: 0.35, ease: [0.33, 1, 0.68, 1] }}
-                    >
-                      <FeatureVisual feature={features[activeIndex]} index={activeIndex} />
-                    </motion.div>
-                  </AnimatePresence>
+              <div className="w-full">
+                  <motion.div
+                    key={activeIndex}
+                    initial={{ opacity: 0, scale: 0.97 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.35, ease: [0.33, 1, 0.68, 1] }}
+                  >
+                    <FeatureVisual feature={features[activeIndex]} index={activeIndex} />
+                  </motion.div>
                 </div>
               </div>
             </div>

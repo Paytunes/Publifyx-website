@@ -510,14 +510,9 @@ const ProgrammaticAudioAdvertising = () => {
                 loading="lazy"
               />
             </div>
-            <motion.h3
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="absolute -translate-x-1/2 text-white font-bold text-xl md:text-2xl lg:text-3xl whitespace-nowrap"
-            >
+            <h3 className="text-white font-bold text-xl md:text-2xl lg:text-3xl whitespace-nowrap mt-4">
               United States of America
-            </motion.h3>
+            </h3>
 
             {/* Stats overlay */}
             <div className="w-full max-w-6xl mx-auto -mt-12 sm:-mt-20 md:-mt-28 lg:-mt-36 relative z-20 px-2">
