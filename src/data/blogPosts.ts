@@ -45,6 +45,17 @@ export const blogPosts: BlogPost[] = [
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&fm=webp&q=75",
     slug: "online-banner-advertising-guide-2026",
   },
+  {
+    id: 4,
+    title: "Connected TV Advertising: A Complete Guide",
+    excerpt:
+      "Learn how to leverage Connected TV advertising to reach cord-cutters and streaming audiences effectively.",
+    category: "CTV Advertising",
+    date: "Dec 8, 2025",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop&fm=webp&q=75",
+    slug: "connected-tv-advertising-guide",
+  },
 ];
 
 /**
