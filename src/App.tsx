@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Lazy-loaded high-traffic pages
 const Blog = lazy(() => import("./pages/Blog"));
