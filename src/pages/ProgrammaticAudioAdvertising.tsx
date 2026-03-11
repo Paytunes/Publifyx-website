@@ -541,7 +541,7 @@ const ProgrammaticAudioAdvertising = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-white/40 text-xs mt-12 text-center"
+              className="text-white/60 text-sm mt-12 text-center"
             >
               Source: Statista, Edison Research 2024
             </motion.p>
