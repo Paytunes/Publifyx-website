@@ -498,54 +498,53 @@ const ProgrammaticAudioAdvertising = () => {
       </section>
 
       {/* ═══════════════ AUDIO STATISTICS — US Map visual ═══════════════ */}
-      <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
+      <section className="py-16 md:py-24 lg:py-32 bg-navy-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
 
+        {/* USA Map — absolute background visual */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+          <img
+            src={usaMapSilhouette}
+            alt=""
+            aria-hidden="true"
+            className="w-[90%] max-w-4xl h-auto opacity-20 md:opacity-25 lg:opacity-30 object-contain"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Foreground content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="relative flex flex-col items-center">
-            {/* US Map background */}
-            <div className="relative w-full max-w-4xl mx-auto">
-              <img
-                src={usaMapSilhouette}
-                alt="United States of America map"
-                className="w-full h-auto opacity-40"
-                loading="lazy"
-              />
-            </div>
-            <h3 className="text-white absolute font-bold text-xl md:text-2xl lg:text-3xl whitespace-nowrap mt-4">
-              United States of America
-            </h3>
+          <h3 className="text-white font-bold text-xl md:text-2xl lg:text-3xl text-center mb-12 md:mb-16">
+            United States of America
+          </h3>
 
-            {/* Stats overlay */}
-            <div className="w-full max-w-6xl mx-auto -mt-12 sm:-mt-20 md:-mt-28 lg:-mt-36 relative z-20 px-2">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
-                {audioStats.map((stat, i) => (
-                  <motion.div
-                    key={stat.value}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.12 }}
-                    className="text-center px-4 py-6"
-                  >
-                    <AnimatedStatCounter target={stat.value} suffix={stat.suffix} />
-                    <p className="text-white/70 text-sm md:text-base leading-relaxed mt-3 max-w-[240px] mx-auto">
-                      {stat.description}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-white/80 text-sm mt-12 text-center"
-            >
-              Source: Statista, Edison Research 2024
-            </motion.p>
+          {/* Stats grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 max-w-6xl mx-auto">
+            {audioStats.map((stat, i) => (
+              <motion.div
+                key={stat.value}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12 }}
+                className="text-center px-4 py-6"
+              >
+                <AnimatedStatCounter target={stat.value} suffix={stat.suffix} />
+                <p className="text-white/70 text-sm md:text-base leading-relaxed mt-3 max-w-[240px] mx-auto">
+                  {stat.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-white/80 text-sm mt-12 md:mt-16 text-center"
+          >
+            Source: Statista, Edison Research 2024
+          </motion.p>
         </div>
       </section>
     </Layout>
