@@ -15,16 +15,11 @@ const WhiteLabelDSP = lazy(() => import("./pages/WhiteLabelDSP"));
 const CTVAdvertisingNew = lazy(() => import("./pages/CTVAdvertisingNew"));
 const OTTAdvertising = lazy(() => import("./pages/OTTAdvertising"));
 
-const HowItWorks = lazy(() => import("./pages/HowItWorks"));
-const Features = lazy(() => import("./pages/Features"));
-const Integrations = lazy(() => import("./pages/Integrations"));
-const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const About = lazy(() => import("./pages/About"));
 const WhiteLabelVsSelfServe = lazy(() => import("./pages/WhiteLabelVsSelfServe"));
 const CTVAdvertisingIndia = lazy(() => import("./pages/CTVAdvertisingIndia"));
 const OnlineBannerAdvertising = lazy(() => import("./pages/OnlineBannerAdvertising"));
 const DigitalAdvertising = lazy(() => import("./pages/DigitalAdvertising"));
-const AdInsights = lazy(() => import("./pages/AdInsights"));
 const Services = lazy(() => import("./pages/Services"));
 const CEO = lazy(() => import("./pages/CEO"));
 const ProgrammaticAudioAdvertising = lazy(() => import("./pages/ProgrammaticAudioAdvertising"));
