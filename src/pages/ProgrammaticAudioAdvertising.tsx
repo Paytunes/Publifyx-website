@@ -20,9 +20,6 @@ import {
   Globe,
   Monitor,
   Music,
-  TrendingUp,
-  Users,
-  Clock,
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
