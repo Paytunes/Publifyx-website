@@ -304,8 +304,6 @@ const ProgrammaticAudioAdvertising = () => {
                   src={programmaticAudioConcept}
                   alt="Programmatic audio advertising concept showing smartphone with audio waveforms, headphones, microphone, and targeting signals"
                   className="relative w-full h-auto rounded-2xl shadow-xl"
-                  width={672}
-                  height={672}
                   loading="lazy"
                 />
               </div>
@@ -397,8 +395,6 @@ const ProgrammaticAudioAdvertising = () => {
                   src={podcastStudio}
                   alt="Professional podcast recording studio with microphone for programmatic audio advertising"
                   className="relative w-full h-auto rounded-2xl shadow-xl"
-                  width={672}
-                  height={672}
                   loading="lazy"
                 />
               </div>
@@ -470,8 +466,6 @@ const ProgrammaticAudioAdvertising = () => {
                   src={audioDevices}
                   alt="Smart speakers and audio streaming devices for programmatic audio advertising"
                   className="relative w-full h-auto rounded-2xl shadow-xl"
-                  width={672}
-                  height={672}
                   loading="lazy"
                 />
               </div>
@@ -607,8 +601,6 @@ const ProgrammaticAudioAdvertising = () => {
             alt=""
             aria-hidden="true"
             className="w-[90%] max-w-4xl h-auto opacity-20 md:opacity-25 lg:opacity-30 object-contain"
-            width={1200}
-            height={800}
             loading="lazy"
           />
         </div>
