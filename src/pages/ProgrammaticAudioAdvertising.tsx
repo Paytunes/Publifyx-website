@@ -397,6 +397,8 @@ const ProgrammaticAudioAdvertising = () => {
                   src={podcastStudio}
                   alt="Professional podcast recording studio with microphone for programmatic audio advertising"
                   className="relative w-full h-auto rounded-2xl shadow-xl"
+                  width={672}
+                  height={672}
                   loading="lazy"
                 />
               </div>
