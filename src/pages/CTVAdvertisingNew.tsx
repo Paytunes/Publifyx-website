@@ -7,6 +7,12 @@ import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
 import { motion } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
 import ctvHeroDashboard from "@/assets/ctv/ctv-hero-dashboard.webp";
+import stepObjectives from "@/assets/ctv/step-objectives.webp";
+import stepTargeting from "@/assets/ctv/step-targeting.webp";
+import stepCreatives from "@/assets/ctv/step-creatives.webp";
+import stepBudget from "@/assets/ctv/step-budget.webp";
+import stepLaunch from "@/assets/ctv/step-launch.webp";
+import stepOptimize from "@/assets/ctv/step-optimize.webp";
 import {
   ArrowRight,
   Sparkles,
