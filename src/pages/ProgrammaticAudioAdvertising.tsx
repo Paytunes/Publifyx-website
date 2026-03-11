@@ -470,6 +470,8 @@ const ProgrammaticAudioAdvertising = () => {
                   src={audioDevices}
                   alt="Smart speakers and audio streaming devices for programmatic audio advertising"
                   className="relative w-full h-auto rounded-2xl shadow-xl"
+                  width={672}
+                  height={672}
                   loading="lazy"
                 />
               </div>
