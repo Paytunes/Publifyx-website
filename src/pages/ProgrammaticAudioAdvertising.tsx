@@ -512,7 +512,7 @@ const ProgrammaticAudioAdvertising = () => {
                 loading="lazy"
               />
             </div>
-            <h3 className="text-white font-bold text-xl md:text-2xl lg:text-3xl whitespace-nowrap mt-4">
+            <h3 className="text-white absolute font-bold text-xl md:text-2xl lg:text-3xl whitespace-nowrap mt-4">
               United States of America
             </h3>
 
