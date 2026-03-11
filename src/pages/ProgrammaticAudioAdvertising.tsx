@@ -117,8 +117,143 @@ const ProgrammaticAudioAdvertising = () => {
         "content",
         "Run targeted audio ads on streaming music, podcasts, and digital radio with PublifyX's programmatic audio advertising platform. Reach listeners where screens cannot.",
       );
+
+    const schemas = [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PublifyX",
+        "url": "https://www.publifyx.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.publifyx.com/logo.png"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Saurabh",
+          "jobTitle": "CEO"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/publifyx"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "url": "https://www.publifyx.com/contact"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Programmatic Audio Advertising Platform",
+        "serviceType": "Programmatic Audio Advertising",
+        "description": "PublifyX provides a programmatic audio advertising platform that enables brands to deliver targeted audio ads across streaming music, podcasts, and digital radio with real-time bidding and precise audience targeting.",
+        "url": "https://www.publifyx.com/programmatic-audio-advertising",
+        "provider": {
+          "@type": "Organization",
+          "name": "PublifyX",
+          "url": "https://www.publifyx.com"
+        },
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Audio Advertising Capabilities",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "In-Stream Audio Ads" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Podcast Ads with Dynamic Insertion" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Companion Display Banners" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sequential Audio Messaging" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Advanced Audience Targeting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real-Time Optimization and Reporting" } }
+          ]
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PublifyX Programmatic Audio Advertising Platform",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://www.publifyx.com/programmatic-audio-advertising",
+        "description": "A self-serve programmatic audio advertising platform for buying and delivering targeted audio ads across streaming music, podcasts, and digital radio.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Contact for pricing"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "PublifyX",
+          "url": "https://www.publifyx.com"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.publifyx.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Programmatic Audio Advertising",
+            "item": "https://www.publifyx.com/programmatic-audio-advertising"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "reviewBody": "Programmatic audio allowed us to reach engaged listeners across music and podcast platforms with precision targeting. The real-time reporting made optimization seamless.",
+        "author": {
+          "@type": "Person",
+          "name": "Media Director",
+          "jobTitle": "Media Director",
+          "worksFor": { "@type": "Organization", "name": "Digital Media Agency" }
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "itemReviewed": {
+          "@type": "SoftwareApplication",
+          "name": "Programmatic Audio Advertising Platform",
+          "provider": { "@type": "Organization", "name": "PublifyX" }
+        }
+      }
+    ];
+
+    removeAllFaqPageSchemas();
+    const scriptElements: HTMLScriptElement[] = schemas.map((schema, i) => {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.setAttribute("data-audio-schema", String(i));
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+      return script;
+    });
+
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
+      scriptElements.forEach((el) => el.remove());
     };
   }, []);
 
