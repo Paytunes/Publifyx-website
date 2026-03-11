@@ -149,17 +149,6 @@ const Header = () => {
                   </Link>
                 ))}
 
-                <p className="text-xs font-bold uppercase tracking-wider text-navy-400 px-3 pt-3 pb-1">Resources</p>
-                {resourceLinks.map((link) => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className="text-navy-600 active:text-brand-orange-500 font-medium py-2 px-3 pl-5 rounded-lg active:bg-navy-50 transition-colors text-sm touch-manipulation"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
 
                 <Link
                   to="/blog"
