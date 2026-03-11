@@ -35,19 +35,6 @@ const BlogPostAdTechTrends2026 = lazy(() => import("./pages/BlogPost-AdTechTrend
 const BlogPostWhiteLabelDSPReasons = lazy(() => import("./pages/BlogPost-WhiteLabelDSPReasons"));
 const BlogPostConnectedTVAdvertising = lazy(() => import("./pages/BlogPost-ConnectedTVAdvertising"));
 
-// New Phase 3 blog posts
-const BlogPostWhatIsWhiteLabelDSP = lazy(() => import("./pages/BlogPost-WhatIsWhiteLabelDSP"));
-const BlogPostHowToLaunchDSP = lazy(() => import("./pages/BlogPost-HowToLaunchDSP"));
-const BlogPostCTVvsOTT = lazy(() => import("./pages/BlogPost-CTVvsOTT"));
-const BlogPostProgrammaticAudioGuide = lazy(() => import("./pages/BlogPost-ProgrammaticAudioGuide"));
-const BlogPostWhyAgenciesSwitching = lazy(() => import("./pages/BlogPost-WhyAgenciesSwitching"));
-const BlogPostHowCTVWorks = lazy(() => import("./pages/BlogPost-HowCTVWorks"));
-const BlogPostSmartTVGuide = lazy(() => import("./pages/BlogPost-SmartTVGuide"));
-const BlogPostDSPvsSSP = lazy(() => import("./pages/BlogPost-DSPvsSSP"));
-const BlogPostWhiteLabelBenefits = lazy(() => import("./pages/BlogPost-WhiteLabelBenefits"));
-const BlogPostProgrammaticIndia = lazy(() => import("./pages/BlogPost-ProgrammaticIndia"));
-const BlogPostHowToBuyOTTAds = lazy(() => import("./pages/BlogPost-HowToBuyOTTAds"));
-const BlogPostWhiteLabelVsBuildInHouse = lazy(() => import("./pages/BlogPost-WhiteLabelVsBuildInHouse"));
 
 const TermsConditions = lazy(() => import("./pages/TermsConditions"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
