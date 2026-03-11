@@ -15,7 +15,7 @@ const staticPages: { path: string; priority: number; changefreq: string }[] = [
   { path: "/ctv-advertising", priority: 0.9, changefreq: "monthly" },
   { path: "/ott-advertising", priority: 0.9, changefreq: "monthly" },
   { path: "/blog", priority: 0.8, changefreq: "daily" },
-  { path: "/pricing", priority: 0.8, changefreq: "monthly" },
+  
   { path: "/contact", priority: 0.7, changefreq: "yearly" },
   { path: "/services", priority: 0.7, changefreq: "monthly" },
   { path: "/how-it-works", priority: 0.7, changefreq: "monthly" },

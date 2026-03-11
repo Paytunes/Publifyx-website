@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-navy-900 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top: Logo + Link Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-1">
             <Link to="/">
@@ -73,28 +73,6 @@ const Footer = () => {
                   className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
                 >
                   Programmatic Audio
-                </Link>
-              </li>
-              <li>
-                <Link to="/pricing" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
-                  Pricing
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* More */}
-          <div>
-            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">More</h4>
-            <ul className="space-y-2.5">
-              <li>
-                <Link to="/blog" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/pricing" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
-                  Pricing
                 </Link>
               </li>
             </ul>
