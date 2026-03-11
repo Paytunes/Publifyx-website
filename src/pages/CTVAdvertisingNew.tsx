@@ -13,6 +13,10 @@ import stepCreatives from "@/assets/ctv/step-creatives.webp";
 import stepBudget from "@/assets/ctv/step-budget.webp";
 import stepLaunch from "@/assets/ctv/step-launch.webp";
 import stepOptimize from "@/assets/ctv/step-optimize.webp";
+import deviceSmartTv from "@/assets/ctv/device-smart-tv.png";
+import deviceStreaming from "@/assets/ctv/device-streaming.png";
+import deviceGaming from "@/assets/ctv/device-gaming.png";
+import deviceSettop from "@/assets/ctv/device-settop.png";
 import {
   ArrowRight,
   Sparkles,
