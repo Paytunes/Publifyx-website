@@ -11,16 +11,7 @@ import podcastStudio from "@/assets/audio/podcast-studio.webp";
 import audioDevices from "@/assets/audio/audio-devices.webp";
 import { motion, useInView } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
-import {
-  ArrowRight,
-  Sparkles,
-  Headphones,
-  Radio,
-  Mic,
-  Globe,
-  Monitor,
-  Music,
-} from "lucide-react";
+import { ArrowRight, Sparkles, Headphones, Radio, Mic, Globe, Monitor, Music } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
 import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
@@ -79,7 +70,11 @@ const faqs = [
 
 const audioStats = [
   { value: 93, suffix: "%", description: "of U.S. adults aged 18+ tune in to radio every week" },
-  { value: 84, suffix: "%", description: "of Americans aged 12+ are familiar with podcasts (approx. 241 million people)" },
+  {
+    value: 84,
+    suffix: "%",
+    description: "of Americans aged 12+ are familiar with podcasts (approx. 241 million people)",
+  },
   { value: 73, suffix: "%", description: "of Americans aged 12+ listened to online audio in the past month" },
   { value: 47, suffix: "%", description: "of Americans aged 12+ listened to a podcast during the last month" },
 ];
@@ -501,7 +496,7 @@ const ProgrammaticAudioAdvertising = () => {
       </section>
 
       {/* ═══════════════ AUDIO STATISTICS — US Map visual ═══════════════ */}
-      <section className="py-20 md:py-28 bg-navy-800 relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -514,15 +509,15 @@ const ProgrammaticAudioAdvertising = () => {
                 className="w-full h-auto opacity-40"
                 loading="lazy"
               />
-              <motion.h3
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="absolute top-[12%] left-1/2 -translate-x-1/2 text-white font-bold text-xl md:text-2xl lg:text-3xl whitespace-nowrap"
-              >
-                United States of America
-              </motion.h3>
             </div>
+            <motion.h3
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="absolute -translate-x-1/2 text-white font-bold text-xl md:text-2xl lg:text-3xl whitespace-nowrap"
+            >
+              United States of America
+            </motion.h3>
 
             {/* Stats overlay */}
             <div className="w-full max-w-6xl mx-auto -mt-12 sm:-mt-20 md:-mt-28 lg:-mt-36 relative z-20 px-2">
