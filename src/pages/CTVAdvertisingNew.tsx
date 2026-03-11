@@ -117,10 +117,10 @@ const howItWorksSteps = [
 ];
 
 const ctvDevices = [
-  { icon: Tv, label: "Smart TVs with built-in internet connectivity" },
-  { icon: Radio, label: "Streaming devices (Roku, Amazon Fire TV, Apple TV)" },
-  { icon: Gamepad2, label: "Gaming consoles (PlayStation, Xbox)" },
-  { icon: Monitor, label: "Internet-enabled set-top boxes" },
+  { icon: Tv, label: "Smart TVs with built-in internet connectivity", image: deviceSmartTv },
+  { icon: Radio, label: "Streaming devices (Roku, Amazon Fire TV, Apple TV)", image: deviceStreaming },
+  { icon: Gamepad2, label: "Gaming consoles (PlayStation, Xbox)", image: deviceGaming },
+  { icon: Monitor, label: "Internet-enabled set-top boxes", image: deviceSettop },
 ];
 
 const ctvBrings = [
