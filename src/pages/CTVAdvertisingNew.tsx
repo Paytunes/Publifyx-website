@@ -633,7 +633,7 @@ const CTVAdvertising = () => {
             })}
           </div>
 
-          <p className="text-lg text-navy-400 leading-relaxed mt-4">
+          <p className="text-lg text-navy-400 leading-relaxed mt-4 text-center">
             Post-campaign, access reporting on impressions, VCR, unique household reach, frequency, and cost per
             completed view.
           </p>
