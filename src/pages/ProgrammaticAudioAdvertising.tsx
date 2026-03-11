@@ -607,6 +607,8 @@ const ProgrammaticAudioAdvertising = () => {
             alt=""
             aria-hidden="true"
             className="w-[90%] max-w-4xl h-auto opacity-20 md:opacity-25 lg:opacity-30 object-contain"
+            width={1200}
+            height={800}
             loading="lazy"
           />
         </div>
