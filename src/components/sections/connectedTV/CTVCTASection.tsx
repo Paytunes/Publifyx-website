@@ -18,10 +18,7 @@ const CTVCTASection = ({ onGetStarted }: CTVCTASectionProps) => {
         viewport={{ once: true }}
         className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
       >
-        <h2 className="mb-6 !text-white">Stop Wasting Budgets on Invisible Ads</h2>
-        <p className="text-xl text-navy-300 mb-4 leading-relaxed">
-          Your customers are on Smart TVs. Let's meet them there—with ads they can't ignore.
-        </p>
+        <h3 className="text-2xl md:text-3xl font-bold mb-6 !text-white">Ready to activate CTV advertising? Request a campaign walkthrough.</h3>
         <p className="text-base text-navy-400 mb-10 font-semibold">
           No commitment required · Launch campaigns in minutes
         </p>
@@ -29,7 +26,7 @@ const CTVCTASection = ({ onGetStarted }: CTVCTASectionProps) => {
           to="/contact"
           className="inline-flex items-center bg-brand-orange-500 hover:bg-brand-orange-600 text-white text-lg px-10 py-4 font-semibold hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 rounded-xl group"
         >
-          Book a Demo to Launch Your Smart TV Campaign
+          Contact Us
           <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </Link>
       </motion.div>

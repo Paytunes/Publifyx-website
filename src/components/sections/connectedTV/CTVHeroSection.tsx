@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Play } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 interface CTVHeroSectionProps {
   onGetStarted: () => void;
@@ -34,34 +33,42 @@ const CTVHeroSection = ({ onGetStarted }: CTVHeroSectionProps) => {
             </div>
 
             <h1 className="mb-6 !text-white leading-[1.1]">
-              PublifyX Connected TV
-              <span className="block text-brand-orange-400">Advertising Platform</span>
+              CTV Advertising Platform —
+              <span className="block text-brand-orange-400">Reach Audiences on Connected TV</span>
             </h1>
 
             <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-              Your brand deserves premium attention. Reach engaged audiences on the biggest screen in the house with
-              programmatic CTV advertising.
+              Television has not disappeared. It has evolved.
             </p>
 
-            <p className="text-base text-navy-300 mb-10 font-semibold">
-              Smart TVs · Streaming Apps · Premium Inventory · Real-Time Analytics
+            <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
+              Connected TV advertising allows brands to reach viewers on smart TVs and streaming devices with the full-screen impact of traditional TV combined with the targeting precision and measurability of digital.
             </p>
+
+            <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
+              PublifyX gives agencies and advertisers a powerful CTV advertising platform to plan, execute, and measure campaigns across premium streaming environments, all from a unified dashboard.
+            </p>
+
+            <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
+              Deliver non-skippable, full-screen video ads to viewers watching content on smart TVs, Roku, Amazon Fire TV, Apple TV, gaming consoles, and other connected devices.
+            </p>
+
+            <p className="text-base text-navy-300 mb-6 font-semibold">
+              Big screen impact. Digital precision.
+            </p>
+
+            <h3 className="text-lg text-navy-200 mb-6">
+              Explore how CTV can fit into your media strategy. Book a demo today.
+            </h3>
 
             <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
               <Button
                 onClick={onGetStarted}
                 className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-orange-500/25 group"
               >
-                Book a Demo
+                Book a Call
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Link
-                to="/contact"
-                className="inline-flex items-center border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white px-8 py-3.5 rounded-xl font-semibold text-lg backdrop-blur-sm border transition-colors"
-              >
-                <Play className="mr-2 w-5 h-5" />
-                Contact Us
-              </Link>
             </div>
 
             <p className="text-sm text-navy-400">No commitment required · Launch campaigns in minutes</p>
