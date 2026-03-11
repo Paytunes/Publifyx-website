@@ -110,7 +110,8 @@ const howItWorksSteps = [
   {
     number: "06",
     title: "Monitor & Report",
-    description: "Monitor and optimize in real time.",
+    description:
+      "Monitor and optimize in real time.  Post-campaign, access reporting on impressions, VCR, unique household reach, frequency, and cost per completed view.",
     image: "step-optimize",
   },
 ];
@@ -632,11 +633,6 @@ const CTVAdvertising = () => {
               );
             })}
           </div>
-
-          <p className="text-lg text-navy-400 leading-relaxed mt-4 text-center">
-            Post-campaign, access reporting on impressions, VCR, unique household reach, frequency, and cost per
-            completed view.
-          </p>
         </div>
       </section>
 
