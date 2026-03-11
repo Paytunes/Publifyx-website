@@ -308,7 +308,7 @@ const ProgrammaticAudioAdvertising = () => {
             </motion.div>
           </div>
         </div>
-        <div className="flex gap-4 flex-col justify-center">
+        <div className="flex gap-4 flex-col items-center">
           <p className="text-sm text-navy-400 font-semibold mb-6">
             Considering audio for your next campaign? Let's map the right targeting strategy.
           </p>
