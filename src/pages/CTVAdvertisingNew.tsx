@@ -632,6 +632,11 @@ const CTVAdvertising = () => {
               );
             })}
           </div>
+
+          <p className="mt-6">
+            Post-campaign, access reporting on impressions, VCR, unique household reach, frequency, and cost per
+            completed view.
+          </p>
         </div>
       </section>
 
