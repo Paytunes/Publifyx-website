@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import audioHeroDashboard from "@/assets/audio/audio-hero-dashboard.webp";
 import usaMapSilhouette from "@/assets/audio/usa-map-silhouette.png";
 import listenerHeadphones from "@/assets/audio/listener-headphones.webp";
+import programmaticAudioConcept from "@/assets/audio/programmatic-audio-concept.webp";
 import podcastStudio from "@/assets/audio/podcast-studio.webp";
 import audioDevices from "@/assets/audio/audio-devices.webp";
 import { motion, useInView } from "framer-motion";
