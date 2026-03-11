@@ -498,7 +498,7 @@ const ProgrammaticAudioAdvertising = () => {
       </section>
 
       {/* ═══════════════ AUDIO STATISTICS — US Map visual ═══════════════ */}
-      <section className="py-16 md:py-24 lg:py-32 bg-navy-800 relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
 
         {/* USA Map — absolute background visual */}
