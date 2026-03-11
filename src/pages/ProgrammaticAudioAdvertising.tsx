@@ -3,6 +3,7 @@ import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import audioHeroDashboard from "@/assets/audio/audio-hero-dashboard.webp";
 import usaMapSilhouette from "@/assets/audio/usa-map-silhouette.png";
 import listenerHeadphones from "@/assets/audio/listener-headphones.webp";
