@@ -145,7 +145,7 @@ const ProgrammaticAudioAdvertising = () => {
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
                 <span className="text-sm font-medium text-white/80">Audio Advertising Platform</span>
               </div>
-              <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-5xl">
+              <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-4xl">
                 Programmatic Audio Advertising — Reach Listeners Across Streaming, Podcasts, and Digital Radio
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
