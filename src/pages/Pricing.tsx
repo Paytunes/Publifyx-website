@@ -350,18 +350,6 @@ const Pricing = () => {
               >
                 CTV Advertising
               </Link>
-              <Link
-                to="/features"
-                className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
-              >
-                Features
-              </Link>
-              <Link
-                to="/how-it-works"
-                className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
-              >
-                How It Works
-              </Link>
             </div>
           </div>
         </div>
