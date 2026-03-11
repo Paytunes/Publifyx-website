@@ -592,31 +592,35 @@ const CTVAdvertising = () => {
               How CTV Advertising Works with PublifyX
             </motion.h2>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl mx-auto mb-12"
-          >
-            <ol className="space-y-4">
-              {howItWorksSteps.map((step, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+            {howItWorksSteps.map((step, i) => {
+              const images: Record<string, string> = {
+                "step-objectives": stepObjectives,
+                "step-targeting": stepTargeting,
+                "step-creatives": stepCreatives,
+                "step-budget": stepBudget,
+                "step-launch": stepLaunch,
+                "step-optimize": stepOptimize,
+              };
+              return (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.08 * i }}
-                  className="flex items-start gap-4 bg-white rounded-xl border border-navy-100 p-5"
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  className="bg-card rounded-2xl border border-navy-100 p-6 text-center shadow-sm hover:shadow-lg transition-shadow duration-300"
                 >
-                  <span className="w-8 h-8 rounded-lg bg-brand-orange-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
-                    {i + 1}
-                  </span>
-                  <span className="text-navy-600 font-medium leading-relaxed">{step}</span>
-                </motion.li>
-              ))}
-            </ol>
-          </motion.div>
+                  <div className="w-full h-36 flex items-center justify-center mb-5">
+                    <img src={images[step.image]} alt={step.title} className="max-h-full max-w-[80%] object-contain" loading="lazy" />
+                  </div>
+                  <span className="inline-block text-sm font-bold text-brand-orange-500 mb-2">{step.number}</span>
+                  <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
