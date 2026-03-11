@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://publifyx.com/sitemap.xml
+Sitemap: https://www.publifyx.com/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
