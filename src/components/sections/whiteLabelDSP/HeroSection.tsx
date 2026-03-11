@@ -38,7 +38,7 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
               <span className="text-sm font-medium text-white/80">White Label DSP Platform</span>
             </div>
 
-            <h1 className="mb-6 !text-white leading-[1.1]">
+            <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-4xl">
               White Label DSP — Launch Your Own Branded
               <span className="block text-brand-orange-400">Demand Side Platform</span>
             </h1>
