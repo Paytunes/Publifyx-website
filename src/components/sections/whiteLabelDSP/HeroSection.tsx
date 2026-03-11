@@ -68,7 +68,7 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
               </Button>
             </div>
 
-            <p className="text-sm text-navy-400">No commitment required · Launch in under 15 minutes</p>
+            <p className="text-sm text-navy-300">No commitment required · Launch in under 15 minutes</p>
           </motion.div>
 
           <motion.div
