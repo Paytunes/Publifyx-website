@@ -108,6 +108,76 @@ const AnimatedStatCounter = ({ target, suffix }: { target: number; suffix: strin
   );
 };
 
+const audioSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "PublifyX",
+    url: "https://www.publifyx.com",
+    logo: "https://www.publifyx.com/logo.png",
+    founder: { "@type": "Person", name: "Saurabh", jobTitle: "CEO" },
+    sameAs: ["https://www.linkedin.com/company/publifyx"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Programmatic Audio Advertising Platform",
+    serviceType: "Programmatic Audio Advertising",
+    provider: { "@type": "Organization", name: "PublifyX", url: "https://www.publifyx.com" },
+    areaServed: { "@type": "Place", name: "Worldwide" },
+    description:
+      "Run programmatic audio advertising campaigns across streaming music, podcasts, digital radio, and smart speaker environments with PublifyX. Target listeners with precision and measure performance in real time, all within the same platform you use for display, video, and CTV.",
+    url: "https://www.publifyx.com/programmatic-audio-advertising",
+    category: "Programmatic Advertising Platform",
+    offers: { "@type": "Offer", url: "https://www.publifyx.com/programmatic-audio-advertising", availability: "https://schema.org/InStock" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "PublifyX Programmatic Audio Advertising Platform",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web-based",
+    description:
+      "A programmatic audio advertising platform that automates the buying and delivery of audio ads across streaming music, podcasts, digital radio, and smart speaker environments with real-time bidding and precision listener targeting.",
+    publisher: { "@type": "Organization", name: "PublifyX" },
+    featureList: [
+      "Cross-platform audio inventory access",
+      "Precision listener targeting",
+      "Dynamic creative capabilities",
+      "Companion display banners",
+      "Real-time reporting and analytics",
+      "Unified platform experience across audio, display, video, CTV, and OTT",
+    ],
+    offers: { "@type": "Offer", url: "https://www.publifyx.com/programmatic-audio-advertising", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.publifyx.com" },
+      { "@type": "ListItem", position: 2, name: "Services", item: "https://www.publifyx.com/services" },
+      { "@type": "ListItem", position: 3, name: "Programmatic Audio Advertising", item: "https://www.publifyx.com/programmatic-audio-advertising" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    reviewBody:
+      "Audio campaigns helped us reach audiences during commute hours where display simply couldn't. Completion rates were consistently strong, and companion banners drove additional engagement.",
+    author: { "@type": "Person", name: "Senior Media Planner, Digital-First Agency" },
+    itemReviewed: { "@type": "SoftwareApplication", name: "PublifyX Programmatic Audio Advertising Platform" },
+  },
+];
+
 const ProgrammaticAudioAdvertising = () => {
   useEffect(() => {
     document.title = "Programmatic Audio Advertising Platform | Audio DSP — PublifyX";
@@ -117,8 +187,21 @@ const ProgrammaticAudioAdvertising = () => {
         "content",
         "Run targeted audio ads on streaming music, podcasts, and digital radio with PublifyX's programmatic audio advertising platform. Reach listeners where screens cannot.",
       );
+
+    removeAllFaqPageSchemas();
+
+    const scripts: HTMLScriptElement[] = audioSchemas.map((schema, i) => {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.id = `audio-schema-${i}`;
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+      return script;
+    });
+
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
+      scripts.forEach((s) => s.remove());
     };
   }, []);
 
