@@ -129,7 +129,11 @@ const audioSchemas = [
       "Run programmatic audio advertising campaigns across streaming music, podcasts, digital radio, and smart speaker environments with PublifyX. Target listeners with precision and measure performance in real time, all within the same platform you use for display, video, and CTV.",
     url: "https://www.publifyx.com/programmatic-audio-advertising",
     category: "Programmatic Advertising Platform",
-    offers: { "@type": "Offer", url: "https://www.publifyx.com/programmatic-audio-advertising", availability: "https://schema.org/InStock" },
+    offers: {
+      "@type": "Offer",
+      url: "https://www.publifyx.com/programmatic-audio-advertising",
+      availability: "https://schema.org/InStock",
+    },
   },
   {
     "@context": "https://schema.org",
@@ -148,7 +152,12 @@ const audioSchemas = [
       "Real-time reporting and analytics",
       "Unified platform experience across audio, display, video, CTV, and OTT",
     ],
-    offers: { "@type": "Offer", url: "https://www.publifyx.com/programmatic-audio-advertising", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+    offers: {
+      "@type": "Offer",
+      url: "https://www.publifyx.com/programmatic-audio-advertising",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
   },
   {
     "@context": "https://schema.org",
@@ -165,7 +174,12 @@ const audioSchemas = [
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://www.publifyx.com" },
       { "@type": "ListItem", position: 2, name: "Services", item: "https://www.publifyx.com/services" },
-      { "@type": "ListItem", position: 3, name: "Programmatic Audio Advertising", item: "https://www.publifyx.com/programmatic-audio-advertising" },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Programmatic Audio Advertising",
+        item: "https://www.publifyx.com/programmatic-audio-advertising",
+      },
     ],
   },
   {
@@ -224,7 +238,7 @@ const ProgrammaticAudioAdvertising = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <PageBreadcrumb items={breadcrumbs} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
                 <span className="text-sm font-medium text-white/80">Audio Advertising Platform</span>
@@ -255,13 +269,8 @@ const ProgrammaticAudioAdvertising = () => {
                   </Link>
                 </EnergyButton>
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="hidden lg:block"
-            >
+            </div>
+            <div className="hidden lg:block">
               <div className="relative">
                 <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
                 <img
@@ -274,7 +283,7 @@ const ProgrammaticAudioAdvertising = () => {
                   decoding="sync"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
