@@ -61,7 +61,7 @@ const App = () => (
             <Route path="/ctv-advertising" element={<CTVAdvertisingNew />} />
             <Route path="/connected-tv-advertising" element={<CTVAdvertisingNew />} />
             <Route path="/ott-advertising" element={<OTTAdvertising />} />
-            <Route path="/pricing" element={<Pricing />} />
+            
 
             {/* Supporting Pages */}
             <Route path="/services" element={<Services />} />

@@ -75,28 +75,6 @@ const Footer = () => {
                   Programmatic Audio
                 </Link>
               </li>
-              <li>
-                <Link to="/pricing" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
-                  Pricing
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* More */}
-          <div>
-            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">More</h4>
-            <ul className="space-y-2.5">
-              <li>
-                <Link to="/blog" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/pricing" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
-                  Pricing
-                </Link>
-              </li>
             </ul>
           </div>
 
