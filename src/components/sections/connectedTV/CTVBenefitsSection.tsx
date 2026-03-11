@@ -1,34 +1,25 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Users, Monitor, Zap } from "lucide-react";
-import { ArrowRight } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import MagneticCard from "@/components/effects/MagneticCard";
 
 interface CTVBenefitsSectionProps {
   onGetStarted: () => void;
 }
 
-const benefits = [
-  {
-    title: "Explosive Growth",
-    description: "Smart TV adoption is exploding with more households choosing streaming over cable.",
-    icon: TrendingUp,
-  },
-  {
-    title: "Engaged Viewers",
-    description: "Get in front of engaged viewers on the biggest screen in the house when they're paying attention.",
-    icon: Users,
-  },
-  {
-    title: "Premium Inventory",
-    description: "Full-screen takeovers with zero distractions across OTT platforms like Hulu, SonyLIV, Hotstar.",
-    icon: Monitor,
-  },
-  {
-    title: "Smarter Campaigns",
-    description: "Run smarter, richer, and better-looking campaigns with Smart TV advertising.",
-    icon: Zap,
-  },
+const ctvBrings = [
+  "The immersive impact of television",
+  "Non-skippable ad placements",
+  "Household-level targeting",
+  "Real-time optimization",
+  "Transparent reporting",
+];
+
+const targetingBy = [
+  "Demographics",
+  "Geography",
+  "Interests",
+  "Purchase behavior",
+  "Household characteristics",
 ];
 
 const CTVBenefitsSection = ({ onGetStarted }: CTVBenefitsSectionProps) => {
@@ -50,7 +41,7 @@ const CTVBenefitsSection = ({ onGetStarted }: CTVBenefitsSectionProps) => {
             viewport={{ once: true }}
             className="mb-4 max-w-4xl mx-auto"
           >
-            Why Advertise on Smart TVs in 2025?
+            Why CTV Advertising Is Essential for Modern Brands
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -59,52 +50,66 @@ const CTVBenefitsSection = ({ onGetStarted }: CTVBenefitsSectionProps) => {
             transition={{ delay: 0.1 }}
             className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Today is the perfect time for your brand to adopt Smart TV advertising with connected TV ads by PublifyX.
+            The shift from cable to streaming is not a trend, it is a structural change in media consumption. Cord-cutting households continue to grow year over year, and a significant portion of younger demographics have never subscribed to traditional cable.
           </motion.p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-14"
-        >
-          {benefits.map((benefit, i) => (
-            <MagneticCard
-              key={benefit.title}
-              className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-xl bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
-                  <benefit.icon className="w-6 h-6 text-brand-orange-500" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-navy-800 mb-2">{benefit.title}</h3>
-                  <p className="text-navy-400 leading-relaxed">{benefit.description}</p>
-                </div>
-              </div>
-            </MagneticCard>
-          ))}
-        </motion.div>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-10">
+          {/* CTV brings together */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-white rounded-2xl border border-navy-100 p-8"
+          >
+            <h3 className="text-xl font-bold text-navy-800 mb-6">CTV brings together:</h3>
+            <ul className="space-y-4">
+              {ctvBrings.map((item) => (
+                <li key={item} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3.5 h-3.5 text-brand-orange-600" />
+                  </div>
+                  <span className="text-navy-600 font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* CTV enables targeting by */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-white rounded-2xl border border-navy-100 p-8"
+          >
+            <h3 className="text-xl font-bold text-navy-800 mb-6">Additionally, CTV enables targeting by:</h3>
+            <ul className="space-y-4">
+              {targetingBy.map((item) => (
+                <li key={item} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3.5 h-3.5 text-brand-orange-600" />
+                  </div>
+                  <span className="text-navy-600 font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-navy-800 rounded-2xl border border-navy-700 p-10 max-w-5xl mx-auto text-center"
+          className="max-w-3xl mx-auto text-center"
         >
-          <p className="text-lg text-navy-200 mb-6 leading-relaxed max-w-2xl mx-auto">
-            Expect your brand to run smarter, richer, and better-looking campaigns with Smart TV advertising with
-            connected TV ads by PublifyX.
+          <p className="text-lg text-navy-400 leading-relaxed mb-4">
+            Completion rates on CTV typically exceed mobile and desktop video. Viewers actively choose what they watch, resulting in higher attention and brand recall.
           </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-orange-500/25 group"
-          >
-            Get Started Now
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <p className="text-lg text-navy-400 leading-relaxed">
+            Advertisers can control frequency, optimize in real time, and measure outcomes including website visits, app installs, and offline conversions.
+          </p>
         </motion.div>
       </div>
     </section>

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Tv, Target, BarChart3 } from "lucide-react";
-import MagneticCard from "@/components/effects/MagneticCard";
+import { Tv, Gamepad2, Monitor, Radio } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
@@ -8,25 +7,11 @@ interface CTVExplanationSectionProps {
   onGetStarted: () => void;
 }
 
-const items = [
-  {
-    icon: Tv,
-    title: "Smart TV Reach",
-    description:
-      "Connected TV (CTV) advertising lets your brand show video ads on internet-enabled TVs—think Smart TVs, Roku, Fire TV, Apple TV, even gaming consoles.",
-  },
-  {
-    icon: Target,
-    title: "Premium Placement",
-    description:
-      "Unlike traditional cable ads that interrupt random content, CTV ads appear within on-demand, high-quality, and premium environments—exactly where today's viewer is.",
-  },
-  {
-    icon: BarChart3,
-    title: "Real Results",
-    description:
-      "Advertisers can easily target real people and will be able to track real results, which is something you don't get with traditional cable advertising.",
-  },
+const devices = [
+  { icon: Tv, label: "Smart TVs with built-in internet connectivity" },
+  { icon: Radio, label: "Streaming devices (Roku, Amazon Fire TV, Apple TV)" },
+  { icon: Gamepad2, label: "Gaming consoles (PlayStation, Xbox)" },
+  { icon: Monitor, label: "Internet-enabled set-top boxes" },
 ];
 
 const CTVExplanationSection = ({ onGetStarted }: CTVExplanationSectionProps) => {
@@ -48,7 +33,7 @@ const CTVExplanationSection = ({ onGetStarted }: CTVExplanationSectionProps) => 
             viewport={{ once: true }}
             className="mb-4 max-w-4xl mx-auto"
           >
-            What is Connected TV Advertising?
+            What Is CTV Advertising?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -57,8 +42,7 @@ const CTVExplanationSection = ({ onGetStarted }: CTVExplanationSectionProps) => 
             transition={{ delay: 0.1 }}
             className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Deliver full-screen, non-skippable video ads to viewers on the biggest screen in the house — powered by
-            programmatic precision.
+            CTV advertising refers to video ads delivered through internet-connected television devices. Unlike traditional linear TV, where ads are broadcast to mass audiences during scheduled programming, CTV ads are served programmatically to specific households or audience segments based on data-driven targeting.
           </motion.p>
         </div>
 
@@ -67,28 +51,38 @@ const CTVExplanationSection = ({ onGetStarted }: CTVExplanationSectionProps) => 
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12"
+          className="max-w-3xl mx-auto mb-12"
         >
-          {items.map((item, i) => (
-            <MagneticCard key={item.title} className="bg-navy-50 rounded-2xl border border-navy-100 p-8 text-center">
-              <div className="w-14 h-14 rounded-2xl bg-brand-orange-100 flex items-center justify-center mx-auto mb-5">
-                <item.icon className="w-7 h-7 text-brand-orange-500" />
-              </div>
-              <h3 className="text-lg font-bold text-navy-800 mb-3">{item.title}</h3>
-              <p className="text-navy-400 leading-relaxed text-sm">{item.description}</p>
-            </MagneticCard>
-          ))}
+          <h3 className="text-xl font-bold text-navy-800 mb-6 text-center">Connected TV devices include:</h3>
+          <ul className="space-y-4">
+            {devices.map((device, i) => (
+              <motion.li
+                key={device.label}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * i }}
+                className="flex items-center gap-4 bg-navy-50 rounded-xl border border-navy-100 p-4"
+              >
+                <div className="w-10 h-10 rounded-xl bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
+                  <device.icon className="w-5 h-5 text-brand-orange-500" />
+                </div>
+                <span className="text-navy-600 font-medium">{device.label}</span>
+              </motion.li>
+            ))}
+          </ul>
         </motion.div>
 
-        <div className="text-center">
-          <Link
-            to="/contact"
-            className="inline-flex items-center bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-orange-500/25 group"
-          >
-            Book Your Free Demo
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <p className="text-lg text-navy-400 leading-relaxed">
+            CTV advertising is a subset of OTT (over-the-top) advertising. While OTT refers to content delivered via the internet across all devices (smartphones, tablets, laptops, TVs), CTV specifically refers to ads viewed on a television screen through an internet connection.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
