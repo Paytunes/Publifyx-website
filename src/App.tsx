@@ -60,10 +60,6 @@ const App = () => (
 
             {/* Supporting Pages */}
             <Route path="/services" element={<Services />} />
-            <Route path="/how-it-works" element={<HowItWorks />} />
-            <Route path="/features" element={<Features />} />
-            <Route path="/integrations" element={<Integrations />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/about" element={<About />} />
             <Route path="/saurabh" element={<CEO />} />
             <Route path="/white-label-dsp-vs-self-serve-dsp" element={<WhiteLabelVsSelfServe />} />
@@ -73,7 +69,6 @@ const App = () => (
             <Route path="/programmatic-audio-advertising" element={<ProgrammaticAudioAdvertising />} />
             <Route path="/online-banner-advertising" element={<OnlineBannerAdvertising />} />
             <Route path="/digital-advertising" element={<DigitalAdvertising />} />
-            <Route path="/ad-insights" element={<AdInsights />} />
 
             {/* Blog Posts — Existing */}
             <Route path="/blog/online-banner-advertising-guide-2026" element={<BlogPostOnlineBannerAdvertising2026 />} />

@@ -18,13 +18,8 @@ const staticPages: { path: string; priority: number; changefreq: string }[] = [
   
   { path: "/contact", priority: 0.7, changefreq: "yearly" },
   { path: "/services", priority: 0.7, changefreq: "monthly" },
-  { path: "/how-it-works", priority: 0.7, changefreq: "monthly" },
-  { path: "/features", priority: 0.7, changefreq: "monthly" },
-  { path: "/integrations", priority: 0.7, changefreq: "monthly" },
-  { path: "/case-studies", priority: 0.7, changefreq: "monthly" },
   { path: "/about", priority: 0.6, changefreq: "monthly" },
   { path: "/saurabh", priority: 0.5, changefreq: "yearly" },
-  { path: "/ad-insights", priority: 0.6, changefreq: "monthly" },
   { path: "/digital-advertising", priority: 0.7, changefreq: "monthly" },
   { path: "/online-banner-advertising", priority: 0.7, changefreq: "monthly" },
   { path: "/white-label-dsp-vs-self-serve-dsp", priority: 0.6, changefreq: "monthly" },
