@@ -12,7 +12,8 @@ import podcastStudio from "@/assets/audio/podcast-studio.webp";
 import audioDevices from "@/assets/audio/audio-devices.webp";
 import { motion, useInView } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
-import { ArrowRight, Sparkles, Headphones, Radio, Mic, Globe, Monitor, Music } from "lucide-react";
+import { ArrowRight, Sparkles, Headphones, Radio, Mic, Globe, Monitor, Music, Tv } from "lucide-react";
+import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
 import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
@@ -492,74 +493,28 @@ const ProgrammaticAudioAdvertising = () => {
       />
 
       {/* ═══════════════ RELATED SERVICES ═══════════════ */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
-            >
-              More Solutions
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
-            >
-              Explore Related Services
-            </motion.h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                title: "OTT Advertising",
-                desc: "Reach viewers across premium OTT platforms with programmatic video campaigns.",
-                icon: Radio,
-                path: "/ott-advertising",
-              },
-              {
-                title: "CTV Advertising",
-                desc: "Reach audiences on the big screen with programmatic connected TV campaigns.",
-                icon: Globe,
-                path: "/ctv-advertising",
-              },
-              {
-                title: "White Label DSP",
-                desc: "Launch your own branded demand-side platform with PublifyX's white-label infrastructure.",
-                icon: Monitor,
-                path: "/white-label-dsp",
-              },
-            ].map((service, i) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <Link
-                  to={service.path}
-                  className="group flex flex-col h-full bg-navy-50 border border-navy-100 rounded-2xl p-8 hover:border-brand-orange-500/30 hover:shadow-lg hover:shadow-brand-orange-500/5 transition-all duration-300"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-5 shadow-lg shadow-brand-orange-500/20">
-                    <service.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-extrabold text-navy-900 mb-2 group-hover:text-brand-orange-600 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-navy-600 font-medium leading-relaxed mb-4 flex-1">{service.desc}</p>
-                  <span className="inline-flex items-center gap-2 text-brand-orange-500 font-bold text-sm group-hover:gap-3 transition-all">
-                    Learn More <ArrowRight className="w-4 h-4" />
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={[
+          {
+            title: "OTT Advertising",
+            desc: "Reach viewers across premium OTT platforms with programmatic video campaigns.",
+            icon: Radio,
+            path: "/ott-advertising",
+          },
+          {
+            title: "CTV Advertising",
+            desc: "Reach audiences on the big screen with programmatic connected TV campaigns.",
+            icon: Tv,
+            path: "/ctv-advertising",
+          },
+          {
+            title: "Programmatic Display",
+            desc: "Run programmatic banner, native, and rich media display campaigns at scale.",
+            icon: Monitor,
+            path: "/programmatic-display-advertising",
+          },
+        ]}
+      />
 
       {/* ═══════════════ FAQ ═══════════════ */}
       <section className="py-12 md:py-16 bg-navy-50 faq-section">

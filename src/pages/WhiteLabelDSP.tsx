@@ -12,6 +12,8 @@ import WhiteLabelCTASection from "@/components/sections/whiteLabelDSP/WhiteLabel
 import WhiteLabelFAQSection from "@/components/sections/whiteLabelDSP/WhiteLabelFAQSection";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
 import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
+import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
+import { Headphones, Radio, Tv } from "lucide-react";
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -158,13 +160,20 @@ const reviewSchema = {
   },
 };
 
-const allSchemas = [serviceSchema, softwareAppSchema, faqSchema, breadcrumbSchema, reviewSchema];
+const allSchemas = [
+  serviceSchema,
+  softwareAppSchema,
+  faqSchema,
+  breadcrumbSchema,
+  reviewSchema,
+];
 
 const WhiteLabelDSP = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "White Label DSP Platform | Launch Your Own DSP — PublifyX";
+    document.title =
+      "White Label DSP Platform | Launch Your Own DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
@@ -186,7 +195,8 @@ const WhiteLabelDSP = () => {
     });
 
     return () => {
-      document.title = "White Label DSP Platform | Launch Your Programmatic Ad Business — PublifyX";
+      document.title =
+        "White Label DSP Platform | Launch Your Programmatic Ad Business — PublifyX";
       scripts.forEach((s) => s.remove());
     };
   }, []);
@@ -220,6 +230,29 @@ const WhiteLabelDSP = () => {
         variant="split"
       />
       <WhiteLabelCTASection onGetStarted={handleGetStarted} />
+      {/* ═══════════════ RELATED SERVICES ═══════════════ */}
+      <RelatedServicesSection
+        services={[
+          {
+            title: "CTV Advertising",
+            desc: "Reach audiences on the big screen with programmatic connected TV campaigns.",
+            icon: Tv,
+            path: "/ctv-advertising",
+          },
+          {
+            title: "OTT Advertising",
+            desc: "Reach viewers across premium OTT platforms with programmatic video campaigns.",
+            icon: Radio,
+            path: "/ott-advertising",
+          },
+          {
+            title: "Programmatic Audio",
+            desc: "Engage listeners on music and podcast platforms with targeted audio campaigns.",
+            icon: Headphones,
+            path: "/programmatic-audio-advertising",
+          },
+        ]}
+      />
       <WhiteLabelFAQSection />
     </Layout>
   );
