@@ -19,7 +19,12 @@ import {
 } from "lucide-react";
 import howItWorksDashboard from "@/assets/how-it-works/hero-dashboard.webp";
 import MagneticCard from "@/components/effects/MagneticCard";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const steps = [
   {
@@ -68,7 +73,8 @@ const whoItsFor = [
   },
   {
     title: "Ad Networks",
-    description: "Add self-serve programmatic buying capabilities for your advertiser base — fast and scalable.",
+    description:
+      "Add self-serve programmatic buying capabilities for your advertiser base — fast and scalable.",
     icon: Globe,
   },
   {
@@ -98,7 +104,8 @@ const faqs = [
   },
   {
     question: "Can I add more channels or integrations later?",
-    answer: "Yes. You can activate additional channels and SSP integrations at any time as your business needs evolve.",
+    answer:
+      "Yes. You can activate additional channels and SSP integrations at any time as your business needs evolve.",
   },
 ];
 
@@ -124,47 +131,59 @@ const HowItWorks = () => {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
         <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <PageBreadcrumb items={[{ label: "Home", path: "/" }, { label: "Resources" }, { label: "How It Works" }]} />
+          <PageBreadcrumb
+            items={[
+              { label: "Home", path: "/" },
+              { label: "Resources" },
+              { label: "How It Works" },
+            ]}
+          />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
-                <span className="text-sm font-medium text-white/80">How It Works</span>
+                <span className="text-sm font-medium text-white/80">
+                  How It Works
+                </span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1]">
                 From Setup to Live Campaigns
-                <span className="block text-brand-orange-400">In Days, Not Months</span>
+                <span className="block text-brand-orange-400">
+                  In Days, Not Months
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-                Launching your own DSP sounds complex. With PublifyX, we handle the technology, infrastructure, and
-                integrations — you focus on your brand, clients, and growth.
+                Launching your own DSP sounds complex. With PublifyX, we handle
+                the technology, infrastructure, and integrations — you focus on
+                your brand, clients, and growth.
               </p>
               <p className="text-base text-navy-300 mb-10 font-semibold">
                 5 steps · 5-10 business days · Zero engineering required
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link to="/contact" className="flex items-center text-white no-underline group">
+                  <Link
+                    to="/contact"
+                    className="flex items-center text-white no-underline group"
+                  >
                     Start Your Journey{" "}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
               </div>
-              <p className="text-sm text-navy-400">No commitment required · Most clients launch within 2 weeks</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="hidden lg:block"
-            >
+              <p className="text-sm text-navy-400">
+                No commitment required · Most clients launch within 2 weeks
+              </p>
+            </div>
+            <div className="hidden lg:block">
               <div className="relative">
                 <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
                 <img
@@ -177,7 +196,7 @@ const HowItWorks = () => {
                   decoding="sync"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -194,7 +213,11 @@ const HowItWorks = () => {
             >
               The Process
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Five Steps to Your Own DSP
             </motion.h2>
             <motion.p
@@ -204,7 +227,8 @@ const HowItWorks = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-navy-400 max-w-2xl mx-auto mt-4"
             >
-              From consultation to live campaigns — typically within five to ten business days.
+              From consultation to live campaigns — typically within five to ten
+              business days.
             </motion.p>
           </div>
           <div className="max-w-4xl mx-auto space-y-6">
@@ -221,9 +245,15 @@ const HowItWorks = () => {
                     <step.icon className="w-7 h-7 text-brand-orange-400" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-brand-orange-500 mb-1">STEP {step.number}</div>
-                    <h3 className="font-bold text-navy-800 text-xl mb-2">{step.title}</h3>
-                    <p className="text-navy-400 leading-relaxed">{step.description}</p>
+                    <div className="text-xs font-bold text-brand-orange-500 mb-1">
+                      STEP {step.number}
+                    </div>
+                    <h3 className="font-bold text-navy-800 text-xl mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-navy-400 leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -236,7 +266,10 @@ const HowItWorks = () => {
             className="text-center mt-12"
           >
             <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-              <Link to="/contact" className="flex items-center text-white no-underline group">
+              <Link
+                to="/contact"
+                className="flex items-center text-white no-underline group"
+              >
                 Start Step 1 — Book a Call{" "}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -257,7 +290,11 @@ const HowItWorks = () => {
             >
               Built For You
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Who Is This Process For?
             </motion.h2>
           </div>
@@ -274,8 +311,12 @@ const HowItWorks = () => {
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <audience.icon className="w-6 h-6 text-brand-orange-500" />
                   </div>
-                  <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
-                  <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+                  <h3 className="font-bold text-navy-800 text-xl mb-2">
+                    {audience.title}
+                  </h3>
+                  <p className="text-navy-400 leading-relaxed">
+                    {audience.description}
+                  </p>
                 </MagneticCard>
               </motion.div>
             ))}
@@ -287,7 +328,9 @@ const HowItWorks = () => {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-navy-50 rounded-2xl border border-navy-100 p-6 md:p-8">
-            <h3 className="text-lg font-bold text-navy-900 mb-4">Explore More</h3>
+            <h3 className="text-lg font-bold text-navy-900 mb-4">
+              Explore More
+            </h3>
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/features"
@@ -330,13 +373,17 @@ const HowItWorks = () => {
         >
           <h2 className="mb-6 !text-white">Ready to Launch?</h2>
           <p className="text-xl text-navy-300 mb-4 leading-relaxed">
-            Most clients go from consultation to live campaigns within five to ten business days.
+            Most clients go from consultation to live campaigns within five to
+            ten business days.
           </p>
           <p className="text-base text-navy-400 mb-10 font-semibold">
             No commitment required · Zero engineering needed
           </p>
           <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link to="/contact" className="flex items-center text-white no-underline group">
+            <Link
+              to="/contact"
+              className="flex items-center text-white no-underline group"
+            >
               Book a Call{" "}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -356,11 +403,19 @@ const HowItWorks = () => {
             >
               FAQ
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Frequently Asked Questions
             </motion.h2>
           </div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
                 <AccordionItem
@@ -371,7 +426,9 @@ const HowItWorks = () => {
                   <AccordionTrigger className="text-left font-semibold text-navy-800 hover:text-brand-orange-500 hover:no-underline py-5">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

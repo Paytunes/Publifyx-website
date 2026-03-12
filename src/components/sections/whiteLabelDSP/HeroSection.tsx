@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
 import heroDashboard from "@/assets/white-label-dsp/hero-dashboard.webp";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
@@ -18,7 +17,8 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -28,30 +28,33 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 md:pt-28 md:pb-16">
         <PageBreadcrumb items={breadcrumbs} />
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
+          <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
               <Sparkles className="w-4 h-4 text-brand-orange-400" />
-              <span className="text-sm font-medium text-white/80">White Label DSP Platform</span>
+              <span className="text-sm font-medium text-white/80">
+                White Label DSP Platform
+              </span>
             </div>
 
             <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-4xl">
               White Label DSP — Launch Your Own Branded
-              <span className="block text-brand-orange-400">Demand Side Platform</span>
+              <span className="block text-brand-orange-400">
+                Demand Side Platform
+              </span>
             </h1>
 
             <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-              Launching a demand side platform from scratch used to mean years of development, massive engineering
-              costs, and complex exchange integrations. With PublifyX, it doesn't.
+              Launching a demand side platform from scratch used to mean years
+              of development, massive engineering costs, and complex exchange
+              integrations. With PublifyX, it doesn't.
             </p>
 
             <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-              Our white label DSP gives agencies, ad networks, and startups the ability to launch a fully branded
-              programmatic platform in 15 minutes, not days, without writing a single line of code. Your logo. Your
-              domain. Your pricing. Your client relationships. Our DSP.
+              Our white label DSP gives agencies, ad networks, and startups the
+              ability to launch a fully branded programmatic platform in 15
+              minutes, not days, without writing a single line of code. Your
+              logo. Your domain. Your pricing. Your client relationships. Our
+              DSP.
             </p>
 
             <p className="text-base text-navy-300 mb-10 font-semibold">
@@ -68,15 +71,12 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
               </Button>
             </div>
 
-            <p className="text-sm text-navy-300">No commitment required · Launch in under 15 minutes</p>
-          </motion.div>
+            <p className="text-sm text-navy-300">
+              No commitment required · Launch in under 15 minutes
+            </p>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 40, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="hidden lg:block"
-          >
+          <div className="hidden lg:block">
             <div className="relative">
               <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
               <img
@@ -89,7 +89,7 @@ const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
                 decoding="sync"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

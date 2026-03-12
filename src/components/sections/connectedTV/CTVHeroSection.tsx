@@ -13,7 +13,8 @@ const CTVHeroSection = ({ onGetStarted }: CTVHeroSectionProps) => {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -22,19 +23,19 @@ const CTVHeroSection = ({ onGetStarted }: CTVHeroSectionProps) => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
+          <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
               <Sparkles className="w-4 h-4 text-brand-orange-400" />
-              <span className="text-sm font-medium text-white/80">Connected TV Advertising</span>
+              <span className="text-sm font-medium text-white/80">
+                Connected TV Advertising
+              </span>
             </div>
 
             <h1 className="mb-6 !text-white leading-[1.1]">
               CTV Advertising Platform —
-              <span className="block text-brand-orange-400">Reach Audiences on Connected TV</span>
+              <span className="block text-brand-orange-400">
+                Reach Audiences on Connected TV
+              </span>
             </h1>
 
             <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
@@ -42,15 +43,22 @@ const CTVHeroSection = ({ onGetStarted }: CTVHeroSectionProps) => {
             </p>
 
             <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-              Connected TV advertising allows brands to reach viewers on smart TVs and streaming devices with the full-screen impact of traditional TV combined with the targeting precision and measurability of digital.
+              Connected TV advertising allows brands to reach viewers on smart
+              TVs and streaming devices with the full-screen impact of
+              traditional TV combined with the targeting precision and
+              measurability of digital.
             </p>
 
             <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-              PublifyX gives agencies and advertisers a powerful CTV advertising platform to plan, execute, and measure campaigns across premium streaming environments, all from a unified dashboard.
+              PublifyX gives agencies and advertisers a powerful CTV advertising
+              platform to plan, execute, and measure campaigns across premium
+              streaming environments, all from a unified dashboard.
             </p>
 
             <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-              Deliver non-skippable, full-screen video ads to viewers watching content on smart TVs, Roku, Amazon Fire TV, Apple TV, gaming consoles, and other connected devices.
+              Deliver non-skippable, full-screen video ads to viewers watching
+              content on smart TVs, Roku, Amazon Fire TV, Apple TV, gaming
+              consoles, and other connected devices.
             </p>
 
             <p className="text-base text-navy-300 mb-6 font-semibold">
@@ -58,7 +66,8 @@ const CTVHeroSection = ({ onGetStarted }: CTVHeroSectionProps) => {
             </p>
 
             <h3 className="text-lg text-navy-200 mb-6">
-              Explore how CTV can fit into your media strategy. Book a demo today.
+              Explore how CTV can fit into your media strategy. Book a demo
+              today.
             </h3>
 
             <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
@@ -71,16 +80,13 @@ const CTVHeroSection = ({ onGetStarted }: CTVHeroSectionProps) => {
               </Button>
             </div>
 
-            <p className="text-sm text-navy-400">No commitment required · Launch campaigns in minutes</p>
-          </motion.div>
+            <p className="text-sm text-navy-400">
+              No commitment required · Launch campaigns in minutes
+            </p>
+          </div>
 
           {/* Right side — trust stats */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="hidden lg:grid grid-cols-2 gap-4"
-          >
+          <div className="hidden lg:grid grid-cols-2 gap-4">
             {[
               { value: "100+", label: "Premium CTV Publishers" },
               { value: "95%+", label: "Video Completion Rate" },
@@ -94,11 +100,13 @@ const CTVHeroSection = ({ onGetStarted }: CTVHeroSectionProps) => {
                 transition={{ delay: 0.5 + i * 0.1 }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors"
               >
-                <div className="text-3xl font-bold text-brand-orange-400 mb-1">{stat.value}</div>
+                <div className="text-3xl font-bold text-brand-orange-400 mb-1">
+                  {stat.value}
+                </div>
                 <div className="text-sm text-navy-300">{stat.label}</div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

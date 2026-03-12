@@ -24,7 +24,12 @@ import {
 } from "lucide-react";
 import ctvIndiaDashboard from "@/assets/ctv-india/hero-dashboard.webp";
 import MagneticCard from "@/components/effects/MagneticCard";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const features = [
   {
@@ -41,17 +46,20 @@ const features = [
   },
   {
     title: "Household-Level Targeting",
-    description: "Target by geography, demographics, interests, and household profiles to reach the right homes.",
+    description:
+      "Target by geography, demographics, interests, and household profiles to reach the right homes.",
     icon: Target,
   },
   {
     title: "Growing Inventory",
-    description: "As Indian streaming platforms adopt ad-supported models, CTV inventory continues to expand rapidly.",
+    description:
+      "As Indian streaming platforms adopt ad-supported models, CTV inventory continues to expand rapidly.",
     icon: TrendingUp,
   },
   {
     title: "Pin Code Level Targeting",
-    description: "Programmatic access with geographic precision down to city and pin code level.",
+    description:
+      "Programmatic access with geographic precision down to city and pin code level.",
     icon: MapPin,
   },
   {
@@ -65,22 +73,26 @@ const features = [
 const whoItsFor = [
   {
     title: "Indian Media Agencies",
-    description: "Plan CTV campaigns for Indian brands with programmatic precision and white-label reporting.",
+    description:
+      "Plan CTV campaigns for Indian brands with programmatic precision and white-label reporting.",
     icon: Building2,
   },
   {
     title: "National Advertisers",
-    description: "Reach India's growing smart TV audience across metros and tier-2 cities.",
+    description:
+      "Reach India's growing smart TV audience across metros and tier-2 cities.",
     icon: Megaphone,
   },
   {
     title: "Regional Businesses",
-    description: "Target specific states, cities, or pin codes with CTV ads for localized impact.",
+    description:
+      "Target specific states, cities, or pin codes with CTV ads for localized impact.",
     icon: Store,
   },
   {
     title: "Ad Tech Startups",
-    description: "Build an ad platform for the Indian market with PublifyX's CTV technology and inventory.",
+    description:
+      "Build an ad platform for the Indian market with PublifyX's CTV technology and inventory.",
     icon: Zap,
   },
 ];
@@ -95,7 +107,8 @@ const steps = [
   {
     number: "02",
     title: "Configure Targeting",
-    description: "Select audiences by geography, demographics, and viewing behavior.",
+    description:
+      "Select audiences by geography, demographics, and viewing behavior.",
     icon: Settings,
   },
   {
@@ -107,7 +120,8 @@ const steps = [
   {
     number: "04",
     title: "Optimize & Report",
-    description: "Monitor performance and optimize for maximum impact in India.",
+    description:
+      "Monitor performance and optimize for maximum impact in India.",
     icon: GraduationCap,
   },
 ];
@@ -137,7 +151,8 @@ const faqs = [
 
 const CTVAdvertisingIndia = () => {
   useEffect(() => {
-    document.title = "CTV Advertising in India | Connected TV Ads Platform for Indian Market — PublifyX";
+    document.title =
+      "CTV Advertising in India | Connected TV Ads Platform for Indian Market — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
@@ -157,7 +172,8 @@ const CTVAdvertisingIndia = () => {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -165,41 +181,50 @@ const CTVAdvertisingIndia = () => {
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <PageBreadcrumb
-            items={[{ label: "Home", path: "/" }, { label: "Services" }, { label: "CTV Advertising India" }]}
+            items={[
+              { label: "Home", path: "/" },
+              { label: "Services" },
+              { label: "CTV Advertising India" },
+            ]}
           />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
-                <span className="text-sm font-medium text-white/80">CTV Advertising India</span>
+                <span className="text-sm font-medium text-white/80">
+                  CTV Advertising India
+                </span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1]">
                 CTV Advertising in India — Reach India's
-                <span className="block text-brand-orange-400">Connected TV Audience</span>
+                <span className="block text-brand-orange-400">
+                  Connected TV Audience
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-                India's CTV market is booming. Smart TV adoption, expanding broadband, and streaming platforms like
-                JioCinema, Disney+ Hotstar, and ZEE5 create massive advertising opportunity.
+                India's CTV market is booming. Smart TV adoption, expanding
+                broadband, and streaming platforms like JioCinema, Disney+
+                Hotstar, and ZEE5 create massive advertising opportunity.
               </p>
               <p className="text-base text-navy-300 mb-10 font-semibold">
                 Premium audiences · Pin code targeting · Growing inventory
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link to="/contact" className="flex items-center text-white no-underline group">
+                  <Link
+                    to="/contact"
+                    className="flex items-center text-white no-underline group"
+                  >
                     Book a Call{" "}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
               </div>
-              <p className="text-sm text-navy-400">No commitment required · Indian market expertise</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="hidden lg:block"
-            >
+              <p className="text-sm text-navy-400">
+                No commitment required · Indian market expertise
+              </p>
+            </div>
+            <div className="hidden lg:block">
               <div className="relative">
                 <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
                 <img
@@ -212,7 +237,7 @@ const CTVAdvertisingIndia = () => {
                   decoding="sync"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -244,9 +269,11 @@ const CTVAdvertisingIndia = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
             >
-              India's CTV ecosystem is at an inflection point. Smart TV penetration is accelerating with affordable
-              devices from Xiaomi, Samsung, TCL, and OnePlus. Indian streaming platforms have embraced ad-supported
-              models — brands moving early into CTV will benefit from lower competition and strong engagement.
+              India's CTV ecosystem is at an inflection point. Smart TV
+              penetration is accelerating with affordable devices from Xiaomi,
+              Samsung, TCL, and OnePlus. Indian streaming platforms have
+              embraced ad-supported models — brands moving early into CTV will
+              benefit from lower competition and strong engagement.
             </motion.p>
           </div>
         </div>
@@ -264,7 +291,11 @@ const CTVAdvertisingIndia = () => {
             >
               Why CTV India
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Why CTV Advertising Works in India
             </motion.h2>
           </div>
@@ -281,8 +312,12 @@ const CTVAdvertisingIndia = () => {
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <feature.icon className="w-6 h-6 text-brand-orange-500" />
                   </div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">{feature.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="font-bold text-navy-800 text-lg mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </MagneticCard>
               </motion.div>
             ))}
@@ -302,7 +337,11 @@ const CTVAdvertisingIndia = () => {
             >
               Built For You
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Who Is CTV India For?
             </motion.h2>
           </div>
@@ -319,8 +358,12 @@ const CTVAdvertisingIndia = () => {
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <audience.icon className="w-6 h-6 text-brand-orange-500" />
                   </div>
-                  <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
-                  <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+                  <h3 className="font-bold text-navy-800 text-xl mb-2">
+                    {audience.title}
+                  </h3>
+                  <p className="text-navy-400 leading-relaxed">
+                    {audience.description}
+                  </p>
                 </MagneticCard>
               </motion.div>
             ))}
@@ -340,7 +383,11 @@ const CTVAdvertisingIndia = () => {
             >
               Get Started
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               How to Launch CTV in India
             </motion.h2>
           </div>
@@ -361,9 +408,15 @@ const CTVAdvertisingIndia = () => {
                   <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-navy-700 transition-colors">
                     <step.icon className="w-8 h-8 text-brand-orange-400" />
                   </div>
-                  <div className="text-xs font-bold text-brand-orange-500 mb-2">{step.number}</div>
-                  <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+                  <div className="text-xs font-bold text-brand-orange-500 mb-2">
+                    {step.number}
+                  </div>
+                  <h3 className="font-bold text-navy-800 text-base mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -375,7 +428,10 @@ const CTVAdvertisingIndia = () => {
             className="text-center"
           >
             <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-              <Link to="/contact" className="flex items-center text-white no-underline group">
+              <Link
+                to="/contact"
+                className="flex items-center text-white no-underline group"
+              >
                 Launch CTV in India{" "}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -388,7 +444,9 @@ const CTVAdvertisingIndia = () => {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-navy-50 rounded-2xl border border-navy-100 p-6 md:p-8">
-            <h3 className="text-lg font-bold text-navy-900 mb-4">Explore Related</h3>
+            <h3 className="text-lg font-bold text-navy-900 mb-4">
+              Explore Related
+            </h3>
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/ctv-advertising"
@@ -419,13 +477,17 @@ const CTVAdvertisingIndia = () => {
         >
           <h2 className="mb-6 !text-white">Launch CTV Campaigns in India</h2>
           <p className="text-xl text-navy-300 mb-4 leading-relaxed">
-            Reach premium Indian audiences on the largest screen in the household with programmatic precision.
+            Reach premium Indian audiences on the largest screen in the
+            household with programmatic precision.
           </p>
           <p className="text-base text-navy-400 mb-10 font-semibold">
             No commitment required · Indian market expertise
           </p>
           <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link to="/contact" className="flex items-center text-white no-underline group">
+            <Link
+              to="/contact"
+              className="flex items-center text-white no-underline group"
+            >
               Book a Call{" "}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -445,11 +507,19 @@ const CTVAdvertisingIndia = () => {
             >
               FAQ
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Frequently Asked Questions
             </motion.h2>
           </div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
                 <AccordionItem
@@ -460,7 +530,9 @@ const CTVAdvertisingIndia = () => {
                   <AccordionTrigger className="text-left font-semibold text-navy-800 hover:text-brand-orange-500 hover:no-underline py-5">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

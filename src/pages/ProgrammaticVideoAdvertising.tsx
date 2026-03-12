@@ -24,47 +24,73 @@ import {
   Tv,
 } from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const features = [
   {
     title: "In-Stream & Outstream",
-    description: "Pre-roll, mid-roll, post-roll within video content, or outstream video in editorial environments.",
+    description:
+      "Pre-roll, mid-roll, post-roll within video content, or outstream video in editorial environments.",
     icon: Video,
   },
   {
     title: "Premium Inventory",
-    description: "Access video placements across high-quality publisher sites, mobile apps, and streaming platforms.",
+    description:
+      "Access video placements across high-quality publisher sites, mobile apps, and streaming platforms.",
     icon: Monitor,
   },
   {
     title: "VAST & VPAID Compliance",
-    description: "Full support for industry-standard video ad serving protocols across publishers and devices.",
+    description:
+      "Full support for industry-standard video ad serving protocols across publishers and devices.",
     icon: Layers,
   },
   {
     title: "Advanced Targeting",
-    description: "Target by demographics, geography, interests, device type, content context, and behavioral signals.",
+    description:
+      "Target by demographics, geography, interests, device type, content context, and behavioral signals.",
     icon: Target,
   },
   {
     title: "Viewability Optimization",
-    description: "Optimize for viewable impressions and video completion rate to maximize budget efficiency.",
+    description:
+      "Optimize for viewable impressions and video completion rate to maximize budget efficiency.",
     icon: Eye,
   },
   {
     title: "Cross-Channel Strategy",
-    description: "Combine web/app video with CTV and OTT within PublifyX for unified video advertising.",
+    description:
+      "Combine web/app video with CTV and OTT within PublifyX for unified video advertising.",
     icon: Zap,
   },
 ];
 
 const adFormats = [
-  { title: "Pre-Roll Video Ads", desc: "Video ads playing before content — 6s bumper, 15s, and 30s formats." },
-  { title: "Mid-Roll Video Ads", desc: "Ads inserted during natural breaks for higher completion rates." },
-  { title: "Post-Roll Video Ads", desc: "Video ads playing after content conclusion." },
-  { title: "Outstream Video Ads", desc: "Auto-playing video within text-based editorial content." },
-  { title: "Rewarded Video Ads", desc: "In-app video offering incentives for full ad viewing." },
+  {
+    title: "Pre-Roll Video Ads",
+    desc: "Video ads playing before content — 6s bumper, 15s, and 30s formats.",
+  },
+  {
+    title: "Mid-Roll Video Ads",
+    desc: "Ads inserted during natural breaks for higher completion rates.",
+  },
+  {
+    title: "Post-Roll Video Ads",
+    desc: "Video ads playing after content conclusion.",
+  },
+  {
+    title: "Outstream Video Ads",
+    desc: "Auto-playing video within text-based editorial content.",
+  },
+  {
+    title: "Rewarded Video Ads",
+    desc: "In-app video offering incentives for full ad viewing.",
+  },
 ];
 
 const steps = [
@@ -77,19 +103,22 @@ const steps = [
   {
     number: "02",
     title: "Set Targeting",
-    description: "Define audiences by demographics, behavior, context, and geography.",
+    description:
+      "Define audiences by demographics, behavior, context, and geography.",
     icon: Settings,
   },
   {
     number: "03",
     title: "Launch Campaigns",
-    description: "Go live across premium video inventory via real-time bidding.",
+    description:
+      "Go live across premium video inventory via real-time bidding.",
     icon: Rocket,
   },
   {
     number: "04",
     title: "Optimize & Scale",
-    description: "Monitor VCR, viewability, and conversions — optimize in real time.",
+    description:
+      "Monitor VCR, viewability, and conversions — optimize in real time.",
     icon: GraduationCap,
   },
 ];
@@ -109,12 +138,14 @@ const whoItsFor = [
   },
   {
     title: "Performance Marketers",
-    description: "Drive measurable outcomes with video completion optimization and cross-device attribution.",
+    description:
+      "Drive measurable outcomes with video completion optimization and cross-device attribution.",
     icon: Target,
   },
   {
     title: "Streaming & OTT Brands",
-    description: "Extend your video strategy from CTV to web and mobile with unified campaign management.",
+    description:
+      "Extend your video strategy from CTV to web and mobile with unified campaign management.",
     icon: Tv,
   },
 ];
@@ -127,7 +158,8 @@ const faqs = [
   },
   {
     question: "What video ad lengths does PublifyX support?",
-    answer: "6-second bumper, 15-second, and 30-second spots. Custom lengths may be available depending on inventory.",
+    answer:
+      "6-second bumper, 15-second, and 30-second spots. Custom lengths may be available depending on inventory.",
   },
   {
     question: "How is video ad performance measured?",
@@ -136,17 +168,20 @@ const faqs = [
   },
   {
     question: "Can I run video ads on mobile apps?",
-    answer: "Yes. PublifyX provides in-app video inventory including rewarded and interstitial video formats.",
+    answer:
+      "Yes. PublifyX provides in-app video inventory including rewarded and interstitial video formats.",
   },
   {
     question: "Does PublifyX support VAST and VPAID?",
-    answer: "Yes. Full support for both standards ensuring compatibility across all publishers.",
+    answer:
+      "Yes. Full support for both standards ensuring compatibility across all publishers.",
   },
 ];
 
 const ProgrammaticVideoAdvertising = () => {
   useEffect(() => {
-    document.title = "Programmatic Video Advertising Platform | Video DSP — PublifyX";
+    document.title =
+      "Programmatic Video Advertising Platform | Video DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
@@ -168,7 +203,8 @@ const ProgrammaticVideoAdvertising = () => {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -177,38 +213,43 @@ const ProgrammaticVideoAdvertising = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <PageBreadcrumb items={breadcrumbs} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
-                <span className="text-sm font-medium text-white/80">Video Advertising Platform</span>
+                <span className="text-sm font-medium text-white/80">
+                  Video Advertising Platform
+                </span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1]">
                 Programmatic Video — High-Impact Ads
-                <span className="block text-brand-orange-400">Across Web, App & Streaming</span>
+                <span className="block text-brand-orange-400">
+                  Across Web, App & Streaming
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-                Video commands attention like no other format. Higher engagement, stronger brand recall, and growing
-                consumer preference make video essential for every media strategy.
+                Video commands attention like no other format. Higher
+                engagement, stronger brand recall, and growing consumer
+                preference make video essential for every media strategy.
               </p>
               <p className="text-base text-navy-300 mb-10 font-semibold">
                 In-stream · Outstream · Rewarded · One platform
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link to="/contact" className="flex items-center text-white no-underline group">
+                  <Link
+                    to="/contact"
+                    className="flex items-center text-white no-underline group"
+                  >
                     Book a Call{" "}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
               </div>
-              <p className="text-sm text-navy-400">No commitment required · VAST & VPAID supported</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="hidden lg:block"
-            >
+              <p className="text-sm text-navy-400">
+                No commitment required · VAST & VPAID supported
+              </p>
+            </div>
+            <div className="hidden lg:block">
               <div className="relative">
                 <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
                 <img
@@ -221,7 +262,7 @@ const ProgrammaticVideoAdvertising = () => {
                   decoding="sync"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -253,8 +294,10 @@ const ProgrammaticVideoAdvertising = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
             >
-              Video captures attention more effectively than any other digital format. The combination of sight, sound,
-              and motion creates immersive experiences that drive brand awareness, recall, and purchase intent.
+              Video captures attention more effectively than any other digital
+              format. The combination of sight, sound, and motion creates
+              immersive experiences that drive brand awareness, recall, and
+              purchase intent.
             </motion.p>
           </div>
         </div>
@@ -272,7 +315,11 @@ const ProgrammaticVideoAdvertising = () => {
             >
               Platform Features
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Video Advertising Capabilities
             </motion.h2>
           </div>
@@ -289,8 +336,12 @@ const ProgrammaticVideoAdvertising = () => {
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <feature.icon className="w-6 h-6 text-brand-orange-500" />
                   </div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">{feature.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="font-bold text-navy-800 text-lg mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </MagneticCard>
               </motion.div>
             ))}
@@ -310,7 +361,11 @@ const ProgrammaticVideoAdvertising = () => {
             >
               Ad Formats
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Video Ad Formats on PublifyX
             </motion.h2>
           </div>
@@ -322,14 +377,24 @@ const ProgrammaticVideoAdvertising = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className={i === adFormats.length - 1 ? "md:col-span-2 lg:col-span-1" : ""}
+                className={
+                  i === adFormats.length - 1
+                    ? "md:col-span-2 lg:col-span-1"
+                    : ""
+                }
               >
                 <div className="bg-navy-50 rounded-2xl border border-navy-100 p-7 h-full hover:shadow-lg transition-all duration-300">
                   <div className="w-10 h-10 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-4">
-                    <span className="text-white font-bold text-sm">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-white font-bold text-sm">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">{format.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{format.desc}</p>
+                  <h3 className="font-bold text-navy-800 text-lg mb-2">
+                    {format.title}
+                  </h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">
+                    {format.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -349,7 +414,11 @@ const ProgrammaticVideoAdvertising = () => {
             >
               Built For You
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Who Is Video Advertising For?
             </motion.h2>
           </div>
@@ -366,8 +435,12 @@ const ProgrammaticVideoAdvertising = () => {
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <audience.icon className="w-6 h-6 text-brand-orange-500" />
                   </div>
-                  <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
-                  <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+                  <h3 className="font-bold text-navy-800 text-xl mb-2">
+                    {audience.title}
+                  </h3>
+                  <p className="text-navy-400 leading-relaxed">
+                    {audience.description}
+                  </p>
                 </MagneticCard>
               </motion.div>
             ))}
@@ -387,7 +460,11 @@ const ProgrammaticVideoAdvertising = () => {
             >
               Get Started
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               How It Works
             </motion.h2>
           </div>
@@ -408,9 +485,15 @@ const ProgrammaticVideoAdvertising = () => {
                   <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-navy-700 transition-colors">
                     <step.icon className="w-8 h-8 text-brand-orange-400" />
                   </div>
-                  <div className="text-xs font-bold text-brand-orange-500 mb-2">{step.number}</div>
-                  <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+                  <div className="text-xs font-bold text-brand-orange-500 mb-2">
+                    {step.number}
+                  </div>
+                  <h3 className="font-bold text-navy-800 text-base mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -422,7 +505,10 @@ const ProgrammaticVideoAdvertising = () => {
             className="text-center"
           >
             <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-              <Link to="/contact" className="flex items-center text-white no-underline group">
+              <Link
+                to="/contact"
+                className="flex items-center text-white no-underline group"
+              >
                 Launch Video Campaigns{" "}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -435,7 +521,9 @@ const ProgrammaticVideoAdvertising = () => {
       <section className="py-12 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl border border-navy-100 p-6 md:p-8">
-            <h3 className="text-lg font-bold text-navy-900 mb-4">Explore Related Services</h3>
+            <h3 className="text-lg font-bold text-navy-900 mb-4">
+              Explore Related Services
+            </h3>
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/ctv-advertising"
@@ -478,11 +566,17 @@ const ProgrammaticVideoAdvertising = () => {
         >
           <h2 className="mb-6 !text-white">Launch Your Video Campaign</h2>
           <p className="text-xl text-navy-300 mb-4 leading-relaxed">
-            Run high-impact video campaigns across premium websites, mobile apps, and streaming environments.
+            Run high-impact video campaigns across premium websites, mobile
+            apps, and streaming environments.
           </p>
-          <p className="text-base text-navy-400 mb-10 font-semibold">No commitment required · All formats supported</p>
+          <p className="text-base text-navy-400 mb-10 font-semibold">
+            No commitment required · All formats supported
+          </p>
           <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link to="/contact" className="flex items-center text-white no-underline group">
+            <Link
+              to="/contact"
+              className="flex items-center text-white no-underline group"
+            >
               Book a Call{" "}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -502,11 +596,19 @@ const ProgrammaticVideoAdvertising = () => {
             >
               FAQ
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Frequently Asked Questions
             </motion.h2>
           </div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
                 <AccordionItem
@@ -517,7 +619,9 @@ const ProgrammaticVideoAdvertising = () => {
                   <AccordionTrigger className="text-left font-semibold text-navy-800 hover:text-brand-orange-500 hover:no-underline py-5">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

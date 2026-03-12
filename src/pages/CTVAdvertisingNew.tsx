@@ -35,7 +35,12 @@ import {
 } from "lucide-react";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import MagneticCard from "@/components/effects/MagneticCard";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
 import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
 
@@ -119,10 +124,26 @@ const howItWorksSteps = [
 ];
 
 const ctvDevices = [
-  { icon: Tv, label: "Smart TVs with built-in internet connectivity", image: deviceSmartTv },
-  { icon: Radio, label: "Streaming devices (Roku, Amazon Fire TV, Apple TV)", image: deviceStreaming },
-  { icon: Gamepad2, label: "Gaming consoles (PlayStation, Xbox)", image: deviceGaming },
-  { icon: Monitor, label: "Internet-enabled set-top boxes", image: deviceSettop },
+  {
+    icon: Tv,
+    label: "Smart TVs with built-in internet connectivity",
+    image: deviceSmartTv,
+  },
+  {
+    icon: Radio,
+    label: "Streaming devices (Roku, Amazon Fire TV, Apple TV)",
+    image: deviceStreaming,
+  },
+  {
+    icon: Gamepad2,
+    label: "Gaming consoles (PlayStation, Xbox)",
+    image: deviceGaming,
+  },
+  {
+    icon: Monitor,
+    label: "Internet-enabled set-top boxes",
+    image: deviceSettop,
+  },
 ];
 
 const ctvBrings = [
@@ -133,7 +154,13 @@ const ctvBrings = [
   "Transparent reporting",
 ];
 
-const targetingBy = ["Demographics", "Geography", "Interests", "Purchase behavior", "Household characteristics"];
+const targetingBy = [
+  "Demographics",
+  "Geography",
+  "Interests",
+  "Purchase behavior",
+  "Household characteristics",
+];
 
 const faqs = [
   {
@@ -269,7 +296,8 @@ const ctvSchemas = [
 
 const CTVAdvertising = () => {
   useEffect(() => {
-    document.title = "CTV Advertising Platform | Programmatic Connected TV Ads — PublifyX";
+    document.title =
+      "CTV Advertising Platform | Programmatic Connected TV Ads — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
@@ -303,7 +331,8 @@ const CTVAdvertising = () => {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -312,49 +341,62 @@ const CTVAdvertising = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <PageBreadcrumb items={breadcrumbs} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
-                <span className="text-sm font-medium text-white/80">Connected TV Advertising</span>
+                <span className="text-sm font-medium text-white/80">
+                  Connected TV Advertising
+                </span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-4xl">
                 CTV Advertising Platform —
-                <span className="block text-brand-orange-400">Reach Audiences on Connected TV</span>
+                <span className="block text-brand-orange-400">
+                  Reach Audiences on Connected TV
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
                 Television has not disappeared. It has evolved.
               </p>
               <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-                Connected TV advertising allows brands to reach viewers on smart TVs and streaming devices with the
-                full-screen impact of traditional TV combined with the targeting precision and measurability of digital.
+                Connected TV advertising allows brands to reach viewers on smart
+                TVs and streaming devices with the full-screen impact of
+                traditional TV combined with the targeting precision and
+                measurability of digital.
               </p>
               <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-                PublifyX gives agencies and advertisers a powerful CTV advertising platform to plan, execute, and
-                measure campaigns across premium streaming environments, all from a unified dashboard.
+                PublifyX gives agencies and advertisers a powerful CTV
+                advertising platform to plan, execute, and measure campaigns
+                across premium streaming environments, all from a unified
+                dashboard.
               </p>
               <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-                Deliver non-skippable, full-screen video ads to viewers watching content on smart TVs, Roku, Amazon Fire
-                TV, Apple TV, gaming consoles, and other connected devices.
+                Deliver non-skippable, full-screen video ads to viewers watching
+                content on smart TVs, Roku, Amazon Fire TV, Apple TV, gaming
+                consoles, and other connected devices.
               </p>
-              <p className="text-base text-navy-300 mb-6 font-semibold">Big screen impact. Digital precision.</p>
+              <p className="text-base text-navy-300 mb-6 font-semibold">
+                Big screen impact. Digital precision.
+              </p>
               <h3 className="text-lg text-navy-200 mb-6">
-                Explore how CTV can fit into your media strategy. Book a demo today.
+                Explore how CTV can fit into your media strategy. Book a demo
+                today.
               </h3>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link to="/contact" className="flex items-center text-white no-underline group">
-                    Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <Link
+                    to="/contact"
+                    className="flex items-center text-white no-underline group"
+                  >
+                    Book a Call{" "}
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
               </div>
-              <p className="text-sm text-navy-400">No commitment required · Launch campaigns in minutes</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="hidden lg:block"
-            >
+              <p className="text-sm text-navy-400">
+                No commitment required · Launch campaigns in minutes
+              </p>
+            </div>
+            <div className="hidden lg:block">
               <div className="relative">
                 <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
                 <img
@@ -367,7 +409,7 @@ const CTVAdvertising = () => {
                   decoding="sync"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -399,14 +441,18 @@ const CTVAdvertising = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
             >
-              CTV advertising refers to video ads delivered through internet-connected television devices. Unlike
-              traditional linear TV, where ads are broadcast to mass audiences during scheduled programming, CTV ads are
-              served programmatically to specific households or audience segments based on data-driven targeting.
+              CTV advertising refers to video ads delivered through
+              internet-connected television devices. Unlike traditional linear
+              TV, where ads are broadcast to mass audiences during scheduled
+              programming, CTV ads are served programmatically to specific
+              households or audience segments based on data-driven targeting.
             </motion.p>
           </div>
 
           <div className="max-w-5xl mx-auto mb-12">
-            <h3 className="text-xl font-bold text-navy-800 mb-8 text-center">Connected TV devices include:</h3>
+            <h3 className="text-xl font-bold text-navy-800 mb-8 text-center">
+              Connected TV devices include:
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {ctvDevices.map((device, i) => (
                 <motion.div
@@ -425,7 +471,9 @@ const CTVAdvertising = () => {
                       loading="lazy"
                     />
                   </div>
-                  <h4 className="font-semibold text-navy-800 text-sm leading-snug">{device.label}</h4>
+                  <h4 className="font-semibold text-navy-800 text-sm leading-snug">
+                    {device.label}
+                  </h4>
                 </motion.div>
               ))}
             </div>
@@ -438,9 +486,11 @@ const CTVAdvertising = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <p className="text-lg text-navy-400 leading-relaxed">
-              CTV advertising is a subset of OTT (over-the-top) advertising. While OTT refers to content delivered via
-              the internet across all devices (smartphones, tablets, laptops, TVs), CTV specifically refers to ads
-              viewed on a television screen through an internet connection.
+              CTV advertising is a subset of OTT (over-the-top) advertising.
+              While OTT refers to content delivered via the internet across all
+              devices (smartphones, tablets, laptops, TVs), CTV specifically
+              refers to ads viewed on a television screen through an internet
+              connection.
             </p>
           </motion.div>
         </div>
@@ -481,9 +531,10 @@ const CTVAdvertising = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
             >
-              The shift from cable to streaming is not a trend, it is a structural change in media consumption.
-              Cord-cutting households continue to grow year over year, and a significant portion of younger demographics
-              have never subscribed to traditional cable.
+              The shift from cable to streaming is not a trend, it is a
+              structural change in media consumption. Cord-cutting households
+              continue to grow year over year, and a significant portion of
+              younger demographics have never subscribed to traditional cable.
             </motion.p>
           </div>
 
@@ -495,7 +546,9 @@ const CTVAdvertising = () => {
               transition={{ duration: 0.5 }}
               className="bg-white rounded-2xl border border-navy-100 p-8"
             >
-              <h3 className="text-xl font-bold text-navy-800 mb-6">CTV brings together:</h3>
+              <h3 className="text-xl font-bold text-navy-800 mb-6">
+                CTV brings together:
+              </h3>
               <ul className="space-y-4">
                 {ctvBrings.map((item) => (
                   <li key={item} className="flex items-center gap-3">
@@ -515,7 +568,9 @@ const CTVAdvertising = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-white rounded-2xl border border-navy-100 p-8"
             >
-              <h3 className="text-xl font-bold text-navy-800 mb-6">Additionally, CTV enables targeting by:</h3>
+              <h3 className="text-xl font-bold text-navy-800 mb-6">
+                Additionally, CTV enables targeting by:
+              </h3>
               <ul className="space-y-4">
                 {targetingBy.map((item) => (
                   <li key={item} className="flex items-center gap-3">
@@ -536,12 +591,14 @@ const CTVAdvertising = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <p className="text-lg text-navy-400 leading-relaxed mb-4">
-              Completion rates on CTV typically exceed mobile and desktop video. Viewers actively choose what they
-              watch, resulting in higher attention and brand recall.
+              Completion rates on CTV typically exceed mobile and desktop video.
+              Viewers actively choose what they watch, resulting in higher
+              attention and brand recall.
             </p>
             <p className="text-lg text-navy-400 leading-relaxed">
-              Advertisers can control frequency, optimize in real time, and measure outcomes including website visits,
-              app installs, and offline conversions.
+              Advertisers can control frequency, optimize in real time, and
+              measure outcomes including website visits, app installs, and
+              offline conversions.
             </p>
           </motion.div>
         </div>
@@ -559,7 +616,11 @@ const CTVAdvertising = () => {
             >
               Platform Features
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               PublifyX CTV Advertising Platform Features
             </motion.h2>
           </div>
@@ -576,8 +637,12 @@ const CTVAdvertising = () => {
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <feature.icon className="w-6 h-6 text-brand-orange-500" />
                   </div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">{feature.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="font-bold text-navy-800 text-lg mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </MagneticCard>
               </motion.div>
             ))}
@@ -597,7 +662,11 @@ const CTVAdvertising = () => {
             >
               How It Works
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               How CTV Advertising Works with PublifyX
             </motion.h2>
           </div>
@@ -628,9 +697,15 @@ const CTVAdvertising = () => {
                       loading="lazy"
                     />
                   </div>
-                  <span className="inline-block text-sm font-bold text-brand-orange-500 mb-2">{step.number}</span>
-                  <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+                  <span className="inline-block text-sm font-bold text-brand-orange-500 mb-2">
+                    {step.number}
+                  </span>
+                  <h3 className="font-bold text-navy-800 text-base mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">
+                    {step.description}
+                  </p>
                 </motion.div>
               );
             })}
@@ -667,8 +742,12 @@ const CTVAdvertising = () => {
             No commitment required · Launch campaigns in minutes
           </p>
           <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link to="/contact" className="flex items-center text-white no-underline group">
-              Contact Us <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Link
+              to="/contact"
+              className="flex items-center text-white no-underline group"
+            >
+              Contact Us{" "}
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </EnergyButton>
         </motion.div>
@@ -710,7 +789,11 @@ const CTVAdvertising = () => {
             >
               FAQ
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Frequently Asked Questions About CTV Advertising
             </motion.h2>
           </div>
@@ -721,7 +804,11 @@ const CTVAdvertising = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.06, duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
+                transition={{
+                  delay: i * 0.06,
+                  duration: 0.4,
+                  ease: [0.33, 1, 0.68, 1],
+                }}
               >
                 <AccordionItem
                   value={`item-${i}`}
@@ -730,7 +817,9 @@ const CTVAdvertising = () => {
                   <AccordionTrigger className="py-5 !text-[16px] text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="pb-5 text-navy-400 leading-relaxed">{faq.answer}</AccordionContent>
+                  <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               </motion.div>
             ))}

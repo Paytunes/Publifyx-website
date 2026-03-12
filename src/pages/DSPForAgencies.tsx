@@ -25,37 +25,48 @@ import {
   Globe,
 } from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const features = [
   {
     title: "Multi-Channel Buying",
-    description: "Run display, video, audio, CTV, and OTT campaigns from a single interface.",
+    description:
+      "Run display, video, audio, CTV, and OTT campaigns from a single interface.",
     icon: Layers,
   },
   {
     title: "White Label Branding",
-    description: "Deploy under your agency's brand — custom domain, logo, colors, and reports.",
+    description:
+      "Deploy under your agency's brand — custom domain, logo, colors, and reports.",
     icon: Palette,
   },
   {
     title: "Flexible Client Access",
-    description: "Grant self-serve access, view-only dashboards, or manage everything internally.",
+    description:
+      "Grant self-serve access, view-only dashboards, or manage everything internally.",
     icon: Users,
   },
   {
     title: "Transparent Pricing",
-    description: "No hidden markups on media. You control what you charge clients.",
+    description:
+      "No hidden markups on media. You control what you charge clients.",
     icon: DollarSign,
   },
   {
     title: "Dedicated Support",
-    description: "Onboarding, training, and ongoing support tailored to how agencies operate.",
+    description:
+      "Onboarding, training, and ongoing support tailored to how agencies operate.",
     icon: Headphones,
   },
   {
     title: "Scalable Infrastructure",
-    description: "From ten clients to a hundred — the platform scales without constraints.",
+    description:
+      "From ten clients to a hundred — the platform scales without constraints.",
     icon: Zap,
   },
 ];
@@ -63,22 +74,26 @@ const features = [
 const agencyTypes = [
   {
     title: "Independent Media Agencies",
-    description: "Bring programmatic in-house, replace third-party DSPs, and capture margins that went to middlemen.",
+    description:
+      "Bring programmatic in-house, replace third-party DSPs, and capture margins that went to middlemen.",
     icon: Building2,
   },
   {
     title: "Performance Marketing Agencies",
-    description: "Run data-driven campaigns optimizing toward CPA, ROAS, and performance KPIs with log-level data.",
+    description:
+      "Run data-driven campaigns optimizing toward CPA, ROAS, and performance KPIs with log-level data.",
     icon: Target,
   },
   {
     title: "Creative Agencies",
-    description: "Add programmatic capabilities to your offering without building a media buying team from scratch.",
+    description:
+      "Add programmatic capabilities to your offering without building a media buying team from scratch.",
     icon: Star,
   },
   {
     title: "Regional & Boutique Agencies",
-    description: "Compete with larger agencies by presenting clients with a proprietary technology platform.",
+    description:
+      "Compete with larger agencies by presenting clients with a proprietary technology platform.",
     icon: Globe,
   },
 ];
@@ -87,7 +102,8 @@ const steps = [
   {
     number: "01",
     title: "Schedule Consultation",
-    description: "Define business requirements, branding, and client structure.",
+    description:
+      "Define business requirements, branding, and client structure.",
     icon: PhoneCall,
   },
   {
@@ -99,13 +115,15 @@ const steps = [
   {
     number: "03",
     title: "Deploy Your DSP",
-    description: "Your branded platform goes live — typically within 5-10 business days.",
+    description:
+      "Your branded platform goes live — typically within 5-10 business days.",
     icon: Rocket,
   },
   {
     number: "04",
     title: "Onboarding & Growth",
-    description: "Your team receives training and ongoing support for campaign optimization.",
+    description:
+      "Your team receives training and ongoing support for campaign optimization.",
     icon: GraduationCap,
   },
 ];
@@ -127,17 +145,20 @@ const faqs = [
   },
   {
     question: "Do agencies need technical staff?",
-    answer: "No dedicated technical staff required. PublifyX handles infrastructure, maintenance, and updates.",
+    answer:
+      "No dedicated technical staff required. PublifyX handles infrastructure, maintenance, and updates.",
   },
   {
     question: "How quickly can an agency get started?",
-    answer: "Most deployments complete within 5-10 business days including branding, SSP integrations, and onboarding.",
+    answer:
+      "Most deployments complete within 5-10 business days including branding, SSP integrations, and onboarding.",
   },
 ];
 
 const DSPForAgencies = () => {
   useEffect(() => {
-    document.title = "DSP for Agencies | Programmatic Platform Built for Media Agencies — PublifyX";
+    document.title =
+      "DSP for Agencies | Programmatic Platform Built for Media Agencies — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
@@ -158,7 +179,8 @@ const DSPForAgencies = () => {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -167,38 +189,43 @@ const DSPForAgencies = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <PageBreadcrumb items={breadcrumbs} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
-                <span className="text-sm font-medium text-white/80">DSP for Agencies</span>
+                <span className="text-sm font-medium text-white/80">
+                  DSP for Agencies
+                </span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1]">
                 DSP for Agencies — Bring Programmatic
-                <span className="block text-brand-orange-400">Buying In-House</span>
+                <span className="block text-brand-orange-400">
+                  Buying In-House
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-                Eliminate third-party fees, increase margins, and present clients with a branded programmatic platform
-                that carries your agency's identity.
+                Eliminate third-party fees, increase margins, and present
+                clients with a branded programmatic platform that carries your
+                agency's identity.
               </p>
               <p className="text-base text-navy-300 mb-10 font-semibold">
                 Your brand · Your margins · Your clients · Our infrastructure
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link to="/contact" className="flex items-center text-white no-underline group">
+                  <Link
+                    to="/contact"
+                    className="flex items-center text-white no-underline group"
+                  >
                     Book a Call{" "}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
               </div>
-              <p className="text-sm text-navy-400">No commitment required · Deploy in 5-10 days</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="hidden lg:block"
-            >
+              <p className="text-sm text-navy-400">
+                No commitment required · Deploy in 5-10 days
+              </p>
+            </div>
+            <div className="hidden lg:block">
               <div className="relative">
                 <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
                 <img
@@ -211,7 +238,7 @@ const DSPForAgencies = () => {
                   decoding="sync"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -243,9 +270,10 @@ const DSPForAgencies = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
             >
-              Third-party DSPs erode margins, create transparency concerns, and make it difficult to differentiate.
-              Operating your own DSP changes the equation — you control the workflow, set margins, and present clients
-              with your branded platform.
+              Third-party DSPs erode margins, create transparency concerns, and
+              make it difficult to differentiate. Operating your own DSP changes
+              the equation — you control the workflow, set margins, and present
+              clients with your branded platform.
             </motion.p>
           </div>
           <motion.div
@@ -255,7 +283,9 @@ const DSPForAgencies = () => {
             className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
           >
             <div className="bg-navy-50 rounded-2xl border border-navy-100 p-8">
-              <h3 className="text-xl font-bold text-navy-800 mb-4">Without Your Own DSP</h3>
+              <h3 className="text-xl font-bold text-navy-800 mb-4">
+                Without Your Own DSP
+              </h3>
               <ul className="space-y-3">
                 {[
                   "Paying percentage-based fees",
@@ -273,7 +303,9 @@ const DSPForAgencies = () => {
               </ul>
             </div>
             <div className="bg-navy-800 rounded-2xl border border-navy-700 p-8">
-              <h3 className="text-xl font-bold text-white mb-4">With PublifyX DSP</h3>
+              <h3 className="text-xl font-bold text-white mb-4">
+                With PublifyX DSP
+              </h3>
               <ul className="space-y-3">
                 {[
                   "Control entire media buying workflow",
@@ -307,7 +339,11 @@ const DSPForAgencies = () => {
             >
               Platform Features
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               What Makes PublifyX Right for Agencies
             </motion.h2>
           </div>
@@ -324,8 +360,12 @@ const DSPForAgencies = () => {
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <feature.icon className="w-6 h-6 text-brand-orange-500" />
                   </div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">{feature.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="font-bold text-navy-800 text-lg mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </MagneticCard>
               </motion.div>
             ))}
@@ -345,7 +385,11 @@ const DSPForAgencies = () => {
             >
               Built For You
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               How Agencies Use PublifyX
             </motion.h2>
           </div>
@@ -362,8 +406,12 @@ const DSPForAgencies = () => {
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <audience.icon className="w-6 h-6 text-brand-orange-500" />
                   </div>
-                  <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
-                  <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+                  <h3 className="font-bold text-navy-800 text-xl mb-2">
+                    {audience.title}
+                  </h3>
+                  <p className="text-navy-400 leading-relaxed">
+                    {audience.description}
+                  </p>
                 </MagneticCard>
               </motion.div>
             ))}
@@ -383,7 +431,11 @@ const DSPForAgencies = () => {
             >
               Get Started
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               How to Get Started
             </motion.h2>
           </div>
@@ -404,9 +456,15 @@ const DSPForAgencies = () => {
                   <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-navy-700 transition-colors">
                     <step.icon className="w-8 h-8 text-brand-orange-400" />
                   </div>
-                  <div className="text-xs font-bold text-brand-orange-500 mb-2">{step.number}</div>
-                  <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+                  <div className="text-xs font-bold text-brand-orange-500 mb-2">
+                    {step.number}
+                  </div>
+                  <h3 className="font-bold text-navy-800 text-base mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -418,7 +476,10 @@ const DSPForAgencies = () => {
             className="text-center"
           >
             <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-              <Link to="/contact" className="flex items-center text-white no-underline group">
+              <Link
+                to="/contact"
+                className="flex items-center text-white no-underline group"
+              >
                 Get Your Agency's Own DSP{" "}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -431,7 +492,9 @@ const DSPForAgencies = () => {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-navy-50 rounded-2xl border border-navy-100 p-6 md:p-8">
-            <h3 className="text-lg font-bold text-navy-900 mb-4">Explore Related Services</h3>
+            <h3 className="text-lg font-bold text-navy-900 mb-4">
+              Explore Related Services
+            </h3>
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/white-label-dsp"
@@ -462,11 +525,17 @@ const DSPForAgencies = () => {
         >
           <h2 className="mb-6 !text-white">Get Your Agency's Own DSP</h2>
           <p className="text-xl text-navy-300 mb-4 leading-relaxed">
-            Eliminate third-party fees, increase margins, and present clients with a branded platform.
+            Eliminate third-party fees, increase margins, and present clients
+            with a branded platform.
           </p>
-          <p className="text-base text-navy-400 mb-10 font-semibold">No commitment required · Deploy in 5-10 days</p>
+          <p className="text-base text-navy-400 mb-10 font-semibold">
+            No commitment required · Deploy in 5-10 days
+          </p>
           <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link to="/contact" className="flex items-center text-white no-underline group">
+            <Link
+              to="/contact"
+              className="flex items-center text-white no-underline group"
+            >
               Book a Call{" "}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -486,11 +555,19 @@ const DSPForAgencies = () => {
             >
               FAQ
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Frequently Asked Questions
             </motion.h2>
           </div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
                 <AccordionItem
@@ -501,7 +578,9 @@ const DSPForAgencies = () => {
                   <AccordionTrigger className="text-left font-semibold text-navy-800 hover:text-brand-orange-500 hover:no-underline py-5">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
