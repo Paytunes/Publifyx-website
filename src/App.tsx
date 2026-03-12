@@ -6,22 +6,18 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
-// Statically imported — these are high-priority landing pages that must not
-// incur an extra React.lazy() network roundtrip. Each gets its own manualChunk
-// (page-ott, page-wl-dsp, page-ctv, page-display) so Vite emits
-// <link rel="modulepreload"> for them at build time.
-import WhiteLabelDSP from "./pages/WhiteLabelDSP";
-import CTVAdvertisingNew from "./pages/CTVAdvertisingNew";
-import OTTAdvertising from "./pages/OTTAdvertising";
-import ProgrammaticDisplayAdvertising from "./pages/ProgrammaticDisplayAdvertising";
-
-// Remaining pages are lazy-loaded so the main entry bundle stays minimal.
+// All pages are lazy-loaded so the main entry bundle stays minimal.
 // Contact is lazy — form functionality is 100% preserved, just deferred until /contact is navigated to.
 const Index = lazy(() => import("./pages/Index"));
 const Contact = lazy(() => import("./pages/Contact"));
 
 // High-traffic pages
 const Blog = lazy(() => import("./pages/Blog"));
+const WhiteLabelDSP = lazy(() => import("./pages/WhiteLabelDSP"));
+
+// Lazy-loaded pages
+const CTVAdvertisingNew = lazy(() => import("./pages/CTVAdvertisingNew"));
+const OTTAdvertising = lazy(() => import("./pages/OTTAdvertising"));
 
 const About = lazy(() => import("./pages/About"));
 
@@ -30,6 +26,7 @@ const DigitalAdvertising = lazy(() => import("./pages/DigitalAdvertising"));
 const Services = lazy(() => import("./pages/Services"));
 const CEO = lazy(() => import("./pages/CEO"));
 const ProgrammaticAudioAdvertising = lazy(() => import("./pages/ProgrammaticAudioAdvertising"));
+const ProgrammaticDisplayAdvertising = lazy(() => import("./pages/ProgrammaticDisplayAdvertising"));
 
 // Existing blog posts
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));

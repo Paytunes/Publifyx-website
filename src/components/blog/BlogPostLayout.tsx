@@ -1,4 +1,3 @@
-import "@/styles/article.css";
 import { ReactNode } from "react";
 import Layout from "@/components/Layout";
 import { ArrowLeft, Twitter, Linkedin, Facebook } from "lucide-react";
