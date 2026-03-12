@@ -712,38 +712,34 @@ const DisplayStickyFeaturesSection = () => {
   // Desktop refs
   const outerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const outer = outerRef.current;
     const track = trackRef.current;
-    if (!outer || !track) return;
+    const container = containerRef.current;
+    if (!outer || !track || !container) return;
 
-    // ── Set outer div height so vertical scroll has enough room ──
     const setHeight = () => {
-      // Safety: skip if element is not rendered (display:none from hidden)
       if (outer.offsetParent === null) return;
-      // maxTranslate: how far we need to shift so the last card's right edge
-      // aligns with the right edge of the viewport (minus padding).
-      const rightPad = Math.max(32, window.innerWidth * 0.05); // matches clamp padding
-      const maxTranslate = Math.max(0, track.scrollWidth - window.innerWidth + rightPad);
+      const containerWidth = container.offsetWidth;
+      const maxTranslate = Math.max(0, track.scrollWidth - containerWidth);
       outer.style.height = `${window.innerHeight + maxTranslate}px`;
     };
 
-    // ── Translate track horizontally based on scroll progress ──
     const onScroll = () => {
-      if (outer.offsetParent === null) return; // not rendered
+      if (outer.offsetParent === null) return;
       const rect = outer.getBoundingClientRect();
       const scrolled = Math.max(0, -rect.top);
       const maxScroll = outer.offsetHeight - window.innerHeight;
       if (maxScroll <= 0) return;
 
       const progress = Math.min(1, scrolled / maxScroll);
-      const rightPad = Math.max(32, window.innerWidth * 0.05);
-      const maxTranslate = Math.max(0, track.scrollWidth - window.innerWidth + rightPad);
+      const containerWidth = container.offsetWidth;
+      const maxTranslate = Math.max(0, track.scrollWidth - containerWidth);
 
-      // Direct DOM mutation — no React state — smooth on every frame
       track.style.transform = `translateX(${-progress * maxTranslate}px)`;
 
       // Progress bar fill
@@ -787,24 +783,21 @@ const DisplayStickyFeaturesSection = () => {
           ═══════════════════════════════════════ */}
       <div className="hidden lg:block" style={sectionBg}>
         {/* Outer tall div — captures vertical scroll distance */}
-        <div ref={outerRef} className="relative max-w-[1920px] mx-auto">
+        <div ref={outerRef} className="relative">
           {/* Sticky container — pins to viewport for the entire scroll range */}
           <div className="sticky top-0 overflow-hidden flex flex-col" style={{ height: "100vh" }}>
             <div className="max-w-7xl mx-auto w-full px-4">
               <SectionHeader hint />
             </div>
 
-            {/* Horizontal card track */}
-            <div className="flex-1 flex items-center overflow-hidden">
+            {/* Horizontal card track — constrained to 7xl */}
+            <div ref={containerRef} className="flex-1 flex items-center overflow-hidden max-w-7xl mx-auto w-full px-4">
               <div
                 ref={trackRef}
                 className="flex flex-row items-stretch h-fit py-4"
                 style={{
                   gap: "26px",
-                  paddingLeft: "clamp(32px, 5vw, 80px)",
-                  paddingRight: "clamp(32px, 5vw, 80px)",
                   willChange: "transform",
-                  // No CSS transition — scroll handler drives it at native speed
                 }}
               >
                 {features.map((feature, i) => (
@@ -814,7 +807,7 @@ const DisplayStickyFeaturesSection = () => {
             </div>
 
             {/* Progress bar + dot indicators */}
-            <div className="flex-shrink-0 pb-7 px-[5vw] flex items-center gap-4">
+            <div className="flex-shrink-0 pb-7 max-w-7xl mx-auto w-full px-4 flex items-center gap-4">
               {/* Dots */}
               <div className="flex items-center gap-2">
                 {features.map((_, i) => (
