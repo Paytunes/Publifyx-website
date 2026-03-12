@@ -158,7 +158,7 @@ const ClientTestimonialSection = ({
               <Sparkles className="w-5 h-5 text-brand-orange-500 mb-5" />
               <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display mb-6">"{quote}"</p>
               <div className="w-10 h-px bg-navy-200 mb-3" />
-              <p className="text-sm font-semibold text-navy-500">— {attribution}</p>
+              {attribution && <p className="text-sm font-semibold text-navy-500">— {attribution}</p>}
             </div>
           </motion.div>
 
