@@ -625,10 +625,10 @@ const FeatureCard = ({ feature, index }: CardProps) => {
     <motion.div
       whileHover={{ scale: 1.03, y: -6 }}
       transition={{ duration: 0.24, ease: [0.33, 1, 0.68, 1] }}
-      className="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden"
+      className="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden w-full lg:w-auto"
       style={{
-        minWidth: "clamp(280px, 85vw, 420px)",
-        width: "420px",
+        minWidth: typeof window !== "undefined" && window.innerWidth >= 1024 ? "clamp(280px, 85vw, 420px)" : undefined,
+        width: typeof window !== "undefined" && window.innerWidth >= 1024 ? "420px" : undefined,
         background: "rgba(9, 20, 40, 0.92)",
         border: "1px solid rgba(249,115,22,0.17)",
         boxShadow: "0 8px 48px rgba(0,0,0,0.55), 0 0 0 0.5px rgba(249,115,22,0.08) inset",
