@@ -508,8 +508,8 @@ const ProgrammaticDisplayAdvertising = () => {
       />
 
       {/* ═══════════════ EXPLORE RELATED SERVICES ═══════════════ */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-16 bg-white max-w-7xl mx-auto">
+        <div className="px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <motion.span
               initial={{ opacity: 0 }}
@@ -528,7 +528,7 @@ const ProgrammaticDisplayAdvertising = () => {
               Explore Related Services
             </motion.h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: "OTT Advertising",
