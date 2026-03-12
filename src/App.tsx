@@ -6,19 +6,18 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
-// Static imports — Vite adds <link rel="modulepreload"> for these chunks in the
-// HTML <head> so browsers fetch them in parallel with the entry JS, eliminating
-// the React.lazy() network roundtrip that caused 3–5 s LCP delays on these pages.
-// Each has its own manualChunk in vite.config.ts to keep the entry bundle small.
-import WhiteLabelDSP from "./pages/WhiteLabelDSP";
-import CTVAdvertisingNew from "./pages/CTVAdvertisingNew";
-import OTTAdvertising from "./pages/OTTAdvertising";
-import ProgrammaticDisplayAdvertising from "./pages/ProgrammaticDisplayAdvertising";
-
-// Lazy-loaded pages — less critical or lower traffic
+// All pages are lazy-loaded so the main entry bundle stays minimal.
+// Contact is lazy — form functionality is 100% preserved, just deferred until /contact is navigated to.
 const Index = lazy(() => import("./pages/Index"));
 const Contact = lazy(() => import("./pages/Contact"));
+
+// High-traffic pages
 const Blog = lazy(() => import("./pages/Blog"));
+const WhiteLabelDSP = lazy(() => import("./pages/WhiteLabelDSP"));
+
+// Lazy-loaded pages
+const CTVAdvertisingNew = lazy(() => import("./pages/CTVAdvertisingNew"));
+const OTTAdvertising = lazy(() => import("./pages/OTTAdvertising"));
 
 const About = lazy(() => import("./pages/About"));
 
@@ -27,6 +26,7 @@ const DigitalAdvertising = lazy(() => import("./pages/DigitalAdvertising"));
 const Services = lazy(() => import("./pages/Services"));
 const CEO = lazy(() => import("./pages/CEO"));
 const ProgrammaticAudioAdvertising = lazy(() => import("./pages/ProgrammaticAudioAdvertising"));
+const ProgrammaticDisplayAdvertising = lazy(() => import("./pages/ProgrammaticDisplayAdvertising"));
 
 // Existing blog posts
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
