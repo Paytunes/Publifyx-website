@@ -493,49 +493,33 @@ const ProgrammaticDisplayAdvertising = () => {
           </div>
 
           {/* Desktop: 2-col grid | Tablet: 2-col compact | Mobile: stacked */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {adFormats.map((format, i) => {
-              const Icon = format.icon;
-              return (
-                <motion.div
-                  key={format.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="group bg-white border border-navy-100 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-brand-orange-500/5 hover:-translate-y-1 transition-all duration-300 hover:border-brand-orange-500/30 flex flex-col"
-                >
-                  {/* Image / illustration at card top */}
-                  <div className="bg-gradient-to-br from-navy-50 to-navy-100 flex items-center justify-center p-10 relative overflow-hidden">
-                    <div
-                      className="absolute inset-0 opacity-[0.04]"
-                      style={{
-                        backgroundImage:
-                          "radial-gradient(circle at 1px 1px, #1e3a5f 1px, transparent 0)",
-                        backgroundSize: "24px 24px",
-                      }}
-                    />
-                    <div className="relative z-10 w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center">
-                      <Icon className="w-9 h-9 text-brand-orange-500" />
-                    </div>
-                  </div>
-
-                  {/* Card content */}
-                  <div className="p-6 flex flex-col flex-1">
-                    {/* Category indicator — accent orange */}
-                    <span className="inline-block text-xs font-extrabold text-brand-orange-500 uppercase tracking-widest mb-3">
-                      Format {format.category}
-                    </span>
-                    <h3 className="font-extrabold text-navy-800 text-xl mb-3 group-hover:text-brand-orange-600 transition-colors">
-                      {format.title}
-                    </h3>
-                    <p className="text-navy-500 leading-relaxed font-medium flex-1">
-                      {format.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {adFormats.map((format, i) => (
+              <motion.div
+                key={format.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12, duration: 0.5 }}
+                className="bg-navy-50 rounded-2xl border border-navy-100 p-6 text-center shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col"
+              >
+                <div className="w-full h-36 flex items-center justify-center mb-5">
+                  <img
+                    src={format.image}
+                    alt={format.title}
+                    className="max-h-full max-w-[80%] object-contain rounded-xl"
+                    width={320}
+                    height={205}
+                    loading="lazy"
+                  />
+                </div>
+                <span className="inline-block text-sm font-bold text-brand-orange-500 mb-2">
+                  {format.category}
+                </span>
+                <h3 className="font-bold text-navy-800 text-base mb-2">{format.title}</h3>
+                <p className="text-navy-400 text-sm leading-relaxed">{format.desc}</p>
+              </motion.div>
+            ))}
           </div>
 
           {/* Ad formats CTA */}
