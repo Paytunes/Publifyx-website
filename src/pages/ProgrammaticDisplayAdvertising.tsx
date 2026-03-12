@@ -311,7 +311,7 @@ const ProgrammaticDisplayAdvertising = () => {
               <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">
                 What Is Programmatic Display Advertising?
               </h2>
-              <div className="space-y-4 text-navy-600 leading-relaxed text-lg">
+              <div className="space-y-2 text-navy-600 leading-relaxed text-lg">
                 <p>
                   Programmatic display advertising is the automated buying and selling of display ad inventory through
                   real-time bidding technology.
