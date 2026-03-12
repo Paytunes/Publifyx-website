@@ -595,7 +595,7 @@ const ProgrammaticDisplayAdvertising = () => {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
             >
-              Frequently Asked Questions About Programmatic Display Advertising
+              Frequently Asked Questions
             </motion.h2>
           </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
