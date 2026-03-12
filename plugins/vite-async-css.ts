@@ -22,8 +22,7 @@ export function asyncCssPlugin(): Plugin {
     name: "vite-async-css",
     apply: "build",
     transformIndexHtml: {
-      // Run after Vite has injected all asset <link> tags into the HTML
-      enforce: "post",
+      order: "post",
       handler(html) {
         return html.replace(
           /<link rel="stylesheet" crossorigin href="(\/assets\/[^"]+\.css)">/g,
