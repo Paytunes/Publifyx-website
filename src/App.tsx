@@ -4,11 +4,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 
-// Lazy-loaded high-traffic pages
+// All pages are lazy-loaded so the main entry bundle stays minimal.
+// Contact is lazy — form functionality is 100% preserved, just deferred until /contact is navigated to.
+const Index = lazy(() => import("./pages/Index"));
+const Contact = lazy(() => import("./pages/Contact"));
+
+// High-traffic pages
 const Blog = lazy(() => import("./pages/Blog"));
 const WhiteLabelDSP = lazy(() => import("./pages/WhiteLabelDSP"));
 

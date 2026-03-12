@@ -18,8 +18,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Merge all CSS into a single file injected directly in HTML <head>
-    // This breaks the JS→CSS critical chain flagged by PageSpeed
+    // CSS is split per JS chunk so each lazy route only loads what it needs
     cssCodeSplit: true,
     // Increase warning limit to avoid noise from intentional large vendor chunks
     chunkSizeWarningLimit: 600,
@@ -28,12 +27,37 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           // Isolate framer-motion — it's 300KB+ and only needed for animations
           "framer-motion": ["framer-motion"],
-          // React core + router kept lean and fast
+          // React core + router — smallest possible critical-path chunk
           "react-vendor": ["react", "react-dom", "react-router-dom"],
           // Tanstack query separate chunk
           query: ["@tanstack/react-query"],
           // Lucide icons — large icon set
           lucide: ["lucide-react"],
+          // Radix UI primitives (used by shadcn/ui) — kept out of the main entry
+          // chunk so pages that don't use dialogs/selects don't pay the cost
+          "radix-ui": [
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-alert-dialog",
+            "@radix-ui/react-avatar",
+            "@radix-ui/react-checkbox",
+            "@radix-ui/react-collapsible",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-label",
+            "@radix-ui/react-popover",
+            "@radix-ui/react-progress",
+            "@radix-ui/react-radio-group",
+            "@radix-ui/react-scroll-area",
+            "@radix-ui/react-select",
+            "@radix-ui/react-separator",
+            "@radix-ui/react-slider",
+            "@radix-ui/react-slot",
+            "@radix-ui/react-switch",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-toast",
+            "@radix-ui/react-toggle",
+            "@radix-ui/react-tooltip",
+          ],
         },
       },
     },
