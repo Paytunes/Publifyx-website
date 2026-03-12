@@ -13,21 +13,8 @@ import formatRichMedia from "@/assets/display/format-rich-media.webp";
 import formatInterstitial from "@/assets/display/format-interstitial.webp";
 import { motion } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
-import {
-  ArrowRight,
-  Sparkles,
-  Image,
-  Layout as LayoutIcon,
-  Film,
-  Maximize2,
-  Layers,
-} from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { ArrowRight, Sparkles, Image, Layout as LayoutIcon, Film, Maximize2, Layers } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
 import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
 import DisplayStickyFeaturesSection from "@/components/sections/displayAdvertising/DisplayStickyFeaturesSection";
@@ -198,8 +185,7 @@ const displaySchemas = [
 
 const ProgrammaticDisplayAdvertising = () => {
   useEffect(() => {
-    document.title =
-      "Programmatic Display Advertising Platform | Display DSP — PublifyX";
+    document.title = "Programmatic Display Advertising Platform | Display DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
@@ -234,8 +220,7 @@ const ProgrammaticDisplayAdvertising = () => {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -247,44 +232,31 @@ const ProgrammaticDisplayAdvertising = () => {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
-                <span className="text-sm font-medium text-white/80">
-                  Display Advertising Platform
-                </span>
+                <span className="text-sm font-medium text-white/80">Display Advertising Platform</span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-4xl">
-                Programmatic Display Advertising — Banner, Native, and Rich
-                Media Ads at Scale
+                Programmatic Display Advertising — Banner, Native, and Rich Media Ads at Scale
               </h1>
               <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-                Display advertising remains one of the most powerful foundations
-                of programmatic media buying. From banner placements on premium
-                news websites to native ads embedded within mobile apps, display
-                campaigns allow advertisers to reach audiences at scale while
-                maintaining precise targeting and control.
+                Display advertising remains one of the most powerful foundations of programmatic media buying. From
+                banner placements on premium news websites to native ads embedded within mobile apps, display campaigns
+                allow advertisers to reach audiences at scale while maintaining precise targeting and control.
               </p>
               <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-                PublifyX provides a programmatic display advertising platform
-                that connects advertisers to billions of daily impressions
-                across websites, mobile apps, and digital properties worldwide.
+                PublifyX provides a programmatic display advertising platform that connects advertisers to billions of
+                daily impressions across websites, mobile apps, and digital properties worldwide.
               </p>
               <p className="text-base text-navy-300 mb-8 leading-relaxed max-w-xl">
-                Run banner ads, native ads, and rich media campaigns with
-                advanced targeting, real-time bidding, and transparent
-                reporting, all within the same multi-channel DSP used for video,
-                audio, OTT, and CTV.
+                Run banner ads, native ads, and rich media campaigns with advanced targeting, real-time bidding, and
+                transparent reporting, all within the same multi-channel DSP used for video, audio, OTT, and CTV.
               </p>
               <p className="text-sm text-navy-300 mb-6 font-semibold">
-                Looking to scale display advertising with programmatic
-                precision? Request a platform walkthrough.
+                Looking to scale display advertising with programmatic precision? Request a platform walkthrough.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link
-                    to="/contact"
-                    className="flex items-center text-white no-underline group"
-                  >
-                    Book a Demo{" "}
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <Link to="/contact" className="flex items-center text-white no-underline group">
+                    Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
               </div>
@@ -341,34 +313,28 @@ const ProgrammaticDisplayAdvertising = () => {
               </h2>
               <div className="space-y-4 text-navy-600 leading-relaxed text-lg">
                 <p>
-                  Programmatic display advertising is the automated buying and
-                  selling of display ad inventory through real-time bidding
-                  technology.
+                  Programmatic display advertising is the automated buying and selling of display ad inventory through
+                  real-time bidding technology.
                 </p>
                 <p>
-                  When a user visits a website or opens an app, the available ad
-                  space generates a bid request. Demand-side platforms evaluate
-                  that opportunity in real time, matching it against advertiser
-                  targeting criteria.
+                  When a user visits a website or opens an app, the available ad space generates a bid request.
+                  Demand-side platforms evaluate that opportunity in real time, matching it against advertiser targeting
+                  criteria.
                 </p>
                 <p>
-                  If the user fits the targeting profile, the platform places a
-                  bid. The highest eligible bid wins the auction, and the ad is
-                  delivered instantly.
+                  If the user fits the targeting profile, the platform places a bid. The highest eligible bid wins the
+                  auction, and the ad is delivered instantly.
                 </p>
                 <p>This entire process happens in milliseconds.</p>
                 <p>
-                  Display ads include standard banner formats (such as 300x250,
-                  728x90, and 160x600), native ads that blend with the
-                  surrounding content, and rich media ads that incorporate
-                  interactive elements like expandable panels, video, or
-                  animation.
+                  Display ads include standard banner formats (such as 300x250, 728x90, and 160x600), native ads that
+                  blend with the surrounding content, and rich media ads that incorporate interactive elements like
+                  expandable panels, video, or animation.
                 </p>
                 <p>
-                  Programmatic display accounts for the majority of all digital
-                  display ad spending globally. It provides advertisers with
-                  scale, efficiency, and the ability to target specific
-                  audiences across millions of websites and apps simultaneously.
+                  Programmatic display accounts for the majority of all digital display ad spending globally. It
+                  provides advertisers with scale, efficiency, and the ability to target specific audiences across
+                  millions of websites and apps simultaneously.
                 </p>
               </div>
             </motion.div>
@@ -392,12 +358,9 @@ const ProgrammaticDisplayAdvertising = () => {
               </h2>
               <div className="space-y-3 text-navy-600 leading-relaxed text-lg">
                 <p>
-                  Display advertising offers one of the largest pools of
-                  addressable digital inventory available today.
+                  Display advertising offers one of the largest pools of addressable digital inventory available today.
                 </p>
-                <p>
-                  Through programmatic buying, advertisers gain the ability to:
-                </p>
+                <p>Through programmatic buying, advertisers gain the ability to:</p>
               </div>
               <ul className="space-y-3 mt-4 mb-6">
                 {[
@@ -410,16 +373,13 @@ const ProgrammaticDisplayAdvertising = () => {
                     <div className="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
                       <Layers className="w-4 h-4 text-brand-orange-600" />
                     </div>
-                    <span className="text-navy-600 font-medium text-lg">
-                      {item}
-                    </span>
+                    <span className="text-navy-600 font-medium text-lg">{item}</span>
                   </li>
                 ))}
               </ul>
               <p className="text-navy-600 leading-relaxed text-lg mb-6">
-                Programmatic display combines scale with control, allowing
-                advertisers to continuously refine targeting, bidding
-                strategies, and creative performance as campaigns run.
+                Programmatic display combines scale with control, allowing advertisers to continuously refine targeting,
+                bidding strategies, and creative performance as campaigns run.
               </p>
             </motion.div>
             <motion.div
@@ -444,16 +404,11 @@ const ProgrammaticDisplayAdvertising = () => {
         </div>
         <div className="flex gap-6 flex-col items-center mt-6 p-4">
           <p className="text-sm text-navy-400 font-semibold text-center">
-            Want to explore how display fits into your full programmatic
-            strategy? Speak with our team.
+            Want to explore how display fits into your full programmatic strategy? Speak with our team.
           </p>
           <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link
-              to="/contact"
-              className="flex items-center text-white no-underline group"
-            >
-              Book a Demo{" "}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Link to="/contact" className="flex items-center text-white no-underline group">
+              Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </EnergyButton>
         </div>
@@ -493,7 +448,7 @@ const ProgrammaticDisplayAdvertising = () => {
           </div>
 
           {/* Desktop: 2-col grid | Tablet: 2-col compact | Mobile: stacked */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {adFormats.map((format, i) => (
               <motion.div
                 key={format.title}
@@ -513,9 +468,7 @@ const ProgrammaticDisplayAdvertising = () => {
                     loading="lazy"
                   />
                 </div>
-                <span className="inline-block text-sm font-bold text-brand-orange-500 mb-2">
-                  {format.category}
-                </span>
+                <span className="inline-block text-sm font-bold text-brand-orange-500 mb-2">{format.category}</span>
                 <h3 className="font-bold text-navy-800 text-base mb-2">{format.title}</h3>
                 <p className="text-navy-400 text-sm leading-relaxed">{format.desc}</p>
               </motion.div>
@@ -530,16 +483,11 @@ const ProgrammaticDisplayAdvertising = () => {
             className="flex flex-col items-center mt-12 gap-4"
           >
             <p className="text-sm text-navy-400 font-semibold text-center">
-              Interested in running high-impact display campaigns? Request a
-              demo of the PublifyX platform.
+              Interested in running high-impact display campaigns? Request a demo of the PublifyX platform.
             </p>
             <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-              <Link
-                to="/contact"
-                className="flex items-center text-white no-underline group"
-              >
-                Book a Demo{" "}
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Link to="/contact" className="flex items-center text-white no-underline group">
+                Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </EnergyButton>
           </motion.div>
@@ -650,11 +598,7 @@ const ProgrammaticDisplayAdvertising = () => {
               Frequently Asked Questions About Programmatic Display Advertising
             </motion.h2>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
                 <AccordionItem
