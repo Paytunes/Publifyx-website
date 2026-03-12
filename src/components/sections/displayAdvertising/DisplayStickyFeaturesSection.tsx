@@ -799,7 +799,9 @@ const DisplayStickyFeaturesSection = () => {
                 }}
               >
                 {features.map((feature, i) => (
-                  <FeatureCard key={feature.title} feature={feature} index={i} />
+                  <div key={feature.title} style={{ minWidth: "clamp(280px, 85vw, 420px)", width: "420px", flexShrink: 0 }}>
+                    <FeatureCard feature={feature} index={i} />
+                  </div>
                 ))}
               </div>
             </div>
