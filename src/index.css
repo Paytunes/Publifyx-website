@@ -80,24 +80,7 @@
     background: linear-gradient(135deg, hsl(27 100% 35%), hsl(27 100% 28%));
   }
 
-  .btn-secondary {
-    @apply text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105;
-    background: linear-gradient(135deg, hsl(220 47% 12%), hsl(220 45% 20%));
-  }
-
-  .btn-secondary:hover {
-    background: linear-gradient(135deg, hsl(220 45% 20%), hsl(220 47% 15%));
-  }
 }
-
-@layer utilities {
-  /* ── Typography Scale ── */
-  .text-section-title {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
-    line-height: 1.15;
-    letter-spacing: -0.025em;
-    font-weight: 700;
-  }
 }
 
 /* ── Energy Button Ripple ── */
