@@ -33,19 +33,26 @@ export default defineConfig(({ mode }) => ({
           query: ["@tanstack/react-query"],
           // Lucide icons — large icon set
           lucide: ["lucide-react"],
-          // Radix UI primitives (used by shadcn/ui) — kept out of the main entry
-          // chunk so pages that don't use dialogs/selects don't pay the cost
-          "radix-ui": [
-            "@radix-ui/react-accordion",
-            "@radix-ui/react-dialog",
-            "@radix-ui/react-dropdown-menu",
-            "@radix-ui/react-label",
-            "@radix-ui/react-popover",
-            "@radix-ui/react-select",
-            "@radix-ui/react-separator",
-            "@radix-ui/react-slot",
+          // Radix UI — split by usage frequency to avoid loading unused packages
+          // Header (statically imported) uses DropdownMenu → always loads
+          "radix-nav": ["@radix-ui/react-dropdown-menu"],
+          // App.tsx (statically imported) uses Toaster + TooltipProvider → always loads
+          "radix-globals": [
             "@radix-ui/react-toast",
             "@radix-ui/react-tooltip",
+          ],
+          // Heavy form/overlay primitives — only load with lazy Contact/modal pages
+          "radix-forms": [
+            "@radix-ui/react-label",
+            "@radix-ui/react-select",
+            "@radix-ui/react-slot",
+          ],
+          // Dialog/popover/accordion — load only with pages that render them
+          "radix-overlay": [
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-popover",
+            "@radix-ui/react-separator",
           ],
         },
       },
