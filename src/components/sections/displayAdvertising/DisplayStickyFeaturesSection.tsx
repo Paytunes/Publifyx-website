@@ -625,7 +625,7 @@ const FeatureCard = ({ feature, index }: CardProps) => {
     <motion.div
       whileHover={{ scale: 1.03, y: -6 }}
       transition={{ duration: 0.24, ease: [0.33, 1, 0.68, 1] }}
-      className="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden w-full"
+      className="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden w-full h-full"
       style={{
         background: "rgba(9, 20, 40, 0.92)",
         border: "1px solid rgba(249,115,22,0.17)",
@@ -799,7 +799,10 @@ const DisplayStickyFeaturesSection = () => {
                 }}
               >
                 {features.map((feature, i) => (
-                  <div key={feature.title} style={{ minWidth: "clamp(280px, 85vw, 420px)", width: "420px", flexShrink: 0 }}>
+                  <div
+                    key={feature.title}
+                    style={{ minWidth: "clamp(280px, 85vw, 420px)", width: "420px", flexShrink: 0 }}
+                  >
                     <FeatureCard feature={feature} index={i} />
                   </div>
                 ))}
