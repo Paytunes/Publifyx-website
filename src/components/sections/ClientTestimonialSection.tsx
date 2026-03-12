@@ -94,7 +94,7 @@ const ClientTestimonialSection = ({
               </div>
               <div>
                 <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display mb-4">"{quote}"</p>
-                <p className="text-sm font-semibold text-navy-500">— {attribution}</p>
+                {attribution && <p className="text-sm font-semibold text-navy-500">— {attribution}</p>}
               </div>
             </div>
           </motion.div>
