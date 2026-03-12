@@ -101,7 +101,7 @@ const displaySchemas = [
     },
     areaServed: { "@type": "Place", name: "Worldwide" },
     description:
-      "Run targeted display advertising campaigns across premium websites and apps with PublifyX's programmatic display DSP. Banner ads, native ads, and rich media at scale.",
+      "Run programmatic display advertising campaigns across banner, native, and rich media formats with PublifyX. Connect to billions of daily impressions across websites, mobile apps, and digital properties worldwide. Target audiences with precision using real-time bidding and measure performance transparently, all within the same platform you use for audio, video, OTT, and CTV.",
     url: "https://www.publifyx.com/programmatic-display-advertising",
     category: "Programmatic Advertising Platform",
     offers: {
@@ -117,16 +117,16 @@ const displaySchemas = [
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web-based",
     description:
-      "A programmatic display advertising platform that automates the buying and delivery of banner ads, native ads, and rich media across premium websites and apps with real-time bidding and precision audience targeting.",
+      "A programmatic display advertising platform that automates the buying and delivery of banner, native, and rich media ads across hundreds of thousands of websites and mobile apps through real-time bidding, advanced audience targeting, and transparent performance reporting.",
     publisher: { "@type": "Organization", name: "PublifyX" },
     featureList: [
-      "Massive inventory reach across websites and apps",
-      "Standard and custom ad formats",
-      "Advanced audience targeting",
-      "Real-time bidding optimization",
-      "Retargeting and prospecting",
-      "Viewability and brand safety",
-      "Transparent reporting",
+      "Massive inventory reach across websites and mobile apps",
+      "Standard and custom ad formats including IAB banners, native, rich media, and interstitials",
+      "Advanced audience targeting by demographics, interests, behavior, and geography",
+      "Real-time bidding optimization for CPM, CPC, CPA, and ROAS",
+      "Retargeting and lookalike audience prospecting",
+      "Viewability verification and brand safety controls",
+      "Transparent real-time reporting and analytics",
     ],
     offers: {
       "@type": "Offer",
@@ -175,7 +175,7 @@ const displaySchemas = [
       "Display campaigns through PublifyX gave us the reach we needed while still allowing precise audience targeting. The ability to retarget users across multiple publishers significantly improved campaign efficiency.",
     author: {
       "@type": "Person",
-      name: "Performance Marketing Lead, E-Commerce Brand",
+      name: "Senior Media Strategist, Digital Marketing Agency",
     },
     itemReviewed: {
       "@type": "SoftwareApplication",
