@@ -42,7 +42,7 @@ const ClientTestimonialSection = ({
                 </div>
                 <div>
                   <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display">"{quote}"</p>
-                  <p className="text-sm font-semibold text-navy-400 mt-3">— {attribution}</p>
+                  {attribution && <p className="text-sm font-semibold text-navy-400 mt-3">— {attribution}</p>}
                 </div>
               </div>
 
