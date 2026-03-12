@@ -75,6 +75,14 @@ const Footer = () => {
                   Programmatic Audio
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/programmatic-display-advertising"
+                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
+                >
+                  Programmatic Display
+                </Link>
+              </li>
             </ul>
           </div>
 
