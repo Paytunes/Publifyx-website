@@ -847,51 +847,16 @@ const DisplayStickyFeaturesSection = () => {
       </div>
 
       {/* ═══════════════════════════════════════
-          MOBILE (<lg) — touch horizontal scroll
+          MOBILE / TABLET (<lg) — responsive grid
           ═══════════════════════════════════════ */}
       <div className="lg:hidden" style={sectionBg}>
         <SectionHeader />
-        <div
-          className="overflow-x-auto pb-8"
-          style={{
-            scrollSnapType: "x mandatory",
-            WebkitOverflowScrolling: "touch",
-          }}
-        >
-          <div
-            className="flex"
-            style={{
-              gap: "16px",
-              paddingLeft: "20px",
-              paddingRight: "20px",
-              width: "max-content",
-            }}
-          >
+        <div className="max-w-7xl mx-auto px-4 pb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {features.map((feature, i) => (
-              <div
-                key={feature.title}
-                style={{
-                  scrollSnapAlign: "start",
-                  minWidth: "85vw",
-                  maxWidth: "340px",
-                }}
-              >
-                <FeatureCard feature={feature} index={i} />
-              </div>
+              <FeatureCard key={feature.title} feature={feature} index={i} />
             ))}
           </div>
-        </div>
-        {/* Mobile dot indicator */}
-        <div className="flex justify-center gap-2 pb-8">
-          {features.map((_, i) => (
-            <div
-              key={i}
-              className="w-2 h-2 rounded-full"
-              style={{
-                background: i === 0 ? "rgb(249,115,22)" : "rgba(255,255,255,0.18)",
-              }}
-            />
-          ))}
         </div>
       </div>
     </>
