@@ -1044,13 +1044,15 @@ const DisplayStickyFeaturesSection = () => {
           ═══════════════════════════════════════ */}
       <div className="hidden lg:block" style={sectionBg}>
         {/* Outer tall div — captures vertical scroll distance */}
-        <div ref={outerRef} className="relative">
+        <div ref={outerRef} className="relative max-w-[1920px] mx-auto">
           {/* Sticky container — pins to viewport for the entire scroll range */}
           <div
             className="sticky top-0 overflow-hidden flex flex-col"
             style={{ height: "100vh" }}
           >
-            <SectionHeader hint />
+            <div className="max-w-7xl mx-auto w-full px-4">
+              <SectionHeader hint />
+            </div>
 
             {/* Horizontal card track */}
             <div className="flex-1 flex items-center overflow-hidden">
