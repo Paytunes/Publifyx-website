@@ -38,24 +38,28 @@ const adFormats = [
     desc: "All standard banner sizes including leaderboard (728x90), medium rectangle (300x250), skyscraper (160x600), and mobile-optimized formats (320x50, 300x600).",
     icon: Image,
     category: "01",
+    image: formatStandardBanners,
   },
   {
     title: "Native Display Ads",
     desc: "Ads that match the look, feel, and function of the surrounding content. Native placements drive higher engagement by integrating naturally into the user experience.",
     icon: LayoutIcon,
     category: "02",
+    image: formatNativeAds,
   },
   {
     title: "Rich Media Ads",
     desc: "Interactive display ads with expandable panels, embedded video, carousels, and animation for enhanced user engagement.",
     icon: Film,
     category: "03",
+    image: formatRichMedia,
   },
   {
     title: "Interstitial Ads",
     desc: "Full-screen display ads shown during natural transition points within mobile apps and mobile web experiences.",
     icon: Maximize2,
     category: "04",
+    image: formatInterstitial,
   },
 ];
 
