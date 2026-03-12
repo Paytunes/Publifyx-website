@@ -7,6 +7,10 @@ import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import displayHeroDashboard from "@/assets/display/display-hero-dashboard.webp";
 import displayAnalytics from "@/assets/display/display-analytics.webp";
 import displayDevices from "@/assets/display/display-devices.webp";
+import formatStandardBanners from "@/assets/display/format-standard-banners.webp";
+import formatNativeAds from "@/assets/display/format-native-ads.webp";
+import formatRichMedia from "@/assets/display/format-rich-media.webp";
+import formatInterstitial from "@/assets/display/format-interstitial.webp";
 import { motion } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
 import {
