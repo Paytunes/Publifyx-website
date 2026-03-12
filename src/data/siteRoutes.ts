@@ -49,12 +49,6 @@ export const siteRoutes: SiteRoute[] = [
   { path: "/saurabh", priority: 0.5, changefreq: "yearly" },
   { path: "/digital-advertising", priority: 0.7, changefreq: "monthly" },
   { path: "/online-banner-advertising", priority: 0.7, changefreq: "monthly" },
-  {
-    path: "/white-label-dsp-vs-self-serve-dsp",
-    priority: 0.6,
-    changefreq: "monthly",
-  },
-  { path: "/ctv-advertising-india", priority: 0.7, changefreq: "monthly" },
 
   // ── Legal ─────────────────────────────────────────────
   { path: "/terms_and_conditions", priority: 0.3, changefreq: "yearly" },

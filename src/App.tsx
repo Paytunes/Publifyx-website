@@ -20,21 +20,36 @@ const CTVAdvertisingNew = lazy(() => import("./pages/CTVAdvertisingNew"));
 const OTTAdvertising = lazy(() => import("./pages/OTTAdvertising"));
 
 const About = lazy(() => import("./pages/About"));
-const WhiteLabelVsSelfServe = lazy(() => import("./pages/WhiteLabelVsSelfServe"));
+const WhiteLabelVsSelfServe = lazy(
+  () => import("./pages/WhiteLabelVsSelfServe"),
+);
 const CTVAdvertisingIndia = lazy(() => import("./pages/CTVAdvertisingIndia"));
-const OnlineBannerAdvertising = lazy(() => import("./pages/OnlineBannerAdvertising"));
+const OnlineBannerAdvertising = lazy(
+  () => import("./pages/OnlineBannerAdvertising"),
+);
 const DigitalAdvertising = lazy(() => import("./pages/DigitalAdvertising"));
 const Services = lazy(() => import("./pages/Services"));
 const CEO = lazy(() => import("./pages/CEO"));
-const ProgrammaticAudioAdvertising = lazy(() => import("./pages/ProgrammaticAudioAdvertising"));
-const ProgrammaticDisplayAdvertising = lazy(() => import("./pages/ProgrammaticDisplayAdvertising"));
+const ProgrammaticAudioAdvertising = lazy(
+  () => import("./pages/ProgrammaticAudioAdvertising"),
+);
+const ProgrammaticDisplayAdvertising = lazy(
+  () => import("./pages/ProgrammaticDisplayAdvertising"),
+);
 
 // Existing blog posts
-const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
-const BlogPostAdTechTrends2026 = lazy(() => import("./pages/BlogPost-AdTechTrends2026"));
-const BlogPostWhiteLabelDSPReasons = lazy(() => import("./pages/BlogPost-WhiteLabelDSPReasons"));
-const BlogPostConnectedTVAdvertising = lazy(() => import("./pages/BlogPost-ConnectedTVAdvertising"));
-
+const BlogPostOnlineBannerAdvertising2026 = lazy(
+  () => import("./pages/BlogPost-OnlineBannerAdvertising2026"),
+);
+const BlogPostAdTechTrends2026 = lazy(
+  () => import("./pages/BlogPost-AdTechTrends2026"),
+);
+const BlogPostWhiteLabelDSPReasons = lazy(
+  () => import("./pages/BlogPost-WhiteLabelDSPReasons"),
+);
+const BlogPostConnectedTVAdvertising = lazy(
+  () => import("./pages/BlogPost-ConnectedTVAdvertising"),
+);
 
 const TermsConditions = lazy(() => import("./pages/TermsConditions"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
@@ -60,29 +75,52 @@ const App = () => (
 
             {/* Core Service Pages */}
             <Route path="/ctv-advertising" element={<CTVAdvertisingNew />} />
-            <Route path="/connected-tv-advertising" element={<CTVAdvertisingNew />} />
+            <Route
+              path="/connected-tv-advertising"
+              element={<CTVAdvertisingNew />}
+            />
             <Route path="/ott-advertising" element={<OTTAdvertising />} />
-            
 
             {/* Supporting Pages */}
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/saurabh" element={<CEO />} />
-            <Route path="/white-label-dsp-vs-self-serve-dsp" element={<WhiteLabelVsSelfServe />} />
-            <Route path="/ctv-advertising-india" element={<CTVAdvertisingIndia />} />
 
             {/* Legacy */}
-            <Route path="/programmatic-audio-advertising" element={<ProgrammaticAudioAdvertising />} />
-            <Route path="/programmatic-display-advertising" element={<ProgrammaticDisplayAdvertising />} />
-            <Route path="/online-banner-advertising" element={<OnlineBannerAdvertising />} />
-            <Route path="/digital-advertising" element={<DigitalAdvertising />} />
+            <Route
+              path="/programmatic-audio-advertising"
+              element={<ProgrammaticAudioAdvertising />}
+            />
+            <Route
+              path="/programmatic-display-advertising"
+              element={<ProgrammaticDisplayAdvertising />}
+            />
+            <Route
+              path="/online-banner-advertising"
+              element={<OnlineBannerAdvertising />}
+            />
+            <Route
+              path="/digital-advertising"
+              element={<DigitalAdvertising />}
+            />
 
             {/* Blog Posts — Existing */}
-            <Route path="/blog/online-banner-advertising-guide-2026" element={<BlogPostOnlineBannerAdvertising2026 />} />
-            <Route path="/blog/ad-tech-trends-2026" element={<BlogPostAdTechTrends2026 />} />
-            <Route path="/blog/white-label-dsp-reasons" element={<BlogPostWhiteLabelDSPReasons />} />
-            <Route path="/blog/connected-tv-advertising-guide" element={<BlogPostConnectedTVAdvertising />} />
-
+            <Route
+              path="/blog/online-banner-advertising-guide-2026"
+              element={<BlogPostOnlineBannerAdvertising2026 />}
+            />
+            <Route
+              path="/blog/ad-tech-trends-2026"
+              element={<BlogPostAdTechTrends2026 />}
+            />
+            <Route
+              path="/blog/white-label-dsp-reasons"
+              element={<BlogPostWhiteLabelDSPReasons />}
+            />
+            <Route
+              path="/blog/connected-tv-advertising-guide"
+              element={<BlogPostConnectedTVAdvertising />}
+            />
 
             {/* Legal */}
             <Route path="/terms_and_conditions" element={<TermsConditions />} />
