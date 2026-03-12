@@ -497,7 +497,7 @@ const ProgrammaticDisplayAdvertising = () => {
       {/* ═══════════════ CLIENT EXPERIENCE ═══════════════ */}
       <ClientTestimonialSection
         quote="Display campaigns through PublifyX gave us the reach we needed while still allowing precise audience targeting. The ability to retarget users across multiple publishers significantly improved campaign efficiency."
-        attribution=""
+        attribution="Senior Media Strategist, Digital Marketing Agency"
         results={[
           "Expanded campaign reach across thousands of publisher sites",
           "Increased click-through performance through contextual targeting",
