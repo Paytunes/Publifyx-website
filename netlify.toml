@@ -2,30 +2,62 @@
   publish = "dist"
   command = "npm run build"
 
-# Hashed JS/CSS bundles — immutable
+# ── Hashed JS/CSS bundles (Vite content-hashed) ────────────────────────────
+# Safe to cache forever — any change produces a new filename
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/*.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Uploaded images
+# ── Hashed image assets (Vite content-hashed WebPs in /assets/) ────────────
+[[headers]]
+  for = "/assets/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*.gif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── Uploaded media (non-hashed but very rarely changes) ────────────────────
 [[headers]]
   for = "/lovable-uploads/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Fonts
 [[headers]]
-  for = "/*.woff2"
+  for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]
-  for = "/*.woff"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Images
+# ── Static image files in public root ──────────────────────────────────────
 [[headers]]
   for = "/*.webp"
   [headers.values]
@@ -42,22 +74,69 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
+  for = "/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
   for = "/*.svg"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# HTML — no cache
 [[headers]]
-  for = "/*.html"
+  for = "/*.ico"
   [headers.values]
-    Cache-Control = "no-cache"
+    Cache-Control = "public, max-age=86400"
 
+# ── Web fonts ───────────────────────────────────────────────────────────────
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/*.woff"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/*.ttf"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+# ── HTML — never cache; always revalidate so deploys land immediately ───────
 [[headers]]
   for = "/"
   [headers.values]
-    Cache-Control = "no-cache"
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
 
-# SPA fallback
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# ── SEO/meta files — short cache (updated occasionally) ────────────────────
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type = "application/xml; charset=utf-8"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# ── SPA fallback — serve index.html for all non-asset routes ────────────────
 [[redirects]]
   from = "/*"
   to = "/index.html"
