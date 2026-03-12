@@ -979,8 +979,11 @@ const DisplayStickyFeaturesSection = () => {
     const setHeight = () => {
       // Safety: skip if element is not rendered (display:none from hidden)
       if (outer.offsetParent === null) return;
-      const extra = Math.max(0, track.scrollWidth - window.innerWidth);
-      outer.style.height = `${window.innerHeight + extra}px`;
+      // maxTranslate: how far we need to shift so the last card's right edge
+      // aligns with the right edge of the viewport (minus padding).
+      const rightPad = Math.max(32, window.innerWidth * 0.05); // matches clamp padding
+      const maxTranslate = Math.max(0, track.scrollWidth - window.innerWidth + rightPad);
+      outer.style.height = `${window.innerHeight + maxTranslate}px`;
     };
 
     // ── Translate track horizontally based on scroll progress ──
@@ -992,7 +995,8 @@ const DisplayStickyFeaturesSection = () => {
       if (maxScroll <= 0) return;
 
       const progress = Math.min(1, scrolled / maxScroll);
-      const maxTranslate = track.scrollWidth - window.innerWidth;
+      const rightPad = Math.max(32, window.innerWidth * 0.05);
+      const maxTranslate = Math.max(0, track.scrollWidth - window.innerWidth + rightPad);
 
       // Direct DOM mutation — no React state — smooth on every frame
       track.style.transform = `translateX(${-progress * maxTranslate}px)`;
@@ -1040,13 +1044,15 @@ const DisplayStickyFeaturesSection = () => {
           ═══════════════════════════════════════ */}
       <div className="hidden lg:block" style={sectionBg}>
         {/* Outer tall div — captures vertical scroll distance */}
-        <div ref={outerRef} className="relative">
+        <div ref={outerRef} className="relative max-w-[1920px] mx-auto">
           {/* Sticky container — pins to viewport for the entire scroll range */}
           <div
             className="sticky top-0 overflow-hidden flex flex-col"
             style={{ height: "100vh" }}
           >
-            <SectionHeader hint />
+            <div className="max-w-7xl mx-auto w-full px-4">
+              <SectionHeader hint />
+            </div>
 
             {/* Horizontal card track */}
             <div className="flex-1 flex items-center overflow-hidden">
