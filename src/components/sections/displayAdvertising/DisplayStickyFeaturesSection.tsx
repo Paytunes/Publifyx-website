@@ -788,24 +788,21 @@ const DisplayStickyFeaturesSection = () => {
           ═══════════════════════════════════════ */}
       <div className="hidden lg:block" style={sectionBg}>
         {/* Outer tall div — captures vertical scroll distance */}
-        <div ref={outerRef} className="relative max-w-[1920px] mx-auto">
+        <div ref={outerRef} className="relative">
           {/* Sticky container — pins to viewport for the entire scroll range */}
           <div className="sticky top-0 overflow-hidden flex flex-col" style={{ height: "100vh" }}>
             <div className="max-w-7xl mx-auto w-full px-4">
               <SectionHeader hint />
             </div>
 
-            {/* Horizontal card track */}
-            <div className="flex-1 flex items-center overflow-hidden">
+            {/* Horizontal card track — constrained to 7xl */}
+            <div ref={containerRef} className="flex-1 flex items-center overflow-hidden max-w-7xl mx-auto w-full px-4">
               <div
                 ref={trackRef}
                 className="flex flex-row items-stretch h-fit py-4"
                 style={{
                   gap: "26px",
-                  paddingLeft: "clamp(32px, 5vw, 80px)",
-                  paddingRight: "clamp(32px, 5vw, 80px)",
                   willChange: "transform",
-                  // No CSS transition — scroll handler drives it at native speed
                 }}
               >
                 {features.map((feature, i) => (
@@ -815,7 +812,7 @@ const DisplayStickyFeaturesSection = () => {
             </div>
 
             {/* Progress bar + dot indicators */}
-            <div className="flex-shrink-0 pb-7 px-[5vw] flex items-center gap-4">
+            <div className="flex-shrink-0 pb-7 max-w-7xl mx-auto w-full px-4 flex items-center gap-4">
               {/* Dots */}
               <div className="flex items-center gap-2">
                 {features.map((_, i) => (
