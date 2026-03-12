@@ -3,131 +3,55 @@ import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import displayHeroDashboard from "@/assets/display/display-hero-dashboard.webp";
+import displayAnalytics from "@/assets/display/display-analytics.webp";
+import displayDevices from "@/assets/display/display-devices.webp";
 import { motion } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
 import {
   ArrowRight,
   Sparkles,
-  Globe,
-  Target,
-  BarChart3,
-  Shield,
-  RefreshCw,
-  Zap,
+  Image,
+  Layout as LayoutIcon,
+  Film,
+  Maximize2,
   Layers,
-  PhoneCall,
-  Settings,
-  Rocket,
-  GraduationCap,
-  Building2,
-  Store,
-  Megaphone,
 } from "lucide-react";
-import MagneticCard from "@/components/effects/MagneticCard";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
-const features = [
-  {
-    title: "Massive Inventory Reach",
-    description:
-      "Access display inventory across hundreds of thousands of websites and mobile apps through leading ad exchanges.",
-    icon: Globe,
-  },
-  {
-    title: "All Ad Formats",
-    description: "Support for IAB banners, native ads, expandable rich media, and interstitial placements.",
-    icon: Layers,
-  },
-  {
-    title: "Advanced Targeting",
-    description:
-      "Target by demographics, interests, browsing behavior, contextual keywords, geography, and device type.",
-    icon: Target,
-  },
-  {
-    title: "RTB Optimization",
-    description: "Algorithms optimize in real time for CPM, CPC, CPA, or ROAS efficiency.",
-    icon: Zap,
-  },
-  {
-    title: "Retargeting & Prospecting",
-    description: "Re-engage website visitors and use lookalike modeling to find new audiences.",
-    icon: RefreshCw,
-  },
-  {
-    title: "Viewability & Brand Safety",
-    description: "Viewability verification, fraud detection, and domain-level exclusion controls.",
-    icon: Shield,
-  },
-  {
-    title: "Transparent Reporting",
-    description: "Real-time dashboards with impressions, clicks, CTR, conversions, and cost efficiency.",
-    icon: BarChart3,
-  },
-];
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
+import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
+import DisplayStickyFeaturesSection from "@/components/sections/displayAdvertising/DisplayStickyFeaturesSection";
 
 const adFormats = [
   {
     title: "Standard IAB Banners",
-    desc: "Leaderboard (728×90), medium rectangle (300×250), skyscraper (160×600), and mobile formats.",
+    desc: "All standard banner sizes including leaderboard (728x90), medium rectangle (300x250), skyscraper (160x600), and mobile-optimized formats (320x50, 300x600).",
+    icon: Image,
+    category: "01",
   },
-  { title: "Native Display Ads", desc: "Ads matching the look and feel of surrounding content for higher engagement." },
+  {
+    title: "Native Display Ads",
+    desc: "Ads that match the look, feel, and function of the surrounding content. Native placements drive higher engagement by integrating naturally into the user experience.",
+    icon: LayoutIcon,
+    category: "02",
+  },
   {
     title: "Rich Media Ads",
-    desc: "Interactive ads with expandable panels, embedded video, carousels, and animation.",
-  },
-  { title: "Interstitial Ads", desc: "Full-screen ads shown during natural transition points in mobile apps and web." },
-];
-
-const steps = [
-  {
-    number: "01",
-    title: "Upload Creatives",
-    description: "Upload your banner, native, or rich media ad creatives.",
-    icon: PhoneCall,
+    desc: "Interactive display ads with expandable panels, embedded video, carousels, and animation for enhanced user engagement.",
+    icon: Film,
+    category: "03",
   },
   {
-    number: "02",
-    title: "Define Audiences",
-    description: "Set targeting by demographics, behavior, context, and geography.",
-    icon: Settings,
-  },
-  {
-    number: "03",
-    title: "Launch via RTB",
-    description: "Go live across premium inventory through real-time bidding.",
-    icon: Rocket,
-  },
-  {
-    number: "04",
-    title: "Optimize Results",
-    description: "Monitor performance and optimize for your campaign goals.",
-    icon: GraduationCap,
-  },
-];
-
-const whoItsFor = [
-  {
-    title: "Performance Marketers",
-    description:
-      "Drive conversions with precise targeting, retargeting, and real-time optimization across billions of impressions.",
-    icon: Target,
-  },
-  {
-    title: "Brand Advertisers",
-    description: "Build awareness at scale with premium display placements across trusted websites and apps.",
-    icon: Megaphone,
-  },
-  {
-    title: "Media Agencies",
-    description: "Run display campaigns for clients with white-label reporting and transparent margin control.",
-    icon: Building2,
-  },
-  {
-    title: "E-Commerce Brands",
-    description: "Retarget shoppers, drive product page visits, and maximize ROAS with dynamic display campaigns.",
-    icon: Store,
+    title: "Interstitial Ads",
+    desc: "Full-screen display ads shown during natural transition points within mobile apps and mobile web experiences.",
+    icon: Maximize2,
+    category: "04",
   },
 ];
 
@@ -138,37 +62,157 @@ const faqs = [
       "Programmatic display advertising is the automated buying and selling of display ad placements through real-time bidding. Advertisers use a DSP to bid on impressions that match their targeting criteria across websites and apps.",
   },
   {
-    question: "What ad sizes are supported?",
+    question: "What ad sizes are supported for display campaigns?",
     answer:
-      "PublifyX supports all IAB standard display sizes including 728×90, 300×250, 160×600, 320×50, 300×600, and more.",
+      "PublifyX supports all IAB standard display sizes including 728x90, 300x250, 160x600, 320x50, 300x600, and more. Custom sizes may be available depending on inventory sources.",
   },
   {
     question: "How does targeting work for display ads?",
     answer:
-      "You can target by demographics, interests, browsing behavior, contextual keywords, geographic location, device type, and custom audience segments.",
+      "You can target display audiences by demographics, interests, browsing behavior, contextual keywords, geographic location, device type, and custom audience segments built from first-party data.",
   },
   {
     question: "What is the difference between display and native ads?",
     answer:
-      "Standard display ads are banner-style placements. Native ads match the visual style of surrounding content for a more integrated experience.",
+      "Standard display ads are clearly distinguishable banner-style placements. Native ads are designed to match the visual style and format of the surrounding content, creating a more integrated and less intrusive user experience.",
   },
   {
     question: "Can I retarget users with display ads?",
-    answer: "Yes. PublifyX supports pixel-based retargeting and lookalike audience modeling.",
+    answer:
+      "Yes. PublifyX supports pixel-based retargeting to re-engage users who have visited your website, as well as lookalike audience modeling to reach new users with similar profiles.",
+  },
+];
+
+const displaySchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "PublifyX",
+    url: "https://www.publifyx.com",
+    logo: "https://www.publifyx.com/logo.png",
+    founder: { "@type": "Person", name: "Saurabh", jobTitle: "CEO" },
+    sameAs: ["https://www.linkedin.com/company/publifyx"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Programmatic Display Advertising Platform",
+    serviceType: "Programmatic Display Advertising",
+    provider: {
+      "@type": "Organization",
+      name: "PublifyX",
+      url: "https://www.publifyx.com",
+    },
+    areaServed: { "@type": "Place", name: "Worldwide" },
+    description:
+      "Run targeted display advertising campaigns across premium websites and apps with PublifyX's programmatic display DSP. Banner ads, native ads, and rich media at scale.",
+    url: "https://www.publifyx.com/programmatic-display-advertising",
+    category: "Programmatic Advertising Platform",
+    offers: {
+      "@type": "Offer",
+      url: "https://www.publifyx.com/programmatic-display-advertising",
+      availability: "https://schema.org/InStock",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "PublifyX Programmatic Display Advertising Platform",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web-based",
+    description:
+      "A programmatic display advertising platform that automates the buying and delivery of banner ads, native ads, and rich media across premium websites and apps with real-time bidding and precision audience targeting.",
+    publisher: { "@type": "Organization", name: "PublifyX" },
+    featureList: [
+      "Massive inventory reach across websites and apps",
+      "Standard and custom ad formats",
+      "Advanced audience targeting",
+      "Real-time bidding optimization",
+      "Retargeting and prospecting",
+      "Viewability and brand safety",
+      "Transparent reporting",
+    ],
+    offers: {
+      "@type": "Offer",
+      url: "https://www.publifyx.com/programmatic-display-advertising",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.publifyx.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://www.publifyx.com/services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Programmatic Display Advertising",
+        item: "https://www.publifyx.com/programmatic-display-advertising",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    reviewBody:
+      "Display campaigns through PublifyX gave us the reach we needed while still allowing precise audience targeting. The ability to retarget users across multiple publishers significantly improved campaign efficiency.",
+    author: {
+      "@type": "Person",
+      name: "Performance Marketing Lead, E-Commerce Brand",
+    },
+    itemReviewed: {
+      "@type": "SoftwareApplication",
+      name: "PublifyX Programmatic Display Advertising Platform",
+    },
   },
 ];
 
 const ProgrammaticDisplayAdvertising = () => {
   useEffect(() => {
-    document.title = "Programmatic Display Advertising Platform | Display DSP — PublifyX";
+    document.title =
+      "Programmatic Display Advertising Platform | Display DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
         "content",
-        "Run targeted display advertising campaigns across premium websites and apps with PublifyX's programmatic display DSP.",
+        "Run targeted display advertising campaigns across premium websites and apps with PublifyX's programmatic display DSP. Banner ads, native ads, and rich media at scale.",
       );
+
+    removeAllFaqPageSchemas();
+
+    const scripts: HTMLScriptElement[] = displaySchemas.map((schema, i) => {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.id = `display-schema-${i}`;
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+      return script;
+    });
+
     return () => {
       document.title = "PublifyX — Programmatic Advertising Platform";
+      scripts.forEach((s) => s.remove());
     };
   }, []);
 
@@ -176,13 +220,14 @@ const ProgrammaticDisplayAdvertising = () => {
 
   return (
     <Layout transparentHeader>
-      {/* Hero */}
+      {/* ═══════════════ HERO ═══════════════ */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-navy-800">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -191,43 +236,57 @@ const ProgrammaticDisplayAdvertising = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <PageBreadcrumb items={breadcrumbs} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
-                <span className="text-sm font-medium text-white/80">Display Advertising Platform</span>
+                <span className="text-sm font-medium text-white/80">
+                  Display Advertising Platform
+                </span>
               </div>
-              <h1 className="mb-6 !text-white leading-[1.1]">
-                Programmatic Display — Banner, Native &
-                <span className="block text-brand-orange-400">Rich Media Ads at Scale</span>
+              <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-4xl">
+                Programmatic Display Advertising — Banner, Native, and Rich
+                Media Ads at Scale
               </h1>
-              <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-                Display advertising is the foundation of programmatic media buying. Reach billions of daily impressions
-                across websites, apps, and digital properties worldwide.
+              <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
+                Display advertising remains one of the most powerful foundations
+                of programmatic media buying. From banner placements on premium
+                news websites to native ads embedded within mobile apps, display
+                campaigns allow advertisers to reach audiences at scale while
+                maintaining precise targeting and control.
               </p>
-              <p className="text-base text-navy-300 mb-10 font-semibold">
-                Banners · Native · Rich Media · One platform
+              <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
+                PublifyX provides a programmatic display advertising platform
+                that connects advertisers to billions of daily impressions
+                across websites, mobile apps, and digital properties worldwide.
+              </p>
+              <p className="text-base text-navy-300 mb-8 leading-relaxed max-w-xl">
+                Run banner ads, native ads, and rich media campaigns with
+                advanced targeting, real-time bidding, and transparent
+                reporting, all within the same multi-channel DSP used for video,
+                audio, OTT, and CTV.
+              </p>
+              <p className="text-sm text-navy-300 mb-6 font-semibold">
+                Looking to scale display advertising with programmatic
+                precision? Request a platform walkthrough.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
                 <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link to="/contact" className="flex items-center text-white no-underline group">
-                    Book a Call{" "}
+                  <Link
+                    to="/contact"
+                    className="flex items-center text-white no-underline group"
+                  >
+                    Book a Demo{" "}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </EnergyButton>
               </div>
-              <p className="text-sm text-navy-400">No commitment required · All IAB formats supported</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="hidden lg:block"
-            >
+            </div>
+            <div className="hidden lg:block">
               <div className="relative">
                 <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
                 <img
                   src={displayHeroDashboard}
-                  alt="Programmatic display advertising dashboard with banner previews and bidding analytics"
+                  alt="Programmatic display ads dashboard with banner ad performance analytics and audience targeting controls"
                   className="relative w-full h-auto rounded-2xl shadow-2xl shadow-black/40 border border-white/10"
                   width={1024}
                   height={1024}
@@ -235,12 +294,175 @@ const ProgrammaticDisplayAdvertising = () => {
                   decoding="sync"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ WHAT IS PROGRAMMATIC DISPLAY ═══════════════ */}
+      {/* Pattern 1: Image LEFT, Text RIGHT */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="relative">
+                <div className="absolute -inset-3 bg-brand-orange-500/8 rounded-3xl blur-xl" />
+                <img
+                  src={displayAnalytics}
+                  alt="Programmatic display advertising concept showing banner ad formats, RTB auction flow, and publisher network placement"
+                  className="relative w-full h-auto rounded-2xl shadow-xl"
+                  width={672}
+                  height={672}
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">
+                What Is Programmatic Display Advertising?
+              </h2>
+              <div className="space-y-4 text-navy-600 leading-relaxed text-lg">
+                <p>
+                  Programmatic display advertising is the automated buying and
+                  selling of display ad inventory through real-time bidding
+                  technology.
+                </p>
+                <p>
+                  When a user visits a website or opens an app, the available ad
+                  space generates a bid request. Demand-side platforms evaluate
+                  that opportunity in real time, matching it against advertiser
+                  targeting criteria.
+                </p>
+                <p>
+                  If the user fits the targeting profile, the platform places a
+                  bid. The highest eligible bid wins the auction, and the ad is
+                  delivered instantly.
+                </p>
+                <p>This entire process happens in milliseconds.</p>
+                <p>
+                  Display ads include standard banner formats (such as 300x250,
+                  728x90, and 160x600), native ads that blend with the
+                  surrounding content, and rich media ads that incorporate
+                  interactive elements like expandable panels, video, or
+                  animation.
+                </p>
+                <p>
+                  Programmatic display accounts for the majority of all digital
+                  display ad spending globally. It provides advertisers with
+                  scale, efficiency, and the ability to target specific
+                  audiences across millions of websites and apps simultaneously.
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* What Is It */}
+      {/* ═══════════════ WHY PROGRAMMATIC DISPLAY MATTERS ═══════════════ */}
+      {/* Pattern 2: Text LEFT, Image RIGHT */}
+      <section className="py-12 md:py-16 bg-navy-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-3">
+                Let's Understand why Programmatic Display Advertising Matters:
+              </h2>
+              <div className="space-y-3 text-navy-600 leading-relaxed text-lg">
+                <p>
+                  Display advertising offers one of the largest pools of
+                  addressable digital inventory available today.
+                </p>
+                <p>
+                  Through programmatic buying, advertisers gain the ability to:
+                </p>
+              </div>
+              <ul className="space-y-3 mt-4 mb-6">
+                {[
+                  "Reach audiences across a vast network of publishers and apps",
+                  "Target users based on behavior, interests, and demographics",
+                  "Optimize campaigns dynamically based on performance data",
+                  "Retarget users who have previously interacted with the brand",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-4">
+                    <div className="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
+                      <Layers className="w-4 h-4 text-brand-orange-600" />
+                    </div>
+                    <span className="text-navy-600 font-medium text-lg">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-navy-600 leading-relaxed text-lg mb-6">
+                Programmatic display combines scale with control, allowing
+                advertisers to continuously refine targeting, bidding
+                strategies, and creative performance as campaigns run.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="relative">
+                <div className="absolute -inset-3 bg-brand-orange-500/8 rounded-3xl blur-xl" />
+                <img
+                  src={displayDevices}
+                  alt="Display advertising across multiple devices showing banner ad formats on desktop, tablet, and mobile screens"
+                  className="relative w-full h-auto rounded-2xl shadow-xl"
+                  width={672}
+                  height={672}
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+        <div className="flex gap-6 flex-col items-center mt-6 p-4">
+          <p className="text-sm text-navy-400 font-semibold text-center">
+            Want to explore how display fits into your full programmatic
+            strategy? Speak with our team.
+          </p>
+          <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+            <Link
+              to="/contact"
+              className="flex items-center text-white no-underline group"
+            >
+              Book a Demo{" "}
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </EnergyButton>
+        </div>
+      </section>
+
+      {/* ═══════════════ FOUNDER QUOTE ═══════════════ */}
+      <FounderQuoteSection
+        quote="Programmatic display is often underestimated because it feels familiar. But when you combine scale with intelligent targeting and real-time optimization, display becomes one of the most powerful performance channels available to advertisers."
+        name="Saurabh"
+        title="CEO, PublifyX"
+        variant="default"
+      />
+
+      {/* ═══════════════ FEATURES — Sticky horizontal scroll ═══════════════ */}
+      <DisplayStickyFeaturesSection />
+
+      {/* ═══════════════ AD FORMATS GRID ═══════════════ */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
@@ -248,197 +470,83 @@ const ProgrammaticDisplayAdvertising = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
+              className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
             >
-              Display Advertising
+              Ad Formats
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-4 max-w-4xl mx-auto"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
             >
-              What Is Programmatic Display Advertising?
+              Display Ad Formats Available on PublifyX
             </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
-            >
-              Programmatic display is the automated buying of display ad inventory through real-time bidding auctions.
-              It accounts for the majority of all digital display spending globally, providing advertisers with scale,
-              efficiency, and precise audience targeting.
-            </motion.p>
           </div>
-        </div>
-      </section>
 
-      {/* Features */}
-      <section className="py-12 md:py-16 bg-navy-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
-              Platform Features
-            </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              Display Advertising Features
-            </motion.h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {features.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className={i === features.length - 1 ? "md:col-span-2 lg:col-span-1" : ""}
-              >
-                <MagneticCard className="group bg-white rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
-                  <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
-                    <feature.icon className="w-6 h-6 text-brand-orange-500" />
+          {/* Desktop: 2-col grid | Tablet: 2-col compact | Mobile: stacked */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {adFormats.map((format, i) => {
+              const Icon = format.icon;
+              return (
+                <motion.div
+                  key={format.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  className="group bg-white border border-navy-100 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-brand-orange-500/5 hover:-translate-y-1 transition-all duration-300 hover:border-brand-orange-500/30 flex flex-col"
+                >
+                  {/* Image / illustration at card top */}
+                  <div className="bg-gradient-to-br from-navy-50 to-navy-100 flex items-center justify-center p-10 relative overflow-hidden">
+                    <div
+                      className="absolute inset-0 opacity-[0.04]"
+                      style={{
+                        backgroundImage:
+                          "radial-gradient(circle at 1px 1px, #1e3a5f 1px, transparent 0)",
+                        backgroundSize: "24px 24px",
+                      }}
+                    />
+                    <div className="relative z-10 w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center">
+                      <Icon className="w-9 h-9 text-brand-orange-500" />
+                    </div>
                   </div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">{feature.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{feature.description}</p>
-                </MagneticCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Ad Formats */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
-              Ad Formats
-            </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              Display Ad Formats on PublifyX
-            </motion.h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {adFormats.map((format, i) => (
-              <motion.div
-                key={format.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <div className="bg-navy-50 rounded-2xl border border-navy-100 p-7 h-full hover:shadow-lg transition-all duration-300">
-                  <div className="w-10 h-10 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-4">
-                    <span className="text-white font-bold text-sm">{String(i + 1).padStart(2, "0")}</span>
+                  {/* Card content */}
+                  <div className="p-6 flex flex-col flex-1">
+                    {/* Category indicator — accent orange */}
+                    <span className="inline-block text-xs font-extrabold text-brand-orange-500 uppercase tracking-widest mb-3">
+                      Format {format.category}
+                    </span>
+                    <h3 className="font-extrabold text-navy-800 text-xl mb-3 group-hover:text-brand-orange-600 transition-colors">
+                      {format.title}
+                    </h3>
+                    <p className="text-navy-500 leading-relaxed font-medium flex-1">
+                      {format.desc}
+                    </p>
                   </div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">{format.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{format.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
-        </div>
-      </section>
 
-      {/* Who It's For */}
-      <section className="py-12 md:py-16 bg-navy-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
-              Built For You
-            </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              Who Is Display Advertising For?
-            </motion.h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {whoItsFor.map((audience, i) => (
-              <motion.div
-                key={audience.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <MagneticCard className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-all duration-300 group h-full">
-                  <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
-                    <audience.icon className="w-6 h-6 text-brand-orange-500" />
-                  </div>
-                  <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
-                  <p className="text-navy-400 leading-relaxed">{audience.description}</p>
-                </MagneticCard>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
-              Get Started
-            </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              How It Works
-            </motion.h2>
-          </div>
-          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
-            {steps.map((step, i) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12 }}
-                className="relative text-center group"
-              >
-                {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-navy-200" />
-                )}
-                <div className="relative z-10">
-                  <div className="w-20 h-20 rounded-2xl bg-navy-800 flex items-center justify-center mx-auto mb-5 group-hover:bg-navy-700 transition-colors">
-                    <step.icon className="w-8 h-8 text-brand-orange-400" />
-                  </div>
-                  <div className="text-xs font-bold text-brand-orange-500 mb-2">{step.number}</div>
-                  <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {/* Ad formats CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="flex flex-col items-center mt-12 gap-4"
           >
+            <p className="text-sm text-navy-400 font-semibold text-center">
+              Interested in running high-impact display campaigns? Request a
+              demo of the PublifyX platform.
+            </p>
             <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-              <Link to="/contact" className="flex items-center text-white no-underline group">
-                Launch Display Campaigns{" "}
+              <Link
+                to="/contact"
+                className="flex items-center text-white no-underline group"
+              >
+                Book a Demo{" "}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </EnergyButton>
@@ -446,66 +554,20 @@ const ProgrammaticDisplayAdvertising = () => {
         </div>
       </section>
 
-      {/* Related */}
-      <section className="py-12 bg-navy-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl border border-navy-100 p-6 md:p-8">
-            <h3 className="text-lg font-bold text-navy-900 mb-4">Explore Related Services</h3>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to="/programmatic-video-advertising"
-                className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
-              >
-                Video Advertising
-              </Link>
-              <Link
-                to="/ott-advertising"
-                className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
-              >
-                OTT Advertising
-              </Link>
-              <Link
-                to="/ctv-advertising"
-                className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
-              >
-                CTV Advertising
-              </Link>
-              <Link
-                to="/white-label-dsp"
-                className="text-sm bg-navy-50 border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors"
-              >
-                White Label DSP
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ═══════════════ CLIENT EXPERIENCE ═══════════════ */}
+      <ClientTestimonialSection
+        quote="Display campaigns through PublifyX gave us the reach we needed while still allowing precise audience targeting. The ability to retarget users across multiple publishers significantly improved campaign efficiency."
+        attribution=""
+        results={[
+          "Expanded campaign reach across thousands of publisher sites",
+          "Increased click-through performance through contextual targeting",
+          "Reduced wasted impressions using viewability filters",
+          "Improved retargeting conversion rates through audience segmentation",
+        ]}
+        variant="split"
+      />
 
-      {/* CTA */}
-      <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange-500 rounded-full blur-[250px] opacity-10" />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
-        >
-          <h2 className="mb-6 !text-white">Launch Display Campaigns Today</h2>
-          <p className="text-xl text-navy-300 mb-4 leading-relaxed">
-            Access billions of daily impressions with advanced targeting and real-time optimization.
-          </p>
-          <p className="text-base text-navy-400 mb-10 font-semibold">No commitment required · All formats supported</p>
-          <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link to="/contact" className="flex items-center text-white no-underline group">
-              Book a Call{" "}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </EnergyButton>
-        </motion.div>
-      </section>
-
-      {/* FAQ */}
+      {/* ═══════════════ FAQ ═══════════════ */}
       <section className="py-12 md:py-16 bg-navy-50 faq-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
@@ -517,22 +579,33 @@ const ProgrammaticDisplayAdvertising = () => {
             >
               FAQ
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              Frequently Asked Questions
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
+            >
+              Frequently Asked Questions About Programmatic Display Advertising
             </motion.h2>
           </div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
                 <AccordionItem
                   key={i}
                   value={`faq-${i}`}
-                  className="bg-white rounded-xl border border-navy-100 px-6 overflow-hidden"
+                  className="bg-white rounded-2xl border border-navy-100 px-8 overflow-hidden hover:border-brand-orange-500/30 transition-all duration-300"
                 >
-                  <AccordionTrigger className="text-left font-semibold text-navy-800 hover:text-brand-orange-500 hover:no-underline py-5">
+                  <AccordionTrigger className="text-left font-extrabold text-navy-800 hover:text-brand-orange-600 hover:no-underline py-6 text-lg">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-navy-600 font-medium leading-relaxed pb-6 text-base">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

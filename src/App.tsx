@@ -24,6 +24,7 @@ const DigitalAdvertising = lazy(() => import("./pages/DigitalAdvertising"));
 const Services = lazy(() => import("./pages/Services"));
 const CEO = lazy(() => import("./pages/CEO"));
 const ProgrammaticAudioAdvertising = lazy(() => import("./pages/ProgrammaticAudioAdvertising"));
+const ProgrammaticDisplayAdvertising = lazy(() => import("./pages/ProgrammaticDisplayAdvertising"));
 
 // Existing blog posts
 const BlogPostOnlineBannerAdvertising2026 = lazy(() => import("./pages/BlogPost-OnlineBannerAdvertising2026"));
@@ -69,6 +70,7 @@ const App = () => (
 
             {/* Legacy */}
             <Route path="/programmatic-audio-advertising" element={<ProgrammaticAudioAdvertising />} />
+            <Route path="/programmatic-display-advertising" element={<ProgrammaticDisplayAdvertising />} />
             <Route path="/online-banner-advertising" element={<OnlineBannerAdvertising />} />
             <Route path="/digital-advertising" element={<DigitalAdvertising />} />
 
