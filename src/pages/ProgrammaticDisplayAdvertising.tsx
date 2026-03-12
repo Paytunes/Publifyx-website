@@ -225,8 +225,8 @@ const ProgrammaticDisplayAdvertising = () => {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
+        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" style={{ willChange: "transform", transform: "translateZ(0)" }} />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" style={{ willChange: "transform", transform: "translateZ(0)" }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 md:pt-28 md:pb-16">
           <PageBreadcrumb items={breadcrumbs} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -272,7 +272,7 @@ const ProgrammaticDisplayAdvertising = () => {
                   width={1024}
                   height={1024}
                   fetchPriority="high"
-                  decoding="sync"
+                  decoding="async"
                 />
               </div>
             </div>
