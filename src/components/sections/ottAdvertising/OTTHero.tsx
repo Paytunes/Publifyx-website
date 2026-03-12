@@ -67,7 +67,7 @@ const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
                 width={1024}
                 height={1024}
                 fetchPriority="high"
-                decoding="sync"
+                decoding="async"
               />
             </div>
           </div>
