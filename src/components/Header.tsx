@@ -50,7 +50,7 @@ const Header = () => {
           <div className="flex justify-between items-center h-18 py-4">
             <Link to="/" className="flex items-center">
               <img
-                src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.webp"
+                src={publifyxLogoImg}
                 alt="PublifyX"
                 className="h-8 w-auto"
                 width={171}
