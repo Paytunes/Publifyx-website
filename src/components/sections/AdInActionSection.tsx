@@ -126,7 +126,7 @@ const AdInActionSection = () => {
                     <div className="px-4">
                       <img
                         className="mt-4 h-56 w-full object-cover rounded-lg"
-                        src="/lovable-uploads/f5ba6f65-20c4-464b-994f-bf7e067b8c11.webp"
+                        src={mamaEarthAdImg}
                         alt="Mama Earth Ubtan Face Wash advertisement"
                         height={224}
                         width={269}
