@@ -49,11 +49,13 @@ const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
             <p className="text-base text-navy-200 mb-10 font-semibold">
               Looking to expand beyond traditional TV? Speak with our team about launching OTT campaigns.
             </p>
-            <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4 mb-10">
-              <Link to="/contact" className="flex items-center text-white no-underline group">
-                Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </EnergyButton>
+            <div className="flex flex-col sm:flex-row gap-4 items-start mb-10 animate-fade-in">
+              <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+                <Link to="/contact" className="flex items-center text-white no-underline group">
+                  Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </EnergyButton>
+            </div>
           </div>
           <div className="hidden lg:block animate-fade-in">
             <div className="relative">

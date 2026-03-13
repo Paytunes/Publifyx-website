@@ -122,11 +122,14 @@ const About = () => {
               <p className="text-base text-navy-300 mb-10 font-semibold">
                 Delhi, India · Serving clients worldwide · Enterprise tech, accessible pricing
               </p>
-              <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4 mb-10">
-                <Link to="/contact" className="flex items-center text-white no-underline group">
-                  Partner with Us <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </EnergyButton>
+              <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
+                <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+                  <Link to="/contact" className="flex items-center text-white no-underline group">
+                    Partner with Us{" "}
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </EnergyButton>
+              </div>
               <p className="text-sm text-navy-400">Democratizing access to programmatic ad tech</p>
             </motion.div>
             <motion.div
@@ -310,7 +313,8 @@ const About = () => {
           <p className="text-base text-navy-400 mb-10 font-semibold">No commitment required · Global reach</p>
           <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
             <Link to="/contact" className="flex items-center text-white no-underline group">
-              Book a Call <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Book a Call{" "}
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </EnergyButton>
         </motion.div>
