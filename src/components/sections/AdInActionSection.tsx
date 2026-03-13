@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Check, Play, Pause, SkipBack, SkipForward, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
+import mamaEarthAdImg from "@/assets/home/mama-earth-ad.webp";
+import publifyxLogoImg from "@/assets/brand/publifyx-logo.webp";
 
 const AdInActionSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);

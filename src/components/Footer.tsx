@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin } from "lucide-react";
+import publifyxLogoImg from "@/assets/brand/publifyx-logo.webp";
 
 const Footer = () => {
   return (

@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import EnergyButton from "@/components/effects/EnergyButton";
+import podcastStudioImg from "@/assets/home/podcast-studio.webp";
 
 const JoinRevolutionSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
