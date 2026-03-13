@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import { Tv, Gamepad2, Monitor, Radio } from "lucide-react";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 interface CTVExplanationSectionProps {
-  onGetStarted: () => void;
+  onGetStarted?: () => void;
 }
 
 const devices = [
@@ -14,7 +12,7 @@ const devices = [
   { icon: Monitor, label: "Internet-enabled set-top boxes" },
 ];
 
-const CTVExplanationSection = ({ onGetStarted }: CTVExplanationSectionProps) => {
+const CTVExplanationSection = ({}: CTVExplanationSectionProps) => {
   return (
     <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

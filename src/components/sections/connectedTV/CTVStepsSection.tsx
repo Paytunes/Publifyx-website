@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 
 interface CTVStepsSectionProps {
-  onGetStarted: () => void;
+  onGetStarted?: () => void;
 }
 
 const steps = [
@@ -16,7 +14,7 @@ const steps = [
   "Post-campaign, access reporting on impressions, VCR, unique household reach, frequency, and cost per completed view.",
 ];
 
-const CTVStepsSection = ({ onGetStarted }: CTVStepsSectionProps) => {
+const CTVStepsSection = ({}: CTVStepsSectionProps) => {
   return (
     <section className="py-12 md:py-16 bg-navy-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

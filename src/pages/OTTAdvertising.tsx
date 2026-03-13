@@ -6,7 +6,6 @@ import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
 import { motion } from "framer-motion";
 import { Tv, Monitor, Radio } from "lucide-react";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
-import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 // Hero loaded eagerly (above fold)

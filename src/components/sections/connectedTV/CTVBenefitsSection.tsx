@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Check } from "lucide-react";
 
 interface CTVBenefitsSectionProps {
-  onGetStarted: () => void;
+  onGetStarted?: () => void;
 }
 
 const ctvBrings = [
@@ -22,7 +21,7 @@ const targetingBy = [
   "Household characteristics",
 ];
 
-const CTVBenefitsSection = ({ onGetStarted }: CTVBenefitsSectionProps) => {
+const CTVBenefitsSection = ({}: CTVBenefitsSectionProps) => {
   return (
     <section className="py-12 md:py-16 bg-navy-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

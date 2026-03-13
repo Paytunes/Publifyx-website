@@ -34,7 +34,7 @@ interface BenefitsAndAudienceSectionProps {
   onGetStarted: () => void;
 }
 
-const BenefitsAndAudienceSection = ({ onGetStarted }: BenefitsAndAudienceSectionProps) => {
+const BenefitsAndAudienceSection = ({}: BenefitsAndAudienceSectionProps) => {
   return (
     <section className="py-12 md:py-16 bg-navy-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

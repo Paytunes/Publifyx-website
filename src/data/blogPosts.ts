@@ -1,4 +1,4 @@
-const ottBuyAdsCard = "/images/blog/ott-buy-ads-card.webp";
+
 
 export interface BlogPost {
   id: number;

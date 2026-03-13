@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Palette, Layers, Zap, Target, BarChart3, Settings, Headphones } from "lucide-react";
+import { Palette, Layers, Zap, Target, Settings, Headphones } from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
 
 const features = [

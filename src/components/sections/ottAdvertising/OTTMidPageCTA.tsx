@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { PlayCircle, Download } from "lucide-react";
+import { PlayCircle } from "lucide-react";
 import EnergyButton from "@/components/effects/EnergyButton";
 
 const OTTMidPageCTA = () => {

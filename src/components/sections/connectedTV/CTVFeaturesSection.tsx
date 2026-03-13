@@ -65,7 +65,7 @@ const CTVFeaturesSection = () => {
           transition={{ duration: 0.5 }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
         >
-          {features.map((feature, i) => (
+          {features.map((feature) => (
             <MagneticCard
               key={feature.title}
               className="bg-navy-50 rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-shadow duration-300"
