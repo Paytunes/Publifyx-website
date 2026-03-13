@@ -185,6 +185,18 @@ const displaySchemas = [
 ];
 
 const ProgrammaticDisplayAdvertising = () => {
+  // Preload hero image immediately to reduce LCP load delay
+  useEffect(() => {
+    const preload = document.createElement("link");
+    preload.rel = "preload";
+    preload.as = "image";
+    preload.type = "image/webp";
+    preload.href = displayHeroDashboard;
+    preload.setAttribute("fetchpriority", "high");
+    document.head.appendChild(preload);
+    return () => { preload.remove(); };
+  }, []);
+
   useEffect(() => {
     document.title = "Programmatic Display Advertising Platform | Display DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
