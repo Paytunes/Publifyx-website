@@ -71,7 +71,7 @@ interface WhyChooseSectionProps {
   onGetStarted: () => void;
 }
 
-const WhyChooseSection = ({ onGetStarted }: WhyChooseSectionProps) => {
+const WhyChooseSection = ({}: WhyChooseSectionProps) => {
   const [activeTab, setActiveTab] = useState("display");
   const activeContent = tabs.find((t) => t.id === activeTab)!;
 

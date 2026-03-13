@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Laptop, Smartphone, Tablet, Tv, Gamepad2, Monitor, Box, Rocket } from "lucide-react";
+import { Laptop, Smartphone, Tablet, Tv, Gamepad2, Box } from "lucide-react";
 
 const devices = [
   { name: "Smart TVs", icon: Tv, sub: "Samsung, LG, VIZIO, Android TV" },

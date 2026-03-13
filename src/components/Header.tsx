@@ -21,9 +21,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === "/";
   const isContact = location.pathname.includes("/contact");
-  const isBlog = location.pathname.includes("/blog");
   const isFounders = ["/saurabh", "/privacy_policy", "/terms_and_conditions"].some((p) =>
     location.pathname.includes(p),
   );

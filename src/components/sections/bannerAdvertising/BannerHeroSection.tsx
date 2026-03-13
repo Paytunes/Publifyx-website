@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 
 interface BannerHeroSectionProps {
   onGetStarted: () => void;
-  onWatchDemo: () => void;
+  onWatchDemo?: () => void;
 }
 
-const BannerHeroSection = ({ onGetStarted, onWatchDemo }: BannerHeroSectionProps) => {
+const BannerHeroSection = ({ onGetStarted }: BannerHeroSectionProps) => {
   // Start visible so LCP text is not hidden by JS-gated opacity-0
   const [isVisible, setIsVisible] = useState(true);
   const [floatingElements, setFloatingElements] = useState([

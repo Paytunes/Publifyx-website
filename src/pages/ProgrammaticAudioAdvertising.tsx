@@ -11,7 +11,7 @@ import podcastStudio from "@/assets/audio/podcast-studio.webp";
 import audioDevices from "@/assets/audio/audio-devices.webp";
 import { motion, useInView } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
-import { ArrowRight, Sparkles, Headphones, Radio, Mic, Globe, Monitor, Music, Tv } from "lucide-react";
+import { ArrowRight, Sparkles, Headphones, Radio, Mic, Monitor, Music, Tv } from "lucide-react";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";

@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 interface CTVCTASectionProps {
-  onGetStarted: () => void;
+  onGetStarted?: () => void;
 }
 
-const CTVCTASection = ({ onGetStarted }: CTVCTASectionProps) => {
+const CTVCTASection = ({}: CTVCTASectionProps) => {
   return (
     <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />

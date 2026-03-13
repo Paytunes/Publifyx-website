@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Check } from "lucide-react";
 
 interface CTVBenefitsSectionProps {
-  onGetStarted: () => void;
+  onGetStarted?: () => void;
 }
 
 const ctvBrings = [
