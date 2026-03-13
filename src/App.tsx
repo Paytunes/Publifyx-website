@@ -87,7 +87,7 @@ const App = () => (
         </Suspense>
       </BrowserRouter>
     </TooltipProvider>
-  </QueryClientProvider>
+  </>
 );
 
 export default App;
