@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import EnergyButton from "@/components/effects/EnergyButton";
+import heroImage from "@/assets/home/hero-woman-phone.webp";
 
 const ParticleNetwork = lazy(() => import("@/components/effects/ParticleNetwork"));
 

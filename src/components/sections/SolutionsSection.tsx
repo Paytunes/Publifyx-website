@@ -1,6 +1,9 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Cpu, Tv, LayoutDashboard } from "lucide-react";
 import { useRef, type MouseEvent } from "react";
+import solutionAiCreativity from "@/assets/home/solution-ai-creativity.webp";
+import solutionOtt from "@/assets/home/solution-ott.webp";
+import solutionDsp from "@/assets/home/solution-dsp.webp";
 
 const solutions = [
   {
@@ -8,7 +11,7 @@ const solutions = [
     title: "AI-Powered Creativity",
     description:
       "Create captivating audio and video content effortlessly with advanced AI algorithms that ensure natural, engaging creativity in seconds.",
-    image: "/lovable-uploads/f64cf965-b6ee-4102-9e75-6f5b1cbdf48b.webp",
+    image: solutionAiCreativity,
     alt: "Person editing ad video on phone using AI",
   },
   {
@@ -16,7 +19,7 @@ const solutions = [
     title: "OTT Advertising Simplification",
     description:
       "Pre-packaged OTT solutions make platform selection easy and affordable, with guaranteed high ad completion rates to maximize ROI.",
-    image: "/lovable-uploads/283b0e0e-7e0f-457e-9002-2c270f2cd928.webp",
+    image: solutionOtt,
     alt: "Woman watching video content on mobile device",
   },
   {
@@ -24,7 +27,7 @@ const solutions = [
     title: "White-Labeled DSP Solutions",
     description:
       "Customized DSP platforms for corporate media agencies with self-branded reporting portals and campaign management tools.",
-    image: "/lovable-uploads/d0e4d426-d705-4d55-8135-97e8afdf1613.webp",
+    image: solutionDsp,
     alt: "Smartphone showing ad interface – DSP solution",
   },
 ];

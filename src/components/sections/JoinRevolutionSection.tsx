@@ -47,7 +47,7 @@ const JoinRevolutionSection = () => {
             style={{ y: imgY }}
           >
             <img
-              src="/lovable-uploads/378f516e-ced5-4d46-999b-0075f2957d7a.webp"
+              src={podcastStudioImg}
               alt="Podcast recording studio – audio ad production setup"
               className="w-full h-auto rounded-2xl shadow-xl"
               width={584}
