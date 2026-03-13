@@ -13,7 +13,18 @@ import formatRichMedia from "@/assets/display/format-rich-media.webp";
 import formatInterstitial from "@/assets/display/format-interstitial.webp";
 import { motion } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
-import { ArrowRight, Sparkles, Image, Layout as LayoutIcon, Film, Maximize2, Layers, Headphones, Tv, Radio } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  Image,
+  Layout as LayoutIcon,
+  Film,
+  Maximize2,
+  Layers,
+  Headphones,
+  Tv,
+  Radio,
+} from "lucide-react";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
@@ -185,18 +196,6 @@ const displaySchemas = [
 ];
 
 const ProgrammaticDisplayAdvertising = () => {
-  // Preload hero image immediately to reduce LCP load delay
-  useEffect(() => {
-    const preload = document.createElement("link");
-    preload.rel = "preload";
-    preload.as = "image";
-    preload.type = "image/webp";
-    preload.href = displayHeroDashboard;
-    preload.setAttribute("fetchpriority", "high");
-    document.head.appendChild(preload);
-    return () => { preload.remove(); };
-  }, []);
-
   useEffect(() => {
     document.title = "Programmatic Display Advertising Platform | Display DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
@@ -237,8 +236,14 @@ const ProgrammaticDisplayAdvertising = () => {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" style={{ willChange: "transform", transform: "translateZ(0)" }} />
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" style={{ willChange: "transform", transform: "translateZ(0)" }} />
+        <div
+          className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10"
+          style={{ willChange: "transform", transform: "translateZ(0)" }}
+        />
+        <div
+          className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]"
+          style={{ willChange: "transform", transform: "translateZ(0)" }}
+        />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 md:pt-28 md:pb-16">
           <PageBreadcrumb items={breadcrumbs} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -266,13 +271,11 @@ const ProgrammaticDisplayAdvertising = () => {
               <p className="text-sm text-navy-300 mb-6 font-semibold">
                 Looking to scale display advertising with programmatic precision? Request a platform walkthrough.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
-                <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link to="/contact" className="flex items-center text-white no-underline group">
-                    Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </EnergyButton>
-              </div>
+              <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4 mb-10">
+                <Link to="/contact" className="flex items-center text-white no-underline group">
+                  Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </EnergyButton>
             </div>
             <div className="hidden lg:block">
               <div className="relative">
