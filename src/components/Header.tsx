@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
+import publifyxLogoImg from "@/assets/brand/publifyx-logo.webp";
 import {
   DropdownMenu,
   DropdownMenuContent,
