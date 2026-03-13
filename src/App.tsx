@@ -37,11 +37,8 @@ const BlogPostConnectedTVAdvertising = lazy(() => import("./pages/BlogPost-Conne
 const TermsConditions = lazy(() => import("./pages/TermsConditions"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-
-const queryClient = new QueryClient();
-
 const App = () => (
-  <QueryClientProvider client={queryClient}>
+  <>
     <TooltipProvider>
       <Toaster />
       <Sonner />
