@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Target, Zap, Star, Rocket } from "lucide-react";
+import { Target, Zap, Star, Rocket, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import MagneticCard from "@/components/effects/MagneticCard";
 
 const targetAudience = [
