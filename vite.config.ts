@@ -4,6 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { sitemapPlugin } from "./plugins/vite-sitemap";
 import { asyncCssPlugin } from "./plugins/vite-async-css";
+import { heroPreloadPlugin } from "./plugins/vite-hero-preload";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
