@@ -271,22 +271,21 @@ const AudioStickyFeaturesSection = () => {
         </div>
       </div>
 
-      {/* Mobile: Stacked layout */}
-      <div className="lg:hidden px-4 sm:px-6 pb-16 space-y-10">
-        {features.map((feature, i) => {
+      {/* Mobile: Compact card list — no FeatureVisual to keep DOM lean */}
+      <div className="lg:hidden px-4 sm:px-6 pb-16 space-y-4">
+        {features.map((feature) => {
           const Icon = feature.icon;
           return (
-            <div key={feature.title}>
-              <div className="bg-white rounded-2xl border border-navy-100 p-6 mb-4">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-11 h-11 rounded-xl bg-brand-orange-50 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-brand-orange-700" />
-                  </div>
-                  <h3 className="text-lg font-extrabold text-navy-800">{feature.title}</h3>
+            <div key={feature.title} className="bg-white rounded-2xl border border-navy-100 p-5">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-brand-orange-50 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-5 h-5 text-brand-orange-700" />
                 </div>
-                <p className="text-navy-600 font-medium leading-relaxed text-sm">{feature.description}</p>
+                <div>
+                  <h3 className="text-base font-extrabold text-navy-800 mb-1">{feature.title}</h3>
+                  <p className="text-navy-600 leading-relaxed text-sm">{feature.description}</p>
+                </div>
               </div>
-              <FeatureVisual feature={feature} index={i} />
             </div>
           );
         })}

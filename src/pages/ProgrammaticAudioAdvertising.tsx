@@ -17,6 +17,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
 import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
 import AudioStickyFeaturesSection from "@/components/sections/audioAdvertising/AudioStickyFeaturesSection";
+import LazySection from "@/components/LazySection";
 
 const adFormats = [
   {
@@ -227,14 +228,13 @@ const ProgrammaticAudioAdvertising = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-navy-800">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.03] hidden md:block"
           style={{
             backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
+        <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10 hidden lg:block" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <PageBreadcrumb items={breadcrumbs} />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -271,18 +271,15 @@ const ProgrammaticAudioAdvertising = () => {
               </div>
             </div>
             <div className="hidden lg:block">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
-                <img
-                  src={audioHeroDashboard}
-                  alt="Programmatic audio advertising dashboard with waveform visualization and listener analytics"
-                  className="relative w-full h-auto rounded-2xl shadow-2xl shadow-black/40 border border-white/10"
-                  width={1024}
-                  height={1024}
-                  fetchPriority="high"
-                  decoding="sync"
-                />
-              </div>
+              <img
+                src={audioHeroDashboard}
+                alt="Programmatic audio advertising dashboard with waveform visualization and listener analytics"
+                className="w-full h-auto rounded-2xl shadow-2xl shadow-black/40 border border-white/10"
+                width={1024}
+                height={1024}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
@@ -298,17 +295,15 @@ const ProgrammaticAudioAdvertising = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="relative">
-                <div className="absolute -inset-3 bg-brand-orange-500/8 rounded-3xl blur-xl" />
-                <img
-                  src={programmaticAudioConcept}
-                  alt="Programmatic audio advertising concept showing smartphone with audio waveforms, headphones, microphone, and targeting signals"
-                  className="relative w-full h-auto rounded-2xl shadow-xl"
-                  width={672}
-                  height={672}
-                  loading="lazy"
-                />
-              </div>
+              <img
+                src={programmaticAudioConcept}
+                alt="Programmatic audio advertising concept showing smartphone with audio waveforms, headphones, microphone, and targeting signals"
+                className="w-full h-auto rounded-2xl shadow-xl"
+                width={672}
+                height={672}
+                loading="lazy"
+                decoding="async"
+              />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 40 }}
@@ -373,10 +368,8 @@ const ProgrammaticAudioAdvertising = () => {
                   "Smart speaker adoption",
                   "Increased mobile usage",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-4">
-                    <div className="w-8 h-8 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
-                      <Headphones className="w-4 h-4 text-brand-orange-600" />
-                    </div>
+                  <li key={item} className="flex items-center gap-3">
+                    <Headphones className="w-5 h-5 text-brand-orange-600 flex-shrink-0" />
                     <span className="text-navy-600 font-medium text-lg">{item}</span>
                   </li>
                 ))}
@@ -391,17 +384,15 @@ const ProgrammaticAudioAdvertising = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="relative">
-                <div className="absolute -inset-3 bg-brand-orange-500/8 rounded-3xl blur-xl" />
-                <img
-                  src={podcastStudio}
-                  alt="Professional podcast recording studio with microphone for programmatic audio advertising"
-                  className="relative w-full h-auto rounded-2xl shadow-xl"
-                  width={672}
-                  height={672}
-                  loading="lazy"
-                />
-              </div>
+              <img
+                src={podcastStudio}
+                alt="Professional podcast recording studio with microphone for programmatic audio advertising"
+                className="w-full h-auto rounded-2xl shadow-xl"
+                width={672}
+                height={672}
+                loading="lazy"
+                decoding="async"
+              />
             </motion.div>
           </div>
         </div>
@@ -417,121 +408,109 @@ const ProgrammaticAudioAdvertising = () => {
         </div>
       </section>
 
-      <FounderQuoteSection
-        quote="Some of the most influential advertising moments happen when screens are off. Audio allows brands to speak directly to listeners during high-attention moments, and we've made that scalable and measurable."
-        name="Saurabh"
-        title="CEO, PublifyX"
-        variant="default"
-      />
+      <LazySection minHeight="200px">
+        <FounderQuoteSection
+          quote="Some of the most influential advertising moments happen when screens are off. Audio allows brands to speak directly to listeners during high-attention moments, and we've made that scalable and measurable."
+          name="Saurabh"
+          title="CEO, PublifyX"
+          variant="default"
+        />
+      </LazySection>
 
       {/* ═══════════════ FEATURES — Sticky scroll (OTT-style) ═══════════════ */}
-      <AudioStickyFeaturesSection />
+      <LazySection minHeight="400px">
+        <AudioStickyFeaturesSection />
+      </LazySection>
 
       {/* ═══════════════ AD FORMATS — Alternating with image ═══════════════ */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
-                Ad Formats
-              </span>
-              <h2 className="mb-8">Audio Ad Formats Supported by PublifyX</h2>
-              <div className="space-y-6">
-                {adFormats.map((format, i) => (
-                  <motion.div
-                    key={format.title}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex gap-5 items-start group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange-500 transition-colors">
-                      <format.icon className="w-5 h-5 text-brand-orange-400 group-hover:text-white transition-colors" />
+      <LazySection minHeight="300px">
+        <section className="py-12 md:py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <div>
+                <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+                  Ad Formats
+                </span>
+                <h2 className="mb-8">Audio Ad Formats Supported by PublifyX</h2>
+                <div className="space-y-6">
+                  {adFormats.map((format) => (
+                    <div key={format.title} className="flex gap-4 items-start">
+                      <div className="w-10 h-10 rounded-xl bg-navy-800 flex items-center justify-center flex-shrink-0">
+                        <format.icon className="w-5 h-5 text-brand-orange-400" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-navy-800 text-lg mb-1">{format.title}</h3>
+                        <p className="text-navy-400 leading-relaxed">{format.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-bold text-navy-800 text-lg mb-1">{format.title}</h3>
-                      <p className="text-navy-400 leading-relaxed">{format.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="hidden lg:block"
-            >
-              <div className="relative">
-                <div className="absolute -inset-4 bg-brand-orange-500/8 rounded-3xl blur-xl" />
+              <div className="hidden lg:block">
                 <img
                   src={audioDevices}
                   alt="Smart speakers and audio streaming devices for programmatic audio advertising"
-                  className="relative w-full h-auto rounded-2xl shadow-xl"
+                  className="w-full h-auto rounded-2xl shadow-xl"
                   width={672}
                   height={672}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </LazySection>
 
-      <ClientTestimonialSection
-        quote="Audio campaigns helped us reach audiences during commute hours where display simply couldn't. Completion rates were consistently strong, and companion banners drove additional engagement."
-        attribution="Senior Media Planner, Digital-First Agency"
-        results={[
-          "Targeted by listening behavior and time of day",
-          "Increased brand recall in post-campaign surveys",
-          "Improved reach during non-screen engagement hours",
-        ]}
-        variant="split"
-      />
+      <LazySection minHeight="200px">
+        <ClientTestimonialSection
+          quote="Audio campaigns helped us reach audiences during commute hours where display simply couldn't. Completion rates were consistently strong, and companion banners drove additional engagement."
+          attribution="Senior Media Planner, Digital-First Agency"
+          results={[
+            "Targeted by listening behavior and time of day",
+            "Increased brand recall in post-campaign surveys",
+            "Improved reach during non-screen engagement hours",
+          ]}
+          variant="split"
+        />
+      </LazySection>
 
       {/* ═══════════════ RELATED SERVICES ═══════════════ */}
-      <RelatedServicesSection
-        services={[
-          {
-            title: "OTT Advertising",
-            desc: "Reach viewers across premium OTT platforms with programmatic video campaigns.",
-            icon: Radio,
-            path: "/ott-advertising",
-          },
-          {
-            title: "CTV Advertising",
-            desc: "Reach audiences on the big screen with programmatic connected TV campaigns.",
-            icon: Tv,
-            path: "/ctv-advertising",
-          },
-          {
-            title: "Programmatic Display",
-            desc: "Run programmatic banner, native, and rich media display campaigns at scale.",
-            icon: Monitor,
-            path: "/programmatic-display-advertising",
-          },
-        ]}
-      />
+      <LazySection minHeight="200px">
+        <RelatedServicesSection
+          services={[
+            {
+              title: "OTT Advertising",
+              desc: "Reach viewers across premium OTT platforms with programmatic video campaigns.",
+              icon: Radio,
+              path: "/ott-advertising",
+            },
+            {
+              title: "CTV Advertising",
+              desc: "Reach audiences on the big screen with programmatic connected TV campaigns.",
+              icon: Tv,
+              path: "/ctv-advertising",
+            },
+            {
+              title: "Programmatic Display",
+              desc: "Run programmatic banner, native, and rich media display campaigns at scale.",
+              icon: Monitor,
+              path: "/programmatic-display-advertising",
+            },
+          ]}
+        />
+      </LazySection>
 
       {/* ═══════════════ FAQ ═══════════════ */}
-      <section className="py-12 md:py-16 bg-navy-50 faq-section">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
-              FAQ
-            </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              Frequently Asked Questions About Programmatic Audio Advertising
-            </motion.h2>
-          </div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+      <LazySection minHeight="300px">
+        <section className="py-12 md:py-16 bg-navy-50 faq-section">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-14">
+              <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+                FAQ
+              </span>
+              <h2>Frequently Asked Questions About Programmatic Audio Advertising</h2>
+            </div>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
                 <AccordionItem
@@ -546,62 +525,51 @@ const ProgrammaticAudioAdvertising = () => {
                 </AccordionItem>
               ))}
             </Accordion>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
+      </LazySection>
 
       {/* ═══════════════ AUDIO STATISTICS — US Map visual ═══════════════ */}
-      <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
+      <LazySection minHeight="250px">
+        <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
 
-        {/* USA Map — absolute background visual */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+          {/* USA Map — background visual (desktop only to save mobile DOM) */}
           <img
             src={usaMapSilhouette}
             alt=""
             aria-hidden="true"
-            className="w-[90%] max-w-4xl h-auto opacity-20 md:opacity-25 lg:opacity-30 object-contain"
+            className="absolute inset-0 w-full h-full object-contain pointer-events-none opacity-20 md:opacity-25 lg:opacity-30 hidden md:block"
             width={1200}
             height={800}
             loading="lazy"
+            decoding="async"
           />
-        </div>
 
-        {/* Foreground content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h3 className="text-white font-bold text-xl md:text-2xl lg:text-3xl text-center mb-12 md:mb-16">
-            United States of America
-          </h3>
+          {/* Foreground content */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h3 className="text-white font-bold text-xl md:text-2xl lg:text-3xl text-center mb-12 md:mb-16">
+              United States of America
+            </h3>
 
-          {/* Stats grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 max-w-6xl mx-auto">
-            {audioStats.map((stat, i) => (
-              <motion.div
-                key={stat.value}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12 }}
-                className="text-center px-4 py-6"
-              >
-                <AnimatedStatCounter target={stat.value} suffix={stat.suffix} />
-                <p className="text-white/70 text-sm md:text-base leading-relaxed mt-3 max-w-[240px] mx-auto">
-                  {stat.description}
-                </p>
-              </motion.div>
-            ))}
+            {/* Stats grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 max-w-6xl mx-auto">
+              {audioStats.map((stat) => (
+                <div key={stat.value} className="text-center px-2 py-4 md:px-4 md:py-6">
+                  <AnimatedStatCounter target={stat.value} suffix={stat.suffix} />
+                  <p className="text-white/70 text-sm md:text-base leading-relaxed mt-3 max-w-[240px] mx-auto">
+                    {stat.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-white/80 text-sm mt-12 md:mt-16 text-center">
+              Source: Statista, Edison Research 2024
+            </p>
           </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-white/80 text-sm mt-12 md:mt-16 text-center"
-          >
-            Source: Statista, Edison Research 2024
-          </motion.p>
-        </div>
-      </section>
+        </section>
+      </LazySection>
     </Layout>
   );
 };

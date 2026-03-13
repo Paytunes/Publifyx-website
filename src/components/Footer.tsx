@@ -41,7 +41,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Services</h4>
+            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider font-inter">Services</h3>
             <ul className="space-y-2.5">
               <li>
                 <Link
@@ -88,7 +88,7 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Company</h4>
+            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider font-inter">Company</h3>
             <ul className="space-y-2.5">
               <li>
                 <Link to="/about" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
@@ -105,7 +105,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Legal</h4>
+            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider font-inter">Legal</h3>
             <ul className="space-y-2.5">
               <li>
                 <Link

@@ -179,14 +179,10 @@ const ClientTestimonialSection = ({
                   initial={{ opacity: 0, x: 24 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.45, delay: 0.3 + i * 0.12 }}
-                  className="group bg-white rounded-2xl border border-navy-100 p-5 hover:border-brand-orange-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden"
+                  className="bg-white rounded-2xl border border-navy-100 p-5 hover:border-brand-orange-200 hover:shadow-lg transition-all duration-300"
                 >
-                  {/* Subtle glow on hover */}
-                  <div className="absolute inset-0 rounded-2xl bg-brand-orange-500/0 group-hover:bg-brand-orange-500/[0.02] transition-colors duration-300" />
-                  <div className="flex items-center gap-4 relative z-10">
-                    <div className="w-10 h-10 rounded-xl bg-brand-orange-50 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange-100 transition-colors">
-                      <CheckCircle2 className="w-5 h-5 text-brand-orange-500" />
-                    </div>
+                  <div className="flex items-center gap-4">
+                    <CheckCircle2 className="w-5 h-5 text-brand-orange-500 flex-shrink-0" />
                     <p className="text-sm font-semibold text-navy-700 leading-snug">{result}</p>
                   </div>
                 </motion.div>
