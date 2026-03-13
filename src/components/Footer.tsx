@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin } from "lucide-react";
+import publifyxLogoImg from "@/assets/brand/publifyx-logo.webp";
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
           <div className="col-span-1">
             <Link to="/">
               <img
-                src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.webp"
+                src={publifyxLogoImg}
                 alt="PublifyX"
                 className="h-8"
                 width={171}

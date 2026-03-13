@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Check, Play, Pause, SkipBack, SkipForward, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import EnergyButton from "@/components/effects/EnergyButton";
+import mamaEarthAdImg from "@/assets/home/mama-earth-ad.webp";
+import publifyxLogoImg from "@/assets/brand/publifyx-logo.webp";
 
 const AdInActionSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -126,7 +128,7 @@ const AdInActionSection = () => {
                     <div className="px-4">
                       <img
                         className="mt-4 h-56 w-full object-cover rounded-lg"
-                        src="/lovable-uploads/f5ba6f65-20c4-464b-994f-bf7e067b8c11.webp"
+                        src={mamaEarthAdImg}
                         alt="Mama Earth Ubtan Face Wash advertisement"
                         height={224}
                         width={269}
@@ -198,7 +200,7 @@ const AdInActionSection = () => {
                         <p className="text-xs text-white/50">Powered by</p>
                         <img
                           className="mx-auto my-1.5 w-28 brightness-0 invert"
-                          src="/lovable-uploads/c51dbe32-20d8-4bf7-a697-3e8e02023a97.webp"
+                          src={publifyxLogoImg}
                           alt="Publifyx Logo"
                           width={112}
                           height={21}

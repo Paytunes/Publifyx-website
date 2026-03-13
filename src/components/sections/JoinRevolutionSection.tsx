@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import EnergyButton from "@/components/effects/EnergyButton";
+import podcastStudioImg from "@/assets/home/podcast-studio.webp";
 
 const JoinRevolutionSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -47,7 +48,7 @@ const JoinRevolutionSection = () => {
             style={{ y: imgY }}
           >
             <img
-              src="/lovable-uploads/378f516e-ced5-4d46-999b-0075f2957d7a.webp"
+              src={podcastStudioImg}
               alt="Podcast recording studio – audio ad production setup"
               className="w-full h-auto rounded-2xl shadow-xl"
               width={584}
