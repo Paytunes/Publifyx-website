@@ -467,6 +467,8 @@ const CTVAdvertising = () => {
                     <img
                       src={device.image}
                       alt={device.label}
+                      width={196}
+                      height={196}
                       className="max-h-full max-w-[80%] object-contain"
                       loading="lazy"
                     />
