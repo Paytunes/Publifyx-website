@@ -85,8 +85,8 @@ const HeroSection = () => {
           >
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 !bg-[#ffbf32]">
-                <img
-                  src="/lovable-uploads/bef683a7-f8ef-4723-b8b6-270b4e10a7c0.webp"
+               <img
+                  src={heroImage}
                   alt="Young woman using phone – digital advertising concept"
                   className="w-full h-auto"
                   width={584}
