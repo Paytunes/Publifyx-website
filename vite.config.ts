@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => ({
           // chunk so pages that don't use dialogs/selects don't pay the cost
           "radix-ui": [
             "@radix-ui/react-accordion",
-            "@radix-ui/react-dialog",
+            
             "@radix-ui/react-dropdown-menu",
             "@radix-ui/react-select",
             "@radix-ui/react-separator",
