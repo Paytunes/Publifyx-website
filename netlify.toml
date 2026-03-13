@@ -111,8 +111,7 @@
 [[headers]]
   for = "/"
   [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-    X-Frame-Options = "DENY"
+    Cache-Control = "public, max-age=0, must-revalidate"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
