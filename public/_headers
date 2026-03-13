@@ -30,9 +30,9 @@
 
 # HTML — always revalidate so updates reflect immediately
 /
-  Cache-Control: no-cache
+  Cache-Control: public, max-age=0, must-revalidate
 /*.html
-  Cache-Control: no-cache
+  Cache-Control: public, max-age=0, must-revalidate
 
 # SEO / meta files — short cache
 /robots.txt
