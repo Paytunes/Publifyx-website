@@ -29,8 +29,6 @@ export default defineConfig(({ mode }) => ({
           "framer-motion": ["framer-motion"],
           // React core + router — smallest possible critical-path chunk
           "react-vendor": ["react", "react-dom", "react-router-dom"],
-          // Tanstack query separate chunk
-          query: ["@tanstack/react-query"],
           // Lucide icons — large icon set
           lucide: ["lucide-react"],
           // Radix UI primitives (used by shadcn/ui) — kept out of the main entry
