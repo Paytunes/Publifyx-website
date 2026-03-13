@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import { Tv, Gamepad2, Monitor, Radio } from "lucide-react";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 interface CTVExplanationSectionProps {
-  onGetStarted: () => void;
+  onGetStarted?: () => void;
 }
 
 const devices = [
