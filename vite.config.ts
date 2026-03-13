@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger(), sitemapPlugin(), asyncCssPlugin()].filter(Boolean),
+  plugins: [react(), mode === "development" && componentTagger(), sitemapPlugin(), asyncCssPlugin(), heroPreloadPlugin()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
