@@ -1,93 +1,56 @@
 import * as React from "react"
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-/* ───────────────────────────────────────────────────────────────
-   CSS-only Accordion built on <details>/<summary>.
-   Drop-in replacement for the Radix UI accordion – same exports,
-   same className / children API, zero forced reflows.
-   ─────────────────────────────────────────────────────────────── */
+const Accordion = AccordionPrimitive.Root
 
-interface AccordionProps {
-  type?: "single" | "multiple"
-  collapsible?: boolean
-  className?: string
-  children: React.ReactNode
-}
-
-const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
-  ({ className, children, ...props }, ref) => (
-    <div ref={ref} className={cn("", className)} {...props}>
-      {children}
-    </div>
-  ),
-)
-Accordion.displayName = "Accordion"
-
-/* ── Item ────────────────────────────────────────────────────── */
-
-interface AccordionItemProps {
-  value?: string
-  className?: string
-  children: React.ReactNode
-}
-
-const AccordionItem = React.forwardRef<HTMLDetailsElement, AccordionItemProps>(
-  ({ className, value: _value, ...props }, ref) => (
-    <details
-      ref={ref}
-      className={cn("border-b group", className)}
-      {...props}
-    />
-  ),
-)
+const AccordionItem = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
+>(({ className, ...props }, ref) => (
+  <AccordionPrimitive.Item
+    ref={ref}
+    className={cn("border-b", className)}
+    {...props}
+  />
+))
 AccordionItem.displayName = "AccordionItem"
 
-/* ── Trigger ─────────────────────────────────────────────────── */
-
-interface AccordionTriggerProps
-  extends React.HTMLAttributes<HTMLElement> {
-  className?: string
-  children: React.ReactNode
-}
-
-const AccordionTrigger = React.forwardRef<HTMLElement, AccordionTriggerProps>(
-  ({ className, children, ...props }, ref) => (
-    <summary
-      ref={ref as React.Ref<HTMLElement>}
+const AccordionTrigger = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
+>(({ className, children, ...props }, ref) => (
+  <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Trigger
+      ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline cursor-pointer list-none [&::-webkit-details-marker]:hidden",
-        className,
+        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+        className
       )}
       {...props}
     >
       {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180" />
-    </summary>
-  ),
-)
-AccordionTrigger.displayName = "AccordionTrigger"
+      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+    </AccordionPrimitive.Trigger>
+  </AccordionPrimitive.Header>
+))
+AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 
-/* ── Content ─────────────────────────────────────────────────── */
+const AccordionContent = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
+>(({ className, children, ...props }, ref) => (
+  <AccordionPrimitive.Content
+    ref={ref}
+    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    {...props}
+  >
+    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+  </AccordionPrimitive.Content>
+))
 
-interface AccordionContentProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  className?: string
-  children: React.ReactNode
-}
-
-const AccordionContent = React.forwardRef<HTMLDivElement, AccordionContentProps>(
-  ({ className, children, ...props }, ref) => (
-    <div
-      ref={ref}
-      className="overflow-hidden text-sm"
-      {...props}
-    >
-      <div className={cn("pb-4 pt-0", className)}>{children}</div>
-    </div>
-  ),
-)
-AccordionContent.displayName = "AccordionContent"
+AccordionContent.displayName = AccordionPrimitive.Content.displayName
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }

@@ -35,6 +35,8 @@ export default defineConfig(({ mode }) => ({
           // Radix UI primitives (used by shadcn/ui) — kept out of the main entry
           // chunk so pages that don't use dialogs/selects don't pay the cost
           "radix-ui": [
+            "@radix-ui/react-accordion",
+            
             "@radix-ui/react-dropdown-menu",
             "@radix-ui/react-select",
             "@radix-ui/react-separator",
