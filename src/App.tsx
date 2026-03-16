@@ -1,9 +1,10 @@
 import { lazy, Suspense } from "react";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Toasters are lazy — they're only needed when a toast is triggered (Contact page)
+const Toaster = lazy(() => import("@/components/ui/toaster").then(m => ({ default: m.Toaster })));
+const Sonner = lazy(() => import("@/components/ui/sonner").then(m => ({ default: m.Toaster })));
 import ScrollToTop from "./components/ScrollToTop";
 
 // All pages are lazy-loaded so the main entry bundle stays minimal.
@@ -39,13 +40,14 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const App = () => (
   <>
-    <TooltipProvider>
+    <Suspense fallback={null}>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Suspense fallback={null}>
-          <Routes>
+    </Suspense>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Suspense fallback={null}>
+        <Routes>
             {/* Core */}
             <Route path="/" element={<Index />} />
             <Route path="/white-label-dsp" element={<WhiteLabelDSP />} />
@@ -86,7 +88,6 @@ const App = () => (
           </Routes>
         </Suspense>
       </BrowserRouter>
-    </TooltipProvider>
   </>
 );
 

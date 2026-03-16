@@ -2,12 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import publifyxLogoImg from "@/assets/brand/publifyx-logo.webp";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const serviceLinks = [
   { to: "/white-label-dsp", label: "White Label DSP" },
@@ -67,26 +61,28 @@ const Header = () => {
                 White Label DSP
               </Link>
 
-              <DropdownMenu>
-                <DropdownMenuTrigger
+              {/* CSS-only dropdown — no JS library needed */}
+              <div className="relative group">
+                <button
                   className={`flex items-center font-medium transition-colors focus:outline-none text-sm ${linkClass}`}
                 >
                   Services <ChevronDown className="ml-1 h-3.5 w-3.5" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white border border-navy-100 shadow-xl rounded-xl p-1 w-56">
-                  {serviceLinks.map((link) => (
-                    <DropdownMenuItem key={link.to} asChild>
+                </button>
+                <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-150">
+                  <div className="bg-white border border-navy-100 shadow-xl rounded-xl p-1 w-56">
+                    {serviceLinks.map((link) => (
                       <Link
+                        key={link.to}
                         to={link.to}
                         state={{ fromServices: true }}
-                        className="w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700 text-sm"
+                        className="block w-full px-4 py-2.5 rounded-lg hover:bg-navy-50 text-navy-700 text-sm"
                       >
                         {link.label}
                       </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
 
               <Link to="/blog" className={`font-medium transition-colors text-sm ${linkClass}`}>

@@ -26,22 +26,10 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: {
-          // Isolate framer-motion — it's 300KB+ and only needed for animations
-          "framer-motion": ["framer-motion"],
           // React core + router — smallest possible critical-path chunk
           "react-vendor": ["react", "react-dom", "react-router-dom"],
-          // Lucide icons — large icon set
+          // Lucide icons — used across many pages
           lucide: ["lucide-react"],
-          // Radix UI primitives (used by shadcn/ui) — kept out of the main entry
-          // chunk so pages that don't use dialogs/selects don't pay the cost
-          "radix-ui": [
-            "@radix-ui/react-dropdown-menu",
-            "@radix-ui/react-select",
-            "@radix-ui/react-separator",
-            "@radix-ui/react-slot",
-            "@radix-ui/react-toast",
-            "@radix-ui/react-tooltip",
-          ],
         },
       },
     },
