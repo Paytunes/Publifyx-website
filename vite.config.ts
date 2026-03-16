@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 import { sitemapPlugin } from "./plugins/vite-sitemap";
 import { asyncCssPlugin } from "./plugins/vite-async-css";
 import { heroPreloadPlugin } from "./plugins/vite-hero-preload";
+import { netlifyPreloadPlugin } from "./plugins/vite-netlify-preload";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -12,7 +13,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger(), sitemapPlugin(), asyncCssPlugin(), heroPreloadPlugin()].filter(Boolean),
+  plugins: [react(), mode === "development" && componentTagger(), sitemapPlugin(), asyncCssPlugin(), heroPreloadPlugin(), netlifyPreloadPlugin()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

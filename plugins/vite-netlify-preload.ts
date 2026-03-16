@@ -38,12 +38,22 @@ const ROUTE_PAGE_MAP: Record<string, string> = {
 
 // manualChunk names whose files should ALSO be preloaded alongside page chunks
 // (these are the heavy deps that lazy page chunks import at runtime)
-const PAGE_DEP_CHUNK_NAMES = ["framer-motion", "radix-overlay", "radix-forms", "lucide"];
+// "proxy" is how Vite/Rollup names the framer-motion chunk (re-export proxy module)
+const PAGE_DEP_CHUNK_NAMES = ["framer-motion", "proxy", "radix-overlay", "radix-forms", "lucide"];
+
+// Route-specific hero images to preload (source filename fragment → route)
+// The plugin finds the content-hashed output filename and emits a Link preload header.
+const ROUTE_HERO_IMAGES: Record<string, string> = {
+  "ctv-hero-dashboard": "/ctv-advertising",
+  "ott-hero-dashboard": "/ott-advertising",
+  "hero-dashboard": "/white-label-dsp",
+};
 
 export function netlifyPreloadPlugin(): Plugin {
   // Collected in generateBundle, consumed in closeBundle
   const routeChunks: Map<string, string[]> = new Map(); // route → ["/assets/foo.js", ...]
   let depChunkFiles: string[] = []; // files for PAGE_DEP_CHUNK_NAMES
+  const routeHeroImages: Map<string, string> = new Map(); // route → "/assets/ctv-hero-xxx.webp"
 
   return {
     name: "vite-netlify-preload",
@@ -64,16 +74,33 @@ export function netlifyPreloadPlugin(): Plugin {
       );
 
       // Map each landing page source fragment → its output chunk filename
+      // Use exact name match or filename-end match to avoid partial hits
+      // (e.g. "WhiteLabelDSP" must not match "BlogPost-WhiteLabelDSPReasons")
       for (const chunk of Object.values(bundle)) {
         if (chunk.type !== "chunk") continue;
         for (const [srcFragment, route] of Object.entries(ROUTE_PAGE_MAP)) {
+          const name = chunk.name ?? "";
+          const facadeId = chunk.facadeModuleId ?? "";
           if (
-            (chunk.facadeModuleId ?? "").includes(srcFragment) ||
-            (chunk.name ?? "").includes(srcFragment)
+            name === srcFragment ||
+            facadeId.endsWith(`/${srcFragment}.tsx`) ||
+            facadeId.endsWith(`/${srcFragment}.ts`)
           ) {
             const existing = routeChunks.get(route) ?? [];
             existing.push(`/${chunk.fileName}`);
             routeChunks.set(route, existing);
+          }
+        }
+      }
+
+      // Collect route-specific hero images (content-hashed filenames)
+      // Use basename matching to avoid "hero-dashboard" matching "ott-hero-dashboard"
+      for (const [fileName] of Object.entries(bundle)) {
+        if (!/\.(webp|avif|png|jpg)$/.test(fileName)) continue;
+        const baseName = fileName.split("/").pop() ?? "";
+        for (const [imgFragment, route] of Object.entries(ROUTE_HERO_IMAGES)) {
+          if (baseName.startsWith(imgFragment)) {
+            routeHeroImages.set(route, `/${fileName}`);
           }
         }
       }
@@ -120,10 +147,19 @@ export function netlifyPreloadPlugin(): Plugin {
         for (const [route, pageFiles] of routeChunks) {
           // page chunk(s) + shared dep chunks (framer-motion, radix-overlay, etc.)
           const allFiles = [...new Set([...pageFiles, ...depChunkFiles])];
-          const linkValue = allFiles
-            .map((f) => `<${f}>; rel=modulepreload; crossorigin`)
-            .join(", ");
-          lines.push("", route, `  Link: ${linkValue}`);
+          const linkParts = allFiles.map(
+            (f) => `<${f}>; rel=modulepreload; crossorigin`,
+          );
+
+          // Add hero image preload for this route if available
+          const heroImage = routeHeroImages.get(route);
+          if (heroImage) {
+            linkParts.push(
+              `<${heroImage}>; rel=preload; as=image; type=image/webp`,
+            );
+          }
+
+          lines.push("", route, `  Link: ${linkParts.join(", ")}`);
         }
       }
 
