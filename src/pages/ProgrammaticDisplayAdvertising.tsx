@@ -11,7 +11,6 @@ import formatStandardBanners from "@/assets/display/format-standard-banners.webp
 import formatNativeAds from "@/assets/display/format-native-ads.webp";
 import formatRichMedia from "@/assets/display/format-rich-media.webp";
 import formatInterstitial from "@/assets/display/format-interstitial.webp";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   Sparkles,
@@ -316,12 +315,7 @@ const ProgrammaticDisplayAdvertising = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div>
               <div className="relative">
                 <div className="absolute -inset-3 bg-brand-orange-500/8 rounded-3xl blur-xl" />
                 <img
@@ -333,13 +327,8 @@ const ProgrammaticDisplayAdvertising = () => {
                   loading="lazy"
                 />
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            </div>
+            <div>
               <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-4">
                 What Is Programmatic Display Advertising?
               </h2>
@@ -375,7 +364,7 @@ const ProgrammaticDisplayAdvertising = () => {
                   audiences across millions of websites and apps simultaneously.
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -385,12 +374,7 @@ const ProgrammaticDisplayAdvertising = () => {
       <section className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div>
               <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-3">
                 Let's Understand why Programmatic Display Advertising Matters:
               </h2>
@@ -425,13 +409,8 @@ const ProgrammaticDisplayAdvertising = () => {
                 advertisers to continuously refine targeting, bidding
                 strategies, and creative performance as campaigns run.
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            </div>
+            <div>
               <div className="relative">
                 <div className="absolute -inset-3 bg-brand-orange-500/8 rounded-3xl blur-xl" />
                 <img
@@ -443,7 +422,7 @@ const ProgrammaticDisplayAdvertising = () => {
                   loading="lazy"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
         <div className="flex gap-6 flex-col items-center mt-6 p-4">
@@ -475,33 +454,19 @@ const ProgrammaticDisplayAdvertising = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
-            >
+            <span className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4">
               Ad Formats
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
-            >
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900">
               Display Ad Formats Available on PublifyX
-            </motion.h2>
+            </h2>
           </div>
 
           {/* Desktop: 2-col grid | Tablet: 2-col compact | Mobile: stacked */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {adFormats.map((format, i) => (
-              <motion.div
+              <div
                 key={format.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12, duration: 0.5 }}
                 className="bg-navy-50 rounded-2xl border border-navy-100 p-6 text-center shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col"
               >
                 <div className="w-full h-36 flex items-center justify-center mb-5">
@@ -523,17 +488,12 @@ const ProgrammaticDisplayAdvertising = () => {
                 <p className="text-navy-400 text-sm leading-relaxed">
                   {format.desc}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Ad formats CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center mt-12 gap-4"
-          >
+          <div className="flex flex-col items-center mt-12 gap-4">
             <p className="text-sm text-navy-400 font-semibold text-center">
               Interested in running high-impact display campaigns? Request a
               demo of the PublifyX platform.
@@ -545,7 +505,7 @@ const ProgrammaticDisplayAdvertising = () => {
               Book a Demo{" "}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -590,28 +550,14 @@ const ProgrammaticDisplayAdvertising = () => {
       <section className="py-12 md:py-16 bg-navy-50 faq-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
+            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
               FAQ
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
-            >
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900">
               Frequently Asked Questions
-            </motion.h2>
+            </h2>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
                 <AccordionItem
@@ -628,7 +574,7 @@ const ProgrammaticDisplayAdvertising = () => {
                 </AccordionItem>
               ))}
             </Accordion>
-          </motion.div>
+          </div>
         </div>
       </section>
     </Layout>
