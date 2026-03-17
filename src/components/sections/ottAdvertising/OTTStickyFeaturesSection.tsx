@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Smartphone, Globe, Target, RefreshCw, BarChart3, Zap } from "lucide-react";
+import {
+  Smartphone,
+  Globe,
+  Target,
+  RefreshCw,
+  BarChart3,
+  Zap,
+} from "lucide-react";
 
 const features = [
   {
@@ -8,7 +15,11 @@ const features = [
     description:
       "Deliver video ads across smart TVs, mobile devices, tablets, desktop browsers, and gaming consoles. Reach your audience on the device and platform they prefer.",
     icon: Smartphone,
-    bullets: ["Smart TVs & streaming sticks", "Mobile & tablet apps", "Desktop browsers & gaming consoles"],
+    bullets: [
+      "Smart TVs & streaming sticks",
+      "Mobile & tablet apps",
+      "Desktop browsers & gaming consoles",
+    ],
     visual: {
       label: "Device Coverage",
       items: [
@@ -24,7 +35,11 @@ const features = [
     description:
       "Access ad-supported streaming platforms, FAST channels, and OTT apps through leading SSP integrations and private marketplace deals.",
     icon: Globe,
-    bullets: ["Ad-supported streaming platforms", "FAST channel inventory", "Private marketplace deals via SSPs"],
+    bullets: [
+      "Ad-supported streaming platforms",
+      "FAST channel inventory",
+      "Private marketplace deals via SSPs",
+    ],
     visual: {
       label: "Inventory Sources",
       items: [
@@ -60,7 +75,11 @@ const features = [
     description:
       "Control how many times a household or individual sees your ad across devices and platforms, preventing ad fatigue while maximizing campaign efficiency.",
     icon: RefreshCw,
-    bullets: ["Household-level frequency caps", "Cross-device deduplication", "Ad fatigue prevention"],
+    bullets: [
+      "Household-level frequency caps",
+      "Cross-device deduplication",
+      "Ad fatigue prevention",
+    ],
     visual: {
       label: "Frequency Control",
       items: [
@@ -76,7 +95,11 @@ const features = [
     description:
       "Monitor campaign performance in real time with metrics including impressions, VCR, reach, frequency, and cost efficiency. Make adjustments on the fly to improve results.",
     icon: BarChart3,
-    bullets: ["Live impression & VCR tracking", "Cost efficiency monitoring", "On-the-fly optimization"],
+    bullets: [
+      "Live impression & VCR tracking",
+      "Cost efficiency monitoring",
+      "On-the-fly optimization",
+    ],
     visual: {
       label: "Performance Metrics",
       items: [
@@ -92,7 +115,11 @@ const features = [
     description:
       "Combine OTT campaigns with display, audio, and native advertising within the PublifyX platform for a unified, omnichannel media buying experience.",
     icon: Zap,
-    bullets: ["Unified campaign management", "Cross-channel attribution", "Single reporting dashboard"],
+    bullets: [
+      "Unified campaign management",
+      "Cross-channel attribution",
+      "Single reporting dashboard",
+    ],
     visual: {
       label: "Channel Mix",
       items: [
@@ -105,7 +132,13 @@ const features = [
   },
 ];
 
-const FeatureVisual = ({ feature, index }: { feature: (typeof features)[0]; index: number }) => {
+const FeatureVisual = ({
+  feature,
+  index,
+}: {
+  feature: (typeof features)[0];
+  index: number;
+}) => {
   const Icon = feature.icon;
   return (
     <div className="bg-white rounded-2xl border border-navy-100 p-8 shadow-xl shadow-navy-500/5 h-full">
@@ -129,8 +162,12 @@ const FeatureVisual = ({ feature, index }: { feature: (typeof features)[0]; inde
           <Icon className="w-7 h-7 text-brand-orange-700" />
         </div>
         <div>
-          <p className="text-xs font-bold text-brand-orange-700 uppercase tracking-widest">{feature.visual.label}</p>
-          <h4 className="text-xl font-extrabold text-navy-900">{feature.title}</h4>
+          <p className="text-xs font-bold text-brand-orange-700 uppercase tracking-widest">
+            {feature.visual.label}
+          </p>
+          <h4 className="text-xl font-extrabold text-navy-900">
+            {feature.title}
+          </h4>
         </div>
       </div>
 
@@ -139,14 +176,22 @@ const FeatureVisual = ({ feature, index }: { feature: (typeof features)[0]; inde
         {feature.visual.items.map((item, i) => (
           <div key={item.name}>
             <div className="flex justify-between mb-1.5">
-              <span className="text-sm font-semibold text-navy-700">{item.name}</span>
-              <span className="text-sm font-bold text-brand-orange-700">{item.pct}%</span>
+              <span className="text-sm font-semibold text-navy-700">
+                {item.name}
+              </span>
+              <span className="text-sm font-bold text-brand-orange-700">
+                {item.pct}%
+              </span>
             </div>
             <div className="w-full bg-navy-100 rounded-full h-3 overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${item.pct}%` }}
-                transition={{ duration: 0.8, delay: i * 0.1, ease: [0.33, 1, 0.68, 1] }}
+                transition={{
+                  duration: 0.8,
+                  delay: i * 0.1,
+                  ease: [0.33, 1, 0.68, 1],
+                }}
                 className="h-full rounded-full bg-gradient-to-r from-brand-orange-500 to-brand-orange-400"
               />
             </div>
@@ -211,22 +256,17 @@ const OTTStickyFeaturesSection = () => {
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 pb-12">
         <div className="text-center">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
-          >
+          <span className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4">
             Platform Capabilities
-          </motion.span>
-          <motion.h2
+          </span>
+          <h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 leading-tight max-w-3xl mx-auto"
           >
             PublifyX OTT Advertising Capabilities
-          </motion.h2>
+          </h2>
         </div>
       </div>
 
@@ -246,7 +286,10 @@ const OTTStickyFeaturesSection = () => {
                       exit={{ opacity: 0, scale: 0.97 }}
                       transition={{ duration: 0.35, ease: [0.33, 1, 0.68, 1] }}
                     >
-                      <FeatureVisual feature={features[activeIndex]} index={activeIndex} />
+                      <FeatureVisual
+                        feature={features[activeIndex]}
+                        index={activeIndex}
+                      />
                     </motion.div>
                   </AnimatePresence>
                 </div>
@@ -275,7 +318,9 @@ const OTTStickyFeaturesSection = () => {
                       <div className="flex items-center gap-4 mb-4">
                         <div
                           className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
-                            isActive ? "bg-brand-orange-500" : "bg-brand-orange-50"
+                            isActive
+                              ? "bg-brand-orange-500"
+                              : "bg-brand-orange-50"
                           }`}
                         >
                           <Icon
@@ -284,12 +329,19 @@ const OTTStickyFeaturesSection = () => {
                             }`}
                           />
                         </div>
-                        <h3 className="text-xl font-extrabold text-navy-800">{feature.title}</h3>
+                        <h3 className="text-xl font-extrabold text-navy-800">
+                          {feature.title}
+                        </h3>
                       </div>
-                      <p className="text-navy-600 font-medium leading-relaxed mb-4">{feature.description}</p>
+                      <p className="text-navy-600 font-medium leading-relaxed mb-4">
+                        {feature.description}
+                      </p>
                       <ul className="space-y-2">
                         {feature.bullets.map((bullet) => (
-                          <li key={bullet} className="flex items-center gap-2.5 text-sm text-navy-600 font-medium">
+                          <li
+                            key={bullet}
+                            className="flex items-center gap-2.5 text-sm text-navy-600 font-medium"
+                          >
                             <div className="w-1.5 h-1.5 rounded-full bg-brand-orange-500 flex-shrink-0" />
                             {bullet}
                           </li>
@@ -315,12 +367,19 @@ const OTTStickyFeaturesSection = () => {
                   <div className="w-11 h-11 rounded-xl bg-brand-orange-50 flex items-center justify-center">
                     <Icon className="w-5 h-5 text-brand-orange-700" />
                   </div>
-                  <h3 className="text-lg font-extrabold text-navy-800">{feature.title}</h3>
+                  <h3 className="text-lg font-extrabold text-navy-800">
+                    {feature.title}
+                  </h3>
                 </div>
-                <p className="text-navy-600 font-medium leading-relaxed mb-3 text-sm">{feature.description}</p>
+                <p className="text-navy-600 font-medium leading-relaxed mb-3 text-sm">
+                  {feature.description}
+                </p>
                 <ul className="space-y-1.5">
                   {feature.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-center gap-2 text-sm text-navy-600 font-medium">
+                    <li
+                      key={bullet}
+                      className="flex items-center gap-2 text-sm text-navy-600 font-medium"
+                    >
                       <div className="w-1.5 h-1.5 rounded-full bg-brand-orange-500 flex-shrink-0" />
                       {bullet}
                     </li>

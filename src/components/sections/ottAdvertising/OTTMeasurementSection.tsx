@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import targetingImg from "@/assets/ott/ott-targeting.webp";
@@ -7,16 +6,10 @@ import measurementImg from "@/assets/ott/ott-measurement-dashboard.webp";
 
 const OTTMeasurementSection = () => {
   return (
-    <section className="py-12 md:py-16 bg-navy-50 overflow-hidden">
+    <section className="py-12 md:py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
-        >
+        <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-8 leading-tight">
             Why OTT Advertising Matters
           </h2>
@@ -25,17 +18,11 @@ const OTTMeasurementSection = () => {
             reach a mass audience with limited targeting precision. OTT flips
             that model.
           </p>
-        </motion.div>
+        </div>
 
         {/* Block 1: Targeting — Image Left, Text Right */}
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
+          <div className="relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-orange-500/10 rounded-full blur-[100px]" />
             <div className="relative rounded-3xl overflow-hidden shadow-[0_24px_48px_-12px_rgba(0,0,0,0.4)] border border-navy-100">
               <img
@@ -49,14 +36,9 @@ const OTTMeasurementSection = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
               />
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <p className="text-lg text-navy-600 mb-8 leading-relaxed">
               With OTT, you can target at the household or individual level
               using:
@@ -76,17 +58,12 @@ const OTTMeasurementSection = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Block 2: Engagement — Text Left, Image Right */}
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <p className="text-lg text-navy-600 mb-6 leading-relaxed">
               OTT audiences are highly engaged. They have actively chosen the
               content they are watching, which translates to higher attention
@@ -96,15 +73,9 @@ const OTTMeasurementSection = () => {
               Most OTT ads are non-skippable, delivering consistently high
               completion rates.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
+          <div className="relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-orange-500/10 rounded-full blur-[100px]" />
             <div className="relative rounded-3xl overflow-hidden shadow-[0_24px_48px_-12px_rgba(0,0,0,0.4)] border border-navy-100">
               <img
@@ -118,12 +89,12 @@ const OTTMeasurementSection = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Block 3: Measurement — Image Left, Text Right */}
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center mb-16">
-          <motion.div
+          <div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -143,14 +114,9 @@ const OTTMeasurementSection = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
               />
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <p className="text-lg text-navy-600 mb-8 leading-relaxed">
               For advertisers, OTT combines:
             </p>
@@ -172,7 +138,7 @@ const OTTMeasurementSection = () => {
               Impressions, completion rates, frequency, attribution, all
               measurable in real time.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         {/* CTA */}

@@ -35,14 +35,7 @@ const OTTResourceSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {ottBlogs.map((res, i) => (
-            <motion.div
-              key={res.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group"
-            >
+            <div key={res.title} className="group">
               <Link
                 to={`/blog/${res.slug}`}
                 className="no-underline block h-full"
@@ -72,7 +65,7 @@ const OTTResourceSection = () => {
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:text-orange-700" />
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

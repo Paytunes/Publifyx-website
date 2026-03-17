@@ -6,17 +6,32 @@ import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
 import { motion } from "framer-motion";
 import { Tv, Monitor, Radio } from "lucide-react";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // Hero loaded eagerly (above fold)
 import OTTHero from "@/components/sections/ottAdvertising/OTTHero";
 
 // Lazy-load below-fold sections to reduce initial JS bundle
-const FounderQuoteSection = lazy(() => import("@/components/sections/FounderQuoteSection"));
-const ClientTestimonialSection = lazy(() => import("@/components/sections/ClientTestimonialSection"));
-const OTTMeasurementSection = lazy(() => import("@/components/sections/ottAdvertising/OTTMeasurementSection"));
-const OTTResourceSection = lazy(() => import("@/components/sections/ottAdvertising/OTTResourceSection"));
-const OTTStickyFeaturesSection = lazy(() => import("@/components/sections/ottAdvertising/OTTStickyFeaturesSection"));
+const FounderQuoteSection = lazy(
+  () => import("@/components/sections/FounderQuoteSection"),
+);
+const ClientTestimonialSection = lazy(
+  () => import("@/components/sections/ClientTestimonialSection"),
+);
+const OTTMeasurementSection = lazy(
+  () => import("@/components/sections/ottAdvertising/OTTMeasurementSection"),
+);
+const OTTResourceSection = lazy(
+  () => import("@/components/sections/ottAdvertising/OTTResourceSection"),
+);
+const OTTStickyFeaturesSection = lazy(
+  () => import("@/components/sections/ottAdvertising/OTTStickyFeaturesSection"),
+);
 
 import ottMultiscreenImg from "@/assets/ott/ott-multiscreen.webp";
 import prerollImg from "@/assets/ott/preroll-ad.webp";
@@ -83,7 +98,8 @@ const faqs = [
 
 const OTTAdvertising = () => {
   useEffect(() => {
-    document.title = "OTT Advertising Platform | Over-the-Top Ads Across Every Screen — PublifyX";
+    document.title =
+      "OTT Advertising Platform | Over-the-Top Ads Across Every Screen — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
@@ -103,8 +119,18 @@ const OTTAdvertising = () => {
         breadcrumb: {
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://publifyx.com" },
-            { "@type": "ListItem", position: 2, name: "OTT Advertising", item: "https://publifyx.com/ott-advertising" },
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://publifyx.com",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "OTT Advertising",
+              item: "https://publifyx.com/ott-advertising",
+            },
           ],
         },
       },
@@ -125,12 +151,42 @@ const OTTAdvertising = () => {
           "@type": "OfferCatalog",
           name: "OTT Advertising Capabilities",
           itemListElement: [
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Multi-Device Reach" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Premium Inventory Access" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Advanced Audience Targeting" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Frequency Management" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Real-Time Optimization and Reporting" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Seamless Integration with Other Channels" } },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Multi-Device Reach" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Premium Inventory Access",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Advanced Audience Targeting",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Frequency Management" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Real-Time Optimization and Reporting",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Seamless Integration with Other Channels",
+              },
+            },
           ],
         },
       },
@@ -242,12 +298,7 @@ const OTTAdvertising = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
+            <div>
               <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-4">
                 OTT Advertising
               </span>
@@ -255,33 +306,35 @@ const OTTAdvertising = () => {
                 What Is OTT Advertising?
               </h2>
               <p className="text-lg text-navy-600 leading-relaxed mb-4">
-                OTT stands for "over-the-top," referring to content delivered directly over the internet, bypassing
-                traditional cable, broadcast, and satellite television providers.
+                OTT stands for "over-the-top," referring to content delivered
+                directly over the internet, bypassing traditional cable,
+                broadcast, and satellite television providers.
               </p>
               <p className="text-lg text-navy-600 leading-relaxed mb-8">
-                OTT advertising is the placement of ads within this internet-delivered content.
+                OTT advertising is the placement of ads within this
+                internet-delivered content.
               </p>
-              <p className="text-base text-navy-600 font-semibold mb-4">OTT content is consumed across:</p>
+              <p className="text-base text-navy-600 font-semibold mb-4">
+                OTT content is consumed across:
+              </p>
               <ul className="space-y-4 mb-8">
-                {["Smart TVs & Streaming devices", "Smartphones & Tablets", "Laptops", "Gaming consoles"].map(
-                  (item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <div className="w-7 h-7 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
-                        <Tv className="w-4 h-4 text-brand-orange-600" />
-                      </div>
-                      <span className="text-navy-700 font-semibold">{item}</span>
-                    </li>
-                  ),
-                )}
+                {[
+                  "Smart TVs & Streaming devices",
+                  "Smartphones & Tablets",
+                  "Laptops",
+                  "Gaming consoles",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
+                      <Tv className="w-4 h-4 text-brand-orange-600" />
+                    </div>
+                    <span className="text-navy-700 font-semibold">{item}</span>
+                  </li>
+                ))}
               </ul>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
+            <div>
               <div className="relative">
                 <div className="absolute -inset-4 bg-brand-orange-500/10 rounded-3xl blur-2xl" />
                 <img
@@ -295,25 +348,31 @@ const OTTAdvertising = () => {
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
         <div className="bg-navy-50 rounded-2xl border border-navy-100 p-6 mb-6 max-w-[40rem] mx-auto mt-8">
-          <p className="text-base text-navy-600 font-semibold mb-2">The distinction is simple:</p>
+          <p className="text-base text-navy-600 font-semibold mb-2">
+            The distinction is simple:
+          </p>
           <p className="text-navy-500 leading-relaxed mb-1">
-            <strong className="text-navy-800">OTT</strong> is the delivery method across all internet-connected devices.
+            <strong className="text-navy-800">OTT</strong> is the delivery
+            method across all internet-connected devices.
           </p>
           <p className="text-navy-500 leading-relaxed">
-            <strong className="text-navy-800">CTV</strong> is specifically OTT viewed on a television screen.
+            <strong className="text-navy-800">CTV</strong> is specifically OTT
+            viewed on a television screen.
           </p>
         </div>
         <p className="text-lg leading-relaxed max-w-[40rem] mx-auto text-center text-brand-orange-700 font-semibold">
-          When you activate OTT campaigns through PublifyX, you reach audiences across every screen, not just the living
-          room.
+          When you activate OTT campaigns through PublifyX, you reach audiences
+          across every screen, not just the living room.
         </p>
       </section>
 
-      <Suspense fallback={<div style={{ minHeight: "600px" }} aria-hidden="true" />}>
+      <Suspense
+        fallback={<div style={{ minHeight: "600px" }} aria-hidden="true" />}
+      >
         {/* ─── 3. FOUNDER QUOTE ─── */}
         <FounderQuoteSection
           quote="Streaming is not a trend, it's the new default. Our OTT platform ensures brands don't just follow audiences across devices, but reach them with measurable impact."
@@ -331,33 +390,19 @@ const OTTAdvertising = () => {
         <section className="py-12 md:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <motion.span
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
-              >
+              <span className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4">
                 Ad Formats
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
-              >
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900">
                 OTT Ad Formats Supported by PublifyX
-              </motion.h2>
+              </h2>
             </div>
             <div className="space-y-16 max-w-6xl mx-auto">
               {adFormats.map((format, i) => {
                 const isEven = i % 2 === 0;
                 return (
-                  <motion.div
+                  <div
                     key={format.title}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
                     className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${
                       isEven ? "" : "md:flex-row-reverse"
                     }`}
@@ -378,12 +423,18 @@ const OTTAdvertising = () => {
                     </div>
                     <div className="w-full md:w-1/2">
                       <div className="w-11 h-11 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-5 shadow-lg shadow-brand-orange-500/20">
-                        <span className="text-white font-black text-base">{String(i + 1).padStart(2, "0")}</span>
+                        <span className="text-white font-black text-base">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
                       </div>
-                      <h3 className="font-extrabold text-navy-800 text-2xl mb-3">{format.title}</h3>
-                      <p className="text-navy-600 font-medium leading-relaxed">{format.desc}</p>
+                      <h3 className="font-extrabold text-navy-800 text-2xl mb-3">
+                        {format.title}
+                      </h3>
+                      <p className="text-navy-600 font-medium leading-relaxed">
+                        {format.desc}
+                      </p>
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>
@@ -434,24 +485,14 @@ const OTTAdvertising = () => {
         <section className="py-12 md:py-16 bg-navy-50 faq-section">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
-              <motion.span
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
-              >
+              <span className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4">
                 FAQ
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900"
-              >
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900">
                 Frequently Asked Questions
-              </motion.h2>
+              </h2>
             </div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <div>
               <Accordion type="single" collapsible className="space-y-3">
                 {faqs.map((faq, i) => (
                   <AccordionItem
@@ -468,7 +509,7 @@ const OTTAdvertising = () => {
                   </AccordionItem>
                 ))}
               </Accordion>
-            </motion.div>
+            </div>
           </div>
         </section>
       </Suspense>
