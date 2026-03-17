@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-import stepConsultation from "@/assets/white-label-dsp/step-consultation.png";
-import stepConfigure from "@/assets/white-label-dsp/step-configure.png";
-import stepDeploy from "@/assets/white-label-dsp/step-deploy.png";
-import stepOnboarding from "@/assets/white-label-dsp/step-onboarding.png";
+import stepConsultation from "@/assets/white-label-dsp/step-consultation.webp";
+import stepConfigure from "@/assets/white-label-dsp/step-configure.webp";
+import stepDeploy from "@/assets/white-label-dsp/step-deploy.webp";
+import stepOnboarding from "@/assets/white-label-dsp/step-onboarding.webp";
 import { Link } from "react-router-dom";
 
 const steps = [
@@ -86,6 +86,8 @@ const HowItWorksSection = ({ onGetStarted }: HowItWorksSectionProps) => {
                 <img
                   src={step.image}
                   alt={step.title}
+                  width={512}
+                  height={512}
                   className="max-h-full max-w-[80%] object-contain"
                   loading="lazy"
                 />

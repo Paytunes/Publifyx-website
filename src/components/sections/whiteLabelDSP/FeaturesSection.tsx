@@ -7,7 +7,7 @@ import {
   Settings,
   Headphones,
 } from "lucide-react";
-import MagneticCard from "@/components/effects/MagneticCard";
+
 
 const features = [
   {
@@ -85,7 +85,7 @@ const FeaturesSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.4 }}
             >
-              <MagneticCard className="group bg-navy-50 rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
+              <div className="group bg-navy-50 rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
                 <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                   <feature.icon className="w-6 h-6 text-brand-orange-500" />
                 </div>
@@ -95,7 +95,7 @@ const FeaturesSection = () => {
                 <p className="text-navy-400 text-sm leading-relaxed">
                   {feature.description}
                 </p>
-              </MagneticCard>
+              </div>
             </motion.div>
           ))}
         </div>

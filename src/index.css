@@ -82,6 +82,12 @@
 
 }
 
+/* ── Defer rendering of below-fold sections ── */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
 /* ── Energy Button Ripple ── */
 .energy-btn {
   background-size: 200% 100%;

@@ -1,19 +1,22 @@
+import { lazy, Suspense } from "react";
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import HeroSection from "@/components/sections/whiteLabelDSP/HeroSection";
 import WhiteLabelExplanationSection from "@/components/sections/whiteLabelDSP/WhiteLabelExplanationSection";
-import WhyChooseSection from "@/components/sections/whiteLabelDSP/WhyChooseSection";
-import FeaturesSection from "@/components/sections/whiteLabelDSP/FeaturesSection";
-import BenefitsAndAudienceSection from "@/components/sections/whiteLabelDSP/BenefitsAndAudienceSection";
-import HowItWorksSection from "@/components/sections/whiteLabelDSP/HowItWorksSection";
-import WhiteLabelCTASection from "@/components/sections/whiteLabelDSP/WhiteLabelCTASection";
-import WhiteLabelFAQSection from "@/components/sections/whiteLabelDSP/WhiteLabelFAQSection";
-import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
-import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
-import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import { Headphones, Radio, Tv } from "lucide-react";
+
+// Lazy-load below-fold sections to reduce initial JS bundle
+const FounderQuoteSection = lazy(() => import("@/components/sections/FounderQuoteSection"));
+const WhyChooseSection = lazy(() => import("@/components/sections/whiteLabelDSP/WhyChooseSection"));
+const FeaturesSection = lazy(() => import("@/components/sections/whiteLabelDSP/FeaturesSection"));
+const BenefitsAndAudienceSection = lazy(() => import("@/components/sections/whiteLabelDSP/BenefitsAndAudienceSection"));
+const HowItWorksSection = lazy(() => import("@/components/sections/whiteLabelDSP/HowItWorksSection"));
+const ClientTestimonialSection = lazy(() => import("@/components/sections/ClientTestimonialSection"));
+const WhiteLabelCTASection = lazy(() => import("@/components/sections/whiteLabelDSP/WhiteLabelCTASection"));
+const RelatedServicesSection = lazy(() => import("@/components/sections/RelatedServicesSection"));
+const WhiteLabelFAQSection = lazy(() => import("@/components/sections/whiteLabelDSP/WhiteLabelFAQSection"));
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -209,51 +212,69 @@ const WhiteLabelDSP = () => {
     <Layout transparentHeader>
       <HeroSection onGetStarted={handleGetStarted} />
       <WhiteLabelExplanationSection />
+      <Suspense fallback={<div style={{ minHeight: "600px" }} aria-hidden="true" />}>
       <FounderQuoteSection
         quote="We built PublifyX to remove the biggest barrier in ad tech: Access. Agencies and startups shouldn't need million-dollar engineering teams to own powerful programmatic technology. Our white label DSP gives businesses control, speed, and margin from day one."
         name="Saurabh"
         title="CEO, PublifyX"
       />
-      <WhyChooseSection onGetStarted={handleGetStarted} />
-      <FeaturesSection />
-      <BenefitsAndAudienceSection onGetStarted={handleGetStarted} />
-      <HowItWorksSection onGetStarted={handleGetStarted} />
-      <ClientTestimonialSection
-        quote="Launching our own branded DSP completely changed how clients perceive us. We're no longer just a media agency, we're a technology partner. The transition was smooth, and we were live within minutes."
-        attribution="Founder, Performance Marketing Agency"
-        results={[
-          "Launched branded DSP in under 15 minutes",
-          "Increased programmatic margins by 28%",
-          "Improved client retention through platform access",
-          "Expanded into CTV and Audio without additional tools",
-        ]}
-        variant="split"
-      />
-      <WhiteLabelCTASection onGetStarted={handleGetStarted} />
+      <div className="cv-auto">
+        <WhyChooseSection onGetStarted={handleGetStarted} />
+      </div>
+      <div className="cv-auto">
+        <FeaturesSection />
+      </div>
+      <div className="cv-auto">
+        <BenefitsAndAudienceSection onGetStarted={handleGetStarted} />
+      </div>
+      <div className="cv-auto">
+        <HowItWorksSection onGetStarted={handleGetStarted} />
+      </div>
+      <div className="cv-auto">
+        <ClientTestimonialSection
+          quote="Launching our own branded DSP completely changed how clients perceive us. We're no longer just a media agency, we're a technology partner. The transition was smooth, and we were live within minutes."
+          attribution="Founder, Performance Marketing Agency"
+          results={[
+            "Launched branded DSP in under 15 minutes",
+            "Increased programmatic margins by 28%",
+            "Improved client retention through platform access",
+            "Expanded into CTV and Audio without additional tools",
+          ]}
+          variant="split"
+        />
+      </div>
+      <div className="cv-auto">
+        <WhiteLabelCTASection onGetStarted={handleGetStarted} />
+      </div>
       {/* ═══════════════ RELATED SERVICES ═══════════════ */}
-      <RelatedServicesSection
-        services={[
-          {
-            title: "CTV Advertising",
-            desc: "Reach audiences on the big screen with programmatic connected TV campaigns.",
-            icon: Tv,
-            path: "/ctv-advertising",
-          },
-          {
-            title: "OTT Advertising",
-            desc: "Reach viewers across premium OTT platforms with programmatic video campaigns.",
-            icon: Radio,
-            path: "/ott-advertising",
-          },
-          {
-            title: "Programmatic Audio",
-            desc: "Engage listeners on music and podcast platforms with targeted audio campaigns.",
-            icon: Headphones,
-            path: "/programmatic-audio-advertising",
-          },
-        ]}
-      />
-      <WhiteLabelFAQSection />
+      <div className="cv-auto">
+        <RelatedServicesSection
+          services={[
+            {
+              title: "CTV Advertising",
+              desc: "Reach audiences on the big screen with programmatic connected TV campaigns.",
+              icon: Tv,
+              path: "/ctv-advertising",
+            },
+            {
+              title: "OTT Advertising",
+              desc: "Reach viewers across premium OTT platforms with programmatic video campaigns.",
+              icon: Radio,
+              path: "/ott-advertising",
+            },
+            {
+              title: "Programmatic Audio",
+              desc: "Engage listeners on music and podcast platforms with targeted audio campaigns.",
+              icon: Headphones,
+              path: "/programmatic-audio-advertising",
+            },
+          ]}
+        />
+      </div>
+      <div className="cv-auto">
+        <WhiteLabelFAQSection />
+      </div>
+      </Suspense>
     </Layout>
   );
 };

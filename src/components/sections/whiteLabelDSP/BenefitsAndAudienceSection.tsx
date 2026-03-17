@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Target, Zap, Star, Rocket, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import MagneticCard from "@/components/effects/MagneticCard";
+
 
 const targetAudience = [
   {
@@ -65,7 +65,7 @@ const BenefitsAndAudienceSection = ({}: BenefitsAndAudienceSectionProps) => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <MagneticCard className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-all duration-300 group h-full">
+              <div className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-all duration-300 group h-full">
                 <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                   <audience.icon className="w-6 h-6 text-brand-orange-500" />
                 </div>
@@ -75,7 +75,7 @@ const BenefitsAndAudienceSection = ({}: BenefitsAndAudienceSectionProps) => {
                 <p className="text-navy-400 leading-relaxed">
                   {audience.description}
                 </p>
-              </MagneticCard>
+              </div>
             </motion.div>
           ))}
         </div>

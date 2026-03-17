@@ -48,7 +48,7 @@ const FounderQuoteSection = ({ quote, name, title, showImage = true }: FounderQu
                       }
                     : {}
                 }
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 4, repeat: 2, ease: "easeInOut" }}
                 className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden"
               >
                 <img
