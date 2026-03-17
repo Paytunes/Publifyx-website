@@ -176,23 +176,18 @@ const OTTMeasurementSection = () => {
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
+        <div className="text-center">
           <p className="text-lg text-navy-600 mb-6">
             Want to see how OTT fits into your media mix? Request a strategic
             consultation.
           </p>
-          <Link to="/contact">
-            <div className="inline-flex items-center gap-2 px-8 py-4 bg-brand-orange-500 hover:bg-brand-orange-600 text-white rounded-xl font-bold text-lg transition-colors duration-300">
-              Book a Demo
-            </div>
+          <Link
+            to="/contact"
+            className="inline-flex items-center btn-primary text-lg px-10 py-4 text-white no-underline"
+          >
+            Book a Demo
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

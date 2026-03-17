@@ -380,17 +380,12 @@ const CTVAdvertising = () => {
                 Explore how CTV can fit into your media strategy. Book a demo
                 today.
               </h3>
-              <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
-                <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link
-                    to="/contact"
-                    className="flex items-center text-white no-underline group"
-                  >
-                    Book a Call{" "}
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
+              <Link
+                to="/contact"
+                className="inline-flex mb-4 items-center btn-primary text-lg px-10 py-4 text-white no-underline"
+              >
+                Book a Call <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
               <p className="text-sm text-navy-400">
                 No commitment required · Launch campaigns in minutes
               </p>
@@ -714,17 +709,20 @@ const CTVAdvertising = () => {
         </div>
       </section>
 
-      {/* Client Testimonial */}
-      <ClientTestimonialSection
-        quote="CTV campaigns through PublifyX delivered stronger completion rates than any other video channel we've tested. The targeting precision gave us both reach and relevance."
-        attribution="Marketing Head, Leading D2C Brand"
-        results={[
-          "Household-level targeting across key metros",
-          "Cross-device retargeting increased post-view conversions",
-          "Transparent reporting improved campaign optimization speed",
-        ]}
-        variant="split"
-      />
+      <section>
+        {/* Client Testimonial */}
+        <ClientTestimonialSection
+          quote="CTV campaigns through PublifyX delivered stronger completion rates than any other video channel we've tested. The targeting precision gave us both reach and relevance."
+          attribution="Marketing Head, Leading D2C Brand"
+          results={[
+            "Household-level targeting across key metros",
+            "Cross-device retargeting increased post-view conversions",
+            "Transparent reporting improved campaign optimization speed",
+          ]}
+          variant="split"
+          background="white"
+        />
+      </section>
 
       {/* CTA */}
       <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
@@ -739,18 +737,15 @@ const CTVAdvertising = () => {
           <h3 className="text-2xl md:text-3xl font-bold mb-6 !text-white">
             Ready to activate CTV advertising? Request a campaign walkthrough.
           </h3>
-          <p className="text-base text-navy-400 mb-10 font-semibold">
+          <p className="text-base text-navy-300 mb-4 font-semibold">
             No commitment required · Launch campaigns in minutes
           </p>
-          <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link
-              to="/contact"
-              className="flex items-center text-white no-underline group"
-            >
-              Contact Us{" "}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+          <Link
+            to="/contact"
+            className="inline-flex items-center btn-primary text-lg px-10 py-4 text-white no-underline"
+          >
+            Contact Us <ArrowRight className="ml-2 w-5 h-5" />
+          </Link>
         </motion.div>
       </section>
 

@@ -6,7 +6,9 @@ import { ArrowRight } from "lucide-react";
 const OTTResourceSection = () => {
   // Filter blog posts for OTT/CTV categories
   const ottBlogs = blogPosts
-    .filter((post) => ["OTT Advertising", "CTV Advertising"].includes(post.category))
+    .filter((post) =>
+      ["OTT Advertising", "CTV Advertising"].includes(post.category),
+    )
     .slice(0, 3);
 
   return (
@@ -18,12 +20,13 @@ const OTTResourceSection = () => {
               Helpful OTT & CTV Content for Marketers
             </h2>
             <p className="text-lg text-navy-600">
-              Boost your knowledge with our curated resources on the evolving landscape of streaming advertising.
+              Boost your knowledge with our curated resources on the evolving
+              landscape of streaming advertising.
             </p>
           </div>
           <Link
             to="/blog"
-            className="text-brand-orange-700 font-bold flex items-center gap-2 hover:gap-3 transition-all no-underline"
+            className="text-brand-orange-700 md:whitespace-nowrap font-bold flex items-center gap-2 hover:gap-3 transition-all no-underline"
           >
             VIEW ALL RESOURCES
             <ArrowRight className="w-3.5 h-3.5 ml-1" />
@@ -40,7 +43,10 @@ const OTTResourceSection = () => {
               transition={{ delay: i * 0.1 }}
               className="group"
             >
-              <Link to={`/blog/${res.slug}`} className="no-underline block h-full">
+              <Link
+                to={`/blog/${res.slug}`}
+                className="no-underline block h-full"
+              >
                 <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6 shadow-md transition-shadow group-hover:shadow-xl">
                   <img
                     src={res.image}
@@ -58,7 +64,9 @@ const OTTResourceSection = () => {
                 <h3 className="text-xl font-extrabold text-navy-900 mb-3 group-hover:text-brand-orange-600 transition-colors">
                   {res.title}
                 </h3>
-                <p className="text-navy-600 leading-relaxed mb-4 line-clamp-2">{res.excerpt}</p>
+                <p className="text-navy-600 leading-relaxed mb-4 line-clamp-2">
+                  {res.excerpt}
+                </p>
                 <div className="text-navy-900 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
                   Read More
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:text-orange-700" />

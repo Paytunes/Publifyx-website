@@ -286,17 +286,12 @@ const ProgrammaticDisplayAdvertising = () => {
                 Looking to scale display advertising with programmatic
                 precision? Request a platform walkthrough.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
-                <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link
-                    to="/contact"
-                    className="flex items-center text-white no-underline group"
-                  >
-                    Book a Demo{" "}
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center btn-primary text-lg px-10 py-4 text-white no-underline"
+              >
+                Book a Demo <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </div>
             <div className="hidden lg:block">
               <div className="relative">
@@ -456,15 +451,12 @@ const ProgrammaticDisplayAdvertising = () => {
             Want to explore how display fits into your full programmatic
             strategy? Speak with our team.
           </p>
-          <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link
-              to="/contact"
-              className="flex items-center text-white no-underline group"
-            >
-              Book a Demo{" "}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+          <Link
+            to="/contact"
+            className="inline-flex items-center btn-primary text-lg px-10 py-4 text-white no-underline"
+          >
+            Book a Demo <ArrowRight className="ml-2 w-5 h-5" />
+          </Link>
         </div>
       </section>
 
@@ -546,15 +538,13 @@ const ProgrammaticDisplayAdvertising = () => {
               Interested in running high-impact display campaigns? Request a
               demo of the PublifyX platform.
             </p>
-            <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
-              <Link
-                to="/contact"
-                className="flex items-center text-white no-underline group"
-              >
-                Book a Demo{" "}
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+            <Link
+              to="/contact"
+              className="inline-flex items-center btn-primary text-lg px-10 py-4 text-white no-underline"
+            >
+              Book a Demo{" "}
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
         </div>
       </section>

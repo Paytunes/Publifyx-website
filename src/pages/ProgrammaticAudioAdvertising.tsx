@@ -327,17 +327,12 @@ const ProgrammaticAudioAdvertising = () => {
                 Want to reach audiences during screen-free moments? Talk to our
                 audio specialists.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
-                <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link
-                    to="/contact"
-                    className="flex items-center text-white no-underline group"
-                  >
-                    Book a Demo{" "}
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center btn-primary text-lg px-10 py-4 text-white no-underline"
+              >
+                Book a Demo <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </div>
             <div className="hidden lg:block">
               <img
@@ -486,15 +481,12 @@ const ProgrammaticAudioAdvertising = () => {
             Considering audio for your next campaign? Let's map the right
             targeting strategy.
           </p>
-          <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link
-              to="/contact"
-              className="flex items-center text-white no-underline group"
-            >
-              Book a Demo{" "}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+          <Link
+            to="/contact"
+            className="inline-flex items-center btn-primary text-lg px-10 py-4 text-white no-underline"
+          >
+            Book a Demo <ArrowRight className="ml-2 w-5 h-5" />
+          </Link>
         </div>
       </section>
 

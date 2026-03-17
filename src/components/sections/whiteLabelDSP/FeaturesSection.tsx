@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
-import { Palette, Layers, Zap, Target, Settings, Headphones } from "lucide-react";
+import {
+  Palette,
+  Layers,
+  Zap,
+  Target,
+  Settings,
+  Headphones,
+} from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
 
 const features = [
@@ -11,7 +18,8 @@ const features = [
   },
   {
     title: "Multi-Channel Media Buying",
-    description: "Run display, video, native, audio, CTV, and OTT campaigns from one unified interface.",
+    description:
+      "Run display, video, native, audio, CTV, and OTT campaigns from one unified interface.",
     icon: Layers,
   },
   {
@@ -59,7 +67,11 @@ const FeaturesSection = () => {
           >
             Platform Features
           </motion.span>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             Key Features of PublifyX White Label DSP
           </motion.h2>
         </div>
@@ -72,14 +84,17 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.4 }}
-              className={i === features.length - 1 ? "md:col-span-2 lg:col-span-1" : ""}
             >
               <MagneticCard className="group bg-navy-50 rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
                 <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                   <feature.icon className="w-6 h-6 text-brand-orange-500" />
                 </div>
-                <h3 className="font-bold text-navy-800 text-lg mb-2">{feature.title}</h3>
-                <p className="text-navy-400 text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="font-bold text-navy-800 text-lg mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-navy-400 text-sm leading-relaxed">
+                  {feature.description}
+                </p>
               </MagneticCard>
             </motion.div>
           ))}

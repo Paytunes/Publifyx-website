@@ -47,7 +47,11 @@ const BenefitsAndAudienceSection = ({}: BenefitsAndAudienceSectionProps) => {
           >
             Built For You
           </motion.span>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             Who Is PublifyX White Label DSP For?
           </motion.h2>
         </div>
@@ -65,28 +69,29 @@ const BenefitsAndAudienceSection = ({}: BenefitsAndAudienceSectionProps) => {
                 <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                   <audience.icon className="w-6 h-6 text-brand-orange-500" />
                 </div>
-                <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
-                <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+                <h3 className="font-bold text-navy-800 text-xl mb-2">
+                  {audience.title}
+                </h3>
+                <p className="text-navy-400 leading-relaxed">
+                  {audience.description}
+                </p>
               </MagneticCard>
             </motion.div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <p className="text-navy-500 mb-6 font-medium">Not sure which model fits your business?</p>
+        <div className="flex flex-col items-center">
+          <p className="text-navy-500 mb-6 font-medium">
+            Not sure which model fits your business?
+          </p>
           <Link
             to="/contact"
-            className="inline-flex items-center text-md bg-white border border-navy-200 rounded-lg px-4 py-2 text-navy-700 hover:border-brand-orange-500 hover:text-brand-orange-500 transition-colors group"
+            className="inline-flex items-center btn-primary text-lg px-10 py-4 text-white no-underline"
           >
-            Request a Strategy Consultation
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            Request a Strategy Consultation{" "}
+            <ArrowRight className="ml-2 w-5 h-5" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

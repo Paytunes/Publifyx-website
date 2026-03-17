@@ -6,18 +6,21 @@ import stepConsultation from "@/assets/white-label-dsp/step-consultation.png";
 import stepConfigure from "@/assets/white-label-dsp/step-configure.png";
 import stepDeploy from "@/assets/white-label-dsp/step-deploy.png";
 import stepOnboarding from "@/assets/white-label-dsp/step-onboarding.png";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
     number: "01",
     title: "Schedule a Consultation",
-    description: "Schedule a consultation to define business requirements and branding.",
+    description:
+      "Schedule a consultation to define business requirements and branding.",
     image: stepConsultation,
   },
   {
     number: "02",
     title: "Configure Your Platform",
-    description: "Our team configures your domain, branding, and SSP integrations.",
+    description:
+      "Our team configures your domain, branding, and SSP integrations.",
     image: stepConfigure,
   },
   {
@@ -51,7 +54,11 @@ const HowItWorksSection = ({ onGetStarted }: HowItWorksSectionProps) => {
           >
             Get Started
           </motion.span>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             How to Get Started with PublifyX White Label DSP
           </motion.h2>
           <motion.p
@@ -86,26 +93,24 @@ const HowItWorksSection = ({ onGetStarted }: HowItWorksSectionProps) => {
               <span className="inline-block text-sm font-bold text-brand-orange-500 mb-2">
                 {step.number}
               </span>
-              <h3 className="font-bold text-navy-800 text-base mb-2">{step.title}</h3>
-              <p className="text-navy-400 text-sm leading-relaxed">{step.description}</p>
+              <h3 className="font-bold text-navy-800 text-base mb-2">
+                {step.title}
+              </h3>
+              <p className="text-navy-400 text-sm leading-relaxed">
+                {step.description}
+              </p>
             </motion.div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Button
-            onClick={onGetStarted}
-            className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-10 py-6 rounded-xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 group"
+        <div className="flex w-full justify-center">
+          <Link
+            to="/contact"
+            className="inline-flex items-center btn-primary text-lg px-10 py-4 text-white no-underline"
           >
-            Contact Us to Begin Setup
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </motion.div>
+            Contact Us to Begin Setup <ArrowRight className="ml-2 w-5 h-5" />
+          </Link>
+        </div>
       </div>
     </section>
   );

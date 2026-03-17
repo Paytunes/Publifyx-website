@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface WhiteLabelCTASectionProps {
   onGetStarted: () => void;
@@ -20,18 +21,18 @@ const WhiteLabelCTASection = ({ onGetStarted }: WhiteLabelCTASectionProps) => {
       >
         <h2 className="mb-6 !text-white">Ready to Launch Your Own DSP?</h2>
         <p className="text-xl text-navy-300 mb-4 leading-relaxed">
-          See how your own branded DSP would look. Schedule a personalized demo with our team.
+          See how your own branded DSP would look. Schedule a personalized demo
+          with our team.
         </p>
         <p className="text-base text-navy-400 mb-10 font-semibold">
           No commitment required · Launch in under 15 minutes
         </p>
-        <Button
-          onClick={onGetStarted}
-          className="bg-brand-orange-500 hover:bg-brand-orange-600 text-white text-lg px-10 py-6 font-semibold hover:scale-105 transition-all duration-300 shadow-lg shadow-brand-orange-500/25 rounded-xl group"
+        <Link
+          to="/contact"
+          className="inline-flex items-center btn-primary text-lg px-10 py-4 text-white no-underline"
         >
-          Book a Call
-          <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </Button>
+          Book a Call <ArrowRight className="ml-2 w-5 h-5" />
+        </Link>
       </motion.div>
     </section>
   );
