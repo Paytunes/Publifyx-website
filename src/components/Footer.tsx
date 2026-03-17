@@ -148,7 +148,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-primary-foreground/50 text-center text-primary-foreground/60 text-sm">
           <p>
-            Copyright © 2026{" "}
+            Copyright © 2025{" "}
             <span className="text-brand-orange-400">PublifyX.com</span> | All
             rights reserved
           </p>
