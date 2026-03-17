@@ -25,7 +25,12 @@ const Footer = () => {
             </p>
 
             <div className="mt-4">
-              {[{ icon: Linkedin, href: "https://www.linkedin.com/company/publifyx/" }].map(({ icon: Icon, href }) => (
+              {[
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/company/publifyx/",
+                },
+              ].map(({ icon: Icon, href }) => (
                 <a
                   key={href}
                   href={href}
@@ -42,7 +47,9 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider font-inter">Services</h3>
+            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider font-inter">
+              Services
+            </h3>
             <ul className="space-y-2.5">
               <li>
                 <Link
@@ -89,15 +96,23 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider font-inter">Company</h3>
+            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider font-inter">
+              Company
+            </h3>
             <ul className="space-y-2.5">
               <li>
-                <Link to="/about" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
+                <Link
+                  to="/about"
+                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-primary-foreground/60 hover:text-white transition-colors text-sm">
+                <Link
+                  to="/contact"
+                  className="text-primary-foreground/60 hover:text-white transition-colors text-sm"
+                >
                   Contact
                 </Link>
               </li>
@@ -106,7 +121,9 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider font-inter">Legal</h3>
+            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider font-inter">
+              Legal
+            </h3>
             <ul className="space-y-2.5">
               <li>
                 <Link
@@ -131,7 +148,9 @@ const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-primary-foreground/50 text-center text-primary-foreground/60 text-sm">
           <p>
-            Copyright © 2025 <span className="text-brand-orange-400">PublifyX.com</span> | All rights reserved
+            Copyright © 2026{" "}
+            <span className="text-brand-orange-400">PublifyX.com</span> | All
+            rights reserved
           </p>
         </div>
       </div>
