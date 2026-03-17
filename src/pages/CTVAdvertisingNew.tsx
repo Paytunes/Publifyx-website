@@ -4,7 +4,6 @@ import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import { Link } from "react-router-dom";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
-import { motion } from "framer-motion";
 import ctvHeroDashboard from "@/assets/ctv/ctv-hero-dashboard.webp";
 import stepObjectives from "@/assets/ctv/step-objectives.webp";
 import stepTargeting from "@/assets/ctv/step-targeting.webp";
@@ -412,35 +411,17 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3"
-            >
+            <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
               What Is CTV
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-4 max-w-4xl mx-auto"
-            >
-              What Is CTV Advertising?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
-            >
+            </span>
+            <h2 className="mb-4 max-w-4xl mx-auto">What Is CTV Advertising?</h2>
+            <p className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed">
               CTV advertising refers to video ads delivered through
               internet-connected television devices. Unlike traditional linear
               TV, where ads are broadcast to mass audiences during scheduled
               programming, CTV ads are served programmatically to specific
               households or audience segments based on data-driven targeting.
-            </motion.p>
+            </p>
           </div>
 
           <div className="max-w-5xl mx-auto mb-12">
@@ -449,12 +430,8 @@ const CTVAdvertising = () => {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {ctvDevices.map((device, i) => (
-                <motion.div
+                <div
                   key={device.label}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
                   className="bg-card rounded-2xl border border-navy-100 p-6 text-center shadow-sm hover:shadow-lg transition-shadow duration-300"
                 >
                   <div className="w-full h-28 flex items-center justify-center mb-4">
@@ -470,17 +447,12 @@ const CTVAdvertising = () => {
                   <h4 className="font-semibold text-navy-800 text-sm leading-snug">
                     {device.label}
                   </h4>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
-          >
+          <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg text-navy-400 leading-relaxed">
               CTV advertising is a subset of OTT (over-the-top) advertising.
               While OTT refers to content delivered via the internet across all
@@ -488,7 +460,7 @@ const CTVAdvertising = () => {
               refers to ads viewed on a television screen through an internet
               connection.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -504,44 +476,22 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
+            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
               Why CTV
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-4 max-w-4xl mx-auto"
-            >
+            </span>
+            <h2 className="mb-4 max-w-4xl mx-auto">
               Why CTV Advertising Is Essential for Modern Brands
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
-            >
+            </h2>
+            <p className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed">
               The shift from cable to streaming is not a trend, it is a
               structural change in media consumption. Cord-cutting households
               continue to grow year over year, and a significant portion of
               younger demographics have never subscribed to traditional cable.
-            </motion.p>
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-white rounded-2xl border border-navy-100 p-8"
-            >
+            <div className="bg-white rounded-2xl border border-navy-100 p-8">
               <h3 className="text-xl font-bold text-navy-800 mb-6">
                 CTV brings together:
               </h3>
@@ -555,15 +505,9 @@ const CTVAdvertising = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white rounded-2xl border border-navy-100 p-8"
-            >
+            <div className="bg-white rounded-2xl border border-navy-100 p-8">
               <h3 className="text-xl font-bold text-navy-800 mb-6">
                 Additionally, CTV enables targeting by:
               </h3>
@@ -577,15 +521,10 @@ const CTVAdvertising = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
-          >
+          <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg text-navy-400 leading-relaxed mb-4">
               Completion rates on CTV typically exceed mobile and desktop video.
               Viewers actively choose what they watch, resulting in higher
@@ -596,7 +535,7 @@ const CTVAdvertising = () => {
               measure outcomes including website visits, app installs, and
               offline conversions.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -604,31 +543,14 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
+            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
               Platform Features
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              PublifyX CTV Advertising Platform Features
-            </motion.h2>
+            </span>
+            <h2>PublifyX CTV Advertising Platform Features</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {features.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
+              <div key={feature.title}>
                 <MagneticCard className="group bg-white rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <feature.icon className="w-6 h-6 text-brand-orange-500" />
@@ -640,7 +562,7 @@ const CTVAdvertising = () => {
                     {feature.description}
                   </p>
                 </MagneticCard>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -650,21 +572,10 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
+            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
               How It Works
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              How CTV Advertising Works with PublifyX
-            </motion.h2>
+            </span>
+            <h2>How CTV Advertising Works with PublifyX</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
             {howItWorksSteps.map((step, i) => {
@@ -677,12 +588,8 @@ const CTVAdvertising = () => {
                 "step-optimize": stepOptimize,
               };
               return (
-                <motion.div
+                <div
                   key={step.number}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
                   className="bg-card rounded-2xl border border-navy-100 p-6 text-center shadow-sm hover:shadow-lg transition-shadow duration-300"
                 >
                   <div className="w-full h-36 flex items-center justify-center mb-5">
@@ -702,7 +609,7 @@ const CTVAdvertising = () => {
                   <p className="text-navy-400 text-sm leading-relaxed">
                     {step.description}
                   </p>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -728,12 +635,7 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange-500 rounded-full blur-[250px] opacity-10" />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
-        >
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h3 className="text-2xl md:text-3xl font-bold mb-6 !text-white">
             Ready to activate CTV advertising? Request a campaign walkthrough.
           </h3>
@@ -746,7 +648,7 @@ const CTVAdvertising = () => {
           >
             Contact Us <ArrowRight className="ml-2 w-5 h-5" />
           </Link>
-        </motion.div>
+        </div>
       </section>
 
       {/* ═══════════════ RELATED SERVICES ═══════════════ */}
@@ -777,35 +679,14 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-white faq-section">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-            >
+            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
               FAQ
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              Frequently Asked Questions About CTV Advertising
-            </motion.h2>
+            </span>
+            <h2>Frequently Asked Questions About CTV Advertising</h2>
           </div>
           <Accordion type="single" collapsible className="w-full space-y-3">
             {faqs.map((faq, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: i * 0.06,
-                  duration: 0.4,
-                  ease: [0.33, 1, 0.68, 1],
-                }}
-              >
+              <div key={i}>
                 <AccordionItem
                   value={`item-${i}`}
                   className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
@@ -817,7 +698,7 @@ const CTVAdvertising = () => {
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
-              </motion.div>
+              </div>
             ))}
           </Accordion>
         </div>
