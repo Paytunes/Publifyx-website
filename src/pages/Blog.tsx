@@ -6,13 +6,14 @@ import { motion } from "framer-motion";
 import { blogPosts } from "@/data/blogPosts";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import MagneticCard from "@/components/effects/MagneticCard";
-import EnergyButton from "@/components/effects/EnergyButton";
 
 const Blog = () => {
   useEffect(() => {
     const prev = document.title;
     document.title = "Programmatic Advertising Blog & Insights — PublifyX";
-    return () => { document.title = prev; };
+    return () => {
+      document.title = prev;
+    };
   }, []);
 
   const featured = blogPosts[0];
@@ -26,7 +27,8 @@ const Blog = () => {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -34,24 +36,38 @@ const Blog = () => {
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <PageBreadcrumb items={[{ label: "Home", path: "/" }, { label: "Blog" }]} />
+          <PageBreadcrumb
+            items={[{ label: "Home", path: "/" }, { label: "Blog" }]}
+          />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
-                <span className="text-sm font-medium text-white/80">PublifyX Blog</span>
+                <span className="text-sm font-medium text-white/80">
+                  PublifyX Blog
+                </span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1]">
                 Ad Tech Insights &
-                <span className="block text-brand-orange-400">Industry Analysis</span>
+                <span className="block text-brand-orange-400">
+                  Industry Analysis
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-10 leading-relaxed max-w-xl">
-                Stay ahead with the latest trends, strategies, and deep dives in programmatic advertising, DSP technology, and digital media buying.
+                Stay ahead with the latest trends, strategies, and deep dives in
+                programmatic advertising, DSP technology, and digital media
+                buying.
               </p>
               <div className="flex items-center gap-6 text-navy-300">
                 <div className="flex items-center gap-2">
                   <BookOpen className="w-5 h-5 text-brand-orange-400" />
-                  <span className="text-sm font-semibold">{blogPosts.length} Articles</span>
+                  <span className="text-sm font-semibold">
+                    {blogPosts.length} Articles
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-semibold">Updated Weekly</span>
@@ -127,13 +143,28 @@ const Blog = () => {
           <div className="lg:hidden mb-10">
             <Link to={`/blog/${featured.slug}`} className="group block">
               <div className="rounded-2xl overflow-hidden border border-navy-100 hover:shadow-lg transition-all">
-                <img src={featured.image} alt={featured.title} className="w-full h-48 object-cover" loading="eager" />
+                <img
+                  src={featured.image}
+                  alt={featured.title}
+                  className="w-full h-48 object-cover"
+                  loading="eager"
+                />
                 <div className="p-5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-brand-orange-500">{featured.category}</span>
-                  <h3 className="text-lg font-bold text-navy-800 mt-2 mb-2 group-hover:text-brand-orange-500 transition-colors">{featured.title}</h3>
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-orange-500">
+                    {featured.category}
+                  </span>
+                  <h3 className="text-lg font-bold text-navy-800 mt-2 mb-2 group-hover:text-brand-orange-500 transition-colors">
+                    {featured.title}
+                  </h3>
                   <div className="flex items-center gap-3 text-xs text-navy-400">
-                    <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{featured.date}</span>
-                    <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{featured.readTime}</span>
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {featured.date}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {featured.readTime}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -205,10 +236,16 @@ const Blog = () => {
           transition={{ duration: 0.7 }}
           className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 !text-white">Subscribe to Our Newsletter</h2>
-          <p className="text-navy-300 mb-8 text-lg">Get the latest advertising insights delivered straight to your inbox</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 !text-white">
+            Subscribe to Our Newsletter
+          </h2>
+          <p className="text-navy-300 mb-8 text-lg">
+            Get the latest advertising insights delivered straight to your inbox
+          </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
-            <label htmlFor="newsletter-email" className="sr-only">Email address</label>
+            <label htmlFor="newsletter-email" className="sr-only">
+              Email address
+            </label>
             <input
               id="newsletter-email"
               type="email"
@@ -216,9 +253,9 @@ const Blog = () => {
               aria-label="Email address for newsletter"
               className="flex-1 px-4 py-3 rounded-xl text-navy-800 bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange-500 border-0"
             />
-            <EnergyButton className="inline-flex items-center bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-6 py-3 rounded-xl font-semibold transition-colors">
+            <div className="inline-flex items-center bg-brand-orange-500 hover:bg-brand-orange-600 text-white px-6 py-3 rounded-xl font-semibold transition-colors">
               Subscribe
-            </EnergyButton>
+            </div>
           </div>
         </motion.div>
       </section>

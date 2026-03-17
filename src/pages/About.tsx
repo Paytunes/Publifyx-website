@@ -3,30 +3,43 @@ import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import EnergyButton from "@/components/effects/EnergyButton";
-import { ArrowRight, Sparkles, Lightbulb, Globe, Handshake, Building2, Star, Target, Zap } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  Lightbulb,
+  Globe,
+  Handshake,
+  Building2,
+  Star,
+  Target,
+  Zap,
+} from "lucide-react";
 import aboutDashboard from "@/assets/about/hero-dashboard.webp";
 import MagneticCard from "@/components/effects/MagneticCard";
 
 const whatWeDo = [
   {
     title: "White Label DSP Technology",
-    description: "A fully functional, branded demand side platform supporting display, video, audio, CTV, and OTT.",
+    description:
+      "A fully functional, branded demand side platform supporting display, video, audio, CTV, and OTT.",
     icon: Lightbulb,
   },
   {
     title: "Infrastructure & Bidding",
-    description: "We handle real-time bidding engine, server architecture, data pipelines, and ongoing compliance.",
+    description:
+      "We handle real-time bidding engine, server architecture, data pipelines, and ongoing compliance.",
     icon: Zap,
   },
   {
     title: "Supply Integrations",
-    description: "40+ SSP and ad exchange connections pre-configured. Custom integrations available.",
+    description:
+      "40+ SSP and ad exchange connections pre-configured. Custom integrations available.",
     icon: Globe,
   },
   {
     title: "Ongoing Support",
-    description: "Ad tech specialists guide you through setup, optimization, and campaign strategy.",
+    description:
+      "Ad tech specialists guide you through setup, optimization, and campaign strategy.",
     icon: Handshake,
   },
 ];
@@ -40,7 +53,8 @@ const whoWeServe = [
   },
   {
     title: "Ad Networks",
-    description: "Offer self-serve programmatic capabilities to your advertiser base with custom access tiers.",
+    description:
+      "Offer self-serve programmatic capabilities to your advertiser base with custom access tiers.",
     icon: Globe,
   },
   {
@@ -51,7 +65,8 @@ const whoWeServe = [
   },
   {
     title: "Startups",
-    description: "Enter the ad tech market without millions in development costs. Launch your own DSP in days.",
+    description:
+      "Enter the ad tech market without millions in development costs. Launch your own DSP in days.",
     icon: Star,
   },
 ];
@@ -59,25 +74,30 @@ const whoWeServe = [
 const values = [
   {
     title: "Transparency",
-    description: "Clear pricing, honest communication, and full visibility into how your platform operates.",
+    description:
+      "Clear pricing, honest communication, and full visibility into how your platform operates.",
   },
   {
     title: "Accessibility",
-    description: "Enterprise-grade ad tech should not require enterprise-grade budgets. We make it accessible.",
+    description:
+      "Enterprise-grade ad tech should not require enterprise-grade budgets. We make it accessible.",
   },
   {
     title: "Partnership",
-    description: "We succeed when you succeed. Our support goes beyond technology into business strategy.",
+    description:
+      "We succeed when you succeed. Our support goes beyond technology into business strategy.",
   },
   {
     title: "Innovation",
-    description: "Continuous platform updates, new features, and expanded integrations to keep you competitive.",
+    description:
+      "Continuous platform updates, new features, and expanded integrations to keep you competitive.",
   },
 ];
 
 const About = () => {
   useEffect(() => {
-    document.title = "About PublifyX | White Label Programmatic Technology Company";
+    document.title =
+      "About PublifyX | White Label Programmatic Technology Company";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
@@ -97,40 +117,62 @@ const About = () => {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
         <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-brand-orange-500 rounded-full blur-[200px] opacity-10" />
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-brand-orange-300 rounded-full blur-[160px] opacity-[0.06]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <PageBreadcrumb items={[{ label: "Home", path: "/" }, { label: "Resources" }, { label: "About" }]} />
+          <PageBreadcrumb
+            items={[
+              { label: "Home", path: "/" },
+              { label: "Resources" },
+              { label: "About" },
+            ]}
+          />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
-                <span className="text-sm font-medium text-white/80">About PublifyX</span>
+                <span className="text-sm font-medium text-white/80">
+                  About PublifyX
+                </span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1]">
                 Powering the Next Generation of
-                <span className="block text-brand-orange-400">Programmatic Advertising</span>
+                <span className="block text-brand-orange-400">
+                  Programmatic Advertising
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
-                We build white-labeled DSP technology that enables agencies, ad networks, and startups to launch their
-                own branded programmatic platforms — without building from scratch.
+                We build white-labeled DSP technology that enables agencies, ad
+                networks, and startups to launch their own branded programmatic
+                platforms — without building from scratch.
               </p>
               <p className="text-base text-navy-300 mb-10 font-semibold">
-                Delhi, India · Serving clients worldwide · Enterprise tech, accessible pricing
+                Delhi, India · Serving clients worldwide · Enterprise tech,
+                accessible pricing
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
-                <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link to="/contact" className="flex items-center text-white no-underline group">
+                <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
+                  <Link
+                    to="/contact"
+                    className="flex items-center text-white no-underline group"
+                  >
                     Partner with Us{" "}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </EnergyButton>
+                </div>
               </div>
-              <p className="text-sm text-navy-400">Democratizing access to programmatic ad tech</p>
+              <p className="text-sm text-navy-400">
+                Democratizing access to programmatic ad tech
+              </p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 40, scale: 0.95 }}
@@ -167,7 +209,11 @@ const About = () => {
             >
               What We Do
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Our Technology, Your Brand
             </motion.h2>
             <motion.p
@@ -177,8 +223,9 @@ const About = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-navy-400 max-w-3xl mx-auto mt-4 leading-relaxed"
             >
-              You deploy the platform under your brand, operate with your pricing, and manage clients independently —
-              while we handle infrastructure, bidding technology, and updates.
+              You deploy the platform under your brand, operate with your
+              pricing, and manage clients independently — while we handle
+              infrastructure, bidding technology, and updates.
             </motion.p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -194,8 +241,12 @@ const About = () => {
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <item.icon className="w-6 h-6 text-brand-orange-500" />
                   </div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">{item.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="font-bold text-navy-800 text-lg mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
                 </MagneticCard>
               </motion.div>
             ))}
@@ -215,7 +266,11 @@ const About = () => {
             >
               Our Approach
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               What Drives Us
             </motion.h2>
           </div>
@@ -230,10 +285,16 @@ const About = () => {
               >
                 <div className="bg-white rounded-2xl border border-navy-100 p-6 hover:shadow-lg transition-all duration-300 h-full text-center">
                   <div className="w-10 h-10 rounded-xl bg-brand-orange-500 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-sm">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-white font-bold text-sm">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                  <h3 className="font-bold text-navy-800 text-base mb-2">{value.title}</h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">{value.description}</p>
+                  <h3 className="font-bold text-navy-800 text-base mb-2">
+                    {value.title}
+                  </h3>
+                  <p className="text-navy-400 text-sm leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -253,7 +314,11 @@ const About = () => {
             >
               Who We Serve
             </motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
               Our Clients
             </motion.h2>
           </div>
@@ -270,8 +335,12 @@ const About = () => {
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <audience.icon className="w-6 h-6 text-brand-orange-500" />
                   </div>
-                  <h3 className="font-bold text-navy-800 text-xl mb-2">{audience.title}</h3>
-                  <p className="text-navy-400 leading-relaxed">{audience.description}</p>
+                  <h3 className="font-bold text-navy-800 text-xl mb-2">
+                    {audience.title}
+                  </h3>
+                  <p className="text-navy-400 leading-relaxed">
+                    {audience.description}
+                  </p>
                 </MagneticCard>
               </motion.div>
             ))}
@@ -308,15 +377,21 @@ const About = () => {
         >
           <h2 className="mb-6 !text-white">Partner with PublifyX</h2>
           <p className="text-xl text-navy-300 mb-4 leading-relaxed">
-            Ready to explore how we can power your programmatic advertising business?
+            Ready to explore how we can power your programmatic advertising
+            business?
           </p>
-          <p className="text-base text-navy-400 mb-10 font-semibold">No commitment required · Global reach</p>
-          <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link to="/contact" className="flex items-center text-white no-underline group">
+          <p className="text-base text-navy-400 mb-10 font-semibold">
+            No commitment required · Global reach
+          </p>
+          <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
+            <Link
+              to="/contact"
+              className="flex items-center text-white no-underline group"
+            >
               Book a Call{" "}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </EnergyButton>
+          </div>
         </motion.div>
       </section>
     </Layout>

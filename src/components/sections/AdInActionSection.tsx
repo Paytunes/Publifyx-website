@@ -1,8 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Check, Play, Pause, SkipBack, SkipForward, ArrowRight } from "lucide-react";
+import {
+  Check,
+  Play,
+  Pause,
+  SkipBack,
+  SkipForward,
+  ArrowRight,
+} from "lucide-react";
 import { motion } from "framer-motion";
-import EnergyButton from "@/components/effects/EnergyButton";
 import mamaEarthAdImg from "@/assets/home/mama-earth-ad.webp";
 import publifyxLogoImg from "@/assets/brand/publifyx-logo.webp";
 
@@ -61,9 +67,12 @@ const AdInActionSection = () => {
             <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-4">
               See It In Action
             </span>
-            <h2 className="mb-6 text-left">AI-Powered Ad Content That Engages</h2>
+            <h2 className="mb-6 text-left">
+              AI-Powered Ad Content That Engages
+            </h2>
             <p className="text-lg text-navy-400 mb-8 leading-relaxed">
-              PublifyX ensures seamless delivery with user-friendly pre-packaged solutions.
+              PublifyX ensures seamless delivery with user-friendly pre-packaged
+              solutions.
             </p>
 
             <div className="space-y-5 mb-8">
@@ -81,12 +90,15 @@ const AdInActionSection = () => {
               ))}
             </div>
 
-            <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-              <Link to="/contact" className="flex items-center text-white no-underline group">
+            <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
+              <Link
+                to="/contact"
+                className="flex items-center text-white no-underline group"
+              >
                 Request a demo
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </EnergyButton>
+            </div>
           </motion.div>
 
           {/* Right Phone Mockup */}
@@ -108,14 +120,32 @@ const AdInActionSection = () => {
                   <hr className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-navy-900 border-0 rounded-b-lg" />
 
                   <div className="absolute top-4 left-1/2 -translate-x-1/2">
-                    <svg width="85" height="8" viewBox="0 0 711 107" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      width="85"
+                      height="8"
+                      viewBox="0 0 711 107"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <rect width="711" height="107" rx="53.5" fill="#2B2B2B" />
                     </svg>
                   </div>
 
                   <div className="absolute top-2 right-8">
-                    <svg width="18" height="18" viewBox="0 0 133 125" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <ellipse cx="66.5" cy="62.5" rx="66.5" ry="62.5" fill="#2B2B2B" />
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 133 125"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <ellipse
+                        cx="66.5"
+                        cy="62.5"
+                        rx="66.5"
+                        ry="62.5"
+                        fill="#2B2B2B"
+                      />
                     </svg>
                   </div>
 
@@ -152,7 +182,9 @@ const AdInActionSection = () => {
                       </div>
 
                       <div className="mt-4">
-                        <label htmlFor="audio-seek" className="sr-only">Seek audio</label>
+                        <label htmlFor="audio-seek" className="sr-only">
+                          Seek audio
+                        </label>
                         <input
                           id="audio-seek"
                           type="range"
@@ -162,7 +194,9 @@ const AdInActionSection = () => {
                           max={duration}
                           onChange={(e) => {
                             if (audioRef.current) {
-                              audioRef.current.currentTime = Number(e.target.value);
+                              audioRef.current.currentTime = Number(
+                                e.target.value,
+                              );
                             }
                           }}
                         />
@@ -181,7 +215,9 @@ const AdInActionSection = () => {
                           <SkipBack size={24} aria-hidden="true" />
                         </button>
                         <button
-                          aria-label={isPlaying ? "Pause audio ad" : "Play audio ad"}
+                          aria-label={
+                            isPlaying ? "Pause audio ad" : "Play audio ad"
+                          }
                           onClick={handlePlayPause}
                           className="bg-white rounded-full p-3 hover:bg-white/90 transition-colors"
                         >
@@ -191,7 +227,10 @@ const AdInActionSection = () => {
                             <Play size={24} className="text-navy-800" />
                           )}
                         </button>
-                        <button className="text-white/70 hover:text-white transition-colors" aria-label="Next track">
+                        <button
+                          className="text-white/70 hover:text-white transition-colors"
+                          aria-label="Next track"
+                        >
                           <SkipForward size={24} aria-hidden="true" />
                         </button>
                       </div>

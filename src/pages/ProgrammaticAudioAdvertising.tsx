@@ -10,10 +10,23 @@ import programmaticAudioConcept from "@/assets/audio/programmatic-audio-concept.
 import podcastStudio from "@/assets/audio/podcast-studio.webp";
 import audioDevices from "@/assets/audio/audio-devices.webp";
 import { motion, useInView } from "framer-motion";
-import EnergyButton from "@/components/effects/EnergyButton";
-import { ArrowRight, Sparkles, Headphones, Radio, Mic, Monitor, Music, Tv } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  Headphones,
+  Radio,
+  Mic,
+  Monitor,
+  Music,
+  Tv,
+} from "lucide-react";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
 import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
 import AudioStickyFeaturesSection from "@/components/sections/audioAdvertising/AudioStickyFeaturesSection";
@@ -71,18 +84,39 @@ const faqs = [
 ];
 
 const audioStats = [
-  { value: 93, suffix: "%", description: "of U.S. adults aged 18+ tune in to radio every week" },
+  {
+    value: 93,
+    suffix: "%",
+    description: "of U.S. adults aged 18+ tune in to radio every week",
+  },
   {
     value: 84,
     suffix: "%",
-    description: "of Americans aged 12+ are familiar with podcasts (approx. 241 million people)",
+    description:
+      "of Americans aged 12+ are familiar with podcasts (approx. 241 million people)",
   },
-  { value: 73, suffix: "%", description: "of Americans aged 12+ listened to online audio in the past month" },
-  { value: 47, suffix: "%", description: "of Americans aged 12+ listened to a podcast during the last month" },
+  {
+    value: 73,
+    suffix: "%",
+    description:
+      "of Americans aged 12+ listened to online audio in the past month",
+  },
+  {
+    value: 47,
+    suffix: "%",
+    description:
+      "of Americans aged 12+ listened to a podcast during the last month",
+  },
 ];
 
 /* ── Animated counter (AdTonos-inspired) ── */
-const AnimatedStatCounter = ({ target, suffix }: { target: number; suffix: string }) => {
+const AnimatedStatCounter = ({
+  target,
+  suffix,
+}: {
+  target: number;
+  suffix: string;
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [count, setCount] = useState(0);
@@ -102,7 +136,10 @@ const AnimatedStatCounter = ({ target, suffix }: { target: number; suffix: strin
   }, [isInView, target]);
 
   return (
-    <div ref={ref} className="text-5xl md:text-6xl font-extrabold text-white mb-2 font-display">
+    <div
+      ref={ref}
+      className="text-5xl md:text-6xl font-extrabold text-white mb-2 font-display"
+    >
       {count}
       {suffix}
     </div>
@@ -124,7 +161,11 @@ const audioSchemas = [
     "@type": "Service",
     name: "Programmatic Audio Advertising Platform",
     serviceType: "Programmatic Audio Advertising",
-    provider: { "@type": "Organization", name: "PublifyX", url: "https://www.publifyx.com" },
+    provider: {
+      "@type": "Organization",
+      name: "PublifyX",
+      url: "https://www.publifyx.com",
+    },
     areaServed: { "@type": "Place", name: "Worldwide" },
     description:
       "Run programmatic audio advertising campaigns across streaming music, podcasts, digital radio, and smart speaker environments with PublifyX. Target listeners with precision and measure performance in real time, all within the same platform you use for display, video, and CTV.",
@@ -173,8 +214,18 @@ const audioSchemas = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.publifyx.com" },
-      { "@type": "ListItem", position: 2, name: "Services", item: "https://www.publifyx.com/services" },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.publifyx.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://www.publifyx.com/services",
+      },
       {
         "@type": "ListItem",
         position: 3,
@@ -188,14 +239,21 @@ const audioSchemas = [
     "@type": "Review",
     reviewBody:
       "Audio campaigns helped us reach audiences during commute hours where display simply couldn't. Completion rates were consistently strong, and companion banners drove additional engagement.",
-    author: { "@type": "Person", name: "Senior Media Planner, Digital-First Agency" },
-    itemReviewed: { "@type": "SoftwareApplication", name: "PublifyX Programmatic Audio Advertising Platform" },
+    author: {
+      "@type": "Person",
+      name: "Senior Media Planner, Digital-First Agency",
+    },
+    itemReviewed: {
+      "@type": "SoftwareApplication",
+      name: "PublifyX Programmatic Audio Advertising Platform",
+    },
   },
 ];
 
 const ProgrammaticAudioAdvertising = () => {
   useEffect(() => {
-    document.title = "Programmatic Audio Advertising Platform | Audio DSP — PublifyX";
+    document.title =
+      "Programmatic Audio Advertising Platform | Audio DSP — PublifyX";
     const meta = document.querySelector('meta[name="description"]');
     if (meta)
       meta.setAttribute(
@@ -230,7 +288,8 @@ const ProgrammaticAudioAdvertising = () => {
         <div
           className="absolute inset-0 opacity-[0.03] hidden md:block"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -241,33 +300,43 @@ const ProgrammaticAudioAdvertising = () => {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
-                <span className="text-sm font-medium text-white/80">Audio Advertising Platform</span>
+                <span className="text-sm font-medium text-white/80">
+                  Audio Advertising Platform
+                </span>
               </div>
               <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-4xl">
-                Programmatic Audio Advertising — Reach Listeners Across Streaming, Podcasts, and Digital Radio
+                Programmatic Audio Advertising — Reach Listeners Across
+                Streaming, Podcasts, and Digital Radio
               </h1>
               <p className="text-lg md:text-xl text-navy-200 mb-4 leading-relaxed max-w-xl">
                 Not every powerful advertising moment happens on a screen.
               </p>
               <p className="text-base text-navy-300 mb-4 leading-relaxed max-w-xl">
-                Audio reaches audiences while they commute, exercise, cook, or work, moments when visual ads cannot
-                compete.
+                Audio reaches audiences while they commute, exercise, cook, or
+                work, moments when visual ads cannot compete.
               </p>
               <p className="text-base text-navy-300 mb-10 leading-relaxed max-w-xl">
-                PublifyX provides a programmatic audio advertising platform that automates the buying and delivery of
-                audio ads across streaming music, podcasts, digital radio, and smart speaker environments. Target
-                listeners with precision and measure performance in real time, all within the same platform you use for
-                display, video, and CTV.
+                PublifyX provides a programmatic audio advertising platform that
+                automates the buying and delivery of audio ads across streaming
+                music, podcasts, digital radio, and smart speaker environments.
+                Target listeners with precision and measure performance in real
+                time, all within the same platform you use for display, video,
+                and CTV.
               </p>
               <p className="text-sm text-navy-300 mb-6 font-semibold">
-                Want to reach audiences during screen-free moments? Talk to our audio specialists.
+                Want to reach audiences during screen-free moments? Talk to our
+                audio specialists.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
-                <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                  <Link to="/contact" className="flex items-center text-white no-underline group">
-                    Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
+                  <Link
+                    to="/contact"
+                    className="flex items-center text-white no-underline group"
+                  >
+                    Book a Demo{" "}
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </EnergyButton>
+                </div>
               </div>
             </div>
             <div className="hidden lg:block">
@@ -316,22 +385,28 @@ const ProgrammaticAudioAdvertising = () => {
               </h2>
               <div className="space-y-4 text-navy-600 leading-relaxed text-lg">
                 <p>
-                  Programmatic audio advertising is the automated buying and selling of audio ad inventory using
-                  real-time bidding technology.
+                  Programmatic audio advertising is the automated buying and
+                  selling of audio ad inventory using real-time bidding
+                  technology.
                 </p>
                 <p>
-                  When a listener streams music, a podcast, or digital radio content, an audio ad slot becomes
-                  available. A bid request is sent to demand-side platforms, where advertisers compete in a real-time
-                  auction based on targeting criteria. The winning ad is served seamlessly within the listener's stream.
+                  When a listener streams music, a podcast, or digital radio
+                  content, an audio ad slot becomes available. A bid request is
+                  sent to demand-side platforms, where advertisers compete in a
+                  real-time auction based on targeting criteria. The winning ad
+                  is served seamlessly within the listener's stream.
                 </p>
                 <p>
-                  This process happens in milliseconds and eliminates the need for manual negotiations with individual
-                  publishers or radio stations. Advertisers gain access to vast audio inventory across multiple
-                  platforms and can manage targeting, budgets, pacing, and frequency from a single interface.
+                  This process happens in milliseconds and eliminates the need
+                  for manual negotiations with individual publishers or radio
+                  stations. Advertisers gain access to vast audio inventory
+                  across multiple platforms and can manage targeting, budgets,
+                  pacing, and frequency from a single interface.
                 </p>
                 <p>
-                  Programmatic audio ads are typically 15 or 30 seconds in length and are often accompanied by a
-                  companion display banner shown in the app or player while the audio ad plays.
+                  Programmatic audio ads are typically 15 or 30 seconds in
+                  length and are often accompanied by a companion display banner
+                  shown in the app or player while the audio ad plays.
                 </p>
               </div>
             </motion.div>
@@ -353,11 +428,18 @@ const ProgrammaticAudioAdvertising = () => {
                 Why Audio Advertising Deserves a Place in Your Media Mix
               </h2>
               <div className="space-y-3 text-navy-600 leading-relaxed text-lg">
-                <p>Audio captures attention during moments when visual ads are ineffective.</p>
-                <p>Listeners are often fully engaged, wearing headphones, focused, and immersed in content.</p>
                 <p>
-                  Unlike display ads that can be scrolled past, audio ads are typically played in full. Completion rates
-                  are consistently high.
+                  Audio captures attention during moments when visual ads are
+                  ineffective.
+                </p>
+                <p>
+                  Listeners are often fully engaged, wearing headphones,
+                  focused, and immersed in content.
+                </p>
+                <p>
+                  Unlike display ads that can be scrolled past, audio ads are
+                  typically played in full. Completion rates are consistently
+                  high.
                 </p>
                 <p>Digital audio consumption continues to expand, driven by:</p>
               </div>
@@ -370,12 +452,15 @@ const ProgrammaticAudioAdvertising = () => {
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <Headphones className="w-5 h-5 text-brand-orange-600 flex-shrink-0" />
-                    <span className="text-navy-600 font-medium text-lg">{item}</span>
+                    <span className="text-navy-600 font-medium text-lg">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
               <p className="text-navy-600 leading-relaxed text-lg mb-6">
-                For advertisers, this means scalable, addressable reach with precision targeting.
+                For advertisers, this means scalable, addressable reach with
+                precision targeting.
               </p>
             </motion.div>
             <motion.div
@@ -398,13 +483,18 @@ const ProgrammaticAudioAdvertising = () => {
         </div>
         <div className="flex gap-6 flex-col items-center mt-6 p-4">
           <p className="text-sm text-navy-400 font-semibold text-center">
-            Considering audio for your next campaign? Let's map the right targeting strategy.
+            Considering audio for your next campaign? Let's map the right
+            targeting strategy.
           </p>
-          <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-            <Link to="/contact" className="flex items-center text-white no-underline group">
-              Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
+            <Link
+              to="/contact"
+              className="flex items-center text-white no-underline group"
+            >
+              Book a Demo{" "}
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </EnergyButton>
+          </div>
         </div>
       </section>
 
@@ -439,8 +529,12 @@ const ProgrammaticAudioAdvertising = () => {
                         <format.icon className="w-5 h-5 text-brand-orange-400" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-navy-800 text-lg mb-1">{format.title}</h3>
-                        <p className="text-navy-400 leading-relaxed">{format.desc}</p>
+                        <h3 className="font-bold text-navy-800 text-lg mb-1">
+                          {format.title}
+                        </h3>
+                        <p className="text-navy-400 leading-relaxed">
+                          {format.desc}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -509,7 +603,9 @@ const ProgrammaticAudioAdvertising = () => {
               <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
                 FAQ
               </span>
-              <h2>Frequently Asked Questions About Programmatic Audio Advertising</h2>
+              <h2>
+                Frequently Asked Questions About Programmatic Audio Advertising
+              </h2>
             </div>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
@@ -521,7 +617,9 @@ const ProgrammaticAudioAdvertising = () => {
                   <AccordionTrigger className="text-left font-semibold text-navy-800 hover:text-brand-orange-500 hover:no-underline py-5">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
@@ -555,8 +653,14 @@ const ProgrammaticAudioAdvertising = () => {
             {/* Stats grid */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 max-w-6xl mx-auto">
               {audioStats.map((stat) => (
-                <div key={stat.value} className="text-center px-2 py-4 md:px-4 md:py-6">
-                  <AnimatedStatCounter target={stat.value} suffix={stat.suffix} />
+                <div
+                  key={stat.value}
+                  className="text-center px-2 py-4 md:px-4 md:py-6"
+                >
+                  <AnimatedStatCounter
+                    target={stat.value}
+                    suffix={stat.suffix}
+                  />
                   <p className="text-white/70 text-sm md:text-base leading-relaxed mt-3 max-w-[240px] mx-auto">
                     {stat.description}
                   </p>

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Zap, Building2 } from "lucide-react";
-import MagneticButton from "@/components/effects/MagneticButton";
 
 const ProductsSection = () => {
   return (
@@ -34,7 +33,8 @@ const ProductsSection = () => {
             transition={{ delay: 0.1 }}
             className="text-lg text-navy-300 max-w-2xl mx-auto"
           >
-            An evolved user experience that drives performance across channels with ease.
+            An evolved user experience that drives performance across channels
+            with ease.
           </motion.p>
         </div>
 
@@ -53,20 +53,19 @@ const ProductsSection = () => {
               </div>
               <h3 className="mb-4 !text-white text-2xl">Shout Lite</h3>
               <p className="text-navy-300 leading-relaxed mb-8">
-                AI-powered audio and video creativity solutions at a fraction of traditional costs. Pre-packaged OTT
-                solutions simplify advertising, empowering businesses to optimize ROI through enhanced ad completion
-                rates.
+                AI-powered audio and video creativity solutions at a fraction of
+                traditional costs. Pre-packaged OTT solutions simplify
+                advertising, empowering businesses to optimize ROI through
+                enhanced ad completion rates.
               </p>
             </div>
-            <MagneticButton as="div" className="w-full">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center btn-primary w-full text-center group/btn"
-              >
-                Get Started
-                <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </Link>
-            </MagneticButton>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center btn-primary w-full text-center group/btn"
+            >
+              Get Started
+              <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
 
           {/* Shout Enterprise */}
@@ -86,19 +85,19 @@ const ProductsSection = () => {
               </div>
               <h3 className="mb-4 !text-white text-2xl">Shout Enterprise</h3>
               <p className="text-white/80 leading-relaxed mb-8">
-                White-Labeled DSP Platform designed for corporate media agencies. Fully customizable platforms with
-                self-branded reporting portals and campaign management tools for unparalleled client services.
+                White-Labeled DSP Platform designed for corporate media
+                agencies. Fully customizable platforms with self-branded
+                reporting portals and campaign management tools for unparalleled
+                client services.
               </p>
             </div>
-            <MagneticButton as="div" className="w-full">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center bg-white text-navy-800 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg w-full text-center group/btn"
-              >
-                Contact Sales
-                <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </Link>
-            </MagneticButton>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center bg-white text-navy-800 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg w-full text-center group/btn"
+            >
+              Contact Sales
+              <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
         </div>
       </div>

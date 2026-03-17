@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
 import { motion } from "framer-motion";
-import EnergyButton from "@/components/effects/EnergyButton";
 import ctvHeroDashboard from "@/assets/ctv/ctv-hero-dashboard.webp";
 import stepObjectives from "@/assets/ctv/step-objectives.webp";
 import stepTargeting from "@/assets/ctv/step-targeting.webp";
@@ -382,7 +381,7 @@ const CTVAdvertising = () => {
                 today.
               </h3>
               <div className="flex flex-col sm:flex-row gap-4 items-start mb-10">
-                <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+                <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
                   <Link
                     to="/contact"
                     className="flex items-center text-white no-underline group"
@@ -390,7 +389,7 @@ const CTVAdvertising = () => {
                     Book a Call{" "}
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </EnergyButton>
+                </div>
               </div>
               <p className="text-sm text-navy-400">
                 No commitment required · Launch campaigns in minutes
@@ -743,7 +742,7 @@ const CTVAdvertising = () => {
           <p className="text-base text-navy-400 mb-10 font-semibold">
             No commitment required · Launch campaigns in minutes
           </p>
-          <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
+          <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
             <Link
               to="/contact"
               className="flex items-center text-white no-underline group"
@@ -751,7 +750,7 @@ const CTVAdvertising = () => {
               Contact Us{" "}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </EnergyButton>
+          </div>
         </motion.div>
       </section>
 

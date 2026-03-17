@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
-import EnergyButton from "@/components/effects/EnergyButton";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import ottHeroDashboard from "@/assets/ott/ott-hero-dashboard.webp";
 
@@ -15,7 +14,8 @@ const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -27,34 +27,47 @@ const OTTHero = ({ breadcrumbs }: OTTHeroProps) => {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
               <Sparkles className="w-4 h-4 text-brand-orange-400" />
-              <span className="text-sm font-medium text-white/80">OTT Advertising Platform</span>
+              <span className="text-sm font-medium text-white/80">
+                OTT Advertising Platform
+              </span>
             </div>
             <h1 className="mb-6 !text-white leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] xl:text-4xl">
               OTT Advertising Platform — Reach Streaming Audiences
-              <span className="block text-brand-orange-400">Across Every Screen</span>
+              <span className="block text-brand-orange-400">
+                Across Every Screen
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-navy-100 mb-4 leading-relaxed max-w-xl">
-              Streaming has changed how people consume content, and how brands must reach them.
+              Streaming has changed how people consume content, and how brands
+              must reach them.
             </p>
             <p className="text-base text-navy-200 mb-4 leading-relaxed max-w-xl">
-              Over-the-top (OTT) advertising allows you to deliver targeted video ads across smart TVs, smartphones,
-              tablets, laptops, and gaming consoles. Wherever audiences stream, your message follows.
+              Over-the-top (OTT) advertising allows you to deliver targeted
+              video ads across smart TVs, smartphones, tablets, laptops, and
+              gaming consoles. Wherever audiences stream, your message follows.
             </p>
             <p className="text-base text-navy-200 mb-4 leading-relaxed max-w-xl">
-              PublifyX provides a programmatic OTT advertising platform that connects you to premium streaming inventory
-              across devices and environments. Whether your audience is watching a show on a smart TV, catching up on
-              content on mobile, or streaming during their commute, your campaigns reach them with precision and
-              measurable impact.
+              PublifyX provides a programmatic OTT advertising platform that
+              connects you to premium streaming inventory across devices and
+              environments. Whether your audience is watching a show on a smart
+              TV, catching up on content on mobile, or streaming during their
+              commute, your campaigns reach them with precision and measurable
+              impact.
             </p>
             <p className="text-base text-navy-200 mb-10 font-semibold">
-              Looking to expand beyond traditional TV? Speak with our team about launching OTT campaigns.
+              Looking to expand beyond traditional TV? Speak with our team about
+              launching OTT campaigns.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-start mb-10 animate-fade-in">
-              <EnergyButton className="inline-flex items-center btn-primary text-lg px-10 py-4">
-                <Link to="/contact" className="flex items-center text-white no-underline group">
-                  Book a Demo <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <div className="inline-flex items-center btn-primary text-lg px-10 py-4">
+                <Link
+                  to="/contact"
+                  className="flex items-center text-white no-underline group"
+                >
+                  Book a Demo{" "}
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-              </EnergyButton>
+              </div>
             </div>
           </div>
           <div className="hidden lg:block animate-fade-in">

@@ -3,10 +3,11 @@ import { ArrowRight, Sparkles, BarChart3, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import EnergyButton from "@/components/effects/EnergyButton";
 import heroImage from "@/assets/home/hero-woman-phone.webp";
 
-const ParticleNetwork = lazy(() => import("@/components/effects/ParticleNetwork"));
+const ParticleNetwork = lazy(
+  () => import("@/components/effects/ParticleNetwork"),
+);
 
 const HeroSection = () => {
   return (
@@ -23,7 +24,8 @@ const HeroSection = () => {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -38,7 +40,9 @@ const HeroSection = () => {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
               <Sparkles className="w-4 h-4 text-brand-orange-400" />
-              <span className="text-sm font-medium text-white/80">AI-Powered Ad-Tech Platform</span>
+              <span className="text-sm font-medium text-white/80">
+                AI-Powered Ad-Tech Platform
+              </span>
             </div>
 
             <h1 className="mb-6 !text-white leading-[1.1]">
@@ -49,16 +53,17 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-navy-200 mb-10 max-w-lg leading-relaxed">
-              Leverage AI for seamless creativity, simplify OTT advertising, and maximize ROI with white-labeled DSP
-              solutions.
+              Leverage AI for seamless creativity, simplify OTT advertising, and
+              maximize ROI with white-labeled DSP solutions.
             </p>
 
-            <EnergyButton className="bg-brand-orange-700 mb-4 w-fit hover:bg-brand-orange-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-brand-orange-500/25">
-              <Link to="/contact" className="flex items-center text-white no-underline">
-                Get Your White Label DSP
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </EnergyButton>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center btn-primary w-fit text-center group/btn mb-4"
+            >
+              Get Your White Label DSP
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
 
             <div className="flex items-center gap-8 pt-8 border-t border-white/10">
               {[
@@ -69,7 +74,9 @@ const HeroSection = () => {
                 <div key={m.label} className="flex items-center gap-2">
                   <m.icon className="w-5 h-5 text-brand-orange-400" />
                   <div>
-                    <div className="text-white font-bold text-lg">{m.value}</div>
+                    <div className="text-white font-bold text-lg">
+                      {m.value}
+                    </div>
                     <div className="text-navy-300 text-sm">{m.label}</div>
                   </div>
                 </div>
@@ -86,7 +93,7 @@ const HeroSection = () => {
           >
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10 !bg-[#ffbf32]">
-               <img
+                <img
                   src={heroImage}
                   alt="Young woman using phone – digital advertising concept"
                   className="w-full h-auto"
@@ -100,7 +107,11 @@ const HeroSection = () => {
               {/* Floating card */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl"
               >
                 <div className="flex items-center gap-3">
@@ -108,7 +119,9 @@ const HeroSection = () => {
                     <BarChart3 className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-navy-800">+300% ROI</div>
+                    <div className="text-sm font-bold text-navy-800">
+                      +300% ROI
+                    </div>
                     <div className="text-xs text-navy-400">Avg. Campaign</div>
                   </div>
                 </div>
