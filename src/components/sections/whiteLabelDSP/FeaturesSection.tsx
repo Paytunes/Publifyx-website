@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import {
   Palette,
   Layers,
@@ -7,7 +6,6 @@ import {
   Settings,
   Headphones,
 } from "lucide-react";
-
 
 const features = [
   {
@@ -59,32 +57,15 @@ const FeaturesSection = () => {
     <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-          >
+          <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
             Platform Features
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Key Features of PublifyX White Label DSP
-          </motion.h2>
+          </span>
+          <h2>Key Features of PublifyX White Label DSP</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {features.map((feature, i) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.4 }}
-            >
+            <div key={feature.title}>
               <div className="group bg-navy-50 rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
                 <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                   <feature.icon className="w-6 h-6 text-brand-orange-500" />
@@ -96,7 +77,7 @@ const FeaturesSection = () => {
                   {feature.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

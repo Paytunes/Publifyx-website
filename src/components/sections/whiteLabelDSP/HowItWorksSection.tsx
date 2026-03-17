@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 import stepConsultation from "@/assets/white-label-dsp/step-consultation.webp";
@@ -46,40 +44,19 @@ const HowItWorksSection = ({ onGetStarted }: HowItWorksSectionProps) => {
     <section className="py-12 md:py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-          >
+          <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
             Get Started
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            How to Get Started with PublifyX White Label DSP
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-navy-400 max-w-2xl mx-auto mt-4"
-          >
+          </span>
+          <h2>How to Get Started with PublifyX White Label DSP</h2>
+          <p className="text-lg text-navy-400 max-w-2xl mx-auto mt-4">
             From consultation to live campaigns — typically within two weeks.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
           {steps.map((step, i) => (
-            <motion.div
+            <div
               key={step.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12, duration: 0.5 }}
               className="bg-navy-50 rounded-2xl border border-navy-100 p-6 text-center shadow-sm hover:shadow-lg transition-shadow duration-300"
             >
               <div className="w-full h-36 flex items-center justify-center mb-5">
@@ -101,7 +78,7 @@ const HowItWorksSection = ({ onGetStarted }: HowItWorksSectionProps) => {
               <p className="text-navy-400 text-sm leading-relaxed">
                 {step.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 

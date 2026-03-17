@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
   Monitor,
@@ -87,46 +86,24 @@ const WhyChooseSection = ({}: WhyChooseSectionProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-          >
+          <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
             Why PublifyX
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-4 max-w-4xl mx-auto"
-          >
+          </span>
+          <h2 className="mb-4 max-w-4xl mx-auto">
             Why Choose PublifyX White Label DSP?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed"
-          >
+          </h2>
+          <p className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed">
             Most white label platforms focus heavily on display. Some extend
             into video. PublifyX delivers true multi-channel capability under
             one unified platform. We connect to 40+ supply-side platforms and ad
             exchanges, giving your advertisers access to premium inventory
             across web, mobile apps, smart TVs, and streaming environments.
             Every format. Every screen. One branded dashboard.
-          </motion.p>
+          </p>
         </div>
 
         {/* Dashboard Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.15, duration: 0.5 }}
-          className="rounded-3xl bg-white border border-navy-100 shadow-xl shadow-navy-800/5 overflow-hidden"
-        >
+        <div className="rounded-3xl bg-white border border-navy-100 shadow-xl shadow-navy-800/5 overflow-hidden">
           {/* Tab Bar */}
           <div className="border-b border-navy-100 px-4 md:px-8 pt-6 pb-0 overflow-x-auto scrollbar-hide">
             <div className="flex gap-1 min-w-max">
@@ -152,49 +129,36 @@ const WhyChooseSection = ({}: WhyChooseSectionProps) => {
 
           {/* Tab Content */}
           <div className="p-4 md:p-8">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.25 }}
-              >
-                {/* Browser chrome + headline */}
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="w-3 h-3 rounded-full bg-red-400" />
-                  <span className="w-3 h-3 rounded-full bg-yellow-400" />
-                  <span className="w-3 h-3 rounded-full bg-green-400" />
-                  <span className="ml-4 text-xs text-navy-300 font-mono">
-                    publify<span className="text-brand-orange-500">x</span>.io /{" "}
-                    {activeContent.id}
-                  </span>
-                </div>
+            <div key={activeTab}>
+              {/* Browser chrome + headline */}
+              <div className="flex items-center gap-2 mb-4">
+                <span className="w-3 h-3 rounded-full bg-red-400" />
+                <span className="w-3 h-3 rounded-full bg-yellow-400" />
+                <span className="w-3 h-3 rounded-full bg-green-400" />
+                <span className="ml-4 text-xs text-navy-300 font-mono">
+                  publify<span className="text-brand-orange-500">x</span>.io /{" "}
+                  {activeContent.id}
+                </span>
+              </div>
 
-                {/* Description */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-navy-800 mb-2">
-                    {activeContent.headline}
-                  </h3>
-                  <p className="text-sm text-navy-400 leading-relaxed max-w-3xl">
-                    {activeContent.description}
-                  </p>
-                </div>
+              {/* Description */}
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-navy-800 mb-2">
+                  {activeContent.headline}
+                </h3>
+                <p className="text-sm text-navy-400 leading-relaxed max-w-3xl">
+                  {activeContent.description}
+                </p>
+              </div>
 
-                {/* Unique Dashboard Mockup */}
-                <activeContent.Mockup />
-              </motion.div>
-            </AnimatePresence>
+              {/* Unique Dashboard Mockup */}
+              <activeContent.Mockup />
+            </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
+        <div className="text-center mt-12">
           <p className="text-navy-500 mb-6 font-medium">
             Talk to our team about activating the channels that matter most to
             your business.
@@ -208,7 +172,7 @@ const WhyChooseSection = ({}: WhyChooseSectionProps) => {
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

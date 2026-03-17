@@ -13,12 +13,7 @@ const WhiteLabelCTASection = ({ onGetStarted }: WhiteLabelCTASectionProps) => {
       <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange-500 rounded-full blur-[250px] opacity-10" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
-      >
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h2 className="mb-6 !text-white">Ready to Launch Your Own DSP?</h2>
         <p className="text-xl text-navy-300 mb-4 leading-relaxed">
           See how your own branded DSP would look. Schedule a personalized demo
@@ -33,7 +28,7 @@ const WhiteLabelCTASection = ({ onGetStarted }: WhiteLabelCTASectionProps) => {
         >
           Book a Call <ArrowRight className="ml-2 w-5 h-5" />
         </Link>
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -1,7 +1,5 @@
-import { motion } from "framer-motion";
 import { Target, Zap, Star, Rocket, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
 
 const targetAudience = [
   {
@@ -39,32 +37,15 @@ const BenefitsAndAudienceSection = ({}: BenefitsAndAudienceSectionProps) => {
     <section className="py-12 md:py-16 bg-navy-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
-          >
+          <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
             Built For You
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Who Is PublifyX White Label DSP For?
-          </motion.h2>
+          </span>
+          <h2>Who Is PublifyX White Label DSP For?</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
           {targetAudience.map((audience, i) => (
-            <motion.div
-              key={audience.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-            >
+            <div key={audience.title}>
               <div className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-all duration-300 group h-full">
                 <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                   <audience.icon className="w-6 h-6 text-brand-orange-500" />
@@ -76,7 +57,7 @@ const BenefitsAndAudienceSection = ({}: BenefitsAndAudienceSectionProps) => {
                   {audience.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
