@@ -33,16 +33,16 @@ const RelatedServicesSection = ({ services }: RelatedServicesSectionProps) => (
                 to={service.path}
                 className="group flex flex-col h-full bg-navy-50 border border-navy-100 rounded-2xl p-8 hover:border-brand-orange-500/30 hover:shadow-lg hover:shadow-brand-orange-500/5 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-brand-orange-500 flex items-center justify-center mb-5 shadow-lg shadow-brand-orange-500/20">
+                <div className="w-12 h-12 rounded-xl bg-brand-orange-700 flex items-center justify-center mb-5 shadow-lg shadow-brand-orange-500/20">
                   <Icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-extrabold text-navy-900 mb-2 group-hover:text-brand-orange-600 transition-colors">
+                <h3 className="text-xl font-extrabold text-navy-900 mb-2 group-hover:text-brand-orange-700 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-navy-600 font-medium leading-relaxed mb-4 flex-1">
                   {service.desc}
                 </p>
-                <span className="inline-flex items-center gap-2 text-brand-orange-500 font-bold text-sm group-hover:gap-3 transition-all">
+                <span className="inline-flex items-center gap-2 text-brand-orange-700 font-bold text-sm group-hover:gap-3 transition-all">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>

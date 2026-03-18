@@ -11,6 +11,8 @@ import stepCreatives from "@/assets/ctv/step-creatives.webp";
 import stepBudget from "@/assets/ctv/step-budget.webp";
 import stepLaunch from "@/assets/ctv/step-launch.webp";
 import stepOptimize from "@/assets/ctv/step-optimize.webp";
+import ctvConcept from "@/assets/ctv/ctvConcept.webp";
+import ctvConceptMobile from "@/assets/ctv/ctvConceptMobile.webp";
 import {
   ArrowRight,
   Sparkles,
@@ -423,7 +425,7 @@ const CTVAdvertising = () => {
               />
             </div>
             <div>
-              <span className="inline-block text-sm font-semibold text-brand-orange-600 uppercase tracking-widest mb-3">
+              <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
                 What Is CTV
               </span>
               <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">
@@ -493,7 +495,7 @@ const CTVAdvertising = () => {
       {/* Why CTV Advertising Is Essential */}
       <section className="py-12 md:py-16 bg-navy-50 cv-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-4">
             <h2 className="mb-4 max-w-4xl mx-auto">
               Why CTV Advertising Is Essential for Modern Brands
             </h2>
@@ -505,38 +507,26 @@ const CTVAdvertising = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-10">
-            <div className="bg-white rounded-2xl border border-navy-100 p-8">
-              <h3 className="text-xl font-bold text-navy-800 mb-6">
-                CTV brings together:
-              </h3>
-              <ul className="space-y-4">
-                {ctvBrings.map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-3.5 h-3.5 text-brand-orange-600" />
-                    </div>
-                    <span className="text-navy-600 font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-2xl border border-navy-100 p-8">
-              <h3 className="text-xl font-bold text-navy-800 mb-6">
-                Additionally, CTV enables targeting by:
-              </h3>
-              <ul className="space-y-4">
-                {targetingBy.map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-brand-orange-100 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-3.5 h-3.5 text-brand-orange-600" />
-                    </div>
-                    <span className="text-navy-600 font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="max-w-5xl mx-auto my-6">
+            {/* You Control */}
+            <img
+              src={ctvConcept}
+              alt="White label DSP concept showing a branded advertising platform"
+              className="rounded-2xl sm:block hidden m-auto"
+              width={672}
+              height={672}
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src={ctvConceptMobile}
+              alt="White label DSP concept showing a branded advertising platform"
+              className="w-full max-w-[400px] m-auto h-auto rounded-2xl sm:hidden"
+              width={672}
+              height={672}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <div className="max-w-3xl mx-auto text-center">
@@ -558,7 +548,7 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-white cv-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="inline-block text-sm font-semibold text-brand-orange-600 uppercase tracking-widest mb-3">
+            <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
               Platform Features
             </span>
             <h2>PublifyX CTV Advertising Platform Features</h2>
@@ -568,7 +558,7 @@ const CTVAdvertising = () => {
               <div key={feature.title}>
                 <div className="group bg-white rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
-                    <feature.icon className="w-6 h-6 text-brand-orange-500" />
+                    <feature.icon className="w-6 h-6 text-brand-orange-700" />
                   </div>
                   <h3 className="font-bold text-navy-800 text-lg mb-2">
                     {feature.title}
@@ -587,7 +577,7 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-navy-50 cv-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="inline-block text-sm font-semibold text-brand-orange-600 uppercase tracking-widest mb-3">
+            <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
               How It Works
             </span>
             <h2>How CTV Advertising Works with PublifyX</h2>
@@ -615,7 +605,7 @@ const CTVAdvertising = () => {
                       loading="lazy"
                     />
                   </div>
-                  <span className="inline-block text-sm font-bold text-brand-orange-500 mb-2">
+                  <span className="inline-block text-sm font-bold text-brand-orange-700 mb-2">
                     {step.number}
                   </span>
                   <h3 className="font-bold text-navy-800 text-base mb-2">
@@ -654,6 +644,7 @@ const CTVAdvertising = () => {
           <h3 className="text-2xl md:text-3xl font-bold mb-6 !text-white">
             Ready to activate CTV advertising? Request a campaign walkthrough.
           </h3>
+          {/*  */}
           <p className="text-base text-navy-300 mb-4 font-semibold">
             No commitment required · Launch campaigns in minutes
           </p>
@@ -694,10 +685,10 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-navy-50/65 faq-section cv-auto">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="inline-block text-sm font-semibold text-brand-orange-600 uppercase tracking-widest mb-3">
+            <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
               FAQ
             </span>
-            <h2>Frequently Asked Questions About CTV Advertising</h2>
+            <h2>Frequently Asked Questions</h2>
           </div>
           <Accordion type="single" collapsible className="w-full space-y-3">
             {faqs.map((faq, i) => (
@@ -706,7 +697,7 @@ const CTVAdvertising = () => {
                   value={`item-${i}`}
                   className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
                 >
-                  <AccordionTrigger className="py-5 !text-[16px] text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
+                  <AccordionTrigger className="py-5 !text-[16px] text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-700 transition-colors">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="pb-5 text-navy-400 leading-relaxed">

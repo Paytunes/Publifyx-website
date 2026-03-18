@@ -38,7 +38,7 @@ const ClientTestimonialSection = ({
             <div className="relative z-10">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-brand-orange-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Sparkles className="w-5 h-5 text-brand-orange-500" />
+                  <Sparkles className="w-5 h-5 text-brand-orange-700" />
                 </div>
                 <div>
                   <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display">
@@ -54,7 +54,7 @@ const ClientTestimonialSection = ({
 
               {/* Results label */}
               <div className="mt-8 mb-4">
-                <p className="text-xs font-bold uppercase tracking-widest text-brand-orange-500">
+                <p className="text-xs font-bold uppercase tracking-widest text-brand-orange-700">
                   Results Snapshot
                 </p>
               </div>
@@ -67,7 +67,7 @@ const ClientTestimonialSection = ({
                     className="group inline-flex items-center gap-2.5 bg-navy-50 border border-navy-100 rounded-2xl px-5 py-3 hover:border-brand-orange-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <div className="w-7 h-7 rounded-lg bg-brand-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange-200 transition-colors">
-                      <CheckCircle2 className="w-4 h-4 text-brand-orange-500" />
+                      <CheckCircle2 className="w-4 h-4 text-brand-orange-700" />
                     </div>
                     <span className="text-sm font-semibold text-navy-700">
                       {result}
@@ -92,7 +92,7 @@ const ClientTestimonialSection = ({
             <Quote className="absolute top-6 right-8 w-14 h-14 text-navy-200 opacity-30" />
             <div className="relative z-10 flex items-start gap-4">
               <div className="w-10 h-10 rounded-xl bg-brand-orange-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Sparkles className="w-5 h-5 text-brand-orange-500" />
+                <Sparkles className="w-5 h-5 text-brand-orange-700" />
               </div>
               <div>
                 <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display mb-4">
@@ -108,7 +108,7 @@ const ClientTestimonialSection = ({
           </div>
 
           {/* Results label */}
-          <p className="text-xs font-bold uppercase tracking-widest text-brand-orange-500 mb-4">
+          <p className="text-xs font-bold uppercase tracking-widest text-brand-orange-700 mb-4">
             Results Snapshot
           </p>
 
@@ -160,7 +160,7 @@ const ClientTestimonialSection = ({
             <Quote className="absolute bottom-4 right-4 w-20 h-20 text-navy-100 opacity-30" />
 
             <div className="relative z-10">
-              <Sparkles className="w-5 h-5 text-brand-orange-500 mb-5" />
+              <Sparkles className="w-5 h-5 text-brand-orange-700 mb-5" />
               <p className="text-lg md:text-xl text-navy-700 leading-relaxed italic font-display mb-6">
                 "{quote}"
               </p>
@@ -175,7 +175,7 @@ const ClientTestimonialSection = ({
 
           {/* Right: Results Snapshot cards */}
           <div className="flex flex-col">
-            <p className="text-xs font-bold uppercase tracking-widest text-brand-orange-500 mb-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-brand-orange-700 mb-4">
               Results Snapshot
             </p>
             <div className="space-y-3 flex-1 flex flex-col justify-center">
@@ -185,7 +185,7 @@ const ClientTestimonialSection = ({
                   className="bg-white rounded-2xl border border-navy-100 p-5 hover:border-brand-orange-200 hover:shadow-lg transition-all duration-300"
                 >
                   <div className="flex items-center gap-4">
-                    <CheckCircle2 className="w-5 h-5 text-brand-orange-500 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-orange-700 flex-shrink-0" />
                     <p className="text-sm font-semibold text-navy-700 leading-snug">
                       {result}
                     </p>
