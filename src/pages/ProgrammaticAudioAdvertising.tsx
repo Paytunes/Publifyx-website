@@ -589,27 +589,25 @@ const ProgrammaticAudioAdvertising = () => {
 
       {/* ═══════════════ FAQ ═══════════════ */}
       <LazySection minHeight="300px">
-        <section className="py-12 md:py-16 bg-navy-50 faq-section">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-12 md:py-16 bg-navy-50/45 faq-section">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
-              <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+              <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
                 FAQ
               </span>
-              <h2>
-                Frequently Asked Questions About Programmatic Audio Advertising
-              </h2>
+              <h2>Frequently Asked Questions</h2>
             </div>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
                 <AccordionItem
                   key={i}
                   value={`faq-${i}`}
-                  className="bg-white rounded-xl border border-navy-100 px-6 overflow-hidden"
+                  className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden"
                 >
-                  <AccordionTrigger className="text-left font-semibold text-navy-800 hover:text-brand-orange-500 hover:no-underline py-5">
+                  <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-700 transition-colors">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-navy-500 leading-relaxed pb-5">
+                  <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

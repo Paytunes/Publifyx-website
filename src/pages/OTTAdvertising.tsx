@@ -482,15 +482,13 @@ const OTTAdvertising = () => {
         <OTTResourceSection />
 
         {/* ─── 9. FAQ ─── */}
-        <section className="py-12 md:py-16 bg-navy-50 faq-section">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 text-center">
-              <span className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4">
+        <section className="py-12 md:py-16 bg-navy-50/45 faq-section">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-14">
+              <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
                 FAQ
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900">
-                Frequently Asked Questions
-              </h2>
+              <h2>Frequently Asked Questions</h2>
             </div>
             <div>
               <Accordion type="single" collapsible className="space-y-3">
@@ -498,12 +496,12 @@ const OTTAdvertising = () => {
                   <AccordionItem
                     key={i}
                     value={`faq-${i}`}
-                    className="bg-white rounded-2xl border border-navy-100 px-8 overflow-hidden hover:border-brand-orange-500/30 transition-all duration-300"
+                    className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden"
                   >
-                    <AccordionTrigger className="text-left font-extrabold text-navy-800 hover:text-brand-orange-600 hover:no-underline py-6 text-lg">
+                    <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-700 transition-colors">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-navy-600 font-medium leading-relaxed pb-6 text-base">
+                    <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>

@@ -37,13 +37,13 @@ const faqs = [
 
 const WhiteLabelFAQSection = () => {
   return (
-    <section className="py-12 md:py-16 bg-white faq-section">
+    <section className="py-12 md:py-16 bg-navy-50/45 faq-section">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+          <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
             FAQ
           </span>
-          <h2>Frequently Asked Questions About White Label DSP</h2>
+          <h2>Frequently Asked Questions</h2>
         </div>
 
         <Accordion type="single" collapsible className="w-full space-y-3">
@@ -53,7 +53,7 @@ const WhiteLabelFAQSection = () => {
               value={`item-${index}`}
               className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden"
             >
-              <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-500 transition-colors">
+              <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-700 transition-colors">
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent className="pb-5 text-navy-400 leading-relaxed">

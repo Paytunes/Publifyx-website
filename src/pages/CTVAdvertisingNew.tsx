@@ -17,12 +17,6 @@ import {
   ArrowRight,
   Sparkles,
   Tv,
-  Target,
-  BarChart3,
-  Shield,
-  RefreshCw,
-  Layers,
-  Globe,
   Check,
   Gamepad2,
   Monitor,
@@ -35,53 +29,9 @@ import ctvDevices2 from "@/assets/ctv/ctvDevices2.webp";
 import ctvDevices3 from "@/assets/ctv/ctvDevices3.webp";
 import ctvDevices4 from "@/assets/ctv/ctvDevices4.webp";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
 import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
-
-const features = [
-  {
-    title: "Premium Streaming Inventory Access",
-    description:
-      "Access ad-supported streaming platforms, FAST channels, OTT apps, and premium CTV inventory via SSP integrations and private marketplace deals.",
-    icon: Globe,
-  },
-  {
-    title: "Precision Audience Targeting",
-    description:
-      "Go beyond basic demographics. Target households based on interests, purchase intent, viewing behavior, income level, and geographic location, down to the zip code level.",
-    icon: Target,
-  },
-  {
-    title: "Cross-Device Retargeting",
-    description:
-      "Identify viewers who saw your CTV ad and retarget them across mobile, desktop, and tablet with display or video follow-up campaigns, creating a true omnichannel experience.",
-    icon: RefreshCw,
-  },
-  {
-    title: "Real-Time Campaign Reporting",
-    description:
-      "Monitor impressions, video completion rates (VCR), reach, frequency, and cost metrics in real time. Our reporting dashboard provides full transparency into where your ads ran and how they performed.",
-    icon: BarChart3,
-  },
-  {
-    title: "Brand Safety Controls",
-    description:
-      "Ensure your ads appear alongside quality content with category-level and app-level exclusions, plus third-party verification integrations.",
-    icon: Shield,
-  },
-  {
-    title: "White Label CTV Capabilities",
-    description:
-      "Agencies using PublifyX's white label DSP can offer CTV advertising as a branded service to their clients, with custom reporting and platform access.",
-    icon: Layers,
-  },
-];
+import CTVStickyFeaturesSection from "@/components/sections/ctvAdvertising/CTVStickyFeaturesSection";
 
 const howItWorksSteps = [
   {
@@ -544,34 +494,8 @@ const CTVAdvertising = () => {
         </div>
       </section>
 
-      {/* Platform Features */}
-      <section className="py-12 md:py-16 bg-white cv-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
-              Platform Features
-            </span>
-            <h2>PublifyX CTV Advertising Platform Features</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {features.map((feature, i) => (
-              <div key={feature.title}>
-                <div className="group bg-white rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
-                  <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
-                    <feature.icon className="w-6 h-6 text-brand-orange-700" />
-                  </div>
-                  <h3 className="font-bold text-navy-800 text-lg mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-navy-400 text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Platform Features — Cards left, sticky image right */}
+      <CTVStickyFeaturesSection />
 
       {/* How CTV Advertising Works */}
       <section className="py-12 md:py-16 bg-navy-50 cv-auto">
@@ -682,7 +606,7 @@ const CTVAdvertising = () => {
       />
 
       {/* FAQ */}
-      <section className="py-12 md:py-16 bg-navy-50/65 faq-section cv-auto">
+      <section className="py-12 md:py-16 bg-navy-50/45 faq-section cv-auto">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
@@ -690,23 +614,33 @@ const CTVAdvertising = () => {
             </span>
             <h2>Frequently Asked Questions</h2>
           </div>
-          <Accordion type="single" collapsible className="w-full space-y-3">
+          <div className="w-full space-y-3">
             {faqs.map((faq, i) => (
-              <div key={i}>
-                <AccordionItem
-                  value={`item-${i}`}
-                  className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
-                >
-                  <AccordionTrigger className="py-5 !text-[16px] text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-700 transition-colors">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              </div>
+              <details
+                key={i}
+                className="group bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
+              >
+                <summary className="py-5 text-[16px] text-left font-semibold text-navy-800 hover:text-brand-orange-700 transition-colors cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden">
+                  {faq.question}
+                  <svg
+                    className="w-4 h-4 shrink-0 ml-2 transition-transform duration-200 group-open:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </summary>
+                <div className="pb-5 text-navy-400 leading-relaxed">
+                  {faq.answer}
+                </div>
+              </details>
             ))}
-          </Accordion>
+          </div>
         </div>
       </section>
     </Layout>
