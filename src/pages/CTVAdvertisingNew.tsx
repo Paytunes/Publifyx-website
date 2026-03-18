@@ -31,6 +31,7 @@ import {
   Radio,
   Headphones,
 } from "lucide-react";
+import ctvExplanationConcept from "@/assets/ctv/ctvExplanationConcept.webp";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import MagneticCard from "@/components/effects/MagneticCard";
 import {
@@ -410,18 +411,36 @@ const CTVAdvertising = () => {
       {/* What Is CTV Advertising */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
-              What Is CTV
-            </span>
-            <h2 className="mb-4 max-w-4xl mx-auto">What Is CTV Advertising?</h2>
-            <p className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed">
-              CTV advertising refers to video ads delivered through
-              internet-connected television devices. Unlike traditional linear
-              TV, where ads are broadcast to mass audiences during scheduled
-              programming, CTV ads are served programmatically to specific
-              households or audience segments based on data-driven targeting.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-10">
+            <div>
+              <img
+                src={ctvExplanationConcept}
+                alt="Connected TV advertising concept"
+                className="w-full max-w-[750px] m-auto h-auto rounded-2xl shadow-xl"
+                width={672}
+                height={672}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div>
+              <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+                What Is CTV
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">
+                What Is CTV Advertising?
+              </h2>
+              <div className="text-lg text-navy-400 max-w-3xl mx-auto leading-relaxed">
+                <p>
+                  CTV advertising refers to video ads delivered through
+                  internet-connected television devices. Unlike traditional
+                  linear TV, where ads are broadcast to mass audiences during
+                  scheduled programming, CTV ads are served programmatically to
+                  specific households or audience segments based on data-driven
+                  targeting.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="max-w-5xl mx-auto mb-12">
