@@ -11,10 +11,6 @@ import stepCreatives from "@/assets/ctv/step-creatives.webp";
 import stepBudget from "@/assets/ctv/step-budget.webp";
 import stepLaunch from "@/assets/ctv/step-launch.webp";
 import stepOptimize from "@/assets/ctv/step-optimize.webp";
-import deviceSmartTv from "@/assets/ctv/device-smart-tv.webp";
-import deviceStreaming from "@/assets/ctv/device-streaming.webp";
-import deviceGaming from "@/assets/ctv/device-gaming.webp";
-import deviceSettop from "@/assets/ctv/device-settop.webp";
 import {
   ArrowRight,
   Sparkles,
@@ -32,6 +28,12 @@ import {
   Headphones,
 } from "lucide-react";
 import ctvExplanationConcept from "@/assets/ctv/ctvExplanationConcept.webp";
+import ctvDevices1 from "@/assets/ctv/ctvDevices1.webp";
+import ctvDevices2 from "@/assets/ctv/ctvDevices2.webp";
+import ctvDevices3 from "@/assets/ctv/ctvDevices3.webp";
+import ctvDevices4 from "@/assets/ctv/ctvDevices4.webp";
+import ctvConcept from "@/assets/ctv/ctvConcept.webp";
+import ctvConceptMobile from "@/assets/ctv/ctvControlMobile.webp";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import MagneticCard from "@/components/effects/MagneticCard";
 import {
@@ -126,22 +128,22 @@ const ctvDevices = [
   {
     icon: Tv,
     label: "Smart TVs with built-in internet connectivity",
-    image: deviceSmartTv,
+    image: ctvDevices1,
   },
   {
     icon: Radio,
     label: "Streaming devices (Roku, Amazon Fire TV, Apple TV)",
-    image: deviceStreaming,
+    image: ctvDevices2,
   },
   {
     icon: Gamepad2,
     label: "Gaming consoles (PlayStation, Xbox)",
-    image: deviceGaming,
+    image: ctvDevices3,
   },
   {
     icon: Monitor,
     label: "Internet-enabled set-top boxes",
-    image: deviceSettop,
+    image: ctvDevices4,
   },
 ];
 
@@ -424,7 +426,7 @@ const CTVAdvertising = () => {
               />
             </div>
             <div>
-              <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+              <span className="inline-block text-sm font-semibold text-brand-orange-600 uppercase tracking-widest mb-3">
                 What Is CTV
               </span>
               <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">
@@ -459,7 +461,7 @@ const CTVAdvertising = () => {
                       alt={device.label}
                       width={196}
                       height={196}
-                      className="max-h-full max-w-[80%] object-contain"
+                      className="max-h-full max-w-fit"
                       loading="lazy"
                     />
                   </div>
@@ -495,9 +497,6 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
-              Why CTV
-            </span>
             <h2 className="mb-4 max-w-4xl mx-auto">
               Why CTV Advertising Is Essential for Modern Brands
             </h2>
@@ -562,7 +561,7 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+            <span className="inline-block text-sm font-semibold text-brand-orange-600 uppercase tracking-widest mb-3">
               Platform Features
             </span>
             <h2>PublifyX CTV Advertising Platform Features</h2>
@@ -591,7 +590,7 @@ const CTVAdvertising = () => {
       <section className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+            <span className="inline-block text-sm font-semibold text-brand-orange-600 uppercase tracking-widest mb-3">
               How It Works
             </span>
             <h2>How CTV Advertising Works with PublifyX</h2>
@@ -695,10 +694,10 @@ const CTVAdvertising = () => {
       />
 
       {/* FAQ */}
-      <section className="py-12 md:py-16 bg-white faq-section">
+      <section className="py-12 md:py-16 bg-navy-50/65 faq-section">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+            <span className="inline-block text-sm font-semibold text-brand-orange-600 uppercase tracking-widest mb-3">
               FAQ
             </span>
             <h2>Frequently Asked Questions About CTV Advertising</h2>
