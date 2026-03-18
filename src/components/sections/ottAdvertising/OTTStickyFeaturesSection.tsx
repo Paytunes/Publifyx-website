@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   Smartphone,
   Globe,
@@ -184,15 +183,9 @@ const FeatureVisual = ({
               </span>
             </div>
             <div className="w-full bg-navy-100 rounded-full h-3 overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${item.pct}%` }}
-                transition={{
-                  duration: 0.8,
-                  delay: i * 0.1,
-                  ease: [0.33, 1, 0.68, 1],
-                }}
-                className="h-full rounded-full bg-gradient-to-r from-brand-orange-500 to-brand-orange-400"
+              <div
+                style={{ width: `${item.pct}%`, transitionDelay: `${i * 100}ms` }}
+                className="h-full rounded-full bg-gradient-to-r from-brand-orange-500 to-brand-orange-400 transition-all duration-700 ease-out"
               />
             </div>
           </div>
@@ -260,9 +253,6 @@ const OTTStickyFeaturesSection = () => {
             Platform Capabilities
           </span>
           <h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 leading-tight max-w-3xl mx-auto"
           >
             PublifyX OTT Advertising Capabilities
@@ -278,20 +268,12 @@ const OTTStickyFeaturesSection = () => {
             <div className="relative">
               <div className="sticky top-24 h-[calc(100vh-8rem)] flex items-center">
                 <div className="w-full">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeIndex}
-                      initial={{ opacity: 0, scale: 0.97 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.97 }}
-                      transition={{ duration: 0.35, ease: [0.33, 1, 0.68, 1] }}
-                    >
-                      <FeatureVisual
-                        feature={features[activeIndex]}
-                        index={activeIndex}
-                      />
-                    </motion.div>
-                  </AnimatePresence>
+                  <div className="transition-opacity duration-300">
+                    <FeatureVisual
+                      feature={features[activeIndex]}
+                      index={activeIndex}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

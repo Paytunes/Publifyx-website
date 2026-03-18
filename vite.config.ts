@@ -17,6 +17,8 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      // Replace framer-motion (119 KB) with a lightweight shim (~1 KB)
+      "framer-motion": path.resolve(__dirname, "./src/lib/motion-shim.ts"),
     },
   },
   build: {

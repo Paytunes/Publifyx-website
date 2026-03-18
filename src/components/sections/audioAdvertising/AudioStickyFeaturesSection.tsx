@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { motion } from "framer-motion";
 import { Globe, Target, Mic, Radio, BarChart3, Zap } from "lucide-react";
 
 const features = [
@@ -128,11 +127,9 @@ const FeatureVisual = ({ feature, index }: { feature: (typeof features)[0]; inde
               <span className="text-sm font-bold text-brand-orange-700">{item.pct}%</span>
             </div>
             <div className="w-full bg-navy-100 rounded-full h-3 overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${item.pct}%` }}
-                transition={{ duration: 0.8, delay: i * 0.1, ease: [0.33, 1, 0.68, 1] }}
-                className="h-full rounded-full bg-gradient-to-r from-brand-orange-500 to-brand-orange-400"
+              <div
+                style={{ width: `${item.pct}%`, transitionDelay: `${i * 100}ms` }}
+                className="h-full rounded-full bg-gradient-to-r from-brand-orange-500 to-brand-orange-400 transition-all duration-700 ease-out"
               />
             </div>
           </div>
@@ -196,22 +193,16 @@ const AudioStickyFeaturesSection = () => {
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 pb-12">
         <div className="text-center">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+          <span
             className="inline-block text-sm font-extrabold text-brand-orange-700 uppercase tracking-widest mb-4"
           >
             Platform Features
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          </span>
+          <h2
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 leading-tight max-w-3xl mx-auto"
           >
             PublifyX Audio Advertising Platform Features
-          </motion.h2>
+          </h2>
         </div>
       </div>
 

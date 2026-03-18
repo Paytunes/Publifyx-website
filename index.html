@@ -33,11 +33,11 @@
     <meta property="og:title" content="White Label DSP Platform | Launch Your Programmatic Ad Business — PublifyX" />
     <meta property="og:description" content="Launch your own branded DSP in 15 minutes. Run programmatic campaigns across Display, Video, Audio, CTV & OTT. Built for agencies, ad networks, and startups." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="https://www.publifyx.com/logo.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@publifyx" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:image" content="https://www.publifyx.com/logo.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,9 +50,17 @@
     <link rel="alternate" type="application/rss+xml" title="PublifyX Blog RSS" href="/blog/rss.xml">
     <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/03f79ad6-ab28-41f5-9484-52cb8eee9c72.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/lovable-uploads/03f79ad6-ab28-41f5-9484-52cb8eee9c72.png">
-    <!-- Preload LCP hero image and critical font subset -->
-    <link rel="preload" as="image" href="/hero-dashboard.webp" type="image/webp">
+    <!-- Preload LCP hero image (route-aware) and critical font subset -->
     <link rel="preload" as="font" crossorigin href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" type="font/woff2">
+    <script>
+      (function(){
+        var p=location.pathname,img;
+        if(p==='/ctv-advertising')img='/ctv-hero-dashboard.webp';
+        else img='/hero-dashboard.webp';
+        var l=document.createElement('link');l.rel='preload';l.as='image';l.href=img;l.type='image/webp';
+        document.head.appendChild(l);
+      })();
+    </script>
 
     <script type="application/ld+json">
     {
@@ -132,6 +140,7 @@
   <body>
     <div id="root">
       <!-- Static hero shell — visible instantly, replaced when React mounts -->
+      <!-- Route-aware: shows CTV hero on /ctv-advertising, WL-DSP hero otherwise -->
       <div id="static-hero">
         <header style="position:fixed;top:0;left:0;right:0;z-index:50;background:transparent">
           <div style="max-width:80rem;margin:0 auto;padding:0 1rem">
@@ -142,7 +151,8 @@
             </div>
           </div>
         </header>
-        <section class="hero-critical" style="position:relative;overflow:hidden">
+        <!-- WL-DSP hero (default) -->
+        <section id="hero-wldsp" class="hero-critical" style="position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0f172a 0%,#1e293b 60%,#1e3a5f 100%)"></div>
           <div style="position:relative;z-index:10;max-width:80rem;margin:0 auto;padding:7rem 1rem 3rem">
             <div>
@@ -168,7 +178,51 @@
             </div>
           </div>
         </section>
+        <!-- CTV hero -->
+        <section id="hero-ctv" class="hero-critical" style="position:relative;overflow:hidden;display:none">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0f172a 0%,#1e293b 60%,#1e3a5f 100%)"></div>
+          <div style="position:relative;z-index:10;max-width:80rem;margin:0 auto;padding:7rem 1rem 3rem">
+            <div>
+              <div style="display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border-radius:9999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);margin-bottom:2rem">
+                <span style="font-size:.875rem;font-weight:500;color:rgba(255,255,255,.8)">Connected TV Advertising</span>
+              </div>
+              <h1 style="margin-bottom:1.5rem;color:#fff;line-height:1.1;font-size:clamp(1.875rem,5vw,2.75rem)">
+                CTV Advertising Platform —
+                <span style="display:block;color:#f97316">Reach Audiences on Connected TV</span>
+              </h1>
+              <p style="font-size:1.125rem;color:#cbd5e1;margin-bottom:1rem;line-height:1.625;max-width:36rem">
+                Television has not disappeared. It has evolved.
+              </p>
+              <p style="font-size:1rem;color:#94a3b8;margin-bottom:1rem;line-height:1.625;max-width:36rem">
+                Connected TV advertising allows brands to reach viewers on smart TVs and streaming devices with the full-screen impact of traditional TV combined with the targeting precision and measurability of digital.
+              </p>
+              <p style="font-size:1rem;color:#94a3b8;margin-bottom:1.5rem;font-weight:600">
+                Big screen impact. Digital precision.
+              </p>
+              <a href="/contact" class="btn-primary" style="padding:.75rem 2.5rem;font-size:1.125rem;border-radius:.75rem;text-decoration:none">
+                Book a Call →
+              </a>
+              <p style="font-size:.875rem;color:#94a3b8;margin-top:1rem">
+                No commitment required · Launch campaigns in minutes
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
+      <script>
+        (function(){
+          var p=location.pathname;
+          if(p==='/ctv-advertising'){
+            var w=document.getElementById('hero-wldsp');
+            var c=document.getElementById('hero-ctv');
+            if(w)w.style.display='none';
+            if(c)c.style.display='';
+          } else if(p!=='/' && p!=='/white-label-dsp'){
+            var s=document.getElementById('static-hero');
+            if(s)s.style.display='none';
+          }
+        })();
+      </script>
     </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

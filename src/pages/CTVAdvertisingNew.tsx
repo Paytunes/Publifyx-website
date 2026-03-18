@@ -32,10 +32,7 @@ import ctvDevices1 from "@/assets/ctv/ctvDevices1.webp";
 import ctvDevices2 from "@/assets/ctv/ctvDevices2.webp";
 import ctvDevices3 from "@/assets/ctv/ctvDevices3.webp";
 import ctvDevices4 from "@/assets/ctv/ctvDevices4.webp";
-import ctvConcept from "@/assets/ctv/ctvConcept.webp";
-import ctvConceptMobile from "@/assets/ctv/ctvControlMobile.webp";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
-import MagneticCard from "@/components/effects/MagneticCard";
 import {
   Accordion,
   AccordionContent,
@@ -494,7 +491,7 @@ const CTVAdvertising = () => {
       />
 
       {/* Why CTV Advertising Is Essential */}
-      <section className="py-12 md:py-16 bg-navy-50">
+      <section className="py-12 md:py-16 bg-navy-50 cv-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="mb-4 max-w-4xl mx-auto">
@@ -558,7 +555,7 @@ const CTVAdvertising = () => {
       </section>
 
       {/* Platform Features */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16 bg-white cv-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="inline-block text-sm font-semibold text-brand-orange-600 uppercase tracking-widest mb-3">
@@ -569,7 +566,7 @@ const CTVAdvertising = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {features.map((feature, i) => (
               <div key={feature.title}>
-                <MagneticCard className="group bg-white rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
+                <div className="group bg-white rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
                     <feature.icon className="w-6 h-6 text-brand-orange-500" />
                   </div>
@@ -579,7 +576,7 @@ const CTVAdvertising = () => {
                   <p className="text-navy-400 text-sm leading-relaxed">
                     {feature.description}
                   </p>
-                </MagneticCard>
+                </div>
               </div>
             ))}
           </div>
@@ -587,7 +584,7 @@ const CTVAdvertising = () => {
       </section>
 
       {/* How CTV Advertising Works */}
-      <section className="py-12 md:py-16 bg-navy-50">
+      <section className="py-12 md:py-16 bg-navy-50 cv-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="inline-block text-sm font-semibold text-brand-orange-600 uppercase tracking-widest mb-3">
@@ -650,7 +647,7 @@ const CTVAdvertising = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden cv-auto">
         <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange-500 rounded-full blur-[250px] opacity-10" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -694,7 +691,7 @@ const CTVAdvertising = () => {
       />
 
       {/* FAQ */}
-      <section className="py-12 md:py-16 bg-navy-50/65 faq-section">
+      <section className="py-12 md:py-16 bg-navy-50/65 faq-section cv-auto">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="inline-block text-sm font-semibold text-brand-orange-600 uppercase tracking-widest mb-3">
