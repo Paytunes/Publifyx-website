@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import {
   ArrowRight,
   Monitor,
@@ -9,12 +9,14 @@ import {
   Target,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import DisplayMockup from "./mockups/DisplayMockup";
-import VideoMockup from "./mockups/VideoMockup";
-import CTVMockup from "./mockups/CTVMockup";
-import DataTargetingMockup from "./mockups/DataTargetingMockup";
-import ReportingMockup from "./mockups/ReportingMockup";
-import WhiteLabelMockup from "./mockups/WhiteLabelMockup";
+
+// Lazy-load mockups — only the active tab's mockup is fetched
+const DisplayMockup = lazy(() => import("./mockups/DisplayMockup"));
+const VideoMockup = lazy(() => import("./mockups/VideoMockup"));
+const CTVMockup = lazy(() => import("./mockups/CTVMockup"));
+const DataTargetingMockup = lazy(() => import("./mockups/DataTargetingMockup"));
+const ReportingMockup = lazy(() => import("./mockups/ReportingMockup"));
+const WhiteLabelMockup = lazy(() => import("./mockups/WhiteLabelMockup"));
 
 const tabs = [
   {
@@ -151,8 +153,10 @@ const WhyChooseSection = ({}: WhyChooseSectionProps) => {
                 </p>
               </div>
 
-              {/* Unique Dashboard Mockup */}
-              <activeContent.Mockup />
+              {/* Unique Dashboard Mockup — lazy-loaded per tab */}
+              <Suspense fallback={<div className="h-64 bg-navy-50 rounded-xl animate-pulse" />}>
+                <activeContent.Mockup />
+              </Suspense>
             </div>
           </div>
         </div>
