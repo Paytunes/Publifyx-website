@@ -1,6 +1,14 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Globe, Layers, Target, Zap, RefreshCw, Shield, BarChart3 } from "lucide-react";
+import {
+  Globe,
+  Layers,
+  Target,
+  Zap,
+  RefreshCw,
+  Shield,
+  BarChart3,
+} from "lucide-react";
 
 // ─────────────────────────────────────────────
 // Feature data
@@ -58,14 +66,16 @@ const VizBase = ({ children }: { children: React.ReactNode }) => (
     className="relative w-full overflow-hidden flex items-center justify-center flex-shrink-0"
     style={{
       height: "188px",
-      background: "linear-gradient(135deg, #040b18 0%, #081525 65%, #0c1d38 100%)",
+      background:
+        "linear-gradient(135deg, #040b18 0%, #081525 65%, #0c1d38 100%)",
     }}
   >
     {/* dot grid */}
     <div
       className="absolute inset-0"
       style={{
-        backgroundImage: "radial-gradient(circle at 1px 1px, rgba(249,115,22,0.38) 1px, transparent 0)",
+        backgroundImage:
+          "radial-gradient(circle at 1px 1px, rgba(249,115,22,0.38) 1px, transparent 0)",
         backgroundSize: "22px 22px",
         opacity: 0.22,
       }}
@@ -75,7 +85,8 @@ const VizBase = ({ children }: { children: React.ReactNode }) => (
     <div
       className="absolute inset-0 pointer-events-none"
       style={{
-        background: "radial-gradient(ellipse at 50% 60%, rgba(249,115,22,0.08) 0%, transparent 65%)",
+        background:
+          "radial-gradient(ellipse at 50% 60%, rgba(249,115,22,0.08) 0%, transparent 65%)",
       }}
     />
   </div>
@@ -84,7 +95,12 @@ const VizBase = ({ children }: { children: React.ReactNode }) => (
 // ── 1. Publisher network mesh ──────────────────
 const NetworkViz = () => (
   <VizBase>
-    <svg viewBox="0 0 300 170" width="300" height="170" className="relative z-10">
+    <svg
+      viewBox="0 0 300 170"
+      width="300"
+      height="170"
+      className="relative z-10"
+    >
       {(
         [
           [55, 85, 150, 38],
@@ -138,7 +154,14 @@ const NetworkViz = () => (
           <circle cx={cx} cy={cy} r="4" fill="#f97316" opacity="0.7" />
         </g>
       ))}
-      <circle cx="150" cy="85" r="20" fill="rgba(249,115,22,0.1)" stroke="#f97316" strokeWidth="1.5" />
+      <circle
+        cx="150"
+        cy="85"
+        r="20"
+        fill="rgba(249,115,22,0.1)"
+        stroke="#f97316"
+        strokeWidth="1.5"
+      />
       <circle cx="150" cy="85" r="7" fill="#f97316" opacity="0.9" />
     </svg>
   </VizBase>
@@ -147,7 +170,12 @@ const NetworkViz = () => (
 // ── 2. Stacked banner format shapes ───────────
 const FormatsViz = () => (
   <VizBase>
-    <svg viewBox="0 0 300 170" width="300" height="170" className="relative z-10">
+    <svg
+      viewBox="0 0 300 170"
+      width="300"
+      height="170"
+      className="relative z-10"
+    >
       {/* Leaderboard 728×90 */}
       <rect
         x="20"
@@ -161,7 +189,15 @@ const FormatsViz = () => (
         strokeWidth="1.5"
         strokeDasharray="6 3"
       />
-      <text x="150" y="43" textAnchor="middle" fill="#f97316" fillOpacity="0.48" fontSize="9" fontFamily="monospace">
+      <text
+        x="150"
+        y="43"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.48"
+        fontSize="9"
+        fontFamily="monospace"
+      >
         728 × 90
       </text>
       {/* Medium rectangle */}
@@ -177,7 +213,15 @@ const FormatsViz = () => (
         strokeWidth="1.5"
         strokeDasharray="6 3"
       />
-      <text x="76" y="114" textAnchor="middle" fill="#f97316" fillOpacity="0.48" fontSize="9" fontFamily="monospace">
+      <text
+        x="76"
+        y="114"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.48"
+        fontSize="9"
+        fontFamily="monospace"
+      >
         300 × 250
       </text>
       {/* Skyscraper */}
@@ -193,7 +237,15 @@ const FormatsViz = () => (
         strokeWidth="1.5"
         strokeDasharray="5 3"
       />
-      <text x="175" y="113" textAnchor="middle" fill="#f97316" fillOpacity="0.42" fontSize="8" fontFamily="monospace">
+      <text
+        x="175"
+        y="113"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.42"
+        fontSize="8"
+        fontFamily="monospace"
+      >
         160×600
       </text>
       {/* Mobile 320×50 */}
@@ -209,7 +261,15 @@ const FormatsViz = () => (
         strokeWidth="1"
         strokeDasharray="4 3"
       />
-      <text x="249" y="80" textAnchor="middle" fill="#f97316" fillOpacity="0.4" fontSize="7.5" fontFamily="monospace">
+      <text
+        x="249"
+        y="80"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.4"
+        fontSize="7.5"
+        fontFamily="monospace"
+      >
         320×50
       </text>
       {/* 300×600 */}
@@ -225,7 +285,15 @@ const FormatsViz = () => (
         strokeWidth="1"
         strokeDasharray="4 3"
       />
-      <text x="249" y="125" textAnchor="middle" fill="#f97316" fillOpacity="0.35" fontSize="7.5" fontFamily="monospace">
+      <text
+        x="249"
+        y="125"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.35"
+        fontSize="7.5"
+        fontFamily="monospace"
+      >
         300×600
       </text>
     </svg>
@@ -235,7 +303,12 @@ const FormatsViz = () => (
 // ── 3. Radar / targeting rings ─────────────────
 const TargetingViz = () => (
   <VizBase>
-    <svg viewBox="0 0 300 170" width="300" height="170" className="relative z-10">
+    <svg
+      viewBox="0 0 300 170"
+      width="300"
+      height="170"
+      className="relative z-10"
+    >
       {[72, 54, 36, 18].map((r, i) => (
         <circle
           key={i}
@@ -249,10 +322,42 @@ const TargetingViz = () => (
           strokeDasharray={i % 2 === 0 ? "none" : "5 4"}
         />
       ))}
-      <line x1="150" y1="8" x2="150" y2="60" stroke="#f97316" strokeOpacity="0.32" strokeWidth="1" />
-      <line x1="150" y1="110" x2="150" y2="162" stroke="#f97316" strokeOpacity="0.32" strokeWidth="1" />
-      <line x1="74" y1="85" x2="124" y2="85" stroke="#f97316" strokeOpacity="0.32" strokeWidth="1" />
-      <line x1="176" y1="85" x2="226" y2="85" stroke="#f97316" strokeOpacity="0.32" strokeWidth="1" />
+      <line
+        x1="150"
+        y1="8"
+        x2="150"
+        y2="60"
+        stroke="#f97316"
+        strokeOpacity="0.32"
+        strokeWidth="1"
+      />
+      <line
+        x1="150"
+        y1="110"
+        x2="150"
+        y2="162"
+        stroke="#f97316"
+        strokeOpacity="0.32"
+        strokeWidth="1"
+      />
+      <line
+        x1="74"
+        y1="85"
+        x2="124"
+        y2="85"
+        stroke="#f97316"
+        strokeOpacity="0.32"
+        strokeWidth="1"
+      />
+      <line
+        x1="176"
+        y1="85"
+        x2="226"
+        y2="85"
+        stroke="#f97316"
+        strokeOpacity="0.32"
+        strokeWidth="1"
+      />
       {(
         [
           [108, 56],
@@ -274,7 +379,14 @@ const TargetingViz = () => (
           <circle cx={cx} cy={cy} r="2" fill="#f97316" opacity="0.8" />
         </g>
       ))}
-      <circle cx="150" cy="85" r="8" fill="rgba(249,115,22,0.2)" stroke="#f97316" strokeWidth="1.5" />
+      <circle
+        cx="150"
+        cy="85"
+        r="8"
+        fill="rgba(249,115,22,0.2)"
+        stroke="#f97316"
+        strokeWidth="1.5"
+      />
       <circle cx="150" cy="85" r="3.5" fill="#f97316" />
     </svg>
   </VizBase>
@@ -283,8 +395,21 @@ const TargetingViz = () => (
 // ── 4. RTB bid auction bars ────────────────────
 const RTBViz = () => (
   <VizBase>
-    <svg viewBox="0 0 300 170" width="300" height="170" className="relative z-10">
-      <line x1="28" y1="138" x2="272" y2="138" stroke="#f97316" strokeOpacity="0.18" strokeWidth="1" />
+    <svg
+      viewBox="0 0 300 170"
+      width="300"
+      height="170"
+      className="relative z-10"
+    >
+      <line
+        x1="28"
+        y1="138"
+        x2="272"
+        y2="138"
+        stroke="#f97316"
+        strokeOpacity="0.18"
+        strokeWidth="1"
+      />
       {[38, 68, 98, 118].map((y, i) => (
         <line
           key={i}
@@ -330,7 +455,15 @@ const RTBViz = () => (
               ✓ WIN
             </text>
           )}
-          <text x={x} y="153" textAnchor="middle" fill="#f97316" fillOpacity="0.38" fontSize="8" fontFamily="monospace">
+          <text
+            x={x}
+            y="153"
+            textAnchor="middle"
+            fill="#f97316"
+            fillOpacity="0.38"
+            fontSize="8"
+            fontFamily="monospace"
+          >
             {label}
           </text>
         </g>
@@ -364,9 +497,21 @@ const RTBViz = () => (
 // ── 5. Retargeting flow ───────────────────────
 const RetargetingViz = () => (
   <VizBase>
-    <svg viewBox="0 0 300 170" width="300" height="170" className="relative z-10">
+    <svg
+      viewBox="0 0 300 170"
+      width="300"
+      height="170"
+      className="relative z-10"
+    >
       <defs>
-        <marker id="rt-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+        <marker
+          id="rt-arrow"
+          markerWidth="7"
+          markerHeight="7"
+          refX="6"
+          refY="3.5"
+          orient="auto"
+        >
           <path d="M0,0 L0,7 L7,3.5 z" fill="#f97316" opacity="0.65" />
         </marker>
       </defs>
@@ -380,10 +525,26 @@ const RetargetingViz = () => (
         strokeWidth="1.5"
         strokeDasharray="5 3"
       />
-      <text x="60" y="82" textAnchor="middle" fill="#f97316" fillOpacity="0.6" fontSize="8.5" fontFamily="monospace">
+      <text
+        x="60"
+        y="82"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.6"
+        fontSize="8.5"
+        fontFamily="monospace"
+      >
         Site
       </text>
-      <text x="60" y="94" textAnchor="middle" fill="#f97316" fillOpacity="0.6" fontSize="8.5" fontFamily="monospace">
+      <text
+        x="60"
+        y="94"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.6"
+        fontSize="8.5"
+        fontFamily="monospace"
+      >
         Visit
       </text>
       <path
@@ -404,10 +565,26 @@ const RetargetingViz = () => (
         strokeOpacity="0.58"
         strokeWidth="1.5"
       />
-      <text x="240" y="82" textAnchor="middle" fill="#f97316" fillOpacity="0.78" fontSize="8.5" fontFamily="monospace">
+      <text
+        x="240"
+        y="82"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.78"
+        fontSize="8.5"
+        fontFamily="monospace"
+      >
         Ad
       </text>
-      <text x="240" y="94" textAnchor="middle" fill="#f97316" fillOpacity="0.78" fontSize="8.5" fontFamily="monospace">
+      <text
+        x="240"
+        y="94"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.78"
+        fontSize="8.5"
+        fontFamily="monospace"
+      >
         Served
       </text>
       <path
@@ -430,7 +607,15 @@ const RetargetingViz = () => (
         strokeOpacity="0.3"
         strokeWidth="1"
       />
-      <text x="150" y="36" textAnchor="middle" fill="#f97316" fillOpacity="0.55" fontSize="7.5" fontFamily="monospace">
+      <text
+        x="150"
+        y="36"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.55"
+        fontSize="7.5"
+        fontFamily="monospace"
+      >
         pixel tag
       </text>
       <rect
@@ -444,7 +629,15 @@ const RetargetingViz = () => (
         strokeOpacity="0.25"
         strokeWidth="1"
       />
-      <text x="150" y="142" textAnchor="middle" fill="#f97316" fillOpacity="0.45" fontSize="7.5" fontFamily="monospace">
+      <text
+        x="150"
+        y="142"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.45"
+        fontSize="7.5"
+        fontFamily="monospace"
+      >
         lookalike
       </text>
     </svg>
@@ -454,7 +647,12 @@ const RetargetingViz = () => (
 // ── 6. Brand safety shield ─────────────────────
 const SafetyViz = () => (
   <VizBase>
-    <svg viewBox="0 0 300 170" width="300" height="170" className="relative z-10">
+    <svg
+      viewBox="0 0 300 170"
+      width="300"
+      height="170"
+      className="relative z-10"
+    >
       <path
         d="M150 16 L222 44 L222 96 Q222 136 150 158 Q78 136 78 96 L78 44 Z"
         fill="rgba(249,115,22,0.06)"
@@ -471,7 +669,16 @@ const SafetyViz = () => (
         strokeDasharray="5 4"
       />
       {[64, 79, 94, 109, 124].map((y, i) => (
-        <line key={i} x1="86" y1={y} x2="214" y2={y} stroke="#f97316" strokeOpacity="0.09" strokeWidth="1" />
+        <line
+          key={i}
+          x1="86"
+          y1={y}
+          x2="214"
+          y2={y}
+          stroke="#f97316"
+          strokeOpacity="0.09"
+          strokeWidth="1"
+        />
       ))}
       <path
         d="M126 88 L142 106 L174 74"
@@ -522,7 +729,12 @@ const SafetyViz = () => (
 // ── 7. Analytics dashboard ────────────────────
 const ReportingViz = () => (
   <VizBase>
-    <svg viewBox="0 0 300 170" width="300" height="170" className="relative z-10">
+    <svg
+      viewBox="0 0 300 170"
+      width="300"
+      height="170"
+      className="relative z-10"
+    >
       <rect
         x="18"
         y="14"
@@ -534,13 +746,36 @@ const ReportingViz = () => (
         strokeOpacity="0.18"
         strokeWidth="1"
       />
-      <rect x="18" y="14" width="264" height="22" rx="6" fill="rgba(249,115,22,0.07)" />
+      <rect
+        x="18"
+        y="14"
+        width="264"
+        height="22"
+        rx="6"
+        fill="rgba(249,115,22,0.07)"
+      />
       <circle cx="32" cy="25" r="4" fill="#f97316" opacity="0.45" />
       <circle cx="47" cy="25" r="4" fill="#f97316" opacity="0.25" />
-      <text x="165" y="29" textAnchor="middle" fill="#f97316" fillOpacity="0.38" fontSize="7.5" fontFamily="monospace">
+      <text
+        x="165"
+        y="29"
+        textAnchor="middle"
+        fill="#f97316"
+        fillOpacity="0.38"
+        fontSize="7.5"
+        fontFamily="monospace"
+      >
         Campaign Analytics — Live
       </text>
-      <line x1="32" y1="128" x2="175" y2="128" stroke="#f97316" strokeOpacity="0.14" strokeWidth="1" />
+      <line
+        x1="32"
+        y1="128"
+        x2="175"
+        y2="128"
+        stroke="#f97316"
+        strokeOpacity="0.14"
+        strokeWidth="1"
+      />
       {[
         { x: 48, h: 52 },
         { x: 70, h: 38 },
@@ -580,7 +815,14 @@ const ReportingViz = () => (
             strokeOpacity="0.18"
             strokeWidth="1"
           />
-          <text x="198" y={42 + i * 25 + 13} fill="#f97316" fillOpacity="0.42" fontSize="7.5" fontFamily="monospace">
+          <text
+            x="198"
+            y={42 + i * 25 + 13}
+            fill="#f97316"
+            fillOpacity="0.42"
+            fontSize="7.5"
+            fontFamily="monospace"
+          >
             {l}
           </text>
           <text
@@ -629,7 +871,8 @@ const FeatureCard = ({ feature, index }: CardProps) => {
       style={{
         background: "rgba(9, 20, 40, 0.92)",
         border: "1px solid rgba(249,115,22,0.17)",
-        boxShadow: "0 8px 48px rgba(0,0,0,0.55), 0 0 0 0.5px rgba(249,115,22,0.08) inset",
+        boxShadow:
+          "0 8px 48px rgba(0,0,0,0.55), 0 0 0 0.5px rgba(249,115,22,0.08) inset",
         backdropFilter: "blur(8px)",
         WebkitBackdropFilter: "blur(8px)",
       }}
@@ -650,14 +893,22 @@ const FeatureCard = ({ feature, index }: CardProps) => {
           >
             <Icon className="w-4 h-4 text-brand-orange-400" />
           </div>
-          <span className="text-xs font-extrabold uppercase tracking-widest" style={{ color: "rgba(249,115,22,0.65)" }}>
+          <span
+            className="text-xs font-extrabold uppercase tracking-widest"
+            style={{ color: "rgba(249,115,22,0.65)" }}
+          >
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
 
-        <h3 className="text-xl font-extrabold text-white mb-3 leading-snug">{feature.title}</h3>
+        <h3 className="text-xl font-extrabold text-white mb-3 leading-snug">
+          {feature.title}
+        </h3>
 
-        <p className="text-sm leading-relaxed" style={{ color: "rgba(175, 198, 228, 0.72)" }}>
+        <p
+          className="text-sm leading-relaxed"
+          style={{ color: "rgba(175, 198, 228, 0.72)" }}
+        >
           {feature.description}
         </p>
       </div>
@@ -666,7 +917,8 @@ const FeatureCard = ({ feature, index }: CardProps) => {
       <div
         className="h-px w-full flex-shrink-0"
         style={{
-          background: "linear-gradient(90deg, transparent 0%, rgba(249,115,22,0.38) 50%, transparent 100%)",
+          background:
+            "linear-gradient(90deg, transparent 0%, rgba(249,115,22,0.38) 50%, transparent 100%)",
         }}
       />
     </motion.div>
@@ -682,8 +934,7 @@ const SectionHeader = ({ hint = false }: { hint?: boolean }) => (
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="inline-block text-sm font-extrabold uppercase tracking-widest mb-3"
-      style={{ color: "rgba(249,115,22,0.75)" }}
+      className="inline-block text-brand-orange-300 text-sm font-extrabold uppercase tracking-widest mb-3"
     >
       Platform Features
     </motion.span>
@@ -696,7 +947,10 @@ const SectionHeader = ({ hint = false }: { hint?: boolean }) => (
       PublifyX Display Advertising Features
     </motion.h2>
     {hint && (
-      <p className="mt-2 text-xs font-medium" style={{ color: "rgba(180,200,230,0.38)" }}>
+      <p
+        className="mt-2 text-xs font-medium"
+        style={{ color: "rgba(180,200,230,0.38)" }}
+      >
         Scroll to explore all features →
       </p>
     )}
@@ -750,7 +1004,9 @@ const DisplayStickyFeaturesSection = () => {
       dotRefs.current.forEach((dot, i) => {
         if (!dot) return;
         const isActive = i === activeIdx;
-        dot.style.backgroundColor = isActive ? "rgb(249,115,22)" : "rgba(255,255,255,0.16)";
+        dot.style.backgroundColor = isActive
+          ? "rgb(249,115,22)"
+          : "rgba(255,255,255,0.16)";
         dot.style.transform = isActive ? "scaleX(2.6)" : "scaleX(1)";
       });
     };
@@ -783,13 +1039,19 @@ const DisplayStickyFeaturesSection = () => {
         {/* Outer tall div — captures vertical scroll distance */}
         <div ref={outerRef} className="relative">
           {/* Sticky container — pins to viewport for the entire scroll range */}
-          <div className="sticky top-0 overflow-hidden flex flex-col" style={{ height: "100vh" }}>
+          <div
+            className="sticky top-0 overflow-hidden flex flex-col"
+            style={{ height: "100vh" }}
+          >
             <div className="max-w-7xl mx-auto w-full px-4">
               <SectionHeader hint />
             </div>
 
             {/* Horizontal card track — constrained to 7xl */}
-            <div ref={containerRef} className="flex-1 flex items-center overflow-hidden max-w-7xl mx-auto w-full px-4">
+            <div
+              ref={containerRef}
+              className="flex-1 flex items-center overflow-hidden max-w-7xl mx-auto w-full px-4"
+            >
               <div
                 ref={trackRef}
                 className="flex flex-row items-stretch h-fit py-4"
@@ -801,7 +1063,11 @@ const DisplayStickyFeaturesSection = () => {
                 {features.map((feature, i) => (
                   <div
                     key={feature.title}
-                    style={{ minWidth: "clamp(280px, 85vw, 420px)", width: "420px", flexShrink: 0 }}
+                    style={{
+                      minWidth: "clamp(280px, 85vw, 420px)",
+                      width: "420px",
+                      flexShrink: 0,
+                    }}
                   >
                     <FeatureCard feature={feature} index={i} />
                   </div>
@@ -823,7 +1089,8 @@ const DisplayStickyFeaturesSection = () => {
                     style={{
                       width: "8px",
                       height: "8px",
-                      backgroundColor: i === 0 ? "rgb(249,115,22)" : "rgba(255,255,255,0.16)",
+                      backgroundColor:
+                        i === 0 ? "rgb(249,115,22)" : "rgba(255,255,255,0.16)",
                       transform: i === 0 ? "scaleX(2.6)" : "scaleX(1)",
                       transformOrigin: "left center",
                     }}
@@ -831,17 +1098,24 @@ const DisplayStickyFeaturesSection = () => {
                 ))}
               </div>
               {/* Track */}
-              <div className="flex-1 rounded-full" style={{ height: "2px", background: "rgba(249,115,22,0.1)" }}>
+              <div
+                className="flex-1 rounded-full"
+                style={{ height: "2px", background: "rgba(249,115,22,0.1)" }}
+              >
                 <div
                   ref={progressBarRef}
                   className="h-full rounded-full"
                   style={{
                     width: "0%",
-                    background: "linear-gradient(90deg, rgba(249,115,22,0.72), rgba(249,115,22,0.36))",
+                    background:
+                      "linear-gradient(90deg, rgba(249,115,22,0.72), rgba(249,115,22,0.36))",
                   }}
                 />
               </div>
-              <span className="text-xs font-mono flex-shrink-0" style={{ color: "rgba(249,115,22,0.4)" }}>
+              <span
+                className="text-xs font-mono flex-shrink-0"
+                style={{ color: "rgba(249,115,22,0.4)" }}
+              >
                 {features.length} features
               </span>
             </div>

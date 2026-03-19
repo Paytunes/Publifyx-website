@@ -34,7 +34,7 @@ const WhiteLabelExplanationSection = () => {
             />
           </div>
           <div>
-            <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+            <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
               White Label DSP
             </span>
             <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">

@@ -510,7 +510,7 @@ const ProgrammaticAudioAdvertising = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
-                <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+                <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
                   Ad Formats
                 </span>
                 <h2 className="mb-8">Audio Ad Formats Supported by PublifyX</h2>

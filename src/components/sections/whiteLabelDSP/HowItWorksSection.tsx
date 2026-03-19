@@ -44,7 +44,7 @@ const HowItWorksSection = ({ onGetStarted }: HowItWorksSectionProps) => {
     <section className="py-12 md:py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+          <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
             Get Started
           </span>
           <h2>How to Get Started with PublifyX White Label DSP</h2>
@@ -69,7 +69,7 @@ const HowItWorksSection = ({ onGetStarted }: HowItWorksSectionProps) => {
                   loading="lazy"
                 />
               </div>
-              <span className="inline-block text-sm font-bold text-brand-orange-500 mb-2">
+              <span className="inline-block text-sm font-bold text-brand-orange-700 mb-2">
                 {step.number}
               </span>
               <h3 className="font-bold text-navy-800 text-base mb-2">

@@ -86,7 +86,7 @@ const WhyChooseSection = ({}: WhyChooseSectionProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3">
+          <span className="inline-block text-sm font-semibold text-brand-orange-700 uppercase tracking-widest mb-3">
             Why PublifyX
           </span>
           <h2 className="mb-4 max-w-4xl mx-auto">
@@ -136,7 +136,7 @@ const WhyChooseSection = ({}: WhyChooseSectionProps) => {
                 <span className="w-3 h-3 rounded-full bg-yellow-400" />
                 <span className="w-3 h-3 rounded-full bg-green-400" />
                 <span className="ml-4 text-xs text-navy-300 font-mono">
-                  publify<span className="text-brand-orange-500">x</span>.io /{" "}
+                  publify<span className="text-brand-orange-700">x</span>.io /{" "}
                   {activeContent.id}
                 </span>
               </div>
