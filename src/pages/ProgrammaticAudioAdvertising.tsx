@@ -9,7 +9,6 @@ import usaMapSilhouette from "@/assets/audio/usa-map-silhouette.webp";
 import programmaticAudioConcept from "@/assets/audio/programmatic-audio-concept.webp";
 import podcastStudio from "@/assets/audio/podcast-studio.webp";
 import audioDevices from "@/assets/audio/audio-devices.webp";
-import { motion, useInView } from "framer-motion";
 import {
   ArrowRight,
   Sparkles,
@@ -112,7 +111,17 @@ const AnimatedStatCounter = ({
   suffix: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [isInView, setIsInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsInView(true); observer.disconnect(); } },
+      { rootMargin: "-50px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -347,12 +356,7 @@ const ProgrammaticAudioAdvertising = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div>
               <img
                 src={programmaticAudioConcept}
                 alt="Programmatic audio advertising concept showing smartphone with audio waveforms, headphones, microphone, and targeting signals"
@@ -362,13 +366,8 @@ const ProgrammaticAudioAdvertising = () => {
                 loading="lazy"
                 decoding="async"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            </div>
+            <div>
               <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-6">
                 What Is Programmatic Audio Advertising?
               </h2>
@@ -398,7 +397,7 @@ const ProgrammaticAudioAdvertising = () => {
                   shown in the app or player while the audio ad plays.
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -407,12 +406,7 @@ const ProgrammaticAudioAdvertising = () => {
       <section className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div>
               <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-3">
                 Why Audio Advertising Deserves a Place in Your Media Mix
               </h2>
@@ -451,13 +445,8 @@ const ProgrammaticAudioAdvertising = () => {
                 For advertisers, this means scalable, addressable reach with
                 precision targeting.
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            </div>
+            <div>
               <img
                 src={podcastStudio}
                 alt="Professional podcast recording studio with microphone for programmatic audio advertising"
@@ -467,7 +456,7 @@ const ProgrammaticAudioAdvertising = () => {
                 loading="lazy"
                 decoding="async"
               />
-            </motion.div>
+            </div>
           </div>
         </div>
         <div className="flex gap-6 flex-col items-center mt-6 p-4">
