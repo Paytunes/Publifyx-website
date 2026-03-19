@@ -56,6 +56,7 @@
       (function(){
         var p=location.pathname,img;
         if(p==='/ctv-advertising')img='/ctv-hero-dashboard.webp';
+        else if(p==='/programmatic-audio-advertising')img='/audio-hero-dashboard.webp';
         else img='/hero-dashboard.webp';
         var l=document.createElement('link');l.rel='preload';l.as='image';l.href=img;l.type='image/webp';
         document.head.appendChild(l);
@@ -208,19 +209,46 @@
             </div>
           </div>
         </section>
+        <!-- Audio hero -->
+        <section id="hero-audio" class="hero-critical" style="position:relative;overflow:hidden;display:none">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0f172a 0%,#1e293b 60%,#1e3a5f 100%)"></div>
+          <div style="position:relative;z-index:10;max-width:80rem;margin:0 auto;padding:7rem 1rem 3rem">
+            <div>
+              <div style="display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border-radius:9999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);margin-bottom:2rem">
+                <span style="font-size:.875rem;font-weight:500;color:rgba(255,255,255,.8)">Programmatic Audio</span>
+              </div>
+              <h1 style="margin-bottom:1.5rem;color:#fff;line-height:1.1;font-size:clamp(1.875rem,5vw,2.75rem)">
+                Programmatic Audio Advertising —
+                <span style="display:block;color:#f97316">Reach Listeners at Scale</span>
+              </h1>
+              <p style="font-size:1rem;color:#94a3b8;margin-bottom:1rem;line-height:1.625;max-width:36rem">
+                Audio is one of the last screen-free, high-attention media environments. Programmatic audio advertising lets you reach listeners during focused, personal moments.
+              </p>
+              <p style="font-size:1rem;color:#94a3b8;margin-bottom:1.5rem;font-weight:600">
+                High attention. High completion. Measurable results.
+              </p>
+              <a href="/contact" class="btn-primary" style="padding:.75rem 2.5rem;font-size:1.125rem;border-radius:.75rem;text-decoration:none">
+                Book a Call →
+              </a>
+              <p style="font-size:.875rem;color:#94a3b8;margin-top:1rem">
+                No commitment required · Launch campaigns in minutes
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
       <script>
         (function(){
           var p=location.pathname;
-          if(p==='/ctv-advertising'){
-            var w=document.getElementById('hero-wldsp');
-            var c=document.getElementById('hero-ctv');
-            if(w)w.style.display='none';
-            if(c)c.style.display='';
-          } else if(p!=='/' && p!=='/white-label-dsp'){
-            var s=document.getElementById('static-hero');
-            if(s)s.style.display='none';
+          var heroes={'hero-wldsp':['/','/white-label-dsp'],'hero-ctv':['/ctv-advertising'],'hero-audio':['/programmatic-audio-advertising']};
+          var matched=false;
+          for(var id in heroes){
+            var el=document.getElementById(id);
+            if(!el)continue;
+            if(heroes[id].indexOf(p)!==-1){el.style.display='';matched=true;}
+            else{el.style.display='none';}
           }
+          if(!matched){var s=document.getElementById('static-hero');if(s)s.style.display='none';}
         })();
       </script>
     </div>

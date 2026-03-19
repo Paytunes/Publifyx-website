@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import audioHeroDashboard from "@/assets/audio/audio-hero-dashboard.webp";
-import usaMapSilhouette from "@/assets/audio/usa-map-silhouette.png";
+import usaMapSilhouette from "@/assets/audio/usa-map-silhouette.webp";
 import programmaticAudioConcept from "@/assets/audio/programmatic-audio-concept.webp";
 import podcastStudio from "@/assets/audio/podcast-studio.webp";
 import audioDevices from "@/assets/audio/audio-devices.webp";
@@ -21,12 +21,6 @@ import {
   Tv,
 } from "lucide-react";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import FounderQuoteSection from "@/components/sections/FounderQuoteSection";
 import ClientTestimonialSection from "@/components/sections/ClientTestimonialSection";
 import AudioStickyFeaturesSection from "@/components/sections/audioAdvertising/AudioStickyFeaturesSection";
@@ -597,22 +591,33 @@ const ProgrammaticAudioAdvertising = () => {
               </span>
               <h2>Frequently Asked Questions</h2>
             </div>
-            <Accordion type="single" collapsible className="space-y-3">
+            <div className="space-y-3">
               {faqs.map((faq, i) => (
-                <AccordionItem
+                <details
                   key={i}
-                  value={`faq-${i}`}
-                  className="bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden"
+                  className="group bg-navy-50 rounded-xl border border-navy-100 px-6 overflow-hidden hover:border-brand-orange-200 transition-colors duration-300"
                 >
-                  <AccordionTrigger className="py-5 text-left font-semibold text-navy-800 hover:no-underline hover:text-brand-orange-700 transition-colors">
+                  <summary className="py-5 text-[16px] text-left font-semibold text-navy-800 hover:text-brand-orange-700 transition-colors cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden">
                     {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-5 text-navy-400 leading-relaxed">
+                    <svg
+                      className="w-4 h-4 shrink-0 ml-2 transition-transform duration-200 group-open:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </summary>
+                  <div className="pb-5 text-navy-400 leading-relaxed">
                     {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
+                  </div>
+                </details>
               ))}
-            </Accordion>
+            </div>
           </div>
         </section>
       </LazySection>
@@ -658,7 +663,11 @@ const ProgrammaticAudioAdvertising = () => {
               ))}
             </div>
 
-            <p className="text-white/80 text-sm mt-12 md:mt-16 text-center">
+            <p
+              className="t
+            
+            ext-white/80 text-sm mt-12 md:mt-16 text-center"
+            >
               Source: Statista, Edison Research 2024
             </p>
           </div>
