@@ -627,7 +627,7 @@ const ProgrammaticAudioAdvertising = () => {
             src={usaMapSilhouette}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-contain pointer-events-none opacity-20 md:opacity-25 lg:opacity-30 hidden md:block"
+            className="absolute inset-0 w-full h-full object-contain pointer-events-none opacity-20 md:opacity-25 lg:opacity-30"
             width={1200}
             height={800}
             loading="lazy"
@@ -641,7 +641,7 @@ const ProgrammaticAudioAdvertising = () => {
             </h3>
 
             {/* Stats grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 max-w-6xl mx-auto">
               {audioStats.map((stat) => (
                 <div
                   key={stat.value}
