@@ -1,5 +1,9 @@
 import { Target, Zap, Star, Rocket, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import builtForImg1 from "@/assets/white-label-dsp/white_label_built_for1.webp";
+import builtForImg2 from "@/assets/white-label-dsp/white_label_built_for2.webp";
+import builtForImg3 from "@/assets/white-label-dsp/white_label_built_for3.webp";
+import builtForImg4 from "@/assets/white-label-dsp/white_label_built_for4.webp";
 
 const targetAudience = [
   {
@@ -7,24 +11,28 @@ const targetAudience = [
     description:
       "Bring programmatic buying in-house, eliminate middlemen, and increase margins by operating your own branded DSP. Control the entire media buying workflow and offer clients a proprietary platform experience.",
     icon: Target,
+    image: builtForImg1,
   },
   {
     title: "Ad Networks",
     description:
       "Provide your advertiser base with self-serve programmatic capabilities. Expand your product offering beyond traditional network buys to include real-time bidding, audience targeting, and cross-channel reach.",
     icon: Zap,
+    image: builtForImg2,
   },
   {
     title: "Startups & Entrepreneurs",
     description:
       "Enter the ad tech market without the capital expenditure of building a DSP from scratch. PublifyX gives you enterprise-grade technology at a fraction of the cost and time.",
     icon: Star,
+    image: builtForImg3,
   },
   {
-    title: "Publishers with Ad Services",
+    title: "Publishers with Advertising Services",
     description:
       "If you offer advertising solutions alongside your content business, a white label DSP lets you create a full-service buying platform for your advertising clients.",
     icon: Rocket,
+    image: builtForImg4,
   },
 ];
 
@@ -44,18 +52,31 @@ const BenefitsAndAudienceSection = ({}: BenefitsAndAudienceSectionProps) => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
-          {targetAudience.map((audience, i) => (
+          {targetAudience.map((audience) => (
             <div key={audience.title}>
-              <div className="bg-white rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-all duration-300 group h-full">
-                <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
-                  <audience.icon className="w-6 h-6 text-brand-orange-700" />
+              <div className="bg-white rounded-2xl border border-navy-100 overflow-hidden hover:shadow-lg transition-all duration-300 group h-full">
+                <img
+                  src={audience.image}
+                  alt={audience.title}
+                  width={800}
+                  height={533}
+                  className="w-full h-60 sm:h-80 object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="p-6 sm:px-8 sm:py-4 ">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-orange-50 flex items-center justify-center group-hover:bg-brand-orange-100 transition-colors">
+                      <audience.icon className="w-5 h-5 text-brand-orange-700" />
+                    </div>
+                    <h3 className="font-bold text-navy-800 text-xl">
+                      {audience.title}
+                    </h3>
+                  </div>
+                  <p className="text-navy-400 leading-relaxed">
+                    {audience.description}
+                  </p>
                 </div>
-                <h3 className="font-bold text-navy-800 text-xl mb-2">
-                  {audience.title}
-                </h3>
-                <p className="text-navy-400 leading-relaxed">
-                  {audience.description}
-                </p>
               </div>
             </div>
           ))}
