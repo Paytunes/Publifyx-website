@@ -13,12 +13,13 @@ import featureImg3 from "@/assets/white-label-dsp/white_label_platform_feature3.
 import featureImg4 from "@/assets/white-label-dsp/white_label_platform_feature4.webp";
 import featureImg5 from "@/assets/white-label-dsp/white_label_platform_feature5.webp";
 import featureImg6 from "@/assets/white-label-dsp/white_label_platform_feature6.webp";
+import featureImg7 from "@/assets/white-label-dsp/white_label_platform_feature7.webp";
 
 const features = [
   {
     title: "Full Brand Customization",
     description:
-      "Deploy on your custom domain with your logo, color palette, and brand guidelines. To your clients, it's your platform — not a reseller solution.",
+      "Deploy the platform on your custom domain with your logo, color palette, and brand guidelines applied throughout the interface. To your clients, it is your platform, not a reseller solution.",
     icon: Palette,
     image: featureImg1,
   },
@@ -32,7 +33,7 @@ const features = [
   {
     title: "Real-Time Bidding Engine",
     description:
-      "Our proprietary RTB engine processes bid requests in milliseconds, optimizing for CPM, CPC, CPA, and ROAS targets.",
+      "Our proprietary RTB engine processes bid requests in milliseconds, optimizing for your advertisers' KPIs including CPM, CPC, CPA, and ROAS targets.",
     icon: Zap,
     image: featureImg3,
   },
@@ -44,7 +45,14 @@ const features = [
     image: featureImg4,
   },
   {
-    title: "Self-Serve & Managed Modes",
+    title: "Transparent Reporting and Analytics",
+    description:
+      "Granular campaign reporting with real-time dashboards. White-labeled reports that you can share directly with your clients.",
+    icon: Target,
+    image: featureImg7,
+  },
+  {
+    title: "Self-Serve and Managed Service Options",
     description:
       "Configure the platform for self-serve advertiser access or use it as a managed service tool for your internal media buying team.",
     icon: Settings,
