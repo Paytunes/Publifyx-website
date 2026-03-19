@@ -202,13 +202,13 @@ const BenefitsAndAudienceSection = ({}: BenefitsAndAudienceSectionProps) => {
       </div>
 
       {/* CTA */}
-      <div className="flex flex-col items-center pb-12 md:pb-16 px-4">
+      <div className="flex flex-col text-center items-center pb-12 md:pb-16 px-4">
         <p className="text-navy-500 mb-6 font-medium">
           Not sure which model fits your business?
         </p>
         <Link
           to="/contact"
-          className="inline-flex items-center btn-primary text-lg px-10 py-4 text-white no-underline"
+          className="inline-flex items-center btn-primary text-base sm:text-lg px-4 sm:px-10 py-4 text-white no-underline"
         >
           Request a Strategy Consultation{" "}
           <ArrowRight className="ml-2 w-5 h-5" />
