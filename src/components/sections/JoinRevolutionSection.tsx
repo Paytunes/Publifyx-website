@@ -1,16 +1,31 @@
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import podcastStudioImg from "@/assets/home/podcast-studio.webp";
 
 const JoinRevolutionSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const imgY = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  const imgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const img = imgRef.current;
+    if (!section || !img) return;
+
+    const onScroll = () => {
+      const rect = section.getBoundingClientRect();
+      const sectionHeight = rect.height + window.innerHeight;
+      const scrolled = window.innerHeight - rect.top;
+      const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+      // Map progress 0..1 to 40..-40
+      const translateY = 40 - progress * 80;
+      img.style.transform = `translateY(${translateY}px)`;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <section
@@ -19,12 +34,7 @@ const JoinRevolutionSection = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
-          >
+          <div>
             <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-4">
               Join Us
             </span>
@@ -46,19 +56,9 @@ const JoinRevolutionSection = () => {
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.7,
-              delay: 0.15,
-              ease: [0.33, 1, 0.68, 1],
-            }}
-            style={{ y: imgY }}
-          >
+          <div ref={imgRef}>
             <img
               src={podcastStudioImg}
               alt="Podcast recording studio – audio ad production setup"
@@ -69,7 +69,7 @@ const JoinRevolutionSection = () => {
               decoding="async"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

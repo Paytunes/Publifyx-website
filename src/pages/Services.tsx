@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { motion } from "framer-motion";
+
 import { Monitor, Tv } from "lucide-react";
 
 const services = [
@@ -37,30 +37,22 @@ const Services = () => {
       <section className="py-20 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+            <h1
               className="text-4xl md:text-5xl font-bold text-foreground mb-4"
             >
               Our Services
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+            </h1>
+            <p
               className="text-lg text-muted-foreground max-w-2xl mx-auto"
             >
               Multi-channel programmatic advertising solutions built for agencies, ad networks, and startups.
-            </motion.p>
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {services.map((service, i) => (
-              <motion.div
+              <div
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.08 }}
               >
                 <Link
                   to={service.path}
@@ -72,7 +64,7 @@ const Services = () => {
                   </h2>
                   <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

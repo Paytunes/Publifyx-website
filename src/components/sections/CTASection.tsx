@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+
 import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
@@ -18,11 +18,7 @@ const CTASection = () => {
         }}
       />
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
+      <div
         className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
       >
         <h2 className="mb-6 !text-white">
@@ -41,7 +37,7 @@ const CTASection = () => {
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

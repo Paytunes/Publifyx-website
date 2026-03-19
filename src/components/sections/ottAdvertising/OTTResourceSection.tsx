@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
 import { ArrowRight } from "lucide-react";

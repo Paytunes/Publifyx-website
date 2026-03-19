@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+
 import { ArrowRight, Zap, Building2 } from "lucide-react";
 
 const ProductsSection = () => {
@@ -10,41 +10,27 @@ const ProductsSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+          <span
             className="inline-block text-sm font-semibold text-brand-orange-400 uppercase tracking-widest mb-3"
           >
             Products
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          </span>
+          <h2
             className="mb-4 !text-white"
           >
             Choose Your Plan
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+          </h2>
+          <p
             className="text-lg text-navy-300 max-w-2xl mx-auto"
           >
             An evolved user experience that drives performance across channels
             with ease.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Shout Lite */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
+          <div
             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:bg-white/10 hover:border-white/20 transition-all duration-500 group"
           >
             <div>
@@ -66,14 +52,10 @@ const ProductsSection = () => {
               Get Started
               <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
-          </motion.div>
+          </div>
 
           {/* Shout Enterprise */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.33, 1, 0.68, 1] }}
+          <div
             className="bg-gradient-to-br from-brand-orange-500 to-brand-orange-600 rounded-2xl p-8 flex flex-col justify-between shadow-xl shadow-brand-orange-500/20 relative group hover:shadow-2xl hover:shadow-brand-orange-500/30 transition-shadow duration-500"
           >
             <div className="absolute top-4 right-4 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold text-white">
@@ -98,7 +80,7 @@ const ProductsSection = () => {
               Contact Sales
               <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

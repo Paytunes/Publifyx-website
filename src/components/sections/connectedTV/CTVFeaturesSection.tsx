@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+
 import { Globe, Target, RefreshCw, BarChart3, Shield, Layers } from "lucide-react";
 import MagneticCard from "@/components/effects/MagneticCard";
 
@@ -40,29 +40,19 @@ const CTVFeaturesSection = () => {
     <section className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+          <span
             className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
           >
             Platform Features
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          </span>
+          <h2
             className="mb-4 max-w-4xl mx-auto"
           >
             PublifyX CTV Advertising Platform Features
-          </motion.h2>
+          </h2>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+        <div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
         >
           {features.map((feature) => (
@@ -77,7 +67,7 @@ const CTVFeaturesSection = () => {
               <p className="text-navy-400 leading-relaxed text-sm">{feature.description}</p>
             </MagneticCard>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

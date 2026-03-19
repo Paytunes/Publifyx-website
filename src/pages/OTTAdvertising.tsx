@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import { useEffect } from "react";
 import { removeAllFaqPageSchemas } from "@/utils/faqSchemaUtils";
 import { useServiceBreadcrumbs } from "@/hooks/useServiceBreadcrumbs";
-import { motion } from "framer-motion";
+
 import { Tv, Monitor, Radio } from "lucide-react";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import {

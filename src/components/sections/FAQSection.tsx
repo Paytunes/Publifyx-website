@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { motion } from "framer-motion";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { injectFaqPageSchema } from "@/utils/faqSchemaUtils";
 
@@ -51,27 +51,20 @@ const FAQSection = () => {
     <section className="py-12 md:py-16 bg-white faq-section">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+          <span
             className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
           >
             FAQ
-          </motion.span>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          </span>
+          <h2>
             Frequently Asked Questions
-          </motion.h2>
+          </h2>
         </div>
 
         <Accordion type="single" collapsible className="w-full space-y-3">
           {faqs.map((faq, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06, duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
             >
               <AccordionItem
                 value={`item-${i}`}
@@ -82,7 +75,7 @@ const FAQSection = () => {
                 </AccordionTrigger>
                 <AccordionContent className="pb-5 text-navy-400 leading-relaxed">{faq.a}</AccordionContent>
               </AccordionItem>
-            </motion.div>
+            </div>
           ))}
         </Accordion>
       </div>

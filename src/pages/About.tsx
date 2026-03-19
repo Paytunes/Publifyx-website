@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+
 import {
   ArrowRight,
   Sparkles,
@@ -133,11 +133,7 @@ const About = () => {
             ]}
           />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
+            <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
                 <span className="text-sm font-medium text-white/80">
@@ -173,11 +169,8 @@ const About = () => {
               <p className="text-sm text-navy-400">
                 Democratizing access to programmatic ad tech
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            </div>
+            <div
               className="hidden lg:block"
             >
               <div className="relative">
@@ -192,7 +185,7 @@ const About = () => {
                   decoding="sync"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -201,41 +194,26 @@ const About = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+            <span
               className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
             >
               What We Do
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            </span>
+            <h2>
               Our Technology, Your Brand
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+            </h2>
+            <p
               className="text-lg text-navy-400 max-w-3xl mx-auto mt-4 leading-relaxed"
             >
               You deploy the platform under your brand, operate with your
               pricing, and manage clients independently — while we handle
               infrastructure, bidding technology, and updates.
-            </motion.p>
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {whatWeDo.map((item, i) => (
-              <motion.div
+              <div
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
               >
                 <MagneticCard className="group bg-navy-50 rounded-2xl border border-navy-100 p-7 hover:shadow-lg transition-all duration-300 h-full">
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
@@ -248,7 +226,7 @@ const About = () => {
                     {item.description}
                   </p>
                 </MagneticCard>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -258,30 +236,19 @@ const About = () => {
       <section className="py-12 md:py-16 bg-navy-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+            <span
               className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
             >
               Our Approach
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            </span>
+            <h2>
               What Drives Us
-            </motion.h2>
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {values.map((value, i) => (
-              <motion.div
+              <div
                 key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
               >
                 <div className="bg-white rounded-2xl border border-navy-100 p-6 hover:shadow-lg transition-all duration-300 h-full text-center">
                   <div className="w-10 h-10 rounded-xl bg-brand-orange-500 flex items-center justify-center mx-auto mb-4">
@@ -296,7 +263,7 @@ const About = () => {
                     {value.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -306,30 +273,19 @@ const About = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+            <span
               className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
             >
               Who We Serve
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            </span>
+            <h2>
               Our Clients
-            </motion.h2>
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {whoWeServe.map((audience, i) => (
-              <motion.div
+              <div
                 key={audience.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
               >
                 <MagneticCard className="bg-navy-50 rounded-2xl border border-navy-100 p-8 hover:shadow-lg transition-all duration-300 group h-full">
                   <div className="w-12 h-12 rounded-xl bg-brand-orange-50 flex items-center justify-center mb-5 group-hover:bg-brand-orange-100 transition-colors">
@@ -342,7 +298,7 @@ const About = () => {
                     {audience.description}
                   </p>
                 </MagneticCard>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -369,10 +325,7 @@ const About = () => {
       <section className="py-12 md:py-16 bg-navy-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange-500 rounded-full blur-[250px] opacity-10" />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
         >
           <h2 className="mb-6 !text-white">Partner with PublifyX</h2>
@@ -392,7 +345,7 @@ const About = () => {
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
-        </motion.div>
+        </div>
       </section>
     </Layout>
   );

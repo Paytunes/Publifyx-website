@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import {
   Globe,
   Layers,
@@ -864,10 +863,8 @@ interface CardProps {
 const FeatureCard = ({ feature, index }: CardProps) => {
   const Icon = feature.icon;
   return (
-    <motion.div
-      whileHover={{ scale: 1.03, y: -6 }}
-      transition={{ duration: 0.24, ease: [0.33, 1, 0.68, 1] }}
-      className="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden w-full h-full"
+    <div
+      className="flex-shrink-0 flex flex-col rounded-2xl overflow-hidden w-full h-full hover:scale-[1.03] hover:-translate-y-1.5 transition-transform duration-200"
       style={{
         background: "rgba(9, 20, 40, 0.92)",
         border: "1px solid rgba(249,115,22,0.17)",
@@ -921,7 +918,7 @@ const FeatureCard = ({ feature, index }: CardProps) => {
             "linear-gradient(90deg, transparent 0%, rgba(249,115,22,0.38) 50%, transparent 100%)",
         }}
       />
-    </motion.div>
+    </div>
   );
 };
 
@@ -930,22 +927,16 @@ const FeatureCard = ({ feature, index }: CardProps) => {
 // ─────────────────────────────────────────────
 const SectionHeader = ({ hint = false }: { hint?: boolean }) => (
   <div className="flex-shrink-0 pt-10 pb-6 px-4 text-center">
-    <motion.span
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+    <span
       className="inline-block text-brand-orange-300 text-sm font-extrabold uppercase tracking-widest mb-3"
     >
       Platform Features
-    </motion.span>
-    <motion.h2
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+    </span>
+    <h2
       className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white"
     >
       PublifyX Display Advertising Features
-    </motion.h2>
+    </h2>
     {hint && (
       <p
         className="mt-2 text-xs font-medium"

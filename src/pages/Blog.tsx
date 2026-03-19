@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Calendar, Clock, Sparkles, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { motion } from "framer-motion";
+
 import { blogPosts } from "@/data/blogPosts";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import MagneticCard from "@/components/effects/MagneticCard";
@@ -40,11 +40,7 @@ const Blog = () => {
             items={[{ label: "Home", path: "/" }, { label: "Blog" }]}
           />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
+            <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-brand-orange-400" />
                 <span className="text-sm font-medium text-white/80">
@@ -73,13 +69,10 @@ const Blog = () => {
                   <span className="text-sm font-semibold">Updated Weekly</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Featured Post Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            <div
               className="hidden lg:block"
             >
               <Link to={`/blog/${featured.slug}`} className="group block">
@@ -112,7 +105,7 @@ const Blog = () => {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -121,22 +114,16 @@ const Blog = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+            <span
               className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
             >
               Latest Articles
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            </span>
+            <h2
               className="text-3xl md:text-4xl font-extrabold text-navy-800"
             >
               Explore Our Latest Content
-            </motion.h2>
+            </h2>
           </div>
 
           {/* Mobile Featured Post */}
@@ -173,12 +160,8 @@ const Blog = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {rest.map((post, index) => (
-              <motion.div
+              <div
                 key={post.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.06 }}
               >
                 <Link to={`/blog/${post.slug}`} className="group block h-full">
                   <MagneticCard className="bg-white rounded-2xl border border-navy-100 overflow-hidden hover:shadow-lg transition-all duration-300 h-full flex flex-col">
@@ -211,7 +194,7 @@ const Blog = () => {
                     </div>
                   </MagneticCard>
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -229,11 +212,7 @@ const Blog = () => {
             backgroundSize: "60px 60px",
           }}
         />
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+        <div
           className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
         >
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4 !text-white">
@@ -257,7 +236,7 @@ const Blog = () => {
               Subscribe
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
     </Layout>
   );

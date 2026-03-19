@@ -1,4 +1,3 @@
-import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
@@ -10,8 +9,19 @@ const stats = [
 
 const AnimatedCounter = ({ target, suffix }: { target: number; suffix: string }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [isInView, setIsInView] = useState(false);
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsInView(true); observer.disconnect(); } },
+      { rootMargin: "-50px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!isInView) return;
@@ -55,33 +65,26 @@ const StatisticsSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+          <span
             className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-3"
           >
             Platform Reach
-          </motion.span>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          </span>
+          <h2>
             Reach the Right Audience
-          </motion.h2>
+          </h2>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {stats.map((stat, i) => (
-            <motion.div
+          {stats.map((stat) => (
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5, ease: [0.33, 1, 0.68, 1] }}
               className="text-center p-8 rounded-2xl bg-navy-50 border border-navy-100 hover:border-brand-orange-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               <AnimatedCounter target={stat.value} suffix={stat.suffix} />
               <div className="text-brand-orange-500 font-semibold text-lg mb-1">{stat.label}</div>
               <div className="text-navy-400 text-sm">{stat.description}</div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Layout from "@/components/Layout";
-import { motion } from "framer-motion";
+
 import founderImage from "@/assets/founder/saurabh-ceo.webp";
 import { Linkedin, MapPin } from "lucide-react";
 
@@ -46,7 +46,7 @@ const CEO = () => {
             <p className="text-sm text-primary font-medium tracking-wide uppercase">Meet the Founder</p>
           </nav>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <div>
             {/* Founder Image */}
             <img
               src={founderImage}
@@ -141,7 +141,7 @@ const CEO = () => {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </Layout>

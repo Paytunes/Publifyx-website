@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { ArrowRight, Sparkles, BarChart3, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+
 
 import heroImage from "@/assets/home/hero-woman-phone.webp";
 
@@ -85,10 +85,7 @@ const HeroSection = () => {
           </div>
 
           {/* Visual */}
-          <motion.div
-            initial={{ opacity: 0, x: 40, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          <div
             className="hidden lg:block"
           >
             <div className="relative">
@@ -105,13 +102,7 @@ const HeroSection = () => {
                 />
               </div>
               {/* Floating card */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
+              <div
                 className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl"
               >
                 <div className="flex items-center gap-3">
@@ -125,9 +116,9 @@ const HeroSection = () => {
                     <div className="text-xs text-navy-400">Avg. Campaign</div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

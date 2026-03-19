@@ -8,7 +8,7 @@ import {
   SkipForward,
   ArrowRight,
 } from "lucide-react";
-import { motion } from "framer-motion";
+
 import mamaEarthAdImg from "@/assets/home/mama-earth-ad.webp";
 import publifyxLogoImg from "@/assets/brand/publifyx-logo.webp";
 
@@ -57,11 +57,7 @@ const AdInActionSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <div
             className="order-2 lg:order-1"
           >
             <span className="inline-block text-sm font-semibold text-brand-orange-500 uppercase tracking-widest mb-4">
@@ -99,14 +95,10 @@ const AdInActionSection = () => {
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Phone Mockup */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+          <div
             className="order-1 lg:order-2 flex justify-center"
           >
             <div className="relative">
@@ -252,7 +244,7 @@ const AdInActionSection = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
